@@ -21,7 +21,7 @@ function changeLeaderboard(leaderboard) {
     // Discard old fragment
     var url = window.location.href.split("#")[0];
     var new_url = [url, fragment].join("#")
-    window.location.href = new_url
+    window.location.href = new_url;
     // at this point the "hashchange" event is triggered, causing the
     // display to be updated to show the correct leaderboard
 }
@@ -54,7 +54,7 @@ function getUrlFragment() {
     if (parts.length == 2) {
         fragment = parts[1]
     }
-    return fragment
+    return fragment;
 }
 
 function onLoadOrHashChange() {
