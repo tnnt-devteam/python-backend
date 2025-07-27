@@ -101,15 +101,6 @@ class ArchivesView(TemplateView):
 
 class LeaderboardsView(TemplateView):
     template_name = 'leaderboards.html'
-    # One possible refactor of this page, if it ends up taking too much time to
-    # load all leaderboards, is to make it take a GET parameter with the
-    # leaderboard identifier as a parameter, and load only that one. This would
-    # also allow the leaderboard javascript switch to be retired and have the
-    # combo box just reload the page with the new leaderboard. Breaking apart
-    # this backend logic to only do what's necessary to load a single
-    # leaderboard, though, would be more annoying. Currently there is no
-    # complaint of slowness on the leaderboard page, so this refactor isn't
-    # something that needs to happen.
 
     def get_context_data(self, **kwargs):
         # The players and clans lists produced in this function generally look
@@ -172,17 +163,29 @@ class LeaderboardsView(TemplateView):
             'maxscore_nam':    F('max_score_game__player__name'),
         }
 
-        # Now do the actual queries. Only 2 queries!
-        allplayers = list(Player.objects
-                                .filter(total_games__gt = 0)
-                                .annotate(clanname=F('clan__name'), **annotate_kwargs)
-                                .values())
-        winplayers = [ plr for plr in allplayers if plr['wins'] > 0 ]
-        allclans = list(Clan.objects
-                            .filter(total_games__gt = 0)
-                            .annotate(**annotate_kwargs)
-                            .values())
-        winclans = [ clan for clan in allclans if clan['wins'] > 0 ]
+        # Load basic player/clan data WITHOUT the expensive annotations
+        # These fields are stored directly on the model and are fast to query
+        basic_fields = ['id', 'name', 'wins', 'total_games', 'unique_deaths', 'unique_ascs',
+                       'unique_achievements', 'longest_streak', 'zscore', 'splats',
+                       'donations', 'games_over_1000_turns']
+
+        allplayers_basic = list(Player.objects
+                                     .filter(total_games__gt=0)
+                                     .annotate(clanname=F('clan__name'))
+                                     .values(*basic_fields, 'clanname'))
+        winplayers_basic = [p for p in allplayers_basic if p['wins'] > 0]
+
+        allclans_basic = list(Clan.objects
+                                  .filter(total_games__gt=0)
+                                  .values(*basic_fields))
+        winclans_basic = [c for c in allclans_basic if c['wins'] > 0]
+
+        # Basic data loaded - these will be used for leaderboards that only need
+        # fields stored directly on the model (wins, unique_deaths, etc.)
+        allplayers = allplayers_basic
+        winplayers = winplayers_basic
+        allclans = allclans_basic
+        winclans = winclans_basic
 
         # This function takes one of the four lists above, and formats each
         # dictionary appropriately for consumption by the template.
@@ -286,14 +289,64 @@ class LeaderboardsView(TemplateView):
               'wins_only': False,
               'title': 'Most Games over 1000 Turns', 'columntitle': 'games' },
         ]
-        # now add player/clan data to the leaderboards
+        # Process each leaderboard
         for L in leaderboards:
-            L['players'] = gen_leader_list(winplayers if L['wins_only'] else allplayers,
-                                           L['stat'] if 'stat' in L else L['id'],
-                                           L['descending'])
-            L['clans'] = gen_leader_list(winclans if L['wins_only'] else allclans,
-                                         L['stat'] if 'stat' in L else L['id'],
-                                         L['descending'])
+            stat = L['stat'] if 'stat' in L else L['id']
+
+            # For simple stats (stored on model), use the basic data
+            if stat in basic_fields:
+                L['players'] = gen_leader_list(winplayers if L['wins_only'] else allplayers,
+                                             stat, L['descending'])
+                L['clans'] = gen_leader_list(winclans if L['wins_only'] else allclans,
+                                           stat, L['descending'])
+            else:
+                # For complex stats that require JOINs to related Game objects,
+                # load only the specific annotations needed for this leaderboard
+                if stat == 'firstasc':
+                    # Get all players/clans with first ascension
+                    top_players = list(Player.objects
+                        .filter(first_asc__isnull=False)
+                        .annotate(
+                            clanname=F('clan__name'),
+                            firstasc=F('first_asc__endtime'),
+                            firstasc_stt=F('first_asc__starttime'),
+                            firstasc_dlg=F('first_asc__source__dumplog_fmt'),
+                            firstasc_nam=F('first_asc__player__name')
+                        )
+                        .order_by('first_asc__endtime')
+                        .values('name', 'clanname', 'firstasc', 'firstasc_stt', 'firstasc_dlg', 'firstasc_nam'))
+
+                    top_clans = list(Clan.objects
+                        .filter(first_asc__isnull=False)
+                        .annotate(
+                            firstasc=F('first_asc__endtime'),
+                            firstasc_stt=F('first_asc__starttime'),
+                            firstasc_dlg=F('first_asc__source__dumplog_fmt'),
+                            firstasc_nam=F('first_asc__player__name')
+                        )
+                        .order_by('first_asc__endtime')
+                        .values('name', 'firstasc', 'firstasc_stt', 'firstasc_dlg', 'firstasc_nam'))
+
+                    L['players'] = gen_leader_list(top_players, stat, L['descending'])
+                    L['clans'] = gen_leader_list(top_clans, stat, L['descending'])
+                elif stat in ['minturns', 'mintime', 'maxcond', 'mostachgame', 'minscore', 'maxscore']:
+                    # For other complex leaderboards, annotate only the fields needed for this specific stat
+                    stat_annotations = {k: v for k, v in annotate_kwargs.items() if k.startswith(stat)}
+                    players_annotated = list(Player.objects
+                        .filter(total_games__gt=0)
+                        .annotate(clanname=F('clan__name'), **stat_annotations)
+                        .values('name', 'wins', 'clanname', *stat_annotations.keys()))
+                    clans_annotated = list(Clan.objects
+                        .filter(total_games__gt=0)
+                        .annotate(**stat_annotations)
+                        .values('name', 'wins', *stat_annotations.keys()))
+
+                    if L['wins_only']:
+                        players_annotated = [p for p in players_annotated if p.get('wins', 0) > 0]
+                        clans_annotated = [c for c in clans_annotated if c.get('wins', 0) > 0]
+
+                    L['players'] = gen_leader_list(players_annotated, stat, L['descending'])
+                    L['clans'] = gen_leader_list(clans_annotated, stat, L['descending'])
         try:
             kwargs['myname'] = get_player(self.request.user).name
         except:

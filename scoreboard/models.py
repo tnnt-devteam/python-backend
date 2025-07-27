@@ -91,6 +91,13 @@ class Clan(LeaderboardBaseFields):
     # admins = models.ManyToManyField(Player)
     # instead of Player having a clan_admin field
 
+    class Meta:
+        indexes = [
+            models.Index(fields=['wins']),
+            models.Index(fields=['total_games']),
+            models.Index(fields=['-wins', 'name']),  # For leaderboard sorting
+        ]
+
 class Streak:
     # This is NOT a database model!
     # It is a simple storage class for streak information that can be used in
@@ -113,6 +120,13 @@ class Player(LeaderboardBaseFields):
     # xlogfile until it's finished.
     # Populated during aggregation.
     temp_achievements = models.ManyToManyField(Achievement)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['wins']),
+            models.Index(fields=['total_games']),
+            models.Index(fields=['-wins', 'name']),  # For leaderboard sorting
+        ]
 
     # Compute this player's streaks, and return them as a list of Streaks
     # containing the games in the streak and whether they can be continued.
