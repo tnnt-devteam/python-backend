@@ -190,7 +190,7 @@ class Game(models.Model):
     maxlvl       = models.IntegerField(null=True)
     starttime    = models.DateTimeField()
     endtime      = models.DateTimeField()
-    death        = models.CharField(max_length=256)
+    death        = models.CharField(max_length=256, db_index=True)
     align0       = models.CharField(max_length=16, null=True)
     gender0      = models.CharField(max_length=16, null=True)
 
@@ -240,5 +240,12 @@ class Game(models.Model):
     # Importantly, this uses gender0 and align0.
     def rrga(self):
         return '-'.join([self.role, self.race, self.gender0, self.align0])
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['death', 'endtime']),
+            models.Index(fields=['player', 'death']),
+            models.Index(fields=['endtime']),
+        ]
 
 
