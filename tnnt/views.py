@@ -101,6 +101,15 @@ class ArchivesView(TemplateView):
 
 class LeaderboardsView(TemplateView):
     template_name = 'leaderboards.html'
+    # One possible refactor of this page, if it ends up taking too much time to
+    # load all leaderboards, is to make it take a GET parameter with the
+    # leaderboard identifier as a parameter, and load only that one. This would
+    # also allow the leaderboard javascript switch to be retired and have the
+    # combo box just reload the page with the new leaderboard. Breaking apart
+    # this backend logic to only do what's necessary to load a single
+    # leaderboard, though, would be more annoying. Currently there is no
+    # complaint of slowness on the leaderboard page, so this refactor isn't
+    # something that needs to happen.
 
     def get_context_data(self, **kwargs):
         # The players and clans lists produced in this function generally look
@@ -198,6 +207,21 @@ class LeaderboardsView(TemplateView):
                     logger.error('malformed query result for leaderboards')
                     logger.error('stat = %s element = %s', stat, str(elem))
                     return []
+                # TODO: Various leaderboards should leave off entries where the
+                # stat is 0: (some leaderboards such as most unique asc combos
+                # will never have 0 due to only looking at wins)
+                #   -most conducts in an asc
+                #   -most achievements in a game
+                #   -most achievements overall
+                #   -highest scoring game (arguable)
+                #   -longest streak
+                #   -most unique deaths
+                #   -most post amulet splats
+                #   -swap chest donations
+                #   -games over 1000 turns
+                # Probably the way to address it is just to ignore the entry if
+                # stat is 0.
+
                 # elem is either a player or a clan, but this loop doesn't care
                 # which
                 converted = {
@@ -328,6 +352,15 @@ class ClansView(TemplateView):
 class SinglePlayerOrClanView(TemplateView):
     template_name = 'singleplayerorclan.html'
 
+    # a "would be nice" feature to have: on the clan page (not the player page),
+    # show games that the clan members have in progress. Obviously, not possible
+    # to do in the scoreboard alone - it would require the game to do something
+    # extra to indicate a game has started, and have that data be accessible
+    # even when a game is saved. Probably, the cleanest way to do this would be
+    # to have a game write out a file with some basic information when it
+    # starts, and wipe that file when it ends, and add the ability for the
+    # scoreboard to poll such files.
+
     def get_context_data(self, **kwargs):
         if 'clanname' in kwargs:
             kwargs['isClan'] = True
@@ -363,6 +396,14 @@ class SinglePlayerOrClanView(TemplateView):
         kwargs['ascensions'] = \
             bulk_upd_games(list(base_game_qs.filter(won=True).values()), True)
         # 10 most recent games
+        # A popular proposal is to show ALL the games on this page, not just
+        # recent ones (but presumably with most of them hidden by default
+        # because stuff comes after this on the page). The main reason this
+        # hasn't been done is because hauling all the games out of the database,
+        # rendering them in the page, and sending them over the internet is
+        # expected to become a slow operation by the end of the tournament when
+        # there are lots of games. Ignoring scummed games is an option, and
+        # should probably be done by default, but it hasn't been tested.
         kwargs['recentgames'] = \
             bulk_upd_games(list(base_game_qs[:10].values()), False)
 
@@ -387,6 +428,13 @@ class SinglePlayerOrClanView(TemplateView):
 
 class TrophiesView(TemplateView):
     template_name = 'trophies.html'
+
+    # TODO: Some way of visualizing your progress towards all multi-game-combo
+    # trophies: if you do not already have the trophy, display the games that
+    # you / your clan has which count towards it, or display all the games
+    # necessary and highlight ones that have been done in a different color.
+    # Ideally, it would even show ones that have a matching game in progress in
+    # a third color.
 
     def get_context_data(self, **kwargs):
         # only do 3 queries!
@@ -914,5 +962,3 @@ class ClanMgmtView(View):
     # "looking for a clan!" and all such players are listed either publicly or
     # to clan admins (probably publicly)
     # FUTURE TODO: decline an invite
-    # FUTURE TODO: clan logos
-    # TODO: clan name of 🐱 breaks due to incompatible unicode collation or something
