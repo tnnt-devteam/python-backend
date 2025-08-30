@@ -3,6 +3,7 @@ from scoreboard.models import Source, Game, Player, Conduct, Achievement
 from django.db import transaction
 from scoreboard.parsers import XlogParser
 from tnnt import settings
+from tnnt import uniqdeaths
 from pathlib import Path
 import requests
 import sys
@@ -67,6 +68,13 @@ def game_from_xlog(source, xlog_dict):
     # simple fields get keyed directly to keyword args to Game.objects.create()
     for key in SIMPLE_XLOG_FIELDS:
         kwargs[key] = xlog_dict[key]
+
+    # Normalize the death string for efficient unique death queries
+    # Skip normalization if the death should be rejected
+    if not uniqdeaths.reject(kwargs['death']):
+        kwargs['normalized_death'] = uniqdeaths.normalize(kwargs['death'])
+    else:
+        kwargs['normalized_death'] = None
 
     # assign 'won' boolean
     if xlog_dict['achieve'] & 0x100:

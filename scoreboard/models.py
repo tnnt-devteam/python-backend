@@ -205,6 +205,9 @@ class Game(models.Model):
     starttime    = models.DateTimeField()
     endtime      = models.DateTimeField()
     death        = models.CharField(max_length=256, db_index=True)
+    # Pre-normalized death string for efficient unique death queries
+    # Populated during game import using uniqdeaths.normalize()
+    normalized_death = models.CharField(max_length=256, db_index=True, null=True)
     align0       = models.CharField(max_length=16, null=True)
     gender0      = models.CharField(max_length=16, null=True)
 

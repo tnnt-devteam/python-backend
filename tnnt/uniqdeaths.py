@@ -1,5 +1,5 @@
 from tnnt.settings import UNIQUE_DEATH_REJECTIONS, UNIQUE_DEATH_NORMALIZATIONS
-from django.db.models import Count, Min, Subquery, OuterRef
+from django.db.models import Count, Min, Subquery, OuterRef, F
 from scoreboard.models import Game
 import re
 
@@ -26,12 +26,12 @@ def compile_unique_deaths(gameQS):
     # get_unique_death_details() that returns the players who first got a death
     # and when.
 
-    # First, get all unique, un-normalized deaths.
-    raw_uniq_deaths = \
-        gameQS.values_list('death', flat=True).distinct()
-    # Then apply normalizations and rejections, and turn it into a set
-    # to automatically remove any duplicates produced by normalization.
-    return set(normalize(d) for d in raw_uniq_deaths if not reject(d))
+    # Use the pre-normalized deaths field for efficiency
+    # Filter out NULL values (rejected deaths) and get distinct values
+    normalized_deaths = \
+        gameQS.exclude(normalized_death__isnull=True).values_list('normalized_death', flat=True).distinct()
+    # Return as a set (already normalized and rejected deaths are already filtered)
+    return set(normalized_deaths)
 
 def get_unique_death_details():
     # For the Unique Deaths page. Goes more in-depth than just a list of unique
@@ -41,42 +41,29 @@ def get_unique_death_details():
     # total number of clans and players who have that death. The list is sorted
     # by death reason.
 
-    # Subquery to find the earliest game associated with a given death. This is
-    # not complete (because it lacks a .values() on the end) and that needs to
-    # be added where it is used below.
-    subq = Game.objects.values('death') \
-                       .annotate(earliest=Min('endtime')) \
-                       .filter(death=OuterRef('death'))
+    # Use normalized_death field - already normalized and rejected deaths are NULL
+    # Group by normalized_death to avoid duplicates from the start
 
-    # Then put it all together to obtain the fields we want to show.
-    deathdetails = Game.objects.values('death').annotate(
+    # Subquery to find the earliest game for each normalized death
+    subq = Game.objects.filter(normalized_death__isnull=False) \
+                       .values('normalized_death') \
+                       .annotate(earliest=Min('endtime')) \
+                       .filter(normalized_death=OuterRef('normalized_death'))
+
+    # Get unique normalized deaths with statistics
+    deathdetails = Game.objects.filter(normalized_death__isnull=False) \
+                               .values('normalized_death') \
+                               .annotate(
+        death=F('normalized_death'),  # Rename for compatibility
         time=Subquery(subq.values('earliest')),
-        earliest_plr=Subquery(subq.order_by('earliest').values('player__name')[:1]),
+        earliest_plr=Subquery(
+            Game.objects.filter(normalized_death=OuterRef('normalized_death'))
+                       .order_by('endtime')
+                       .values('player__name')[:1]
+        ),
         nclans = Count('player__clan__name', distinct=True),
         nplayers = Count('player__name', distinct=True)
-    ).order_by('death', 'time')
+    ).order_by('normalized_death')
 
-    # Have to iterate over it here, because different raw deaths might normalize
-    # to the same string and we don't want duplicates.
-    output = {}
-
-    for d in deathdetails:
-        if reject(d['death']):
-            continue
-
-        normd = normalize(d['death'])
-        if normd in output:
-            # since we ordered by earliest, this must be a later death with a
-            # different string that got normalized to the same thing; we don't
-            # care about the player details, but do want to add the clan and
-            # player count
-            output[normd]['nclans'] += d['nclans']
-            output[normd]['nplayers'] += d['nplayers']
-            continue
-        else:
-            output[normd] = d
-            # d[death] is still un-normalized, fix that
-            output[normd]['death'] = normd
-
-    return sorted([ value for key,value in output.items() ],
-                  key=lambda deathdict: deathdict['death'])
+    # Convert to list and return
+    return list(deathdetails)
