@@ -260,6 +260,8 @@ class Game(models.Model):
             models.Index(fields=['death', 'endtime']),
             models.Index(fields=['player', 'death']),
             models.Index(fields=['endtime']),
+            models.Index(fields=['player']),  # Single column index for player-only queries
+            models.Index(fields=['starttime']),  # For streak calculations and chronological ordering
         ]
 
 

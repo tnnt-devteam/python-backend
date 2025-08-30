@@ -9,3 +9,5 @@ xlog/*
 .idea
 tags
 CLAUDE.md
+PERFORMANCE_HISTORY.md
+DATABASE_OPTIMIZATIONS.md

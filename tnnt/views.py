@@ -23,6 +23,20 @@ logger = logging.getLogger() # use root logger
 # Also provide the rol-rac-gen-aln string and the list of conducts (if
 # do_conducts is True).
 def bulk_upd_games(gamelist, do_conducts):
+    # If we need conducts, fetch them all at once to avoid N+1 queries
+    if do_conducts and gamelist:
+        game_ids = [g['id'] for g in gamelist]
+        # Fetch all conducts for these games in one query
+        conducts_qs = Conduct.objects.filter(game__id__in=game_ids).values('game__id', 'shortname')
+
+        # Group conducts by game_id
+        conducts_by_game = {}
+        for conduct in conducts_qs:
+            game_id = conduct['game__id']
+            if game_id not in conducts_by_game:
+                conducts_by_game[game_id] = []
+            conducts_by_game[game_id].append(conduct['shortname'])
+
     for g in gamelist:
         g['dumplog'] = dumplog_utils.format_dumplog(g['dlg_fmt'], g['playername'],
                                                     g['starttime'])
@@ -33,14 +47,8 @@ def bulk_upd_games(gamelist, do_conducts):
         g['rrga'] = '-'.join([g['role'], g['race'], g['gender0'], g['align0']])
 
         if do_conducts:
-            # This is not ideal because it's an extra query per each ascension
-            # in the list, but it's not worth the headache of making all these
-            # preproc'd Game lists into Game-x-Conduct lists.
-            #
-            # This used to be Game.conducts_as_str(), whose description was:
-            # > Return a string containing this game's conducts in human readable form
-            # > e.g. "poly wish veg"
-            g['conducts'] = [ c.shortname for c in Conduct.objects.filter(game__id=g['id']) ]
+            # Use the pre-fetched conducts instead of querying per game
+            g['conducts'] = conducts_by_game.get(g['id'], [])
 
     return gamelist
 
