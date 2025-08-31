@@ -133,3 +133,8 @@ Trophies proposed at some point:
     game started after a certain time, say 1 or 2 days into the tournament)
     might work here, but since there are more than a handful of players capable
     of ascending in a few hours, it might not either.
+- "Fantasy TNNT": assemble a fantasy "clan" out of real players, ignoring their
+  real-life clan memberships, and see how the fantasy clan compares to real
+  clans. Possibly better if you have to lock in the fantasy clan ahead of time,
+  which would enable an actual fantasy competition.
+  clans.
