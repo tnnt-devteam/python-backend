@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from scoreboard.models import Player
 from .settings import DGL_DATABASE_PATH
 import sqlite3
-import crypt
+from passlib.hash import sha512_crypt
 import logging
 
 logger = logging.getLogger() # use root logger
@@ -61,8 +61,8 @@ class HdfAuthBackend(BaseBackend):
         else:
             # convert from tuple containing 1 string to just the string
             pwd_hash = pwd_hash[0]
-        # compare it against submitted password with crypt
-        if crypt.crypt(password, pwd_hash) != pwd_hash:
+        # compare it against submitted password with passlib
+        if not sha512_crypt.verify(password, pwd_hash):
             logger.info('%s tried to login but failed due to bad password',
                         username)
             return None

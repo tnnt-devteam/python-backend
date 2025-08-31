@@ -6,3 +6,4 @@ mysqlclient
 pyyaml
 requests
 whitenoise
+passlib
