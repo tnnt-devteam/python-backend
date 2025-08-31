@@ -64,8 +64,7 @@ def get_unique_death_details():
         return []
 
     # Iterate through all games and build a dictionary that maps each normalized
-    # death to a tuple of the earliest time it occurred.
-    # TODO: what happens if two games tie for earliest time?
+    # death to a tuple of (earliest time it occurred, player name).
     earliest_players = {}
     games = Game.objects.filter(normalized_death__isnull=False) \
                         .select_related('player') \
@@ -74,6 +73,21 @@ def get_unique_death_details():
         death = game['normalized_death']
         if death not in earliest_players or game['endtime'] < earliest_players[death][0]:
             earliest_players[death] = (game['endtime'], game['player__name'])
+        elif game['endtime'] == earliest_players[death][0]:
+            # This catches the probably very rare case of two players recording
+            # the same unique death for the first time in the tournament at the
+            # same second. Rather than relying on the arbitrary order of
+            # Game.objects (i.e. the xlogfile which could be influenced by one
+            # player spending longer to look at their end of game summary),
+            # combine the player names.
+            # This won't mess anything else up because the string produced in
+            # the output is only used directly on the unique deaths page, it
+            # doesn't feed into any other data processing.
+            # If this ever happens at all, it's much more likely to be a jackal
+            # or some other level-1 monster at the start of the tournament than
+            # a noteworthy unique death...
+            combined_players = earliest_players[death][1] + ' and ' + game['player__name']
+            earliest_players[death] = (game['endtime'], combined_players)
 
     # Build final output
     output = []
