@@ -1,7 +1,10 @@
 from tnnt.settings import UNIQUE_DEATH_REJECTIONS, UNIQUE_DEATH_NORMALIZATIONS
 from django.db.models import Count, Min, Subquery, OuterRef, F
 from scoreboard.models import Game
+import logging
 import re
+
+logger = logging.getLogger() # use root logger
 
 def normalize(death):
     # Given a death string, apply normalizations from settings.
@@ -29,7 +32,9 @@ def compile_unique_deaths(gameQS):
     # Use the pre-normalized deaths field for efficiency
     # Filter out NULL values (rejected deaths) and get distinct values
     normalized_deaths = \
-        gameQS.exclude(normalized_death__isnull=True).values_list('normalized_death', flat=True).distinct()
+        gameQS.exclude(normalized_death__isnull=True) \
+              .values_list('normalized_death', flat=True) \
+              .distinct()
     # Return as a set (already normalized and rejected deaths are already filtered)
     return set(normalized_deaths)
 
@@ -41,10 +46,8 @@ def get_unique_death_details():
     # total number of clans and players who have that death. The list is sorted
     # by death reason.
 
-    # Use normalized_death field for efficiency
-    # Get all the stats in batch queries instead of N+1
-
-    # First, get aggregate stats for each normalized death
+    # First, produce a QuerySet which maps each distinct normalized death to the
+    # number of clans and players that have it and the earliest endtime.
     death_stats = Game.objects.filter(normalized_death__isnull=False) \
                               .values('normalized_death') \
                               .annotate(
@@ -53,33 +56,33 @@ def get_unique_death_details():
         earliest_time = Min('endtime')
     ).order_by('normalized_death')
 
-    # Build output list, fetching earliest players in batch
-    stats_list = list(death_stats)
+    # Resolve this to a list so the database only gets hit once
+    death_stats = list(death_stats)
 
-    # Get all earliest games in one query
-    earliest_games = {}
-    for stat in stats_list:
-        # Collect all the death/time pairs we need to look up
-        earliest_games[stat['normalized_death']] = stat['earliest_time']
+    if len(death_stats) <= 0:
+        # no games (which qualify for unique deaths) have happened yet
+        return []
 
-    # Fetch all earliest players in a single query
-    if earliest_games:
-        games = Game.objects.filter(
-            normalized_death__in=earliest_games.keys()
-        ).select_related('player').values('normalized_death', 'endtime', 'player__name')
-
-        # Build a lookup dict for earliest player per death
-        earliest_players = {}
-        for game in games:
-            death = game['normalized_death']
-            if death not in earliest_players or game['endtime'] < earliest_players[death][0]:
-                earliest_players[death] = (game['endtime'], game['player__name'])
+    # Iterate through all games and build a dictionary that maps each normalized
+    # death to a tuple of the earliest time it occurred.
+    # TODO: what happens if two games tie for earliest time?
+    earliest_players = {}
+    games = Game.objects.filter(normalized_death__isnull=False) \
+                        .select_related('player') \
+                        .values('normalized_death', 'endtime', 'player__name')
+    for game in games:
+        death = game['normalized_death']
+        if death not in earliest_players or game['endtime'] < earliest_players[death][0]:
+            earliest_players[death] = (game['endtime'], game['player__name'])
 
     # Build final output
     output = []
-    for stat in stats_list:
+    for stat in death_stats:
         death = stat['normalized_death']
-        if death in earliest_players and earliest_players[death][0] == stat['earliest_time']:
+        if not death in earliest_players:
+            # huh?
+            logger.error("Death %s has no player that accomplished it", death);
+        elif earliest_players[death][0] == stat['earliest_time']:
             output.append({
                 'death': death,
                 'time': stat['earliest_time'],

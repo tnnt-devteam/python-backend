@@ -14,20 +14,25 @@ from tnnt import uniqdeaths
 
 logger = logging.getLogger() # use root logger
 
-# Convenience function used by multiple views, not a view itself.
-#
-# Given a list of dicts containing Game fields (specifically 'playername',
-# 'dlg_fmt' and 'starttime'), also insert a 'dumplog' field into each of those
-# dicts containing the formatted dumplog URL.
-#
-# Also provide the rol-rac-gen-aln string and the list of conducts (if
-# do_conducts is True).
 def bulk_upd_games(gamelist, do_conducts):
-    # If we need conducts, fetch them all at once to avoid N+1 queries
+    # Convenience function (not a view itself) used by multiple views when
+    # showing the most recent games or ascensions.
+    #
+    # Given a list of dicts containing Game fields (specifically 'playername',
+    # 'dlg_fmt' and 'starttime'), also insert into each of those dicts:
+    #   1) a 'dumplog' field containing the formatted dumplog URL
+    #   2) a 'rrga' field of the rol-rac-gen-aln string
+    #   3) a 'conducts' field which is an array containing the shortnames of
+    #      conducts achieved in that game (if do_conducts is True).
+    #
+
+    # If we need conducts, fetch them all at once to avoid doing a separate
+    # query for each game
     if do_conducts and gamelist:
         game_ids = [g['id'] for g in gamelist]
         # Fetch all conducts for these games in one query
-        conducts_qs = Conduct.objects.filter(game__id__in=game_ids).values('game__id', 'shortname')
+        conducts_qs = Conduct.objects.filter(game__id__in=game_ids) \
+                                     .values('game__id', 'shortname')
 
         # Group conducts by game_id
         conducts_by_game = {}
@@ -122,6 +127,12 @@ class LeaderboardsView(TemplateView):
         #    'dumplog': 'https://hardfought.org/blah/blah.html'
         # },
 
+        # TODO: add a cache here.
+        # Game.objects.latest('endtime').values('endtime')
+        # if this is the same as previously stored endtime (where do we store
+        # it? class variable?) then return existing copy of data, otherwise
+        # recompute
+
         # *_stt is the starttime of a game, *_dlg is the dumplog format, and
         # *_nam is the name of the player of the game.
         # These are necessary so that we can generate the dumplog here in the
@@ -178,9 +189,9 @@ class LeaderboardsView(TemplateView):
                        'donations', 'games_over_1000_turns']
 
         allplayers_basic = list(Player.objects
-                                     .filter(total_games__gt=0)
-                                     .annotate(clanname=F('clan__name'))
-                                     .values(*basic_fields, 'clanname'))
+                                      .filter(total_games__gt=0)
+                                      .annotate(clanname=F('clan__name'))
+                                      .values(*basic_fields, 'clanname'))
         winplayers_basic = [p for p in allplayers_basic if p['wins'] > 0]
 
         allclans_basic = list(Clan.objects
@@ -304,9 +315,9 @@ class LeaderboardsView(TemplateView):
             # For simple stats (stored on model), use the basic data
             if stat in basic_fields:
                 L['players'] = gen_leader_list(winplayers if L['wins_only'] else allplayers,
-                                             stat, L['descending'])
+                                               stat, L['descending'])
                 L['clans'] = gen_leader_list(winclans if L['wins_only'] else allclans,
-                                           stat, L['descending'])
+                                             stat, L['descending'])
             else:
                 # For complex stats that require JOINs to related Game objects,
                 # load only the specific annotations needed for this leaderboard
@@ -322,7 +333,8 @@ class LeaderboardsView(TemplateView):
                             firstasc_nam=F('first_asc__player__name')
                         )
                         .order_by('first_asc__endtime')
-                        .values('name', 'clanname', 'firstasc', 'firstasc_stt', 'firstasc_dlg', 'firstasc_nam'))
+                        .values('name', 'clanname', 'firstasc', 'firstasc_stt',
+                                'firstasc_dlg', 'firstasc_nam'))
 
                     top_clans = list(Clan.objects
                         .filter(first_asc__isnull=False)
@@ -333,13 +345,17 @@ class LeaderboardsView(TemplateView):
                             firstasc_nam=F('first_asc__player__name')
                         )
                         .order_by('first_asc__endtime')
-                        .values('name', 'firstasc', 'firstasc_stt', 'firstasc_dlg', 'firstasc_nam'))
+                        .values('name', 'firstasc', 'firstasc_stt',
+                                'firstasc_dlg', 'firstasc_nam'))
 
                     L['players'] = gen_leader_list(top_players, stat, L['descending'])
                     L['clans'] = gen_leader_list(top_clans, stat, L['descending'])
-                elif stat in ['minturns', 'mintime', 'maxcond', 'mostachgame', 'minscore', 'maxscore']:
-                    # For other complex leaderboards, annotate only the fields needed for this specific stat
-                    stat_annotations = {k: v for k, v in annotate_kwargs.items() if k.startswith(stat)}
+                elif stat in ['minturns', 'mintime', 'maxcond', 'mostachgame',
+                              'minscore', 'maxscore']:
+                    # For other complex leaderboards, annotate only the fields
+                    # needed for this specific stat
+                    stat_annotations = {k: v for k, v in annotate_kwargs.items()
+                                        if k.startswith(stat)}
                     players_annotated = list(Player.objects
                         .filter(total_games__gt=0)
                         .annotate(clanname=F('clan__name'), **stat_annotations)
@@ -350,8 +366,10 @@ class LeaderboardsView(TemplateView):
                         .values('name', 'wins', *stat_annotations.keys()))
 
                     if L['wins_only']:
-                        players_annotated = [p for p in players_annotated if p.get('wins', 0) > 0]
-                        clans_annotated = [c for c in clans_annotated if c.get('wins', 0) > 0]
+                        players_annotated = [p for p in players_annotated
+                                             if p.get('wins', 0) > 0]
+                        clans_annotated = [c for c in clans_annotated
+                                           if c.get('wins', 0) > 0]
 
                     L['players'] = gen_leader_list(players_annotated, stat, L['descending'])
                     L['clans'] = gen_leader_list(clans_annotated, stat, L['descending'])
@@ -522,8 +540,14 @@ class TrophiesView(TemplateView):
                 'clans': []
             }
 
-        # lists are [{'name': <player/clan name>, 'trophies__name': 'Both Genders', 'trophies__description': '<desc>', 'field': 'players'}, ...]
-        # convert to { 'Both Genders': { 'players': [...], 'clans': [...], 'description': '...' }, ...}
+        # lists are [{'name': <player/clan name>,
+        #             'trophies__name': 'Both Genders',
+        #             'trophies__description': '<desc>',
+        #             'field': 'players'}, ...]
+        # convert to { 'Both Genders': { 'players': [...],
+        #                                'clans': [...],
+        #                                'description': '...' },
+        #               ...}
         for a in alltroph:
             plr_or_clan_name = a['name']
             tname            = a['trophies__name']
@@ -548,7 +572,6 @@ class UniqueDeathsView(TemplateView):
     template_name = 'uniquedeaths.html'
 
     def get_context_data(self, **kwargs):
-        # kwargs['deathlist'] = [ { 'death': 'killed by a jackal', 'player': 'Furey', 'time': 293842, 'nplayers': 20, 'nclans': 3 } ]
         kwargs['deathlist'] = uniqdeaths.get_unique_death_details()
         return kwargs
 
@@ -780,7 +803,9 @@ class ClanMgmtView(View):
             return
 
         # don't allow if this would leave the clan admin-less
-        if not Player.objects.filter(clan=player.clan, clan_admin=True).exclude(id=player.id).exists():
+        if not Player.objects.filter(clan=player.clan, clan_admin=True) \
+                             .exclude(id=player.id) \
+                             .exists():
             logger.warning('%s attempted to leave and cause admin-less clan',
                            player.name)
             ctx['errmsg'] = 'You cannot leave this clan because it would leave it without an admin'

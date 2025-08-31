@@ -187,42 +187,42 @@ class Source(models.Model):
 class Game(models.Model):
     # Represents a single game: a single line in the xlog, a single dumplog, etc.
     # The following fields are those drawn directly from the xlogfile:
-    version      = models.CharField(max_length=32)
-    role         = models.CharField(max_length=16)
-    race         = models.CharField(max_length=16, null=True)
-    gender       = models.CharField(max_length=16, null=True)
-    align        = models.CharField(max_length=16, null=True)
-    points       = models.BigIntegerField(null=True)
-    turns        = models.BigIntegerField()
+    version          = models.CharField(max_length=32)
+    role             = models.CharField(max_length=16)
+    race             = models.CharField(max_length=16, null=True)
+    gender           = models.CharField(max_length=16, null=True)
+    align            = models.CharField(max_length=16, null=True)
+    points           = models.BigIntegerField(null=True)
+    turns            = models.BigIntegerField()
     # we don't care about game mode; explore/wizmode games will just be discarded
 
     # NOTE: All the "fastest realtime" code uses wallclock, NOT realtime.
     # Possible feature is a separate leaderboard for fastest time according to
     # realtime. Depends on if people want it.
-    realtime     = models.DurationField(null=True)
-    wallclock    = models.DurationField(null=True)
-    maxlvl       = models.IntegerField(null=True)
-    starttime    = models.DateTimeField()
-    endtime      = models.DateTimeField()
-    death        = models.CharField(max_length=256, db_index=True)
+    realtime         = models.DurationField(null=True)
+    wallclock        = models.DurationField(null=True)
+    maxlvl           = models.IntegerField(null=True)
+    starttime        = models.DateTimeField()
+    endtime          = models.DateTimeField()
+    death            = models.CharField(max_length=256, db_index=True)
     # Pre-normalized death string for efficient unique death queries
-    # Populated during game import using uniqdeaths.normalize()
-    normalized_death = models.CharField(max_length=256, db_index=True, null=True)
-    align0       = models.CharField(max_length=16, null=True)
-    gender0      = models.CharField(max_length=16, null=True)
+    normalized_death = models.CharField(max_length=256, db_index=True,
+                                        null=True)
+    align0           = models.CharField(max_length=16, null=True)
+    gender0          = models.CharField(max_length=16, null=True)
 
     # These are a bit of denormalization, because it'd be expensive to reach
     # into the achievements every time we want to check if a game is won or has
     # finished Mines/Sokoban.
-    won          = models.BooleanField(default=False)
-    mines_soko   = models.BooleanField(default=False)
+    won              = models.BooleanField(default=False)
+    mines_soko       = models.BooleanField(default=False)
 
     # For tracking certain subsets of non-won games. For our purposes, a "splat"
     # is a game that didn't end in victory, but the player had the Amulet at
     # some point (they don't have to die with it in their possession).
     # deathlev is a native xlogfile field.
-    splatted     = models.BooleanField(default=False)
-    deathlev     = models.IntegerField(null=True)
+    splatted         = models.BooleanField(default=False)
+    deathlev         = models.IntegerField(null=True)
 
     # not necessary for tnnt but may re-introduce for NHS
     # hp           = models.BigIntegerField(null=True)
@@ -232,10 +232,10 @@ class Game(models.Model):
 
     # here are fields that indirectly come from the xlogfile but relate to other
     # models in the database; for instance player corresponds to 'name' in xlog
-    player       = models.ForeignKey(Player, on_delete=models.CASCADE)
-    conducts     = models.ManyToManyField(Conduct)
-    achievements = models.ManyToManyField(Achievement)
-    source       = models.ForeignKey(Source, on_delete=models.PROTECT)
+    player           = models.ForeignKey(Player, on_delete=models.CASCADE)
+    conducts         = models.ManyToManyField(Conduct)
+    achievements     = models.ManyToManyField(Achievement)
+    source           = models.ForeignKey(Source, on_delete=models.PROTECT)
 
     # Return a URL to the dumplog of this game.
     # ASSUMPTION: No two Games of the same player will have the same starttime.
@@ -254,7 +254,8 @@ class Game(models.Model):
                                             self.starttime)
 
     # Return a string of the form "Rol-Rac-Gen-Aln" typical in nethack parlance.
-    # Importantly, this uses gender0 and align0.
+    # Importantly, this uses gender0 and align0, because these can change over
+    # the course of the game and what you started as is what's most relevant.
     def rrga(self):
         return '-'.join([self.role, self.race, self.gender0, self.align0])
 
