@@ -107,10 +107,16 @@ $ ./manage.py collectstatic
 ### Running and operation
 The pollxlogs command will read xlog data from a list of sources with associated URLs,
 saved in the DB. Those sources were defined as fixtures and imported with the above
-loaddata command. The aggregate command will loop over all games and compute various
-aggregate data for individual players and for clans standings.
+loaddata command.
 ```shell
 $ ./manage.py pollxlogs
+# alternatively, if you want to load a local xlogfile for testing, do:
+$ ./manage.py pollxlogs --file /path/to/xlog
+```
+
+The aggregate command will loop over all games and compute various aggregate
+data for individual players and for clans standings.
+```shell
 $ ./manage.py aggregate
 ```
 
