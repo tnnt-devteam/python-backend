@@ -585,3 +585,23 @@ div.row.leaderboard table {
 ul#faq-list li a {
     text-decoration: none;
 }
+
+/*====================================================================
+  === SORTABLE TABLES ================================================
+  ====================================================================*/
+
+table.sortable thead th {
+    position: relative;
+    user-select: none;
+    transition: background-color 0.2s;
+}
+
+table.sortable thead th:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+table.sortable .sort-indicator {
+    font-size: 0.8em;
+    margin-left: 0.3em;
+    transition: opacity 0.2s;
+}

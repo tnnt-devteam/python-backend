@@ -5,6 +5,8 @@
 <head>
   <title>TNNT::Unique Deaths</title>
   {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
 </head>
 
 <body>
@@ -12,15 +14,14 @@
 {% include "header.html" %}
 
 <h2>Unique Deaths</h2>
-<table id="achievements-table">
+<table id="achievements-table" class="sortable default-sort-first">
   <thead>
-    {# FUTURE TODO: Allow this table to be sorted. #}
     <tr class="framed">
-      <th>death</th>
+      <th>death ({{ deathlist|length }} unique deaths)</th>
       <th>first obtained on</th>
       <th>by player</th>
       <th>players</th>
-      <th>clans?</th>
+      <th>clans</th>
     </tr>
   </thead>
   <tbody>
