@@ -229,20 +229,17 @@ class LeaderboardsView(TemplateView):
                     logger.error('malformed query result for leaderboards')
                     logger.error('stat = %s element = %s', stat, str(elem))
                     return []
-                # TODO: Various leaderboards should leave off entries where the
-                # stat is 0: (some leaderboards such as most unique asc combos
-                # will never have 0 due to only looking at wins)
-                #   -most conducts in an asc
-                #   -most achievements in a game
-                #   -most achievements overall
-                #   -highest scoring game (arguable)
-                #   -longest streak
-                #   -most unique deaths
-                #   -most post amulet splats
-                #   -swap chest donations
-                #   -games over 1000 turns
-                # Probably the way to address it is just to ignore the entry if
-                # stat is 0.
+
+                # All leaderboards should leave off entries where the stat is 0.
+                # Initially this was done on a case by case basis, but there are
+                # currently no leaderboards that are capable of showing 0s (some
+                # such as most ascensions or most unique asc combos, will never
+                # have a 0 because only wins are considered) that we want to
+                # show 0s.
+                # So if we hit a zero, descending order means everything after
+                # this will also be 0, so stop iterating.
+                if elem[stat] == 0:
+                    break
 
                 # elem is either a player or a clan, but this loop doesn't care
                 # which
@@ -272,9 +269,9 @@ class LeaderboardsView(TemplateView):
             { 'id': 'firstasc', 'descending': False, 'wins_only': True,
               'title': 'Earliest Ascension', 'columntitle': 'time' },
             { 'id': 'minturns', 'descending': False, 'wins_only': True,
-              'title': 'Lowest Turncount', 'columntitle': 'turns' },
+              'title': 'Lowest Turncount Ascension', 'columntitle': 'turns' },
             { 'id': 'mintime', 'descending': False, 'wins_only': True,
-              'title': 'Fastest Realtime', 'columntitle': 'wallclock' },
+              'title': 'Fastest Realtime Ascension', 'columntitle': 'wallclock' },
             { 'id': 'maxcond', 'descending': True, 'wins_only': True,
               'title': 'Most Conducts in One Ascension', 'columntitle': 'conducts' },
             { 'id': 'mostachgame', 'descending': True, 'wins_only': False,
@@ -298,8 +295,7 @@ class LeaderboardsView(TemplateView):
             { 'id': 'zscorerole', 'stat': 'zscore', 'descending': True,
               'wins_only': True,
               'title': 'Highest Z-Score', 'columntitle': 'z-score' },
-            { 'id': 'splats', 'stat': 'splats', 'descending': True,
-              'wins_only': False,
+            { 'id': 'splats', 'descending': True, 'wins_only': False,
               'title': 'Most Post-Amulet Splats', 'columntitle': 'splats' },
             { 'id': 'donations', 'descending': True, 'wins_only': False,
               'title': 'Most Successful Swap Chest Donations',
