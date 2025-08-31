@@ -19,7 +19,12 @@
   <p> You are not logged in. </p>
   <p><a href="/login">Log in here.</a> </p>
 {% else %}
-  <p>Logged in as {{ user.username }}. <a href="{% url 'logout' %}">Log Out</a></p>
+  <p>Logged in as {{ user.username }}.
+    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+      {% csrf_token %}
+      <button type="submit" style="background: none; border: none; color: blue; text-decoration: underline; cursor: pointer; padding: 0; font: inherit;">Log Out</button>
+    </form>
+  </p>
 
   <hr>
   {% if errmsg is not None %}
