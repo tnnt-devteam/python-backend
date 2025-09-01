@@ -7,3 +7,6 @@ pyyaml
 requests
 whitenoise
 passlib
+django-cors-headers
+django-ratelimit
+pycodestyle
