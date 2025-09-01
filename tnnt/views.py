@@ -300,9 +300,11 @@ class LeaderboardsView(TemplateView):
             { 'id': 'donations', 'descending': True, 'wins_only': False,
               'title': 'Most Successful Swap Chest Donations',
               'columntitle': 'donations' },
-            { 'id': 'mostgames', 'stat': 'games_over_1000_turns', 'descending': True,
-              'wins_only': False,
-              'title': 'Most Games over 1000 Turns', 'columntitle': 'games' },
+            # removed for 2025 tournament; it's not clear that anyone cares
+            # about it, so we'll see if anyone complains
+            # { 'id': 'mostgames', 'stat': 'games_over_1000_turns', 'descending': True,
+            #   'wins_only': False,
+            #   'title': 'Most Games over 1000 Turns', 'columntitle': 'games' },
         ]
         # Process each leaderboard
         for L in leaderboards:
