@@ -1,5 +1,15 @@
 from django.urls import include, path
+from rest_framework.routers import DefaultRouter
 from tnnt import views as tnntviews
+from scoreboard.api_views import (
+    PlayerViewSet, ClanViewSet, LeaderboardView,
+    RecentEventsView, ScoreboardView
+)
+
+# Create router for API viewsets
+router = DefaultRouter()
+router.register('players', PlayerViewSet)
+router.register('clans', ClanViewSet)
 
 # Wire up our API using automatic URL routing.
 # Additionally, we include login URLs for the browsable API.
@@ -19,5 +29,11 @@ urlpatterns = [
     path('archives', tnntviews.ArchivesView.as_view(), name='archives'),
     path('clanmgmt', tnntviews.ClanMgmtView.as_view(), name='clanmgmt'),
     path('', include('django.contrib.auth.urls')),
+
+    # API endpoints
+    path('api/', include(router.urls)),
+    path('api/leaderboards/', LeaderboardView.as_view(), name='api-leaderboards'),
+    path('api/recent-events/', RecentEventsView.as_view(), name='api-recent-events'),
+    path('api/scoreboard/', ScoreboardView.as_view(), name='api-scoreboard'),
 ]
 

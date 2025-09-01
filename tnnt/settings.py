@@ -25,7 +25,7 @@ import os
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 # ALLOWED_HOSTS = []
 ALLOWED_HOSTS = ['tnnt.org','www.tnnt.org']
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',  # CORS support for API
     'rest_framework',
     'scoreboard.apps.ScoreboardConfig',
     'tnnt',
@@ -65,6 +66,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # CORS must be before CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -249,6 +251,42 @@ DONOR_FILES = [
     'https://www.hardfought.org/xlogfiles/tnnt/donors',
     'https://eu.hardfought.org/xlogfiles/tnnt/donors',
     'https://au.hardfought.org/xlogfiles/tnnt/donors'
+]
+
+# CORS Configuration for API access
+# Configure allowed origins for production
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # Local development
+    "http://127.0.0.1:3000",  # Local development
+    "http://localhost:8000",  # Local Django dev server
+    "http://127.0.0.1:8000",  # Local Django dev server
+    # Production URLs:
+    "https://tnnt.org",
+    "https://www.tnnt.org",
+    # Note: IRC bot runs on same server, uses localhost:8000 directly
+    # No CORS needed for server-side bot requests
+]
+
+# For development, you can use this instead (but never in production):
+if DEBUG:
+    CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins in DEBUG mode
+else:
+    CORS_ALLOW_ALL_ORIGINS = False  # Use whitelist in production
+
+# Allow credentials to be included in CORS requests
+CORS_ALLOW_CREDENTIALS = True
+
+# Specify which headers can be used during the actual request
+CORS_ALLOW_HEADERS = [
+    'accept',
+    'accept-encoding',
+    'authorization',
+    'content-type',
+    'dnt',
+    'origin',
+    'user-agent',
+    'x-csrftoken',
+    'x-requested-with',
 ]
 
 # Regexes for unique deaths handling.
