@@ -6,7 +6,7 @@ import sqlite3
 from passlib.hash import sha512_crypt
 import logging
 
-logger = logging.getLogger() # use root logger
+logger = logging.getLogger(__name__)  # use module-specific logger
 
 def get_dgl_cursor():
     # open in read-only mode

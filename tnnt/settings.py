@@ -234,6 +234,13 @@ LOGGING = {
         'handlers': [ 'file', 'console' ],
         'level': 'DEBUG',
     },
+    'loggers': {
+        'passlib': {
+            'handlers': ['file', 'console'],
+            'level': 'WARNING',  # Suppress passlib DEBUG messages
+            'propagate': False,
+        },
+    },
 }
 
 # URLs of swapchest donor files, which will get downloaded and parsed during
