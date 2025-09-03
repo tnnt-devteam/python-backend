@@ -197,8 +197,9 @@ TEMP_ACHIEVEMENTS_PATH = '/opt/nethack/chroot/tnnt/temp_achievements'
 MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
-
-CLAN_FREEZE_TIME = datetime.fromisoformat('2024-11-10T00:00:00+00:00')
+# Can be disabled by setting CLAN_FREEZE_TIME environment variable to empty string
+clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2024-11-10T00:00:00+00:00')
+CLAN_FREEZE_TIME = datetime.fromisoformat(clan_freeze_env) if clan_freeze_env else None
 
 # Tournament start/end times
 

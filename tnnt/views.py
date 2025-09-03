@@ -630,6 +630,8 @@ class ClanMgmtView(View):
         return kwargs
 
     def clan_freeze_in_effect(self):
+        if settings.CLAN_FREEZE_TIME is None:
+            return False  # No freeze if CLAN_FREEZE_TIME is disabled
         return settings.CLAN_FREEZE_TIME <= datetime.now(tz=timezone.utc)
 
     def get(self, request, *args, **kwargs):
