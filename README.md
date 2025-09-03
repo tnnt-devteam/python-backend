@@ -123,9 +123,9 @@ $ ./manage.py aggregate
 #### Optional: point DGL\_DATABASE\_PATH at real database
 This is in `tnnt/settings.py`. By default, it points at `dgamelaunch_test.db`,
 which provides several "registered dgamelaunch accounts" (alice, bob, chuck,
-david, eve, fred, and gimli; each password is the same as the username) for
-dev and testing purposes. For production, you will want to point this to the
-full path of the real dgamelaunch sqlite database.
+david, eve, gimli, janet, omghax, and sally; each password is the same as the
+username) for dev and testing purposes. For production, you will want to point
+this to the full path of the real dgamelaunch sqlite database.
 
 ### Run dev server
 `$ python manage.py runserver`
@@ -147,4 +147,6 @@ Source exists in the database, run:
 `$ python manage.py pollxlogs --file <your custom xlogfile>`
 
 Note that created Games will be associated with a random Source in the database,
-so dumplog links will probably not work.
+so dumplog links will probably not work. Three test xlogfiles are provided for
+testing (test-au.xlog, test-eu.xlog, and test-us.xlog); player names match those
+included in the test dgamelaunch sqlite database.
