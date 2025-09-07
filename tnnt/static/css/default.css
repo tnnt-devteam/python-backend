@@ -594,6 +594,7 @@ table.sortable thead th {
     position: relative;
     user-select: none;
     transition: background-color 0.2s;
+    white-space: nowrap;
 }
 
 table.sortable thead th:hover {
@@ -604,4 +605,5 @@ table.sortable .sort-indicator {
     font-size: 0.8em;
     margin-left: 0.3em;
     transition: opacity 0.2s;
+    display: inline-block;
 }

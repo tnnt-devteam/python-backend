@@ -5,6 +5,8 @@
 <head>
   <title>TNNT::Achievements</title>
   {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
 </head>
 
 <body>
@@ -12,7 +14,7 @@
 {% include "header.html" %}
 
 <h2>Achievements by Number of Achievers</h2>
-<table id="achievements-table">
+<table id="achievements-table" class="sortable default-sort-first">
   <thead>
     <tr class="framed">
       <th>id</th>
