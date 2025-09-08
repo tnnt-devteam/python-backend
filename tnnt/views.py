@@ -573,6 +573,26 @@ class UniqueDeathsView(TemplateView):
         kwargs['deathlist'] = uniqdeaths.get_unique_death_details()
         return kwargs
 
+class AscensionsView(TemplateView):
+    template_name = 'ascensions.html'
+
+    def get_context_data(self, **kwargs):
+        # Get all ascensions (won games) ordered by newest first
+        ascensions_qs = Game.objects.filter(won=True) \
+                                    .select_related('player', 'source') \
+                                    .values('id', 'player__name', 'role', 'race',
+                                           'gender', 'align', 'gender0', 'align0',
+                                           'points', 'turns',
+                                           'endtime', 'starttime', 'wallclock',
+                                           'death',
+                                           playername=F('player__name'),
+                                           dlg_fmt=F('source__dumplog_fmt')) \
+                                    .order_by('-endtime')
+
+        # Use bulk_upd_games to add dumplog URLs, rrga strings, and conducts
+        kwargs['ascensions'] = bulk_upd_games(list(ascensions_qs), True)
+        return kwargs
+
 class StatsView(TemplateView):
     template_name = 'stats.html'
 

@@ -24,6 +24,7 @@ urlpatterns = [
     path('clan/<str:clanname>', tnntviews.SinglePlayerOrClanView.as_view(), name='singleclan'),
     path('achievements', tnntviews.AchievementsView.as_view(), name='achievements'),
     path('uniquedeaths', tnntviews.UniqueDeathsView.as_view(), name='uniquedeaths'),
+    path('ascensions', tnntviews.AscensionsView.as_view(), name='ascensions'),
     path('faq', tnntviews.FaqView.as_view(), name='faq'),
     path('stats', tnntviews.StatsView.as_view(), name='stats'),
     path('archives', tnntviews.ArchivesView.as_view(), name='archives'),

@@ -1,0 +1,61 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Ascensions</title>
+  {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<h2>All Ascensions ({{ ascensions|length }} total)</h2>
+{% if ascensions|length > 0 %}
+  <table class="sortable">
+    <thead>
+      <tr class="framed">
+        <th>name</th>
+        <th>character</th>
+        <th>turns</th>
+        <th>score</th>
+        <th>duration</th>
+        <th>endtime</th>
+        <th colspan=2>conducts</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in ascensions %}
+        <tr class="won">
+          <td>
+            {% include "plink.html" with name=game.playername %}
+          </td>
+          <td class="nowrap">
+            {{ game.rrga }}
+          </td>
+          <td class="num">{{ game.turns }}</td>
+          <td class="num">
+            <a href="{{ game.dumplog }}">{{ game.points }}</a>
+          </td>
+          <td class="num">{{ game.wallclock }}</td>
+          <td class="num">{{ game.endtime }}</td>
+          <td class="num">{{ game.conducts|length }}</td>
+          <td>
+            {% for con in game.conducts %}
+              {{ con }}
+            {% endfor %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>There are no ascensions yet</p>
+{% endif %}
+
+</body>
+
+</html>
