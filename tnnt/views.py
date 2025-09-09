@@ -51,6 +51,12 @@ def bulk_upd_games(gamelist, do_conducts):
         # Since it's a one-liner, not a big deal to leave it duplicated.
         g['rrga'] = '-'.join([g['role'], g['race'], g['gender0'], g['align0']])
 
+        # Format endtime and starttime to ISO format (YYYY-MM-DD HH:MM)
+        if 'endtime' in g and g['endtime']:
+            g['endtime'] = g['endtime'].strftime('%Y-%m-%d %H:%M')
+        if 'starttime' in g and g['starttime']:
+            g['starttime'] = g['starttime'].strftime('%Y-%m-%d %H:%M')
+
         if do_conducts:
             # Use the pre-fetched conducts instead of querying per game
             g['conducts'] = conducts_by_game.get(g['id'], [])
@@ -247,6 +253,11 @@ class LeaderboardsView(TemplateView):
                     'name': elem['name'],
                     'stat': elem[stat],
                 }
+
+                # Format datetime fields to ISO format (YYYY-MM-DD HH:MM)
+                if stat == 'firstasc' and elem[stat]:
+                    converted['stat'] = elem[stat].strftime('%Y-%m-%d %H:%M')
+
                 if 'clanname' in elem and elem['clanname'] is not None:
                     # this is a player, and we want to show the clan
                     converted['clan'] = elem['clanname']

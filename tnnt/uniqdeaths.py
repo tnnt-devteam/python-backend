@@ -99,7 +99,7 @@ def get_unique_death_details():
         elif earliest_players[death][0] == stat['earliest_time']:
             output.append({
                 'death': death,
-                'time': stat['earliest_time'],
+                'time': stat['earliest_time'].strftime('%Y-%m-%d %H:%M') if stat['earliest_time'] else '',
                 'earliest_plr': earliest_players[death][1],
                 'nclans': stat['nclans'],
                 'nplayers': stat['nplayers']

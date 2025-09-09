@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             header.addEventListener('click', () => {
                 // Get all rows
-                const rows = Array.from(tbody.querySelectorAll('tr'));
+                let rows = Array.from(tbody.querySelectorAll('tr'));
 
                 // Determine sort direction
                 let direction = header.sortDirection === 1 ? -1 : 1;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 indicator.style.opacity = '1';
 
                 // Sort rows
-                rows.sort((a, b) => {
+                const sortedRows = rows.slice().sort((a, b) => {
                     const aCell = a.cells[index];
                     const bCell = b.cells[index];
 
@@ -87,6 +87,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         return direction * (aDuration - bDuration);
                     }
 
+                    // Check if it looks like an ISO date (YYYY-MM-DD HH:MM format)
+                    // This MUST come before number parsing since dates start with numbers!
+                    if (aVal.match(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}/) &&
+                        bVal.match(/^\d{4}-\d{2}-\d{2} \d{2}:\d{2}/)) {
+                        // ISO dates sort correctly as strings!
+                        return direction * aVal.localeCompare(bVal);
+                    }
+
                     // Try to parse as numbers
                     const aNum = parseFloat(aVal.replace(/,/g, ''));
                     const bNum = parseFloat(bVal.replace(/,/g, ''));
@@ -96,51 +104,19 @@ document.addEventListener('DOMContentLoaded', function() {
                         return direction * (aNum - bNum);
                     }
 
-                    // Check if dates (multiple formats)
-                    // Format 1: "Nov 14, 09:32:14"
-                    const datePattern1 = /^[A-Za-z]{3} \d{1,2}, \d{2}:\d{2}:\d{2}$/;
-                    // Format 2: ISO-like "2024-11-01 23:19:19+00:00" or "2024-11-01 23:19:19"
-                    const datePattern2 = /^\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/;
-                    // Format 3: Django default "Nov. 1, 2024, 11:19 p.m." or "Nov. 10, 2024, 3:41 a.m." or "Nov. 8, 2024, midnight"
-                    const datePattern3 = /^[A-Za-z]{3}\. \d{1,2}, \d{4}, (\d{1,2}:\d{2} [ap]\.m\.|midnight|noon)$/;
-
-                    if (datePattern1.test(aVal) && datePattern1.test(bVal)) {
-                        // Parse dates - add current year for comparison
-                        const currentYear = new Date().getFullYear();
-                        const aDate = new Date(aVal + ' ' + currentYear);
-                        const bDate = new Date(bVal + ' ' + currentYear);
-                        return direction * (aDate - bDate);
-                    } else if (datePattern2.test(aVal) && datePattern2.test(bVal)) {
-                        // Parse ISO-like dates
-                        const aDate = new Date(aVal.replace('+00:00', 'Z'));
-                        const bDate = new Date(bVal.replace('+00:00', 'Z'));
-                        return direction * (aDate - bDate);
-                    } else if (datePattern3.test(aVal) && datePattern3.test(bVal)) {
-                        // Parse Django formatted dates
-                        // Convert "Nov. 1, 2024, 11:19 p.m." to parseable format
-                        const parseDate = (str) => {
-                            // Handle special cases first
-                            if (str.includes('midnight')) {
-                                str = str.replace('midnight', '12:00 am');
-                            } else if (str.includes('noon')) {
-                                str = str.replace('noon', '12:00 pm');
-                            }
-                            // Remove dots from month abbreviation and am/pm
-                            str = str.replace(/\./g, '');
-                            // JavaScript's Date constructor can parse "Nov 1, 2024, 11:19 pm"
-                            return new Date(str);
-                        };
-                        const aDate = parseDate(aVal);
-                        const bDate = parseDate(bVal);
-                        return direction * (aDate - bDate);
-                    }
-
                     // String comparison (case-insensitive)
                     return direction * aVal.toLowerCase().localeCompare(bVal.toLowerCase());
                 });
 
-                // Re-append sorted rows
-                rows.forEach(row => tbody.appendChild(row));
+                // Clear the tbody and re-append sorted rows
+                while (tbody.firstChild) {
+                    tbody.removeChild(tbody.firstChild);
+                }
+
+                // Now append the sorted rows
+                sortedRows.forEach(row => {
+                    tbody.appendChild(row);
+                });
             });
         });
 

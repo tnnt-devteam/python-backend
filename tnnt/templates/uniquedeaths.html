@@ -28,13 +28,7 @@
     {% for entry in deathlist %}
       <tr>
         <td>{{ entry.death }}</td>
-        {% comment %}
-          Leave the year off here, since TNNT never spans multiple years.
-          Strictly speaking, we could also leave the month off, since TNNT also
-          does not span multiple months, but there's no obvious way to display
-          that to the reader that doesn't look weird.
-        {% endcomment %}
-        <td>{{ entry.time | date:"M d, H:i:s" }}</td>
+        <td>{{ entry.time }}</td>
         <td>{{ entry.earliest_plr }}</td>
         <td>{{ entry.nplayers }}</td>
         <td>{{ entry.nclans }}</td>
