@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::All Games</title>
+  {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<h2>All Games ({{ games|length }} total)</h2>
+{% if games|length > 0 %}
+  <table class="sortable">
+    <thead>
+      <tr class="framed">
+        <th>name</th>
+        <th>character</th>
+        <th>turns</th>
+        <th>score</th>
+        <th>duration</th>
+        <th>endtime</th>
+        <th>death reason</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for game in games %}
+        <tr {% if game.won %}class="won"{% endif %}>
+          <td>
+            {% include "plink.html" with name=game.playername %}
+          </td>
+          <td class="nowrap">
+            {{ game.rrga }}
+          </td>
+          <td class="num">{{ game.turns }}</td>
+          <td class="num">
+            <a href="{{ game.dumplog }}">{{ game.points }}</a>
+          </td>
+          <td class="num">{{ game.wallclock }}</td>
+          <td class="num">{{ game.endtime }}</td>
+          <td>
+            {% if game.won %}
+              ascended
+            {% else %}
+              {{ game.death }}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No games have been played yet</p>
+{% endif %}
+
+</body>
+
+</html>

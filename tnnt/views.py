@@ -620,6 +620,30 @@ class StatsView(TemplateView):
         kwargs['totuniqdeaths'] = len(uniqdeaths.compile_unique_deaths(Game.objects.all()))
         return kwargs
 
+class AllGamesView(TemplateView):
+    template_name = 'allgames.html'
+
+    def get_context_data(self, **kwargs):
+        # Get all legitimate games (exclude scummed) ordered by newest first
+        # Scummed games are defined as: death in ('quit', 'escaped') and turns <= 100
+        games_qs = Game.objects.exclude(
+                                   death__in=['quit', 'escaped'],
+                                   turns__lte=100) \
+                               .select_related('player', 'source') \
+                               .values('id', 'player__name', 'role', 'race',
+                                      'gender', 'align', 'gender0', 'align0',
+                                      'points', 'turns', 'maxlvl',
+                                      'endtime', 'starttime', 'wallclock',
+                                      'death', 'won',
+                                      playername=F('player__name'),
+                                      dlg_fmt=F('source__dumplog_fmt')) \
+                               .order_by('-endtime')
+
+        # Use bulk_upd_games to add dumplog URLs and rrga strings
+        # For all games view, we don't need conducts (only for ascensions)
+        kwargs['games'] = bulk_upd_games(list(games_qs), False)
+        return kwargs
+
 class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
