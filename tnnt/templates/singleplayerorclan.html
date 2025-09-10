@@ -178,8 +178,8 @@ If we do show all streaks in a clan at some point, also make sure to remove the
             <tr>
               <td class="num dim">{{ forloop.counter }}</td>
               <td class="num">{{ streak.games | length }}</td>
-              <td class="num">{{ streak.games.0.starttime }}</td>
-              <td class="num">
+              <td class="num nowrap">{{ streak.games.0.starttime }}</td>
+              <td class="num nowrap">
                 {# annoying construction #}
                 {% with lastgame=streak.games|last %}{{ lastgame.endtime }}{% endwith %}
               </td>

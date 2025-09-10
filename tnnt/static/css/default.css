@@ -68,6 +68,7 @@ a:not(#titlelink):hover {
 div.row {
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 
 .align-top {

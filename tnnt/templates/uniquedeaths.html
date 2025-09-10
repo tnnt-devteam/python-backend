@@ -18,7 +18,7 @@
   <thead>
     <tr class="framed">
       <th>death</th>
-      <th>first obtained on</th>
+      <th>first obtained on (UTC)</th>
       <th>by player</th>
       <th>players</th>
       <th>clans</th>
@@ -28,7 +28,7 @@
     {% for entry in deathlist %}
       <tr>
         <td>{{ entry.death }}</td>
-        <td>{{ entry.time }}</td>
+        <td class="nowrap">{{ entry.time }}</td>
         <td>{{ entry.earliest_plr }}</td>
         <td>{{ entry.nplayers }}</td>
         <td>{{ entry.nclans }}</td>
