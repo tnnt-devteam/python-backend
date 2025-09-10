@@ -26,6 +26,7 @@ urlpatterns = [
     path('uniquedeaths', tnntviews.UniqueDeathsView.as_view(), name='uniquedeaths'),
     path('ascensions', tnntviews.AscensionsView.as_view(), name='ascensions'),
     path('allgames', tnntviews.AllGamesView.as_view(), name='allgames'),
+    path('scummedgames', tnntviews.ScummedGamesView.as_view(), name='scummedgames'),
     path('faq', tnntviews.FaqView.as_view(), name='faq'),
     path('stats', tnntviews.StatsView.as_view(), name='stats'),
     path('archives', tnntviews.ArchivesView.as_view(), name='archives'),

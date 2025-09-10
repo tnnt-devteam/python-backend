@@ -103,7 +103,16 @@ class HomepageView(TemplateView):
         kwargs['numascenders'] = Player.objects.filter(wins__gt=0).count()
 
         # last 10 games/wins
-        base_qs = Game.objects.annotate(
+        # Exclude scummed games from last 10 games
+        from django.db.models import Q
+
+        # Define scummed criteria
+        scummed_exclude = (
+            Q(death__in=['quit', 'escaped'], turns__lte=100) |
+            Q(death__icontains='slipped', turns__lte=300, player__name='post163')
+        )
+
+        base_qs = Game.objects.exclude(scummed_exclude).annotate(
             playername=F('player__name'),
             dlg_fmt=F('source__dumplog_fmt')).order_by('-endtime')
         kwargs['last10games'] = bulk_upd_games(list(base_qs.values()[:10]), False)
@@ -636,10 +645,14 @@ class AllGamesView(TemplateView):
 
     def get_context_data(self, **kwargs):
         # Get all legitimate games (exclude scummed) ordered by newest first
-        # Scummed games are defined as: death in ('quit', 'escaped') and turns <= 100
+        # Scummed games are defined as:
+        # - (death in ('quit', 'escaped') and turns <= 100) OR
+        # - (death contains 'slipped' and turns <= 300 and player is 'post163')
+        from django.db.models import Q
+
         games_qs = Game.objects.exclude(
-                                   death__in=['quit', 'escaped'],
-                                   turns__lte=100) \
+                                   Q(death__in=['quit', 'escaped'], turns__lte=100) |
+                                   Q(death__icontains='slipped', turns__lte=300, player__name='post163')) \
                                .select_related('player', 'source') \
                                .values('id', 'player__name', 'role', 'race',
                                       'gender', 'align', 'gender0', 'align0',
@@ -653,6 +666,57 @@ class AllGamesView(TemplateView):
         # Use bulk_upd_games to add dumplog URLs and rrga strings
         # For all games view, we don't need conducts (only for ascensions)
         kwargs['games'] = bulk_upd_games(list(games_qs), False)
+        return kwargs
+
+class ScummedGamesView(TemplateView):
+    template_name = 'scummedgames.html'
+
+    def get_context_data(self, **kwargs):
+        # Get all players with their scummed game counts
+        # Scummed games are defined as:
+        # - (death in ('quit', 'escaped') and turns <= 100) OR
+        # - (death contains 'slipped' and turns <= 300 and player is 'post163')
+        from django.db.models import Q, Count, F
+
+        # Define the scummed criteria
+        scummed_criteria = (
+            Q(death__in=['quit', 'escaped'], turns__lte=100) |
+            Q(death__icontains='slipped', turns__lte=300, player__name='post163')
+        )
+
+        # Get total scummed games for percentage calculation
+        total_scummed = Game.objects.filter(scummed_criteria).count()
+
+        # Get player statistics for scummed games
+        players_data = Player.objects.annotate(
+            scummed_count=Count(
+                'game',
+                filter=(
+                    Q(game__death__in=['quit', 'escaped'], game__turns__lte=100) |
+                    Q(game__death__icontains='slipped', game__turns__lte=300, name='post163')
+                )
+            )
+        ).filter(
+            scummed_count__gt=0  # Only include players with scummed games
+        ).select_related('clan').values(
+            'name',
+            'clan__name',
+            'scummed_count'
+        ).order_by('-scummed_count')
+
+        # Calculate percentages and format data
+        scummed_list = []
+        for player in players_data:
+            percentage = (player['scummed_count'] / total_scummed * 100) if total_scummed > 0 else 0
+            scummed_list.append({
+                'player': player['name'],
+                'clan': player['clan__name'] if player['clan__name'] else '',
+                'scummed_games': player['scummed_count'],
+                'percentage': f"{percentage:.1f}%"
+            })
+
+        kwargs['scummed_list'] = scummed_list
+        kwargs['total_scummed'] = total_scummed
         return kwargs
 
 class ClanMgmtView(View):

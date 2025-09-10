@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Scummed Games</title>
+  {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<h2>Scummed Games ({{ total_scummed }} total)</h2>
+{% if scummed_list|length > 0 %}
+  <table class="sortable default-sort-3rd">
+    <thead>
+      <tr class="framed">
+        <th>player</th>
+        <th>clan</th>
+        <th>scummed games</th>
+        <th>%</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for entry in scummed_list %}
+        <tr>
+          <td>
+            {% include "plink.html" with name=entry.player %}
+          </td>
+          <td>
+            {% if entry.clan %}
+              {% include "clink.html" with name=entry.clan %}
+            {% endif %}
+          </td>
+          <td class="num">{{ entry.scummed_games }}</td>
+          <td class="num">{{ entry.percentage }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% else %}
+  <p>No scummed games have been played yet</p>
+{% endif %}
+
+</body>
+
+</html>
