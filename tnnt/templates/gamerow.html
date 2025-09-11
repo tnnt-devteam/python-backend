@@ -17,7 +17,11 @@
   </td>
   <td class="num">{{ game.turns }}</td>
   <td class="num">
-    <a href="{{ game.dumplog }}">{{ game.points }}</a>
+    {% if game.is_startscum %}
+      {{ game.points }}
+    {% else %}
+      <a href="{{ game.dumplog }}">{{ game.points }}</a>
+    {% endif %}
   </td>
   <td class="num nowrap">{{ game.wallclock }}</td>
   <td class="num nowrap">{{ game.endtime }}</td>

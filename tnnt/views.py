@@ -43,6 +43,13 @@ def bulk_upd_games(gamelist, do_conducts):
             conducts_by_game[game_id].append(conduct['shortname'])
 
     for g in gamelist:
+        # Check if this is a startscum game (no dumplog generated)
+        # Startscum criteria: quit or escaped within 100 turns or less
+        g['is_startscum'] = (
+            g.get('death') in ('quit', 'escaped') and
+            g.get('turns', 101) <= 100
+        )
+
         g['dumplog'] = dumplog_utils.format_dumplog(g['dlg_fmt'], g['playername'],
                                                     g['starttime'])
 
