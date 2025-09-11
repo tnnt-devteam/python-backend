@@ -22,7 +22,7 @@ class xlog_flags:
     EXPLORE = 0x2
     NOBONES = 0x4
 
-def game_from_xlog(source, xlog_dict):
+def game_from_xlog(source, xlog_dict, auto_detect_source=False):
     '''
     Create and save a Game from a dictionary of fields that comes from the xlog.
     This function contains the custom "business logic" of converting fields that
@@ -32,11 +32,31 @@ def game_from_xlog(source, xlog_dict):
     Return 0 if no game was created, 1 if it was.
 
     `source` is a Source object that the resulting Game will be associated with.
+    `auto_detect_source` if True, will try to detect the source from the xlog's
+    server field when using --file option.
 
     SIDE EFFECT: This searches for a player of the given name, and if they
     cannot be found, it will create that Player. (This is one of the two ways
     Players are naturally created.)
     '''
+
+    # Auto-detect source from xlog server field if requested
+    if auto_detect_source and 'server' in xlog_dict:
+        server_mapping = {
+            'us.hardfought.org': 'hdf',
+            'www.hardfought.org': 'hdf',
+            'hardfought.org': 'hdf',
+            'eu.hardfought.org': 'hfe',
+            'au.hardfought.org': 'hfa',
+        }
+
+        server_value = xlog_dict['server']
+        if server_value in server_mapping:
+            try:
+                source = Source.objects.get(server=server_mapping[server_value])
+                logger.debug(f"Auto-detected source: {source.server} from server={server_value}")
+            except Source.DoesNotExist:
+                logger.warning(f"Could not find Source for server={server_value}, using default")
 
     kwargs = {'source': source}
 
@@ -113,12 +133,15 @@ def import_from_file(path, src):
     '''
     Turn all xlog records from the xlogfile at `path` into Game objects.
     If `src` isn't None, use its internal tracking of file positions and update
-    it at the end. If it's None, ignore this.
+    it at the end. If it's None, auto-detect source from server field in xlog.
     '''
     logger.info('Importing Games from local file %s', path)
+    auto_detect = False
     if src is None:
-        # we still need SOMETHING to pass to from_xlog
-        local_src = Source.objects.all()[0]
+        # When using --file option, we'll auto-detect the source from each xlog entry
+        local_src = Source.objects.all()[0]  # Default fallback
+        auto_detect = True
+        logger.info('Auto-detection mode enabled for source selection')
     else:
         local_src = src
     with Path(path).open("r") as xlog_file:
@@ -126,7 +149,7 @@ def import_from_file(path, src):
             xlog_file.seek(src.file_pos)
         num_added = 0
         for xlog_entry in XlogParser().parse(xlog_file):
-            num_added += game_from_xlog(local_src, xlog_entry)
+            num_added += game_from_xlog(local_src, xlog_entry, auto_detect_source=auto_detect)
         logger.info('Created %d Games from xlog file %s' % (num_added, path))
         if src is not None:
             src.file_pos = xlog_file.tell()
