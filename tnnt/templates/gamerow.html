@@ -20,7 +20,7 @@
     {% if game.is_startscum %}
       {{ game.points }}
     {% else %}
-      <a href="{{ game.dumplog }}">{{ game.points }}</a>
+      <a href="{{ game.dumplog }}" target="_blank">{{ game.points }}</a>
     {% endif %}
   </td>
   <td class="num nowrap">{{ game.wallclock }}</td>

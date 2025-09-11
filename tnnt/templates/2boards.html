@@ -42,7 +42,7 @@
             </td>
             <td class="rjust">
               {% if "dumplog" in player %}
-                <a href="{{ player.dumplog }}">
+                <a href="{{ player.dumplog }}" target="_blank">
                   {{ player.stat }}
                 </a>
               {% else %}
@@ -74,7 +74,7 @@
             <td>{% include "clink.html" with name=clan.name %}</td>
             <td class="rjust">
               {% if "dumplog" in clan %}
-                <a href="{{ clan.dumplog }}">
+                <a href="{{ clan.dumplog }}" target="_blank">
                   {{ clan.stat }}
                 </a>
               {% else %}
