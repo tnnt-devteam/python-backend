@@ -13,7 +13,36 @@
 
 {% include "header.html" %}
 
-<h2>Scummed Games ({{ total_scummed }} total)</h2>
+<h2>Scummed Games Statistics</h2>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Total scummed games</td>
+      <td>{{ total_scummed }}</td>
+    </tr>
+    <tr>
+      <td>Percentage of all games</td>
+      <td>{{ scummed_percentage|floatformat:1 }}% ({{ total_scummed }} of {{ total_games }})</td>
+    </tr>
+    <tr>
+      <td>Players who scummed</td>
+      <td>{{ total_players_scummed }}</td>
+    </tr>
+    <tr>
+      <td>Total real-life time spent scumming</td>
+      <td>{{ total_scummed_time }}</td>
+    </tr>
+    {% if most_scummed_combo %}
+    <tr>
+      <td>Most scummed combination</td>
+      <td>{{ most_scummed_combo }} ({{ most_scummed_count }} game{{ most_scummed_count|pluralize }})</td>
+    </tr>
+    {% endif %}
+  </tbody>
+</table>
+
+<h3>Breakdown by Player</h3>
 {% if scummed_list|length > 0 %}
   <table class="sortable default-sort-3rd">
     <thead>

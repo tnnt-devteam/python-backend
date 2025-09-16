@@ -683,7 +683,7 @@ class ScummedGamesView(TemplateView):
         # Scummed games are defined as:
         # - (death in ('quit', 'escaped') and turns <= 100) OR
         # - (death contains 'slipped' and turns <= 300 and player is 'post163')
-        from django.db.models import Q, Count, F
+        from django.db.models import Q, Count, F, Sum
 
         # Define the scummed criteria
         scummed_criteria = (
@@ -693,6 +693,32 @@ class ScummedGamesView(TemplateView):
 
         # Get total scummed games for percentage calculation
         total_scummed = Game.objects.filter(scummed_criteria).count()
+
+        # Get total games for percentage calculation
+        total_games = Game.objects.count()
+
+        # Calculate percentage of all games that are scummed
+        scummed_percentage = (total_scummed / total_games * 100) if total_games > 0 else 0
+
+        # Calculate total real-life time spent scumming
+        scummed_time_aggr = Game.objects.filter(scummed_criteria).aggregate(
+            Sum('realtime')
+        )
+        total_scummed_time = scummed_time_aggr['realtime__sum']
+
+        # Get most scummed race/role combination
+        scummed_race_role = Game.objects.filter(scummed_criteria).values(
+            'race', 'role'
+        ).annotate(
+            combo_count=Count('*')
+        ).order_by('-combo_count').first()
+
+        if scummed_race_role:
+            most_scummed_combo = f"{scummed_race_role['race']} {scummed_race_role['role']}"
+            most_scummed_count = scummed_race_role['combo_count']
+        else:
+            most_scummed_combo = None
+            most_scummed_count = 0
 
         # Get player statistics for scummed games
         players_data = Player.objects.annotate(
@@ -722,8 +748,17 @@ class ScummedGamesView(TemplateView):
                 'percentage': f"{percentage:.1f}%"
             })
 
+        # Count players with scummed games
+        total_players_scummed = len(scummed_list)
+
         kwargs['scummed_list'] = scummed_list
         kwargs['total_scummed'] = total_scummed
+        kwargs['total_games'] = total_games
+        kwargs['scummed_percentage'] = scummed_percentage
+        kwargs['total_players_scummed'] = total_players_scummed
+        kwargs['most_scummed_combo'] = most_scummed_combo
+        kwargs['most_scummed_count'] = most_scummed_count
+        kwargs['total_scummed_time'] = total_scummed_time
         return kwargs
 
 class ClanMgmtView(View):
