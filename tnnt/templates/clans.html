@@ -5,6 +5,8 @@
 <head>
   <title>TNNT::Clans</title>
   {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
 </head>
 
 <body>
@@ -12,7 +14,7 @@
 {% include "header.html" with page='clans' %}
 
 <h2>All Clans</h2>
-<table class="clans">
+<table class="clans sortable">
   <thead>
     <tr class="framed">
       <th>clan</th>

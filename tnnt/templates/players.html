@@ -5,6 +5,8 @@
 <head>
   <title>TNNT::Players</title>
   {% include "headlinks.html" %}
+  {% load static %}
+  <script src="{% static 'js/table-sort.js' %}"></script>
 </head>
 
 <body>
@@ -12,7 +14,7 @@
 {% include "header.html" with page='players' %}
 
 <h2>All Players</h2>
-<table>
+<table class="sortable">
   <thead>
     <tr class="framed">
       <th></th>
