@@ -528,6 +528,17 @@ class SinglePlayerOrClanView(TemplateView):
         achievements = Achievement.objects.annotate(**ach_annotate_kwargs)
         kwargs['achievements'] = achievements
 
+        # Format streak dates to ISO format (YYYY-MM-DD HH:MM) for display
+        # This follows the same pattern as bulk_upd_games for consistency
+        if not kwargs['isClan']:
+            streaks = player.get_streaks()
+            for streak in streaks:
+                for game in streak.games:
+                    # Store formatted dates as separate attributes to preserve originals
+                    game.starttime_formatted = game.starttime.strftime('%Y-%m-%d %H:%M') if game.starttime else ''
+                    game.endtime_formatted = game.endtime.strftime('%Y-%m-%d %H:%M') if game.endtime else ''
+            kwargs['streaks'] = streaks
+
         return kwargs
 
 class TrophiesView(TemplateView):

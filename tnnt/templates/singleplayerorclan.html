@@ -173,18 +173,21 @@ If we do show all streaks in a clan at some point, also make sure to remove the
         </tr>
       </thead>
       <tbody>
-        {% with streaks=player_or_clan.get_streaks %}
-          {% for streak in streaks %}
+        {% for streak in streaks %}
             <tr>
               <td class="num dim">{{ forloop.counter }}</td>
               <td class="num">{{ streak.games | length }}</td>
-              <td class="num nowrap">{{ streak.games.0.starttime }}</td>
+              <td class="num nowrap">{{ streak.games.0.starttime_formatted }}</td>
               <td class="num nowrap">
                 {# annoying construction #}
-                {% with lastgame=streak.games|last %}{{ lastgame.endtime }}{% endwith %}
+                {% with lastgame=streak.games|last %}{{ lastgame.endtime_formatted }}{% endwith %}
               </td>
-              <td class="num streak-continuable">
-                {% if streak.continuable %} &check; {% else %} &cross; {% endif %}
+              <td class="streak-continuable">
+                {% if streak.continuable %}
+                  <span class="achieved">&#10004;</span>
+                {% else %}
+                  <span class="not-achieved">&#10008;</span>
+                {% endif %}
               </td>
               <td>
                 {% for g in streak.games %}
@@ -195,7 +198,6 @@ If we do show all streaks in a clan at some point, also make sure to remove the
               </td>
             </tr>
           {% endfor %}
-        {% endwith %}
       </tbody>
     </table>
   {% endif %} {# longest_streak greater than 0 #}
