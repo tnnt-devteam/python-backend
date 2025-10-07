@@ -1,0 +1,1687 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Clans</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu  menusel ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
+              <a href="https://tnnt.org/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2021 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<h2>All Clans</h2>
+<table class="clans">
+  <thead>
+    <tr class="framed">
+      <th>clan</th>
+      <th>wins</th>
+      <th>combos</th>
+      <th>achieve</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Order&#32;of&#32;the&#32;Chickatrice">Order of the Chickatrice</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/Andrio">Andrio</a>
+
+            </span>
+          
+            <span >
+              <a href="player/antigulp">antigulp</a>
+
+            </span>
+          
+            <span >
+              <a href="player/chickatriceRobin">chickatriceRobin</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Cloudmillion">Cloudmillion</a>
+
+            </span>
+          
+            <span >
+              <a href="player/deadnoob">deadnoob</a>
+
+            </span>
+          
+            <span >
+              <a href="player/finitelycraig">finitelycraig</a>
+
+            </span>
+          
+            <span >
+              <a href="player/IceBox">IceBox</a>
+
+            </span>
+          
+            <span >
+              <a href="player/ichbinmiah">ichbinmiah</a>
+
+            </span>
+          
+            <span >
+              <a href="player/iyarkonan">iyarkonan</a>
+
+            </span>
+          
+            <span >
+              <a href="player/shadowrider38">shadowrider38</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/spicycat">spicycat</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Stella">Stella</a>
+
+            </span>
+          
+          <span class="subinfo">
+            12
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">46</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">37</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">275</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/teamsplat">teamsplat</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/anndec">anndec</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Arahael">Arahael</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/elenmirie">elenmirie</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/hothraxxa">hothraxxa</a>
+
+            </span>
+          
+            <span >
+              <a href="player/jt">jt</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Mandevil">Mandevil</a>
+
+            </span>
+          
+            <span >
+              <a href="player/mobileuser">mobileuser</a>
+
+            </span>
+          
+            <span >
+              <a href="player/noims">noims</a>
+
+            </span>
+          
+            <span >
+              <a href="player/oh6">oh6</a>
+
+            </span>
+          
+            <span >
+              <a href="player/qt">qt</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Raisse">Raisse</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Umbire">Umbire</a>
+
+            </span>
+          
+          <span class="subinfo">
+            12
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">43</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">36</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">277</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/teamsplit">teamsplit</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/amateurhour">amateurhour</a>
+
+            </span>
+          
+            <span >
+              <a href="player/bouquet">bouquet</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Demo">Demo</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Grasshopper">Grasshopper</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/k2">k2</a>
+
+            </span>
+          
+            <span >
+              <a href="player/krm26">krm26</a>
+
+            </span>
+          
+            <span >
+              <a href="player/malor">malor</a>
+
+            </span>
+          
+            <span >
+              <a href="player/nabru">nabru</a>
+
+            </span>
+          
+            <span >
+              <a href="player/rebatela">rebatela</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Tangles">Tangles</a>
+
+            </span>
+          
+            <span >
+              <a href="player/VaderFLAG">VaderFLAG</a>
+
+            </span>
+          
+          <span class="subinfo">
+            11
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">35</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">29</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">267</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Order&#32;of&#32;the&#32;Cockatrice">Order of the Cockatrice</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/disperse">disperse</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Glord">Glord</a>
+
+            </span>
+          
+            <span >
+              <a href="player/habib">habib</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Jes">Jes</a>
+
+            </span>
+          
+            <span >
+              <a href="player/jonathanhanes">jonathanhanes</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Luxidream">Luxidream</a>
+
+            </span>
+          
+            <span >
+              <a href="player/machinespray">machinespray</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Smugzug">Smugzug</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Tommo">Tommo</a>
+
+            </span>
+          
+            <span >
+              <a href="player/ToneHack">ToneHack</a>
+
+            </span>
+          
+          <span class="subinfo">
+            10
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">32</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">28</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">258</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/OlymP0WER">OlymP0WER</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/Leszczynek">Leszczynek</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/p0werm0de">p0werm0de</a>
+
+            </span>
+          
+            <span >
+              <a href="player/sentinel2">sentinel2</a>
+
+            </span>
+          
+            <span >
+              <a href="player/torpedojuice">torpedojuice</a>
+
+            </span>
+          
+          <span class="subinfo">
+            4
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">26</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">23</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">217</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/OK.">OK.</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/anselmus">anselmus</a>
+
+            </span>
+          
+            <span >
+              <a href="player/aosdict">aosdict</a>
+
+            </span>
+          
+            <span >
+              <a href="player/BEHiker91W">BEHiker91W</a>
+
+            </span>
+          
+            <span >
+              <a href="player/BilldaCat">BilldaCat</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Graznop">Graznop</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Muad">Muad</a>
+
+            </span>
+          
+            <span >
+              <a href="player/NetSysFire">NetSysFire</a>
+
+            </span>
+          
+            <span >
+              <a href="player/spontiff">spontiff</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/stenno">stenno</a>
+
+            </span>
+          
+          <span class="subinfo">
+            9
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">18</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">18</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">258</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Clan&#32;EIT!">Clan EIT!</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/eitbrad">eitbrad</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitcyruse">eitcyruse</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitkrog">eitkrog</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitlarry">eitlarry</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitm9l">eitm9l</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitquincy">eitquincy</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/eitwinston">eitwinston</a>
+
+            </span>
+          
+          <span class="subinfo">
+            7
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">15</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">14</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">190</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/The&#32;Strong&#32;and&#32;the&#32;Bad">The Strong and the Bad</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/efot">efot</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">8</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">8</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">203</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/unfoog">unfoog</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/deki">deki</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/jannis">jannis</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/JochenPeter">JochenPeter</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Kontroller">Kontroller</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/LordHoto">LordHoto</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Nidan">Nidan</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/rossyrg">rossyrg</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/schnippi">schnippi</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Souljazz">Souljazz</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/squolly">squolly</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/tacco">tacco</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/xororand">xororand</a>
+
+            </span>
+          
+          <span class="subinfo">
+            12
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">8</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">7</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">197</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/✇">✇</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/AlbertB">AlbertB</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Azoxey">Azoxey</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Graydot">Graydot</a>
+
+            </span>
+          
+            <span >
+              <a href="player/jmcunx">jmcunx</a>
+
+            </span>
+          
+            <span >
+              <a href="player/unit327">unit327</a>
+
+            </span>
+          
+          <span class="subinfo">
+            5
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">7</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">6</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">233</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Order&#32;of&#32;the&#32;Pyrolisk">Order of the Pyrolisk</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/Daniexpert">Daniexpert</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/introsp3ctive">introsp3ctive</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Kougyoku">Kougyoku</a>
+
+            </span>
+          
+            <span >
+              <a href="player/lynnwashere">lynnwashere</a>
+
+            </span>
+          
+            <span >
+              <a href="player/PsyMar">PsyMar</a>
+
+            </span>
+          
+            <span >
+              <a href="player/UniDuck">UniDuck</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Wertik">Wertik</a>
+
+            </span>
+          
+            <span >
+              <a href="player/wintergalaxy88">wintergalaxy88</a>
+
+            </span>
+          
+          <span class="subinfo">
+            8
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">5</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">4</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">166</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/The_Levellers">The_Levellers</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/asumu">asumu</a>
+
+            </span>
+          
+            <span >
+              <a href="player/ioa">ioa</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/ptomato">ptomato</a>
+
+            </span>
+          
+          <span class="subinfo">
+            3
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">4</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">4</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">134</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Clan&#32;of&#32;the&#32;Cave&#32;Grue">Clan of the Cave Grue</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/kcostell">kcostell</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">139</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Scottish_Huskeys">Scottish_Huskeys</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/allanb">allanb</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">165</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Voluptuous&#32;Ampersands">Voluptuous Ampersands</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/boardControl">boardControl</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/squishy">squishy</a>
+
+            </span>
+          
+            <span >
+              <a href="player/walkera">walkera</a>
+
+            </span>
+          
+          <span class="subinfo">
+            3
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">3</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">195</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Petrified&#32;Amulet">Petrified Amulet</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/evh">evh</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/Incaendo">Incaendo</a>
+
+            </span>
+          
+          <span class="subinfo">
+            2
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">2</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">117</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Shambling&#32;Horde">Shambling Horde</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/desertgreg">desertgreg</a>
+
+            </span>
+          
+            <span >
+              <a href="player/hyrum">hyrum</a>
+
+            </span>
+          
+            <span >
+              <a href="player/nethackname">nethackname</a>
+
+            </span>
+          
+            <span >
+              <a href="player/ZEDDUB">ZEDDUB</a>
+
+            </span>
+          
+          <span class="subinfo">
+            4
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">2</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">2</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">195</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/GehenNOMNOMNOM">GehenNOMNOMNOM</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/dogsrawsome13">dogsrawsome13</a>
+
+            </span>
+          
+            <span >
+              <a href="player/encore">encore</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/haldisse">haldisse</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/stoicjin">stoicjin</a>
+
+            </span>
+          
+            <span >
+              <a href="player/thetacosniper">thetacosniper</a>
+
+            </span>
+          
+          <span class="subinfo">
+            5
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">144</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Read&#32;Long&#32;Worm">Read Long Worm</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/JohnKeel">JohnKeel</a>
+
+            </span>
+          
+            <span >
+              <a href="player/wheals">wheals</a>
+
+            </span>
+          
+          <span class="subinfo">
+            2
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">152</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Team&#32;9">Team 9</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/Dx34">Dx34</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">1</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">139</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Chlann">Chlann</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/McPanther">McPanther</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">41</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Clan&#32;Destine">Clan Destine</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/peterg">peterg</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">85</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Cup&#32;of&#32;Java">Cup of Java</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/cgnj512CN">cgnj512CN</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">31</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/RedShirtDungeoneers">RedShirtDungeoneers</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/Spider74656">Spider74656</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">46</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/scrublords&#32;:)">scrublords :)</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/poisonrat">poisonrat</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">4</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/SlexismWorldwide">SlexismWorldwide</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/GnollhackIsGreat">GnollhackIsGreat</a>
+
+            </span>
+          
+          <span class="subinfo">
+            1
+            
+              player
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/Smile&#32;mold">Smile mold</a>
+
+          </span>
+
+          
+            <span >
+              <a href="player/AsrielDreemurr">AsrielDreemurr</a>
+
+            </span>
+          
+            <span class="plradmin">
+              <a href="player/lacca">lacca</a>
+
+            </span>
+          
+            <span >
+              <a href="player/MAlischka2">MAlischka2</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Minoru">Minoru</a>
+
+            </span>
+          
+            <span >
+              <a href="player/spline">spline</a>
+
+            </span>
+          
+          <span class="subinfo">
+            5
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">139</span>
+        </td>
+
+      </tr>
+    
+      <tr>
+
+        
+        <td>
+          <span class="clan">
+            <a href="clan/uwu">uwu</a>
+
+          </span>
+
+          
+            <span class="plradmin">
+              <a href="player/hearsegirl">hearsegirl</a>
+
+            </span>
+          
+            <span >
+              <a href="player/Jilvane">Jilvane</a>
+
+            </span>
+          
+          <span class="subinfo">
+            2
+            
+              players
+            
+          </span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">0</span>
+        </td>
+
+        
+        <td class="num">
+          <span class="clan">12</span>
+        </td>
+
+      </tr>
+    
+  </tbody>
+</table>
+
+</body>
+
+</html>
+

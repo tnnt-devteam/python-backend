@@ -1,0 +1,811 @@
+
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT - The November NetHack Tournament</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+  <script type="text/javascript" src="static/js/countdown.js"></script>
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules.html" class="menu ">RULES</a>
+              <a href="players.html" class="menu ">PLAYERS</a>
+              <a href="clans.html" class="menu ">CLANS</a>
+              <a href="leaderboards.html" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies.html" class="menu ">TROPHIES</a>
+              <a href="about.html" class="menu ">ABOUT</a>
+              <a href="/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login.html" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2023 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<div id="salespitch">
+  <h3> Do you love to play <a href="https://nethack.org" target="_blank">NetHack</a>? </h3>
+  <h3> Want to show everyone your personal <a href="players.html">prowess?</a></h3>
+  <h3>
+    Join a <a href="clans.html">clan</a> and team up to accomplish feats too hard
+    for a single player?
+  </h3>
+  
+  <h3>
+    Or just mess around and see how many different ways you can get yourself
+    killed?
+  </h3>
+  <h3>Then come join us in November for a month of NetHacking fun.</h3>
+  <p id="countdown">
+    <span class="initial">&nbsp;</span>
+    <span class="before">The tournament starts in</span>
+    <span class="during">The tournament ends in</span>
+    <span class="over">The tournament is over; see you all next November</span>
+    <span class="counter">
+      <span id="counter"></span> on <span id="when"></span>!
+    </span>
+  </p>
+</div>
+
+<hr>
+
+<article>
+  <h4> How to Play </h4>
+  <p>
+    You will need an <a href="https://en.wikipedia.org/wiki/SSH" target="_blank">SSH client</a>
+    to connect to the game servers. Linux and Mac OS typically come with this
+    installed; Windows users can use either a free client like
+    <a href="https://putty.org" target="_blank">PuTTY</a> or Windows Subsystem for Linux.
+  </p>
+  <p>
+    TNNT is hosted by <a href="https://www.hardfought.org/nethack" target="_blank">hardfought.org</a>.
+    Connect to "nethack@hardfought.org" via SSH, and register an account.
+    Then, you can choose any of three servers to play on:
+    <ul>
+      <li>hardfought.org: USA (East Coast)</li>
+      <li>eu.hardfought.org: Europe (London)</li>
+      <li>au.hardfought.org: Australia (Sydney)</li>
+    </ul>
+    Connect to your preferred server the same way via SSH and select the TNNT game
+    option. That's all there is to it! If you'd like to play with the TNNT tileset,
+    or you're at a location that blocks everything except web access, check out our
+    <a href="https://www.hardfought.org/nethack/hterm" target="_blank">hterm</a> page, you can play this way from any of the three
+    servers listed above.
+  </p>
+  <p>
+    To create, join, or manage clans, go
+    <a href="clanmgmt.html">here</a>.
+    Clan membership (creating and joining) will be frozen on November 10th at 00:00 UTC!
+  </p>
+
+  <h4> More Information </h4>
+  <p>
+    For more general information on NetHack, check out
+    <a href="https://en.wikipedia.org/wiki/NetHack" target="_blank">Wikipedia</a>,
+    the <a href="https://nethackwiki.com" target="_blank">NetHackWiki</a>,
+    and <a href="https://thegreatestgameyouwilleverplay.com" target="_blank">The Greatest Game You Will Ever Play</a>.
+  </p>
+  <p>
+    TNNT-related in-game commands include:
+    <ul>
+      <li>#tnntstats: a listing of all TNNT-related goals</li>
+      <li>#achievements: shows all achievements, completed and those not</li>
+      <li>#snacks: shows all foods eaten</li>
+      <li>#species: shows all eligible species killed and not killed</li>
+      <li>#conduct: shows TNNT conducts in addition to vanilla ones</li>
+    </ul>
+  </p>
+  <p>
+    For more information about the TNNT tournament, see the <a href="about.html">About page</a>
+    and <a href="rules.html">Rules page</a>.
+  </p>
+  <p>
+    Live game events via Twitter feed! Be sure to check out and follow our <a href="https://twitter.com/TNNT_announce/" target="_blank">TNNT Twitter Feed</a> to stay current.
+  </p>
+  <p>
+    TNNT chat discussion happens on the <a href="https://libera.chat" target="_blank">Libera.Chat</a>
+    IRC server, on the #tnnt and #hardfought channels. All TNNT discussion is
+    on-topic in these channels, and this is the best way to reach the admins if
+    you have any issues.
+    <a href="https://web.libera.chat" target="_blank">Click here to open the chat.</a> Enter
+    "#tnnt" for the channel.
+  </p>
+</article>
+
+<h2>Overall Statistics</h2>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>Clans</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>Players</td>
+        <td>320</td>
+      </tr>
+      <tr>
+        <td>Games</td>
+        <td>15073</td>
+      </tr>
+      <tr>
+        <td>Scummed games</td>
+        <td>6033</td>
+      </tr>
+      <tr>
+        <td>Ascensions</td>
+        <td>392</td>
+      </tr>
+      <tr>
+        <td>Ascending players</td>
+        <td>108</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+<h2>Last 10 Ascensions</h2>
+
+  
+
+<table>
+  <thead>
+    <tr class="framed">
+      
+      <th>name</th>
+      <th>character</th>
+      <th>turns</th>
+      <th>score</th>
+      <th>duration</th>
+      <th>endtime</th>
+      
+        <th colspan=2>conducts</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+<tr class=" won ">
+  <td>
+    
+      swegen
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">64088</td>
+  <td class="num">
+    <a href="https://eu.hardfought.org/userdata/s/swegen/tnnt/dumplog/1698954972.tnnt.html">3525338</a>
+  </td>
+  <td class="num">28 days, 4:03:43</td>
+  <td class="num">Nov. 30, 2023, 11:59 p.m.</td>
+  
+    <td class="num">8</td>
+    <td>
+      
+        pile
+      
+        artw
+      
+        geno
+      
+        elbe
+      
+        swap
+      
+        vlad
+      
+        ride
+      
+        bone
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      oh6
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Mal-Cha
+    
+  </td>
+  <td class="num">76403</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1700761859.tnnt.html">2083288</a>
+  </td>
+  <td class="num">7 days, 6:08:17</td>
+  <td class="num">Nov. 30, 2023, 11:59 p.m.</td>
+  
+    <td class="num">3</td>
+    <td>
+      
+        artw
+      
+        geno
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      eitbo
+    
+  </td>
+  <td class="nowrap">
+    Tou-Hum-Mal-Neu
+    
+  </td>
+  <td class="num">96926</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/e/eitbo/tnnt/dumplog/1699164746.tnnt.html">5115582</a>
+  </td>
+  <td class="num">25 days, 17:02:36</td>
+  <td class="num">Nov. 30, 2023, 11:15 p.m.</td>
+  
+    <td class="num">2</td>
+    <td>
+      
+        artw
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      Tangles
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">29081</td>
+  <td class="num">
+    <a href="https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1701088317.tnnt.html">1226732</a>
+  </td>
+  <td class="num">3 days, 10:30:10</td>
+  <td class="num">Nov. 30, 2023, 11:02 p.m.</td>
+  
+    <td class="num">4</td>
+    <td>
+      
+        pile
+      
+        artw
+      
+        elbe
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      disperse
+    
+  </td>
+  <td class="nowrap">
+    Ran-Orc-Mal-Cha
+    
+  </td>
+  <td class="num">23378</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1701310194.tnnt.html">583750</a>
+  </td>
+  <td class="num">20:22:28</td>
+  <td class="num">Nov. 30, 2023, 10:32 p.m.</td>
+  
+    <td class="num">4</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        elbe
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      qt
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">54579</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/q/qt/tnnt/dumplog/1701214775.tnnt.html">2579856</a>
+  </td>
+  <td class="num">1 day, 21:36:02</td>
+  <td class="num">Nov. 30, 2023, 9:15 p.m.</td>
+  
+    <td class="num">5</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        elbe
+      
+        surv
+      
+        bone
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      peterg
+    
+  </td>
+  <td class="nowrap">
+    Wiz-Gno-Fem-Neu
+    
+  </td>
+  <td class="num">48679</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/p/peterg/tnnt/dumplog/1700657806.tnnt.html">2722112</a>
+  </td>
+  <td class="num">8 days, 7:24:13</td>
+  <td class="num">Nov. 30, 2023, 8:20 p.m.</td>
+  
+    <td class="num">5</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        surv
+      
+        pets
+      
+        bone
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      finitelycraig
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">66913</td>
+  <td class="num">
+    <a href="https://eu.hardfought.org/userdata/f/finitelycraig/tnnt/dumplog/1701128381.tnnt.html">2737518</a>
+  </td>
+  <td class="num">2 days, 20:33:59</td>
+  <td class="num">Nov. 30, 2023, 8:13 p.m.</td>
+  
+    <td class="num">3</td>
+    <td>
+      
+        artw
+      
+        elbe
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      Grouchy
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">43456</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1701102565.tnnt.html">2800056</a>
+  </td>
+  <td class="num">3 days, 3:02:16</td>
+  <td class="num">Nov. 30, 2023, 7:31 p.m.</td>
+  
+    <td class="num">4</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        elbe
+      
+        surv
+      
+    </td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      HalNovek
+    
+  </td>
+  <td class="nowrap">
+    Wiz-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">45814</td>
+  <td class="num">
+    <a href="https://eu.hardfought.org/userdata/H/HalNovek/tnnt/dumplog/1701005833.tnnt.html">1854660</a>
+  </td>
+  <td class="num">4 days, 5:50:42</td>
+  <td class="num">Nov. 30, 2023, 7:27 p.m.</td>
+  
+    <td class="num">4</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        surv
+      
+        bone
+      
+    </td>
+  
+</tr>
+
+    
+  </tbody>
+</table>
+
+
+
+<h2>Last 10 Games</h2>
+
+  
+
+<table>
+  <thead>
+    <tr class="framed">
+      
+      <th>name</th>
+      <th>character</th>
+      <th>turns</th>
+      <th>score</th>
+      <th>duration</th>
+      <th>endtime</th>
+      
+        <th>death reason</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+<tr class=" won ">
+  <td>
+    
+      swegen
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">64088</td>
+  <td class="num">
+    <a href="https://eu.hardfought.org/userdata/s/swegen/tnnt/dumplog/1698954972.tnnt.html">3525338</a>
+  </td>
+  <td class="num">28 days, 4:03:43</td>
+  <td class="num">Nov. 30, 2023, 11:59 p.m.</td>
+  
+    <td colspan=2>ascended</td>
+  
+</tr>
+
+    
+      
+<tr class=" won ">
+  <td>
+    
+      oh6
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Mal-Cha
+    
+  </td>
+  <td class="num">76403</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1700761859.tnnt.html">2083288</a>
+  </td>
+  <td class="num">7 days, 6:08:17</td>
+  <td class="num">Nov. 30, 2023, 11:59 p.m.</td>
+  
+    <td colspan=2>ascended</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      jmcunx
+    
+  </td>
+  <td class="nowrap">
+    Hea-Hum-Fem-Neu
+    
+  </td>
+  <td class="num">2699</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/j/jmcunx/tnnt/dumplog/1701387316.tnnt.html">688</a>
+  </td>
+  <td class="num">0:23:46</td>
+  <td class="num">Nov. 30, 2023, 11:59 p.m.</td>
+  
+    <td colspan=2>killed by a werejackal</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      jientho
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">1060</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1701387892.tnnt.html">524</a>
+  </td>
+  <td class="num">0:13:37</td>
+  <td class="num">Nov. 30, 2023, 11:58 p.m.</td>
+  
+    <td colspan=2>killed by a bolt of lightning</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      bleeko
+    
+  </td>
+  <td class="nowrap">
+    Bar-Hum-Mal-Neu
+    
+  </td>
+  <td class="num">2464</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1701387161.tnnt.html">3009</a>
+  </td>
+  <td class="num">0:25:38</td>
+  <td class="num">Nov. 30, 2023, 11:58 p.m.</td>
+  
+    <td colspan=2>killed by an invisible hill orc</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      joes
+    
+  </td>
+  <td class="nowrap">
+    Bar-Orc-Fem-Cha
+    
+  </td>
+  <td class="num">15151</td>
+  <td class="num">
+    <a href="https://eu.hardfought.org/userdata/j/joes/tnnt/dumplog/1701335277.tnnt.html">56636</a>
+  </td>
+  <td class="num">14:50:05</td>
+  <td class="num">Nov. 30, 2023, 11:58 p.m.</td>
+  
+    <td colspan=2>quit</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      Loggers
+    
+  </td>
+  <td class="nowrap">
+    Mon-Hum-Mal-Cha
+    
+  </td>
+  <td class="num">1</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/L/Loggers/tnnt/dumplog/1701388595.tnnt.html">0</a>
+  </td>
+  <td class="num">0:00:01</td>
+  <td class="num">Nov. 30, 2023, 11:56 p.m.</td>
+  
+    <td colspan=2>escaped</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      Loggers
+    
+  </td>
+  <td class="nowrap">
+    Mon-Hum-Mal-Cha
+    
+  </td>
+  <td class="num">1</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/L/Loggers/tnnt/dumplog/1701388592.tnnt.html">0</a>
+  </td>
+  <td class="num">0:00:01</td>
+  <td class="num">Nov. 30, 2023, 11:56 p.m.</td>
+  
+    <td colspan=2>escaped</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      Ride
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">2342</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/R/Ride/tnnt/dumplog/1701388304.tnnt.html">1380</a>
+  </td>
+  <td class="num">0:04:47</td>
+  <td class="num">Nov. 30, 2023, 11:56 p.m.</td>
+  
+    <td colspan=2>killed by a vampire in bat form</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      Loggers
+    
+  </td>
+  <td class="nowrap">
+    Mon-Hum-Mal-Cha
+    
+  </td>
+  <td class="num">1</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/L/Loggers/tnnt/dumplog/1701388589.tnnt.html">0</a>
+  </td>
+  <td class="num">0:00:01</td>
+  <td class="num">Nov. 30, 2023, 11:56 p.m.</td>
+  
+    <td colspan=2>escaped</td>
+  
+</tr>
+
+    
+  </tbody>
+</table>
+
+
+
+</body>
+
+</html>
+

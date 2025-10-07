@@ -1,0 +1,170 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::About</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu  menusel ">ABOUT</a>
+              <a href="https://tnnt.org/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2022 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<article>
+  <h4>History</h4>
+  <p>
+    The long-running
+    <a href="https://nethackwiki.com/wiki//dev/null/nethack_tournament" target="_blank">
+      /dev/null/nethack tournament
+    </a>
+    was unexpectedly shut down in September 2017. When this was announced, some
+    players from TeamSplat banded together quickly with the help of the
+    hardfought.org server to put together a tribute tournament, which was
+    intended to be the same as devnull but updated to 3.6.0.
+  </p>
+  <p>
+    The tribute tournament was never planned to run for a second year;
+    instead, respecting devnull's wishes to shut down completely and not keep
+    its name going, plans for a new tournament were laid. This new tournament
+    would be based off the newly available development version of NetHack, and
+    would remain a primarily vanilla-like tournament, unlike other tournaments
+    like <a href="https://junethack.net" target="_blank">Junethack</a> which
+    focus on variant play.  It was also decided to keep the tradition of running
+    the tournament throughout November, when a lot of veteran players come out
+    of the woodwork checking to see if there's a tournament.
+  </p>
+  <p>
+    For the 2021 tournament, the TNNT website (not the game itself) was
+    reimplemented from the ground up, primarily to get it written in Python
+    instead of Perl, for maintainability reasons. This year also saw a big
+    change to scoring &mdash; players and clans are no longer assigned points
+    for each kind of accomplishment, and instead of only showing the top player
+    in various game metrics, a series of leaderboards show all players and clans
+    competing in them.
+  </p>
+
+  <h4>So TNNT is devnull?</h4>
+  <p>
+    TNNT is <i>not</i> devnull. As per krystal's wishes, the devnull name,
+    tournament structure, and game changes have been retired. TNNT is a fresh
+    start - any game changes are based on a clean vanilla nethack codebase, and
+    the various components of the tournament were designed from scratch.
+  </p>
+
+  <h4>What about the devnull challenges?</h4>
+  <p>
+    As with the rest of devnull, the challenges have been permanently retired
+    and are not implemented in TNNT. However, TNNT does add some of its own
+    gameplay content, including features that don't exist in any variants. It's
+    a bit of a work in progress. We may keep adding a bit of new content every
+    year.
+  </p>
+  <p>
+    If you are looking for the code powering the devnull tribute challenges,
+    to use as a patch for your own purposes, you can find the devnull tribute
+    scoreboard repo
+    <a href="https://github.com/borekl/devnull-tribute-2017" target="_blank">here</a>,
+    and the devnull tribute game code
+    <a href="https://github.com/NHTangles/NetHack36/tree/devnull_hdf" target="_blank">here</a>.
+  </p>
+
+  <h4>What's the new content in TNNT?</h4>
+  <p>
+    To not spoil players that are new to TNNT, the additional content that
+    has been added to the game has been purposely omitted from this site.
+    For those that wish to learn about all of the new game content in TNNT,
+    please visit the TNNT entry on the
+    <a href="https://nethackwiki.com/wiki/The_November_NetHack_Tournament" target="_blank">
+      NetHack Wiki
+    </a>.
+  </p>
+
+  <h4>Contributors</h4>
+  <ul>
+    <li>
+      aoei: Co-creator of the Python web backend (and erstwhile maintainer of
+      the Perl backend).
+    </li>
+    <li>
+      aosdict: Creator of the achievements system, various in-game features,
+      and co-creator of the Python web backend.
+    </li>
+    <li>
+      K2: Server admin and jack-of-all-trades programmer, maintainer, and
+      designer.
+    </li>
+    <li>
+      Mandevil: Creator of the original TNNT scoreboard and its Perl backend, as
+      well as the ones for the devnull tribute tournament.
+    </li>
+    <li>
+      qt: Designer and Programmer - Python web backend, achievements system,
+      in-game features.
+    </li>
+    <li>
+      Tangles: Server admin and creator of the Croesus IRC bot. Ensures that the
+      various interactions between the game and the server network are working
+      properly.
+    </li>
+    <li>
+      elenmirie, raisse, jilles, hothraxxa, and oh6: Tournament designers and
+      alpha testers.
+    </li>
+    <li>
+      And special thanks to spicyCebolla, Andrio, and bhaak for providing
+      bug fixes, and to all of the TNNT beta testers for helping expose those
+      bugs before the tournament goes live every year.
+    </li>
+  </ul>
+
+</article>
+
+</body>
+
+</html>

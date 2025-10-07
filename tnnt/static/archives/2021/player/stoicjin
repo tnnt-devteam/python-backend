@@ -1,0 +1,2871 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TNNT::stoicjin</title>
+  
+
+<link rel="stylesheet" type="text/css" href="../static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico" />
+
+  <script type="text/javascript" src="../static/js/ach-collapse.js"></script>
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="../index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="../static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="../rules" class="menu ">RULES</a>
+              <a href="../players" class="menu  menusel ">PLAYERS</a>
+              <a href="../clans" class="menu ">CLANS</a>
+              <a href="../leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="../trophies" class="menu ">TROPHIES</a>
+              <a href="../about" class="menu ">ABOUT</a>
+              <a href="../archives" class="menu ">ARCHIVES</a>
+              
+                <a href="../login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+</header>
+
+
+
+
+
+<h1>stoicjin</h1>
+
+<div class="row">
+
+<table>
+  <thead>
+    <tr class="framed"><th colspan=2>general information</th></tr>
+  </thead>
+  
+    <tr>
+      <td>clan</td>
+      <td class="num"><a href="../clan/GehenNOMNOMNOM">GehenNOMNOMNOM</a>
+</td>
+    </tr>
+  
+  <tr>
+    <td>total games</td>
+    <td class="num">17</td>
+  </tr>
+  <tr>
+    <td>games ascended</td>
+    <td class="num">1</td>
+  </tr>
+  <tr>
+    <td>games over 1000 turns</td>
+    <td class="num">13</td>
+  </tr>
+  <tr>
+    <td>games scummed</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>ascension ratio</td>
+    <td class="num">5.88%</td>
+  </tr>
+  <tr>
+    <td>distinct achievements</td>
+    <td class="num">118</td>
+  </tr>
+  <tr>
+    <td>unique deaths</td>
+    <td class="num">15</td>
+  </tr>
+</table>
+
+
+
+<table>
+  <thead>
+    <tr class="framed"><th colspan="2">trophies</th></tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Never Scum a Game</td>
+        
+      </tr>
+    
+  </tbody>
+</table>
+
+
+
+</div> 
+
+
+
+
+
+
+
+  
+    <h2>ASCENSIONS</h2>
+    
+
+<table>
+  <thead>
+    <tr class="framed">
+      
+      <th>name</th>
+      <th>character</th>
+      <th>turns</th>
+      <th>score</th>
+      <th>duration</th>
+      <th>endtime</th>
+      
+        <th colspan=2>conducts</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+<tr class=" won ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Val-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">27778</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1635725931.tnnt.html">1880540</a>
+  </td>
+  <td class="num">3 days, 20:16:33</td>
+  <td class="num">Nov. 4, 2021, 8:35 p.m.</td>
+  
+    <td class="num">4</td>
+    <td>
+      
+        self
+      
+        artw
+      
+        surv
+      
+        bone
+      
+    </td>
+  
+</tr>
+
+    
+  </tbody>
+</table>
+
+   
+
+  <h2>RECENT GAMES</h2>
+  
+
+<table>
+  <thead>
+    <tr class="framed">
+      
+      <th>name</th>
+      <th>character</th>
+      <th>turns</th>
+      <th>score</th>
+      <th>duration</th>
+      <th>endtime</th>
+      
+        <th>death reason</th>
+      
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">7118</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637173683.tnnt.html">4900</a>
+  </td>
+  <td class="num">1:25:15</td>
+  <td class="num">Nov. 17, 2021, 7:53 p.m.</td>
+  
+    <td colspan=2>killed by a chameleon imitating a snake</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">1418</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637172996.tnnt.html">632</a>
+  </td>
+  <td class="num">0:11:15</td>
+  <td class="num">Nov. 17, 2021, 6:27 p.m.</td>
+  
+    <td colspan=2>quit</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Arc-Dwa-Mal-Law
+    
+  </td>
+  <td class="num">2095</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637170414.tnnt.html">567</a>
+  </td>
+  <td class="num">0:13:21</td>
+  <td class="num">Nov. 17, 2021, 5:46 p.m.</td>
+  
+    <td colspan=2>killed by a large mimic</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Arc-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">6603</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637165602.tnnt.html">4165</a>
+  </td>
+  <td class="num">1:19:48</td>
+  <td class="num">Nov. 17, 2021, 5:33 p.m.</td>
+  
+    <td colspan=2>killed by a forest centaur</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Arc-Dwa-Fem-Law
+    
+  </td>
+  <td class="num">8193</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637078906.tnnt.html">9789</a>
+  </td>
+  <td class="num">1:15:53</td>
+  <td class="num">Nov. 16, 2021, 5:24 p.m.</td>
+  
+    <td colspan=2>poisoned by a giant spider</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Arc-Dwa-Mal-Law
+    
+  </td>
+  <td class="num">892</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1637077459.tnnt.html">1600</a>
+  </td>
+  <td class="num">0:23:52</td>
+  <td class="num">Nov. 16, 2021, 4:08 p.m.</td>
+  
+    <td colspan=2>killed by a giant spider</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Pri-Hum-Fem-Cha
+    
+  </td>
+  <td class="num">48468</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1636654029.tnnt.html">1503468</a>
+  </td>
+  <td class="num">3 days, 1:18:33</td>
+  <td class="num">Nov. 14, 2021, 7:25 p.m.</td>
+  
+    <td colspan=2>killed by a priestess of Moloch (with the Amulet)</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">20074</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1636426676.tnnt.html">51275</a>
+  </td>
+  <td class="num">17:29:38</td>
+  <td class="num">Nov. 9, 2021, 8:27 p.m.</td>
+  
+    <td colspan=2>killed by a minotaur</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Pri-Elf-Fem-Cha
+    
+  </td>
+  <td class="num">857</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1636426432.tnnt.html">146</a>
+  </td>
+  <td class="num">0:03:42</td>
+  <td class="num">Nov. 9, 2021, 2:57 a.m.</td>
+  
+    <td colspan=2>killed by a boulder</td>
+  
+</tr>
+
+    
+      
+<tr class=" lost ">
+  <td>
+    
+      stoicjin
+    
+  </td>
+  <td class="nowrap">
+    Val-Hum-Fem-Neu
+    
+  </td>
+  <td class="num">656</td>
+  <td class="num">
+    <a href="https://hardfought.org/userdata/s/stoicjin/tnnt/dumplog/1636163697.tnnt.html">227</a>
+  </td>
+  <td class="num">0:04:13</td>
+  <td class="num">Nov. 6, 2021, 1:59 a.m.</td>
+  
+    <td colspan=2>killed by a gnomish wizard</td>
+  
+</tr>
+
+    
+  </tbody>
+</table>
+
+
+ 
+
+
+
+
+
+   
+ 
+
+
+
+<h2>Achievements</h2>
+<div class="achieve-top">
+  <p id="ach-hide">[hide table]</p>
+  <table id="achievements-table">
+    <thead>
+      <tr class="framed">
+        <th></th>
+        <th>Achievement</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Ringing in My Ears</td>
+          <td>Get the Bell of Opening</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Feel the Burn</td>
+          <td>Enter Gehennom</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Emerging Into the Light</td>
+          <td>Get the Candelabrum of Invocation</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Weighing of the Heart</td>
+          <td>Get the Book of the Dead</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Bell, Book and Candle</td>
+          <td>Perform the invocation ritual</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>My Preciousss</td>
+          <td>Get the Amulet of Yendor</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>From the Dungeon they Came</td>
+          <td>Enter the Elemental Planes</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Halls of the Gods</td>
+          <td>Enter the Astral Plane</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Are You Feeling Lucky</td>
+          <td>Get the luckstone from Mines&#x27; End</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Boulder Pusher</td>
+          <td>Finish Sokoban</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Anti-Stoner</td>
+          <td>Kill Medusa</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Back to Civilisation</td>
+          <td>Step onto the Minetown altar</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Sage Advice</td>
+          <td>Consult the Oracle</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Archetypal Hero</td>
+          <td>Get admitted to the Quest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Musical Mastermind</td>
+          <td>Learn the passtune</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Orpheus</td>
+          <td>Activate a drawbridge with the passtune</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Have Fun Storming the Castle</td>
+          <td>Blow up the Castle drawbridge</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Chosen One</td>
+          <td>Get crowned</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Watch Your Footing</td>
+          <td>Step onto the vibrating square</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>It&#x27;s Dangerous To Go Alone! Take This</td>
+          <td>Put an item into a swap chest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The True Dungeon Masters</td>
+          <td>Chat with an active devteam member</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>There Is No Spoon</td>
+          <td>Finish the task the devteam requires of you</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Thunderdome</td>
+          <td>Defeat the NPC from the NPC Deathmatch quest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Asmodead</td>
+          <td>Kill Asmodeus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Baalzebust</td>
+          <td>Kill Baalzebub</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Orcrushed</td>
+          <td>Kill Orcus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Juibl-X</td>
+          <td>Kill Juiblex</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Demogorgone</td>
+          <td>Kill Demogorgon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Yee-No-Go</td>
+          <td>Kill Yeenoghu</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Geryon-Be-Gone</td>
+          <td>Kill Geryon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Dispater-Dispatcher</td>
+          <td>Kill Dispater</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Conqueror of Death</td>
+          <td>Kill Death</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Curer of Pestilence</td>
+          <td>Kill Pestilence</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Feeder of Famine</td>
+          <td>Kill Famine</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Why Won&#x27;t You DIE Already</td>
+          <td>Kill the Wizard of Yendor 20 or more times</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Double Whammy</td>
+          <td>Kill the Wizard of Yendor twice in one action</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>I Did It For The Money</td>
+          <td>Kill Croesus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Holy War</td>
+          <td>Kill a priest of Moloch</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Nine for Mortal Men Doomed to Die ... Again</td>
+          <td>Kill all nine Nazgul</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Furious</td>
+          <td>Kill all three erinyes</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Minetown Avenger</td>
+          <td>Kill every orc in Orctown</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>All Clear</td>
+          <td>Kill all hostiles in the Big Room</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Master of the Four Elementals</td>
+          <td>Kill at least 4 elementals on their respective home planes</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Kill it Twice</td>
+          <td>Destroy a ghost</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Dragonslayer</td>
+          <td>Kill a dragon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Playerbanebane</td>
+          <td>Kill a soldier ant</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>How Much Wood?</td>
+          <td>Kill or tame a woodchuck</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Storm the Gates of Heaven</td>
+          <td>Kill an Archon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Death onna Stick</td>
+          <td>Kill a member of 25 different monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Bring out your Dead</td>
+          <td>Kill a member of 50 different monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Diverse Death-Dealer</td>
+          <td>Kill a member of 100 different monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Grim Reaper</td>
+          <td>Kill a member of 200 different monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Gotta Kill &#x27;em All</td>
+          <td>Kill a member of all eligible monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Learn the Alphabet</td>
+          <td>Kill a monster of each class from a to z</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>LEARN THE ALPHABET</td>
+          <td>Kill a monster of each class from A to Z (except I)</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>What It Was Made For</td>
+          <td>Kill a appropriate monster with a Bane weapon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Kop Training Program</td>
+          <td>Kill a monster with a rubber hose</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Buffy</td>
+          <td>Destroy an undead with #turn</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Bright Light, Bright Light</td>
+          <td>Kill a gremlin with any light source</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Get Your Gas Mask</td>
+          <td>Kill a monster with a stinking cloud</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>It&#x27;s The Pits</td>
+          <td>Kill something while you are stuck in a pit</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Never Saw It Coming</td>
+          <td>Kill an invisible monster without see invisible</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Rope-a-Dope</td>
+          <td>Kill a monster with a thrown aklys</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hulk Smash</td>
+          <td>Kill a monster with a heavy iron ball</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>DIRGE</td>
+          <td>Instakill a monster with poison</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Poseidon</td>
+          <td>Kill a sea monster with a trident</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Touch It With A 10 Foot Pole</td>
+          <td>Kill a floating eye with a polearm</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Bar Brawler</td>
+          <td>Kill a monster with HP damage by smashing a bottle on it</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Rat Tail</td>
+          <td>Kill a monster with a wet towel</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hammer of the Gods</td>
+          <td>Kill a monster by throwing Mjollnir and having it return to your hand</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Friendly Fire</td>
+          <td>Get a hostile monster killed by another hostile monster&#x27;s projectile weapon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>It&#x27;s 4:20 Somewhere</td>
+          <td>Stone a monster</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Part-time Statue</td>
+          <td>Cure stoning</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Blob</td>
+          <td>Cure sliming</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Captain Ahab</td>
+          <td>Survive being grabbed by a sea monster</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Furry Little Problem</td>
+          <td>Cure lycanthropy</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>New Lease on Life</td>
+          <td>Cure deathly illness</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Diamond in the Rough</td>
+          <td>Identify a gem with a touchstone</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Curse the Darkness</td>
+          <td>Identify a potion of oil by applying it</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Michelin Guide</td>
+          <td>Identify both sources of food detection</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Jeweler</td>
+          <td>Identify all rings</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Mikado</td>
+          <td>Identify all wands</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>King of Bling</td>
+          <td>Identify all amulets</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Bookworm</td>
+          <td>Identify all spellbooks</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Scholar</td>
+          <td>Identify all scrolls</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Alchemist</td>
+          <td>Identify all potions</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Fashionista</td>
+          <td>Identify all non-obvious cloaks, helms, boots, and gloves</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Mineralogist</td>
+          <td>Identify every type of valuable gemstone</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Geologist</td>
+          <td>Identify all gray stones</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Glass Collector</td>
+          <td>Identify all worthless glass</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Friends Not Food</td>
+          <td>Receive the Quest with vegetarian conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Animal Rights Activist</td>
+          <td>Receive the Quest with vegan conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Anti Gulp</td>
+          <td>Receive the Quest with foodless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>No Help from Above</td>
+          <td>Receive the Quest with atheist conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Wax On Wax Off</td>
+          <td>Receive the Quest with weaponless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Thou Shalt Not Kill</td>
+          <td>Receive the Quest with pacifist conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Me No Do Words Good</td>
+          <td>Receive the Quest with illiterate conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Lost My Transmutation License</td>
+          <td>Receive the Quest with polypileless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>True to Form</td>
+          <td>Receive the Quest with polyselfless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Self Sufficient</td>
+          <td>Receive the Quest with wishless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Leave the Artifacts to the Gods</td>
+          <td>Receive the Quest with artifact wishless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Feeling Your Way</td>
+          <td>Receive the Quest with zen (permablind) conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Going Commando</td>
+          <td>Receive the Quest with nudist conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Make Love, Not War</td>
+          <td>Receive the Quest with genocideless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>No Help From The Floor</td>
+          <td>Receive the Quest with Elberethless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>It&#x27;s A Wonderful Trip</td>
+          <td>Receive the Quest with permahallu conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Silent World</td>
+          <td>Receive the Quest with permadeaf conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Keep Your Fancy Toys</td>
+          <td>Receive the Quest with artifactless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>New Dungeon, Never Occupied</td>
+          <td>Receive the Quest with bonesless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Extradimensionally Challenged</td>
+          <td>Receive the Quest with swapchestless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Fur Allergy</td>
+          <td>Receive the Quest with petless conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Death Isn&#x27;t So Cheap</td>
+          <td>Receive the Quest with survivor conduct intact</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Breaking and Entering</td>
+          <td>Enter a vault</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Who Was That David Person Anyway?</td>
+          <td>Enter a treasure zoo</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Absolute Monarchy</td>
+          <td>Enter a throne room</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>They&#x27;re After Me Lucky Charms</td>
+          <td>Enter a leprechaun hall</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Hive Mind</td>
+          <td>Enter a beehive</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Day of the Dead</td>
+          <td>Enter a graveyard</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Team a Headquarters</td>
+          <td>Enter an anthole</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Halt, Who Goes There?</td>
+          <td>Enter a barracks</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Dungeon Ecology</td>
+          <td>Enter a swamp</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Statue Showcase</td>
+          <td>Enter a cockatrice nest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Ocean&#x27;s Eleven</td>
+          <td>Enter Fort Ludios</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Pilgrim</td>
+          <td>Visit every type of aligned altar</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>The Grand Tour</td>
+          <td>Visit each high altar on the Astral Plane</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>All You Ever Wanted</td>
+          <td>Get a wish from every wish source</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hyperliterate</td>
+          <td>Read every readable item in the game</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Bomb Squad</td>
+          <td>Untrap all 8 types of traps that can be untrapped</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Balanced Diet</td>
+          <td>Eat one of each type of produce in one game</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Smorgasbord</td>
+          <td>Eat every type of food in the game</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Extreme Omnivore</td>
+          <td>Eat an object from every common, edible object class</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Go Forth and Smite</td>
+          <td>Receive an artifact gift from your deity</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Too Little Too Late</td>
+          <td>Get a sacrifice gift on the Astral Plane</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Some Watery Tart</td>
+          <td>Be gifted Excalibur</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Superfood</td>
+          <td>Gain strength by eating royal jelly</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>You Are What You Eat</td>
+          <td>Gain an intrinsic by eating a corpse (or tin or glob)</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Magivore</td>
+          <td>Gain a magical intrinsic by eating a piece of jewelry</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Batty</td>
+          <td>Get stunned by eating bat meat</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Pet Whisperer</td>
+          <td>Tame a monster by feeding it</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Beast Master</td>
+          <td>Tame a monster without using food</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Shifty</td>
+          <td>Tame a shapeshifter in any way</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Cat Lady</td>
+          <td>Tame seven &quot;f&quot; in the course of one game</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Best Friends Forever</td>
+          <td>Take your starting pet to full adulthood</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Pet Rescue</td>
+          <td>Free a pet from a trap that you didn&#x27;t create yourself</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Distinction Without a Difference</td>
+          <td>Polymorph a pet using a polytrap</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Well... Bye</td>
+          <td>Prevent a Rider from reviving</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Indulgences</td>
+          <td>Buy protection from a priest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Royal Treatment</td>
+          <td>Sit on a throne</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>It&#x27;ll Turn Up Later</td>
+          <td>Drop a ring in a sink</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Orthodoxy</td>
+          <td>Convert an altar</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Always Talk to the Wise Old Man</td>
+          <td>Chat with Izchak</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Isaac Newton</td>
+          <td>Get fruit by kicking a tree</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Not The Bees</td>
+          <td>Get bees by kicking a tree</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Dungeon Economics</td>
+          <td>Buy or sell something at a shop</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Conspicuous Consumption</td>
+          <td>Buy an unidentified gem from a shop</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Art of the Deal</td>
+          <td>Bankrupt a shopkeeper by getting all their money</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Stop, Thief!</td>
+          <td>Be chased by the Keystone Kops</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Wash it Clean</td>
+          <td>Uncurse an item in a fountain</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Well-Read</td>
+          <td>Learn a level 5+ spell</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hand Crafted</td>
+          <td>Make a dragon scale mail</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>A Little Light Larceny</td>
+          <td>Get robbed by a nymph</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Pot of Greed</td>
+          <td>Have your purse lightened by a leprechaun</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Birds and the Bees</td>
+          <td>Dally with a foocubus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hello, Nurse!</td>
+          <td>Get a nurse to heal you or raise your max HP</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>The Most Dangerous Game</td>
+          <td>Catch a monster in a trap set by you</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Liberated</td>
+          <td>Get yourself unpunished</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>It&#x27;s Called That For a Reason</td>
+          <td>Come to earth by levitating over a sink</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Scribe</td>
+          <td>Write a scroll with a magic marker</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>First Edition</td>
+          <td>Write a book</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Dragon Rider</td>
+          <td>Ride a dragon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Shimmer</td>
+          <td>Erosionproof an item</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>They Like Shiny Things</td>
+          <td>Throw a gem at a unicorn</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Civilized Cooking</td>
+          <td>Open a tin with a tin opener</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Reincarnation Cancelled</td>
+          <td>Tin a troll or get its corpse to rot</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Exotic Meat</td>
+          <td>Tin a unique monster</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Tinned Out</td>
+          <td>Use up a tinning kit</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Only Mostly Dead</td>
+          <td>Resurrect a corpse</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Necromancer</td>
+          <td>Resurrect a fallen pet and have it return tame</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Asudem</td>
+          <td>Revive Perseus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>So Thou Thought Thou Couldst Resurrect Me</td>
+          <td>Resurrect the Wizard of Yendor</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Wasn&#x27;t a Meal, Wasn&#x27;t Ready, And You Shouldn&#x27;t Have Eaten It</td>
+          <td>Eat a military ration</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Insert Quarter to Continue</td>
+          <td>Get life-saved</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Buried Treasure</td>
+          <td>Dig up a grave not in a graveyard</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Movers and Shakers</td>
+          <td>Cause an earthquake</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Snake Charmer</td>
+          <td>Pacify a snake with a flute</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Tin Foil Hat</td>
+          <td>Dodge a brainsucking attack</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Right Back at Ya</td>
+          <td>Hit an enemy with a thrown boomerang</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>It Burnsss</td>
+          <td>Deal silver damage to a silver-hating monster</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Arrakis</td>
+          <td>Make a crysknife</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Obligatory Pointy Hat</td>
+          <td>Put on a cornuthaum as a wizard</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Hobbit Skin</td>
+          <td>Wear a mithril coat</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>The Words of the Prophets</td>
+          <td>Read 3 random graffiti</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Are You Still Pudding Farming</td>
+          <td>Split a pudding</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Wearable Snack</td>
+          <td>Wear a meat ring</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Frozen Treats</td>
+          <td>Loot an ice box</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Six Pack</td>
+          <td>Stock an ice box with 6 or more potions of booze</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Pygmalion</td>
+          <td>Create a monster from a figurine</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Nerd</td>
+          <td>Read a spellbook while wearing lenses and a T-shirt</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Recharged</td>
+          <td>Charge an object</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Get Your Kicks</td>
+          <td>Kick an item embedded in a wall or rock</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Spiderman</td>
+          <td>Grab an item with a grappling hook</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>More Light</td>
+          <td>Refill the Candelabrum after it burns out after the Invocation</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Fill &#x27;Er Up</td>
+          <td>Fill an oil lamp with a potion of oil</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Chemistry 101</td>
+          <td>Alchemize two potions in an established recipe</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Escape to Discworld</td>
+          <td>Read a Terry Pratchett novel</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Near Death Experience</td>
+          <td>#chat to Death while carrying a Terry Pratchett novel</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Prize Inside!</td>
+          <td>Get a spellbook by breaking a randomly-generated statue</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Ding-a-Ling</td>
+          <td>Summon a nymph by ringing a cursed bell</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Diver</td>
+          <td>Dive into a moat or pool and retrieve an item from the bottom</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Ceiling Clinging Commute</td>
+          <td>Ride a wumpus over water</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Collapse the Wavefunction</td>
+          <td>Open the box containing Schroedinger&#x27;s Cat</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>I&#x27;m Free! I&#x27;m Free!</td>
+          <td>Free a prisoner</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Spam, Spam, Spam</td>
+          <td>Read a scroll of mail</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Gender Swap</td>
+          <td>Put on an amulet of change</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Gender Bender</td>
+          <td>Change gender two or more times</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Motherhood</td>
+          <td>Lay an egg</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Father Figure</td>
+          <td>Hatch an egg not laid by you and have it come out tame</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Shafted</td>
+          <td>Fall down a shaft</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Potions of Booze Cost More Than That</td>
+          <td>Get two bits for an ale from a priest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Horatius at the Bridge</td>
+          <td>Extinct soldiers or Keystone Kops</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Who&#x27;s That Pretty Girl in the Mirror, There?</td>
+          <td>Deflect a nymph with a mirror</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Money Talks</td>
+          <td>Bribe a demon lord with at least 25000 gold</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>The Negotiator</td>
+          <td>Successfully bribe a demon lord with 1 zorkmid</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Under New Management</td>
+          <td>Change your alignment by any means</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Heisenberg</td>
+          <td>Become uncertain about your position or velocity</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Who You Gonna Call?</td>
+          <td>Get scared by a ghost</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Groundhog Day</td>
+          <td>Return to a forgotten level</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Tainted</td>
+          <td>Dip an item in unholy water</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Hydrochloric</td>
+          <td>Dissolve iron bars with acid</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Predictably, Nothing Happens</td>
+          <td>Break an identified wand of nothing</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Wanton Waste</td>
+          <td>Break an identified wand of wishing with at least 1 charge</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Neutralized</td>
+          <td>Cancel a monster</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Panacea</td>
+          <td>Neutralize a harmful potion with a unicorn horn</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Croesus Competitor</td>
+          <td>Finish a game carrying at least 50000 gold</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Croesus Buyout</td>
+          <td>Finish a game carrying at least 100000 gold</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Palantir</td>
+          <td>Successfully apply a crystal ball</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Peak Condition</td>
+          <td>Raise all attributes to at least 18</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Those Who Came Before</td>
+          <td>Sight another player&#x27;s bones pile</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Imitation Bones</td>
+          <td>Step onto the Rogue level fake bones pile</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Replacement Goldfish</td>
+          <td>Cast create familiar</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Pop the Question</td>
+          <td>Give a ring of adornment to a succubus</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>No Soup For You!</td>
+          <td>Get permanently expelled from the Quest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Discerning Palate</td>
+          <td>Gain intrinsic food appraisal</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Banishing Spells Not Included</td>
+          <td>Summon a demon lord</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Tastes Like Chicken</td>
+          <td>Eat chickatrice or cockatrice meat</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Dust to Dust</td>
+          <td>Wrest one last charge from a wand of wishing</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Teetotaler</td>
+          <td>Neutralize a potion of booze with an amethyst</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Spooky Scary Skeletons</td>
+          <td>Get scared by the rattling of a skeleton</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Gullible</td>
+          <td>Lie to a vault guard about your name</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Luck of the Grasshopper</td>
+          <td>Reach +13 Luck</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Murphy&#x27;s Law</td>
+          <td>Reach -13 Luck</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Looking Slick</td>
+          <td>Grease a piece of armor</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>The Deathly Hallows</td>
+          <td>Wield a wand of death while wearing an invisibility cloak and amulet of life saving</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Indiana Jones</td>
+          <td>Disarm a monster with a bullwhip</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Minesweeper</td>
+          <td>Disarm all land mines in Fort Ludios without blowing any up</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>007</td>
+          <td>Unlock something with a credit card</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Bob Ross</td>
+          <td>Release a picture-painting demon from a camera</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Got No Talent</td>
+          <td>Scare something by playing music</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Cookie Monster</td>
+          <td>Read a fortune without eating its cookie</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Say Hello To My Evil Friend</td>
+          <td>Have a non-guaranteed demon lord gated in or summoned</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Make your Mark</td>
+          <td>Engrave with an athame</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>One Hit KO</td>
+          <td>Deal a monster its maximum HP or more of damage (minimum 20)</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Drink It To The Next Level</td>
+          <td>Level up by drinking from a sink</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>You&#x27;re About To Die, You Scrub</td>
+          <td>Get a special message saying you&#x27;re about to die, you scrub</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Extinctionist Lite</td>
+          <td>Genocide 20 or more monster species</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Dudley&#x27;s Hero</td>
+          <td>Extinct newts</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Ice Jesus</td>
+          <td>Walk on top of lava unharmed</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Rare Loot</td>
+          <td>Acquire an athame that was generated in the inventory of a lich</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Boy Scout</td>
+          <td>Complete Sokoban without incurring any penalties for rule-breaking</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Sounds Hollow</td>
+          <td>Reveal a secret door with a stethoscope</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Unorthodox Exit</td>
+          <td>Reach the Planes via quaffing</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Paddling Pool</td>
+          <td>Create pools from a fountain</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Purple Rain</td>
+          <td>Get at least 20 enemies eaten by purple worms on the Astral Plane</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Heroes&#x27; Feast</td>
+          <td>Eat at least 3 artifacts</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Practical Joke</td>
+          <td>Have a tin blow up in your face</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>Amon Hen</td>
+          <td>Get either of the two &quot;vision&quot; effects from sitting on a throne</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Off With Her Head!</td>
+          <td>Decapitate an enemy with Vorpal Blade</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Detonator</td>
+          <td>Explode a large box or chest</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Lightbringer</td>
+          <td>Light up at least 20 dark rooms in the Dungeons of Doom</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Cosmic Bungee Cord</td>
+          <td>Get sent back a total of 15 or more levels by the mysterious force</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Tenacious Companion</td>
+          <td>Have a pet survive all the way to the Astral Plane that you brought into the Plane of Earth</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="achieved">&check;</td>
+          
+          <td>No Rulez</td>
+          <td>Remove all watchmen from Minetown</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Packing Light</td>
+          <td>Successfully store a bag of holding inside another bag of holding</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Shoo Off</td>
+          <td>Make a monster of difficulty 5 or more escape the dungeon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>What Have I Unleashed</td>
+          <td>Make a demon lord escape the dungeon</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Walking Bullseye</td>
+          <td>Have +30 AC</td>
+        </tr>
+      
+        <tr>
+          
+            <td class="not-achieved">&cross;</td>
+          
+          <td>Doorstopper</td>
+          <td>Have a door resist 8 consecutive times when trying to open or close it</td>
+        </tr>
+      
+    </tbody>
+  </table>
+  <div class="achieve-summary">
+    
+      <div class="achieve-bar"
+          style="width:41%"></div>
+      <div class="achieve-msg">
+        118 out of 287 achievements attained
+      </div>
+    
+  </div>
+</div>
+
+
+
+
+  
+  <h2>Unique Deaths</h2>
+  <table>
+    <thead>
+      <tr class="framed">
+        <th></th>
+        <th>Death</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr>
+          <td class="num dim">1</td>
+          <td>killed by a bolt of lightning</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">2</td>
+          <td>killed by a boulder</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">3</td>
+          <td>killed by a chameleon imitating a snake</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">4</td>
+          <td>killed by a dwarf</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">5</td>
+          <td>killed by a forest centaur</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">6</td>
+          <td>killed by a gecko</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">7</td>
+          <td>killed by a giant spider</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">8</td>
+          <td>killed by a gnome lord</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">9</td>
+          <td>killed by a gnomish wizard</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">10</td>
+          <td>killed by a large mimic</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">11</td>
+          <td>killed by a minotaur</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">12</td>
+          <td>killed by a mumak</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">13</td>
+          <td>killed by a priest(ess) of a deity</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">14</td>
+          <td>poisoned by a giant spider</td>
+        </tr>
+      
+        <tr>
+          <td class="num dim">15</td>
+          <td>poisoned by a pit viper</td>
+        </tr>
+      
+    </tbody>
+  </table>
+
+
+</body>
+</html>

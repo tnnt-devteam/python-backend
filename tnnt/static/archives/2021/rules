@@ -1,0 +1,292 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Rules</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu  menusel ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
+              <a href="https://tnnt.org/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2021 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<article>
+  <h4>General Rules</h4>
+  <p>
+    Use your common sense: don't hack into the game servers, don't deliberately
+    corrupt or leak memory or otherwise try to crash or hang up the game, don't
+    abuse the RNG, and don't be a jerk.
+  </p>
+  <p>
+    Bots are prohibited as well. TNNT is a tournament for human players, not a
+    competition for the best or luckiest bot. Players found to be running a bot
+    may be summarily banned from the tournament. (Our working definition of a
+    bot is any system that automatically evaluates game state. Thus, pasting
+    macros is fine, but running a startscum script that quits the game if your
+    inventory, stats, or surroundings do not meet certain criteria is not.)
+  </p>
+  <p>
+    Apart from bots, anything within the normal execution of the game is fair
+    game. This includes farming, scumming, abusing program bugs, reading other
+    characters' dumplogs, viewing ttyrecs of your own or others' games, using
+    interface enhancers like InterHack, and hanging out on IRC to see if the
+    gray stone you picked up in Mines' End gets livelogged as the luckstone.
+  </p>
+  <p>
+    Digging for victory is fine, of course, but please make sure to set !bones
+    in your rc file so that you don't leave useless bones and throw away other
+    players' interesting bones on your way down.
+  </p>
+
+  <h4>Clans</h4>
+  <p>
+    To create clans, invite players to your clan, and accept invitations to
+    others' clans,
+    
+      please <a href="login">log in</a>.
+    
+  </p>
+  <p>
+    Clan size is capped at 12, and a clan is not allowed to have more than 12
+    pending invitations. The tournament is designed so that adding new clan
+    members, however inexperienced, cannot hurt the clan overall.
+  </p>
+  <p>
+    At November 10th at midnight UTC, clan membership will become frozen;
+    people can still leave or be kicked out of clans, but cannot create new
+    clans or join new clans.
+  </p>
+
+  <h4>Trophies</h4>
+  <p>
+    Various accomplishments across one or multiple games earn you trophies. To
+    see how to earn these, go to the <a href="trophies">Trophies page</a>
+    and hover over them; they will show up as a tooltip. Some trophies need a
+    bit more explanation and are covered below.
+  </p>
+
+  <p>
+    Many of the trophies which can be earned individually can also be earned
+    collectively by a clan. If an individual earns one of these trophies on
+    their own, their clan will also get the trophy.
+  </p>
+
+  <h5>The Great and Lesser Race/Role</h5>
+  <p>
+    The Great Race/Role are a set of multi-ascension trophies for playing all of
+    the interesting character combinations for a given race or role. Gender does
+    not matter. Alignment does not matter for The Great Race, but it does for
+    The Great Role.  Only starting alignment is counted - tricks with changing
+    your alignment in-game won't work.
+  </p>
+  <p>
+    The Great Human is a special case, and requires you to play only those roles
+    which must be human, as shown in the table below.  The required Monk can be
+    of any alignment.
+  </p>
+  <p>
+    Similarly, there is no such thing as the Great Knight, Samurai, or Tourist,
+    because only a single race and alignment combination can be played with
+    these roles.
+  </p>
+  <p>
+    These may be achieved by individual players or by clans working together.
+  </p>
+
+  <p>
+    Below is a table of requirements for each race or role:
+    <table>
+      <thead>
+        <tr class="framed">
+          <th>Trophy</th>
+          <th>Number of Ascensions</th>
+          <th>Requirements</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>The Great Orc</td>
+          <td>4</td>
+          <td>Bar, Ran, Rog, Wiz</td>
+        </tr>
+        <tr>
+          <td>The Great Gnome</td>
+          <td>5</td>
+          <td>Arc, Cav, Hea, Ran, Wiz</td>
+        </tr>
+        <tr>
+          <td>The Great Dwarf</td>
+          <td>3</td>
+          <td>Arc, Cav, Val</td>
+        </tr>
+        <tr>
+          <td>The Great Elf</td>
+          <td>3</td>
+          <td>Pri, Ran, Wiz</td>
+        </tr>
+        <tr>
+          <td>The Great Human</td>
+          <td>4</td>
+          <td>Kni, Mon, Sam, Tou</td>
+        </tr>
+        <tr>
+          <td>The Great Archeologist</td>
+          <td>4</td>
+          <td>Hum-L, Hum-N, Dwa-L, Gno-N</td>
+        </tr>
+        <tr>
+          <td>The Great Barbarian</td>
+          <td>3</td>
+          <td>Hum-N, Hum-C, Orc-C</td>
+        </tr>
+        <tr>
+          <td>The Great Caveperson</td>
+          <td>4</td>
+          <td>Hum-L, Hum-N, Dwa-L, Gno-N</td>
+        </tr>
+        <tr>
+          <td>The Great Healer</td>
+          <td>2</td>
+          <td>Hum-N, Gno-N</td>
+        </tr>
+        <tr>
+          <td>The Great Monk</td>
+          <td>3</td>
+          <td>Hum-L, Hum-N, Hum-C</td>
+        </tr>
+        <tr>
+          <td>The Great Priest</td>
+          <td>4</td>
+          <td>Hum-L, Hum-N, Hum-C, Elf-C</td>
+        </tr>
+        <tr>
+          <td>The Great Ranger</td>
+          <td>5</td>
+          <td>Hum-N, Hum-C, Elf-C, Gno-N, Orc-C</td>
+        </tr>
+        <tr>
+          <td>The Great Rogue</td>
+          <td>2</td>
+          <td>Hum-C, Orc-C</td>
+        </tr>
+        <tr>
+          <td>The Great Valkyrie</td>
+          <td>3</td>
+          <td>Hum-L, Hum-N, Dwa-L</td>
+        </tr>
+        <tr>
+          <td>The Great Wizard</td>
+          <td>5</td>
+          <td>Hum-N, Hum-C, Elf-C, Gno-N, Orc-C</td>
+        </tr>
+      </tbody>
+    </table>
+  </p>
+
+  <p>
+    The Lesser Race/Role works identically to the Great, but instead of ascending,
+    you must instead complete a game with each required character combination
+    where you successfully retrieve the luckstone from the bottom of the Mines
+    <strong>AND</strong> retrieve the prize from the end of Sokoban.
+  </p>
+
+  <p>
+    Like other trophies, these can also be earned collectively by a clan.
+  </p>
+
+  <p>
+    Achieving a Great Race or Role does not necessarily imply that you also
+    deserve the same Lesser Race or Role, since it is possible to ascend
+    without completing Sokoban and/or retrieving the Mines' End luckstone.
+  </p>
+
+  <h5>Ascending without Killing (insert monster here)</h5>
+  <p>
+    These trophies are fairly straightforward for the most part, but one bit of
+    clarification: in order to achieve the trophy, you can't let the specified
+    monster die by any means, like how it works in Junethack. Merely abstaining
+    from killing them personally while your pets or conflicted monsters finish
+    them off will not earn the trophy.
+  </p>
+
+  <h4>Streaking</h4>
+  <p>
+    A streak is a series of consecutive winning games by the same player.
+    Because you can have multiple in-progress games on multiple servers, the
+    rule is that the first game started after a win is the candidate for
+    continuing a streak. Winning or losing non-candidate games will not affect
+    the streak whatsoever. If you start a new game that is eligible to continue
+    two or more streaks, it will continue the streak with the earliest overall
+    start time.
+  </p>
+  <p>
+    For those familiar with DCSS tournaments, these rules are the same as theirs.
+  </p>
+
+  <h4>Achievements</h4>
+  <p>
+    Achievements are small in-game accomplishments you can collect for yourself
+    and your clan, which vary in difficulty from pretty easy to very
+    challenging. You can use the #achievements command during a game to view
+    which ones are and aren't completed. The #tnntstats command is also useful
+    for viewing progress towards certain achievements.
+  </p>
+  <p>
+    To see a list of all achievements and what is required to earn them,
+    navigate to your player or clan page, or view
+    <a href="achievements">all achievements by the number of people who
+      achieved them</a>.
+  </p>
+  <p>
+
+</article>
+
+</body>
+
+</html>

@@ -1,0 +1,2922 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Trophies</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu  menusel ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
+              <a href="https://tnnt.org/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2022 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<table class="trophies">
+  <thead>
+    <tr class="framed">
+      <th>trophy</th>
+      <th>players</th>
+      <th>clans</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td class="trophy-name" title="Ascend a dwarven Arc, Cav, and Val">
+          Great Dwarf
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/squishy">squishy</a>
+
+            &middot;
+          
+            <a href="player/Tangles">Tangles</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend an orcish Bar, Ran, Rog, and Wiz">
+          Great Orc
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend an elvish Pri, Ran, and Wiz">
+          Great Elf
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/asumu">asumu</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/The_Levellers">The_Levellers</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend a gnomish Arc, Cav, Hea, Ran, and Wiz">
+          Great Gnome
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend a Kni, Mon, Sam, and Tou">
+          Great Human
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 4 race/alignment combos for Archeologist">
+          Great Archeologist
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/efot">efot</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 3 race/alignment combos for Barbarian">
+          Great Barbarian
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 4 race/alignment combos for Caveperson">
+          Great Caveperson
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 2 race/alignment combos for Healer">
+          Great Healer
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/efot">efot</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 3 alignments for Monk">
+          Great Monk
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 4 race/alignment combos for Priest">
+          Great Priest
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 5 race/alignment combos for Ranger">
+          Great Ranger
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 2 race/alignment combos for Rogue">
+          Great Rogue
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 3 race/alignment combos for Valkyrie">
+          Great Valkyrie
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/jonosmalls88">jonosmalls88</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend all 5 race/alignment combos for Wizard">
+          Great Wizard
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with a dwarven Arc, Cav, and Val">
+          Lesser Dwarf
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/squishy">squishy</a>
+
+            &middot;
+          
+            <a href="player/Tangles">Tangles</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/GehenNOMNOMNOM">GehenNOMNOMNOM</a>
+
+            
+            
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with an orcish Bar, Ran, Rog, and Wiz">
+          Lesser Orc
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with an elvish Pri, Ran, and Wiz">
+          Lesser Elf
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/asumu">asumu</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/greenbourne277">greenbourne277</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clan/Order%20of%20the%20Chickatrice">Order of the Chickatrice</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The_Levellers">The_Levellers</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with a gnomish Arc, Cav, Hea, Ran, and Wiz">
+          Lesser Gnome
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with a Kni, Mon, Sam, and Tou">
+          Lesser Human
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            &middot;
+          
+            <a href="player/mobileuser">mobileuser</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/Medusa%20Swim%20Team">Medusa Swim Team</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 4 race/alignment combos for Archeologist">
+          Lesser Archeologist
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/efot">efot</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 3 race/alignment combos for Barbarian">
+          Lesser Barbarian
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 4 race/alignment combos for Caveperson">
+          Lesser Caveperson
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 2 race/alignment combos for Healer">
+          Lesser Healer
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/efot">efot</a>
+
+            &middot;
+          
+            <a href="player/youngster">youngster</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 3 alignments for Monk">
+          Lesser Monk
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 4 race/alignment combos for Priest">
+          Lesser Priest
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 5 race/alignment combos for Ranger">
+          Lesser Ranger
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 2 race/alignment combos for Rogue">
+          Lesser Rogue
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/MoonPig">MoonPig</a>
+
+            &middot;
+          
+            <a href="player/Roke">Roke</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 3 race/alignment combos for Valkyrie">
+          Lesser Valkyrie
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/jonosmalls88">jonosmalls88</a>
+
+            &middot;
+          
+            <a href="player/Kontroller">Kontroller</a>
+
+            &middot;
+          
+            <a href="player/Merlek">Merlek</a>
+
+            &middot;
+          
+            <a href="player/nurdglaw">nurdglaw</a>
+
+            &middot;
+          
+            <a href="player/Staengia">Staengia</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clan/GehenNOMNOMNOM">GehenNOMNOMNOM</a>
+
+            
+            
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Meanwhile%20in%20Europe">Meanwhile in Europe</a>
+
+            
+            
+          
+            <a href="clan/Order%20of%20the%20Cockatrice">Order of the Cockatrice</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+            <a href="clan/unfoog">unfoog</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete Mines and Soko with all 5 race/alignment combos for Wizard">
+          Lesser Wizard
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend games with both starting genders">
+          Both Genders
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/aharbin">aharbin</a>
+
+            &middot;
+          
+            <a href="player/allanb">allanb</a>
+
+            &middot;
+          
+            <a href="player/AmElm">AmElm</a>
+
+            &middot;
+          
+            <a href="player/anselmus">anselmus</a>
+
+            &middot;
+          
+            <a href="player/aosdict">aosdict</a>
+
+            &middot;
+          
+            <a href="player/asumu">asumu</a>
+
+            &middot;
+          
+            <a href="player/Bean">Bean</a>
+
+            &middot;
+          
+            <a href="player/blankman">blankman</a>
+
+            &middot;
+          
+            <a href="player/bleeko">bleeko</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/crunchbubba">crunchbubba</a>
+
+            &middot;
+          
+            <a href="player/dingotron">dingotron</a>
+
+            &middot;
+          
+            <a href="player/disperse">disperse</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/efot">efot</a>
+
+            &middot;
+          
+            <a href="player/eitlarry">eitlarry</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/elron">elron</a>
+
+            &middot;
+          
+            <a href="player/eraserhead97">eraserhead97</a>
+
+            &middot;
+          
+            <a href="player/finitelycraig">finitelycraig</a>
+
+            &middot;
+          
+            <a href="player/Furey">Furey</a>
+
+            &middot;
+          
+            <a href="player/Grasshopper">Grasshopper</a>
+
+            &middot;
+          
+            <a href="player/greenbourne277">greenbourne277</a>
+
+            &middot;
+          
+            <a href="player/Grouchy">Grouchy</a>
+
+            &middot;
+          
+            <a href="player/HalNovek">HalNovek</a>
+
+            &middot;
+          
+            <a href="player/hilliance">hilliance</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/jetjaguar">jetjaguar</a>
+
+            &middot;
+          
+            <a href="player/jt">jt</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            &middot;
+          
+            <a href="player/kcostell">kcostell</a>
+
+            &middot;
+          
+            <a href="player/khamul">khamul</a>
+
+            &middot;
+          
+            <a href="player/LythariDrow">LythariDrow</a>
+
+            &middot;
+          
+            <a href="player/malor">malor</a>
+
+            &middot;
+          
+            <a href="player/Merlek">Merlek</a>
+
+            &middot;
+          
+            <a href="player/MHL">MHL</a>
+
+            &middot;
+          
+            <a href="player/mobileuser">mobileuser</a>
+
+            &middot;
+          
+            <a href="player/MoonPig">MoonPig</a>
+
+            &middot;
+          
+            <a href="player/noims">noims</a>
+
+            &middot;
+          
+            <a href="player/oh6">oh6</a>
+
+            &middot;
+          
+            <a href="player/qt">qt</a>
+
+            &middot;
+          
+            <a href="player/spazm">spazm</a>
+
+            &middot;
+          
+            <a href="player/squishy">squishy</a>
+
+            &middot;
+          
+            <a href="player/Tangles">Tangles</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            &middot;
+          
+            <a href="player/unit327">unit327</a>
+
+            &middot;
+          
+            <a href="player/WizardOfPoland">WizardOfPoland</a>
+
+            &middot;
+          
+            <a href="player/zoya">zoya</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clanclan%20of%20the%20Cave%20Grue">Clan of the Cave Grue</a>
+
+            
+            
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/Hi.">Hi.</a>
+
+            
+            
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Meanwhile%20in%20Europe">Meanwhile in Europe</a>
+
+            
+            
+          
+            <a href="clan/Medusa%20Swim%20Team">Medusa Swim Team</a>
+
+            
+            
+          
+            <a href="clan/Order%20of%20the%20Chickatrice">Order of the Chickatrice</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The%20clan%20with%20no%20name">The clan with no name</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+            <a href="clan/The_Levellers">The_Levellers</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend games with every starting alignment">
+          All Alignments
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/allanb">allanb</a>
+
+            &middot;
+          
+            <a href="player/anselmus">anselmus</a>
+
+            &middot;
+          
+            <a href="player/Bean">Bean</a>
+
+            &middot;
+          
+            <a href="player/bouquet">bouquet</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/efot">efot</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/Furey">Furey</a>
+
+            &middot;
+          
+            <a href="player/Grasshopper">Grasshopper</a>
+
+            &middot;
+          
+            <a href="player/Grouchy">Grouchy</a>
+
+            &middot;
+          
+            <a href="player/HalNovek">HalNovek</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/jetjaguar">jetjaguar</a>
+
+            &middot;
+          
+            <a href="player/jt">jt</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            &middot;
+          
+            <a href="player/kcostell">kcostell</a>
+
+            &middot;
+          
+            <a href="player/khamul">khamul</a>
+
+            &middot;
+          
+            <a href="player/lacca">lacca</a>
+
+            &middot;
+          
+            <a href="player/MoonPig">MoonPig</a>
+
+            &middot;
+          
+            <a href="player/noims">noims</a>
+
+            &middot;
+          
+            <a href="player/oh6">oh6</a>
+
+            &middot;
+          
+            <a href="player/spazm">spazm</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            &middot;
+          
+            <a href="player/WizardOfPoland">WizardOfPoland</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clanclan%20of%20the%20Cave%20Grue">Clan of the Cave Grue</a>
+
+            
+            
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/Meanwhile%20in%20Europe">Meanwhile in Europe</a>
+
+            
+            
+          
+            <a href="clan/Medusa%20Swim%20Team">Medusa Swim Team</a>
+
+            
+            
+          
+            <a href="clan/Smile%20mold">Smile mold</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The%20clan%20with%20no%20name">The clan with no name</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend games with all 13 roles">
+          All Roles
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend games with all 5 races">
+          All Races
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/bouquet">bouquet</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/efot">efot</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/jt">jt</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            &middot;
+          
+            <a href="player/noims">noims</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/teamsplit">teamsplit</a>
+
+            
+            
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Preserve each conduct at least once across all ascensions">
+          All Conducts
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Complete each achievement at least once across all games">
+          All Achievements
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Ascend games with all possible (73) race/role/gender0/align0 combinations">
+          NetHack Master
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Accomplish NetHack Master and All Conducts.">
+          NetHack Dominator
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Never quit or escape within the first 100 turns">
+          Never Scum a Game
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/Abdlabl">Abdlabl</a>
+
+            &middot;
+          
+            <a href="player/actualquak">actualquak</a>
+
+            &middot;
+          
+            <a href="player/Adeon">Adeon</a>
+
+            &middot;
+          
+            <a href="player/adridg">adridg</a>
+
+            &middot;
+          
+            <a href="player/Agrius">Agrius</a>
+
+            &middot;
+          
+            <a href="player/aharbin">aharbin</a>
+
+            &middot;
+          
+            <a href="player/AlbertB">AlbertB</a>
+
+            &middot;
+          
+            <a href="player/allanb">allanb</a>
+
+            &middot;
+          
+            <a href="player/amelie">amelie</a>
+
+            &middot;
+          
+            <a href="player/AmElm">AmElm</a>
+
+            &middot;
+          
+            <a href="player/Andrio">Andrio</a>
+
+            &middot;
+          
+            <a href="player/anndec">anndec</a>
+
+            &middot;
+          
+            <a href="player/anselmus">anselmus</a>
+
+            &middot;
+          
+            <a href="player/AnsonKindred">AnsonKindred</a>
+
+            &middot;
+          
+            <a href="player/aosdict">aosdict</a>
+
+            &middot;
+          
+            <a href="player/Arahael">Arahael</a>
+
+            &middot;
+          
+            <a href="player/arkanoid">arkanoid</a>
+
+            &middot;
+          
+            <a href="player/asumu">asumu</a>
+
+            &middot;
+          
+            <a href="player/Bartlem">Bartlem</a>
+
+            &middot;
+          
+            <a href="player/Bean">Bean</a>
+
+            &middot;
+          
+            <a href="player/bouquet">bouquet</a>
+
+            &middot;
+          
+            <a href="player/Brandork">Brandork</a>
+
+            &middot;
+          
+            <a href="player/bvowk">bvowk</a>
+
+            &middot;
+          
+            <a href="player/carr0t">carr0t</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/cernixs">cernixs</a>
+
+            &middot;
+          
+            <a href="player/charlie14690">charlie14690</a>
+
+            &middot;
+          
+            <a href="player/Chenkar">Chenkar</a>
+
+            &middot;
+          
+            <a href="player/Cloudmillion">Cloudmillion</a>
+
+            &middot;
+          
+            <a href="player/crunchbubba">crunchbubba</a>
+
+            &middot;
+          
+            <a href="player/Cuchullain">Cuchullain</a>
+
+            &middot;
+          
+            <a href="player/cyhawk">cyhawk</a>
+
+            &middot;
+          
+            <a href="player/damerell">damerell</a>
+
+            &middot;
+          
+            <a href="player/DarkLightDragon">DarkLightDragon</a>
+
+            &middot;
+          
+            <a href="player/DarkMatt">DarkMatt</a>
+
+            &middot;
+          
+            <a href="player/deadnoob">deadnoob</a>
+
+            &middot;
+          
+            <a href="player/deki">deki</a>
+
+            &middot;
+          
+            <a href="player/Demo">Demo</a>
+
+            &middot;
+          
+            <a href="player/desertgreg">desertgreg</a>
+
+            &middot;
+          
+            <a href="player/Dhuend">Dhuend</a>
+
+            &middot;
+          
+            <a href="player/disperse">disperse</a>
+
+            &middot;
+          
+            <a href="player/DobbyK">DobbyK</a>
+
+            &middot;
+          
+            <a href="player/doctor">doctor</a>
+
+            &middot;
+          
+            <a href="player/dogonthetrack">dogonthetrack</a>
+
+            &middot;
+          
+            <a href="player/DoktorL">DoktorL</a>
+
+            &middot;
+          
+            <a href="player/dragonmaster">dragonmaster</a>
+
+            &middot;
+          
+            <a href="player/dustsquid">dustsquid</a>
+
+            &middot;
+          
+            <a href="player/Dx34">Dx34</a>
+
+            &middot;
+          
+            <a href="player/efot">efot</a>
+
+            &middot;
+          
+            <a href="player/eitbrad">eitbrad</a>
+
+            &middot;
+          
+            <a href="player/eitkrog">eitkrog</a>
+
+            &middot;
+          
+            <a href="player/eitlarry">eitlarry</a>
+
+            &middot;
+          
+            <a href="player/eitronco">eitronco</a>
+
+            &middot;
+          
+            <a href="player/eitwinston">eitwinston</a>
+
+            &middot;
+          
+            <a href="player/elenmirie">elenmirie</a>
+
+            &middot;
+          
+            <a href="player/elron">elron</a>
+
+            &middot;
+          
+            <a href="player/engelson">engelson</a>
+
+            &middot;
+          
+            <a href="player/eraserhead97">eraserhead97</a>
+
+            &middot;
+          
+            <a href="player/Everdying">Everdying</a>
+
+            &middot;
+          
+            <a href="player/fakepass">fakepass</a>
+
+            &middot;
+          
+            <a href="player/finitelycraig">finitelycraig</a>
+
+            &middot;
+          
+            <a href="player/flashman">flashman</a>
+
+            &middot;
+          
+            <a href="player/Furey">Furey</a>
+
+            &middot;
+          
+            <a href="player/galadriel">galadriel</a>
+
+            &middot;
+          
+            <a href="player/Gandelf">Gandelf</a>
+
+            &middot;
+          
+            <a href="player/gnuninio">gnuninio</a>
+
+            &middot;
+          
+            <a href="player/goddog">goddog</a>
+
+            &middot;
+          
+            <a href="player/goupaloupa">goupaloupa</a>
+
+            &middot;
+          
+            <a href="player/Grasshopper">Grasshopper</a>
+
+            &middot;
+          
+            <a href="player/Graydot">Graydot</a>
+
+            &middot;
+          
+            <a href="player/greenbourne277">greenbourne277</a>
+
+            &middot;
+          
+            <a href="player/Grouchy">Grouchy</a>
+
+            &middot;
+          
+            <a href="player/habib">habib</a>
+
+            &middot;
+          
+            <a href="player/haldisse">haldisse</a>
+
+            &middot;
+          
+            <a href="player/HalNovek">HalNovek</a>
+
+            &middot;
+          
+            <a href="player/HarmathZsolt">HarmathZsolt</a>
+
+            &middot;
+          
+            <a href="player/Heliokopis">Heliokopis</a>
+
+            &middot;
+          
+            <a href="player/herovit">herovit</a>
+
+            &middot;
+          
+            <a href="player/hilliance">hilliance</a>
+
+            &middot;
+          
+            <a href="player/hiltoncambridge">hiltoncambridge</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/Hrnn">Hrnn</a>
+
+            &middot;
+          
+            <a href="player/ioa">ioa</a>
+
+            &middot;
+          
+            <a href="player/jackbunny">jackbunny</a>
+
+            &middot;
+          
+            <a href="player/jackofclubs">jackofclubs</a>
+
+            &middot;
+          
+            <a href="player/JADarius">JADarius</a>
+
+            &middot;
+          
+            <a href="player/jah">jah</a>
+
+            &middot;
+          
+            <a href="player/jetjaguar">jetjaguar</a>
+
+            &middot;
+          
+            <a href="player/jientho">jientho</a>
+
+            &middot;
+          
+            <a href="player/jittery">jittery</a>
+
+            &middot;
+          
+            <a href="player/jmcunx">jmcunx</a>
+
+            &middot;
+          
+            <a href="player/joes">joes</a>
+
+            &middot;
+          
+            <a href="player/Jojomojo">Jojomojo</a>
+
+            &middot;
+          
+            <a href="player/jonosmalls88">jonosmalls88</a>
+
+            &middot;
+          
+            <a href="player/joo">joo</a>
+
+            &middot;
+          
+            <a href="player/jt">jt</a>
+
+            &middot;
+          
+            <a href="player/k2">k2</a>
+
+            &middot;
+          
+            <a href="player/kalik">kalik</a>
+
+            &middot;
+          
+            <a href="player/karibou">karibou</a>
+
+            &middot;
+          
+            <a href="player/kcostell">kcostell</a>
+
+            &middot;
+          
+            <a href="player/khamul">khamul</a>
+
+            &middot;
+          
+            <a href="player/KingGizzard">KingGizzard</a>
+
+            &middot;
+          
+            <a href="player/Kontroller">Kontroller</a>
+
+            &middot;
+          
+            <a href="player/Kougyoku">Kougyoku</a>
+
+            &middot;
+          
+            <a href="player/kroyle">kroyle</a>
+
+            &middot;
+          
+            <a href="player/kscheirer">kscheirer</a>
+
+            &middot;
+          
+            <a href="player/lacca">lacca</a>
+
+            &middot;
+          
+            <a href="player/lambda">lambda</a>
+
+            &middot;
+          
+            <a href="player/larry">larry</a>
+
+            &middot;
+          
+            <a href="player/laura">laura</a>
+
+            &middot;
+          
+            <a href="player/Leggman">Leggman</a>
+
+            &middot;
+          
+            <a href="player/Lettuce">Lettuce</a>
+
+            &middot;
+          
+            <a href="player/lova">lova</a>
+
+            &middot;
+          
+            <a href="player/machinespray">machinespray</a>
+
+            &middot;
+          
+            <a href="player/Majin">Majin</a>
+
+            &middot;
+          
+            <a href="player/MAlischka2">MAlischka2</a>
+
+            &middot;
+          
+            <a href="player/malor">malor</a>
+
+            &middot;
+          
+            <a href="player/Mandevil">Mandevil</a>
+
+            &middot;
+          
+            <a href="player/Masami">Masami</a>
+
+            &middot;
+          
+            <a href="player/Menche">Menche</a>
+
+            &middot;
+          
+            <a href="player/Merlek">Merlek</a>
+
+            &middot;
+          
+            <a href="player/MHL">MHL</a>
+
+            &middot;
+          
+            <a href="player/micromoog">micromoog</a>
+
+            &middot;
+          
+            <a href="player/MikeLytle">MikeLytle</a>
+
+            &middot;
+          
+            <a href="player/Mitzutsune">Mitzutsune</a>
+
+            &middot;
+          
+            <a href="player/mmww">mmww</a>
+
+            &middot;
+          
+            <a href="player/mobileuser">mobileuser</a>
+
+            &middot;
+          
+            <a href="player/moop">moop</a>
+
+            &middot;
+          
+            <a href="player/mracich">mracich</a>
+
+            &middot;
+          
+            <a href="player/mrflash818">mrflash818</a>
+
+            &middot;
+          
+            <a href="player/MrWarthog">MrWarthog</a>
+
+            &middot;
+          
+            <a href="player/mthorp">mthorp</a>
+
+            &middot;
+          
+            <a href="player/Muad">Muad</a>
+
+            &middot;
+          
+            <a href="player/murgatroid99">murgatroid99</a>
+
+            &middot;
+          
+            <a href="player/mwehner">mwehner</a>
+
+            &middot;
+          
+            <a href="player/N47H4k3R">N47H4k3R</a>
+
+            &middot;
+          
+            <a href="player/nazult">nazult</a>
+
+            &middot;
+          
+            <a href="player/NetSysFire">NetSysFire</a>
+
+            &middot;
+          
+            <a href="player/Nightsorrow">Nightsorrow</a>
+
+            &middot;
+          
+            <a href="player/nikolaterran">nikolaterran</a>
+
+            &middot;
+          
+            <a href="player/noims">noims</a>
+
+            &middot;
+          
+            <a href="player/Noisytoot">Noisytoot</a>
+
+            &middot;
+          
+            <a href="player/nonzerochance">nonzerochance</a>
+
+            &middot;
+          
+            <a href="player/Numbgoon">Numbgoon</a>
+
+            &middot;
+          
+            <a href="player/ocnda">ocnda</a>
+
+            &middot;
+          
+            <a href="player/ogmobot">ogmobot</a>
+
+            &middot;
+          
+            <a href="player/oh6">oh6</a>
+
+            &middot;
+          
+            <a href="player/OhNoNotAgain">OhNoNotAgain</a>
+
+            &middot;
+          
+            <a href="player/OmegaDino">OmegaDino</a>
+
+            &middot;
+          
+            <a href="player/omghax">omghax</a>
+
+            &middot;
+          
+            <a href="player/Orcranger">Orcranger</a>
+
+            &middot;
+          
+            <a href="player/peterg">peterg</a>
+
+            &middot;
+          
+            <a href="player/PetraKelly">PetraKelly</a>
+
+            &middot;
+          
+            <a href="player/Phyban">Phyban</a>
+
+            &middot;
+          
+            <a href="player/post163">post163</a>
+
+            &middot;
+          
+            <a href="player/ptomato">ptomato</a>
+
+            &middot;
+          
+            <a href="player/qt">qt</a>
+
+            &middot;
+          
+            <a href="player/quervo1">quervo1</a>
+
+            &middot;
+          
+            <a href="player/Qwesti">Qwesti</a>
+
+            &middot;
+          
+            <a href="player/Raisse">Raisse</a>
+
+            &middot;
+          
+            <a href="player/recuerdo">recuerdo</a>
+
+            &middot;
+          
+            <a href="player/richards">richards</a>
+
+            &middot;
+          
+            <a href="player/richo">richo</a>
+
+            &middot;
+          
+            <a href="player/Ride">Ride</a>
+
+            &middot;
+          
+            <a href="player/ripley">ripley</a>
+
+            &middot;
+          
+            <a href="player/Roke">Roke</a>
+
+            &middot;
+          
+            <a href="player/rossyrg">rossyrg</a>
+
+            &middot;
+          
+            <a href="player/RyanHill">RyanHill</a>
+
+            &middot;
+          
+            <a href="player/Sceptross">Sceptross</a>
+
+            &middot;
+          
+            <a href="player/schnippi">schnippi</a>
+
+            &middot;
+          
+            <a href="player/scorchgeek">scorchgeek</a>
+
+            &middot;
+          
+            <a href="player/SeamusMcRed">SeamusMcRed</a>
+
+            &middot;
+          
+            <a href="player/Sergsalz">Sergsalz</a>
+
+            &middot;
+          
+            <a href="player/shadowcat">shadowcat</a>
+
+            &middot;
+          
+            <a href="player/skwrl">skwrl</a>
+
+            &middot;
+          
+            <a href="player/SkydiveMike">SkydiveMike</a>
+
+            &middot;
+          
+            <a href="player/slarty">slarty</a>
+
+            &middot;
+          
+            <a href="player/snes">snes</a>
+
+            &middot;
+          
+            <a href="player/spazm">spazm</a>
+
+            &middot;
+          
+            <a href="player/Spider74656">Spider74656</a>
+
+            &middot;
+          
+            <a href="player/spleen">spleen</a>
+
+            &middot;
+          
+            <a href="player/spline">spline</a>
+
+            &middot;
+          
+            <a href="player/spontiff">spontiff</a>
+
+            &middot;
+          
+            <a href="player/Spuds">Spuds</a>
+
+            &middot;
+          
+            <a href="player/squarelles">squarelles</a>
+
+            &middot;
+          
+            <a href="player/squishy">squishy</a>
+
+            &middot;
+          
+            <a href="player/Staengia">Staengia</a>
+
+            &middot;
+          
+            <a href="player/Stef75">Stef75</a>
+
+            &middot;
+          
+            <a href="player/stenno">stenno</a>
+
+            &middot;
+          
+            <a href="player/steveyo">steveyo</a>
+
+            &middot;
+          
+            <a href="player/stoicjin">stoicjin</a>
+
+            &middot;
+          
+            <a href="player/stuntbum">stuntbum</a>
+
+            &middot;
+          
+            <a href="player/swegen">swegen</a>
+
+            &middot;
+          
+            <a href="player/tacco">tacco</a>
+
+            &middot;
+          
+            <a href="player/Tangles">Tangles</a>
+
+            &middot;
+          
+            <a href="player/telegarn">telegarn</a>
+
+            &middot;
+          
+            <a href="player/tfrichard">tfrichard</a>
+
+            &middot;
+          
+            <a href="player/tfrichards92">tfrichards92</a>
+
+            &middot;
+          
+            <a href="player/thebeef">thebeef</a>
+
+            &middot;
+          
+            <a href="player/tinklebear">tinklebear</a>
+
+            &middot;
+          
+            <a href="player/tizraeder">tizraeder</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            &middot;
+          
+            <a href="player/tlaaloc">tlaaloc</a>
+
+            &middot;
+          
+            <a href="player/Tmasher">Tmasher</a>
+
+            &middot;
+          
+            <a href="player/Tommo">Tommo</a>
+
+            &middot;
+          
+            <a href="player/Tormuse">Tormuse</a>
+
+            &middot;
+          
+            <a href="player/torpedojuice">torpedojuice</a>
+
+            &middot;
+          
+            <a href="player/tromix">tromix</a>
+
+            &middot;
+          
+            <a href="player/unit327">unit327</a>
+
+            &middot;
+          
+            <a href="player/vtt">vtt</a>
+
+            &middot;
+          
+            <a href="player/walkera">walkera</a>
+
+            &middot;
+          
+            <a href="player/wbn">wbn</a>
+
+            &middot;
+          
+            <a href="player/wintergalaxy88">wintergalaxy88</a>
+
+            &middot;
+          
+            <a href="player/wizard44">wizard44</a>
+
+            &middot;
+          
+            <a href="player/WizardOfPoland">WizardOfPoland</a>
+
+            &middot;
+          
+            <a href="player/Wolfechu">Wolfechu</a>
+
+            &middot;
+          
+            <a href="player/wormy">wormy</a>
+
+            &middot;
+          
+            <a href="player/xhtmlcoder">xhtmlcoder</a>
+
+            &middot;
+          
+            <a href="player/xororand">xororand</a>
+
+            &middot;
+          
+            <a href="player/xriiitox">xriiitox</a>
+
+            &middot;
+          
+            <a href="player/youngster">youngster</a>
+
+            &middot;
+          
+            <a href="player/Yrios">Yrios</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/1337_N37_H4k3R5">1337_N37_H4k3R5</a>
+
+            
+            
+          
+            <a href="clan/%3E%3A%5D">&gt;:]</a>
+
+            
+            
+          
+            <a href="clanclan%20EIT%21">Clan EIT!</a>
+
+            
+            
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clanclan%20of%20the%20Cave%20Grue">Clan of the Cave Grue</a>
+
+            
+            
+          
+            <a href="clanclan%20Spoopy%20Hack">Clan Spoopy Hack</a>
+
+            
+            
+          
+            <a href="clan/Gandalf%27s%20illegal%20fireworks">Gandalf&#x27;s illegal fireworks</a>
+
+            
+            
+          
+            <a href="clan/GehenNOMNOMNOM">GehenNOMNOMNOM</a>
+
+            
+            
+          
+            <a href="clan/Hi.">Hi.</a>
+
+            
+            
+          
+            <a href="clan/Madame%20Elvira%27s%20House%20O%27%20Succubi">Madame Elvira&#x27;s House O&#x27; Succubi</a>
+
+            
+            
+          
+            <a href="clan/Medusa%20Swim%20Team">Medusa Swim Team</a>
+
+            
+            
+          
+            <a href="clan/Petra%27s%20Zoo%20of%20Misfits">Petra&#x27;s Zoo of Misfits</a>
+
+            
+            
+          
+            <a href="clan/RedShirtDungeoneers">RedShirtDungeoneers</a>
+
+            
+            
+          
+            <a href="clan/Shambling%20Horde">Shambling Horde</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/SussyBaka420">SussyBaka420</a>
+
+            
+            
+          
+            <a href="clan/swap.chest.lol">swap.chest.lol</a>
+
+            
+            
+          
+            <a href="clan/The%20clan%20with%20no%20name">The clan with no name</a>
+
+            
+            
+          
+            <a href="clan/the%20Ninth%20House">the Ninth House</a>
+
+            
+            
+          
+            <a href="clan/The%20Strong%20and%20the%20Bad">The Strong and the Bad</a>
+
+            
+            
+          
+            <a href="clan/The_Levellers">The_Levellers</a>
+
+            
+            
+          
+            <a href="clan/UAA">UAA</a>
+
+            
+            
+          
+            <a href="clan/unfoog">unfoog</a>
+
+            
+            
+          
+            <a href="clan/%7Binferior%20force%7D">{inferior force}</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Win a game without your quest nemesis dying">
+          Keep Your Nemesis Alive
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/bleeko">bleeko</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/Grouchy">Grouchy</a>
+
+            &middot;
+          
+            <a href="player/swegen">swegen</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Win a game without Vlad dying">
+          Keep Vlad Alive
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/bleeko">bleeko</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/swegen">swegen</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Win a game without the Wizard of Yendor dying">
+          Keep Rodney Alive
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/cathartes">cathartes</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Win a game without the High Priest of Moloch dying">
+          Keep The High Priest of Moloch Alive
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/bleeko">bleeko</a>
+
+            &middot;
+          
+            <a href="player/cathartes">cathartes</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clan/Teenage%20NetHack%20Ninja%20Turtles">Teenage NetHack Ninja Turtles</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+      <tr>
+        <td class="trophy-name" title="Win a game without any Riders dying">
+          Keep The Riders Alive
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="player/cathartes">cathartes</a>
+
+            &middot;
+          
+            <a href="player/charlie14690">charlie14690</a>
+
+            &middot;
+          
+            <a href="player/Furey">Furey</a>
+
+            &middot;
+          
+            <a href="player/HalNovek">HalNovek</a>
+
+            &middot;
+          
+            <a href="player/hothraxxa">hothraxxa</a>
+
+            &middot;
+          
+            <a href="player/LythariDrow">LythariDrow</a>
+
+            &middot;
+          
+            <a href="player/oh6">oh6</a>
+
+            &middot;
+          
+            <a href="player/tinklebear">tinklebear</a>
+
+            &middot;
+          
+            <a href="player/tjw">tjw</a>
+
+            
+          
+        </td>
+        <td class="trophy-multi">
+          
+            <a href="clanclan%20name">clan name</a>
+
+            
+            
+          
+            <a href="clan/Meanwhile%20in%20Europe">Meanwhile in Europe</a>
+
+            
+            
+          
+            <a href="clan/Medusa%20Swim%20Team">Medusa Swim Team</a>
+
+            
+            
+          
+            <a href="clan/Surly%20Dinos">Surly Dinos</a>
+
+            
+            
+          
+            <a href="clan/teamsplat">teamsplat</a>
+
+            
+            
+          
+            <a href="clan/The%20Splendor%20Of%20Yendor">The Splendor Of Yendor</a>
+
+            
+            
+          
+        </td>
+      </tr>
+      
+    
+  </tbody>
+</table>
+
+</body>
+
+</html>

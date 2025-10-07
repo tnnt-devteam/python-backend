@@ -1,0 +1,406 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::FAQ</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="faq.html" class="menu  menusel ">FAQ</a>
+              <a href="players.html" class="menu ">PLAYERS</a>
+              <a href="clans.html" class="menu ">CLANS</a>
+              <a href="leaderboards.html" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies.html" class="menu ">TROPHIES</a>
+              <a href="stats.html" class="menu ">STATS</a>
+              <a href="/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login.html" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2024 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<article>
+  <h2>Tournament FAQ</h2>
+  <ul id="faq-list">
+    <li><a href="faq.html#general">What are the basic rules of the tournament?</a></li>
+    <li><a href="faq.html#bots">Can I run a bot?</a></li>
+    <li><a href="faq.html#version">Why isn't TNNT based on NetHack 3.7 yet?</a></li>
+    <li><a href="faq.html#extracontent">What's this message/level/object I never encountered before?</a></li>
+    <li><a href="faq.html#clans">What's a clan? How does it work?</a></li>
+    <li><a href="faq.html#achievements">What are these "achievement" things?</a></li>
+    <li><a href="faq.html#commands">Do I need to manually keep track of my progress towards achievements?</a></li>
+    <li><a href="faq.html#trophies">What are trophies?</a></li>
+    <li><a href="faq.html#changes">What does it mean for trophies if I change gender or alignment?</a></li>
+    <li><a href="faq.html#missing">Why aren't there role trophies for Knight, Samurai, or Tourist?</a></li>
+    <li><a href="faq.html#lesser">What does "Complete Mines and Soko" mean for the Lesser trophies?</a></li>
+    <li><a href="faq.html#notboth">Why didn't I get the Lesser trophy when I got the Greater one?</a></li>
+    <li><a href="faq.html#streaks">How do streaks work?</a></li>
+    <li><a href="faq.html#splat">What's a "post-Amulet splat"?</a></li>
+    <li><a href="faq.html#donation">What's a "successful swap chest donation"?</a></li>
+    <li><a href="faq.html#zscore">What's a "Z-score"?</a></li>
+    <li><a href="faq.html#origins">Why does TNNT exist? What happened to /dev/null?</a></li>
+    <li><a href="faq.html#replacement">So is TNNT the replacement for /dev/null?</a></li>
+    <li><a href="faq.html#devnullchal">What about the devnull challenges?</a></li>
+    <li><a href="faq.html#scoring">Why have multiple leaderboards instead of a unified overall score?</a></li>
+    <li><a href="faq.html#contributors">Who are you people anyway?</a></li>
+  </ul>
+  <h4 id="general">What are the basic rules of the tournament?</h4>
+  <p>
+    Use your common sense: don't hack into the game servers, don't deliberately
+    corrupt or leak memory or otherwise try to crash or hang up the game, don't
+    abuse the RNG, and don't be a jerk.
+  </p>
+  <p>
+    Anything within the normal execution of NetHack is fair game. This includes
+    farming, scumming, abusing program bugs, reading other characters' dumplogs,
+    viewing ttyrecs of your own or others' games, using interface enhancers like
+    InterHack, and hanging out on IRC to see if the gray stone you picked up in
+    Mines' End gets livelogged as the luckstone.
+  </p>
+  <p>
+    If you're pursuing a strategy that could result in you dying a lot of times
+    on bones-eligible levels, such as digging for victory or fountain scumming,
+    please make sure to set !bones in your rc file as a courtesy to other
+    players so that you don't leave useless bones and throw away other players'
+    interesting bones on your way down.
+  </p>
+  <h4 id="bots">Can I run a bot?</h4>
+  <p>
+    Bots are prohibited. TNNT is a tournament for human players, not a
+    competition for the best or luckiest bot. Players found to be running a bot
+    may be summarily banned from the tournament.
+  </p>
+  <p>
+    Our working definition of a bot is any system that automatically evaluates
+    game state and makes gameplay decisions. Thus, pasting macros is fine, but
+    running a startscum script that quits the game if your inventory, stats, or
+    surroundings do not meet certain criteria is not.
+  </p>
+  <h4 id="version">Why isn't TNNT based on NetHack 3.7 yet?</h4>
+  <p>
+    TNNT is still based on NetHack 3.6.7 because it's the current stable release
+    of NetHack. While we would love to base it on 3.7, we are waiting for it to
+    be officially released. Basing it on the development version would mean
+    picking a random cut-off point in development that might have major bugs or
+    game balance issues, and we want to minimize the risk of something like that
+    being discovered during TNNT and having to make a choice whether to patch it
+    or not.
+  </p>
+  <p>
+    Also, porting it to recent 3.7-dev would mean that a second porting effort
+    would have to be done in the future when 3.7 does actually get released, or
+    even every year if we end up creating the expectation that new features from
+    the development version will be available in TNNT. It's not something we
+    want to commit to.
+  </p>
+  <h4 id="extracontent">What's this message/level/object I never encountered before?</h4>
+  <p>
+    TNNT contains a couple additional challenges which add a few new things to
+    the game, so if you encounter something unfamiliar, it's probably one of
+    those. Interacting with them is not required to win the game. However, there
+    are a few achievements for completing these challenges.
+  </p>
+  <p>
+    To avoid spoiling players that are new to TNNT, the things we added to the
+    game have been purposely omitted from this site. For those who wish to spoil
+    themselves about all of the new game content in TNNT, please visit the TNNT
+    entry on the
+    <a href="https://nethackwiki.com/wiki/The_November_NetHack_Tournament" target="_blank">
+      NetHack Wiki
+    </a>.
+  </p>
+  <h4 id="clans">What's a clan? How does it work?</h4>
+  <p>
+    A clan is a group of players working together to achieve goals that could be
+    difficult for a lone player to achieve by themselves, such as
+    multi-ascension trophies. Most statistics tracked for players are also
+    pooled together and tracked for clans, allowing clans to compete directly
+    against each other (but not against players). You don't have to join a clan,
+    but it's often fun to be in one!
+  </p>
+  <p>
+    To create clans, invite players to your clan, and accept invitations to
+    others' clans,
+    
+      please <a href="login.html">log in</a>.
+    
+  </p>
+  <p>
+    Clan size is capped at 12, and a clan is not allowed to have more than 12
+    pending invitations. The tournament is designed so that adding new clan
+    members, however inexperienced, cannot hurt the clan overall (this is why we
+    don't track a clan's overall ascension ratio, for instance).
+  </p>
+  <p>
+    On November 10th at 00:00 UTC, clan membership will become frozen;
+    people can still leave or be kicked out of clans, but cannot create new
+    clans or join new clans.
+  </p>
+  <h4 id="achievements">What are these "achievement" things?</h4>
+  <p>
+    Achievements are small in-game accomplishments you can collect for yourself
+    and your clan, which vary in difficulty from pretty easy to very
+    challenging. You can use the #achievements command during a game to view
+    which ones are and aren't completed. The #tnntstats command is also useful
+    for viewing progress towards certain achievements.
+  </p>
+  <p>
+    To see a list of all achievements and what is required to earn them,
+    navigate to your player or clan page, or view
+    <a href="achievements.html">all achievements by the number of people who
+      achieved them</a>.
+  </p>
+  <h4 id="commands">Do I need to manually keep track of my progress towards achievements?</h4>
+  <p>
+    Nope. Several in-game extended commands are provided to let you view your
+    progress on such things. These commands are:
+    <ul>
+      <li>#achievements: shows achievements you have and haven't earned.</li>
+      <li>
+        #tnntstats: a listing of TNNT-related goals, mostly related to
+        achievements that require you to do a certain number of things. Some of
+        them may not be shown until they become relevant.
+      </li>
+      <li>#snacks: shows all foods eaten.</li>
+      <li>#species: shows all eligible species killed and not killed.</li>
+      <li>#conduct: shows TNNT conducts in addition to vanilla ones.</li>
+    </ul>
+  </p>
+  <h4 id="trophies">What are trophies?</h4>
+  <p>
+    Various accomplishments across one or multiple games earn you trophies. To
+    see how to earn these, go to the <a href="trophies.html">Trophies page</a>.
+  </p>
+  <p>
+    All the trophies can also be earned collectively by a clan. If an individual
+    earns one of these trophies on their own, their clan will also get the
+    trophy.
+  </p>
+  <h4 id="changes">What does it mean for trophies if I change gender or alignment?</h4>
+  <p>
+    For trophy purposes, the gender or alignment you ended the game with doesn't
+    matter, only the starting one. Consequently, you can't deliberately change
+    your alignment on a race/role/alignment combo you already played to get the
+    game to count as a different one.
+  </p>
+  <h4 id="missing">Why aren't there role trophies for Knight, Samurai, or Tourist?</h4>
+  <p>
+    There's no such thing as the Great (or Lesser) Knight, Samurai, or Tourist
+    because only a single race and alignment combination can be played with
+    these roles, so you would only need a single game to accomplish them. They
+    do count towards the Great and Lesser Human trophies.
+  </p>
+  <h4 id="lesser">What does "Complete Mines and Soko" mean for the Lesser trophies?</h4>
+  <p>
+    For the Lesser Race/Role trophies, you must complete a game with each
+    required character combination where you successfully pick up the luckstone
+    from the bottom of the Mines <strong>AND</strong> pick up the prize from
+    the end of Sokoban. That's all the game needs to qualify &mdash; it doesn't
+    matter if the game ends in death afterwards, and you don't need to escape
+    the dungeon with those prizes.
+  </p>
+  <h4 id="notboth">Why didn't I get the Lesser trophy when I got the Greater one?</h4>
+  <p>
+    Achieving a Great Race or Role does not necessarily imply that you also
+    deserve the same Lesser Race or Role, since it is possible to ascend without
+    completing Sokoban and/or retrieving the Mines' End luckstone. If you got
+    the Greater without the Lesser, one of your qualifying games must not have
+    obtained both prizes. Since both prizes are tracked as achievements, you
+    can check in-game whether you've earned them by using #achievements. If the
+    game is over, you can also check the summary of achievements in its dumplog.
+  </p>
+  <h4 id="streaks">How do streaks work?</h4>
+  <p>
+    A streak is a series of consecutive winning games by the same player.
+    Because you can have multiple in-progress games on multiple servers, the
+    rule is that the first game started after a win is the candidate for
+    continuing a streak. Winning or losing non-candidate games will not affect
+    the streak whatsoever. If you start a new game that is eligible to continue
+    two or more streaks, it will continue the streak with the earliest overall
+    start time.
+  </p>
+  <p>
+    For those familiar with DCSS tournaments, these rules are the same as theirs
+    (except that you can play the same race/role as much as you like and it will
+    still count towards the streak).
+  </p>
+  <h4 id="splat">What's a "post-Amulet splat"?</h4>
+  <p>
+    A "post-Amulet splat" is defined as any game in which the hero possessed the
+    Amulet of Yendor, but which did not end in an ascension. Thus, dying is not
+    necessary for it to count as a splat.
+  </p>
+  <h4 id="donation">What's a "successful swap chest donation"?</h4>
+  <p>
+    A "successful swap chest donation" is an instance of some other player
+    removing an item you put into the swap chest. This gets credited on the
+    scoreboard shortly after they remove the item; their game does not need to
+    end in order for you to be credited.
+  </p>
+  <h4 id="zscore">What's a "Z-score"?</h4>
+  <p>
+    A <a href="https://nethackwiki.com/wiki/Z-score" target="_blank">Z-score</a>
+    is a method of ranking a player with multiple ascensions based on the
+    diversity of the roles they play. The formula is simple: each ascension in a
+    new role is worth 1 point, and repeated ascensions with that same role are
+    worth progressively less points: 1/2 for the second, 1/3 for the third, and
+    so on.
+  </p>
+  <p>
+    Compare two players who each ascend 13 games: the first one ascends each
+    role once, and so gets a Z-score of 13.00. The second player, however, ascends
+    13 valkyries, and the diminishing returns mean they only get a Z-score of
+    3.18.
+  </p>
+  <h4 id="origins">Why does TNNT exist? What happened to /dev/null?</h4>
+  <p>
+    The long-running
+    <a href="https://nethackwiki.com/wiki//dev/null/nethack_tournament" target="_blank">
+      /dev/null/nethack tournament
+    </a>
+    was unexpectedly shut down in September 2017. When this was announced, some
+    players from TeamSplat banded together quickly with the help of the
+    hardfought.org server to put together a tribute tournament, which was
+    intended to be the same as devnull but updated to 3.6.0.
+  </p>
+  <p>
+    The tribute tournament was never planned to run for a second year, in order
+    to respect the wishes of the devnull organizer, krystal, to have it shut
+    down completely and retire its name. Instead, the 2018-era TNNT organizers
+    laid plans for a new tournament. Like the tribute, it would be based off
+    NetHack 3.6, and would remain a primarily vanilla-like tournament, unlike
+    other tournaments like
+    <a href="https://junethack.net" target="_blank">Junethack</a>
+    which focus on variant play. They also decided to keep the tradition of
+    running the tournament for the month of November, when a lot of veteran
+    players come out of the woodwork checking to see if there's a tournament.
+  </p>
+  <h4 id="replacement">So is TNNT the replacement for /dev/null?</h4>
+  <p>
+    TNNT is <i>not</i> trying to be a replacement for devnull. Per krystal's
+    wishes, the devnull name, tournament structure, and game changes have been
+    retired. TNNT is a fresh start &mdash; any game changes are based on a clean
+    vanilla nethack codebase, and the various components of the tournament were
+    designed from scratch. It's a vanilla-adjacent NetHack tournament in
+    November, but that's where the similarities end.
+  </p>
+  <h4 id="devnullchal">What about the devnull challenges?</h4>
+  <p>
+    As with the rest of devnull, the challenges have been permanently retired
+    and are not implemented in TNNT. But TNNT does add some of its own
+    challenges, including features that don't exist in any variants. It's a bit
+    of a work in progress. We might continue to add new challenges in the
+    future.
+  </p>
+  <p>
+    If you are looking for the code powering the devnull tribute challenges,
+    to use as a patch for your own purposes, you can find the devnull tribute
+    scoreboard repo
+    <a href="https://github.com/borekl/devnull-tribute-2017" target="_blank">here</a>,
+    and the devnull tribute game code
+    <a href="https://github.com/NHTangles/NetHack36/tree/devnull_hdf" target="_blank">here</a>.
+  </p>
+  <h4 id="scoring">Why have multiple leaderboards instead of a unified overall score?</h4>
+  <p>
+    The first three years of TNNT did use a unified score and a single
+    leaderboard tracking that score. It started to draw dissatisfaction, though,
+    largely because of a number of biases in the scoring algorithm. These biases
+    didn't have an obvious solution, because there was simply no way to put an
+    objective score on what was ultimately a subjective measure &mdash; how
+    impressive a player's games were.
+  </p>
+  <p>
+    In 2021, the TNNT website was reimplemented from the ground up, primarily to
+    get it written in Python instead of Perl for maintainability reasons. During
+    that rewrite, we took the opportunity to implement the multiple-leaderboard
+    system, where one's place on each leaderboard is determined by game
+    statistics and not a scoring algorithm (and we can show more than just the
+    top player in each category). The response has been generally positive, with
+    players and clans able to compete in categories they like rather than
+    feeling like they need to choose between fun gameplay and doing what would
+    earn them the most points.
+  </p>
+  <h4 id="contributors">Who are you people anyway?</h4>
+  <p>
+    The contributors to TNNT are:
+    <ul>
+      <li>
+        aoei: Co-creator of the Python web backend (and erstwhile maintainer of
+        the Perl backend).
+      </li>
+      <li>
+        aosdict: Creator of the achievements system, various in-game features,
+        and co-creator of the Python web backend.
+      </li>
+      <li>
+        K2: Server admin and jack-of-all-trades programmer, maintainer, and
+        designer.
+      </li>
+      <li>
+        Mandevil: Creator of the original TNNT scoreboard and its Perl backend,
+        as well as the ones for the devnull tribute tournament.
+      </li>
+      <li>
+        qt: Designer and Programmer &mdash; Python web backend, achievements
+        system, in-game features.
+      </li>
+      <li>
+        Tangles: Server admin and creator of the Croesus IRC bot. Ensures that
+        the various interactions between the game and the server network are
+        working properly.
+      </li>
+      <li>
+        elenmirie, raisse, jilles, hothraxxa, and oh6: Tournament designers and
+        alpha testers.
+      </li>
+      <li>
+        And special thanks to spicyCebolla, Andrio, and bhaak for providing bug
+        fixes, and to all of the TNNT beta testers for helping expose those bugs
+        before the tournament goes live every year.
+      </li>
+    </ul>
+  </p>
+
+</article>
+
+</body>
+
+</html>

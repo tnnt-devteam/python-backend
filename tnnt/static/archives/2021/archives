@@ -1,0 +1,72 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Archives</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
+              <a href="archives" class="menu  menusel ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+</header>
+
+
+<article>
+  <h4>Past Tournament Archives</h4>
+  <p>
+    Below you can find static snapshots of the tournament site following the
+    end of previous tournaments, with all of the data from the games in that
+    year's tournament.
+  </p>
+  <ul>
+    <li><a href="https://hardfought.org/tnnt/archives/2018">2018 Tournament</a></li>
+    <li><a href="https://hardfought.org/tnnt/archives/2019">2019 Tournament</a></li>
+    <li><a href="https://hardfought.org/tnnt/archives/2020">2020 Tournament</a></li>
+  </ul>
+</article>
+
+</body>
+
+</html>

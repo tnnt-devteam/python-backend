@@ -1,0 +1,3081 @@
+
+<!doctype html>
+<html>
+<head>
+  <title>TNNT::HonestMistake</title>
+  
+
+<link rel="stylesheet" type="text/css" href="../static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="../static/favicon.ico" />
+
+  <script type="text/javascript" src="../static/js/ach-collapse.js"></script>
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="../static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="../rules" class="menu ">RULES</a>
+              <a href="../players" class="menu  menusel ">PLAYERS</a>
+              <a href="../clans" class="menu ">CLANS</a>
+              <a href="../leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="../trophies" class="menu ">TROPHIES</a>
+              <a href="../about" class="menu ">ABOUT</a>
+              <a href="../archives" class="menu ">ARCHIVES</a>
+              
+                <a href="../login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+</header>
+
+
+
+
+
+<h1>HonestMistake</h1>
+
+<div class="row">
+
+<table>
+  <thead>
+    <tr class="framed"><th colspan=2>general information</th></tr>
+  </thead>
+  
+    <tr>
+      <td>clan</td>
+      <td class="num"><a href="../clan/Outside%20Context%20Problem">Outside Context Problem</a>
+</td>
+    </tr>
+  
+  <tr>
+    <td>total games</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>games ascended</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>games over 1000 turns</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>games scummed</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>ascension ratio</td>
+    <td class="num">N/A</td>
+  </tr>
+  <tr>
+    <td>Z-score</td>
+    <td class="num">0.00</td>
+  </tr>
+  <tr>
+    <td>distinct achievements</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>unique deaths</td>
+    <td class="num">0</td>
+  </tr>
+  <tr>
+    <td>donations</td>
+    <td class="num">0</td>
+  </tr>
+</table>
+
+
+
+<table>
+  <thead>
+    <tr class="framed"><th colspan="2">trophies</th></tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+
+
+
+</div> 
+
+
+
+
+
+ 
+
+
+
+
+
+   
+ 
+
+
+
+<h2>Achievements</h2>
+<div class="achieve-top">
+  <p id="ach-hide">[hide table]</p>
+  <table id="achievements-table">
+    <thead>
+      <tr class="framed">
+        <th></th>
+        <th>ID</th>
+        <th>Achievement</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        <tr id="A_GOT_BELL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V01</td>
+          <td class="ach-name">Ringing in My Ears</td>
+          <td class="ach-desc">Get the Bell of Opening</td>
+        </tr>
+      
+        <tr id="A_ENTERED_GEHENNOM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V02</td>
+          <td class="ach-name">We Need To Go Deeper</td>
+          <td class="ach-desc">Enter Gehennom</td>
+        </tr>
+      
+        <tr id="A_GOT_CANDLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V03</td>
+          <td class="ach-name">Emerging Into the Light</td>
+          <td class="ach-desc">Get the Candelabrum of Invocation</td>
+        </tr>
+      
+        <tr id="A_GOT_BOOK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V04</td>
+          <td class="ach-name">Weighing of the Heart</td>
+          <td class="ach-desc">Get the Book of the Dead</td>
+        </tr>
+      
+        <tr id="A_DID_INVOCATION">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V05</td>
+          <td class="ach-name">Bell, Book and Candle</td>
+          <td class="ach-desc">Perform the invocation ritual</td>
+        </tr>
+      
+        <tr id="A_GOT_AOY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V06</td>
+          <td class="ach-name">My Preciousss</td>
+          <td class="ach-desc">Get the Amulet of Yendor</td>
+        </tr>
+      
+        <tr id="A_ENTERED_PLANES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V07</td>
+          <td class="ach-name">From the Dungeon they Came</td>
+          <td class="ach-desc">Enter the Elemental Planes</td>
+        </tr>
+      
+        <tr id="A_ENTERED_ASTRAL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V08</td>
+          <td class="ach-name">The Halls of the Gods</td>
+          <td class="ach-desc">Enter the Astral Plane</td>
+        </tr>
+      
+        <tr id="A_GOT_LUCKSTONE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V09</td>
+          <td class="ach-name">Are You Feeling Lucky</td>
+          <td class="ach-desc">Get the luckstone from Mines&#x27; End</td>
+        </tr>
+      
+        <tr id="A_DID_SOKOBAN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V10</td>
+          <td class="ach-name">Boulder Pusher</td>
+          <td class="ach-desc">Finish Sokoban</td>
+        </tr>
+      
+        <tr id="A_KILLED_MEDUSA">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#V11</td>
+          <td class="ach-name">Anti-Stoner</td>
+          <td class="ach-desc">Kill Medusa</td>
+        </tr>
+      
+        <tr id="A_FOUND_MINES_ALTAR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#001</td>
+          <td class="ach-name">Back to Civilisation</td>
+          <td class="ach-desc">Step onto the Minetown altar</td>
+        </tr>
+      
+        <tr id="A_CONSULTED_ORACLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#002</td>
+          <td class="ach-name">Sage Advice</td>
+          <td class="ach-desc">Consult the Oracle</td>
+        </tr>
+      
+        <tr id="A_STARTED_QUEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#003</td>
+          <td class="ach-name">The Archetypal Hero</td>
+          <td class="ach-desc">Get admitted to the Quest</td>
+        </tr>
+      
+        <tr id="A_LEARNED_PASSTUNE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#004</td>
+          <td class="ach-name">Musical Mastermind</td>
+          <td class="ach-desc">Learn the passtune</td>
+        </tr>
+      
+        <tr id="A_USED_PASSTUNE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#005</td>
+          <td class="ach-name">Orpheus</td>
+          <td class="ach-desc">Activate a drawbridge with the passtune</td>
+        </tr>
+      
+        <tr id="A_BLEW_UP_DRAWBRIDGE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#006</td>
+          <td class="ach-name">Have Fun Storming the Castle</td>
+          <td class="ach-desc">Blow up the Castle drawbridge</td>
+        </tr>
+      
+        <tr id="A_CROWNED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#007</td>
+          <td class="ach-name">The Chosen One</td>
+          <td class="ach-desc">Get crowned</td>
+        </tr>
+      
+        <tr id="A_REACHED_VIBRATING_SQ">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#008</td>
+          <td class="ach-name">Watch Your Footing</td>
+          <td class="ach-desc">Step onto the vibrating square</td>
+        </tr>
+      
+        <tr id="A_PUT_INTO_SWAPCHEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#009</td>
+          <td class="ach-name">It&#x27;s Dangerous To Go Alone! Take This</td>
+          <td class="ach-desc">Put an item into a swap chest</td>
+        </tr>
+      
+        <tr id="A_TALKED_TO_DEVTEAM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#010</td>
+          <td class="ach-name">The True Dungeon Masters</td>
+          <td class="ach-desc">Chat with an active devteam member</td>
+        </tr>
+      
+        <tr id="A_FINISHED_DEVTEAM_QUEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#011</td>
+          <td class="ach-name">There Is No Spoon</td>
+          <td class="ach-desc">Finish the task the devteam requires of you</td>
+        </tr>
+      
+        <tr id="A_NPC_DEATHMATCH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#012</td>
+          <td class="ach-name">Thunderdome</td>
+          <td class="ach-desc">Defeat the NPC from the NPC Deathmatch quest</td>
+        </tr>
+      
+        <tr id="A_KILLED_ASMODEUS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#013</td>
+          <td class="ach-name">Asmodead</td>
+          <td class="ach-desc">Kill Asmodeus</td>
+        </tr>
+      
+        <tr id="A_KILLED_BAALZEBUB">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#014</td>
+          <td class="ach-name">Baalzebust</td>
+          <td class="ach-desc">Kill Baalzebub</td>
+        </tr>
+      
+        <tr id="A_KILLED_ORCUS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#015</td>
+          <td class="ach-name">Orcrushed</td>
+          <td class="ach-desc">Kill Orcus</td>
+        </tr>
+      
+        <tr id="A_KILLED_JUIBLEX">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#016</td>
+          <td class="ach-name">Juibl-X</td>
+          <td class="ach-desc">Kill Juiblex</td>
+        </tr>
+      
+        <tr id="A_KILLED_DEMOGORGON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#017</td>
+          <td class="ach-name">Demogorgone</td>
+          <td class="ach-desc">Kill Demogorgon</td>
+        </tr>
+      
+        <tr id="A_KILLED_YEENOGHU">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#018</td>
+          <td class="ach-name">Yee-No-Go</td>
+          <td class="ach-desc">Kill Yeenoghu</td>
+        </tr>
+      
+        <tr id="A_KILLED_GERYON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#019</td>
+          <td class="ach-name">Geryon-Be-Gone</td>
+          <td class="ach-desc">Kill Geryon</td>
+        </tr>
+      
+        <tr id="A_KILLED_DISPATER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#020</td>
+          <td class="ach-name">Dispater-Dispatcher</td>
+          <td class="ach-desc">Kill Dispater</td>
+        </tr>
+      
+        <tr id="A_KILLED_DEATH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#021</td>
+          <td class="ach-name">Conqueror of Death</td>
+          <td class="ach-desc">Kill Death</td>
+        </tr>
+      
+        <tr id="A_KILLED_PESTILENCE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#022</td>
+          <td class="ach-name">Curer of Pestilence</td>
+          <td class="ach-desc">Kill Pestilence</td>
+        </tr>
+      
+        <tr id="A_KILLED_FAMINE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#023</td>
+          <td class="ach-name">Feeder of Famine</td>
+          <td class="ach-desc">Kill Famine</td>
+        </tr>
+      
+        <tr id="A_KILLED_20_WIZARDS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#024</td>
+          <td class="ach-name">Why Won&#x27;t You DIE Already</td>
+          <td class="ach-desc">Kill the Wizard of Yendor 20 or more times</td>
+        </tr>
+      
+        <tr id="A_WIZ_DOUBLE_KILL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#025</td>
+          <td class="ach-name">Double Whammy</td>
+          <td class="ach-desc">Kill the Wizard of Yendor twice in one action</td>
+        </tr>
+      
+        <tr id="A_KILLED_MEDUSA_PHYSICALLY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#026</td>
+          <td class="ach-name">Actual Perseus</td>
+          <td class="ach-desc">Kill Medusa with physical damage</td>
+        </tr>
+      
+        <tr id="A_DECAPITATED_MEDUSA">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#027</td>
+          <td class="ach-name">Actual Actual Perseus</td>
+          <td class="ach-desc">Decapitate Medusa</td>
+        </tr>
+      
+        <tr id="A_KILLED_CROESUS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#028</td>
+          <td class="ach-name">I Did It For The Money</td>
+          <td class="ach-desc">Kill Croesus</td>
+        </tr>
+      
+        <tr id="A_KILLED_MOLOCH_PRIEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#029</td>
+          <td class="ach-name">Holy War</td>
+          <td class="ach-desc">Kill a priest of Moloch</td>
+        </tr>
+      
+        <tr id="A_GOT_9_NAZGUL_RINGS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#030</td>
+          <td class="ach-name">Nine for Mortal Men Doomed to Die ... Again</td>
+          <td class="ach-desc">Collect all nine Nazgul rings</td>
+        </tr>
+      
+        <tr id="A_KILLED_3_ERINYES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#031</td>
+          <td class="ach-name">Furious</td>
+          <td class="ach-desc">Kill all three erinyes</td>
+        </tr>
+      
+        <tr id="A_AVENGED_ORCTOWN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#032</td>
+          <td class="ach-name">Minetown Avenger</td>
+          <td class="ach-desc">Kill every orc in Orctown</td>
+        </tr>
+      
+        <tr id="A_CLEARED_BIGROOM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#033</td>
+          <td class="ach-name">All Clear</td>
+          <td class="ach-desc">Kill all hostiles in the Big Room</td>
+        </tr>
+      
+        <tr id="A_KILLED_4X4_ELEMENTALS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#034</td>
+          <td class="ach-name">Master of the Four Elementals</td>
+          <td class="ach-desc">Kill at least 4 elementals on their respective home planes</td>
+        </tr>
+      
+        <tr id="A_KILLED_GHOST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#035</td>
+          <td class="ach-name">Kill it Twice</td>
+          <td class="ach-desc">Destroy a ghost</td>
+        </tr>
+      
+        <tr id="A_KILLED_DRAGON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#036</td>
+          <td class="ach-name">Dragonslayer</td>
+          <td class="ach-desc">Kill a dragon</td>
+        </tr>
+      
+        <tr id="A_KILLED_ALL_DRAGONS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#037</td>
+          <td class="ach-name">Kill the Rainbow</td>
+          <td class="ach-desc">Kill every color of adult dragon</td>
+        </tr>
+      
+        <tr id="A_KILLED_ALL_BABY_DRAGONS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#038</td>
+          <td class="ach-name">Kill the Rainbow, Jr.</td>
+          <td class="ach-desc">Kill every color of baby dragon</td>
+        </tr>
+      
+        <tr id="A_KILLED_SOLDIER_ANT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#039</td>
+          <td class="ach-name">Playerbanebane</td>
+          <td class="ach-desc">Kill a soldier ant</td>
+        </tr>
+      
+        <tr id="A_KILLED_TAMED_WOODCHUCK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#040</td>
+          <td class="ach-name">How Much Wood?</td>
+          <td class="ach-desc">Kill or tame a woodchuck</td>
+        </tr>
+      
+        <tr id="A_KILLED_ARCHON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#041</td>
+          <td class="ach-name">Storm the Gates of Heaven</td>
+          <td class="ach-desc">Kill an Archon</td>
+        </tr>
+      
+        <tr id="A_KILLED_FLAYER_IN_MINES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#042</td>
+          <td class="ach-name">Minesflayer</td>
+          <td class="ach-desc">Kill a mind flayer or master mind flayer in the Gnomish Mines</td>
+        </tr>
+      
+        <tr id="A_MULTISHOT_4_KILLED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#043</td>
+          <td class="ach-name">Quadruple Kill</td>
+          <td class="ach-desc">Kill 4 monsters with a single volley of missiles</td>
+        </tr>
+      
+        <tr id="A_KILLED_25_SPECIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#044</td>
+          <td class="ach-name">Death onna Stick</td>
+          <td class="ach-desc">Kill a member of 25 different monster species</td>
+        </tr>
+      
+        <tr id="A_KILLED_50_SPECIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#045</td>
+          <td class="ach-name">Bring out your Dead</td>
+          <td class="ach-desc">Kill a member of 50 different monster species</td>
+        </tr>
+      
+        <tr id="A_KILLED_100_SPECIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#046</td>
+          <td class="ach-name">Diverse Death-Dealer</td>
+          <td class="ach-desc">Kill a member of 100 different monster species</td>
+        </tr>
+      
+        <tr id="A_KILLED_200_SPECIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#047</td>
+          <td class="ach-name">Grim Reaper</td>
+          <td class="ach-desc">Kill a member of 200 different monster species</td>
+        </tr>
+      
+        <tr id="A_KILLED_ALL_SPECIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#048</td>
+          <td class="ach-name">Gotta Kill &#x27;em All</td>
+          <td class="ach-desc">Kill a member of all eligible monster species</td>
+        </tr>
+      
+        <tr id="A_KILLED_A_Z_LOWERCASE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#049</td>
+          <td class="ach-name">Learn the Alphabet</td>
+          <td class="ach-desc">Kill a monster of each class from a to z</td>
+        </tr>
+      
+        <tr id="A_KILLED_A_Z_UPPERCASE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#050</td>
+          <td class="ach-name">LEARN THE ALPHABET</td>
+          <td class="ach-desc">Kill a monster of each class from A to Z (except I)</td>
+        </tr>
+      
+        <tr id="A_USED_CORRECT_BANE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#051</td>
+          <td class="ach-name">What It Was Made For</td>
+          <td class="ach-desc">Kill an appropriate monster with a Bane weapon</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_HOSE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#052</td>
+          <td class="ach-name">Kop Training Program</td>
+          <td class="ach-desc">Kill a monster with a rubber hose</td>
+        </tr>
+      
+        <tr id="A_DESTROYED_VIA_TURN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#053</td>
+          <td class="ach-name">Buffy</td>
+          <td class="ach-desc">Destroy an undead with #turn</td>
+        </tr>
+      
+        <tr id="A_LIT_UP_GREMLIN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#054</td>
+          <td class="ach-name">Bright Light, Bright Light</td>
+          <td class="ach-desc">Kill a gremlin with any light source</td>
+        </tr>
+      
+        <tr id="A_GASSED_MONSTER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#055</td>
+          <td class="ach-name">Get Your Gas Mask</td>
+          <td class="ach-desc">Kill a monster with a stinking cloud</td>
+        </tr>
+      
+        <tr id="A_KILLED_WHILE_IN_PIT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#056</td>
+          <td class="ach-name">It&#x27;s The Pits</td>
+          <td class="ach-desc">Kill something while you are stuck in a pit</td>
+        </tr>
+      
+        <tr id="A_KILLED_INVISIBLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#057</td>
+          <td class="ach-name">Never Saw It Coming</td>
+          <td class="ach-desc">Kill an invisible monster without see invisible</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_AKLYS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#058</td>
+          <td class="ach-name">Rope-a-Dope</td>
+          <td class="ach-desc">Kill a monster with a thrown aklys</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_IRONBALL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#059</td>
+          <td class="ach-name">Hulk Smash</td>
+          <td class="ach-desc">Kill a monster with a heavy iron ball</td>
+        </tr>
+      
+        <tr id="A_INSTAPOISONED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#060</td>
+          <td class="ach-name">DIRGE</td>
+          <td class="ach-desc">Instakill a monster with poison</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_TRIDENT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#061</td>
+          <td class="ach-name">Poseidon</td>
+          <td class="ach-desc">Kill a sea monster with a trident</td>
+        </tr>
+      
+        <tr id="A_KILLED_EYE_POLEARM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#062</td>
+          <td class="ach-name">Touch It With A 10 Foot Pole</td>
+          <td class="ach-desc">Kill a floating eye with a polearm</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_BOTTLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#063</td>
+          <td class="ach-name">Bar Brawler</td>
+          <td class="ach-desc">Kill a monster with HP damage by smashing a bottle on it</td>
+        </tr>
+      
+        <tr id="A_KILLED_WITH_TOWEL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#064</td>
+          <td class="ach-name">Rat Tail</td>
+          <td class="ach-desc">Kill a monster with a wet towel</td>
+        </tr>
+      
+        <tr id="A_MJOLLNIR_THROW_KILL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#065</td>
+          <td class="ach-name">Hammer of the Gods</td>
+          <td class="ach-desc">Kill a monster by throwing Mjollnir and having it return to your hand</td>
+        </tr>
+      
+        <tr id="A_MVM_PROJECTILE_KILL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#066</td>
+          <td class="ach-name">Friendly Fire</td>
+          <td class="ach-desc">Get one hostile monster killed by another&#x27;s projectile weapon</td>
+        </tr>
+      
+        <tr id="A_M_KILLED_BY_OWN_WAND">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#067</td>
+          <td class="ach-name">Hoist With Its Own Petard</td>
+          <td class="ach-desc">Have a monster kill itself with its own wand zap</td>
+        </tr>
+      
+        <tr id="A_PURPLE_RAIN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#068</td>
+          <td class="ach-name">Purple Rain</td>
+          <td class="ach-desc">Get at least 20 enemies eaten by purple worms on the Astral Plane</td>
+        </tr>
+      
+        <tr id="A_DECAPITATED_ENEMY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#069</td>
+          <td class="ach-name">Off With Her Head!</td>
+          <td class="ach-desc">Decapitate an enemy with Vorpal Blade</td>
+        </tr>
+      
+        <tr id="A_STONED_A_MONSTER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#070</td>
+          <td class="ach-name">It&#x27;s 4:20 Somewhere</td>
+          <td class="ach-desc">Stone a monster</td>
+        </tr>
+      
+        <tr id="A_MELTED_ICE_KILL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#071</td>
+          <td class="ach-name">On Thin Ice</td>
+          <td class="ach-desc">Drown a monster by melting the ice beneath it</td>
+        </tr>
+      
+        <tr id="A_ONE_SIDED_NEMESIS_KILL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#072</td>
+          <td class="ach-name">Some Nemesis You Are</td>
+          <td class="ach-desc">Kill your quest nemesis without them getting a move</td>
+        </tr>
+      
+        <tr id="A_KILLED_LIGHT_MELEE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#073</td>
+          <td class="ach-name">Faster than Light</td>
+          <td class="ach-desc">Kill a &quot;y&quot; monster in melee without it exploding</td>
+        </tr>
+      
+        <tr id="A_CURED_STONING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#074</td>
+          <td class="ach-name">Part-time Statue</td>
+          <td class="ach-desc">Cure stoning</td>
+        </tr>
+      
+        <tr id="A_CURED_SLIMING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#075</td>
+          <td class="ach-name">The Blob</td>
+          <td class="ach-desc">Cure sliming</td>
+        </tr>
+      
+        <tr id="A_SURVIVED_DROWNING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#076</td>
+          <td class="ach-name">Captain Ahab</td>
+          <td class="ach-desc">Survive being grabbed by a sea monster</td>
+        </tr>
+      
+        <tr id="A_CURED_LYCANTHROPY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#077</td>
+          <td class="ach-name">Furry Little Problem</td>
+          <td class="ach-desc">Cure lycanthropy</td>
+        </tr>
+      
+        <tr id="A_CURED_ILLNESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#078</td>
+          <td class="ach-name">New Lease on Life</td>
+          <td class="ach-desc">Cure deathly illness</td>
+        </tr>
+      
+        <tr id="A_USED_TOUCHSTONE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#079</td>
+          <td class="ach-name">Diamond in the Rough</td>
+          <td class="ach-desc">Identify a gem with a touchstone</td>
+        </tr>
+      
+        <tr id="A_LIT_OIL_POTION">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#080</td>
+          <td class="ach-name">Curse the Darkness</td>
+          <td class="ach-desc">Identify a potion of oil by applying it</td>
+        </tr>
+      
+        <tr id="A_ID_DETECT_FOOD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#081</td>
+          <td class="ach-name">Michelin Guide</td>
+          <td class="ach-desc">Identify both sources of food detection</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_RINGS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#082</td>
+          <td class="ach-name">Jeweler</td>
+          <td class="ach-desc">Identify all rings</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_WANDS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#083</td>
+          <td class="ach-name">Mikado</td>
+          <td class="ach-desc">Identify all wands</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_AMULETS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#084</td>
+          <td class="ach-name">King of Bling</td>
+          <td class="ach-desc">Identify all amulets</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_BOOKS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#085</td>
+          <td class="ach-name">Bookworm</td>
+          <td class="ach-desc">Identify all spellbooks</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_SCROLLS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#086</td>
+          <td class="ach-name">Scholar</td>
+          <td class="ach-desc">Identify all scrolls</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_POTIONS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#087</td>
+          <td class="ach-name">Alchemist</td>
+          <td class="ach-desc">Identify all potions</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ACCESSORIES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#088</td>
+          <td class="ach-name">Fashionista</td>
+          <td class="ach-desc">Identify all non-obvious cloaks, helms, boots, and gloves</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_GEMS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#089</td>
+          <td class="ach-name">Mineralogist</td>
+          <td class="ach-desc">Identify every type of valuable gemstone</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_STONES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#090</td>
+          <td class="ach-name">Geologist</td>
+          <td class="ach-desc">Identify all gray stones</td>
+        </tr>
+      
+        <tr id="A_IDENTIFIED_ALL_GLASS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#091</td>
+          <td class="ach-name">Glass Menagerie</td>
+          <td class="ach-desc">Identify all worthless glass</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_VEGETARIAN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#092</td>
+          <td class="ach-name">Friends Not Food</td>
+          <td class="ach-desc">Receive the Quest with vegetarian conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_VEGAN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#093</td>
+          <td class="ach-name">Animal Rights Activist</td>
+          <td class="ach-desc">Receive the Quest with vegan conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_FOODLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#094</td>
+          <td class="ach-name">Anti Gulp</td>
+          <td class="ach-desc">Receive the Quest with foodless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ATHEIST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#095</td>
+          <td class="ach-name">No Help from Above</td>
+          <td class="ach-desc">Receive the Quest with atheist conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_WEAPONLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#096</td>
+          <td class="ach-name">Wax On Wax Off</td>
+          <td class="ach-desc">Receive the Quest with weaponless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_PACIFIST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#097</td>
+          <td class="ach-name">Thou Shalt Not Kill</td>
+          <td class="ach-desc">Receive the Quest with pacifist conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ILLITERATE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#098</td>
+          <td class="ach-name">Me No Do Words Good</td>
+          <td class="ach-desc">Receive the Quest with illiterate conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_POLYPILELESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#099</td>
+          <td class="ach-name">Lost My Transmutation License</td>
+          <td class="ach-desc">Receive the Quest with polypileless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_POLYSELFLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#100</td>
+          <td class="ach-name">True to Form</td>
+          <td class="ach-desc">Receive the Quest with polyselfless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_WISHLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#101</td>
+          <td class="ach-name">Self Sufficient</td>
+          <td class="ach-desc">Receive the Quest with wishless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ARTIWISHLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#102</td>
+          <td class="ach-name">Leave the Artifacts to the Gods</td>
+          <td class="ach-desc">Receive the Quest with artifact wishless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ZEN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#103</td>
+          <td class="ach-name">Feeling Your Way</td>
+          <td class="ach-desc">Receive the Quest with zen (permablind) conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_NUDIST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#104</td>
+          <td class="ach-name">Going Commando</td>
+          <td class="ach-desc">Receive the Quest with nudist conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_GENOCIDELESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#105</td>
+          <td class="ach-name">Make Love, Not War</td>
+          <td class="ach-desc">Receive the Quest with genocideless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ELBERETHLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#106</td>
+          <td class="ach-name">No Help From The Floor</td>
+          <td class="ach-desc">Receive the Quest with Elberethless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_PERMAHALLU">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#107</td>
+          <td class="ach-name">It&#x27;s A Wonderful Trip</td>
+          <td class="ach-desc">Receive the Quest with permahallu conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_PERMADEAF">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#108</td>
+          <td class="ach-name">Silent World</td>
+          <td class="ach-desc">Receive the Quest with permadeaf conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_ARTIFACTLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#109</td>
+          <td class="ach-name">Keep Your Fancy Toys</td>
+          <td class="ach-desc">Receive the Quest with artifactless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_BONESLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#110</td>
+          <td class="ach-name">New Dungeon, Never Occupied</td>
+          <td class="ach-desc">Receive the Quest with bonesless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_SWAPCHESTLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#111</td>
+          <td class="ach-name">Extradimensionally Challenged</td>
+          <td class="ach-desc">Receive the Quest with swapchestless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_PETLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#112</td>
+          <td class="ach-name">Fur Allergy</td>
+          <td class="ach-desc">Receive the Quest with petless conduct intact</td>
+        </tr>
+      
+        <tr id="A_PARTIAL_SURVIVOR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#113</td>
+          <td class="ach-name">Death Isn&#x27;t So Cheap</td>
+          <td class="ach-desc">Receive the Quest with survivor conduct intact</td>
+        </tr>
+      
+        <tr id="A_ENTERED_VAULT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#114</td>
+          <td class="ach-name">Breaking and Entering</td>
+          <td class="ach-desc">Enter a vault</td>
+        </tr>
+      
+        <tr id="A_ENTERED_ZOO">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#115</td>
+          <td class="ach-name">Who Was That David Person Anyway?</td>
+          <td class="ach-desc">Enter a treasure zoo</td>
+        </tr>
+      
+        <tr id="A_ENTERED_THRONE_ROOM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#116</td>
+          <td class="ach-name">Absolute Monarchy</td>
+          <td class="ach-desc">Enter a throne room</td>
+        </tr>
+      
+        <tr id="A_ENTERED_LEP_HALL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#117</td>
+          <td class="ach-name">They&#x27;re After Me Lucky Charms</td>
+          <td class="ach-desc">Enter a leprechaun hall</td>
+        </tr>
+      
+        <tr id="A_ENTERED_BEEHIVE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#118</td>
+          <td class="ach-name">Hive Mind</td>
+          <td class="ach-desc">Enter a beehive</td>
+        </tr>
+      
+        <tr id="A_ENTERED_GRAVEYARD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#119</td>
+          <td class="ach-name">Day of the Dead</td>
+          <td class="ach-desc">Enter a graveyard</td>
+        </tr>
+      
+        <tr id="A_ENTERED_ANTHOLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#120</td>
+          <td class="ach-name">Team a Headquarters</td>
+          <td class="ach-desc">Enter an anthole</td>
+        </tr>
+      
+        <tr id="A_ENTERED_BARRACKS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#121</td>
+          <td class="ach-name">Halt, Who Goes There?</td>
+          <td class="ach-desc">Enter a barracks</td>
+        </tr>
+      
+        <tr id="A_ENTERED_SWAMP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#122</td>
+          <td class="ach-name">Dungeon Ecology</td>
+          <td class="ach-desc">Enter a swamp</td>
+        </tr>
+      
+        <tr id="A_ENTERED_COCKNEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#123</td>
+          <td class="ach-name">Statue Showcase</td>
+          <td class="ach-desc">Enter a cockatrice nest</td>
+        </tr>
+      
+        <tr id="A_ENTERED_LUDIOS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#124</td>
+          <td class="ach-name">Ocean&#x27;s Eleven</td>
+          <td class="ach-desc">Enter Fort Ludios</td>
+        </tr>
+      
+        <tr id="A_VISITED_ALL_ALTARS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#125</td>
+          <td class="ach-name">Pilgrim</td>
+          <td class="ach-desc">Visit every type of aligned altar</td>
+        </tr>
+      
+        <tr id="A_VISITED_HIGH_ALTARS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#126</td>
+          <td class="ach-name">The Grand Tour</td>
+          <td class="ach-desc">Visit each high altar on the Astral Plane</td>
+        </tr>
+      
+        <tr id="A_WISH_FROM_EVERYTHING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#127</td>
+          <td class="ach-name">All You Ever Wanted</td>
+          <td class="ach-desc">Get a wish from every wish source</td>
+        </tr>
+      
+        <tr id="A_READ_ALL_READABLE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#128</td>
+          <td class="ach-name">Hyperliterate</td>
+          <td class="ach-desc">Read every readable item in the game (scroll, book, coin, T-shirt, apron, magic marker, candy bar, credit card, fortune cookie)</td>
+        </tr>
+      
+        <tr id="A_UNTRAPPED_ALL_TRAPS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#129</td>
+          <td class="ach-name">Bomb Squad</td>
+          <td class="ach-desc">Untrap all 8 types of traps that can be untrapped</td>
+        </tr>
+      
+        <tr id="A_ATE_ALL_PRODUCE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#130</td>
+          <td class="ach-name">Balanced Diet</td>
+          <td class="ach-desc">Eat one of each type of produce in one game</td>
+        </tr>
+      
+        <tr id="A_ATE_ALL_FOODS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#131</td>
+          <td class="ach-name">Smorgasbord</td>
+          <td class="ach-desc">Eat every type of food in the game</td>
+        </tr>
+      
+        <tr id="A_ATE_EVERY_OBJCLASS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#132</td>
+          <td class="ach-name">Extreme Omnivore</td>
+          <td class="ach-desc">Eat an object from every common, edible object class</td>
+        </tr>
+      
+        <tr id="A_COLLECTED_ALL_POLEARMS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#133</td>
+          <td class="ach-name">Ultimate Polearm Geek</td>
+          <td class="ach-desc">Collect one of each of the 12 types of polearm</td>
+        </tr>
+      
+        <tr id="A_GRANTED_ARTI">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#134</td>
+          <td class="ach-name">Go Forth and Smite</td>
+          <td class="ach-desc">Receive an artifact gift from your deity</td>
+        </tr>
+      
+        <tr id="A_GIFT_ON_ASTRAL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#135</td>
+          <td class="ach-name">Too Little Too Late</td>
+          <td class="ach-desc">Get a sacrifice gift on the Astral Plane</td>
+        </tr>
+      
+        <tr id="A_GOT_EXCALIBUR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#136</td>
+          <td class="ach-name">Some Watery Tart</td>
+          <td class="ach-desc">Be gifted Excalibur</td>
+        </tr>
+      
+        <tr id="A_ATE_ROYAL_JELLY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#137</td>
+          <td class="ach-name">Superfood</td>
+          <td class="ach-desc">Gain strength by eating royal jelly</td>
+        </tr>
+      
+        <tr id="A_GOT_CORPSE_INTRINSIC">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#138</td>
+          <td class="ach-name">You Are What You Eat</td>
+          <td class="ach-desc">Gain an intrinsic by eating a corpse (or tin or glob)</td>
+        </tr>
+      
+        <tr id="A_INTRINSIC_FROM_JEWELRY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#139</td>
+          <td class="ach-name">Magivore</td>
+          <td class="ach-desc">Gain a magical intrinsic by eating a piece of jewelry</td>
+        </tr>
+      
+        <tr id="A_STUNNED_BAT_MEAT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#140</td>
+          <td class="ach-name">Stunning Flavor</td>
+          <td class="ach-desc">Get stunned by eating bat meat</td>
+        </tr>
+      
+        <tr id="A_ATE_MILITARY_RATION">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#141</td>
+          <td class="ach-name">Wasn&#x27;t a Meal, Wasn&#x27;t Ready, And You Shouldn&#x27;t Have Eaten It</td>
+          <td class="ach-desc">Eat a military ration</td>
+        </tr>
+      
+        <tr id="A_TASTED_COCKATRICE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#142</td>
+          <td class="ach-name">Tastes Like Chicken</td>
+          <td class="ach-desc">Eat chickatrice or cockatrice meat</td>
+        </tr>
+      
+        <tr id="A_ATE_3_ARTIFACTS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#143</td>
+          <td class="ach-name">Heroes&#x27; Feast</td>
+          <td class="ach-desc">Eat at least 3 artifacts</td>
+        </tr>
+      
+        <tr id="A_5_MAXPW_FROM_NEWTS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#144</td>
+          <td class="ach-name">Buzzing With Energy</td>
+          <td class="ach-desc">Gain at least 5 max Pw by eating corpses</td>
+        </tr>
+      
+        <tr id="A_LEVEL_FROM_TRIPE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#145</td>
+          <td class="ach-name">Culinary Experience</td>
+          <td class="ach-desc">Gain a level by eating a tripe ration</td>
+        </tr>
+      
+        <tr id="A_OMELET_OF_YENDOR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#146</td>
+          <td class="ach-name">The Omelet of Yendor</td>
+          <td class="ach-desc">With 3 eggs, spinach, wolfsbane, garlic, eucalyptus, violet fungus, oil, and a dented pot all at once, put on an apron and wield a knife</td>
+        </tr>
+      
+        <tr id="A_TAMED_BY_FOOD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#147</td>
+          <td class="ach-name">Pet Whisperer</td>
+          <td class="ach-desc">Tame a monster by feeding it</td>
+        </tr>
+      
+        <tr id="A_TAMED_NOT_BY_FOOD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#148</td>
+          <td class="ach-name">Beast Master</td>
+          <td class="ach-desc">Tame a monster without using food</td>
+        </tr>
+      
+        <tr id="A_TAMED_SHAPECHANGER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#149</td>
+          <td class="ach-name">Shifty</td>
+          <td class="ach-desc">Tame a shapeshifter in any way</td>
+        </tr>
+      
+        <tr id="A_TAMED_7_CATS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#150</td>
+          <td class="ach-name">Cat Lady</td>
+          <td class="ach-desc">Tame seven &quot;f&quot; in the course of one game</td>
+        </tr>
+      
+        <tr id="A_BANANA_TAMED_Y">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#151</td>
+          <td class="ach-name">Monkey Business</td>
+          <td class="ach-desc">Tame a monkey or ape by giving it a banana</td>
+        </tr>
+      
+        <tr id="A_FULLY_RAISED_PET">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#152</td>
+          <td class="ach-name">Best Friends Forever</td>
+          <td class="ach-desc">Take your starting pet to full adulthood</td>
+        </tr>
+      
+        <tr id="A_UNTRAPPED_PET">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#153</td>
+          <td class="ach-name">Pet Rescue</td>
+          <td class="ach-desc">Free a pet from a trap that you didn&#x27;t create yourself</td>
+        </tr>
+      
+        <tr id="A_POLYED_PET_ON_TRAP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#154</td>
+          <td class="ach-name">Distinction Without a Difference</td>
+          <td class="ach-desc">Polymorph a pet using a polytrap</td>
+        </tr>
+      
+        <tr id="A_PET_THROUGH_PLANES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#155</td>
+          <td class="ach-name">Tenacious Companion</td>
+          <td class="ach-desc">Have a pet survive all the way to the Astral Plane that you brought into the Plane of Earth</td>
+        </tr>
+      
+        <tr id="A_FOUND_BONES_PILE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#156</td>
+          <td class="ach-name">Those Who Came Before</td>
+          <td class="ach-desc">Sight another player&#x27;s bones pile</td>
+        </tr>
+      
+        <tr id="A_FOUND_ROGUE_BONES_PILE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#157</td>
+          <td class="ach-name">Imitation Bones</td>
+          <td class="ach-desc">Step onto the Rogue level fake bones pile</td>
+        </tr>
+      
+        <tr id="A_DOUBLE_BONES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#158</td>
+          <td class="ach-name">Double Bones</td>
+          <td class="ach-desc">Encounter two bones piles on a single level</td>
+        </tr>
+      
+        <tr id="A_FOUND_FOUR_BONES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#159</td>
+          <td class="ach-name">Mr. Bones&#x27; Wild Ride</td>
+          <td class="ach-desc">Find the bones of four former heroes in one game</td>
+        </tr>
+      
+        <tr id="A_OPENED_TIN_PROPERLY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#160</td>
+          <td class="ach-name">Civilized Cooking</td>
+          <td class="ach-desc">Open a tin with a tin opener</td>
+        </tr>
+      
+        <tr id="A_TINNED_UNIQUE_MON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#161</td>
+          <td class="ach-name">Exotic Meat</td>
+          <td class="ach-desc">Tin a unique monster</td>
+        </tr>
+      
+        <tr id="A_USED_UP_TINNING_KIT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#162</td>
+          <td class="ach-name">Tinned Out</td>
+          <td class="ach-desc">Use up a tinning kit</td>
+        </tr>
+      
+        <tr id="A_BLOCKED_TROLL_REVIVAL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#163</td>
+          <td class="ach-name">Reincarnation Cancelled</td>
+          <td class="ach-desc">&quot;Feel less hassled&quot; after blocking a troll&#x27;s revival attempt</td>
+        </tr>
+      
+        <tr id="A_PERMAKILLED_RIDER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#164</td>
+          <td class="ach-name">Well... Bye</td>
+          <td class="ach-desc">Prevent a Rider from resurrecting</td>
+        </tr>
+      
+        <tr id="A_REVIVIFIED_CORPSE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#165</td>
+          <td class="ach-name">Only Mostly Dead</td>
+          <td class="ach-desc">Resurrect a corpse</td>
+        </tr>
+      
+        <tr id="A_RESURRECTED_PET_TAME">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#166</td>
+          <td class="ach-name">Necromancer</td>
+          <td class="ach-desc">Resurrect a fallen pet and have it return tame</td>
+        </tr>
+      
+        <tr id="A_REVIVED_PERSEUS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#167</td>
+          <td class="ach-name">Asudem</td>
+          <td class="ach-desc">Revive Perseus</td>
+        </tr>
+      
+        <tr id="A_RESURRECTED_WIZARD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#168</td>
+          <td class="ach-name">So Thou Thought Thou Couldst Resurrect Me</td>
+          <td class="ach-desc">Resurrect the Wizard of Yendor</td>
+        </tr>
+      
+        <tr id="A_GOT_LIFESAVED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#169</td>
+          <td class="ach-name">Insert Quarter to Continue</td>
+          <td class="ach-desc">Get life-saved</td>
+        </tr>
+      
+        <tr id="A_CHATTED_IZCHAK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#170</td>
+          <td class="ach-name">Always Talk to the Wise Old Man</td>
+          <td class="ach-desc">Chat with Izchak</td>
+        </tr>
+      
+        <tr id="A_PURCHASED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#171</td>
+          <td class="ach-name">Dungeon Economics</td>
+          <td class="ach-desc">Buy or sell something at a shop</td>
+        </tr>
+      
+        <tr id="A_BOUGHT_UNID_GEM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#172</td>
+          <td class="ach-name">Conspicuous Consumption</td>
+          <td class="ach-desc">Buy an unidentified gem from a shop</td>
+        </tr>
+      
+        <tr id="A_BANKRUPTED_SHOPKEEPER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#173</td>
+          <td class="ach-name">The Art of the Deal</td>
+          <td class="ach-desc">Bankrupt a shopkeeper by getting all their money</td>
+        </tr>
+      
+        <tr id="A_ROBBED_SHOP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#174</td>
+          <td class="ach-name">Stop, Thief!</td>
+          <td class="ach-desc">Be chased by the Keystone Kops</td>
+        </tr>
+      
+        <tr id="A_VISITED_DEEP_SHOP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#175</td>
+          <td class="ach-name">The Last Chance Outpost</td>
+          <td class="ach-desc">Visit a shop at or below level 20</td>
+        </tr>
+      
+        <tr id="A_BRIBED_DEMON_LORD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#176</td>
+          <td class="ach-name">Money Talks</td>
+          <td class="ach-desc">Bribe a demon lord with at least 25000 gold</td>
+        </tr>
+      
+        <tr id="A_BRIBED_WITH_1">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#177</td>
+          <td class="ach-name">The Negotiator</td>
+          <td class="ach-desc">Successfully bribe a demon lord with 1 zorkmid</td>
+        </tr>
+      
+        <tr id="A_BRIBED_MERC">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#178</td>
+          <td class="ach-name">Look the Other Way</td>
+          <td class="ach-desc">Successfully bribe a mercenary</td>
+        </tr>
+      
+        <tr id="A_ROBBED_BY_NYMPH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#179</td>
+          <td class="ach-name">A Little Light Larceny</td>
+          <td class="ach-desc">Get robbed by a nymph</td>
+        </tr>
+      
+        <tr id="A_ROBBED_BY_LEPRECHAUN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#180</td>
+          <td class="ach-name">Pot of Greed</td>
+          <td class="ach-desc">Have your purse lightened by a leprechaun</td>
+        </tr>
+      
+        <tr id="A_ENCOUNTERED_FOOCUBUS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#181</td>
+          <td class="ach-name">The Birds and the Bees</td>
+          <td class="ach-desc">Dally with a foocubus</td>
+        </tr>
+      
+        <tr id="A_HEALED_BY_NURSE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#182</td>
+          <td class="ach-name">Hello, Nurse!</td>
+          <td class="ach-desc">Get a nurse to heal you or raise your max HP</td>
+        </tr>
+      
+        <tr id="A_EVADED_BRAINSUCK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#183</td>
+          <td class="ach-name">Tin Foil Hat</td>
+          <td class="ach-desc">Dodge a brainsucking attack</td>
+        </tr>
+      
+        <tr id="A_SCARED_BY_GHOST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#184</td>
+          <td class="ach-name">Who You Gonna Call?</td>
+          <td class="ach-desc">Get scared by a ghost</td>
+        </tr>
+      
+        <tr id="A_HEISENBERG">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#185</td>
+          <td class="ach-name">Heisenberg</td>
+          <td class="ach-desc">Become uncertain about your position or velocity</td>
+        </tr>
+      
+        <tr id="A_AMULET_WAS_STOLEN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#186</td>
+          <td class="ach-name">Yoink!</td>
+          <td class="ach-desc">Have the Amulet of Yendor stolen from you</td>
+        </tr>
+      
+        <tr id="A_BOUGHT_PROTECTION">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#187</td>
+          <td class="ach-name">Indulgences</td>
+          <td class="ach-desc">Buy protection from a priest</td>
+        </tr>
+      
+        <tr id="A_CONVERTED_ALTAR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#188</td>
+          <td class="ach-name">Orthodoxy</td>
+          <td class="ach-desc">Convert an altar</td>
+        </tr>
+      
+        <tr id="A_GOT_TWO_BITS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#189</td>
+          <td class="ach-name">Potions of Booze Cost More Than That</td>
+          <td class="ach-desc">Get two bits for an ale from a priest</td>
+        </tr>
+      
+        <tr id="A_MON_GREW_TO_HIPRIEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#190</td>
+          <td class="ach-name">Fumata Bianca</td>
+          <td class="ach-desc">Get a priest to grow up into a high priest</td>
+        </tr>
+      
+        <tr id="A_BUC_FROM_ALTAR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#191</td>
+          <td class="ach-name">Get Flashed</td>
+          <td class="ach-desc">Learn an item&#x27;s beatitude from an altar</td>
+        </tr>
+      
+        <tr id="A_USED_THRONE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#192</td>
+          <td class="ach-name">The Royal Treatment</td>
+          <td class="ach-desc">Sit on a throne</td>
+        </tr>
+      
+        <tr id="A_DROPPED_RING_IN_SINK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#193</td>
+          <td class="ach-name">It&#x27;ll Turn Up Later</td>
+          <td class="ach-desc">Drop a ring in a sink</td>
+        </tr>
+      
+        <tr id="A_KICKED_FRUIT_TREE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#194</td>
+          <td class="ach-name">Isaac Newton</td>
+          <td class="ach-desc">Get fruit by kicking a tree</td>
+        </tr>
+      
+        <tr id="A_GOT_BEES_FROM_TREE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#195</td>
+          <td class="ach-name">Not The Bees</td>
+          <td class="ach-desc">Get bees by kicking a tree</td>
+        </tr>
+      
+        <tr id="A_UNCURSED_IN_FOUNTAIN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#196</td>
+          <td class="ach-name">Wash it Clean</td>
+          <td class="ach-desc">Uncurse an item in a fountain</td>
+        </tr>
+      
+        <tr id="A_LEARNED_LV5_SPELL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#197</td>
+          <td class="ach-name">Well-Read</td>
+          <td class="ach-desc">Learn a level 5+ spell</td>
+        </tr>
+      
+        <tr id="A_CREATED_DSM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#198</td>
+          <td class="ach-name">Hand Crafted</td>
+          <td class="ach-desc">Make a dragon scale mail</td>
+        </tr>
+      
+        <tr id="A_TRAPPED_MONSTER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#199</td>
+          <td class="ach-name">The Most Dangerous Game</td>
+          <td class="ach-desc">Catch a monster in a trap set by you</td>
+        </tr>
+      
+        <tr id="A_TRAPPED_BEAR_IN_BEAR_TRAP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#200</td>
+          <td class="ach-name">Foobear</td>
+          <td class="ach-desc">Catch a bearish monster in a bear trap you set</td>
+        </tr>
+      
+        <tr id="A_GOT_UNPUNISHED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#201</td>
+          <td class="ach-name">Liberated</td>
+          <td class="ach-desc">Get yourself unpunished</td>
+        </tr>
+      
+        <tr id="A_FELL_ONTO_SINK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#202</td>
+          <td class="ach-name">It&#x27;s Called That For a Reason</td>
+          <td class="ach-desc">Come to earth by levitating over a sink</td>
+        </tr>
+      
+        <tr id="A_WROTE_SCROLL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#203</td>
+          <td class="ach-name">Scribe</td>
+          <td class="ach-desc">Write a scroll with a magic marker</td>
+        </tr>
+      
+        <tr id="A_WROTE_SPELLBOOK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#204</td>
+          <td class="ach-name">First Edition</td>
+          <td class="ach-desc">Write a spellbook</td>
+        </tr>
+      
+        <tr id="A_RODE_DRAGON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#205</td>
+          <td class="ach-name">Dragon Rider</td>
+          <td class="ach-desc">Ride a dragon</td>
+        </tr>
+      
+        <tr id="A_ERODEPROOFED_ITEM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#206</td>
+          <td class="ach-name">Shimmer</td>
+          <td class="ach-desc">Erosionproof an item</td>
+        </tr>
+      
+        <tr id="A_THREW_UNICORN_GEM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#207</td>
+          <td class="ach-name">They Like Shiny Things</td>
+          <td class="ach-desc">Throw a gem at a unicorn</td>
+        </tr>
+      
+        <tr id="A_DUG_UP_GRAVE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#208</td>
+          <td class="ach-name">Buried Treasure</td>
+          <td class="ach-desc">Dig up a grave not in a graveyard</td>
+        </tr>
+      
+        <tr id="A_CAUSED_EARTHQUAKE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#209</td>
+          <td class="ach-name">Movers and Shakers</td>
+          <td class="ach-desc">Cause an earthquake</td>
+        </tr>
+      
+        <tr id="A_CHARMED_SNAKE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#210</td>
+          <td class="ach-name">Snake Charmer</td>
+          <td class="ach-desc">Pacify a snake with a flute</td>
+        </tr>
+      
+        <tr id="A_HIT_WITH_BOOMERANG">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#211</td>
+          <td class="ach-name">Right Back at Ya</td>
+          <td class="ach-desc">Hit an enemy with an indirect strike from a thrown boomerang</td>
+        </tr>
+      
+        <tr id="A_DEALT_SILVER_DAMAGE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#212</td>
+          <td class="ach-name">It Burnsss</td>
+          <td class="ach-desc">Deal silver damage to a silver-hating monster</td>
+        </tr>
+      
+        <tr id="A_MADE_CRYSKNIFE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#213</td>
+          <td class="ach-name">Arrakis</td>
+          <td class="ach-desc">Make a crysknife</td>
+        </tr>
+      
+        <tr id="A_WIZ_WORE_CORNUTHAUM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#214</td>
+          <td class="ach-name">Obligatory Pointy Hat</td>
+          <td class="ach-desc">Put on a cornuthaum as a wizard</td>
+        </tr>
+      
+        <tr id="A_WORE_MITHRIL_COAT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#215</td>
+          <td class="ach-name">Hobbit Skin</td>
+          <td class="ach-desc">Wear a mithril coat</td>
+        </tr>
+      
+        <tr id="A_FOUND_3_GRAFFITI">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#216</td>
+          <td class="ach-name">The Words of the Prophets</td>
+          <td class="ach-desc">Read 3 random graffiti</td>
+        </tr>
+      
+        <tr id="A_SPLIT_A_PUDDING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#217</td>
+          <td class="ach-name">Are You Still Pudding Farming</td>
+          <td class="ach-desc">Split a pudding</td>
+        </tr>
+      
+        <tr id="A_WORE_MEAT_RING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#218</td>
+          <td class="ach-name">Wearable Snack</td>
+          <td class="ach-desc">Wear a meat ring</td>
+        </tr>
+      
+        <tr id="A_LOOTED_ICE_BOX">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#219</td>
+          <td class="ach-name">Frozen Treats</td>
+          <td class="ach-desc">Loot an ice box</td>
+        </tr>
+      
+        <tr id="A_STOCKED_SIX_PACK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#220</td>
+          <td class="ach-name">Six Pack</td>
+          <td class="ach-desc">Stock an ice box with 6 or more potions of booze</td>
+        </tr>
+      
+        <tr id="A_ANIMATED_FIGURINE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#221</td>
+          <td class="ach-name">Pygmalion</td>
+          <td class="ach-desc">Create a monster from a figurine</td>
+        </tr>
+      
+        <tr id="A_NERD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#222</td>
+          <td class="ach-name">Nerd</td>
+          <td class="ach-desc">Read a spellbook while wearing lenses and a T-shirt</td>
+        </tr>
+      
+        <tr id="A_CHARGED_AN_OBJECT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#223</td>
+          <td class="ach-name">Recharged</td>
+          <td class="ach-desc">Charge an object</td>
+        </tr>
+      
+        <tr id="A_KICKED_EMBEDDED_ITEM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#224</td>
+          <td class="ach-name">Get Your Kicks</td>
+          <td class="ach-desc">Kick an item embedded in a wall or rock</td>
+        </tr>
+      
+        <tr id="A_SNAGGED_WITH_HOOK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#225</td>
+          <td class="ach-name">Spiderman</td>
+          <td class="ach-desc">Grab an item with a grappling hook</td>
+        </tr>
+      
+        <tr id="A_REFILLED_CANDELABRUM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#226</td>
+          <td class="ach-name">More Light</td>
+          <td class="ach-desc">Refill the Candelabrum after it burns out after the Invocation</td>
+        </tr>
+      
+        <tr id="A_REFILLED_OIL_LAMP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#227</td>
+          <td class="ach-name">Fill &#x27;Er Up</td>
+          <td class="ach-desc">Fill an oil lamp with a potion of oil</td>
+        </tr>
+      
+        <tr id="A_ALCHEMIZED">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#228</td>
+          <td class="ach-name">Chemistry 101</td>
+          <td class="ach-desc">Alchemize two potions in an established recipe</td>
+        </tr>
+      
+        <tr id="A_READ_NOVEL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#229</td>
+          <td class="ach-name">Escape to Discworld</td>
+          <td class="ach-desc">Read a Terry Pratchett novel</td>
+        </tr>
+      
+        <tr id="A_TALKED_TO_DEATH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#230</td>
+          <td class="ach-name">Near Death Experience</td>
+          <td class="ach-desc">Chat with Death while carrying a Terry Pratchett novel</td>
+        </tr>
+      
+        <tr id="A_GOT_SPBOOK_FROM_STATUE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#231</td>
+          <td class="ach-name">Prize Inside!</td>
+          <td class="ach-desc">Get a spellbook by breaking a randomly-generated statue</td>
+        </tr>
+      
+        <tr id="A_SUMMONED_NYMPH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#232</td>
+          <td class="ach-name">Ding-a-Ling</td>
+          <td class="ach-desc">Summon a nymph by ringing a cursed bell</td>
+        </tr>
+      
+        <tr id="A_GOT_OBJECT_UNDERWATER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#233</td>
+          <td class="ach-name">Diver Down</td>
+          <td class="ach-desc">Dive into a moat or pool and retrieve an item from the bottom</td>
+        </tr>
+      
+        <tr id="A_RODE_WUMPUS_OVER_WATER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#234</td>
+          <td class="ach-name">Ceiling Clinging Commute</td>
+          <td class="ach-desc">Ride a wumpus over water</td>
+        </tr>
+      
+        <tr id="A_OPENED_SCHROEDINGERS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#235</td>
+          <td class="ach-name">Collapse the Wavefunction</td>
+          <td class="ach-desc">Open the box containing Schroedinger&#x27;s Cat</td>
+        </tr>
+      
+        <tr id="A_FREED_PRISONER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#236</td>
+          <td class="ach-name">I&#x27;m Free! I&#x27;m Free!</td>
+          <td class="ach-desc">Free a prisoner</td>
+        </tr>
+      
+        <tr id="A_READ_MAIL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#237</td>
+          <td class="ach-name">Spam, Spam, Spam</td>
+          <td class="ach-desc">Read a scroll of mail</td>
+        </tr>
+      
+        <tr id="A_CHANGED_GENDER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#238</td>
+          <td class="ach-name">Gender Swap</td>
+          <td class="ach-desc">Put on an amulet of change</td>
+        </tr>
+      
+        <tr id="A_MULTI_GENDER_FLIP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#239</td>
+          <td class="ach-name">Gender Bender</td>
+          <td class="ach-desc">Change gender two or more times</td>
+        </tr>
+      
+        <tr id="A_LAID_EGG">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#240</td>
+          <td class="ach-name">Motherhood</td>
+          <td class="ach-desc">Lay an egg</td>
+        </tr>
+      
+        <tr id="A_HATCHED_FOREIGN_EGG">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#241</td>
+          <td class="ach-name">Father Figure</td>
+          <td class="ach-desc">Hatch an egg not laid by you and have it come out tame</td>
+        </tr>
+      
+        <tr id="A_FELL_DOWN_SHAFT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#242</td>
+          <td class="ach-name">Shafted</td>
+          <td class="ach-desc">Fall down a shaft</td>
+        </tr>
+      
+        <tr id="A_EXTINCTED_ARMY_OR_KOPS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#243</td>
+          <td class="ach-name">Horatius at the Bridge</td>
+          <td class="ach-desc">Extinct soldiers or Keystone Kops</td>
+        </tr>
+      
+        <tr id="A_DEFLECTED_NYMPH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#244</td>
+          <td class="ach-name">Who&#x27;s That Pretty Girl in the Mirror, There?</td>
+          <td class="ach-desc">Deflect a nymph with a mirror</td>
+        </tr>
+      
+        <tr id="A_CHANGED_ALIGNMENT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#245</td>
+          <td class="ach-name">Under New Management</td>
+          <td class="ach-desc">Change your alignment by any means</td>
+        </tr>
+      
+        <tr id="A_REVISITED_LOST_LEVEL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#246</td>
+          <td class="ach-name">Groundhog Day</td>
+          <td class="ach-desc">Return to a forgotten level</td>
+        </tr>
+      
+        <tr id="A_DIPPED_IN_UNHOLY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#247</td>
+          <td class="ach-name">Tainted</td>
+          <td class="ach-desc">Dip an item in unholy water</td>
+        </tr>
+      
+        <tr id="A_DISSOLVED_IRONBARS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#248</td>
+          <td class="ach-name">Hydrochloric</td>
+          <td class="ach-desc">Dissolve iron bars with acid</td>
+        </tr>
+      
+        <tr id="A_BROKE_WAN_NOTHING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#249</td>
+          <td class="ach-name">Predictably, Nothing Happens</td>
+          <td class="ach-desc">Break an identified wand of nothing</td>
+        </tr>
+      
+        <tr id="A_BROKE_WAND_WISHING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#250</td>
+          <td class="ach-name">Wanton Waste</td>
+          <td class="ach-desc">Break an identified wand of wishing with at least 1 charge</td>
+        </tr>
+      
+        <tr id="A_CANCELED_MONSTER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#251</td>
+          <td class="ach-name">Neutralized</td>
+          <td class="ach-desc">Cancel a monster</td>
+        </tr>
+      
+        <tr id="A_NEUTRALIZED_POTION">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#252</td>
+          <td class="ach-name">Panacea</td>
+          <td class="ach-desc">Neutralize a harmful potion with a unicorn horn</td>
+        </tr>
+      
+        <tr id="A_FINISHED_WITH_50000">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#253</td>
+          <td class="ach-name">Croesus Competitor</td>
+          <td class="ach-desc">Finish a game carrying at least 50000 gold</td>
+        </tr>
+      
+        <tr id="A_FINISHED_WITH_100000">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#254</td>
+          <td class="ach-name">Croesus Buyout</td>
+          <td class="ach-desc">Finish a game carrying at least 100000 gold</td>
+        </tr>
+      
+        <tr id="A_APPLIED_CRYSTAL_BALL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#255</td>
+          <td class="ach-name">Palantir</td>
+          <td class="ach-desc">Successfully apply a crystal ball</td>
+        </tr>
+      
+        <tr id="A_MAXED_ATTRIBUTES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#256</td>
+          <td class="ach-name">Peak Condition</td>
+          <td class="ach-desc">Raise all attributes to at least 18</td>
+        </tr>
+      
+        <tr id="A_CREATED_FAMILIAR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#257</td>
+          <td class="ach-name">Replacement Goldfish</td>
+          <td class="ach-desc">Cast create familiar</td>
+        </tr>
+      
+        <tr id="A_GAVE_ADORNMENT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#258</td>
+          <td class="ach-name">Pop the Question</td>
+          <td class="ach-desc">Give a ring of adornment to a succubus</td>
+        </tr>
+      
+        <tr id="A_EXPELLED_FROM_QUEST">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#259</td>
+          <td class="ach-name">No Soup For You!</td>
+          <td class="ach-desc">Get permanently expelled from the Quest</td>
+        </tr>
+      
+        <tr id="A_GOT_FOOD_APPRAISAL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#260</td>
+          <td class="ach-name">Discerning Palate</td>
+          <td class="ach-desc">Gain intrinsic food appraisal</td>
+        </tr>
+      
+        <tr id="A_SUMMONED_DEMON_LORD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#261</td>
+          <td class="ach-name">Banishing Spells Not Included</td>
+          <td class="ach-desc">Summon a demon lord</td>
+        </tr>
+      
+        <tr id="A_WRESTED_WOW">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#262</td>
+          <td class="ach-name">Dust to Dust</td>
+          <td class="ach-desc">Wrest one last charge from a wand of wishing</td>
+        </tr>
+      
+        <tr id="A_AMETHYST_BOOZE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#263</td>
+          <td class="ach-name">Teetotaler</td>
+          <td class="ach-desc">Neutralize a potion of booze with an amethyst</td>
+        </tr>
+      
+        <tr id="A_SCARED_OF_SKELETON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#264</td>
+          <td class="ach-name">Spooky Scary Skeletons</td>
+          <td class="ach-desc">Get scared by the rattling of a skeleton</td>
+        </tr>
+      
+        <tr id="A_LIED_TO_GUARD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#265</td>
+          <td class="ach-name">Gullible</td>
+          <td class="ach-desc">Get out of trouble by successfully lying to a vault guard</td>
+        </tr>
+      
+        <tr id="A_GOT_13_LUCK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#266</td>
+          <td class="ach-name">Luck of the Grasshopper</td>
+          <td class="ach-desc">Reach +13 Luck</td>
+        </tr>
+      
+        <tr id="A_GOT_NEGATIVE_13_LUCK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#267</td>
+          <td class="ach-name">Murphy&#x27;s Law</td>
+          <td class="ach-desc">Reach -13 Luck</td>
+        </tr>
+      
+        <tr id="A_GREASED_ARMOR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#268</td>
+          <td class="ach-name">Looking Slick</td>
+          <td class="ach-desc">Grease a piece of armor</td>
+        </tr>
+      
+        <tr id="A_DEATHLY_HALLOWS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#269</td>
+          <td class="ach-name">The Deathly Hallows</td>
+          <td class="ach-desc">Wield a wand of death while wearing an invisibility cloak and amulet of life saving</td>
+        </tr>
+      
+        <tr id="A_DISARMED_WITH_WHIP">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#270</td>
+          <td class="ach-name">Indiana Jones</td>
+          <td class="ach-desc">Disarm a monster with a bullwhip</td>
+        </tr>
+      
+        <tr id="A_DISARMED_LUDIOS_MINES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#271</td>
+          <td class="ach-name">Minesweeper</td>
+          <td class="ach-desc">Disarm all land mines in Fort Ludios without blowing any up</td>
+        </tr>
+      
+        <tr id="A_UNLOCKED_CREDIT_CARD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#272</td>
+          <td class="ach-name">007</td>
+          <td class="ach-desc">Unlock something with a credit card</td>
+        </tr>
+      
+        <tr id="A_RELEASED_CAMERA_DEMON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#273</td>
+          <td class="ach-name">Bob Ross</td>
+          <td class="ach-desc">Release a picture-painting demon from a camera</td>
+        </tr>
+      
+        <tr id="A_SCARED_WITH_MUSIC">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#274</td>
+          <td class="ach-name">Got No Talent</td>
+          <td class="ach-desc">Scare something by playing music</td>
+        </tr>
+      
+        <tr id="A_READ_FORTUNE_FOODLESS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#275</td>
+          <td class="ach-name">Cookie Monster</td>
+          <td class="ach-desc">Read a fortune without eating its cookie</td>
+        </tr>
+      
+        <tr id="A_GATED_IN_DEMON_LORD">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#276</td>
+          <td class="ach-name">Say Hello To My Evil Friend</td>
+          <td class="ach-desc">Have a non-guaranteed demon lord gated in or summoned</td>
+        </tr>
+      
+        <tr id="A_ENGRAVED_WITH_ATHAME">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#277</td>
+          <td class="ach-name">Make your Mark</td>
+          <td class="ach-desc">Engrave with an athame</td>
+        </tr>
+      
+        <tr id="A_ONE_HIT_KO">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#278</td>
+          <td class="ach-name">One Hit KO</td>
+          <td class="ach-desc">Deal a monster its maximum HP or more of damage (minimum 20)</td>
+        </tr>
+      
+        <tr id="A_LEVELED_UP_FROM_SINK">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#279</td>
+          <td class="ach-name">Drink It To The Next Level</td>
+          <td class="ach-desc">Level up by drinking from a sink</td>
+        </tr>
+      
+        <tr id="A_ABOUT_TO_DIE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#280</td>
+          <td class="ach-name">You&#x27;re About To Die, You Scrub</td>
+          <td class="ach-desc">Get a special message saying you&#x27;re about to die, you scrub</td>
+        </tr>
+      
+        <tr id="A_GENOCIDED_5_TIMES">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#281</td>
+          <td class="ach-name">Extinctionist Lite</td>
+          <td class="ach-desc">Perform genocide 5 or more times</td>
+        </tr>
+      
+        <tr id="A_EXTINCTED_NEWTS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#282</td>
+          <td class="ach-name">Dudley&#x27;s Hero</td>
+          <td class="ach-desc">Extinct newts</td>
+        </tr>
+      
+        <tr id="A_WALKED_ON_LAVA">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#283</td>
+          <td class="ach-name">Ice Jesus</td>
+          <td class="ach-desc">Walk on top of lava unharmed</td>
+        </tr>
+      
+        <tr id="A_GOT_LICH_ATHAME">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#284</td>
+          <td class="ach-name">Rare Loot</td>
+          <td class="ach-desc">Acquire an athame that was generated in the inventory of a lich</td>
+        </tr>
+      
+        <tr id="A_DID_PURE_SOKOBAN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#285</td>
+          <td class="ach-name">Boy Scout</td>
+          <td class="ach-desc">Complete Sokoban without incurring any penalties for rule-breaking</td>
+        </tr>
+      
+        <tr id="A_STETHOSCOPED_SDOOR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#286</td>
+          <td class="ach-name">Sounds Hollow</td>
+          <td class="ach-desc">Reveal a secret door with a stethoscope</td>
+        </tr>
+      
+        <tr id="A_PLANES_VIA_QUAFFING">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#287</td>
+          <td class="ach-name">Unorthodox Exit</td>
+          <td class="ach-desc">Reach the Planes via quaffing</td>
+        </tr>
+      
+        <tr id="A_WATER_GUSH_FORTH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#288</td>
+          <td class="ach-name">Paddling Pool</td>
+          <td class="ach-desc">Create pools from a fountain</td>
+        </tr>
+      
+        <tr id="A_BOOBY_TRAPPED_TIN">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#289</td>
+          <td class="ach-name">Practical Joke</td>
+          <td class="ach-desc">Have a tin blow up in your face</td>
+        </tr>
+      
+        <tr id="A_VISION_FROM_THRONE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#290</td>
+          <td class="ach-name">Amon Hen</td>
+          <td class="ach-desc">Get either of the two &quot;vision&quot; effects from sitting on a throne</td>
+        </tr>
+      
+        <tr id="A_EXPLODED_LARGE_BOX">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#291</td>
+          <td class="ach-name">Detonator</td>
+          <td class="ach-desc">Explode a large box or chest</td>
+        </tr>
+      
+        <tr id="A_LIT_20_ROOMS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#292</td>
+          <td class="ach-name">Lightbringer</td>
+          <td class="ach-desc">Light up at least 20 dark rooms in the Dungeons of Doom</td>
+        </tr>
+      
+        <tr id="A_MFORCE_15_LEVELS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#293</td>
+          <td class="ach-name">Cosmic Bungee Cord</td>
+          <td class="ach-desc">Get sent back a total of 15 or more levels by the mysterious force</td>
+        </tr>
+      
+        <tr id="A_GOT_RID_OF_WATCH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#294</td>
+          <td class="ach-name">No Rulez</td>
+          <td class="ach-desc">Remove all watchmen from Minetown</td>
+        </tr>
+      
+        <tr id="A_NESTED_BOH">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#295</td>
+          <td class="ach-name">Packing Light</td>
+          <td class="ach-desc">Successfully store a bag of holding inside another bag of holding</td>
+        </tr>
+      
+        <tr id="A_MAKE_MON_ESCAPE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#296</td>
+          <td class="ach-name">Shoo Off</td>
+          <td class="ach-desc">Make a monster of difficulty 5 or more escape the dungeon</td>
+        </tr>
+      
+        <tr id="A_MAKE_DLORD_ESCAPE">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#297</td>
+          <td class="ach-name">What Have I Unleashed</td>
+          <td class="ach-desc">Make a demon lord escape the dungeon</td>
+        </tr>
+      
+        <tr id="A_GOT_30_AC">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#298</td>
+          <td class="ach-name">Walking Bullseye</td>
+          <td class="ach-desc">Have +30 AC</td>
+        </tr>
+      
+        <tr id="A_GOT_MINUS_50_AC">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#299</td>
+          <td class="ach-name">Tanking It</td>
+          <td class="ach-desc">Have -50 AC</td>
+        </tr>
+      
+        <tr id="A_DOOR_RESIST_8X">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#300</td>
+          <td class="ach-name">Doorstopper</td>
+          <td class="ach-desc">Have a door resist 8 consecutive times when trying to open or close it</td>
+        </tr>
+      
+        <tr id="A_LONG_TIMEOUT">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#301</td>
+          <td class="ach-name">Practically Permanent</td>
+          <td class="ach-desc">Have more than 10,000 turns of a temporary intrinsic</td>
+        </tr>
+      
+        <tr id="A_ENCHANT_WEP_TO_8">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#302</td>
+          <td class="ach-name">This One Goes To +8</td>
+          <td class="ach-desc">Successfully enchant a weapon to +8 or higher</td>
+        </tr>
+      
+        <tr id="A_ENCHANT_WEAPON">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#303</td>
+          <td class="ach-name">Glowy Blue Upgrade</td>
+          <td class="ach-desc">Successfully increase the enchantment on your weapon</td>
+        </tr>
+      
+        <tr id="A_BLEW_UP_BOULDER">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#304</td>
+          <td class="ach-name">Blasters&#x27; Handbook</td>
+          <td class="ach-desc">Blow up a boulder with a land mine</td>
+        </tr>
+      
+        <tr id="A_POLY_MADE_GOLEM">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#305</td>
+          <td class="ach-name">Loew Life</td>
+          <td class="ach-desc">Create a golem from a pile of objects</td>
+        </tr>
+      
+        <tr id="A_CAST_LOCHANCE_SPELL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#306</td>
+          <td class="ach-name">Never Tell Me the Odds</td>
+          <td class="ach-desc">Successfully cast a spell with a failure rate of 95% or greater</td>
+        </tr>
+      
+        <tr id="A_CAST_LV7_SPELL">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#307</td>
+          <td class="ach-name">Archmage</td>
+          <td class="ach-desc">Successfully cast a level 7 spell</td>
+        </tr>
+      
+        <tr id="A_ENTERED_CASTLE_QUICKLY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#308</td>
+          <td class="ach-name">Leeroy Jenkins</td>
+          <td class="ach-desc">Cross the Castle drawbridge threshold within 30 turns of entering the level for the first time</td>
+        </tr>
+      
+        <tr id="A_GOT_SOKO_CANDY">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#309</td>
+          <td class="ach-name">Chocoban</td>
+          <td class="ach-desc">Acquire a candy bar generated in Sokoban</td>
+        </tr>
+      
+        <tr id="A_DRANK_HARMFUL_POTS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#310</td>
+          <td class="ach-name">Thirst For Punishment</td>
+          <td class="ach-desc">Drink all harmful types of potion (conf, blind, paral, hallu, sleep, booze, sick, acid)</td>
+        </tr>
+      
+        <tr id="A_EQUIPPED_ALL_ELVEN_GEAR">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#311</td>
+          <td class="ach-name">The Full Elven</td>
+          <td class="ach-desc">Deck yourself out in 5 pieces of +7 elven armor, then wield a +7 elven weapon</td>
+        </tr>
+      
+        <tr id="A_RESTORED_3_LEVELS">
+          
+            <td class="not-achieved">&#10008;</td>
+          
+          <td class="ach-id">#312</td>
+          <td class="ach-name">Drained and Regained</td>
+          <td class="ach-desc">Restore at least 3 lost levels with a single potion</td>
+        </tr>
+      
+    </tbody>
+  </table>
+  <div class="achieve-summary">
+    
+      <div class="achieve-bar"
+          style="width:0%"></div>
+      <div class="achieve-msg">
+        0 out of 323 achievements attained
+      </div>
+    
+  </div>
+</div>
+
+
+
+
+
+</body>
+</html>

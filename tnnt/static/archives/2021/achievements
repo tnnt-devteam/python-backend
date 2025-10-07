@@ -1,0 +1,2085 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Achievements</title>
+  
+
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
+
+</head>
+
+<body>
+
+
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
+              <a href="https://tnnt.org/archives" class="menu ">ARCHIVES</a>
+              
+                <a href="login" class="menu ">LOGIN</a>
+              
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2021 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<h2>Achievements by Number of Achievers</h2>
+<table>
+  <thead>
+    <tr class="framed">
+      <th>name</th>
+      <th>description</th>
+      <th>players</th>
+      <th>clans</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      <tr>
+        <td>Dungeon Economics</td>
+        <td>Buy or sell something at a shop</td>
+        <td>216</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>You Are What You Eat</td>
+        <td>Gain an intrinsic by eating a corpse (or tin or glob)</td>
+        <td>208</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>Death onna Stick</td>
+        <td>Kill a member of 25 different monster species</td>
+        <td>206</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>A Little Light Larceny</td>
+        <td>Get robbed by a nymph</td>
+        <td>200</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>Friendly Fire</td>
+        <td>Get a hostile monster killed by another hostile monster&#x27;s projectile weapon</td>
+        <td>192</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>Back to Civilisation</td>
+        <td>Step onto the Minetown altar</td>
+        <td>188</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>Pet Whisperer</td>
+        <td>Tame a monster by feeding it</td>
+        <td>174</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Never Saw It Coming</td>
+        <td>Kill an invisible monster without see invisible</td>
+        <td>174</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Hobbit Skin</td>
+        <td>Wear a mithril coat</td>
+        <td>172</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Pot of Greed</td>
+        <td>Have your purse lightened by a leprechaun</td>
+        <td>170</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Bring out your Dead</td>
+        <td>Kill a member of 50 different monster species</td>
+        <td>168</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Shafted</td>
+        <td>Fall down a shaft</td>
+        <td>168</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Absolute Monarchy</td>
+        <td>Enter a throne room</td>
+        <td>167</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Kill it Twice</td>
+        <td>Destroy a ghost</td>
+        <td>166</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Playerbanebane</td>
+        <td>Kill a soldier ant</td>
+        <td>165</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Who Was That David Person Anyway?</td>
+        <td>Enter a treasure zoo</td>
+        <td>158</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Breaking and Entering</td>
+        <td>Enter a vault</td>
+        <td>152</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>One Hit KO</td>
+        <td>Deal a monster its maximum HP or more of damage (minimum 20)</td>
+        <td>152</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Those Who Came Before</td>
+        <td>Sight another player&#x27;s bones pile</td>
+        <td>152</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Best Friends Forever</td>
+        <td>Take your starting pet to full adulthood</td>
+        <td>147</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;s The Pits</td>
+        <td>Kill something while you are stuck in a pit</td>
+        <td>146</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>The Royal Treatment</td>
+        <td>Sit on a throne</td>
+        <td>145</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>No Rulez</td>
+        <td>Remove all watchmen from Minetown</td>
+        <td>144</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Diverse Death-Dealer</td>
+        <td>Kill a member of 100 different monster species</td>
+        <td>144</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Are You Feeling Lucky</td>
+        <td>Get the luckstone from Mines&#x27; End</td>
+        <td>142</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>You&#x27;re About To Die, You Scrub</td>
+        <td>Get a special message saying you&#x27;re about to die, you scrub</td>
+        <td>140</td>
+        <td>26</td>
+      </tr>
+    
+      <tr>
+        <td>Boulder Pusher</td>
+        <td>Finish Sokoban</td>
+        <td>140</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Go Forth and Smite</td>
+        <td>Receive an artifact gift from your deity</td>
+        <td>139</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Orthodoxy</td>
+        <td>Convert an altar</td>
+        <td>139</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Are You Still Pudding Farming</td>
+        <td>Split a pudding</td>
+        <td>138</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Heisenberg</td>
+        <td>Become uncertain about your position or velocity</td>
+        <td>135</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Wasn&#x27;t a Meal, Wasn&#x27;t Ready, And You Shouldn&#x27;t Have Eaten It</td>
+        <td>Eat a military ration</td>
+        <td>132</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>They&#x27;re After Me Lucky Charms</td>
+        <td>Enter a leprechaun hall</td>
+        <td>131</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>New Lease on Life</td>
+        <td>Cure deathly illness</td>
+        <td>131</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Frozen Treats</td>
+        <td>Loot an ice box</td>
+        <td>129</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Indulgences</td>
+        <td>Buy protection from a priest</td>
+        <td>127</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Recharged</td>
+        <td>Charge an object</td>
+        <td>127</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Imitation Bones</td>
+        <td>Step onto the Rogue level fake bones pile</td>
+        <td>127</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;s Dangerous To Go Alone! Take This</td>
+        <td>Put an item into a swap chest</td>
+        <td>126</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Pilgrim</td>
+        <td>Visit every type of aligned altar</td>
+        <td>125</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Furry Little Problem</td>
+        <td>Cure lycanthropy</td>
+        <td>124</td>
+        <td>25</td>
+      </tr>
+    
+      <tr>
+        <td>Dragonslayer</td>
+        <td>Kill a dragon</td>
+        <td>124</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Paddling Pool</td>
+        <td>Create pools from a fountain</td>
+        <td>123</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Hive Mind</td>
+        <td>Enter a beehive</td>
+        <td>122</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>The True Dungeon Masters</td>
+        <td>Chat with an active devteam member</td>
+        <td>121</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Beast Master</td>
+        <td>Tame a monster without using food</td>
+        <td>121</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Halt, Who Goes There?</td>
+        <td>Enter a barracks</td>
+        <td>120</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Boy Scout</td>
+        <td>Complete Sokoban without incurring any penalties for rule-breaking</td>
+        <td>119</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Scribe</td>
+        <td>Write a scroll with a magic marker</td>
+        <td>119</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Got No Talent</td>
+        <td>Scare something by playing music</td>
+        <td>117</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Day of the Dead</td>
+        <td>Enter a graveyard</td>
+        <td>117</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Anti-Stoner</td>
+        <td>Kill Medusa</td>
+        <td>115</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>The Birds and the Bees</td>
+        <td>Dally with a foocubus</td>
+        <td>115</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Batty</td>
+        <td>Get stunned by eating bat meat</td>
+        <td>114</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Feel the Burn</td>
+        <td>Enter Gehennom</td>
+        <td>112</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Death Isn&#x27;t So Cheap</td>
+        <td>Receive the Quest with survivor conduct intact</td>
+        <td>111</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>The Archetypal Hero</td>
+        <td>Get admitted to the Quest</td>
+        <td>111</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>The Most Dangerous Game</td>
+        <td>Catch a monster in a trap set by you</td>
+        <td>111</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Superfood</td>
+        <td>Gain strength by eating royal jelly</td>
+        <td>111</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Luck of the Grasshopper</td>
+        <td>Reach +13 Luck</td>
+        <td>111</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Neutralized</td>
+        <td>Cancel a monster</td>
+        <td>109</td>
+        <td>24</td>
+      </tr>
+    
+      <tr>
+        <td>Escape to Discworld</td>
+        <td>Read a Terry Pratchett novel</td>
+        <td>109</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Dungeon Ecology</td>
+        <td>Enter a swamp</td>
+        <td>109</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>There Is No Spoon</td>
+        <td>Finish the task the devteam requires of you</td>
+        <td>108</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Grim Reaper</td>
+        <td>Kill a member of 200 different monster species</td>
+        <td>108</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Ringing in My Ears</td>
+        <td>Get the Bell of Opening</td>
+        <td>107</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Leave the Artifacts to the Gods</td>
+        <td>Receive the Quest with artifact wishless conduct intact</td>
+        <td>104</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Learn the Alphabet</td>
+        <td>Kill a monster of each class from a to z</td>
+        <td>102</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Shimmer</td>
+        <td>Erosionproof an item</td>
+        <td>100</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Well-Read</td>
+        <td>Learn a level 5+ spell</td>
+        <td>100</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>007</td>
+        <td>Unlock something with a credit card</td>
+        <td>100</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Emerging Into the Light</td>
+        <td>Get the Candelabrum of Invocation</td>
+        <td>99</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Juibl-X</td>
+        <td>Kill Juiblex</td>
+        <td>99</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Looking Slick</td>
+        <td>Grease a piece of armor</td>
+        <td>98</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Watch Your Footing</td>
+        <td>Step onto the vibrating square</td>
+        <td>98</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Prize Inside!</td>
+        <td>Get a spellbook by breaking a randomly-generated statue</td>
+        <td>98</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Sage Advice</td>
+        <td>Consult the Oracle</td>
+        <td>97</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Orcrushed</td>
+        <td>Kill Orcus</td>
+        <td>96</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Weighing of the Heart</td>
+        <td>Get the Book of the Dead</td>
+        <td>96</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Lost My Transmutation License</td>
+        <td>Receive the Quest with polypileless conduct intact</td>
+        <td>96</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Holy War</td>
+        <td>Kill a priest of Moloch</td>
+        <td>95</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>My Preciousss</td>
+        <td>Get the Amulet of Yendor</td>
+        <td>95</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Bell, Book and Candle</td>
+        <td>Perform the invocation ritual</td>
+        <td>95</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Some Watery Tart</td>
+        <td>Be gifted Excalibur</td>
+        <td>94</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;s 4:20 Somewhere</td>
+        <td>Stone a monster</td>
+        <td>94</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>From the Dungeon they Came</td>
+        <td>Enter the Elemental Planes</td>
+        <td>93</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Chemistry 101</td>
+        <td>Alchemize two potions in an established recipe</td>
+        <td>93</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>True to Form</td>
+        <td>Receive the Quest with polyselfless conduct intact</td>
+        <td>92</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>The Halls of the Gods</td>
+        <td>Enter the Astral Plane</td>
+        <td>92</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Diamond in the Rough</td>
+        <td>Identify a gem with a touchstone</td>
+        <td>91</td>
+        <td>23</td>
+      </tr>
+    
+      <tr>
+        <td>Have Fun Storming the Castle</td>
+        <td>Blow up the Castle drawbridge</td>
+        <td>91</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Tin Foil Hat</td>
+        <td>Dodge a brainsucking attack</td>
+        <td>91</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Make Love, Not War</td>
+        <td>Receive the Quest with genocideless conduct intact</td>
+        <td>88</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Tainted</td>
+        <td>Dip an item in unholy water</td>
+        <td>86</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>It Burnsss</td>
+        <td>Deal silver damage to a silver-hating monster</td>
+        <td>86</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Wash it Clean</td>
+        <td>Uncurse an item in a fountain</td>
+        <td>86</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Baalzebust</td>
+        <td>Kill Baalzebub</td>
+        <td>83</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Spam, Spam, Spam</td>
+        <td>Read a scroll of mail</td>
+        <td>83</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>New Dungeon, Never Occupied</td>
+        <td>Receive the Quest with bonesless conduct intact</td>
+        <td>81</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Glass Collector</td>
+        <td>Identify all worthless glass</td>
+        <td>80</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Feeder of Famine</td>
+        <td>Kill Famine</td>
+        <td>80</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Musical Mastermind</td>
+        <td>Learn the passtune</td>
+        <td>79</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Hand Crafted</td>
+        <td>Make a dragon scale mail</td>
+        <td>79</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Asmodead</td>
+        <td>Kill Asmodeus</td>
+        <td>78</td>
+        <td>22</td>
+      </tr>
+    
+      <tr>
+        <td>Who You Gonna Call?</td>
+        <td>Get scared by a ghost</td>
+        <td>77</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Michelin Guide</td>
+        <td>Identify both sources of food detection</td>
+        <td>76</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Insert Quarter to Continue</td>
+        <td>Get life-saved</td>
+        <td>75</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Distinction Without a Difference</td>
+        <td>Polymorph a pet using a polytrap</td>
+        <td>74</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Amon Hen</td>
+        <td>Get either of the two &quot;vision&quot; effects from sitting on a throne</td>
+        <td>73</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Orpheus</td>
+        <td>Activate a drawbridge with the passtune</td>
+        <td>73</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>What It Was Made For</td>
+        <td>Kill a appropriate monster with a Bane weapon</td>
+        <td>72</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Hello, Nurse!</td>
+        <td>Get a nurse to heal you or raise your max HP</td>
+        <td>72</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>They Like Shiny Things</td>
+        <td>Throw a gem at a unicorn</td>
+        <td>72</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Ocean&#x27;s Eleven</td>
+        <td>Enter Fort Ludios</td>
+        <td>72</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Curer of Pestilence</td>
+        <td>Kill Pestilence</td>
+        <td>72</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Furious</td>
+        <td>Kill all three erinyes</td>
+        <td>71</td>
+        <td>21</td>
+      </tr>
+    
+      <tr>
+        <td>Captain Ahab</td>
+        <td>Survive being grabbed by a sea monster</td>
+        <td>71</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Say Hello To My Evil Friend</td>
+        <td>Have a non-guaranteed demon lord gated in or summoned</td>
+        <td>70</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Pet Rescue</td>
+        <td>Free a pet from a trap that you didn&#x27;t create yourself</td>
+        <td>70</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Curse the Darkness</td>
+        <td>Identify a potion of oil by applying it</td>
+        <td>69</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Stop, Thief!</td>
+        <td>Be chased by the Keystone Kops</td>
+        <td>69</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Panacea</td>
+        <td>Neutralize a harmful potion with a unicorn horn</td>
+        <td>68</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Pygmalion</td>
+        <td>Create a monster from a figurine</td>
+        <td>68</td>
+        <td>20</td>
+      </tr>
+    
+      <tr>
+        <td>Team a Headquarters</td>
+        <td>Enter an anthole</td>
+        <td>68</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>The Art of the Deal</td>
+        <td>Bankrupt a shopkeeper by getting all their money</td>
+        <td>68</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Reincarnation Cancelled</td>
+        <td>Tin a troll or get its corpse to rot</td>
+        <td>67</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Rope-a-Dope</td>
+        <td>Kill a monster with a thrown aklys</td>
+        <td>67</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;ll Turn Up Later</td>
+        <td>Drop a ring in a sink</td>
+        <td>66</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>All Clear</td>
+        <td>Kill all hostiles in the Big Room</td>
+        <td>66</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>The Chosen One</td>
+        <td>Get crowned</td>
+        <td>66</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Buried Treasure</td>
+        <td>Dig up a grave not in a graveyard</td>
+        <td>65</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Collapse the Wavefunction</td>
+        <td>Open the box containing Schroedinger&#x27;s Cat</td>
+        <td>63</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Groundhog Day</td>
+        <td>Return to a forgotten level</td>
+        <td>63</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Get Your Kicks</td>
+        <td>Kick an item embedded in a wall or rock</td>
+        <td>63</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Bomb Squad</td>
+        <td>Untrap all 8 types of traps that can be untrapped</td>
+        <td>63</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Part-time Statue</td>
+        <td>Cure stoning</td>
+        <td>61</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Conqueror of Death</td>
+        <td>Kill Death</td>
+        <td>61</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Only Mostly Dead</td>
+        <td>Resurrect a corpse</td>
+        <td>61</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Yee-No-Go</td>
+        <td>Kill Yeenoghu</td>
+        <td>60</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Sounds Hollow</td>
+        <td>Reveal a secret door with a stethoscope</td>
+        <td>60</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Isaac Newton</td>
+        <td>Get fruit by kicking a tree</td>
+        <td>59</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Dust to Dust</td>
+        <td>Wrest one last charge from a wand of wishing</td>
+        <td>59</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>No Help From The Floor</td>
+        <td>Receive the Quest with Elberethless conduct intact</td>
+        <td>59</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>The Words of the Prophets</td>
+        <td>Read 3 random graffiti</td>
+        <td>56</td>
+        <td>18</td>
+      </tr>
+    
+      <tr>
+        <td>Self Sufficient</td>
+        <td>Receive the Quest with wishless conduct intact</td>
+        <td>55</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Always Talk to the Wise Old Man</td>
+        <td>Chat with Izchak</td>
+        <td>54</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>Gullible</td>
+        <td>Lie to a vault guard about your name</td>
+        <td>54</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Palantir</td>
+        <td>Successfully apply a crystal ball</td>
+        <td>53</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Horatius at the Bridge</td>
+        <td>Extinct soldiers or Keystone Kops</td>
+        <td>52</td>
+        <td>17</td>
+      </tr>
+    
+      <tr>
+        <td>I Did It For The Money</td>
+        <td>Kill Croesus</td>
+        <td>52</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Under New Management</td>
+        <td>Change your alignment by any means</td>
+        <td>52</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Minetown Avenger</td>
+        <td>Kill every orc in Orctown</td>
+        <td>51</td>
+        <td>19</td>
+      </tr>
+    
+      <tr>
+        <td>Extradimensionally Challenged</td>
+        <td>Receive the Quest with swapchestless conduct intact</td>
+        <td>50</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Gender Swap</td>
+        <td>Put on an amulet of change</td>
+        <td>49</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Civilized Cooking</td>
+        <td>Open a tin with a tin opener</td>
+        <td>49</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Fill &#x27;Er Up</td>
+        <td>Fill an oil lamp with a potion of oil</td>
+        <td>48</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Thunderdome</td>
+        <td>Defeat the NPC from the NPC Deathmatch quest</td>
+        <td>47</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>The Blob</td>
+        <td>Cure sliming</td>
+        <td>47</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Shifty</td>
+        <td>Tame a shapeshifter in any way</td>
+        <td>44</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>First Edition</td>
+        <td>Write a book</td>
+        <td>43</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>The Grand Tour</td>
+        <td>Visit each high altar on the Astral Plane</td>
+        <td>42</td>
+        <td>16</td>
+      </tr>
+    
+      <tr>
+        <td>Father Figure</td>
+        <td>Hatch an egg not laid by you and have it come out tame</td>
+        <td>42</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Doorstopper</td>
+        <td>Have a door resist 8 consecutive times when trying to open or close it</td>
+        <td>42</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Scholar</td>
+        <td>Identify all scrolls</td>
+        <td>41</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Banishing Spells Not Included</td>
+        <td>Summon a demon lord</td>
+        <td>41</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Exotic Meat</td>
+        <td>Tin a unique monster</td>
+        <td>40</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Make your Mark</td>
+        <td>Engrave with an athame</td>
+        <td>40</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Nerd</td>
+        <td>Read a spellbook while wearing lenses and a T-shirt</td>
+        <td>40</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Teetotaler</td>
+        <td>Neutralize a potion of booze with an amethyst</td>
+        <td>38</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>DIRGE</td>
+        <td>Instakill a monster with poison</td>
+        <td>38</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Potions of Booze Cost More Than That</td>
+        <td>Get two bits for an ale from a priest</td>
+        <td>37</td>
+        <td>15</td>
+      </tr>
+    
+      <tr>
+        <td>Statue Showcase</td>
+        <td>Enter a cockatrice nest</td>
+        <td>37</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Lightbringer</td>
+        <td>Light up at least 20 dark rooms in the Dungeons of Doom</td>
+        <td>36</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>King of Bling</td>
+        <td>Identify all amulets</td>
+        <td>35</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Movers and Shakers</td>
+        <td>Cause an earthquake</td>
+        <td>35</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Right Back at Ya</td>
+        <td>Hit an enemy with a thrown boomerang</td>
+        <td>35</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Cookie Monster</td>
+        <td>Read a fortune without eating its cookie</td>
+        <td>34</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Predictably, Nothing Happens</td>
+        <td>Break an identified wand of nothing</td>
+        <td>34</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Touch It With A 10 Foot Pole</td>
+        <td>Kill a floating eye with a polearm</td>
+        <td>34</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>LEARN THE ALPHABET</td>
+        <td>Kill a monster of each class from A to Z (except I)</td>
+        <td>33</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;s Called That For a Reason</td>
+        <td>Come to earth by levitating over a sink</td>
+        <td>33</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>How Much Wood?</td>
+        <td>Kill or tame a woodchuck</td>
+        <td>33</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Off With Her Head!</td>
+        <td>Decapitate an enemy with Vorpal Blade</td>
+        <td>33</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Discerning Palate</td>
+        <td>Gain intrinsic food appraisal</td>
+        <td>33</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Cosmic Bungee Cord</td>
+        <td>Get sent back a total of 15 or more levels by the mysterious force</td>
+        <td>31</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Storm the Gates of Heaven</td>
+        <td>Kill an Archon</td>
+        <td>31</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Rare Loot</td>
+        <td>Acquire an athame that was generated in the inventory of a lich</td>
+        <td>31</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Not The Bees</td>
+        <td>Get bees by kicking a tree</td>
+        <td>31</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>I&#x27;m Free! I&#x27;m Free!</td>
+        <td>Free a prisoner</td>
+        <td>30</td>
+        <td>14</td>
+      </tr>
+    
+      <tr>
+        <td>Arrakis</td>
+        <td>Make a crysknife</td>
+        <td>30</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Get Your Gas Mask</td>
+        <td>Kill a monster with a stinking cloud</td>
+        <td>30</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Kop Training Program</td>
+        <td>Kill a monster with a rubber hose</td>
+        <td>29</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Wanton Waste</td>
+        <td>Break an identified wand of wishing with at least 1 charge</td>
+        <td>28</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Gender Bender</td>
+        <td>Change gender two or more times</td>
+        <td>28</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Alchemist</td>
+        <td>Identify all potions</td>
+        <td>28</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Bright Light, Bright Light</td>
+        <td>Kill a gremlin with any light source</td>
+        <td>28</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Liberated</td>
+        <td>Get yourself unpunished</td>
+        <td>27</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Who&#x27;s That Pretty Girl in the Mirror, There?</td>
+        <td>Deflect a nymph with a mirror</td>
+        <td>27</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Jeweler</td>
+        <td>Identify all rings</td>
+        <td>27</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Obligatory Pointy Hat</td>
+        <td>Put on a cornuthaum as a wizard</td>
+        <td>27</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Practical Joke</td>
+        <td>Have a tin blow up in your face</td>
+        <td>26</td>
+        <td>13</td>
+      </tr>
+    
+      <tr>
+        <td>Motherhood</td>
+        <td>Lay an egg</td>
+        <td>26</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Poseidon</td>
+        <td>Kill a sea monster with a trident</td>
+        <td>26</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Cat Lady</td>
+        <td>Tame seven &quot;f&quot; in the course of one game</td>
+        <td>26</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Indiana Jones</td>
+        <td>Disarm a monster with a bullwhip</td>
+        <td>26</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>More Light</td>
+        <td>Refill the Candelabrum after it burns out after the Invocation</td>
+        <td>25</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Ice Jesus</td>
+        <td>Walk on top of lava unharmed</td>
+        <td>24</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Geologist</td>
+        <td>Identify all gray stones</td>
+        <td>23</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>The Negotiator</td>
+        <td>Successfully bribe a demon lord with 1 zorkmid</td>
+        <td>23</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Mikado</td>
+        <td>Identify all wands</td>
+        <td>23</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Necromancer</td>
+        <td>Resurrect a fallen pet and have it return tame</td>
+        <td>23</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Hulk Smash</td>
+        <td>Kill a monster with a heavy iron ball</td>
+        <td>22</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Bob Ross</td>
+        <td>Release a picture-painting demon from a camera</td>
+        <td>22</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Pop the Question</td>
+        <td>Give a ring of adornment to a succubus</td>
+        <td>21</td>
+        <td>12</td>
+      </tr>
+    
+      <tr>
+        <td>Master of the Four Elementals</td>
+        <td>Kill at least 4 elementals on their respective home planes</td>
+        <td>21</td>
+        <td>10</td>
+      </tr>
+    
+      <tr>
+        <td>Peak Condition</td>
+        <td>Raise all attributes to at least 18</td>
+        <td>21</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Minesweeper</td>
+        <td>Disarm all land mines in Fort Ludios without blowing any up</td>
+        <td>21</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Purple Rain</td>
+        <td>Get at least 20 enemies eaten by purple worms on the Astral Plane</td>
+        <td>21</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Unorthodox Exit</td>
+        <td>Reach the Planes via quaffing</td>
+        <td>20</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Hammer of the Gods</td>
+        <td>Kill a monster by throwing Mjollnir and having it return to your hand</td>
+        <td>20</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Rat Tail</td>
+        <td>Kill a monster with a wet towel</td>
+        <td>19</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Spiderman</td>
+        <td>Grab an item with a grappling hook</td>
+        <td>19</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Conspicuous Consumption</td>
+        <td>Buy an unidentified gem from a shop</td>
+        <td>18</td>
+        <td>11</td>
+      </tr>
+    
+      <tr>
+        <td>Dispater-Dispatcher</td>
+        <td>Kill Dispater</td>
+        <td>18</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Extinctionist Lite</td>
+        <td>Genocide 20 or more monster species</td>
+        <td>18</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Hydrochloric</td>
+        <td>Dissolve iron bars with acid</td>
+        <td>18</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Mineralogist</td>
+        <td>Identify every type of valuable gemstone</td>
+        <td>17</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Near Death Experience</td>
+        <td>#chat to Death while carrying a Terry Pratchett novel</td>
+        <td>17</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Diver</td>
+        <td>Dive into a moat or pool and retrieve an item from the bottom</td>
+        <td>17</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Six Pack</td>
+        <td>Stock an ice box with 6 or more potions of booze</td>
+        <td>17</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Bar Brawler</td>
+        <td>Kill a monster with HP damage by smashing a bottle on it</td>
+        <td>16</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Wearable Snack</td>
+        <td>Wear a meat ring</td>
+        <td>16</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Dragon Rider</td>
+        <td>Ride a dragon</td>
+        <td>16</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Magivore</td>
+        <td>Gain a magical intrinsic by eating a piece of jewelry</td>
+        <td>16</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Asudem</td>
+        <td>Revive Perseus</td>
+        <td>15</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Croesus Competitor</td>
+        <td>Finish a game carrying at least 50000 gold</td>
+        <td>14</td>
+        <td>9</td>
+      </tr>
+    
+      <tr>
+        <td>Buffy</td>
+        <td>Destroy an undead with #turn</td>
+        <td>14</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Demogorgone</td>
+        <td>Kill Demogorgon</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Keep Your Fancy Toys</td>
+        <td>Receive the Quest with artifactless conduct intact</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Fur Allergy</td>
+        <td>Receive the Quest with petless conduct intact</td>
+        <td>14</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>The Deathly Hallows</td>
+        <td>Wield a wand of death while wearing an invisibility cloak and amulet of life saving</td>
+        <td>14</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Shoo Off</td>
+        <td>Make a monster of difficulty 5 or more escape the dungeon</td>
+        <td>13</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Tinned Out</td>
+        <td>Use up a tinning kit</td>
+        <td>13</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Geryon-Be-Gone</td>
+        <td>Kill Geryon</td>
+        <td>13</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>So Thou Thought Thou Couldst Resurrect Me</td>
+        <td>Resurrect the Wizard of Yendor</td>
+        <td>12</td>
+        <td>8</td>
+      </tr>
+    
+      <tr>
+        <td>Replacement Goldfish</td>
+        <td>Cast create familiar</td>
+        <td>12</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Detonator</td>
+        <td>Explode a large box or chest</td>
+        <td>12</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Tastes Like Chicken</td>
+        <td>Eat chickatrice or cockatrice meat</td>
+        <td>12</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Croesus Buyout</td>
+        <td>Finish a game carrying at least 100000 gold</td>
+        <td>11</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Spooky Scary Skeletons</td>
+        <td>Get scared by the rattling of a skeleton</td>
+        <td>11</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Friends Not Food</td>
+        <td>Receive the Quest with vegetarian conduct intact</td>
+        <td>10</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Snake Charmer</td>
+        <td>Pacify a snake with a flute</td>
+        <td>10</td>
+        <td>7</td>
+      </tr>
+    
+      <tr>
+        <td>Ding-a-Ling</td>
+        <td>Summon a nymph by ringing a cursed bell</td>
+        <td>10</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Wax On Wax Off</td>
+        <td>Receive the Quest with weaponless conduct intact</td>
+        <td>10</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>No Soup For You!</td>
+        <td>Get permanently expelled from the Quest</td>
+        <td>9</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Drink It To The Next Level</td>
+        <td>Level up by drinking from a sink</td>
+        <td>9</td>
+        <td>3</td>
+      </tr>
+    
+      <tr>
+        <td>Money Talks</td>
+        <td>Bribe a demon lord with at least 25000 gold</td>
+        <td>8</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Balanced Diet</td>
+        <td>Eat one of each type of produce in one game</td>
+        <td>8</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Double Whammy</td>
+        <td>Kill the Wizard of Yendor twice in one action</td>
+        <td>8</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Tenacious Companion</td>
+        <td>Have a pet survive all the way to the Astral Plane that you brought into the Plane of Earth</td>
+        <td>8</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>Hyperliterate</td>
+        <td>Read every readable item in the game</td>
+        <td>8</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>What Have I Unleashed</td>
+        <td>Make a demon lord escape the dungeon</td>
+        <td>7</td>
+        <td>6</td>
+      </tr>
+    
+      <tr>
+        <td>Animal Rights Activist</td>
+        <td>Receive the Quest with vegan conduct intact</td>
+        <td>7</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Packing Light</td>
+        <td>Successfully store a bag of holding inside another bag of holding</td>
+        <td>7</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Smorgasbord</td>
+        <td>Eat every type of food in the game</td>
+        <td>7</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>Heroes&#x27; Feast</td>
+        <td>Eat at least 3 artifacts</td>
+        <td>6</td>
+        <td>5</td>
+      </tr>
+    
+      <tr>
+        <td>Ceiling Clinging Commute</td>
+        <td>Ride a wumpus over water</td>
+        <td>5</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>Nine for Mortal Men Doomed to Die ... Again</td>
+        <td>Kill all nine Nazgul</td>
+        <td>5</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>Why Won&#x27;t You DIE Already</td>
+        <td>Kill the Wizard of Yendor 20 or more times</td>
+        <td>5</td>
+        <td>4</td>
+      </tr>
+    
+      <tr>
+        <td>Bookworm</td>
+        <td>Identify all spellbooks</td>
+        <td>5</td>
+        <td>3</td>
+      </tr>
+    
+      <tr>
+        <td>Extreme Omnivore</td>
+        <td>Eat an object from every common, edible object class</td>
+        <td>4</td>
+        <td>3</td>
+      </tr>
+    
+      <tr>
+        <td>Murphy&#x27;s Law</td>
+        <td>Reach -13 Luck</td>
+        <td>3</td>
+        <td>3</td>
+      </tr>
+    
+      <tr>
+        <td>Me No Do Words Good</td>
+        <td>Receive the Quest with illiterate conduct intact</td>
+        <td>3</td>
+        <td>2</td>
+      </tr>
+    
+      <tr>
+        <td>Fashionista</td>
+        <td>Identify all non-obvious cloaks, helms, boots, and gloves</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    
+      <tr>
+        <td>Silent World</td>
+        <td>Receive the Quest with permadeaf conduct intact</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    
+      <tr>
+        <td>Too Little Too Late</td>
+        <td>Get a sacrifice gift on the Astral Plane</td>
+        <td>2</td>
+        <td>2</td>
+      </tr>
+    
+      <tr>
+        <td>Thou Shalt Not Kill</td>
+        <td>Receive the Quest with pacifist conduct intact</td>
+        <td>2</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>It&#x27;s A Wonderful Trip</td>
+        <td>Receive the Quest with permahallu conduct intact</td>
+        <td>2</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>No Help from Above</td>
+        <td>Receive the Quest with atheist conduct intact</td>
+        <td>2</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>Walking Bullseye</td>
+        <td>Have +30 AC</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>Well... Bye</td>
+        <td>Prevent a Rider from reviving</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>Anti Gulp</td>
+        <td>Receive the Quest with foodless conduct intact</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>Dudley&#x27;s Hero</td>
+        <td>Extinct newts</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>All You Ever Wanted</td>
+        <td>Get a wish from every wish source</td>
+        <td>1</td>
+        <td>1</td>
+      </tr>
+    
+      <tr>
+        <td>Feeling Your Way</td>
+        <td>Receive the Quest with zen (permablind) conduct intact</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+    
+      <tr>
+        <td>Going Commando</td>
+        <td>Receive the Quest with nudist conduct intact</td>
+        <td>1</td>
+        <td>0</td>
+      </tr>
+    
+      <tr>
+        <td>Gotta Kill &#x27;em All</td>
+        <td>Kill a member of all eligible monster species</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+</body>
+
+</html>

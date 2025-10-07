@@ -1,0 +1,876 @@
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Rules</title>
+  <!-- Common things that go in the <head> tag. -->
+<link rel="stylesheet" type="text/css" href="default.css" />
+<link href="favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+
+<body>
+
+<header>
+  <div id="headerbar">
+    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+  </div>
+  <table id="navlogo">
+      <tr>
+          <td class="leftmenu"></td>
+          <td id="logo" rowspan="3">
+              <a href="/">
+              <!-- <object style="display:inline" data="tnnt_square_logo.svg" type="image/svg+xml"></objec -->
+              <img src="tnnt_square_logo.svg" width="100px" height="100px" />
+              </a>
+          </td>
+          <td class="rightmenu"></td>
+      </tr>
+      <tr>
+          <td class="leftmenu">
+              <a href="index.html" class="menu ">HOME</a>
+              <a href="trophies.html" class="menu ">TROPHIES</a>
+              <a href="clans.html" class="menu ">CLANS</a>
+              <a href="players.html" class="menu ">PLAYERS</a>
+          </td>
+          <td class="rightmenu">
+              <a href="rules.html" class="menu  menusel ">RULES</a>
+              <a href="about.html" class="menu ">ABOUT</a>
+              <a href="/archives" class="menu ">ARCHIVES</a>
+          </td>
+      </tr>
+      <tr id="lowerheader">
+          <td></td>
+          <td></td>
+      </tr>
+  </table>
+      <tr>
+          <td><br /><h2>2020 ARCHIVE</h2></td>
+      </tr>
+</header>
+
+
+<article>
+  <h4>General Rules</h4>
+  <p>
+    Use your common sense: don't hack into the game servers, don't deliberately
+    corrupt or leak memory or otherwise try to crash or hang up the game, don't
+    abuse the RNG, and don't be a jerk.
+  </p>
+  <p>
+    For now, bots are banned as well.
+    If they're unbanned at some point in the future, they will still be
+    disallowed from impersonating a human (playing on an account registered to
+    a human) or cybernetically enhancing a human clan (playing in a clan that
+    contains humans).
+  </p>
+  <p>
+    However, anything within the normal execution of the game is fair game.
+    This includes farming, scumming, abusing program bugs, reading other
+    characters' dumplogs, viewing ttyrecs of your own or others' games, using
+    interface enhancers like InterHack, and hanging out on IRC to see if the
+    gray stone you picked up in Mines' End gets livelogged as the luckstone.
+  </p>
+  <p>
+    Digging for victory is fine, of course, but please make sure to set !bones
+    in your rc file so that you don't leave useless bones and throw away other
+    players' interesting bones on your way down.
+  </p>
+
+  <h4>Clans</h4>
+  <p>
+    To create clans, invite players to your clan, and accept invitations to
+    others' clans, go <a href="clanmgmt/">here</a>.
+  </p>
+  <p>
+    Clan size is capped at 12, and a clan is not allowed to have more than 12
+    pending invitations. The scoring is designed so that adding new clan
+    members, however inexperienced, cannot hurt the clan overall.
+  </p>
+  <p>
+    At November 10th at midnight UTC, clan membership will become frozen;
+    people can still leave or be kicked out of clans, but cannot create new
+    clans or join new clans.
+  </p>
+  <p>
+  </p>
+
+  <h4>Scoring</h4>
+  <p>
+    The primary way to score points is by ascending. Ascensions start out at 50
+    points each, but repeated ascensions of the same role scale down in points
+    according to Z-score rules.
+  </p>
+  <p>
+    Z-score rules make the second ascension worth 1/2 as much, the third 1/3 as
+    much, the fourth 1/4 as much, and so on. Fractional points will be rounded
+    down. Ascending a role for the second time will earn 25 points instead of
+    50. The third will earn 16. The fourth 12. However, ascending a different
+    role will earn the full 50 points. (There aren't any fractional points
+    anywhere else in the tournament either. All the bonus point calculations
+    described below round down in the same manner.)
+  </p>
+
+  <p>
+    <strong>New in 2020:</strong> Z-score was previously applied based on
+    role/race combinations, and is now based only on role, just like how the
+    NetHack Scoreboard calculates Z-score.
+  </p>
+
+  <h5>Clan Scoring</h5>
+  <p>
+    Clans' games also use Z-scoring on roles for repeated ascensions, but bonus
+    conduct, speedrun, or streak points earned on ascensions are not affected
+    by this and merely add into the total clan score. For example, if player A
+    in a clan ascends a valkyrie with no frills and player B ascends another
+    valkyrie and gets 10 bonus points for it being part of a streak, the clan
+    earns 85 points (50 and 25 for the two valkyrie ascensions, 10 for the
+    streak bonus). It doesn't matter which player ascended first.
+  </p>
+  <p>
+    Many of the trophies which can be earned individually can also be earned
+    collectively by a clan, for the same amount of points. If an individual
+    earns one of these trophies on their own, their clan will also get the
+    trophy.
+  </p>
+
+
+  <h4>Trophies</h4>
+  <p>
+    Various accomplishments across one or multiple games earn you trophies,
+    which come with an associated boatload of points. To see how to earn these,
+    go to the <a href="trophies.html">Trophies page</a> and hover over them;
+    they will show up as a tooltip. Some trophies need a bit more explanation
+    and are covered below.
+    <!-- TODO: Do we want to stick a trophy score table here anyway? -->
+  </p>
+
+  <h5>The Great and Lesser Race/Role</h5>
+  <p>
+    The Great Race/Role are a set of multi-ascension trophies, and gives extra
+    credit for playing all of the interesting character combinations for a given
+    race or role. Gender does not matter. Alignment does not matter for The
+    Great Race, but it does for The Great Role.  Only starting alignment is
+    counted - tricks with changing your alignment in-game won't work.
+  </p>
+  <p>
+    The Great Human is a special case, and requires you to play only those roles
+    which must be human, as shown in the table below.  The required Monk can be
+    of any alignment.
+  </p>
+  <p>
+    Similarly, there is no such thing as the Great Knight, Samurai, or Tourist,
+    because only a single race and alignment combination can be played with
+    these roles.
+  </p>
+  <p>
+    These may be achieved by individual players or by clans working together.
+  </p>
+
+  <p>
+    Below is a table of requirements for each race or role:
+
+  <table>
+    <thead>
+      <tr class="framed">
+        <th>Trophy</th>
+        <th>Number of Ascensions</th>
+        <th>Requirements</th>
+        <th>Points Earned</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> <td>The Great Orc</td>   <td>4</td> <td>Bar, Ran, Rog, Wiz</td> 		   <td>200</td> </tr>
+      <tr> <td>The Great Gnome</td> <td>5</td> <td>Arc, Cav, Hea, Ran, Wiz</td> 	   <td>250</td> </tr>
+      <tr> <td>The Great Dwarf</td> <td>3</td> <td>Arc, Cav, Val</td> 			   <td>150</td> </tr>
+      <tr> <td>The Great Elf</td> 	 <td>3</td> <td>Pri, Ran, Wiz</td> 		   <td>150</td> </tr>
+      <tr> <td>The Great Human</td> <td>4</td> <td>Kni, Mon, Sam, Tou</td> 		   <td>200</td> </tr>
+      <tr> <td>The Great Archeologist</td>   <td>4</td> <td>Hum-L, Hum-N, Dwa-L, Gno-N</td> 	   <td>200</td> </tr>
+      <tr> <td>The Great Barbarian</td>   <td>3</td> <td>Hum-N, Hum-C, Orc-C</td> 		   <td>150</td> </tr>
+      <tr> <td>The Great Caveperson</td>   <td>4</td> <td>Hum-L, Hum-N, Dwa-L, Gno-N</td> 	   <td>200</td> </tr>
+      <tr> <td>The Great Healer</td>   <td>2</td> <td>Hum-N, Gno-N</td> 			   <td>100</td> </tr>
+      <tr> <td>The Great Monk</td>   <td>3</td> <td>Hum-L, Hum-N, Hum-C</td> 		   <td>150</td> </tr>
+      <tr> <td>The Great Priest</td>   <td>4</td> <td>Hum-L, Hum-N, Hum-C, Elf-C</td> 	   <td>200</td> </tr>
+      <tr> <td>The Great Ranger</td>   <td>5</td> <td>Hum-N, Hum-C, Elf-C, Gno-N, Orc-C</td>  <td>250</td> </tr>
+      <tr> <td>The Great Rogue</td>   <td>2</td> <td>Hum-C, Orc-C</td> 			   <td>100</td> </tr>
+      <tr> <td>The Great Valkyrie</td>   <td>3</td> <td>Hum-L, Hum-N, Dwa-L</td> 		   <td>150</td> </tr>
+      <tr> <td>The Great Wiz</td>   <td>5</td> <td>Hum-N, Hum-C, Elf-C, Gno-N, Orc-C</td>  <td>250</td> </tr>
+    </tbody>
+  </table>
+  </p>
+
+  <p>
+    The Lesser Race/Role works identically to the Great, but instead of ascending,
+    you must instead complete a game with each required character combination
+    where you successfully retrieve the luckstone from the bottom of the Mines
+    <strong>AND</strong> retrieve the prize from the end of Sokoban.
+  </p>
+
+  <p>
+    The Great Race/Role is worth fifty additional points for each character
+    combination it requires (as shown in the table above), and The Lesser
+    Race/Role is worth five additional points for each character combination it
+    requires. Like other trophies, these can also be earned collectively by a clan.
+  </p>
+
+  <p>
+    Achieving a Great Race or Role does not necessarily imply that you also
+    deserve the same Lesser Race or Role, since it is possible to ascend
+    without completing Sokoban and/or retrieving the Mines' End luckstone. As
+    such, they are scored independently of each other.
+  </p>
+
+  <h5><strong>New in 2020:</strong>Ascending without Killing (insert monster here)</h5>
+  <p>
+    These trophies are fairly straightforward for the most part, but one bit of
+    clarification is needed: in order to achieve the trophy, you can't let the
+    specified monster die by any means, like how it works in Junethack. Merely
+    abstaining from killing them personally while your pets or conflicted
+    monsters finish them off will not earn the trophy.
+  </p>
+
+  <h4>Ascending with Conducts</h4>
+  <p>
+    Conducts consist of point multipliers which are applied to a base score of
+    50 points (earning less than 50 points due to Z-scoring won't affect your
+    conduct bonus points).  Ascending with more than one conduct is harder, so
+    it multiplies the multipliers together for a bigger bonus.
+  </p>
+  <p>
+    The exact formula for conduct bonus points is
+    <!-- We could use MathJAX here, but it probably isn't needed for a few equations. -->
+    <i>50 &times; <big>((</big>multiplier1 &times; multiplier2 &times; ...<big>)</big> &minus; 1<big>)</big></i>
+  </p>
+  <table>
+    <thead>
+      <tr class="framed">
+        <th>Conduct</th>
+        <th>Multiplier</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr> <td>Zen</td>                                              <td align="right"> 1.8&times;</td> </tr>
+      <tr> <td>Pacifist</td>                                         <td align="right"> 1.6&times;</td> </tr>
+      <tr> <td>Nudist</td>                                           <td align="right"> 1.6&times;</td> </tr>
+      <tr> <td>Foodless</td>                                         <td align="right"> 1.5&times;</td> </tr>
+      <tr> <td>Illiterate</td>                                       <td align="right"> 1.3&times;</td> </tr>
+      <tr> <td>Vegan</td>                                            <td align="right"> 1.3&times;</td> </tr>
+      <tr> <td>Permahallucinating</td>                               <td align="right"> 1.2&times;</td> </tr>
+      <tr> <td>Weaponless</td>                                       <td align="right">1.15&times;</td> </tr>
+      <tr> <td>Atheist</td>                                          <td align="right">1.15&times;</td> </tr>
+      <tr> <td>Artifactless</td>                                     <td align="right"> 1.1&times;</td> </tr>
+      <tr> <td>Vegetarian</td>                                       <td align="right"> 1.1&times;</td> </tr>
+      <tr> <td>Genocideless</td>                                     <td align="right"> 1.1&times;</td> </tr>
+      <tr> <td>Elberethless</td>                                     <td align="right"> 1.1&times;</td> </tr>
+      <tr> <td>Wishless</td>                                         <td align="right"> 1.1&times;</td> </tr>
+      <tr> <td>Survivor</td>                                         <td align="right">1.05&times;</td> </tr>
+      <tr> <td>Petless</td>                                          <td align="right">1.02&times;</td> </tr>
+      <tr> <td>Permadeaf</td>                                        <td align="right">1.02&times;</td> </tr>
+      <tr> <td>Artifact wishless</td>                                <td align="right">1.02&times;</td> </tr>
+      <tr> <td>Polyselfless</td>                                     <td align="right">1.02&times;</td> </tr>
+      <tr> <td>Polyobjectless</td>                                   <td align="right">1.02&times;</td> </tr>
+      <tr> <td>Bonesless</td>                                        <td align="right">1.01&times;</td> </tr>
+      <tr> <td>Swapchestless<sup>*</sup></td>                        <td align="right">1.01&times;</td> </tr>
+    </tbody>
+  </table>
+  <p>
+    <small>* Never remove an item from a swap chest. Inserting items does not break the conduct.</small>
+  </p>
+
+  <p>
+    For conducts that necessarily imply other conducts, such as Vegan and
+    Vegetarian, the multiplier for the less stringent conducts are not counted.
+    For example, a foodless ascension only earns the 1.5&times; for foodless, and the
+    multipliers for vegan and vegetarian are not factored in.
+  </p>
+
+  <h4>Turncount Speedrunning</h4>
+  <p>
+    Games that are won in under 20,000 turns score additional bonus points
+    equal to 500,000 divided by the turncount of the game. For instance, a game
+    that finishes in 5,000 turns will score 100 bonus points, whereas a game
+    that barely finishes in 20,000 turns scores 25 points. No points are
+    awarded for games longer than 20,000 turns.
+  </p>
+
+  <h4>Streaking</h4>
+  <p>
+    A streak is a series of consecutive winning games by the same player.
+    Because you can have multiple in-progress games on multiple servers, the
+    rule is that the first game started after a win is the candidate for
+    continuing a streak. Winning or losing non-candidate games will not affect
+    the streak whatsoever.
+  </p>
+  <p>
+    For those familiar with DCSS tournaments, these rules are the same as theirs.
+  </p>
+  <p>
+    Games that are part of a streak get a multiplier for score that increases
+    with the length of the streak. The multiplier is retroactively awarded:
+    ascending the third game in a row and extending a 2-streak into a 3-streak
+    will apply the higher multiplier equally to all three games. The streak
+    multiplier also multiplies bonus points for speedrunning and conducts.
+  </p>
+  <p>
+    Streak multipliers are:
+    <table>
+      <thead>
+        <tr class="framed">
+          <th>Length</th>
+          <th>Multiplier</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr> <td>2</td>  <td align="right"> 1.1&times;</td> </tr>
+        <tr> <td>3</td>  <td align="right"> 1.2&times;</td> </tr>
+        <tr> <td>4</td>  <td align="right"> 1.3&times;</td> </tr>
+        <tr> <td>5</td>  <td align="right"> 1.4&times;</td> </tr>
+        <tr> <td>6+</td> <td align="right"> 1.5&times;</td> </tr>
+      </tbody>
+    </table>
+    The base points for your ascension are assumed to be a generic 50; this
+    prevents role-based Z-score point reduction from devaluing the streak.
+  </p>
+  <p>
+    The exact formula for the amount of streaking bonus points added to an
+    ascension is
+    <i><big>(</big>50 &plus; conduct bonus points &plus; speedrun bonus points<big>)</big> &times; <big>(</big>streak multiplier &minus; 1<big>)</big></i>
+  </p>
+
+  <h4>Achievements</h4>
+  <p>
+    Achievements are worth 1 point each, across all games (if you get the same
+    achievement in two or more games, you still only get 1 point for that
+    achievement counting towards your individual score.) If you get all
+    possible achievements and the All Achievements trophy, each achievement
+    counts for 2 points instead.
+  </p>
+  <p>
+    Achievement-related points are counted towards your individual and clan
+    score directly, and are not multiplied by any streak you may have.
+  </p>
+  <p>
+    Below is a listing of every achievement a player can earn in-game, and a
+    description of that achievement and what needs to be done to earn it.
+  </p>
+  <p>
+  <!-- TODO: hide this table by default, have it expandable? -->
+  <table>
+    <thead>
+      <tr class="framed">
+        <th>Achievement</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr> <td class="ach">Ringing in My Ears</td> <td class="descr">Get the Bell of Opening</td> </tr>
+      
+      <tr> <td class="ach">Feel the Burn</td> <td class="descr">Enter Gehennom</td> </tr>
+      
+      <tr> <td class="ach">Emerging into the Light</td> <td class="descr">Get the Candelabrum of Invocation</td> </tr>
+      
+      <tr> <td class="ach">Weighing of the Heart</td> <td class="descr">Get the Book of the Dead</td> </tr>
+      
+      <tr> <td class="ach">Bell, Book and Candle</td> <td class="descr">Perform the Invocation Ritual</td> </tr>
+      
+      <tr> <td class="ach">My Preciousss</td> <td class="descr">Get the Amulet of Yendor</td> </tr>
+      
+      <tr> <td class="ach">From the Dungeon They Came</td> <td class="descr">Enter the Elemental Planes</td> </tr>
+      
+      <tr> <td class="ach">The Halls of the Gods</td> <td class="descr">Enter the Astral Plane</td> </tr>
+      
+      <tr> <td class="ach">Are You Feeling Lucky</td> <td class="descr">Get the luckstone from Mines' End</td> </tr>
+      
+      <tr> <td class="ach">Boulder Pusher</td> <td class="descr">Finish Sokoban</td> </tr>
+      
+      <tr> <td class="ach">Anti-Stoner</td> <td class="descr">Kill Medusa</td> </tr>
+      
+      <tr> <td class="ach">Back to Civilisation</td> <td class="descr">Step onto the Minetown altar</td> </tr>
+      
+      <tr> <td class="ach">Sage Advice</td> <td class="descr">Consult the Oracle</td> </tr>
+      
+      <tr> <td class="ach">The Archetypal Hero</td> <td class="descr">Get admitted to the Quest</td> </tr>
+      
+      <tr> <td class="ach">Musical Mastermind</td> <td class="descr">Learn the passtune</td> </tr>
+      
+      <tr> <td class="ach">Indulgences</td> <td class="descr">Buy protection from a priest</td> </tr>
+      
+      <tr> <td class="ach">Part-time Statue</td> <td class="descr">Survive stoning</td> </tr>
+      
+      <tr> <td class="ach">The Blob</td> <td class="descr">Survive sliming</td> </tr>
+      
+      <tr> <td class="ach">Captain Ahab</td> <td class="descr">Survive being grabbed by a sea monster</td> </tr>
+      
+      <tr> <td class="ach">Furry Little Problem</td> <td class="descr">Cure lycanthropy</td> </tr>
+      
+      <tr> <td class="ach">New Lease on Life</td> <td class="descr">Cure deathly illness</td> </tr>
+      
+      <tr> <td class="ach">The Royal Treatment</td> <td class="descr">Sit on a throne</td> </tr>
+      
+      <tr> <td class="ach">It'll Turn Up Later</td> <td class="descr">Drop a ring in a sink</td> </tr>
+      
+      <tr> <td class="ach">Nine for Mortal Men Doomed to Die ... Again</td> <td class="descr">Kill all nine Nazgûl</td> </tr>
+      
+      <tr> <td class="ach">Furious</td> <td class="descr">Kill all three erinyes</td> </tr>
+      
+      <tr> <td class="ach">Orthodoxy</td> <td class="descr">Convert an altar</td> </tr>
+      
+      <tr> <td class="ach">Always Talk to the Wise Old Man</td> <td class="descr">Chat with Izchak</td> </tr>
+      
+      <tr> <td class="ach">Isaac Newton</td> <td class="descr">Get fruit by kicking a tree</td> </tr>
+      
+      <tr> <td class="ach">Dungeon Economics</td> <td class="descr">Buy or sell something at a shop</td> </tr>
+      
+      <tr> <td class="ach">Stop, Thief!</td> <td class="descr">Be chased by the Keystone Kops</td> </tr>
+      
+      <tr> <td class="ach">Wash it Clean</td> <td class="descr">Uncurse an item in a fountain</td> </tr>
+      
+      <tr> <td class="ach">Well-Read</td> <td class="descr">Learn a level 5+ spell</td> </tr>
+      
+      <tr> <td class="ach">Pet Whisperer</td> <td class="descr">Tame a monster by feeding it</td> </tr>
+      
+      <tr> <td class="ach">Beast Master</td> <td class="descr">Tame a monster without using food</td> </tr>
+      
+      <tr> <td class="ach">The Chosen One</td> <td class="descr">Get crowned</td> </tr>
+      
+      <tr> <td class="ach">Go Forth and Smite</td> <td class="descr">Receive an artifact gift from your deity</td> </tr>
+      
+      <tr> <td class="ach">Some Watery Tart</td> <td class="descr">Be gifted Excalibur</td> </tr>
+      
+      <tr> <td class="ach">Hand Crafted</td> <td class="descr">Make a dragon scale mail</td> </tr>
+      
+      <tr> <td class="ach">A Little Light Larceny</td> <td class="descr">Get robbed by a nymph</td> </tr>
+      
+      <tr> <td class="ach">Pot of Greed</td> <td class="descr">Have your purse lightened by a leprechaun</td> </tr>
+      
+      <tr> <td class="ach">The Birds and the Bees</td> <td class="descr">Dally with a foocubus</td> </tr>
+      
+      <tr> <td class="ach">The Most Dangerous Game</td> <td class="descr">Catch a monster in a trap set by you</td> </tr>
+      
+      <tr> <td class="ach">Minetown Avenger</td> <td class="descr">Kill every orc in Orctown</td> </tr>
+      
+      <tr> <td class="ach">All Clear</td> <td class="descr">Kill all hostiles in the Big Room</td> </tr>
+      
+      <tr> <td class="ach">Liberated</td> <td class="descr">Get yourself unpunished</td> </tr>
+      
+      <tr> <td class="ach">It's Called That For a Reason</td> <td class="descr">Come to earth by levitating over a sink</td> </tr>
+      
+      <tr> <td class="ach">Diamond in the Rough</td> <td class="descr">Identify a gem with a touchstone</td> </tr>
+      
+      <tr> <td class="ach">Scribe</td> <td class="descr">Write a scroll with a magic marker</td> </tr>
+      
+      <tr> <td class="ach">First Edition</td> <td class="descr">Write a book</td> </tr>
+      
+      <tr> <td class="ach">Dragon Rider</td> <td class="descr">Ride a dragon</td> </tr>
+      
+      <tr> <td class="ach">Motherhood</td> <td class="descr">Lay an egg</td> </tr>
+      
+      <tr> <td class="ach">Shimmer</td> <td class="descr">Fireproof an item</td> </tr>
+      
+      <tr> <td class="ach">They Like Shiny Things</td> <td class="descr">Throw a gem at a unicorn</td> </tr>
+      
+      <tr> <td class="ach">Reincarnation Cancelled</td> <td class="descr">Tin a troll</td> </tr>
+      
+      <tr> <td class="ach">Kill it Twice</td> <td class="descr">Destroy a ghost</td> </tr>
+      
+      <tr> <td class="ach">Only Mostly Dead</td> <td class="descr">Revive a corpse</td> </tr>
+      
+      <tr> <td class="ach">Buffy</td> <td class="descr">Destroy an undead with #turn</td> </tr>
+      
+      <tr> <td class="ach">Wasn't a Meal, Wasn't Ready, And You Shouldn't Have Eaten It</td> <td class="descr">Eat a military ration</td> </tr>
+      
+      <tr> <td class="ach">Have Fun Storming the Castle</td> <td class="descr">Blow up the Castle drawbridge</td> </tr>
+      
+      <tr> <td class="ach">Insert Quarter to Continue</td> <td class="descr">Get life-saved</td> </tr>
+      
+      <tr> <td class="ach">What It Was Made For</td> <td class="descr">Kill a appropriate monster with a Bane weapon</td> </tr>
+      
+      <tr> <td class="ach">Buried Treasure</td> <td class="descr">Dig up a grave not in a graveyard</td> </tr>
+      
+      <tr> <td class="ach">Holy War</td> <td class="descr">Kill a priest of Moloch</td> </tr>
+      
+      <tr> <td class="ach">Movers and Shakers</td> <td class="descr">Cause an earthquake</td> </tr>
+      
+      <tr> <td class="ach">Snake Charmer</td> <td class="descr">Pacify a snake with a flute</td> </tr>
+      
+      <tr> <td class="ach">Dragonslayer</td> <td class="descr">Kill a dragon</td> </tr>
+      
+      <tr> <td class="ach">Tin Foil Hat</td> <td class="descr">Dodge a brainsucking attack</td> </tr>
+      
+      <tr> <td class="ach">Right Back at Ya</td> <td class="descr">Hit an enemy with a thrown boomerang</td> </tr>
+      
+      <tr> <td class="ach">It Burnsss</td> <td class="descr">Deal silver damage to a silver-hating monster</td> </tr>
+      
+      <tr> <td class="ach">Arrakis</td> <td class="descr">Make a crysknife</td> </tr>
+      
+      <tr> <td class="ach">Kop Training Program</td> <td class="descr">Kill a monster with a rubber hose</td> </tr>
+      
+      <tr> <td class="ach">Obligatory Pointy Hat</td> <td class="descr">Put on a cornuthaum as a wizard</td> </tr>
+      
+      <tr> <td class="ach">Hobbit Skin</td> <td class="descr">Wear a mithril coat</td> </tr>
+      
+      <tr> <td class="ach">The Words of the Prophets</td> <td class="descr">Read 3 random graffiti</td> </tr>
+      
+      <tr> <td class="ach">Are You Still Pudding Farming</td> <td class="descr">Split a pudding</td> </tr>
+      
+      <tr> <td class="ach">Wearable Snack</td> <td class="descr">Wear a meat ring</td> </tr>
+      
+      <tr> <td class="ach">Frozen Treats</td> <td class="descr">Loot an ice box</td> </tr>
+      
+      <tr> <td class="ach">Pygmalion</td> <td class="descr">Create a monster from a figurine</td> </tr>
+      
+      <tr> <td class="ach">Nerd</td> <td class="descr">Read a spellbook while wearing lenses and a T-shirt</td> </tr>
+      
+      <tr> <td class="ach">Recharged</td> <td class="descr">Charge an object</td> </tr>
+      
+      <tr> <td class="ach">Get Your Kicks</td> <td class="descr">Kick an item embedded in a wall or rock</td> </tr>
+      
+      <tr> <td class="ach">Spiderman</td> <td class="descr">Grab an item with a grappling hook</td> </tr>
+      
+      <tr> <td class="ach">More Light</td> <td class="descr">Refill the Candelabrum after it burns out after the Invocation</td> </tr>
+      
+      <tr> <td class="ach">Balanced Diet</td> <td class="descr">Eat one of each type of produce in one game</td> </tr>
+      
+      <tr> <td class="ach">Smorgasbord</td> <td class="descr">Eat every type of food in the game</td> </tr>
+      
+      <tr> <td class="ach">Fill 'Er Up</td> <td class="descr">Fill an oil lamp with a potion of oil</td> </tr>
+      
+      <tr> <td class="ach">Curse the Darkness</td> <td class="descr">Identify a potion of oil by applying it</td> </tr>
+      
+      <tr> <td class="ach">Bright Light, Bright Light</td> <td class="descr">Kill gremlin with any light source</td> </tr>
+      
+      <tr> <td class="ach">Chemistry 101</td> <td class="descr">Alchemize two potions in an established recipe</td> </tr>
+      
+      <tr> <td class="ach">Get Your Gas Mask</td> <td class="descr">Kill a monster with a stinking cloud</td> </tr>
+      
+      <tr> <td class="ach">Escape to Discworld</td> <td class="descr">Read a Terry Pratchett novel</td> </tr>
+      
+      <tr> <td class="ach">Near Death Experience</td> <td class="descr">#chat to Death while carrying a Terry Pratchett novel</td> </tr>
+      
+      <tr> <td class="ach">Mineralogist</td> <td class="descr">Identify every type of valuable gemstone</td> </tr>
+      
+      <tr> <td class="ach">Prize Inside!</td> <td class="descr">Get a spellbook by breaking a randomly-generated statue</td> </tr>
+      
+      <tr> <td class="ach">Ding-a-Ling</td> <td class="descr">Summon a nymph by ringing a cursed bell</td> </tr>
+      
+      <tr> <td class="ach">Best Friends Forever</td> <td class="descr">Take your starting pet to full adulthood</td> </tr>
+      
+      <tr> <td class="ach">Diver</td> <td class="descr">Dive into a moat or pool and retrieve an item from the bottom</td> </tr>
+      
+      <tr> <td class="ach">Ceiling Clinging Commute</td> <td class="descr">Ride a wumpus over water</td> </tr>
+      
+      <tr> <td class="ach">How Much Wood?</td> <td class="descr">Kill or tame a woodchuck</td> </tr>
+      
+      <tr> <td class="ach">Storm the Gates of Heaven</td> <td class="descr">Kill an Archon</td> </tr>
+      
+      <tr> <td class="ach">Shifty</td> <td class="descr">Tame a shapeshifter in any way</td> </tr>
+      
+      <tr> <td class="ach">Cat Lady</td> <td class="descr">Tame seven “f” in the course of one game</td> </tr>
+      
+      <tr> <td class="ach">Collapse the Wavefunction</td> <td class="descr">Open the box containing Schroedinger's Cat</td> </tr>
+      
+      <tr> <td class="ach">I'm Free! I'm Free!</td> <td class="descr">Free a prisoner</td> </tr>
+      
+      <tr> <td class="ach">Pet Rescue</td> <td class="descr">Free a pet from a trap that you didn't create yourself</td> </tr>
+      
+      <tr> <td class="ach">Spam, Spam, Spam</td> <td class="descr">Read a scroll of mail</td> </tr>
+      
+      <tr> <td class="ach">Superfood</td> <td class="descr">Gain strength by eating royal jelly</td> </tr>
+      
+      <tr> <td class="ach">You Are What You Eat</td> <td class="descr">Gain an intrinsic by eating a corpse (or tin or glob)</td> </tr>
+      
+      <tr> <td class="ach">The Art of the Deal</td> <td class="descr">Bankrupt a shopkeeper by getting all their money</td> </tr>
+      
+      <tr> <td class="ach">Distinction Without Difference</td> <td class="descr">Polymorph a pet using a polytrap</td> </tr>
+      
+      <tr> <td class="ach">Transgender</td> <td class="descr">Put on an amulet of change</td> </tr>
+      
+      <tr> <td class="ach">Father Figure</td> <td class="descr">Hatch an egg not laid by you and have it come out tame</td> </tr>
+      
+      <tr> <td class="ach">Hello, Nurse!</td> <td class="descr">Get a nurse to heal you or raise your max HP</td> </tr>
+      
+      <tr> <td class="ach">It's The Pits</td> <td class="descr">Kill something while you are stuck in a pit</td> </tr>
+      
+      <tr> <td class="ach">Never Saw It Coming</td> <td class="descr">Kill invisible monster without see invisible</td> </tr>
+      
+      <tr> <td class="ach">Shafted</td> <td class="descr">Fall down a shaft</td> </tr>
+      
+      <tr> <td class="ach">Potions of Booze Cost More Than That</td> <td class="descr">Get two bits for an ale from a priest</td> </tr>
+      
+      <tr> <td class="ach">Horatius at the Bridge</td> <td class="descr">Extinct soldiers or Keystone Kops</td> </tr>
+      
+      <tr> <td class="ach">Who's That Pretty Girl in the Mirror, There?</td> <td class="descr">Deflect a nymph with a mirror</td> </tr>
+      
+      <tr> <td class="ach">Money Talks</td> <td class="descr">Bribe a demon lord with at least 25000 gold</td> </tr>
+      
+      <tr> <td class="ach">Breaking and Entering</td> <td class="descr">Enter a vault</td> </tr>
+      
+      <tr> <td class="ach">Who Was That David Person Anyway?</td> <td class="descr">Enter a treasure zoo</td> </tr>
+      
+      <tr> <td class="ach">Absolute Monarchy</td> <td class="descr">Enter a throne room</td> </tr>
+      
+      <tr> <td class="ach">They're After Me Lucky Charms</td> <td class="descr">Enter a leprechaun hall</td> </tr>
+      
+      <tr> <td class="ach">Hive Mind</td> <td class="descr">Enter a beehive</td> </tr>
+      
+      <tr> <td class="ach">Day of the Dead</td> <td class="descr">Enter a graveyard</td> </tr>
+      
+      <tr> <td class="ach">Team a Headquarters</td> <td class="descr">Enter an anthole</td> </tr>
+      
+      <tr> <td class="ach">Halt, Who Goes There?</td> <td class="descr">Enter a barracks</td> </tr>
+      
+      <tr> <td class="ach">Dungeon Ecology</td> <td class="descr">Enter a swamp</td> </tr>
+      
+      <tr> <td class="ach">Statue Showcase</td> <td class="descr">Enter a cockatrice nest</td> </tr>
+      
+      <tr> <td class="ach">Asmodead</td> <td class="descr">Kill Asmodeus</td> </tr>
+      
+      <tr> <td class="ach">Fly Swatter</td> <td class="descr">Kill Baalzebub</td> </tr>
+      
+      <tr> <td class="ach">That Wand is Mine</td> <td class="descr">Kill Orcus</td> </tr>
+      
+      <tr> <td class="ach">Squish Squish</td> <td class="descr">Kill Juiblex</td> </tr>
+      
+      <tr> <td class="ach">Demogorgone</td> <td class="descr">Kill Demogorgon</td> </tr>
+      
+      <tr> <td class="ach">Yee-No-Go</td> <td class="descr">Kill Yeenoghu</td> </tr>
+      
+      <tr> <td class="ach">Geryon-Slayer</td> <td class="descr">Kill Geryon</td> </tr>
+      
+      <tr> <td class="ach">Dispater-Dispatcher</td> <td class="descr">Kill Dispater</td> </tr>
+      
+      <tr> <td class="ach">Conqueror of Death</td> <td class="descr">Kill Death</td> </tr>
+      
+      <tr> <td class="ach">Curer of Pestilence</td> <td class="descr">Kill Pestilence</td> </tr>
+      
+      <tr> <td class="ach">Feeder of Famine</td> <td class="descr">Kill Famine</td> </tr>
+      
+      <tr> <td class="ach">Under New Management</td> <td class="descr">Change your alignment by any means</td> </tr>
+      
+      <tr> <td class="ach">Heisenberg</td> <td class="descr">Become uncertain about your position or velocity</td> </tr>
+      
+      <tr> <td class="ach">Who You Gonna Call?</td> <td class="descr">Get scared by a ghost</td> </tr>
+      
+      <tr> <td class="ach">Groundhog Day</td> <td class="descr">Return to a forgotten level</td> </tr>
+      
+      <tr> <td class="ach">Tainted</td> <td class="descr">Dip an item in unholy water</td> </tr>
+      
+      <tr> <td class="ach">Hydrochloric</td> <td class="descr">Dissolve iron bars with acid</td> </tr>
+      
+      <tr> <td class="ach">Predictably, Nothing Happens</td> <td class="descr">Break an identified wand of nothing</td> </tr>
+      
+      <tr> <td class="ach">Neutralized</td> <td class="descr">Cancel a monster</td> </tr>
+      
+      <tr> <td class="ach">Magivore</td> <td class="descr">Gain a magical intrinsic by eating a piece of jewelry</td> </tr>
+      
+      <tr> <td class="ach">Rope-a-Dope</td> <td class="descr">Kill a monster with a thrown aklys</td> </tr>
+      
+      <tr> <td class="ach">Panacea</td> <td class="descr">Neutralize a harmful potion with a unicorn horn</td> </tr>
+      
+      <tr> <td class="ach">Hulk Smash</td> <td class="descr">Kill a monster with a heavy iron ball</td> </tr>
+      
+      <tr> <td class="ach">Croesus Competitor</td> <td class="descr">Finish a game carrying at least 50000 gold</td> </tr>
+      
+      <tr> <td class="ach">Croesus Buyout</td> <td class="descr">Finish a game carrying at least 100000 gold</td> </tr>
+      
+      <tr> <td class="ach">Palantir</td> <td class="descr">Successfully apply a crystal ball</td> </tr>
+      
+      <tr> <td class="ach">Peak Condition</td> <td class="descr">Raise all attributes to at least 18</td> </tr>
+      
+      <tr> <td class="ach">Those Who Came Before</td> <td class="descr">Sight another player's bones pile</td> </tr>
+      
+      <tr> <td class="ach">Imitation Bones</td> <td class="descr">Step onto the Rogue level fake bones pile</td> </tr>
+      
+      <tr> <td class="ach">Replacement Goldfish</td> <td class="descr">Cast create familiar</td> </tr>
+      
+      <tr> <td class="ach">Pop the Question</td> <td class="descr">Give a ring of adornment to a succubus</td> </tr>
+      
+      <tr> <td class="ach">No Soup For You!</td> <td class="descr">Get expelled from the Quest</td> </tr>
+      
+      <tr> <td class="ach">Discerning Palate</td> <td class="descr">Gain intrinsic food appraisal</td> </tr>
+      
+      <tr> <td class="ach">Playerbanebane</td> <td class="descr">Kill a soldier ant</td> </tr>
+      
+      <tr> <td class="ach">Banishing Spells Not Included</td> <td class="descr">Summon a demon lord</td> </tr>
+      
+      <tr> <td class="ach">Tastes Like Chicken</td> <td class="descr">Eat chickatrice or cockatrice meat</td> </tr>
+      
+      <tr> <td class="ach">Dust to Dust</td> <td class="descr">Wrest one last charge from a wand of wishing</td> </tr>
+      
+      <tr> <td class="ach">Teetotaler</td> <td class="descr">Neutralize a potion of booze with an amethyst</td> </tr>
+      
+      <tr> <td class="ach">Spooky Scary Skeletons</td> <td class="descr">Get scared by the rattling of a skeleton</td> </tr>
+      
+      <tr> <td class="ach">Ocean's Eleven</td> <td class="descr">Enter Fort Ludios</td> </tr>
+      
+      <tr> <td class="ach">I Did It For The Money</td> <td class="descr">Kill Croesus</td> </tr>
+      
+      <tr> <td class="ach">Gullible</td> <td class="descr">Lie to a vault guard about your name</td> </tr>
+      
+      <tr> <td class="ach">Luck of the Grasshopper</td> <td class="descr">Reach +13 Luck</td> </tr>
+      
+      <tr> <td class="ach">Murphy's Law</td> <td class="descr">Reach -13 Luck</td> </tr>
+      
+      <tr> <td class="ach">Looking Slick</td> <td class="descr">Grease a piece of armor</td> </tr>
+      
+      <tr> <td class="ach">Watch Your Footing</td> <td class="descr">Step onto the vibrating square</td> </tr>
+      
+      <tr> <td class="ach">The Grand Tour</td> <td class="descr">Visit each high altar on the Astral Plane</td> </tr>
+      
+      <tr> <td class="ach">Friends Not Food</td> <td class="descr">Receive the Quest with vegetarian conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Animal Rights Activist</td> <td class="descr">Receive the Quest with vegan conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Anti Gulp</td> <td class="descr">Receive the Quest with foodless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">No Help from Above</td> <td class="descr">Receive the Quest with atheist conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Wax On Wax Off</td> <td class="descr">Receive the Quest with weaponless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Thou Shalt Not Kill</td> <td class="descr">Receive the Quest with pacifist conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Me No Do Words Good</td> <td class="descr">Receive the Quest with illiterate conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Lost My Transmutation License</td> <td class="descr">Receive the Quest with polypileless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">True to Form</td> <td class="descr">Receive the Quest with polyselfless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Self Sufficient</td> <td class="descr">Receive the Quest with wishless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Leave the Artifacts to the Gods</td> <td class="descr">Receive the Quest with artifact wishless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Feeling Your Way</td> <td class="descr">Receive the Quest with zen (permablind) conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Going Commando</td> <td class="descr">Receive the Quest with nudist conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Make Love, Not War</td> <td class="descr">Receive the Quest with genocideless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">No Help From The Floor</td> <td class="descr">Receive the Quest with Elberethless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">It's A Wonderful Trip</td> <td class="descr">Receive the Quest with permahallu conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Silent World</td> <td class="descr">Receive the Quest with permadeaf conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Keep Your Fancy Toys</td> <td class="descr">Receive the Quest with artifactless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">New Dungeon, Never Occupied</td> <td class="descr">Receive the Quest with bonesless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Extradimensionally Challenged</td> <td class="descr">Receive the Quest with swapchestless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Fur Allergy</td> <td class="descr">Receive the Quest with petless conduct intact</td> </tr>
+      
+      <tr> <td class="ach">Death Isn't So Cheap</td> <td class="descr">Receive the Quest with survivor conduct intact</td> </tr>
+      
+      <tr> <td class="ach">It's Dangerous To Go Alone! Take This</td> <td class="descr">Put an item into a swap chest</td> </tr>
+      
+      <tr> <td class="ach">The True Dungeon Masters</td> <td class="descr">Chat with an active devteam member</td> </tr>
+      
+      <tr> <td class="ach">There Is No Spoon</td> <td class="descr">Finish the task the devteam requires of you</td> </tr>
+      
+      <tr> <td class="ach">DIRGE</td> <td class="descr">Instakill an enemy with poison</td> </tr>
+      
+      <tr> <td class="ach">Gender Bender</td> <td class="descr">Change gender two or more times</td> </tr>
+      
+      <tr> <td class="ach">The Deathly Hallows</td> <td class="descr">Wield a wand of death while wearing an invisibility cloak and amulet of life saving</td> </tr>
+      
+      <tr> <td class="ach">Indiana Jones</td> <td class="descr">Disarm a monster with a bullwhip</td> </tr>
+      
+      <tr> <td class="ach">Pilgrim</td> <td class="descr">Visit every type of aligned altar</td> </tr>
+      
+      <tr> <td class="ach">Wanton Waste</td> <td class="descr">Break an identified, charged wand of wishing</td> </tr>
+      
+      <tr> <td class="ach">Poseidon</td> <td class="descr">Kill a sea monster with a trident</td> </tr>
+      
+      <tr> <td class="ach">It's 4:20 Somewhere</td> <td class="descr">Stone a monster</td> </tr>
+      
+      <tr> <td class="ach">Orpheus</td> <td class="descr">Activate a drawbridge with the passtune</td> </tr>
+      
+      <tr> <td class="ach">Michelin Guide</td> <td class="descr">Identify both sources of food detection</td> </tr>
+      
+      <tr> <td class="ach">All You Ever Wanted</td> <td class="descr">Get a wish from every wish source</td> </tr>
+      
+      <tr> <td class="ach">Touch It With A 10 Foot Pole</td> <td class="descr">Kill a floating eye with a polearm</td> </tr>
+      
+      <tr> <td class="ach">Jeweler</td> <td class="descr">Identify all rings</td> </tr>
+      
+      <tr> <td class="ach">Mikado</td> <td class="descr">Identify all wands</td> </tr>
+      
+      <tr> <td class="ach">King of Bling</td> <td class="descr">Identify all amulets</td> </tr>
+      
+      <tr> <td class="ach">Bookworm</td> <td class="descr">Identify all spellbooks</td> </tr>
+      
+      <tr> <td class="ach">Scholar</td> <td class="descr">Identify all scrolls</td> </tr>
+      
+      <tr> <td class="ach">Alchemist</td> <td class="descr">Identify all potions</td> </tr>
+      
+      <tr> <td class="ach">Fashionista</td> <td class="descr">Identify all non-obvious cloaks, helms, boots, and gloves</td> </tr>
+      
+      <tr> <td class="ach">Minesweeper</td> <td class="descr">Disarm all land mines in Fort Ludios without blowing any up</td> </tr>
+      
+      <tr> <td class="ach">Hyperliterate</td> <td class="descr">Read every readable item in the game</td> </tr>
+      
+      <tr> <td class="ach">Civilized Cooking</td> <td class="descr">Open a tin with a tin opener</td> </tr>
+      
+      <tr> <td class="ach">007</td> <td class="descr">Unlock something with a credit card</td> </tr>
+      
+      <tr> <td class="ach">Bob Ross</td> <td class="descr">Release a picture-painting demon from a camera</td> </tr>
+      
+      <tr> <td class="ach">Got No Talent</td> <td class="descr">Scare something by playing music</td> </tr>
+      
+      <tr> <td class="ach">Cookie Monster</td> <td class="descr">Read a fortune without eating its cookie</td> </tr>
+      
+      <tr> <td class="ach">Say Hello To My Evil Friend</td> <td class="descr">Have a non-guaranteed demon lord gated in or summoned</td> </tr>
+      
+      <tr> <td class="ach">Death onna Stick</td> <td class="descr">Kill a member of 25 different monster species</td> </tr>
+      
+      <tr> <td class="ach">Bring out your Dead</td> <td class="descr">Kill a member of 50 different monster species</td> </tr>
+      
+      <tr> <td class="ach">Diverse Death-Dealer</td> <td class="descr">Kill a member of 100 different monster species</td> </tr>
+      
+      <tr> <td class="ach">Grim Reaper</td> <td class="descr">Kill a member of 200 different monster species</td> </tr>
+      
+      <tr> <td class="ach">Gotta Kill 'em All</td> <td class="descr">Kill a member of all eligible monster species</td> </tr>
+      
+      <tr> <td class="ach">Learn the Alphabet</td> <td class="descr">Kill a member of each species from a to z</td> </tr>
+      
+      <tr> <td class="ach">Make your Mark</td> <td class="descr">Engrave with an athame</td> </tr>
+      
+      <tr> <td class="ach">One Hit KO</td> <td class="descr">Deal a monster its maximum HP or more of damage (minimum 20)</td> </tr>
+      
+      <tr> <td class="ach">Drink It To The Next Level</td> <td class="descr">Level up by drinking from a sink</td> </tr>
+      
+      <tr> <td class="ach">Why Won't You DIE Already</td> <td class="descr">Kill the Wizard of Yendor 20 or more times</td> </tr>
+      
+      <tr> <td class="ach">You're About To Die, You Scrub</td> <td class="descr">Get a special message saying you're about to die, you scrub</td> </tr>
+      
+      <tr> <td class="ach">Six Pack</td> <td class="descr">Stock an ice box with 6 or more potions of booze</td> </tr>
+      
+      <tr> <td class="ach">Bar Brawler</td> <td class="descr">Kill a monster with HP damage by smashing a bottle on it</td> </tr>
+      
+      <tr> <td class="ach">Extreme Omnivore</td> <td class="descr">Eat an object from every common, edible object class</td> </tr>
+      
+      <tr> <td class="ach">Extinctionist Lite</td> <td class="descr">Genocide 20 or more monster species</td> </tr>
+      
+      <tr> <td class="ach">Dudley's Hero</td> <td class="descr">Extinct newts</td> </tr>
+      
+      <tr> <td class="ach">Ice Jesus</td> <td class="descr">Walk on top of lava unharmed</td> </tr>
+      
+      <tr> <td class="ach">Rare Loot</td> <td class="descr">Acquire an athame that was generated in the inventory of a lich</td> </tr>
+      
+      <tr> <td class="ach">Boy Scout</td> <td class="descr">Complete Sokoban without incurring any penalties for rule-breaking</td> </tr>
+      
+      <tr> <td class="ach">Sounds Hollow</td> <td class="descr">Reveal a secret door with a stethoscope</td> </tr>
+      
+      <tr> <td class="ach">DO YOU WANT TO DO THIS BRO? BECAUSE IT'S THUNDERDOME TIME!</td> <td class="descr">Defeat the NPC from the NPC Deathmatch quest</td> </tr>
+      
+    </tbody>
+  </table>
+  </p>
+
+</article>
+
+</body>
+
+</html>

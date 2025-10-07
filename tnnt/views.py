@@ -1213,10 +1213,71 @@ class ClanMgmtView(View):
         logger.info('%s set the message of clan %s to "%s"',
                     player.name, clan.name, clan.message)
 
-
     # FUTURE TODO: functionality for a clanless player to request becoming a
     # member of a clan they input, admins can accept (inverse of invites)
     # FUTURE TODO: functionality for a clanless player to raise a flag saying
     # "looking for a clan!" and all such players are listed either publicly or
     # to clan admins (probably publicly)
     # FUTURE TODO: decline an invite
+
+class ArchiveFileView(View):
+    """
+    Serves static HTML files from tournament archives (2018-2024).
+    Files are served from staticfiles/archives/<year>/ at URL /archives/<year>/
+    """
+    def get(self, request, year, path='index.html'):
+        import os
+        from django.http import FileResponse, Http404
+        from django.conf import settings
+
+        # Construct the file path
+        if not path:
+            path = 'index.html'
+
+        file_path = os.path.join(
+            settings.STATIC_ROOT,
+            'archives',
+            year,
+            path
+        )
+
+        # Security check: ensure the path is within the archives directory
+        archive_base = os.path.join(settings.STATIC_ROOT, 'archives', year)
+        real_path = os.path.realpath(file_path)
+        real_base = os.path.realpath(archive_base)
+
+        if not real_path.startswith(real_base):
+            raise Http404("Invalid archive path")
+
+        # Serve the file
+        try:
+            return FileResponse(
+                open(file_path, 'rb'),
+                content_type=self._get_content_type(file_path)
+            )
+        except FileNotFoundError:
+            raise Http404("Archive file not found")
+
+    def _get_content_type(self, file_path):
+        """Determine content type based on file extension or content"""
+        import mimetypes
+        import os
+
+        # Try to guess from extension first
+        content_type, _ = mimetypes.guess_type(file_path)
+
+        if content_type:
+            return content_type
+
+        # For files without extensions, check if it's HTML
+        # (2021-2024 archives have extension-less HTML files)
+        try:
+            with open(file_path, 'rb') as f:
+                first_bytes = f.read(512).lower()
+                if b'<!doctype html' in first_bytes or b'<html' in first_bytes:
+                    return 'text/html'
+        except:
+            pass
+
+        # Default fallback
+        return 'application/octet-stream'
