@@ -94,7 +94,7 @@ in the TNNT game source code. The import of fixtures should also only be done on
 when a fresh Django server is being set up.
 ```shell
 $ ./ach_to_yaml.sh /path/to/tnnt/source > scoreboard/fixtures/achievements.yaml
-$ python manage.py loaddata achievements conducts sources trophies
+$ ./manage.py loaddata achievements conducts sources trophies
 ```
 
 #### Serving up static content in production mode
@@ -128,7 +128,7 @@ username) for dev and testing purposes. For production, you will want to point
 this to the full path of the real dgamelaunch sqlite database.
 
 ### Run dev server
-`$ python manage.py runserver`
+`$ ./manage.py runserver`
 
 ### Clearing databases
 Use `reset_db.sh` when you want to reset the DB structure; i.e. after changing a
@@ -144,7 +144,7 @@ This is if you want to test specific behavior with a manually edited xlogfile.
 After making sure that Games are cleared from the database and at least one
 Source exists in the database, run:
 
-`$ python manage.py pollxlogs --file <your custom xlogfile>`
+`$ ./manage.py pollxlogs --file <your custom xlogfile>`
 
 Note that created Games will be associated with a random Source in the database,
 so dumplog links will probably not work. Three test xlogfiles are provided for
