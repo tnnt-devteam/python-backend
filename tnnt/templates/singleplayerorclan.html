@@ -19,7 +19,7 @@
 
 <table>
   <thead>
-    <tr class="framed"><th colspan=2>general information</th></tr>
+    <tr class="framed"><th colspan=2>General information</th></tr>
   </thead>
   {% if not isClan and player_or_clan.clan %}
     <tr>
@@ -97,7 +97,7 @@
 
 <table>
   <thead>
-    <tr class="framed"><th colspan="2">trophies</th></tr>
+    <tr class="framed"><th colspan="2">Trophies</th></tr>
   </thead>
   <tbody>
     {% for tr in player_or_clan.trophies.all %}
@@ -117,7 +117,7 @@
 {% if isClan %} {# we expect "members" to be defined #}
   <table>
     <thead>
-      <tr class="framed"><th>members</th></tr>
+      <tr class="framed"><th>Members</th></tr>
     </thead>
     <tbody>
       {% for plr in members %}
@@ -165,11 +165,11 @@ If we do show all streaks in a clan at some point, also make sure to remove the
       <thead>
         <tr class="framed">
           <th>&nbsp;</th>
-          <th>len</th>
-          <th>start</th>
-          <th>end</th>
-          <th>continuable</th>
-          <th>streak games</th>
+          <th>Len</th>
+          <th>Start</th>
+          <th>End</th>
+          <th>Continuable</th>
+          <th>Streak games</th>
         </tr>
       </thead>
       <tbody>
