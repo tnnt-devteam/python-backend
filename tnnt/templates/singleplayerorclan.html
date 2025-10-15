@@ -375,7 +375,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
   <div class="achieve-summary">
     {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements.count %}
       <div class="achieve-bar"
-          style="width:{% widthratio plr_ach tot_ach 100 %}%"></div>
+          data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
       <div class="achieve-msg">
         {{ plr_ach }} out of {{ tot_ach }} achievements attained
       </div>

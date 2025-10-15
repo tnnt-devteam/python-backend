@@ -20,7 +20,7 @@
 <div id="leaderboard-select" class="row">
   <div id="prev-board" class="board-lr-move">&laquo;</div>
   <div id="leaderboard-combobox">
-    <label for="boards">Select leaderboard: </label>
+    <label for="boards-combobox">Select leaderboard: </label>
     <select name="boards" id="boards-combobox">
       {% for board in leaderboards %}
         <option value="{{ board.id }}">{{ board.title }}</option>
