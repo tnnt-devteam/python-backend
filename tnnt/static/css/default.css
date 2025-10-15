@@ -307,6 +307,24 @@ span.streak {
   }
 }
 
+/* Player trophy section - constrains trophy grid on player pages */
+.player-trophy-section {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+  .player-trophy-section {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 800px) {
+  .player-trophy-section {
+    max-width: 100%;
+  }
+}
+
 TABLE.clan-members {
   max-width: 20em;
 }
