@@ -5,6 +5,9 @@
   <title>TNNT::{{ player_or_clan.name }}</title>
   {% include "headlinks.html" %}
   <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}"></script>
+  {% if trophy_grid and not isClan %}
+  <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
+  {% endif %}
 </head>
 
 <body>
@@ -133,6 +136,141 @@
 {% endif %}
 
 </div> {# class="row" #}
+
+{# == TROPHY PROGRESS TRACKER =========================================== #}
+
+{% if trophy_grid and not isClan %}
+<div class="clan-trophy-grid">
+<h2>Trophy Progress Tracker</h2>
+<p class="trophy-grid-legend">
+  Symbols: - = invalid combo, <span class="progress-symbols"><span class="sym-mines">✓</span></span> = Mines+Soko complete, <span class="progress-symbols"><span class="sym-male">♂</span></span> = male ascension, <span class="progress-symbols"><span class="sym-female">♀</span></span> = female ascension
+</p>
+<div class="trophy-grid-container">
+  <table class="trophy-grid sortable">
+    <thead>
+      <tr class="framed">
+        <th></th>
+        {% for role in trophy_grid.roles %}
+          <th>{{ role }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in trophy_grid.rows %}
+        <tr>
+          <th>{{ row.race_align }}</th>
+          {% for combo in row.combos %}
+            <td class="{% if combo.valid %}valid clickable-cell{% else %}invalid{% endif %}"
+                {% if combo.valid %}
+                data-role="{{ combo.role }}"
+                data-race-align="{{ row.race_align }}"
+                data-entity-type="player"
+                data-entity-id="{{ player_or_clan.id }}"
+                {% endif %}>
+              {% if not combo.valid %}
+                -
+              {% else %}
+                <span class="progress-symbols">
+                  {% if combo.mines_soko %}<span class="sym-mines">✓</span>{% endif %}{% if combo.asc_male %}<span class="sym-male">♂</span>{% endif %}{% if combo.asc_female %}<span class="sym-female">♀</span>{% endif %}{% if not combo.mines_soko and not combo.asc_male and not combo.asc_female %}&nbsp;{% endif %}
+                </span>
+              {% endif %}
+            </td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% if isClan %}
+{# Trophy completion summary - only show for clan pages #}
+<details class="trophy-status">
+  <summary>Trophy Status Summary</summary>
+  <div class="trophy-status-content">
+    <h4>Great/Lesser Race Trophies</h4>
+    <ul>
+      {% for race, completed in trophy_grid.trophy_status.great_races.items %}
+        <li>
+          Great {{ race }}:
+          {% if completed %}
+            <span class="achieved">✔ Complete</span>
+          {% else %}
+            <span class="not-achieved">✘ Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for race, completed in trophy_grid.trophy_status.lesser_races.items %}
+        <li>
+          Lesser {{ race }}:
+          {% if completed %}
+            <span class="achieved">✔ Complete</span>
+          {% else %}
+            <span class="not-achieved">✘ Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Great/Lesser Role Trophies</h4>
+    <ul>
+      {% for role, completed in trophy_grid.trophy_status.great_roles.items %}
+        <li>
+          Great {{ role }}:
+          {% if completed %}
+            <span class="achieved">✔ Complete</span>
+          {% else %}
+            <span class="not-achieved">✘ Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    <ul>
+      {% for role, completed in trophy_grid.trophy_status.lesser_roles.items %}
+        <li>
+          Lesser {{ role }}:
+          {% if completed %}
+            <span class="achieved">✔ Complete</span>
+          {% else %}
+            <span class="not-achieved">✘ Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Combo Completion Trophies</h4>
+    <ul>
+      <li>
+        All Roles:
+        {% if trophy_grid.trophy_status.all_roles %}
+          <span class="achieved">✔ Complete</span>
+        {% else %}
+          <span class="not-achieved">✘ Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        All Races:
+        {% if trophy_grid.trophy_status.all_races %}
+          <span class="achieved">✔ Complete</span>
+        {% else %}
+          <span class="not-achieved">✘ Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        NetHack Master (all 73 combos):
+        {% if trophy_grid.trophy_status.nethack_master %}
+          <span class="achieved">✔ Complete</span>
+        {% else %}
+          <span class="not-achieved">✘ Incomplete</span>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</details>
+{% endif %} {# isClan #}
+</div>
+{% endif %} {# trophy_grid #}
 
 {# post 2021 TODO: possibly show leaderboard ranks (stretch goal) #}
 

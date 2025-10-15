@@ -40,5 +40,6 @@ urlpatterns = [
     path('api/leaderboards/', LeaderboardView.as_view(), name='api-leaderboards'),
     path('api/recent-events/', RecentEventsView.as_view(), name='api-recent-events'),
     path('api/scoreboard/', ScoreboardView.as_view(), name='api-scoreboard'),
+    path('api/trophy-grid-games/', tnntviews.TrophyGridGamesView.as_view(), name='api-trophy-grid-games'),
 ]
 

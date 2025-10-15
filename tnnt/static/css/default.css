@@ -225,7 +225,6 @@ div.achieve-top table tbody tr:last-child {
 
 .achieved {
   color: green;
-  font-weight: 900;
 }
 
 .sorta-achieved {
@@ -235,7 +234,6 @@ div.achieve-top table tbody tr:last-child {
 
 .not-achieved {
   color: red;
-  font-weight: 900;
 }
 
 /* style for the achievement summary with in-laid progress bar */
@@ -279,6 +277,35 @@ span.streak {
 /*====================================================================
   === CLAN PAGES =====================================================
   ====================================================================*/
+
+/* Two-column layout for clan management page */
+.clan-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  align-items: flex-start;
+}
+
+.clan-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.clan-trophy-grid {
+  flex: 1;
+  min-width: 600px;
+}
+
+/* Responsive: stack on narrow screens */
+@media (max-width: 1200px) {
+  .clan-layout {
+    flex-direction: column;
+  }
+
+  .clan-trophy-grid {
+    width: 100%;
+  }
+}
 
 TABLE.clan-members {
   max-width: 20em;
@@ -520,7 +547,7 @@ span#counter {
   === CLAN MANAGEMENT ================================================
   ====================================================================*/
 
-form.disguised-button, form.inline-form {
+form.disguised-button, form.inline-form, form.logout-form {
     display: inline;
 }
 
@@ -543,12 +570,268 @@ form.disguised-button button:hover {
     color: #fd0;
 }
 
+/* Logout form keeps default button styling */
+
 .errmsg {
     color: red;
 }
 
 .current-player {
     font-weight: bold;
+}
+
+/*====================================================================
+  === TROPHY PROGRESS TRACKER ========================================
+  ====================================================================*/
+
+.trophy-grid-legend {
+  text-align: center;
+  font-size: 90%;
+  color: #99b;
+  font-style: italic;
+  margin: 0.5em 0;
+}
+
+.trophy-grid-legend .progress-symbols {
+  min-width: 0;
+  letter-spacing: 0;
+}
+
+.trophy-grid-container {
+  overflow-x: auto;
+  margin: 1em 0;
+  max-width: 100%;
+}
+
+table.trophy-grid {
+  font-family: monospace;
+  font-size: 90%;
+  width: 100%;
+}
+
+table.trophy-grid td,
+table.trophy-grid th {
+  padding: 0.3em;
+  text-align: center;
+  border: 1px solid #446;
+  min-width: 2.5em;
+}
+
+table.trophy-grid th {
+  background-color: #237;
+  font-weight: 600;
+}
+
+table.trophy-grid tbody th {
+  text-align: right;
+  background-color: #237;
+  white-space: nowrap;
+}
+
+table.trophy-grid td.invalid {
+  background-color: #112;
+  color: #556;
+}
+
+table.trophy-grid td.valid {
+  background-color: #003;
+}
+
+.progress-symbols {
+  display: inline-block;
+  min-width: 2em;
+  letter-spacing: 0.1em;
+}
+
+.progress-symbols .sym-mines {
+  color: #0f0;
+}
+
+.progress-symbols .sym-male {
+  color: #6af;
+}
+
+.progress-symbols .sym-female {
+  color: #f8a;
+}
+
+/* Trophy status collapsible section */
+details.trophy-status {
+  margin-top: 1em;
+  width: 100%;
+}
+
+details.trophy-status summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #eb0;
+  text-align: center;
+  padding: 0.5em;
+  background-color: #224;
+  border-radius: 5px;
+}
+
+details.trophy-status summary:hover {
+  color: #fd0;
+  background-color: #336;
+}
+
+.trophy-status-content {
+  padding: 1em;
+  background-color: #112;
+  border-radius: 5px;
+  margin-top: 0.5em;
+}
+
+.trophy-status-content h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.trophy-status-content h4:first-child {
+  margin-top: 0;
+}
+
+.trophy-status-content ul {
+  list-style: none;
+  padding-left: 1em;
+}
+
+.trophy-status-content li {
+  margin: 0.3em 0;
+}
+
+/* Clickable cells */
+table.trophy-grid td.clickable-cell:hover {
+  background-color: #115;
+  cursor: pointer;
+}
+
+/* Trophy Grid Modal */
+.trophy-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.trophy-modal-hidden {
+  display: none;
+}
+
+.modal-loading {
+  text-align: center;
+  padding: 2em;
+}
+
+.modal-loading-hidden {
+  display: none;
+}
+
+.modal-games-hidden {
+  display: none;
+}
+
+.error-msg {
+  color: red;
+  text-align: center;
+}
+
+.no-games-msg {
+  text-align: center;
+  padding: 2em;
+}
+
+.trophy-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.trophy-modal-content {
+  position: relative;
+  margin: 5% auto;
+  width: 90%;
+  max-width: 800px;
+  background-color: #003;
+  border: 2px solid #abf;
+  border-radius: 5px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.trophy-modal-header {
+  padding: 1em;
+  border-bottom: 1px solid #446;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #237;
+}
+
+.trophy-modal-header h3 {
+  margin: 0;
+  color: #f2f5ff;
+  font-size: 1.2em;
+}
+
+.trophy-modal-close {
+  background: none;
+  border: none;
+  color: #f2f5ff;
+  font-size: 2em;
+  cursor: pointer;
+  line-height: 0.8;
+  padding: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.trophy-modal-close:hover {
+  color: #fd0;
+}
+
+.trophy-modal-body {
+  padding: 1em;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.trophy-modal-body h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+  color: #eb0;
+}
+
+.trophy-modal-body h4:first-child {
+  margin-top: 0;
+}
+
+.trophy-modal-body table.games-table {
+  width: 100%;
+  margin-bottom: 1.5em;
+  font-size: 90%;
+}
+
+.trophy-modal-body table.games-table th {
+  background-color: #237;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.trophy-modal-body table.games-table td {
+  padding: 0.5em;
+  border-bottom: 1px solid #224;
+}
+
+.trophy-modal-body table.games-table tr:hover {
+  background-color: #115;
 }
 
 /*====================================================================

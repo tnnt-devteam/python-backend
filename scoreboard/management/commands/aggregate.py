@@ -4,6 +4,7 @@ from scoreboard.parsers import XlogParser
 from django.db import transaction
 from django.db.models import Sum, Min, Max, Count, Q
 from tnnt import uniqdeaths
+from tnnt.trophy_grid import invalidate_trophy_grid_cache
 from pathlib import Path
 import os
 import re
@@ -193,7 +194,6 @@ def obtainTempAchievements():
                 if achdict[ach.xlogfield] & (1 << ach.bit):
                     player.temp_achievements.add(ach)
 
-
 # Determine and award trophies to a player or clan.
 # ASSUMPTION: The player's LeaderboardBaseFields are already computed.
 # allgames_qs is a QuerySet of all Games by this player/clan. For most
@@ -289,7 +289,6 @@ def awardTrophies(player_or_clan, allgames_qs):
                 player_or_clan.trophies.add(TROPHIES['Keep The High Priest of Moloch Alive'])
             elif c.shortname == 'ride':
                 player_or_clan.trophies.add(TROPHIES['Keep The Riders Alive'])
-
 
 # Given a QuerySet of Games, compute the overall Z-score of the winning games.
 # (Does not assume the games are all wins.)
@@ -500,3 +499,5 @@ class Command(BaseCommand):
         with transaction.atomic():
             aggregatePlayerData()
             aggregateClanData()
+            # Invalidate all trophy grid caches after new data is aggregated
+            invalidate_trophy_grid_cache()

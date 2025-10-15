@@ -466,6 +466,8 @@ class SinglePlayerOrClanView(TemplateView):
     # scoreboard to poll such files.
 
     def get_context_data(self, **kwargs):
+        from tnnt.trophy_grid import generate_combo_grid_data
+
         if 'clanname' in kwargs:
             kwargs['isClan'] = True
             kwargs['header_key'] = 'clans'
@@ -481,12 +483,18 @@ class SinglePlayerOrClanView(TemplateView):
             # for a clan, we want to filter games from any of its members
             base_game_qs = Game.objects.filter(player__in=member_ids)
 
+            # Generate trophy progress grid for the clan
+            kwargs['trophy_grid'] = generate_combo_grid_data(clan)
+
         elif 'playername' in kwargs:
             kwargs['isClan'] = False
             kwargs['header_key'] = 'players'
             player = get_object_or_404(Player, name=kwargs['playername'])
             kwargs['player_or_clan'] = player
             base_game_qs = Game.objects.filter(player=player.id)
+
+            # Generate trophy progress grid for the player
+            kwargs['trophy_grid'] = generate_combo_grid_data(player)
 
         else:
             logger.error('single player/clan view without clan or player name')
@@ -776,6 +784,8 @@ class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
     def get_context_data(self, **kwargs):
+        from tnnt.trophy_grid import generate_combo_grid_data
+
         user = self.request.user
         # we assume the player is already known to exist since both get() and
         # post() check for it
@@ -788,6 +798,8 @@ class ClanMgmtView(View):
             kwargs['clan'] = clan
             kwargs['members'] = Player.objects.filter(clan=clan).order_by('-clan_admin','name')
             kwargs['invitees'] = clan.invitees.all().order_by('name')
+            # Generate trophy progress grid for the clan
+            kwargs['trophy_grid'] = generate_combo_grid_data(clan)
         kwargs['invites'] = player.invites.all().order_by('name')
 
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
@@ -1219,6 +1231,97 @@ class ClanMgmtView(View):
     # "looking for a clan!" and all such players are listed either publicly or
     # to clan admins (probably publicly)
     # FUTURE TODO: decline an invite
+
+class TrophyGridGamesView(View):
+    """
+    API endpoint to fetch games for a specific role-race-alignment combo.
+    Used by clickable trophy grid cells.
+    """
+    def get(self, request):
+        from django.http import JsonResponse
+        from django.db.models import Q
+
+        # Get parameters
+        entity_type = request.GET.get('entity_type')  # 'player' or 'clan'
+        entity_id = request.GET.get('entity_id')
+        role = request.GET.get('role')
+        race = request.GET.get('race')
+        align = request.GET.get('align')
+
+        # Validate parameters
+        if not all([entity_type, entity_id, role, race, align]):
+            return JsonResponse({
+                'error': 'Missing required parameters'
+            }, status=400)
+
+        if entity_type not in ['player', 'clan']:
+            return JsonResponse({
+                'error': 'Invalid entity_type'
+            }, status=400)
+
+        # Get base queryset based on entity type
+        try:
+            if entity_type == 'player':
+                player = Player.objects.get(id=entity_id)
+                base_qs = Game.objects.filter(player=player)
+            else:  # clan
+                clan = Clan.objects.get(id=entity_id)
+                member_ids = Player.objects.filter(
+                    clan=clan
+                ).values_list('id', flat=True)
+                base_qs = Game.objects.filter(player__in=member_ids)
+        except (Player.DoesNotExist, Clan.DoesNotExist):
+            return JsonResponse({
+                'error': 'Entity not found'
+            }, status=404)
+
+        # Filter by combo
+        combo_qs = base_qs.filter(
+            role=role,
+            race=race,
+            align0=align
+        )
+
+        # Get mines+soko games
+        mines_soko_games = combo_qs.filter(
+            mines_soko=True
+        ).select_related('player', 'source').values(
+            'id', 'player__name', 'endtime', 'points',
+            'turns', 'gender0', 'starttime', 'role', 'race', 'align0',
+            playername=F('player__name'),
+            dlg_fmt=F('source__dumplog_fmt')
+        ).order_by('-endtime')[:20]  # Limit to 20 most recent
+
+        # Get ascensions (male and female)
+        ascension_games = combo_qs.filter(
+            won=True
+        ).select_related('player', 'source').values(
+            'id', 'player__name', 'endtime', 'points',
+            'turns', 'gender0', 'starttime', 'role', 'race', 'align0',
+            playername=F('player__name'),
+            dlg_fmt=F('source__dumplog_fmt')
+        ).order_by('-endtime')[:20]  # Limit to 20 most recent
+
+        # Format games using bulk_upd_games
+        mines_soko_list = bulk_upd_games(list(mines_soko_games), False)
+        ascension_list = bulk_upd_games(list(ascension_games), False)
+
+        # Separate ascensions by gender
+        male_ascs = [g for g in ascension_list if g.get('gender0') == 'Mal']
+        female_ascs = [g for g in ascension_list if g.get('gender0') == 'Fem']
+
+        return JsonResponse({
+            'combo': {
+                'role': role,
+                'race': race,
+                'align': align
+            },
+            'games': {
+                'mines_soko': mines_soko_list,
+                'male_ascensions': male_ascs,
+                'female_ascensions': female_ascs
+            }
+        })
 
 class ArchiveFileView(View):
     """
