@@ -14,6 +14,11 @@
 {% include "header.html" with page="index" %}
 
 <div id="salespitch">
+  {% if debug %}
+  <p class="debug-warning">
+    DEBUG MODE: Active
+  </p>
+  {% endif %}
   <h3> Do you love to play <a href="https://nethack.org" target="_blank">NetHack</a>? </h3>
   <h3> Want to show everyone your personal <a href="/players">prowess</a>?</h3>
   <h3>

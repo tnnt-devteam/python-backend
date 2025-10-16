@@ -21,6 +21,11 @@
       <a href="https://www.hardfought.org/nethack/#how-to-connect">this page</a>
       for instructions.
     </p>
+    {% if debug %}
+    <p class="debug-warning">
+      ⚠ DEBUG MODE: Test database in use, regular logins are disabled.
+    </p>
+    {% endif %}
     <form method="post">
       {% csrf_token %} {# guard against cross-site submission of this POST #}
     {{ form.as_table }}
@@ -28,9 +33,7 @@
     </form>
 </article>
 
-
 <hr>
-
 
 </body>
 
