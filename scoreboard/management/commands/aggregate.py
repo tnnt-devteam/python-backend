@@ -182,12 +182,12 @@ def obtainTempAchievements():
                                % (fname))
                 continue # for fname in filelist
 
-            # create a dict of { achieve: <achieve bits>, tnntachieve0: <achieve bits>, ... }
-            # Assumption: file contents have first line of achieve bits, then
-            # subsequent lines are tnntachieve0, tnntachieve1, ...
-            achdict = { 'achieve': int(lines[0], 16) }
+            # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
+            # Assumption: file contents have tnntachieve0 as a number on the
+            # first line, then subsequent lines are tnntachieve1, tnntachieve2, ...
+            achdict = {}
             tnntachieveX = 0
-            for L in lines[1:]:
+            for L in lines:
                 achdict['tnntachieve' + str(tnntachieveX)] = int(L, 16)
                 tnntachieveX += 1
             for ach in ALL_ACHIEVEMENTS:
