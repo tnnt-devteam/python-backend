@@ -230,8 +230,13 @@ def invalidate_trophy_grid_cache(player_or_clan=None):
         cache.delete(cache_key)
     else:
         # Invalidate all trophy grid caches
-        # This is done by deleting keys matching the pattern
-        cache.delete_pattern('trophy_grid_*')
+        # Try to use delete_pattern if available (Redis), otherwise clear all
+        if hasattr(cache, 'delete_pattern'):
+            cache.delete_pattern('trophy_grid_*')
+        else:
+            # LocMemCache and other backends don't support pattern deletion
+            # For development/testing, we can just clear the entire cache
+            cache.clear()
 
 def _calculate_trophy_status(
         player_or_clan, mines_soko_combos, ascension_combos):
