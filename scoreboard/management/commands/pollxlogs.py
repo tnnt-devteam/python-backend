@@ -22,7 +22,7 @@ class xlog_flags:
     EXPLORE = 0x2
     NOBONES = 0x4
 
-def game_from_xlog(source, xlog_dict, auto_detect_source=False):
+def game_from_xlog(source, xlog_dict, auto_detect_source=False, conducts_cache=None, achievements_cache=None):
     '''
     Create and save a Game from a dictionary of fields that comes from the xlog.
     This function contains the custom "business logic" of converting fields that
@@ -34,6 +34,8 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False):
     `source` is a Source object that the resulting Game will be associated with.
     `auto_detect_source` if True, will try to detect the source from the xlog's
     server field when using --file option.
+    `conducts_cache` if provided, should be a list of all Conduct objects (avoids repeated queries)
+    `achievements_cache` if provided, should be a list of all Achievement objects (avoids repeated queries)
 
     SIDE EFFECT: This searches for a player of the given name, and if they
     cannot be found, it will create that Player. (This is one of the two ways
@@ -119,12 +121,27 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False):
     kwargs['player'] = player
 
     game = Game.objects.create(**kwargs)
-    for conduct in Conduct.objects.all():
+
+    # Use cached conducts/achievements if provided, otherwise query
+    conducts_to_check = conducts_cache if conducts_cache is not None else Conduct.objects.all()
+    achievements_to_check = achievements_cache if achievements_cache is not None else Achievement.objects.all()
+
+    # Collect matching conducts and achievements, then add in bulk
+    matching_conducts = []
+    for conduct in conducts_to_check:
         if conduct.xlogfield in xlog_dict and xlog_dict[conduct.xlogfield] & (1 << conduct.bit):
-            game.conducts.add(conduct)
-    for achieve in Achievement.objects.all():
+            matching_conducts.append(conduct)
+
+    matching_achievements = []
+    for achieve in achievements_to_check:
         if achieve.xlogfield in xlog_dict and xlog_dict[achieve.xlogfield] & (1 << achieve.bit):
-            game.achievements.add(achieve)
+            matching_achievements.append(achieve)
+
+    # Bulk add to reduce transactions
+    if matching_conducts:
+        game.conducts.add(*matching_conducts)
+    if matching_achievements:
+        game.achievements.add(*matching_achievements)
 
     game.save()
     return 1
@@ -144,23 +161,28 @@ def import_from_file(path, src):
         logger.info('Auto-detection mode enabled for source selection')
     else:
         local_src = src
+
+    # Pre-load conducts and achievements once to avoid repeated queries
+    conducts_cache = list(Conduct.objects.all())
+    achievements_cache = list(Achievement.objects.all())
+    logger.debug(f'Cached {len(conducts_cache)} conducts and {len(achievements_cache)} achievements')
+
     with Path(path).open("r") as xlog_file:
         if src is not None:
             xlog_file.seek(src.file_pos)
         num_added = 0
         for xlog_entry in XlogParser().parse(xlog_file):
-            num_added += game_from_xlog(local_src, xlog_entry, auto_detect_source=auto_detect)
+            num_added += game_from_xlog(local_src, xlog_entry, auto_detect_source=auto_detect,
+                                        conducts_cache=conducts_cache, achievements_cache=achievements_cache)
         logger.info('Created %d Games from xlog file %s' % (num_added, path))
         if src is not None:
             src.file_pos = xlog_file.tell()
             src.save()
 
-
 @transaction.atomic
 def import_records(src):
     xlog_path = Path(settings.XLOG_DIR) / src.local_file
     import_from_file(xlog_path, src)
-
 
 def sync_local_file(url, local_file):
     logger.info('Syncing remote xlog file from %s', url)
@@ -172,7 +194,6 @@ def sync_local_file(url, local_file):
             return
         for chunk in r.iter_content(chunk_size=128):
             xlog_file.write(chunk)
-
 
 class Command(BaseCommand):
     help = "Poll Sources (xlogfiles) for new game data"
