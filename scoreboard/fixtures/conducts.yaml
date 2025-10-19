@@ -148,6 +148,24 @@
     shortname: bone
     xlogfield: conduct
     bit: 24
+- model: scoreboard.conduct
+  fields:
+    name: Containerless
+    shortname: cont
+    xlogfield: conduct
+    bit: 25
+- model: scoreboard.conduct
+  fields:
+    name: Zapless
+    shortname: zap
+    xlogfield: conduct
+    bit: 26
+- model: scoreboard.conduct
+  fields:
+    name: Potionless
+    shortname: pot
+    xlogfield: conduct
+    bit: 27
 # mumble grumble devteam putting conducts in the achieve field grumble mumble...
 - model: scoreboard.conduct
   fields:

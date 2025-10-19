@@ -303,7 +303,9 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     (r"^killed by an ", "killed by a "),
     (r", while .*", ""),
     (r"hallucinogen-distorted ", ""),
-    (r"by the invisible ", "by "),
+    (r"by the invisible ", "by the"),
+    # this turns "invisible stalker" into just "stalker" but that's fine since
+    # there's no other way to get killed by some other stalker
     (r"by (an|a) invisible ", "by a "),
     (r"by invisible ", "by "),
     (r"by .*; the shopkeeper", "by a shopkeeper"),
@@ -311,14 +313,13 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     (r" (herself|himself) ", " themselves "),
     (r" (herself|himself)$", " themselves"),
     (r" (called|named) .*", ""),
-    # (r" \(with the Amulet\)$", ""), # leave this as a consolation prize
     (r"choked on .*", "choked on something"),
     (r"killed by kicking .*", "killed by kicking something"),
     (r"killed by touching .*", "killed by touching an artifact"),
     # (r"killed by a falling (?!rock)$", "killed by a falling object"), # don't think we need this
     (r" (an? )?M[rs]\. [A-Z].*[,;] the shopkeeper", " a shopkeeper"),
-    (r" (an?|the) ghost of .+", " a ghost"),
     (r"poisoned by a rotted .* corpse", "poisoned by a rotted corpse"),
+    (r"poisoned by a rotted glob .+", "poisoned by a rotted glob"),
     (r"wrath of .+", "wrath of a deity"),
     (r"priest(ess)?", "priest(ess)"),
     # This next one must come after the last one, because it assumes the
@@ -328,7 +329,43 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     # this is ugly... it's the list of things that can be summoned as a minion
     # (to prevent farming a bunch of unique deaths off repeated prayers until
     # the god summons a minion)
-    (r"an? (\w+ elemental|Aleax|couatl|Angel|\w+ demon|\w+ devil|(suc|in)cubus|balrog|pit fiend|nalfeshnee|hezrou|vrock|marilith|erinyes) of .+", "minion of a deity"),
-    # currently "chameleon imitating a foo" IS treated as a separate death from
-    # "foo". Should it be normalized down to the same thing?
+    (r"an? (\w+ elemental|Aleax|couatl|Angel|\w+ demon|\w+ devil|(suc|in)cubus|balrog|pit fiend|nalfeshnee|hezrou|vrock|marilith|erinyes) of .+", "a minion of a deity"),
+    # "chameleon imitating a monster" is its own unique death, rather than
+    # treating it as the monster it was imitating, but all monsters turn into
+    # just "monster"; however, "killed by a chameleon" when it's not imitating
+    # anything will not be normalized, because getting killed by it when it's in
+    # its natural form actually is a distinct unique death
+    (r"(chameleon|sandestin|doppelganger) imitating an? .+", r"\1 imitating a monster"),
+    # deaths to player remnant monsters in bones should count the same as the
+    # basic monster type
+    (r"[^ ]+'s ghost", "a ghost"),
+    (r"[^ ]+ the (vampire|ghoul|wraith|green slime)", r"a \1"),
+    (r"[^ ]+ the (gnome|orc|dwarf|elf|human) mummy", r"a \1 mummy"),
+    # TNNT TODO FOR 3.7: add "zombie" to the above case with a second
+    # backreference, as it is now possible to arise as those
+    # TNNT TODO FOR 3.7: deaths to remnant monsters have some differences in
+    # formatting. It appears to now be "killed by the [remnant monster] of
+    # [plname]" in all cases (ghosts and non-ghosts).
 ]
+'''
+Deaths that are deliberately NOT normalized:
+  - Vampires have several combinations:
+    "vampire in fog cloud form"
+    "vampire in bat form"
+    "vampire lord in fog cloud form"
+    "vampire lord in bat form"
+    "vampire lord in wolf form"
+    These aren't numerous enough or repeatable enough to get a wide variety of
+    unique deaths, like can happen with chameleons.
+    (Technically add 3 more vampire unique deaths for Vlad, but it would take
+    quite a lot of effort to die to Vlad in a form other than his natural one
+    and if anyone manages it, they deserve the unique death).
+  - The "(with the Amulet)" suffix on deaths when the hero was carrying the
+    Amulet is intentionally not normalized out. Getting a (likely) unique
+    death is an intentional consolation prize.
+  - Deaths from petrifying corpses do not normalize "chickatrice corpse" into
+    "cockatrice corpse". Chickatrices are rarer and less likely to drop a
+    corpse, so it's noticeably more difficult to set up unique deaths with them.
+    If it turns out most of these deaths get accomplished by wishing for
+    corpses, though, we may want to revisit it.
+'''
