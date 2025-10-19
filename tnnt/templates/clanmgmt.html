@@ -52,6 +52,27 @@
           <button name="create_clan" type="submit">Create</button>
       </form>
     {% endif %}
+
+    <hr>
+    {% if invites.all %}
+      <p>The following clans have invited you: </p>
+      <ul>
+        {% for othclan in invites %}
+          <li>
+            <form method="post" class="disguised-button">
+              {% csrf_token %}
+              <input name="join_clan_id" type="hidden" value="{{othclan.id}}" />
+              {{othclan.name}}
+              <button name="join_clan" type="submit" value="{{othclan.name}}">
+                accept invite
+              </button>
+            </form>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You do not have any invites.</p>
+    {% endif %}
   {% else %}
     {# Two-column layout: clan info on left, trophy grid on right #}
     <div class="clan-layout">
