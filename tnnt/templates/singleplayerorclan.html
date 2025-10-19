@@ -5,6 +5,7 @@
   <title>TNNT::{{ player_or_clan.name }}</title>
   {% include "headlinks.html" %}
   <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/table-sort.js' %}"></script>
   {% if trophy_grid and not isClan %}
   <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
   {% endif %}
@@ -282,11 +283,24 @@
 
   {% if player_or_clan.wins > 0 %}
     <h2 id="ascensions">ASCENSIONS</h2>
-    {% include "games_table.html" with games=ascensions ascview=True %}
+    {% include "games_table.html" with games=ascensions ascview=True sortable=True %}
   {% endif %} {# wins > 0 #}
 
-  <h2 id="recent-games">RECENT GAMES</h2>
-  {% include "games_table.html" with games=recentgames ascview=False %}
+  <h2 id="recent-games">
+    {% if show_all_games %}
+      ALL GAMES
+    {% else %}
+      RECENT GAMES
+    {% endif %}
+  </h2>
+  <p class="game-toggle">
+    {% if show_all_games %}
+      <a href="?show_all=false#recent-games">[show recent only]</a>
+    {% else %}
+      <a href="?show_all=true#recent-games">[show all legitimate games]</a>
+    {% endif %}
+  </p>
+  {% include "games_table.html" with games=recentgames ascview=False sortable=True %}
 
 {% endif %} {# games > 0 #}
 

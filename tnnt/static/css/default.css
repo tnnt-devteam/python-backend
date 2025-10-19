@@ -913,3 +913,21 @@ table.sortable .sort-indicator {
     transition: opacity 0.2s;
     display: inline-block;
 }
+
+/* === TOGGLE LINKS (for show all games) ============================
+   ====================================================================*/
+
+.game-toggle {
+  text-align: center;
+  margin-top: 0;
+  cursor: pointer;
+}
+
+.game-toggle a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.game-toggle:hover {
+  color: #fd0;
+}

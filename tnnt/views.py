@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.views import View
 from django.shortcuts import render, get_object_or_404
-from django.db.models import Exists, OuterRef, F, Count, Value, Sum
+from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from scoreboard.models import *
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
@@ -507,17 +507,23 @@ class SinglePlayerOrClanView(TemplateView):
                                    .order_by('-endtime')
         kwargs['ascensions'] = \
             bulk_upd_games(list(base_game_qs.filter(won=True).values()), True)
-        # 10 most recent games
-        # A popular proposal is to show ALL the games on this page, not just
-        # recent ones (but presumably with most of them hidden by default
-        # because stuff comes after this on the page). The main reason this
-        # hasn't been done is because hauling all the games out of the database,
-        # rendering them in the page, and sending them over the internet is
-        # expected to become a slow operation by the end of the tournament when
-        # there are lots of games. Ignoring scummed games is an option, and
-        # should probably be done by default, but it hasn't been tested.
-        kwargs['recentgames'] = \
-            bulk_upd_games(list(base_game_qs[:10].values()), False)
+
+        # Check if user wants to see all games (default: recent only)
+        show_all = self.request.GET.get('show_all', 'false').lower() == 'true'
+        kwargs['show_all_games'] = show_all
+
+        if show_all:
+            # Show all games (excluding scummed games for performance)
+            # Scummed games: quit/escaped with <=100 turns
+            non_scummed_qs = base_game_qs.exclude(
+                Q(death__in=('quit', 'escaped'), turns__lte=100)
+            )
+            kwargs['recentgames'] = \
+                bulk_upd_games(list(non_scummed_qs.values()), False)
+        else:
+            # 10 most recent games (default behavior)
+            kwargs['recentgames'] = \
+                bulk_upd_games(list(base_game_qs[:10].values()), False)
 
         # this only gets the deaths, no other details; we have the ability to
         # get extra details now, but currently there isn't any demand to show
