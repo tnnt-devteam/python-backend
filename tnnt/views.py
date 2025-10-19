@@ -997,8 +997,15 @@ class ClanMgmtView(View):
 
         # if we got here, we're good to leave the clan
         save_clan_name = player.clan.name
+        save_clan = player.clan  # Save reference before clearing
         player.clan = None
         player.save()
+
+        # Invalidate trophy grid cache for both player and clan
+        from tnnt.trophy_grid import invalidate_trophy_grid_cache
+        invalidate_trophy_grid_cache(player)
+        invalidate_trophy_grid_cache(save_clan)
+
         logger.info('%s left clan %s', player.name, save_clan_name)
 
     # Helper function triggered when "disband" is clicked
@@ -1019,7 +1026,12 @@ class ClanMgmtView(View):
 
         # if we got here, we're good to leave the clan
         clan_members = Player.objects.filter(clan=player.clan)
+
+        # Invalidate trophy grid cache for all members and the clan
+        from tnnt.trophy_grid import invalidate_trophy_grid_cache
+        invalidate_trophy_grid_cache(clan)
         for member in clan_members:
+            invalidate_trophy_grid_cache(member)
             # setting .clan to None is not technically needed because the
             # model has SET_NULL for when the clan is deleted, but why not be
             # explicit?
@@ -1083,6 +1095,12 @@ class ClanMgmtView(View):
                            player.name)
         player.clan_admin = False # to be safe
         player.save()
+
+        # Invalidate trophy grid cache for both player and clan
+        from tnnt.trophy_grid import invalidate_trophy_grid_cache
+        invalidate_trophy_grid_cache(player)
+        invalidate_trophy_grid_cache(newclan)
+
         # A bit questionable whether the invite should be left in place or
         # removed here, but we decided that if a player leaves or is kicked from
         # the clan, it's cleaner if they have to ask for the invite again
@@ -1191,11 +1209,18 @@ class ClanMgmtView(View):
             return
 
         # if we passed checks, we're good to kick this player out of the clan
+        save_clan = kickee.clan  # Save reference before clearing
         kickee.clan = None
         kickee.clan_admin = False
         kickee.save()
+
+        # Invalidate trophy grid cache for both kicked player and clan
+        from tnnt.trophy_grid import invalidate_trophy_grid_cache
+        invalidate_trophy_grid_cache(kickee)
+        invalidate_trophy_grid_cache(save_clan)
+
         logger.info('%s kicked %s out of clan %s',
-                    player.name, kickee.name, player.clan.name)
+                    player.name, kickee.name, save_clan.name)
         # FUTURE TODO: would be nice if this and all the other post operations
         # also updated a context message that gets displayed to show success; in
         # this case it would be "Successfully kicked foo out of the clan"
