@@ -188,7 +188,10 @@ def sync_local_file(url, local_file):
     logger.info('Syncing remote xlog file from %s', url)
     xlog_path = Path(settings.XLOG_DIR) / local_file
     with xlog_path.open("ab") as xlog_file:
-        r = requests.get(url, headers={"Range": f"bytes={xlog_file.tell()}-"})
+        r = requests.get(url, headers={
+            "Range": f"bytes={xlog_file.tell()}-",
+            "Accept-Encoding": "identity"  # Disable gzip for Range requests
+        })
         # 206 means they are honouring our Range request c:
         if r.status_code != 206:
             return
