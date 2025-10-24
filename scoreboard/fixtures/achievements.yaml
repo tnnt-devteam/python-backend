@@ -1617,7 +1617,7 @@
 - model: scoreboard.achievement
   fields:
     name: "If We Don't Have It, You Don't Need It"
-    description: "Enter a general store"
+    description: "Visit a general store"
     ingameid: "203"
     define: "A_ENTERED_GENERAL_STORE"
     xlogfield: "tnntachieve3"
@@ -1625,7 +1625,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Food Glorious Food"
-    description: "Enter a delicatessen"
+    description: "Visit a delicatessen"
     ingameid: "204"
     define: "A_ENTERED_DELICATESSEN"
     xlogfield: "tnntachieve3"
@@ -1633,7 +1633,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Single-Use Reading Material"
-    description: "Enter a scroll shop"
+    description: "Visit a scroll shop"
     ingameid: "205"
     define: "A_ENTERED_SCROLL_SHOP"
     xlogfield: "tnntachieve3"
@@ -1641,7 +1641,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Nearest Thing To A Library"
-    description: "Enter a book shop"
+    description: "Visit a book shop"
     ingameid: "206"
     define: "A_ENTERED_BOOK_SHOP"
     xlogfield: "tnntachieve3"
@@ -1649,7 +1649,7 @@
 - model: scoreboard.achievement
   fields:
     name: "What's Your Poison?"
-    description: "Enter a potion shop"
+    description: "Visit a potion shop"
     ingameid: "207"
     define: "A_ENTERED_POTION_SHOP"
     xlogfield: "tnntachieve3"
@@ -1657,7 +1657,7 @@
 - model: scoreboard.achievement
   fields:
     name: "He Protec"
-    description: "Enter an armor shop"
+    description: "Visit an armor shop"
     ingameid: "208"
     define: "A_ENTERED_ARMOR_SHOP"
     xlogfield: "tnntachieve3"
@@ -1665,7 +1665,7 @@
 - model: scoreboard.achievement
   fields:
     name: "But He Also Attac"
-    description: "Enter a weapon shop"
+    description: "Visit a weapon shop"
     ingameid: "209"
     define: "A_ENTERED_WEAPON_SHOP"
     xlogfield: "tnntachieve3"
@@ -1673,7 +1673,7 @@
 - model: scoreboard.achievement
   fields:
     name: "The Right Tool For The Job"
-    description: "Enter a tool shop"
+    description: "Visit a tool shop"
     ingameid: "210"
     define: "A_ENTERED_TOOL_SHOP"
     xlogfield: "tnntachieve3"
@@ -1681,7 +1681,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Vegan Outfitters"
-    description: "Enter a health food shop"
+    description: "Visit a health food shop"
     ingameid: "211"
     define: "A_ENTERED_HEALTH_FOOD_SHOP"
     xlogfield: "tnntachieve3"
@@ -1689,7 +1689,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Zap Happy"
-    description: "Enter a wand shop"
+    description: "Visit a wand shop"
     ingameid: "212"
     define: "A_ENTERED_WAND_SHOP"
     xlogfield: "tnntachieve3"
@@ -1697,7 +1697,7 @@
 - model: scoreboard.achievement
   fields:
     name: "A Real Gem Of A Shop"
-    description: "Enter a jewelers"
+    description: "Visit a jewelers"
     ingameid: "213"
     define: "A_ENTERED_JEWELRY_SHOP"
     xlogfield: "tnntachieve3"
