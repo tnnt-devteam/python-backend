@@ -196,13 +196,13 @@ MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
 # Can be disabled by setting CLAN_FREEZE_TIME environment variable to empty string
-clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2024-11-10T00:00:00+00:00')
+clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2025-11-10T00:00:00+00:00')
 CLAN_FREEZE_TIME = datetime.fromisoformat(clan_freeze_env) if clan_freeze_env else None
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2024-11-01T00:00:00+00:00')
-TOURNAMENT_END   = datetime.fromisoformat('2024-12-01T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2025-10-22T00:00:00+00:00')
+TOURNAMENT_END   = datetime.fromisoformat('2025-12-01T00:00:00+00:00')
 
 # Main log file
 
