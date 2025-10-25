@@ -7,7 +7,7 @@
   <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/table-sort.js' %}"></script>
   {% if trophy_grid and not isClan %}
-  <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
   {% endif %}
 </head>
 
@@ -145,7 +145,16 @@
 <div class="clan-trophy-grid">
 <h2>Trophy Progress Tracker</h2>
 <p class="trophy-grid-legend">
-  Symbols: - = invalid combo, <span class="progress-symbols"><span class="sym-mines">✓</span></span> = Mines+Soko complete, <span class="progress-symbols"><span class="sym-male">♂</span></span> = male ascension, <span class="progress-symbols"><span class="sym-female">♀</span></span> = female ascension
+  Symbols: - = invalid combo,
+  <span class="progress-symbols">
+    <span class="sym-mines">&#x26cf;&#x1faa8;</span>
+  </span> = Mines+Soko complete,
+  <span class="progress-symbols">
+    <span class="sym-male">&male;</span>
+  </span> = male ascension,
+  <span class="progress-symbols">
+    <span class="sym-female">&female;</span>
+  </span> = female ascension
 </p>
 <div class="trophy-grid-container">
   <table class="trophy-grid sortable">
@@ -173,7 +182,18 @@
                 -
               {% else %}
                 <span class="progress-symbols">
-                  {% if combo.mines_soko %}<span class="sym-mines">✓</span>{% endif %}{% if combo.asc_male %}<span class="sym-male">♂</span>{% endif %}{% if combo.asc_female %}<span class="sym-female">♀</span>{% endif %}{% if not combo.mines_soko and not combo.asc_male and not combo.asc_female %}&nbsp;{% endif %}
+                  {% if combo.mines_soko %}
+                    <span class="sym-mines">&#x26cf;&#x1faa8;</span>
+                  {% endif %}
+                  {% if combo.asc_male %}
+                    <span class="sym-male">&male;</span>
+                  {% endif %}
+                  {% if combo.asc_female %}
+                    <span class="sym-female">&female;</span>
+                  {% endif %}
+                  {% if not combo.mines_soko and not combo.asc_male and not combo.asc_female %}
+                    &nbsp;
+                  {% endif %}
                 </span>
               {% endif %}
             </td>
@@ -195,9 +215,9 @@
         <li>
           Great {{ race }}:
           {% if completed %}
-            <span class="achieved">✔ Complete</span>
+            <span class="achieved">&#x2714; Complete</span>
           {% else %}
-            <span class="not-achieved">✘ Incomplete</span>
+            <span class="not-achieved">&#x2718; Incomplete</span>
           {% endif %}
         </li>
       {% endfor %}
@@ -207,9 +227,9 @@
         <li>
           Lesser {{ race }}:
           {% if completed %}
-            <span class="achieved">✔ Complete</span>
+            <span class="achieved">&#x2714; Complete</span>
           {% else %}
-            <span class="not-achieved">✘ Incomplete</span>
+            <span class="not-achieved">&#x2718; Incomplete</span>
           {% endif %}
         </li>
       {% endfor %}
@@ -221,9 +241,9 @@
         <li>
           Great {{ role }}:
           {% if completed %}
-            <span class="achieved">✔ Complete</span>
+            <span class="achieved">&#x2714; Complete</span>
           {% else %}
-            <span class="not-achieved">✘ Incomplete</span>
+            <span class="not-achieved">&#x2718; Incomplete</span>
           {% endif %}
         </li>
       {% endfor %}
@@ -233,9 +253,9 @@
         <li>
           Lesser {{ role }}:
           {% if completed %}
-            <span class="achieved">✔ Complete</span>
+            <span class="achieved">&#x2714; Complete</span>
           {% else %}
-            <span class="not-achieved">✘ Incomplete</span>
+            <span class="not-achieved">&#x2718; Incomplete</span>
           {% endif %}
         </li>
       {% endfor %}
@@ -246,25 +266,25 @@
       <li>
         All Roles:
         {% if trophy_grid.trophy_status.all_roles %}
-          <span class="achieved">✔ Complete</span>
+          <span class="achieved">&#x2714; Complete</span>
         {% else %}
-          <span class="not-achieved">✘ Incomplete</span>
+          <span class="not-achieved">&#x2718; Incomplete</span>
         {% endif %}
       </li>
       <li>
         All Races:
         {% if trophy_grid.trophy_status.all_races %}
-          <span class="achieved">✔ Complete</span>
+          <span class="achieved">&#x2714; Complete</span>
         {% else %}
-          <span class="not-achieved">✘ Incomplete</span>
+          <span class="not-achieved">&#x2718; Incomplete</span>
         {% endif %}
       </li>
       <li>
         NetHack Master (all 73 combos):
         {% if trophy_grid.trophy_status.nethack_master %}
-          <span class="achieved">✔ Complete</span>
+          <span class="achieved">&#x2714; Complete</span>
         {% else %}
-          <span class="not-achieved">✘ Incomplete</span>
+          <span class="not-achieved">&#x2718; Incomplete</span>
         {% endif %}
       </li>
     </ul>

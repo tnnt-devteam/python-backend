@@ -675,10 +675,12 @@ table.trophy-grid td.valid {
 
 .progress-symbols .sym-male {
   color: #6af;
+  font-weight: bold;
 }
 
 .progress-symbols .sym-female {
   color: #f8a;
+  font-weight: bold;
 }
 
 /* Trophy status collapsible section */
