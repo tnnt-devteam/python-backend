@@ -105,6 +105,7 @@
             </button>
           {% if me.clan_admin %}
             <button name="disband" type="submit">Disband clan</button>
+            <noscript>(WARNING: Disbanding cannot be undone!)</noscript>
           {% endif %}
         </form>
         <p>Clan message: {{ clan.message }}</p>
