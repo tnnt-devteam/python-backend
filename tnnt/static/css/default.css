@@ -216,6 +216,10 @@ div.achieve-top table tbody tr:last-child {
   max-width: 32em;
 }
 
+#achieve-table-legend {
+  text-align: center;
+}
+
 /* small caps for Near Death Experience */
 #A_TALKED_TO_DEATH .ach-name {
   font-variant: small-caps;
