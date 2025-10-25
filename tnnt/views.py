@@ -483,8 +483,22 @@ class SinglePlayerOrClanView(TemplateView):
             # for a clan, we want to filter games from any of its members
             base_game_qs = Game.objects.filter(player__in=member_ids)
 
-            # Generate trophy progress grid for the clan
-            kwargs['trophy_grid'] = generate_combo_grid_data(clan)
+            # check if this is the player's own clan; if not, do not send the
+            # trophy grid. This is based on two ideas:
+            # 1. Provide an incentive for logging in.
+            # 2. Make it harder for clan non-members to see other clans'
+            #    progress towards trophies. (Questionable, since it's not clear
+            #    what advantage would be gained from seeing this.)
+            # Not set in stone; if players get confused by how to make the
+            # tracker appear, we could just remove this login requirement.
+            try:
+                player_name = get_player(self.request.user).name
+                if player_name in kwargs['members'].values_list('name', flat=True):
+                    kwargs['trophy_grid'] = generate_combo_grid_data(clan)
+            except:
+                # don't produce error if no player found, since you can view any
+                # clan when not logged in
+                pass
 
         elif 'playername' in kwargs:
             kwargs['isClan'] = False
@@ -790,7 +804,6 @@ class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
     def get_context_data(self, **kwargs):
-        from tnnt.trophy_grid import generate_combo_grid_data
 
         user = self.request.user
         # we assume the player is already known to exist since both get() and
@@ -804,8 +817,6 @@ class ClanMgmtView(View):
             kwargs['clan'] = clan
             kwargs['members'] = Player.objects.filter(clan=clan).order_by('-clan_admin','name')
             kwargs['invitees'] = clan.invitees.all().order_by('name')
-            # Generate trophy progress grid for the clan
-            kwargs['trophy_grid'] = generate_combo_grid_data(clan)
         kwargs['invites'] = player.invites.all().order_by('name')
 
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
