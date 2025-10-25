@@ -346,6 +346,20 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     # TNNT TODO FOR 3.7: deaths to remnant monsters have some differences in
     # formatting. It appears to now be "killed by the [remnant monster] of
     # [plname]" in all cases (ghosts and non-ghosts).
+    # TNNT TODO FOR 3.7: there are complex death strings like the following:
+    # "killed by the touch of death inflicted by a chameleon imitating an arch-lich"
+    # Getting killed by a touch of death is notable, but can happen for a
+    # variety of monsters even if we normalize away the shapechanger bit.
+    # Various ways this could be handled:
+    #  1. This counts towards only a generic "touch of death".
+    #  2. This counts towards only "chameleon imitating a monster".
+    #  3. Only the arch-lich part is normalized away; getting killed by a touch
+    #     of death is significant and uncommon enough that different monster
+    #     species inflicting it is OK to treat them as unique. (Note that there
+    #     are other death strings, though, that are constructed like this but
+    #     where the death is pretty mundane, like "arrow shot by a gnome lord").
+    #  4. We implement some multiple unique deaths system and this counts for
+    #     both "touch of death" and "chameleon imitating a monster".
 ]
 '''
 Deaths that are deliberately NOT normalized:
