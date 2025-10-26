@@ -557,27 +557,21 @@ class SinglePlayerOrClanView(TemplateView):
                 }
 
                 # Get clan members who have this achievement (most recent 12)
+                # Combine completed and temp achievements, counting unique members
                 members_with_ach = Player.objects.filter(
                     clan=clan,
                     game__achievements=ach
-                ).distinct().order_by('-id')
+                ).distinct()
 
-                total_members = members_with_ach.count()
-                member_list = list(members_with_ach[:12].values_list('name', flat=True))
-
-                # Also check for temp achievements
                 members_with_temp = Player.objects.filter(
                     clan=clan,
                     temp_achievements=ach
-                ).distinct().order_by('-id')
+                ).distinct()
 
-                # Combine both lists (avoiding duplicates)
-                combined_members = set(member_list)
-                for temp_member in members_with_temp[:12].values_list('name', flat=True):
-                    combined_members.add(temp_member)
-
-                member_list = list(combined_members)[:12]
-                total_members = max(total_members, members_with_ach.count() + members_with_temp.count())
+                # Combine both querysets and get unique members
+                all_members = (members_with_ach | members_with_temp).distinct().order_by('-id')
+                total_members = all_members.count()
+                member_list = list(all_members[:12].values_list('name', flat=True))
 
                 ach_dict['clan_members_count'] = total_members
                 ach_dict['clan_members_list'] = member_list
