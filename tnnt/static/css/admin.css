@@ -1,0 +1,177 @@
+/* Admin Panel Styles */
+
+.admin-panel {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.admin-header {
+  background-color: #333;
+  color: #fd0;
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-logout-form {
+  margin: 0;
+}
+
+.admin-logout {
+  background-color: #d33;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+.admin-logout:hover {
+  background-color: #e44;
+  color: #fff;
+}
+
+.setting-card {
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.setting-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fd0;
+}
+
+.setting-status {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 3px;
+  font-weight: bold;
+  margin: 10px 0;
+  font-size: 1em;
+}
+
+.status-enabled {
+  background-color: #222;
+  border: 2px solid #2d5;
+  color: #fff;
+}
+
+.status-disabled {
+  background-color: #222;
+  border: 2px solid #d33;
+  color: #fff;
+}
+
+.status-symbol-enabled {
+  color: #2d5;
+  font-weight: bold;
+}
+
+.status-symbol-disabled {
+  color: #d33;
+  font-weight: bold;
+}
+
+.toggle-button {
+  padding: 8px 20px;
+  font-size: 0.95em;
+  cursor: pointer;
+  border-radius: 3px;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.btn-enable {
+  background-color: #2d5;
+  color: #000;
+}
+
+.btn-enable:hover {
+  background-color: #3e6;
+}
+
+.btn-disable {
+  background-color: #d33;
+  color: #fff;
+}
+
+.btn-disable:hover {
+  background-color: #e44;
+}
+
+.setting-description {
+  margin: 10px 0;
+  color: #aaa;
+  font-size: 0.9em;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.last-updated {
+  text-align: center;
+  color: #888;
+  font-size: 0.85em;
+  margin-top: 15px;
+}
+
+.warning-box {
+  background-color: #440;
+  border: 2px solid #d33;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  color: #faa;
+  font-size: 0.9em;
+}
+
+.warning-text {
+  font-style: normal;
+  font-weight: bold;
+}
+
+/* Logins Disabled Page */
+.logins-disabled-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #222;
+  border: 2px solid #d33;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.logins-disabled-container h2 {
+  color: #d33;
+  margin-top: 0;
+}
+
+.logins-disabled-container p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin: 15px 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #444;
+  color: #fd0;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.back-link:hover {
+  background-color: #555;
+}

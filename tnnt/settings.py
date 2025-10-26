@@ -72,6 +72,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'tnnt.middleware.LoginControlMiddleware',  # Must be after AuthenticationMiddleware
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -100,6 +101,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'tnnt.context_processors.admin_status',
             ],
         },
     },
@@ -198,6 +200,10 @@ MAX_CLAN_PLAYERS = 12
 # Can be disabled by setting CLAN_FREEZE_TIME environment variable to empty string
 clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2025-11-10T00:00:00+00:00')
 CLAN_FREEZE_TIME = datetime.fromisoformat(clan_freeze_env) if clan_freeze_env else None
+
+# Site administrators (player names from dgamelaunch database)
+# These users can access the admin panel and control site settings
+SITE_ADMINS = ['k2', 'aosdict']
 
 # Tournament start/end times
 

@@ -34,6 +34,9 @@
               <a href="/archives" class="menu {% if page == 'archive' %} menusel {% endif %}">ARCHIVES</a>
               {% if user.is_authenticated %}
                 <a href="/clanmgmt" class="menu {% if page == 'clanmgmt' %} menusel {% endif %}">MY CLAN</a>
+                {% if is_admin %}
+                  <a href="/admin-panel" class="menu admin-link {% if page == 'adminpanel' %} menusel {% endif %}">ADMIN</a>
+                {% endif %}
               {% else %}
                 <a href="/login" class="menu {% if page == 'login' %} menusel {% endif %}">LOGIN</a>
               {% endif %}

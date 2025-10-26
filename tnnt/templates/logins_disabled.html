@@ -1,0 +1,32 @@
+{% load static %}
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Logins Disabled</title>
+  {% include "headlinks.html" %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" />
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<article class="logins-disabled-container">
+  <h2>&#10008; Logins Temporarily Disabled</h2>
+
+  <p>
+    Player logins are currently disabled by site administrators.
+  </p>
+
+  <p>
+    Please check back later or contact the tournament organizers for more information.
+  </p>
+
+  <a href="/" class="back-link">Return to Homepage</a>
+</article>
+
+</body>
+
+</html>

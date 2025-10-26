@@ -33,6 +33,8 @@ urlpatterns = [
     path('archives/<str:year>/', tnntviews.ArchiveFileView.as_view(), name='archive-year-index'),
     path('archives/<str:year>/<path:path>', tnntviews.ArchiveFileView.as_view(), name='archive-file'),
     path('clanmgmt', tnntviews.ClanMgmtView.as_view(), name='clanmgmt'),
+    path('admin-panel', tnntviews.AdminPanelView.as_view(), name='adminpanel'),
+    path('logins-disabled', tnntviews.LoginsDisabledView.as_view(), name='logins-disabled'),
     path('', include('django.contrib.auth.urls')),
 
     # API endpoints

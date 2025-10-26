@@ -268,4 +268,39 @@ class Game(models.Model):
             models.Index(fields=['starttime']),  # For streak calculations and chronological ordering
         ]
 
+class SiteSettings(models.Model):
+    """
+    Singleton model for site-wide settings controlled by admins.
+    Only one row should exist in this table.
+    """
+    login_enabled = models.BooleanField(
+        default=True,
+        help_text="Allow non-admin players to log in"
+    )
+    clan_operations_enabled = models.BooleanField(
+        default=True,
+        help_text="Allow all clan operations (create, join, invite, leave, kick)"
+    )
+    updated_at = models.DateTimeField(auto_now=True)
+    updated_by = models.CharField(
+        max_length=64,
+        blank=True,
+        null=True,
+        help_text="Username of admin who made the last update"
+    )
+
+    class Meta:
+        verbose_name = "Site Settings"
+        verbose_name_plural = "Site Settings"
+
+    def save(self, *args, **kwargs):
+        # Ensure only one instance exists (singleton pattern)
+        self.pk = 1
+        super(SiteSettings, self).save(*args, **kwargs)
+
+    @classmethod
+    def load(cls):
+        """Get or create the singleton instance"""
+        obj, created = cls.objects.get_or_create(pk=1)
+        return obj
 

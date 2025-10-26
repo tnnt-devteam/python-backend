@@ -7,6 +7,7 @@ from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
 from . import hardfought_utils # find_player
 from . import dumplog_utils # format_dumplog
+from . import admin_utils
 from . import settings
 from datetime import datetime, timezone
 import logging
@@ -914,6 +915,13 @@ class ClanMgmtView(View):
 
         new_clan_name = create_clan_form.cleaned_data['clan_name']
 
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         # clan freeze must not be in effect
         if self.clan_freeze_in_effect():
             logger.warning('%s attempted to make a clan during freeze',
@@ -948,6 +956,13 @@ class ClanMgmtView(View):
 
         if not invite_form.is_valid():
             ctx['invite_member_form'] = invite_form
+            return
+
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
             return
 
         # invites are pointless when clan freeze is in effect
@@ -987,6 +1002,13 @@ class ClanMgmtView(View):
 
     # Helper function triggered when "leave" is clicked
     def leave_clan(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         clan = player.clan
 
         # must actually have a clan
@@ -1027,6 +1049,13 @@ class ClanMgmtView(View):
 
     # Helper function triggered when "disband" is clicked
     def disband_clan(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         clan = player.clan
 
         # doesn't make sense if player isn't in a clan
@@ -1063,6 +1092,13 @@ class ClanMgmtView(View):
     # Helper function triggered when a clan's invite is clicked
     def join_clan(self, request, player, ctx):
         join_clan_id = request.POST['join_clan_id']
+
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
 
         # joins are not allowed when clan freeze is in effect
         if self.clan_freeze_in_effect():
@@ -1161,6 +1197,13 @@ class ClanMgmtView(View):
 
     # Helper function triggered when "Rescind" is clicked on an invited player
     def rescind_invite(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         # post 2021 TODO? all of these helpers should test that the key is in
         # POST, and if not, log an error and return
         rescindee_id = request.POST['rescind_id']
@@ -1176,6 +1219,13 @@ class ClanMgmtView(View):
 
     # Helper function triggered when "Make Admin" is clicked on a clan member
     def make_admin(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         new_admin_id = request.POST['kick_or_admin_id']
         new_admin = self.clan_admin_other_member_checks(request, player, ctx,
                                                         new_admin_id, "make admin")
@@ -1204,6 +1254,13 @@ class ClanMgmtView(View):
 
     # Helper function triggered when "Kick" is clicked on a clan member
     def kick_member(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
         kickee_id = request.POST['kick_or_admin_id']
         kickee = self.clan_admin_other_member_checks(request, player, ctx,
                                                      kickee_id, "kick")
@@ -1426,3 +1483,76 @@ class ArchiveFileView(View):
 
         # Default fallback
         return 'application/octet-stream'
+
+class AdminPanelView(View):
+    """
+    Admin panel for site administrators.
+    Allows toggling non-admin logins and clan operations.
+    """
+    template_name = 'adminpanel.html'
+
+    def get(self, request, *args, **kwargs):
+        # Check if user is authenticated and is an admin
+        if not request.user.is_authenticated:
+            return HttpResponseRedirect('/login?next=/admin-panel')
+
+        if not admin_utils.is_admin(request.user):
+            return HttpResponse(
+                'Access denied. You must be a site administrator.',
+                status=403
+            )
+
+        # Get current site settings
+        site_settings = admin_utils.get_site_settings()
+
+        context = {
+            'site_settings': site_settings,
+            'is_admin': True,
+        }
+
+        return render(request, self.template_name, context)
+
+    def post(self, request, *args, **kwargs):
+        # Check if user is authenticated and is an admin
+        if not request.user.is_authenticated:
+            return HttpResponseRedirect('/login?next=/admin-panel')
+
+        if not admin_utils.is_admin(request.user):
+            return HttpResponse(
+                'Access denied. You must be a site administrator.',
+                status=403
+            )
+
+        # Get current site settings
+        site_settings = admin_utils.get_site_settings()
+
+        # Handle toggle actions
+        if 'toggle_logins' in request.POST:
+            site_settings.login_enabled = not site_settings.login_enabled
+            site_settings.updated_by = request.user.username
+            site_settings.save()
+            logger.info(
+                '%s %s non-admin logins',
+                request.user.username,
+                'enabled' if site_settings.login_enabled else 'disabled'
+            )
+
+        elif 'toggle_clan_operations' in request.POST:
+            site_settings.clan_operations_enabled = \
+                not site_settings.clan_operations_enabled
+            site_settings.updated_by = request.user.username
+            site_settings.save()
+            logger.info(
+                '%s %s clan operations',
+                request.user.username,
+                'enabled' if site_settings.clan_operations_enabled else 'disabled'
+            )
+
+        # Redirect back to GET to prevent form resubmission
+        return HttpResponseRedirect('/admin-panel')
+
+class LoginsDisabledView(TemplateView):
+    """
+    Page shown when non-admin logins are disabled
+    """
+    template_name = 'logins_disabled.html'

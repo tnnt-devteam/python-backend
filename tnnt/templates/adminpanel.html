@@ -1,0 +1,99 @@
+{% load static %}
+<!doctype html>
+
+<html>
+
+<head>
+  <title>TNNT::Admin Panel</title>
+  {% include "headlinks.html" %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" />
+  <script src="{% static 'js/admin.js' %}" defer></script>
+</head>
+
+<body>
+
+{% include "header.html" with page="adminpanel" %}
+
+<h2>Admin Panel</h2>
+
+<article class="admin-panel">
+  <div class="admin-header">
+    <div><strong>Site Administrator:</strong> {{ user.username }}</div>
+    <form method="post" action="{% url 'logout' %}" class="admin-logout-form">
+      {% csrf_token %}
+      <button type="submit" class="admin-logout">Logout</button>
+    </form>
+  </div>
+
+  <!-- Login Control -->
+  <div class="setting-card">
+    <div class="setting-title">Non-Admin Login Control</div>
+
+    <div class="setting-status {% if site_settings.login_enabled %}status-enabled{% else %}status-disabled{% endif %}">
+      {% if site_settings.login_enabled %}
+        <span class="status-symbol-enabled">&#10004;</span> ENABLED
+      {% else %}
+        <span class="status-symbol-disabled">&#10008;</span> DISABLED
+      {% endif %}
+    </div>
+
+    <div class="setting-description">
+      Controls whether non-administrator players can log into the site.
+      Admins can always log in regardless of this setting.
+      {% if site_settings.login_enabled %}
+      <br><span class="warning-text">Warning: Disabling logins will immediately log out all non-admin users.</span>
+      {% endif %}
+    </div>
+
+    <form method="post" name="login-toggle-form" data-action="{% if site_settings.login_enabled %}disable{% else %}enable{% endif %}">
+      {% csrf_token %}
+      <button name="toggle_logins" type="submit" class="toggle-button {% if site_settings.login_enabled %}btn-disable{% else %}btn-enable{% endif %}">
+        {% if site_settings.login_enabled %}
+          Disable Non-Admin Logins
+        {% else %}
+          Enable Non-Admin Logins
+        {% endif %}
+      </button>
+    </form>
+  </div>
+
+  <!-- Clan Operations Control -->
+  <div class="setting-card">
+    <div class="setting-title">Clan Operations Control</div>
+
+    <div class="setting-status {% if site_settings.clan_operations_enabled %}status-enabled{% else %}status-disabled{% endif %}">
+      {% if site_settings.clan_operations_enabled %}
+        <span class="status-symbol-enabled">&#10004;</span> ENABLED
+      {% else %}
+        <span class="status-symbol-disabled">&#10008;</span> DISABLED
+      {% endif %}
+    </div>
+
+    <div class="setting-description">
+      Controls whether players can perform clan operations (create, join, invite, leave, kick).
+      Admins can always perform clan operations regardless of this setting.
+    </div>
+
+    <form method="post" name="clan-toggle-form" data-action="{% if site_settings.clan_operations_enabled %}disable{% else %}enable{% endif %}">
+      {% csrf_token %}
+      <button name="toggle_clan_operations" type="submit" class="toggle-button {% if site_settings.clan_operations_enabled %}btn-disable{% else %}btn-enable{% endif %}">
+        {% if site_settings.clan_operations_enabled %}
+          Disable Clan Operations
+        {% else %}
+          Enable Clan Operations
+        {% endif %}
+      </button>
+    </form>
+  </div>
+
+  <div class="last-updated">
+    Last updated: {{ site_settings.updated_at|date:"Y-m-d H:i" }} UTC
+    {% if site_settings.updated_by %}
+      by <strong>{{ site_settings.updated_by }}</strong>
+    {% endif %}
+  </div>
+</article>
+
+</body>
+
+</html>

@@ -3,10 +3,17 @@ from django.contrib.auth.models import User
 from scoreboard.models import Player
 from .settings import DGL_DATABASE_PATH
 import sqlite3
-from passlib.hash import sha512_crypt
+from passlib.context import CryptContext
 import logging
 
 logger = logging.getLogger(__name__)  # use module-specific logger
+
+# CryptContext to handle multiple password hash formats
+# Supports both old dgamelaunch hashes (DES, MD5, bcrypt) and new (sha512_crypt)
+pwd_context = CryptContext(
+    schemes=["sha512_crypt", "sha256_crypt", "bcrypt", "md5_crypt", "des_crypt"],
+    deprecated="auto"
+)
 
 def get_dgl_cursor():
     # open in read-only mode
@@ -62,9 +69,15 @@ class HdfAuthBackend(BaseBackend):
             # convert from tuple containing 1 string to just the string
             pwd_hash = pwd_hash[0]
         # compare it against submitted password with passlib
-        if not sha512_crypt.verify(password, pwd_hash):
-            logger.info('%s tried to login but failed due to bad password',
-                        username)
+        # pwd_context supports both old (DES, MD5, bcrypt) and new (sha512_crypt) formats
+        try:
+            if not pwd_context.verify(password, pwd_hash):
+                logger.info('%s tried to login but failed due to bad password',
+                            username)
+                return None
+        except ValueError as e:
+            logger.error('%s has invalid/unsupported password hash format in dgl database: %s',
+                        username, str(e))
             return None
 
         # success! this is the correct dgl password. look up the user or create
