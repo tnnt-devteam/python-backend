@@ -347,29 +347,68 @@ TABLE.clan-members {
   === TROPHIES =======================================================
   ====================================================================*/
 
+table.trophies {
+  margin-bottom: 3em;
+}
+
 table.trophies td {
   min-width: 8em;
-  border-bottom: 1px solid #eee;
-  padding: 0.6rem 1.4rem;
+  border-bottom: 1px solid #334;
+  padding: 0.8rem 1.4rem;
   vertical-align: top;
 }
 
+/* Zebra striping for better readability */
+table.trophies tbody tr:nth-child(even) {
+  background-color: rgba(34, 51, 85, 0.3);
+}
+
+table.trophies tbody tr:hover {
+  background-color: rgba(20, 30, 50, 0.4);
+}
+
+td.trophy-name {
+  width: 35%;
+}
+
 td.trophy-name span.real-trophy-name {
-  font-size: 166%;
+  font-size: 125%;
   text-transform: uppercase;
-  padding-right: 2em;
   font-weight: 300;
-  width: 30%;
+  display: block;
+  margin-bottom: 0.3em;
+  color: #eb0;
 }
 
 td.trophy-name p {
-    margin: 0;
+  margin: 0;
+  color: #99b;
+  font-style: italic;
+  font-size: 85%;
+  line-height: 1.4;
 }
 
 td.trophy-multi {
   font-weight: 400;
-  font-size: 110%;
+  font-size: 90%;
   width: 30%;
+  line-height: 1.8;
+}
+
+/* Style player/clan links as subtle badges */
+td.trophy-multi a {
+  display: inline-block;
+  padding: 0.2em 0.6em;
+  margin: 0.15em 0.2em;
+  background-color: rgba(68, 102, 170, 0.2);
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+td.trophy-multi a:hover {
+  background-color: rgba(255, 221, 0, 0.15);
+  color: #fd0;
 }
 
 /* not used for anything right now, but worth keeping around in case we end up

@@ -605,7 +605,49 @@ class TrophiesView(TemplateView):
             field            = a['field'] # either "players" or "clans"
             trophies[tname][field].append(plr_or_clan_name)
 
+        # Categorize trophies for better organization
+        trophy_categories = [
+            {
+                'name': 'Race Trophies',
+                'trophies': {}
+            },
+            {
+                'name': 'Role Trophies',
+                'trophies': {}
+            },
+            {
+                'name': 'Combo Completion Trophies',
+                'trophies': {}
+            },
+            {
+                'name': 'Conduct Trophies',
+                'trophies': {}
+            },
+            {
+                'name': 'Special Challenge Trophies',
+                'trophies': {}
+            }
+        ]
+
+        # Map trophy names to categories
+        for tname, tdata in trophies.items():
+            if tname.startswith('Great ') or tname.startswith('Lesser '):
+                # Determine if it's a race or role trophy
+                if any(race in tname for race in ['Human', 'Dwarf', 'Elf', 'Gnome', 'Orc']):
+                    trophy_categories[0]['trophies'][tname] = tdata
+                else:
+                    trophy_categories[1]['trophies'][tname] = tdata
+            elif tname in ['All Roles', 'All Races', 'All Alignments',
+                          'Both Genders', 'All Achievements',
+                          'NetHack Master', 'NetHack Dominator']:
+                trophy_categories[2]['trophies'][tname] = tdata
+            elif tname == 'All Conducts':
+                trophy_categories[3]['trophies'][tname] = tdata
+            elif tname.startswith('Keep ') or tname == 'Never Scum a Game':
+                trophy_categories[4]['trophies'][tname] = tdata
+
         kwargs['trophies'] = trophies
+        kwargs['trophy_categories'] = trophy_categories
         return kwargs
 
 class AchievementsView(TemplateView):

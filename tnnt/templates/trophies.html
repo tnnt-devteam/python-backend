@@ -11,37 +11,40 @@
 
 {% include "header.html" with page='trophies' %}
 
-<table class="trophies">
-  <thead>
-    <tr class="framed">
-      <th>Trophy</th>
-      <th>Players</th>
-      <th>Clans</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for trophyname, trophydata in trophies.items %}
-      <tr>
-        <td class="trophy-name">
-          <span class="real-trophy-name">{{ trophyname }}</span>
-          <p>{{trophydata.description}}</p>
-        </td>
-        <td class="trophy-multi">
-          {% for plrname in trophydata.players %}
-            {% include "plink.html" with name=plrname %}
-            {% if not forloop.last %}&middot;{% endif %}
-          {% endfor %}
-        </td>
-        <td class="trophy-multi">
-          {% for clanname in trophydata.clans %}
-            {% include "clink.html" with name=clanname %}
-          {% endfor %}
-        </td>
-      </tr>
-      {# {{ trophyname }}{{trophydata.description}}{{trophydata.players}}{{trophydata.clans}}<br> #}
-    {% endfor %}
-  </tbody>
-</table>
+{% for category in trophy_categories %}
+  {% if category.trophies %}
+    <h2>{{ category.name }}</h2>
+    <table class="trophies">
+      <thead>
+        <tr class="framed">
+          <th>Trophy</th>
+          <th>Players</th>
+          <th>Clans</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for trophyname, trophydata in category.trophies.items %}
+          <tr>
+            <td class="trophy-name">
+              <span class="real-trophy-name">{{ trophyname }}</span>
+              <p>{{ trophydata.description }}</p>
+            </td>
+            <td class="trophy-multi">
+              {% for plrname in trophydata.players %}
+                {% include "plink.html" with name=plrname %}
+              {% endfor %}
+            </td>
+            <td class="trophy-multi">
+              {% for clanname in trophydata.clans %}
+                {% include "clink.html" with name=clanname %}
+              {% endfor %}
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% endif %}
+{% endfor %}
 
 </body>
 
