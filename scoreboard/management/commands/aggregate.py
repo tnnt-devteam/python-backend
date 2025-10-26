@@ -499,5 +499,6 @@ class Command(BaseCommand):
         with transaction.atomic():
             aggregatePlayerData()
             aggregateClanData()
-            # Invalidate all trophy grid caches after new data is aggregated
-            invalidate_trophy_grid_cache()
+
+        # Invalidate all trophy grid caches after transaction commits
+        invalidate_trophy_grid_cache()
