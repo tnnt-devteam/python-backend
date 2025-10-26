@@ -499,7 +499,13 @@ If we do show all streaks in a clan at some point, also make sure to remove the
     = achieved in current game, counted on finish;
     <span class="not-achieved">&#10008;</span> = not achieved
   </p>
-  <p id="ach-hide">[hide table]</p>
+  <p id="ach-filters">
+    <span id="ach-filter-all" class="ach-filter active">[show all]</span>
+    <span id="ach-filter-achieved" class="ach-filter">[show achieved]</span>
+    <span id="ach-filter-temp" class="ach-filter">[show temporarily achieved]</span>
+    <span id="ach-filter-not" class="ach-filter">[show not achieved]</span>
+    <span id="ach-hide">[hide table]</span>
+  </p>
   <table id="achievements-table" class="sortable" data-default-sort="1">
     <thead>
       <tr class="framed">
@@ -507,11 +513,14 @@ If we do show all streaks in a clan at some point, also make sure to remove the
         <th>ID</th>
         <th>Achievement</th>
         <th>Description</th>
+        {% if isClan %}
+          <th>Clan Members</th>
+        {% endif %}
       </tr>
     </thead>
     <tbody>
       {% for ach in achievements %}
-        <tr id="{{ ach.define }}">
+        <tr id="{{ ach.define }}" data-status="{% if ach.obtained %}achieved{% elif ach.has_in_current_game %}temp{% else %}not{% endif %}">
           {% if ach.obtained %}
             <td class="achieved">&#10004;</td>
           {% elif ach.has_in_current_game %}
@@ -522,18 +531,46 @@ If we do show all streaks in a clan at some point, also make sure to remove the
           <td class="ach-id">#{{ ach.ingameid }}</td>
           <td class="ach-name">{{ ach.name }}</td>
           <td class="ach-desc">{{ ach.description }}</td>
+          {% if isClan %}
+            <td class="ach-clan-members ach-hoverable">
+              <span class="ach-count">{{ ach.clan_members_count }}</span>
+              {% if ach.clan_members_list %}
+                <div class="ach-tooltip">
+                  <div class="ach-tooltip-header">Clan Members:</div>
+                  <ul class="ach-tooltip-list">
+                    {% for member in ach.clan_members_list %}
+                      <li>{{ member }}</li>
+                    {% endfor %}
+                    {% if ach.clan_members_more > 0 %}
+                      <li class="ach-tooltip-more">and {{ ach.clan_members_more }} more...</li>
+                    {% endif %}
+                  </ul>
+                </div>
+              {% endif %}
+            </td>
+          {% endif %}
         </tr>
       {% endfor %}
     </tbody>
   </table>
   <div class="achieve-summary">
-    {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements.count %}
-      <div class="achieve-bar"
-          data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
-      <div class="achieve-msg">
-        {{ plr_ach }} out of {{ tot_ach }} achievements attained
-      </div>
-    {% endwith %}
+    {% if isClan %}
+      {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements|length %}
+        <div class="achieve-bar"
+            data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
+        <div class="achieve-msg">
+          {{ plr_ach }} out of {{ tot_ach }} achievements attained
+        </div>
+      {% endwith %}
+    {% else %}
+      {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements.count %}
+        <div class="achieve-bar"
+            data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
+        <div class="achieve-msg">
+          {{ plr_ach }} out of {{ tot_ach }} achievements attained
+        </div>
+      {% endwith %}
+    {% endif %}
   </div>
 </div>
 

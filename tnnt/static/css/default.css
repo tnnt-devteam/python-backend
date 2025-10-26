@@ -203,22 +203,108 @@ div.achieve-top table tbody tr:last-child {
 }
 
 #ach-hide {
-  text-align: center;
-  margin-top: 0;
   cursor: pointer;
+  margin: 0 0.2em;
+  display: inline-block;
 }
 
 #ach-hide:hover {
   color: #fd0;
 }
 
+#ach-filters {
+  text-align: center;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.ach-filter {
+  cursor: pointer;
+  margin: 0 0.2em;
+  padding: 0.3em 0.6em;
+  display: inline-block;
+}
+
+.ach-filter:hover {
+  color: #fd0;
+}
+
+.ach-filter.active {
+  color: #eb0;
+  font-weight: 600;
+}
+
 #achievements-table td {
   max-width: 32em;
+}
+
+#achievements-table tbody tr:hover {
+  background-color: rgba(34, 51, 85, 0.5);
 }
 
 #achieve-table-legend {
   text-align: center;
   font-style: italic;
+}
+
+.ach-name {
+  color: #eb0;
+}
+
+.ach-desc {
+  font-weight: 300;
+}
+
+/* Achievement tooltips for player/clan lists */
+.ach-hoverable {
+  position: relative;
+  cursor: pointer;
+}
+
+.ach-tooltip {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  background-color: #112;
+  border: 1px solid #abf;
+  border-radius: 4px;
+  padding: 0.8em;
+  min-width: 200px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5em;
+}
+
+.ach-hoverable:hover .ach-tooltip {
+  display: block;
+}
+
+.ach-tooltip-header {
+  font-weight: 600;
+  color: #eb0;
+  margin-bottom: 0.5em;
+  font-size: 90%;
+}
+
+.ach-tooltip-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ach-tooltip-list li {
+  padding: 0.3em 0;
+  font-size: 90%;
+  color: #f2f5ff;
+}
+
+.ach-tooltip-more {
+  font-style: italic;
+  color: #99b;
+  margin-top: 0.3em;
 }
 
 /* small caps for Near Death Experience */

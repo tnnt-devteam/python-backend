@@ -541,7 +541,53 @@ class SinglePlayerOrClanView(TemplateView):
             ach_annotate_kwargs['has_in_current_game'] = \
                 Exists(player.temp_achievements.filter(pk=OuterRef('pk')))
         achievements = Achievement.objects.annotate(**ach_annotate_kwargs)
-        kwargs['achievements'] = achievements
+
+        # For clan pages, add info about which members earned each achievement
+        if kwargs['isClan']:
+            achievements_list = []
+            for ach in achievements:
+                ach_dict = {
+                    'pk': ach.pk,
+                    'ingameid': ach.ingameid,
+                    'name': ach.name,
+                    'description': ach.description,
+                    'define': ach.define,
+                    'obtained': ach.obtained,
+                    'has_in_current_game': ach.has_in_current_game,
+                }
+
+                # Get clan members who have this achievement (most recent 12)
+                members_with_ach = Player.objects.filter(
+                    clan=clan,
+                    game__achievements=ach
+                ).distinct().order_by('-id')
+
+                total_members = members_with_ach.count()
+                member_list = list(members_with_ach[:12].values_list('name', flat=True))
+
+                # Also check for temp achievements
+                members_with_temp = Player.objects.filter(
+                    clan=clan,
+                    temp_achievements=ach
+                ).distinct().order_by('-id')
+
+                # Combine both lists (avoiding duplicates)
+                combined_members = set(member_list)
+                for temp_member in members_with_temp[:12].values_list('name', flat=True):
+                    combined_members.add(temp_member)
+
+                member_list = list(combined_members)[:12]
+                total_members = max(total_members, members_with_ach.count() + members_with_temp.count())
+
+                ach_dict['clan_members_count'] = total_members
+                ach_dict['clan_members_list'] = member_list
+                ach_dict['clan_members_more'] = max(0, total_members - 12)
+
+                achievements_list.append(ach_dict)
+
+            kwargs['achievements'] = achievements_list
+        else:
+            kwargs['achievements'] = achievements
 
         # Format streak dates to ISO format (YYYY-MM-DD HH:MM) for display
         # This follows the same pattern as bulk_upd_games for consistency
@@ -654,11 +700,44 @@ class AchievementsView(TemplateView):
     template_name = 'achievements.html'
 
     def get_context_data(self, **kwargs):
-        kwargs['achievements'] = Achievement.objects \
-            .annotate(nplayers=Count('game__player', distinct=True),
-                      nclans=Count('game__player__clan', distinct=True)) \
-            .order_by('-nplayers', '-nclans', 'id') \
-            .values()
+        achievements_data = []
+
+        achievements = Achievement.objects.annotate(
+            nplayers=Count('game__player', distinct=True),
+            nclans=Count('game__player__clan', distinct=True)
+        ).order_by('-nplayers', '-nclans', 'id')
+
+        for ach in achievements:
+            # Get players who earned this achievement (most recent 12)
+            players_qs = Player.objects.filter(
+                game__achievements=ach
+            ).distinct().order_by('-id')
+
+            total_players = players_qs.count()
+            player_list = list(players_qs[:12].values_list('name', flat=True))
+
+            # Get clans who earned this achievement (most recent 12)
+            clans_qs = Clan.objects.filter(
+                player__game__achievements=ach
+            ).distinct().order_by('-id')
+
+            total_clans = clans_qs.count()
+            clan_list = list(clans_qs[:12].values_list('name', flat=True))
+
+            achievements_data.append({
+                'ingameid': ach.ingameid,
+                'name': ach.name,
+                'description': ach.description,
+                'define': ach.define,
+                'nplayers': total_players,
+                'nclans': total_clans,
+                'player_list': player_list,
+                'clan_list': clan_list,
+                'players_more': max(0, total_players - 12),
+                'clans_more': max(0, total_clans - 12),
+            })
+
+        kwargs['achievements'] = achievements_data
         return kwargs
 
 class UniqueDeathsView(TemplateView):

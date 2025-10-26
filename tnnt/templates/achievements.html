@@ -13,7 +13,7 @@
 
 {% include "header.html" %}
 
-<h2>Achievements by Number of Achievers</h2>
+<h2>Achievements</h2>
 <table id="achievements-table" class="sortable default-sort-first">
   <thead>
     <tr class="framed">
@@ -30,8 +30,38 @@
         <td class="ach-id">#{{ ach.ingameid }}</td>
         <td class="ach-name">{{ ach.name }}</td>
         <td class="ach-desc">{{ ach.description }}</td>
-        <td class="ach-nplay">{{ ach.nplayers }}</td>
-        <td class="ach-nclan">{{ ach.nclans }}</td>
+        <td class="ach-nplay ach-hoverable">
+          <span class="ach-count">{{ ach.nplayers }}</span>
+          {% if ach.player_list %}
+            <div class="ach-tooltip">
+              <div class="ach-tooltip-header">Players:</div>
+              <ul class="ach-tooltip-list">
+                {% for player in ach.player_list %}
+                  <li>{{ player }}</li>
+                {% endfor %}
+                {% if ach.players_more > 0 %}
+                  <li class="ach-tooltip-more">and {{ ach.players_more }} more...</li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+        </td>
+        <td class="ach-nclan ach-hoverable">
+          <span class="ach-count">{{ ach.nclans }}</span>
+          {% if ach.clan_list %}
+            <div class="ach-tooltip">
+              <div class="ach-tooltip-header">Clans:</div>
+              <ul class="ach-tooltip-list">
+                {% for clan in ach.clan_list %}
+                  <li>{{ clan }}</li>
+                {% endfor %}
+                {% if ach.clans_more > 0 %}
+                  <li class="ach-tooltip-more">and {{ ach.clans_more }} more...</li>
+                {% endif %}
+              </ul>
+            </div>
+          {% endif %}
+        </td>
       </tr>
     {% endfor %}
   </tbody>
