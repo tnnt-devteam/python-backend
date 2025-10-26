@@ -382,11 +382,12 @@ def _calculate_trophy_status(
         status['nethack_master'] and status['all_conducts']
     )
 
-    # Check Never Scum a Game - no games quit/escaped within 100 turns
-    scummed_games = games_qs.filter(
-        Q(turns__lte=100) & (Q(death='quit') | Q(death='escaped'))
-    ).count()
-    status['never_scum'] = (games_qs.count() > 0 and scummed_games == 0)
+    # Check Never Scum a Game - use pre-calculated games_scummed field
+    # (This field is calculated by aggregate.py with proper logic)
+    scummed_games = player_or_clan.games_scummed
+    status['never_scum'] = (
+        player_or_clan.total_games > 0 and scummed_games == 0
+    )
     status['never_scum_unobtainable'] = (scummed_games > 0)
 
     # Check Keep X Alive trophies - these are conducts in winning games
