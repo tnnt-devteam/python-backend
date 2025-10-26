@@ -218,6 +218,7 @@ div.achieve-top table tbody tr:last-child {
 
 #achieve-table-legend {
   text-align: center;
+  font-style: italic;
 }
 
 /* small caps for Near Death Experience */
@@ -681,6 +682,14 @@ table.trophy-grid td.valid {
 .progress-symbols .sym-female {
   color: #f8a;
   font-weight: bold;
+}
+
+.invalid-combo-symbol {
+  color: #fd0;
+}
+
+.trophy-grid-legend {
+  color: #fff;
 }
 
 /* Trophy status collapsible section */

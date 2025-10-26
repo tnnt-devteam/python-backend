@@ -145,13 +145,13 @@
 <div class="clan-trophy-grid">
 <h2>Trophy Progress Tracker</h2>
 <p class="trophy-grid-legend">
-  Symbols: - = invalid combo,
+  <span class="invalid-combo-symbol">&#x2013;</span> = invalid combo;
   <span class="progress-symbols">
     <span class="sym-mines">&#x26cf;</span>
-  </span> = Mines+Soko complete,
+  </span> = Mines+Soko complete;
   <span class="progress-symbols">
     <span class="sym-male">&male;</span>
-  </span> = male ascension,
+  </span> = male ascension;
   <span class="progress-symbols">
     <span class="sym-female">&female;</span>
   </span> = female ascension
@@ -179,7 +179,7 @@
                 data-entity-id="{{ player_or_clan.id }}"
                 {% endif %}>
               {% if not combo.valid %}
-                -
+                <span class="invalid-combo-symbol">&#x2013;</span>
               {% else %}
                 <span class="progress-symbols">
                   {% if combo.mines_soko %}
@@ -496,7 +496,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
   <p id="achieve-table-legend">
     <span class="achieved">&#10004;</span> = achieved;
     <span class="sorta-achieved">&#10070;</span>
-    = achieved in unfinished game, counted only when it finishes;
+    = achieved in current game, counted on finish;
     <span class="not-achieved">&#10008;</span> = not achieved
   </p>
   <p id="ach-hide">[hide table]</p>
