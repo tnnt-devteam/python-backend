@@ -109,7 +109,7 @@
 
       // Mines+Soko section
       if (games.mines_soko && games.mines_soko.length > 0) {
-        html += '<h4><span class="progress-symbols"><span class="sym-mines">✓</span></span> Mines + Soko Complete (' + games.mines_soko.length + ')</h4>';
+        html += '<h4><span class="progress-symbols"><span class="sym-mines">✧</span></span> Mines + Soko Complete (' + games.mines_soko.length + ')</h4>';
         html += '<table class="games-table">';
         html += '<thead><tr><th>Player</th><th>Date</th><th>Score</th><th>Turns</th><th>Dumplog</th></tr></thead>';
         html += '<tbody>';
