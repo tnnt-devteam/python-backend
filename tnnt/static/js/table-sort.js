@@ -120,15 +120,19 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
 
-        // Set initial sort indicator for first column if it's the default sort
-        if (headers.length > 0 && table.classList.contains('default-sort-first')) {
-            const firstHeader = headers[0];
-            firstHeader.sortDirection = 1;
-            const indicator = firstHeader.querySelector('.sort-indicator');
-            if (indicator) {
-                indicator.textContent = ' ↑';
-                indicator.style.opacity = '1';
+        // Set initial sort indicator and perform initial sort if specified
+        const defaultSortIndex = table.dataset.defaultSort;
+        if (defaultSortIndex !== undefined) {
+            const sortIndex = parseInt(defaultSortIndex);
+            if (sortIndex >= 0 && sortIndex < headers.length) {
+                const defaultHeader = headers[sortIndex];
+                // Trigger a click to perform the sort
+                defaultHeader.click();
             }
+        } else if (headers.length > 0 && table.classList.contains('default-sort-first')) {
+            // Legacy support for default-sort-first class
+            const firstHeader = headers[0];
+            firstHeader.click();
         }
     });
 });
