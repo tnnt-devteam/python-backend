@@ -241,6 +241,10 @@ div.achieve-top table tbody tr:last-child {
   color: red;
 }
 
+.unobtainable {
+  color: yellow;
+}
+
 /* style for the achievement summary with in-laid progress bar */
 
 div.achieve-summary {
@@ -742,6 +746,8 @@ details.trophy-status summary:hover {
 
 .trophy-status-content li {
   margin: 0.3em 0;
+  white-space: nowrap;
+  font-size: 0.95em;
 }
 
 .trophy-status-content li.individual-conduct {

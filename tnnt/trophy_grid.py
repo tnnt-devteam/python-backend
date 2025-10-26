@@ -265,11 +265,17 @@ def _calculate_trophy_status(
         'all_achievements': False,
         'nethack_dominator': False,
         'never_scum': False,
+        'never_scum_unobtainable': False,
         'keep_nemesis_alive': False,
+        'keep_nemesis_alive_unobtainable': False,
         'keep_vlad_alive': False,
+        'keep_vlad_alive_unobtainable': False,
         'keep_rodney_alive': False,
+        'keep_rodney_alive_unobtainable': False,
         'keep_high_priest_alive': False,
+        'keep_high_priest_alive_unobtainable': False,
         'keep_riders_alive': False,
+        'keep_riders_alive_unobtainable': False,
     }
 
     # Check Great/Lesser Race trophies
@@ -381,6 +387,7 @@ def _calculate_trophy_status(
         Q(turns__lte=100) & (Q(death='quit') | Q(death='escaped'))
     ).count()
     status['never_scum'] = (games_qs.count() > 0 and scummed_games == 0)
+    status['never_scum_unobtainable'] = (scummed_games > 0)
 
     # Check Keep X Alive trophies - these are conducts in winning games
     # These conducts are earned by NOT killing certain NPCs
@@ -391,28 +398,58 @@ def _calculate_trophy_status(
         conduct_map = {c.shortname: c for c in all_conducts}
 
         # Keep Your Nemesis Alive - conduct shortname 'neme'
-        status['keep_nemesis_alive'] = winning_games.filter(
-            conducts=conduct_map.get('neme')
-        ).exists() if 'neme' in conduct_map else False
+        if 'neme' in conduct_map:
+            with_conduct = winning_games.filter(
+                conducts=conduct_map.get('neme')
+            ).exists()
+            without_conduct = winning_games.exclude(
+                conducts=conduct_map.get('neme')
+            ).exists()
+            status['keep_nemesis_alive'] = with_conduct
+            status['keep_nemesis_alive_unobtainable'] = without_conduct
 
         # Keep Vlad Alive - conduct shortname 'vlad'
-        status['keep_vlad_alive'] = winning_games.filter(
-            conducts=conduct_map.get('vlad')
-        ).exists() if 'vlad' in conduct_map else False
+        if 'vlad' in conduct_map:
+            with_conduct = winning_games.filter(
+                conducts=conduct_map.get('vlad')
+            ).exists()
+            without_conduct = winning_games.exclude(
+                conducts=conduct_map.get('vlad')
+            ).exists()
+            status['keep_vlad_alive'] = with_conduct
+            status['keep_vlad_alive_unobtainable'] = without_conduct
 
         # Keep Rodney Alive - conduct shortname 'wiz'
-        status['keep_rodney_alive'] = winning_games.filter(
-            conducts=conduct_map.get('wiz')
-        ).exists() if 'wiz' in conduct_map else False
+        if 'wiz' in conduct_map:
+            with_conduct = winning_games.filter(
+                conducts=conduct_map.get('wiz')
+            ).exists()
+            without_conduct = winning_games.exclude(
+                conducts=conduct_map.get('wiz')
+            ).exists()
+            status['keep_rodney_alive'] = with_conduct
+            status['keep_rodney_alive_unobtainable'] = without_conduct
 
         # Keep The High Priest of Moloch Alive - conduct shortname 'prst'
-        status['keep_high_priest_alive'] = winning_games.filter(
-            conducts=conduct_map.get('prst')
-        ).exists() if 'prst' in conduct_map else False
+        if 'prst' in conduct_map:
+            with_conduct = winning_games.filter(
+                conducts=conduct_map.get('prst')
+            ).exists()
+            without_conduct = winning_games.exclude(
+                conducts=conduct_map.get('prst')
+            ).exists()
+            status['keep_high_priest_alive'] = with_conduct
+            status['keep_high_priest_alive_unobtainable'] = without_conduct
 
         # Keep The Riders Alive - conduct shortname 'ride'
-        status['keep_riders_alive'] = winning_games.filter(
-            conducts=conduct_map.get('ride')
-        ).exists() if 'ride' in conduct_map else False
+        if 'ride' in conduct_map:
+            with_conduct = winning_games.filter(
+                conducts=conduct_map.get('ride')
+            ).exists()
+            without_conduct = winning_games.exclude(
+                conducts=conduct_map.get('ride')
+            ).exists()
+            status['keep_riders_alive'] = with_conduct
+            status['keep_riders_alive_unobtainable'] = without_conduct
 
     return status
