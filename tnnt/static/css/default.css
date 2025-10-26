@@ -653,6 +653,63 @@ article {
   max-width: 50%;
 }
 
+.index-column-left article {
+  max-width: 100%;
+  margin-top: 0;
+}
+
+.index-column-left h4:first-child {
+  margin-top: 0;
+}
+
+/* Server status indicators */
+.index-column-right .server-status-heading {
+  margin-top: 2em;
+}
+
+.server-status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 1em;
+}
+
+.server-status-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+}
+
+.server-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.server-indicator {
+  font-size: 100%;
+  line-height: 1;
+}
+
+.server-name {
+  font-size: 95%;
+  font-weight: 500;
+}
+
+.server-message {
+  font-size: 85%;
+  color: #99b;
+  margin-left: 1.5em;
+}
+
+.server-up {
+  color: #0f0;
+}
+
+.server-down {
+  color: #f00;
+}
+
 /* so as not to step on the toes of other links... */
 article a {
   color: #59f;
@@ -693,6 +750,50 @@ article a:hover {
 
 span#counter {
   color: #59f;
+}
+
+/* Index page two-column layout */
+.index-columns {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 900px;
+  margin: 2em auto;
+}
+
+.index-column-left {
+  flex: 0 0 70%;
+  min-width: 0;
+  padding-right: 2em;
+}
+
+.index-column-right {
+  flex: 0 0 30%;
+  min-width: 0;
+}
+
+.index-column-right h4 {
+  margin-top: 0;
+}
+
+.index-column-right table {
+  width: auto;
+  min-width: 200px;
+}
+
+.index-column-right td {
+  padding: 0.3em 0.8em;
+}
+
+/* Stack columns on smaller screens */
+@media (max-width: 900px) {
+  .index-columns {
+    flex-direction: column;
+  }
+
+  .index-column-right {
+    width: 100%;
+  }
 }
 
 /*====================================================================

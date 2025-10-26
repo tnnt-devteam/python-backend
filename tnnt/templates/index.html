@@ -43,99 +43,144 @@
 
 <hr>
 
-<article>
-  <h4> How to Play </h4>
-  <p>
-    TNNT is hosted by
-    <a href="https://www.hardfought.org/nethack" target="_blank">hardfought.org</a>.
-  </p>
-  <p>
-    Most people play TNNT with an
-    <a href="https://en.wikipedia.org/wiki/SSH" target="_blank">SSH client</a>
-    to connect to the game servers. Linux and Mac OS typically come with this
-    installed; Windows users can use either a free client like
-    <a href="https://putty.org" target="_blank">PuTTY</a> or Windows Subsystem
-    for Linux. SSH to "nethack@hardfought.org" or pick an alternate server based
-    on whatever's closest to where you are geographically:
-    <ul>
-      <li>hardfought.org: USA (East Coast)</li>
-      <li>eu.hardfought.org: Europe (London)</li>
-      <li>au.hardfought.org: Australia (Sydney)</li>
-    </ul>
-  </p>
-  <p>
-    If you'd like to play with the TNNT tileset, or you're at a location that
-    blocks everything except web access, you can also play in a Web browser
-    using the
-    <a href="https://www.hardfought.org/nethack/hterm" target="_blank">hardfought web terminal</a>.
-  </p>
-  <p>
-    If you do not already have an account on Hardfought, you need to register
-    one first after connecting. Then, select the TNNT game option in the main
-    menu after you've logged in. That's all there is to it!
-  </p>
-  <p>
-    To create, join, or manage clans, go
-    <a href="/clanmgmt">here</a>.
-    Clan membership (creating and joining) will be frozen on November 10th at 00:00 UTC!
-  </p>
+<div class="index-columns">
+  <div class="index-column-left">
+    <article>
+      <h4> How to Play </h4>
+      <p>
+        TNNT is hosted by
+        <a href="https://www.hardfought.org/nethack" target="_blank">hardfought.org</a>.
+      </p>
+      <p>
+        Most people play TNNT with an
+        <a href="https://en.wikipedia.org/wiki/SSH" target="_blank">SSH client</a>
+        to connect to the game servers. Linux and Mac OS typically come with this
+        installed; Windows users can use either a free client like
+        <a href="https://putty.org" target="_blank">PuTTY</a> or Windows Subsystem
+        for Linux. SSH to "nethack@hardfought.org" or pick an alternate server based
+        on whatever's closest to where you are geographically:
+        <ul>
+          <li>hardfought.org: USA (East Coast)</li>
+          <li>eu.hardfought.org: Europe (London)</li>
+          <li>au.hardfought.org: Australia (Sydney)</li>
+        </ul>
+      </p>
+      <p>
+        If you'd like to play with the TNNT tileset, or you're at a location that
+        blocks everything except web access, you can also play in a Web browser
+        using the
+        <a href="https://www.hardfought.org/nethack/hterm" target="_blank">hardfought web terminal</a>.
+      </p>
+      <p>
+        If you do not already have an account on Hardfought, you need to register
+        one first after connecting. Then, select the TNNT game option in the main
+        menu after you've logged in. That's all there is to it!
+      </p>
+      <p>
+        To create, join, or manage clans, go
+        <a href="/clanmgmt">here</a>.
+        Clan membership (creating and joining) will be frozen on November 10th at 00:00 UTC!
+      </p>
 
-  <h4> More Information </h4>
-  <p>
-    For more general information on NetHack, check out
-    <a href="https://en.wikipedia.org/wiki/NetHack" target="_blank">Wikipedia</a>,
-    the <a href="https://nethackwiki.com" target="_blank">NetHackWiki</a>,
-    and <a href="https://thegreatestgameyouwilleverplay.com" target="_blank">The Greatest Game You Will Ever Play</a>.
-  </p>
-  <p>
-    For more detailed information about the TNNT tournament, see the
-    <a href="/faq">FAQ page</a>.
-  </p>
-  <p>
-    TNNT chat discussion happens on the <a href="https://libera.chat" target="_blank">Libera.Chat</a>
-    IRC server, on the #tnnt and #hardfought channels, or via the
-    <a href="https://discord.com/invite/vg9WWf2" target="_blank">Roguelike Discord</a>
-    on #nethack-tnnt (IRC to Discord bridge is active). All TNNT discussion is
-    on-topic in these channels, and this is the best way to reach the admins if
-    you have any issues.
-    <a href="https://web.libera.chat/#tnnt" target="_blank">Click here to open IRC chat</a>, which
-    will automatically direct you to the #tnnt channel.
-  </p>
-</article>
+      <h4> More Information </h4>
+      <p>
+        For more general information on NetHack, check out
+        <a href="https://en.wikipedia.org/wiki/NetHack" target="_blank">Wikipedia</a>,
+        the <a href="https://nethackwiki.com" target="_blank">NetHackWiki</a>,
+        and <a href="https://thegreatestgameyouwilleverplay.com" target="_blank">The Greatest Game You Will Ever Play</a>.
+      </p>
+      <p>
+        For more detailed information about the TNNT tournament, see the
+        <a href="/faq">FAQ page</a>.
+      </p>
+      <p>
+        TNNT chat discussion happens on the <a href="https://libera.chat" target="_blank">Libera.Chat</a>
+        IRC server, on the #tnnt and #hardfought channels, or via the
+        <a href="https://discord.com/invite/vg9WWf2" target="_blank">Roguelike Discord</a>
+        on #nethack-tnnt (IRC to Discord bridge is active). All TNNT discussion is
+        on-topic in these channels, and this is the best way to reach the admins if
+        you have any issues.
+        <a href="https://web.libera.chat/#tnnt" target="_blank">Click here to open IRC chat</a>, which
+        will automatically direct you to the #tnnt channel.
+      </p>
+    </article>
+  </div>
 
-<h2>Overall Statistics</h2>
-{% if numgames > 0 %}
-  <table>
-    <tbody>
-      <tr>
-        <td>Clans</td>
-        <td>{{ numclans }}</td>
-      </tr>
-      <tr>
-        <td>Players</td>
-        <td>{{ numplayers }}</td>
-      </tr>
-      <tr>
-        <td>Total Games</td>
-        <td>{{ numgames }}</td>
-      </tr>
-      <tr>
-        <td>Scummed games</td>
-        <td>{{ numscums }}</td>
-      </tr>
-      <tr>
-        <td>Ascensions</td>
-        <td>{{ numascs }}</td>
-      </tr>
-      <tr>
-        <td>Ascending players</td>
-        <td>{{ numascenders }}</td>
-      </tr>
-    </tbody>
-  </table>
-{% else %}
-  <p>No games played yet</p>
-{% endif %}
+  <div class="index-column-right">
+    <h4>Overall Statistics</h4>
+    {% if numgames > 0 %}
+      <table>
+        <tbody>
+          <tr>
+            <td>Clans</td>
+            <td class="num">{{ numclans }}</td>
+          </tr>
+          <tr>
+            <td>Players</td>
+            <td class="num">{{ numplayers }}</td>
+          </tr>
+          <tr>
+            <td>Ascensions</td>
+            <td class="num">{{ numascs }}</td>
+          </tr>
+          <tr>
+            <td>Players who have ascended</td>
+            <td class="num">{{ numascenders }}</td>
+          </tr>
+          <tr>
+            <td>Total games</td>
+            <td class="num">{{ numgames }}</td>
+          </tr>
+          <tr>
+            <td>Scummed games</td>
+            <td class="num">{{ numscums }}</td>
+          </tr>
+          <tr>
+            <td>Post-Amulet splats</td>
+            <td class="num">{{ numsplats }}</td>
+          </tr>
+          <tr>
+            <td>Total unique deaths</td>
+            <td class="num">{{ totuniqdeaths }}</td>
+          </tr>
+          <tr>
+            <td>Total donations</td>
+            <td class="num">{{ totdonations }}</td>
+          </tr>
+          <tr>
+            <td>Total in-game turns</td>
+            <td class="num">{{ totturns }}</td>
+          </tr>
+        </tbody>
+      </table>
+    {% else %}
+      <p>No games played yet</p>
+    {% endif %}
+
+    <h4 class="server-status-heading">Server Status</h4>
+    <div class="server-status-list">
+      {% for server in servers %}
+        <div class="server-status-item">
+          <div class="server-line">
+            {% if server.up %}
+              <span class="server-indicator server-up">●</span>
+            {% else %}
+              <span class="server-indicator server-down">●</span>
+            {% endif %}
+            <span class="server-name">{{ server.name }} ({{ server.location }})</span>
+          </div>
+          <div class="server-message">
+            {% if server.up %}
+              Server is up and running.
+            {% else %}
+              Server is down.
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
 <h2>Last 10 Ascensions</h2>
 {% if last10wins|length > 0 %}
