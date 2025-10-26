@@ -209,6 +209,8 @@
 <details class="trophy-status">
   <summary>Trophy Status Summary</summary>
   <div class="trophy-status-content">
+    <div class="trophy-columns">
+      <div class="trophy-column-left">
     <h4>Great/Lesser Race Trophies</h4>
     <ul>
       {% for race, completed in trophy_grid.trophy_status.great_races.items %}
@@ -280,6 +282,30 @@
         {% endif %}
       </li>
       <li>
+        All Alignments:
+        {% if trophy_grid.trophy_status.all_alignments %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Both Genders:
+        {% if trophy_grid.trophy_status.both_genders %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        All Achievements:
+        {% if trophy_grid.trophy_status.all_achievements %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
         NetHack Master (all 73 combos):
         {% if trophy_grid.trophy_status.nethack_master %}
           <span class="achieved">&#x2714; Complete</span>
@@ -287,7 +313,93 @@
           <span class="not-achieved">&#x2718; Incomplete</span>
         {% endif %}
       </li>
+      <li>
+        NetHack Dominator:
+        {% if trophy_grid.trophy_status.nethack_dominator %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
     </ul>
+      </div> {# trophy-column-left #}
+
+      <div class="trophy-column-right">
+    <h4>Conducts</h4>
+    <ul>
+      <li>
+        All Conducts:
+        {% if trophy_grid.trophy_status.all_conducts %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      {% for conduct_name, completed in trophy_grid.trophy_status.individual_conducts.items %}
+        <li class="individual-conduct">
+          {{ conduct_name }}:
+          {% if completed %}
+            <span class="achieved">&#x2714; Complete</span>
+          {% else %}
+            <span class="not-achieved">&#x2718; Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    <h4>Special Challenge Trophies</h4>
+    <ul>
+      <li>
+        Never Scum a Game:
+        {% if trophy_grid.trophy_status.never_scum %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Keep Your Nemesis Alive:
+        {% if trophy_grid.trophy_status.keep_nemesis_alive %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Keep Vlad Alive:
+        {% if trophy_grid.trophy_status.keep_vlad_alive %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Keep Rodney Alive:
+        {% if trophy_grid.trophy_status.keep_rodney_alive %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Keep The High Priest of Moloch Alive:
+        {% if trophy_grid.trophy_status.keep_high_priest_alive %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+      <li>
+        Keep The Riders Alive:
+        {% if trophy_grid.trophy_status.keep_riders_alive %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+    </ul>
+      </div> {# trophy-column-right #}
+    </div> {# trophy-columns #}
   </div>
 </details>
 {% endif %} {# isClan #}

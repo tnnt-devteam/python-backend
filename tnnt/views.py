@@ -484,22 +484,8 @@ class SinglePlayerOrClanView(TemplateView):
             # for a clan, we want to filter games from any of its members
             base_game_qs = Game.objects.filter(player__in=member_ids)
 
-            # check if this is the player's own clan; if not, do not send the
-            # trophy grid. This is based on two ideas:
-            # 1. Provide an incentive for logging in.
-            # 2. Make it harder for clan non-members to see other clans'
-            #    progress towards trophies. (Questionable, since it's not clear
-            #    what advantage would be gained from seeing this.)
-            # Not set in stone; if players get confused by how to make the
-            # tracker appear, we could just remove this login requirement.
-            try:
-                player_name = get_player(self.request.user).name
-                if player_name in kwargs['members'].values_list('name', flat=True):
-                    kwargs['trophy_grid'] = generate_combo_grid_data(clan)
-            except:
-                # don't produce error if no player found, since you can view any
-                # clan when not logged in
-                pass
+            # Always show clan trophy tracker to everyone (no login required)
+            kwargs['trophy_grid'] = generate_combo_grid_data(clan)
 
         elif 'playername' in kwargs:
             kwargs['isClan'] = False

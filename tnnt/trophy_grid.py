@@ -249,6 +249,7 @@ def _calculate_trophy_status(
     from scoreboard.management.commands.aggregate import (
         great_lesser_race, great_lesser_role
     )
+    from scoreboard.models import Conduct, Achievement
 
     status = {
         'great_races': {},
@@ -258,6 +259,17 @@ def _calculate_trophy_status(
         'all_roles': False,
         'all_races': False,
         'nethack_master': False,
+        'both_genders': False,
+        'all_alignments': False,
+        'all_conducts': False,
+        'all_achievements': False,
+        'nethack_dominator': False,
+        'never_scum': False,
+        'keep_nemesis_alive': False,
+        'keep_vlad_alive': False,
+        'keep_rodney_alive': False,
+        'keep_high_priest_alive': False,
+        'keep_riders_alive': False,
     }
 
     # Check Great/Lesser Race trophies
@@ -314,5 +326,93 @@ def _calculate_trophy_status(
     status['nethack_master'] = (
         len(ascension_combos) == 73  # TOTAL_POSSIBLE_COMBOS
     )
+
+    # Determine if this is a player or clan
+    is_clan = player_or_clan.__class__.__name__ == 'Clan'
+
+    # Get all games for this player/clan
+    if is_clan:
+        games_qs = Game.objects.filter(player__clan=player_or_clan)
+    else:
+        games_qs = Game.objects.filter(player=player_or_clan)
+
+    # Check Both Genders - need at least one male and one female ascension
+    genders = set()
+    for combo_data in ascension_combos.values():
+        if combo_data['male']:
+            genders.add('male')
+        if combo_data['female']:
+            genders.add('female')
+    status['both_genders'] = len(genders) == 2
+
+    # Check All Alignments - need ascensions with all 3 alignments
+    asc_aligns = set(combo[2] for combo in ascension_combos.keys())
+    status['all_alignments'] = len(asc_aligns) == 3  # Law, Neu, Cha
+
+    # Check All Conducts - need all conducts preserved across ascensions
+    from scoreboard.models import Conduct, Achievement
+    all_conduct_bits = set()
+    for game in games_qs.filter(won=True):
+        all_conduct_bits.update(game.conducts.all())
+
+    # Track individual conducts
+    status['individual_conducts'] = {}
+    all_conducts = Conduct.objects.all().order_by('name')
+    for conduct in all_conducts:
+        status['individual_conducts'][conduct.name] = conduct in all_conduct_bits
+
+    total_conducts = Conduct.objects.count()
+    status['all_conducts'] = len(all_conduct_bits) >= total_conducts
+
+    # Check All Achievements - need all achievements across all games
+    total_achievements = Achievement.objects.count()
+    all_achievement_bits = set()
+    for game in games_qs:
+        all_achievement_bits.update(game.achievements.all())
+    status['all_achievements'] = len(all_achievement_bits) >= total_achievements
+
+    # Check NetHack Dominator - NetHack Master + All Conducts
+    status['nethack_dominator'] = (
+        status['nethack_master'] and status['all_conducts']
+    )
+
+    # Check Never Scum a Game - no games quit/escaped within 100 turns
+    scummed_games = games_qs.filter(
+        Q(turns__lte=100) & (Q(death='quit') | Q(death='escaped'))
+    ).count()
+    status['never_scum'] = (games_qs.count() > 0 and scummed_games == 0)
+
+    # Check Keep X Alive trophies - these are conducts in winning games
+    # These conducts are earned by NOT killing certain NPCs
+    winning_games = games_qs.filter(won=True).prefetch_related('conducts')
+    if winning_games.exists():
+        # Check if any winning game has the specific conduct
+        all_conducts = Conduct.objects.all()
+        conduct_map = {c.shortname: c for c in all_conducts}
+
+        # Keep Your Nemesis Alive - conduct shortname 'neme'
+        status['keep_nemesis_alive'] = winning_games.filter(
+            conducts=conduct_map.get('neme')
+        ).exists() if 'neme' in conduct_map else False
+
+        # Keep Vlad Alive - conduct shortname 'vlad'
+        status['keep_vlad_alive'] = winning_games.filter(
+            conducts=conduct_map.get('vlad')
+        ).exists() if 'vlad' in conduct_map else False
+
+        # Keep Rodney Alive - conduct shortname 'wiz'
+        status['keep_rodney_alive'] = winning_games.filter(
+            conducts=conduct_map.get('wiz')
+        ).exists() if 'wiz' in conduct_map else False
+
+        # Keep The High Priest of Moloch Alive - conduct shortname 'prst'
+        status['keep_high_priest_alive'] = winning_games.filter(
+            conducts=conduct_map.get('prst')
+        ).exists() if 'prst' in conduct_map else False
+
+        # Keep The Riders Alive - conduct shortname 'ride'
+        status['keep_riders_alive'] = winning_games.filter(
+            conducts=conduct_map.get('ride')
+        ).exists() if 'ride' in conduct_map else False
 
     return status

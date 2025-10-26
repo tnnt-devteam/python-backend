@@ -687,6 +687,8 @@ table.trophy-grid td.valid {
 details.trophy-status {
   margin-top: 1em;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 details.trophy-status summary {
@@ -705,10 +707,14 @@ details.trophy-status summary:hover {
 }
 
 .trophy-status-content {
-  padding: 1em;
+  padding: 0.75em;
   background-color: #112;
   border-radius: 5px;
   margin-top: 0.5em;
+  font-size: 0.75em;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .trophy-status-content h4 {
@@ -727,6 +733,31 @@ details.trophy-status summary:hover {
 
 .trophy-status-content li {
   margin: 0.3em 0;
+}
+
+.trophy-status-content li.individual-conduct {
+  margin-left: 1.25em;
+  font-size: 0.9em;
+}
+
+.trophy-columns {
+  display: flex;
+  gap: 0.75em;
+  width: 100%;
+  max-width: 100%;
+}
+
+.trophy-column-left,
+.trophy-column-right {
+  flex: 1;
+  min-width: 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.trophy-column-left h4:first-child,
+.trophy-column-right h4:first-child {
+  margin-top: 0;
 }
 
 /* Clickable cells */
