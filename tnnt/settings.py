@@ -211,8 +211,9 @@ TOURNAMENT_START = datetime.fromisoformat('2025-10-22T00:00:00+00:00')
 TOURNAMENT_END   = datetime.fromisoformat('2025-12-01T00:00:00+00:00')
 
 # Main log file
-
-TNNT_LOG_FILE = "tnnt.log"
+# Use absolute path for production. Relative paths (e.g., "tnnt.log")
+# will create the log file in the project root directory
+TNNT_LOG_FILE = "/var/log/tnnt/tnnt_server.log"
 
 # Django logging configuration
 LOGGING = {
