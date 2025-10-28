@@ -468,7 +468,9 @@ class ClansView(TemplateView):
             })
 
         # All clans list, convert to list to only query db once.
-        clanlist = list(Clan.objects.order_by('-wins', 'name').values())
+        clanlist = list(Clan.objects.annotate(
+            trophy_count=Count('trophies')
+        ).order_by('-wins', 'name').values())
 
         # Now insert the lists of members.
         for clan in clanlist:

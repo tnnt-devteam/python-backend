@@ -182,6 +182,52 @@ span.plradmin {
   padding: 1em;
 }
 
+/* all clans table styling */
+
+table.clans {
+  margin-bottom: 3em;
+}
+
+table.clans td {
+  border-bottom: 1px solid #334;
+  padding: 0.8rem 1.4rem;
+  vertical-align: top;
+}
+
+table.clans span.clan {
+  font-size: 125%;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: block;
+  margin-bottom: 0.3em;
+  color: #eb0;
+}
+
+table.clans .clan-players {
+  margin: 0;
+  font-style: italic;
+  font-size: 85%;
+  line-height: 1.4;
+}
+
+table.clans .clan-players span {
+  margin-right: 0.3em;
+}
+
+table.clans .clan-players a {
+  color: #f2f5ff;
+}
+
+table.clans .clan-players .subinfo {
+  color: #888;
+  font-size: 100%;
+  margin-left: 0.3em;
+}
+
+table.clans tbody tr:hover {
+  background-color: rgba(34, 51, 85, 0.5);
+}
+
 /*====================================================================
   === PLAYERS & CLANS ================================================
   ====================================================================*/
@@ -450,7 +496,7 @@ table.trophies tbody tr:nth-child(even) {
 }
 
 table.trophies tbody tr:hover {
-  background-color: rgba(20, 30, 50, 0.4);
+  background-color: rgba(34, 51, 85, 0.5);
 }
 
 td.trophy-name {

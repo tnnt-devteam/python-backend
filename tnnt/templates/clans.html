@@ -20,7 +20,8 @@
       <th>Clan</th>
       <th>Wins</th>
       <th>Combos</th>
-      <th>Achieve</th>
+      <th>Trophies</th>
+      <th>Achievements</th>
     </tr>
   </thead>
   <tbody>
@@ -32,36 +33,34 @@
           <span class="clan">
             {% include "clink.html" with name=clan.name %}
           </span>
-
-          {% for plr in clan.members %}
-            <span {% if plr.admin %}class="plradmin"{% endif %}>
-              {% include "plink.html" with name=plr.name %}
+          <div class="clan-players">
+            {% for plr in clan.members %}
+              <span {% if plr.admin %}class="plradmin"{% endif %}>
+                {% include "plink.html" with name=plr.name %}
+              </span>
+            {% endfor %}
+            <span class="subinfo">
+              ({{ clan.members|length }}
+              {% if clan.members|length > 1 %}
+                players
+              {% else %}
+                player
+              {% endif %})
             </span>
-          {% endfor %}
-          <span class="subinfo">
-            {{ clan.members|length }}
-            {% if clan.members|length > 1 %}
-              players
-            {% else %}
-              player
-            {% endif %}
-          </span>
+          </div>
         </td>
 
         {# === clan ascension count ==================================== #}
-        <td class="num">
-          <span class="clan">{{ clan.wins }}</span>
-        </td>
+        <td class="num">{{ clan.wins }}</td>
 
         {# === clan unique ascension combo count ======================= #}
-        <td class="num">
-          <span class="clan">{{ clan.unique_ascs }}</span>
-        </td>
+        <td class="num">{{ clan.unique_ascs }}</td>
+
+        {# === clan trophy count ======================================== #}
+        <td class="num">{{ clan.trophy_count }}</td>
 
         {# === clan achievements count ================================= #}
-        <td class="num">
-          <span class="clan">{{ clan.unique_achievements }}</span>
-        </td>
+        <td class="num">{{ clan.unique_achievements }}</td>
 
       </tr>
     {% empty %}
