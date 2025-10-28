@@ -12,9 +12,9 @@ from django.db.models import Q, Count
 from django.core.cache import cache
 from scoreboard.models import Game
 
-# Cache timeout: 10 minutes (600 seconds)
+# Cache timeout: 5 minutes (300 seconds)
 # Grid data is invalidated when new games are aggregated
-TROPHY_GRID_CACHE_TIMEOUT = 600
+TROPHY_GRID_CACHE_TIMEOUT = 300
 
 # Define all valid role-race-alignment starting combinations in NetHack
 # This matches the combinations used in aggregate.py for trophy calculations
