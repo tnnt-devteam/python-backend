@@ -140,6 +140,14 @@
             <td class="num">{{ numsplats }}</td>
           </tr>
           <tr>
+            <td>Games that completed Mines + Soko</td>
+            <td class="num">{{ numminessoko }}</td>
+          </tr>
+          <tr>
+            <td>Total achievements earned by all players</td>
+            <td class="num">{{ totachieve }}</td>
+          </tr>
+          <tr>
             <td>Total unique deaths</td>
             <td class="num">{{ totuniqdeaths }}</td>
           </tr>
@@ -151,34 +159,27 @@
             <td>Total in-game turns</td>
             <td class="num">{{ totturns }}</td>
           </tr>
+          <tr>
+            <td>Total real-life time spent playing TNNT</td>
+            <td class="num">{{ tottime }}</td>
+          </tr>
         </tbody>
       </table>
+      <p class="stats-link">
+        <a href="/ascensions">List of all ascensions</a>
+      </p>
+      <p class="stats-link">
+        <a href="/allgames">List of all legitimate games</a>
+      </p>
+      <p class="stats-link">
+        <a href="/uniquedeaths">Detailed breakdown of unique deaths</a>
+      </p>
+      <p class="stats-link">
+        <a href="/scummedgames">Detailed breakdown of scummed games</a>
+      </p>
     {% else %}
       <p>No games played yet</p>
     {% endif %}
-
-    <h4 class="server-status-heading">Server Status</h4>
-    <div class="server-status-list">
-      {% for server in servers %}
-        <div class="server-status-item">
-          <div class="server-line">
-            {% if server.up %}
-              <span class="server-indicator server-up">●</span>
-            {% else %}
-              <span class="server-indicator server-down">●</span>
-            {% endif %}
-            <span class="server-name">{{ server.name }} ({{ server.location }})</span>
-          </div>
-          <div class="server-message">
-            {% if server.up %}
-              Server is up and running.
-            {% else %}
-              Server is down.
-            {% endif %}
-          </div>
-        </div>
-      {% endfor %}
-    </div>
   </div>
 </div>
 

@@ -29,8 +29,8 @@
               <a href="/leaderboards" class="menu {% if page == 'leaderboards' %} menusel {% endif %}">LEADERBOARDS</a>
           </td>
           <td class="rightmenu">
+              <a href="/achievements" class="menu {% if page == 'achievements' %} menusel {% endif %}">ACHIEVEMENTS</a>
               <a href="/trophies" class="menu {% if page == 'trophies' %} menusel {% endif %}">TROPHIES</a>
-              <a href="/stats" class="menu {% if page == 'stats' %} menusel {% endif %}">STATS</a>
               <a href="/archives" class="menu {% if page == 'archive' %} menusel {% endif %}">ARCHIVES</a>
               {% if user.is_authenticated %}
                 <a href="/clanmgmt" class="menu {% if page == 'clanmgmt' %} menusel {% endif %}">MY CLAN</a>

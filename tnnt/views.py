@@ -101,7 +101,7 @@ class HomepageView(TemplateView):
     template_name = 'index.html'
 
     def get_context_data(self, **kwargs):
-        # general statistics (subset of stats page)
+        # general statistics
         kwargs['numclans'] = Clan.objects.count()
         kwargs['numplayers'] = Player.objects.count()
         kwargs['numgames'] = Game.objects.count()
@@ -109,33 +109,20 @@ class HomepageView(TemplateView):
                     Sum('games_scummed'),
                     Sum('wins'),
                     Sum('splats'),
+                    Sum('unique_achievements'),
                     Sum('donations'))
         kwargs['numscums'] = aggr['games_scummed__sum']
         kwargs['numascs'] = aggr['wins__sum']
         kwargs['numsplats'] = aggr['splats__sum']
+        kwargs['numminessoko'] = Game.objects.filter(mines_soko=True).count()
         kwargs['numascenders'] = Player.objects.filter(wins__gt=0).count()
+        kwargs['totachieve'] = aggr['unique_achievements__sum']
         kwargs['totdonations'] = aggr['donations__sum']
-        aggr2 = Game.objects.aggregate(Sum('turns'))
+        aggr2 = Game.objects.aggregate(Sum('realtime'),
+                                       Sum('turns'))
         kwargs['totturns'] = aggr2['turns__sum']
+        kwargs['tottime'] = aggr2['realtime__sum']
         kwargs['totuniqdeaths'] = len(uniqdeaths.compile_unique_deaths(Game.objects.all()))
-
-        # server status check
-        import socket
-        def check_server(host, port=22, timeout=2):
-            try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                sock.settimeout(timeout)
-                result = sock.connect_ex((host, port))
-                sock.close()
-                return result == 0
-            except:
-                return False
-
-        kwargs['servers'] = [
-            {'name': 'Hardfought US', 'location': 'East Coast', 'up': check_server('hardfought.org')},
-            {'name': 'Hardfought EU', 'location': 'London', 'up': check_server('eu.hardfought.org')},
-            {'name': 'Hardfought AU', 'location': 'Sydney', 'up': check_server('au.hardfought.org')},
-        ]
 
         # last 10 games/wins
         # Exclude scummed games from last 10 games
@@ -788,33 +775,6 @@ class AscensionsView(TemplateView):
 
         # Use bulk_upd_games to add dumplog URLs, rrga strings, and conducts
         kwargs['ascensions'] = bulk_upd_games(list(ascensions_qs), True)
-        return kwargs
-
-class StatsView(TemplateView):
-    template_name = 'stats.html'
-
-    def get_context_data(self, **kwargs):
-        kwargs['numclans'] = Clan.objects.count()
-        kwargs['numplayers'] = Player.objects.count()
-        kwargs['numgames'] = Game.objects.count()
-        aggr = Player.objects.aggregate(
-                    Sum('games_scummed'),
-                    Sum('wins'),
-                    Sum('splats'),
-                    Sum('unique_achievements'),
-                    Sum('donations'))
-        kwargs['numscums'] = aggr['games_scummed__sum']
-        kwargs['numascs'] = aggr['wins__sum']
-        kwargs['numsplats'] = aggr['splats__sum']
-        kwargs['numminessoko'] = Game.objects.filter(mines_soko=True).count()
-        kwargs['numascenders'] = Player.objects.filter(wins__gt=0).count()
-        kwargs['totachieve'] = aggr['unique_achievements__sum']
-        kwargs['totdonations'] = aggr['donations__sum']
-        aggr2 = Game.objects.aggregate(Sum('realtime'),
-                                       Sum('turns'))
-        kwargs['totturns'] = aggr2['turns__sum']
-        kwargs['tottime'] = aggr2['realtime__sum']
-        kwargs['totuniqdeaths'] = len(uniqdeaths.compile_unique_deaths(Game.objects.all()))
         return kwargs
 
 class AllGamesView(TemplateView):

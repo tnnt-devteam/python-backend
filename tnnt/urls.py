@@ -28,7 +28,6 @@ urlpatterns = [
     path('allgames', tnntviews.AllGamesView.as_view(), name='allgames'),
     path('scummedgames', tnntviews.ScummedGamesView.as_view(), name='scummedgames'),
     path('faq', tnntviews.FaqView.as_view(), name='faq'),
-    path('stats', tnntviews.StatsView.as_view(), name='stats'),
     path('archives', tnntviews.ArchivesView.as_view(), name='archives'),
     path('archives/<str:year>/', tnntviews.ArchiveFileView.as_view(), name='archive-year-index'),
     path('archives/<str:year>/<path:path>', tnntviews.ArchiveFileView.as_view(), name='archive-file'),

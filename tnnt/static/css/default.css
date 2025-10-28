@@ -808,13 +808,13 @@ span#counter {
 }
 
 .index-column-left {
-  flex: 0 0 70%;
+  flex: 0 0 60%;
   min-width: 0;
   padding-right: 2em;
 }
 
 .index-column-right {
-  flex: 0 0 30%;
+  flex: 0 0 40%;
   min-width: 0;
 }
 
@@ -825,10 +825,17 @@ span#counter {
 .index-column-right table {
   width: auto;
   min-width: 200px;
+  margin-left: 0;
 }
 
 .index-column-right td {
   padding: 0.3em 0.8em;
+}
+
+.stats-link {
+  margin-left: 0.8em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 /* Stack columns on smaller screens */
