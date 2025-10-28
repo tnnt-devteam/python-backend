@@ -26,7 +26,8 @@
     <li><a href="#changes">What does it mean for trophies if I change gender or alignment?</a></li>
     <li><a href="#missing">Why aren't there role trophies for Knight, Samurai, or Tourist?</a></li>
     <li><a href="#lesser">What does "Complete Mines and Soko" mean for the Lesser trophies?</a></li>
-    <li><a href="#notboth">Why didn't I get the Lesser trophy when I got the Greater one?</a></li>
+    <li><a href="#notboth">Why didn't I get the Lesser trophy when I got the Great one?</a></li>
+    <li><a href="#scoring">Why have multiple leaderboards instead of a unified overall score?</a></li>
     <li><a href="#streaks">How do streaks work?</a></li>
     <li><a href="#splat">What's a "post-Amulet splat"?</a></li>
     <li><a href="#donation">What's a "successful swap chest donation"?</a></li>
@@ -34,7 +35,6 @@
     <li><a href="#origins">Why does TNNT exist? What happened to /dev/null?</a></li>
     <li><a href="#replacement">So is TNNT the replacement for /dev/null?</a></li>
     <li><a href="#devnullchal">What about the devnull challenges?</a></li>
-    <li><a href="#scoring">Why have multiple leaderboards instead of a unified overall score?</a></li>
     <li><a href="#contributors">Who are you people anyway?</a></li>
   </ul>
   <h4 id="general">What are the basic rules of the tournament?</h4>
@@ -163,10 +163,9 @@
     for viewing progress towards certain achievements.
   </p>
   <p>
-    To see a list of all achievements and what is required to earn them,
-    navigate to your player or clan page, or view
-    <a href="/achievements">all achievements by the number of people who
-      achieved them</a>.
+    To see a list of achievements and what is required to earn them,
+    navigate to your player or clan page, or view the
+    <a href="/achievements">entire list of all 368 achievements</a>.
   </p>
   <h4 id="commands">Do I need to manually keep track of my progress towards achievements?</h4>
   <p>
@@ -222,7 +221,7 @@
     matter if the game ends in death afterwards, and you don't need to escape
     the dungeon with those prizes.
   </p>
-  <h4 id="notboth">Why didn't I get the Lesser trophy when I got the Greater one?</h4>
+  <h4 id="notboth">Why didn't I get the Lesser trophy when I got the Great one?</h4>
   <p>
     Achieving a Great Race or Role does not necessarily imply that you also
     deserve the same Lesser Race or Role, since it is possible to ascend without
@@ -232,6 +231,25 @@
     can check in-game whether you've earned them by using #achievements. If the
     game is over, you can also check the summary of achievements in its dumplog.
   </p>
+  <h4 id="scoring">Why have multiple leaderboards instead of a unified overall score?</h4>
+  <p>
+    The first three years of TNNT did use a unified score and a single
+    leaderboard tracking that score. It started to draw dissatisfaction, though,
+    largely because of a number of biases in the scoring algorithm. These biases
+    didn't have an obvious solution, because there was simply no way to put an
+    objective score on what was ultimately a subjective measure &mdash; how
+    impressive a player's games were.
+  </p>
+  <p>
+    In 2021, the TNNT website was reimplemented from the ground up, primarily to
+    get it written in Python instead of Perl for maintainability reasons. During
+    that rewrite, we took the opportunity to implement the multiple-leaderboard
+    system, where one's place on each leaderboard is determined by game
+    statistics and not a scoring algorithm (and we can show more than just the
+    top player in each category). The response has been generally positive, with
+    players and clans able to compete in categories they like rather than
+    feeling like they need to choose between fun gameplay and doing what would
+    earn them the most points.
   <h4 id="streaks">How do streaks work?</h4>
   <p>
     A streak is a series of consecutive winning games by the same player.
@@ -323,61 +341,41 @@
     and the devnull tribute game code
     <a href="https://github.com/NHTangles/NetHack36/tree/devnull_hdf" target="_blank">here</a>.
   </p>
-  <h4 id="scoring">Why have multiple leaderboards instead of a unified overall score?</h4>
-  <p>
-    The first three years of TNNT did use a unified score and a single
-    leaderboard tracking that score. It started to draw dissatisfaction, though,
-    largely because of a number of biases in the scoring algorithm. These biases
-    didn't have an obvious solution, because there was simply no way to put an
-    objective score on what was ultimately a subjective measure &mdash; how
-    impressive a player's games were.
-  </p>
-  <p>
-    In 2021, the TNNT website was reimplemented from the ground up, primarily to
-    get it written in Python instead of Perl for maintainability reasons. During
-    that rewrite, we took the opportunity to implement the multiple-leaderboard
-    system, where one's place on each leaderboard is determined by game
-    statistics and not a scoring algorithm (and we can show more than just the
-    top player in each category). The response has been generally positive, with
-    players and clans able to compete in categories they like rather than
-    feeling like they need to choose between fun gameplay and doing what would
-    earn them the most points.
-  </p>
   <h4 id="contributors">Who are you people anyway?</h4>
   <p>
     The contributors to TNNT are:
     <ul>
       <li>
-        aoei: Co-creator of the Python web backend (and erstwhile maintainer of
+        <span class="contributor-name">aoei</span>: Co-creator of the Python web backend (and erstwhile maintainer of
         the Perl backend).
       </li>
       <li>
-        aosdict: Creator of the achievements system, various in-game features,
+        <span class="contributor-name">aosdict</span>: Creator of the achievements system, various in-game features,
         and co-creator of the Python web backend.
       </li>
       <li>
-        K2: Server admin and jack-of-all-trades programmer, maintainer, and
+        <span class="contributor-name">K2</span>: Server admin and jack-of-all-trades programmer, maintainer, and
         designer.
       </li>
       <li>
-        Mandevil: Creator of the original TNNT scoreboard and its Perl backend,
+        <span class="contributor-name">Mandevil</span>: Creator of the original TNNT scoreboard and its Perl backend,
         as well as the ones for the devnull tribute tournament.
       </li>
       <li>
-        qt: Designer and Programmer &mdash; Python web backend, achievements
+        <span class="contributor-name">qt</span>: Designer and Programmer &mdash; Python web backend, achievements
         system, in-game features.
       </li>
       <li>
-        Tangles: Server admin and creator of the Croesus IRC bot. Ensures that
+        <span class="contributor-name">Tangles</span>: Server admin and creator of the Croesus IRC bot. Ensures that
         the various interactions between the game and the server network are
         working properly.
       </li>
       <li>
-        elenmirie, raisse, jilles, hothraxxa, and oh6: Tournament designers and
+        <span class="contributor-name">elenmirie</span>, <span class="contributor-name">raisse</span>, <span class="contributor-name">jilles</span>, <span class="contributor-name">hothraxxa</span>, and <span class="contributor-name">oh6</span>: Tournament designers and
         alpha testers.
       </li>
       <li>
-        And special thanks to spicyCebolla, Andrio, and bhaak for providing bug
+        And special thanks to <span class="contributor-name">spicyCebolla</span>, <span class="contributor-name">Andrio</span>, and <span class="contributor-name">bhaak</span> for providing bug
         fixes, and to all of the TNNT beta testers for helping expose those bugs
         before the tournament goes live every year.
       </li>
