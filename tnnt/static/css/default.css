@@ -328,6 +328,13 @@ div.achieve-top table tbody tr:last-child {
   display: block;
 }
 
+.ach-tooltip.tooltip-below {
+  bottom: auto;
+  top: 100%;
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
 .ach-tooltip-header {
   font-weight: 600;
   color: #eb0;
@@ -488,11 +495,6 @@ table.trophies td {
   border-bottom: 1px solid #334;
   padding: 0.8rem 1.4rem;
   vertical-align: top;
-}
-
-/* Zebra striping for better readability */
-table.trophies tbody tr:nth-child(even) {
-  background-color: rgba(34, 51, 85, 0.3);
 }
 
 table.trophies tbody tr:hover {
