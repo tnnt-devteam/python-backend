@@ -728,6 +728,8 @@ class AchievementsView(TemplateView):
     template_name = 'achievements.html'
 
     def get_context_data(self, **kwargs):
+        from collections import defaultdict
+
         achievements_data = []
 
         achievements = Achievement.objects.annotate(
@@ -735,22 +737,41 @@ class AchievementsView(TemplateView):
             nclans=Count('game__player__clan', distinct=True)
         ).order_by('-nplayers', '-nclans', 'id')
 
+        # Pre-fetch all achievement-player relationships in bulk (1 query)
+        player_achievements = Player.objects.filter(
+            game__achievements__isnull=False
+        ).values('game__achievements__id', 'name', 'id').distinct()
+
+        # Pre-fetch all achievement-clan relationships in bulk (1 query)
+        clan_achievements = Clan.objects.filter(
+            player__game__achievements__isnull=False
+        ).values('player__game__achievements__id', 'name', 'id').distinct()
+
+        # Build lookup dictionaries: achievement_id -> list of (entity_id, entity_name)
+        players_by_achievement = defaultdict(list)
+        for item in player_achievements:
+            players_by_achievement[item['game__achievements__id']].append(
+                (item['id'], item['name'])
+            )
+
+        clans_by_achievement = defaultdict(list)
+        for item in clan_achievements:
+            clans_by_achievement[item['player__game__achievements__id']].append(
+                (item['id'], item['name'])
+            )
+
         for ach in achievements:
-            # Get players who earned this achievement (most recent 12)
-            players_qs = Player.objects.filter(
-                game__achievements=ach
-            ).distinct().order_by('-id')
+            # Get players who earned this achievement (from pre-fetched data)
+            players = players_by_achievement[ach.id]
+            total_players = len(players)
+            # Sort by player_id descending and take first 12 names
+            player_list = [name for pid, name in sorted(players, key=lambda x: x[0], reverse=True)[:12]]
 
-            total_players = players_qs.count()
-            player_list = list(players_qs[:12].values_list('name', flat=True))
-
-            # Get clans who earned this achievement (most recent 12)
-            clans_qs = Clan.objects.filter(
-                player__game__achievements=ach
-            ).distinct().order_by('-id')
-
-            total_clans = clans_qs.count()
-            clan_list = list(clans_qs[:12].values_list('name', flat=True))
+            # Get clans who earned this achievement (from pre-fetched data)
+            clans = clans_by_achievement[ach.id]
+            total_clans = len(clans)
+            # Sort by clan_id descending and take first 12 names
+            clan_list = [name for cid, name in sorted(clans, key=lambda x: x[0], reverse=True)[:12]]
 
             achievements_data.append({
                 'ingameid': ach.ingameid,
