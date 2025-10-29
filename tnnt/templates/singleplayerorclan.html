@@ -7,7 +7,7 @@
   <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/table-sort.js' %}"></script>
   <script type="text/javascript" src="{% static 'js/tooltip-position.js' %}"></script>
-  {% if trophy_grid and not isClan %}
+  {% if trophy_grid %}
     <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
   {% endif %}
 </head>
@@ -176,7 +176,7 @@
                 {% if combo.valid %}
                 data-role="{{ combo.role }}"
                 data-race-align="{{ row.race_align }}"
-                data-entity-type="player"
+                data-entity-type="{% if isClan %}clan{% else %}player{% endif %}"
                 data-entity-id="{{ player_or_clan.id }}"
                 {% endif %}>
               {% if not combo.valid %}
