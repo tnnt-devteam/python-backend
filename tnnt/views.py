@@ -560,6 +560,34 @@ class SinglePlayerOrClanView(TemplateView):
 
         # For clan pages, add info about which members earned each achievement
         if kwargs['isClan']:
+            # Pre-fetch all achievement-member relationships in bulk to avoid N+1 queries
+            from collections import defaultdict
+
+            # Get all completed achievements for clan members (1 query)
+            completed_ach_members = Game.objects.filter(
+                player__clan=clan,
+                achievements__isnull=False
+            ).values('achievements__id', 'player__name', 'player__id').distinct()
+
+            # Get all temp achievements for clan members (1 query)
+            temp_ach_members = Player.objects.filter(
+                clan=clan,
+                temp_achievements__isnull=False
+            ).values('temp_achievements__id', 'name', 'id').distinct()
+
+            # Build lookup dictionaries: achievement_id -> set of (player_id, player_name)
+            completed_lookup = defaultdict(set)
+            for item in completed_ach_members:
+                completed_lookup[item['achievements__id']].add(
+                    (item['player__id'], item['player__name'])
+                )
+
+            temp_lookup = defaultdict(set)
+            for item in temp_ach_members:
+                temp_lookup[item['temp_achievements__id']].add(
+                    (item['id'], item['name'])
+                )
+
             achievements_list = []
             for ach in achievements:
                 ach_dict = {
@@ -572,22 +600,12 @@ class SinglePlayerOrClanView(TemplateView):
                     'has_in_current_game': ach.has_in_current_game,
                 }
 
-                # Get clan members who have this achievement (most recent 12)
-                # Combine completed and temp achievements, counting unique members
-                members_with_ach = Player.objects.filter(
-                    clan=clan,
-                    game__achievements=ach
-                ).distinct()
+                # Get unique members who have this achievement (from pre-fetched data)
+                all_members = completed_lookup[ach.pk] | temp_lookup[ach.pk]
+                total_members = len(all_members)
 
-                members_with_temp = Player.objects.filter(
-                    clan=clan,
-                    temp_achievements=ach
-                ).distinct()
-
-                # Combine both querysets and get unique members
-                all_members = (members_with_ach | members_with_temp).distinct().order_by('-id')
-                total_members = all_members.count()
-                member_list = list(all_members[:12].values_list('name', flat=True))
+                # Sort by player_id descending and take first 12 names
+                member_list = [name for pid, name in sorted(all_members, key=lambda x: x[0], reverse=True)[:12]]
 
                 ach_dict['clan_members_count'] = total_members
                 ach_dict['clan_members_list'] = member_list
