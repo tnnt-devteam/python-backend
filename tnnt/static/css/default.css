@@ -1250,6 +1250,10 @@ table.sortable .sort-indicator {
     display: inline-block;
 }
 
+table.sortable tbody tr:hover {
+    background-color: rgba(34, 51, 85, 0.5);
+}
+
 /* === TOGGLE LINKS (for show all games) ============================
    ====================================================================*/
 

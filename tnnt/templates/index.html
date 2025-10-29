@@ -7,6 +7,7 @@
   <title>TNNT - The November NetHack Tournament</title>
   {% include "headlinks.html" %}
   <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}"></script>
 </head>
 
 <body>
@@ -185,14 +186,14 @@
 
 <h2>Last 10 Ascensions</h2>
 {% if last10wins|length > 0 %}
-  {% include "games_table.html" with games=last10wins ascview=True %}
+  {% include "games_table.html" with games=last10wins ascview=True sortable=True %}
 {% else %}
   <p>There are no ascensions yet</p>
 {% endif %}
 
 <h2>Last 10 Games</h2>
 {% if last10games|length > 0 %}
-  {% include "games_table.html" with games=last10games ascview=False %}
+  {% include "games_table.html" with games=last10games ascview=False sortable=True %}
 {% else %}
   <p>No games have been played yet</p>
 {% endif %}
