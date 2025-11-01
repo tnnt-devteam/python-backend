@@ -207,7 +207,7 @@ SITE_ADMINS = ['k2', 'aosdict']
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2025-10-22T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2025-11-01T00:00:00+00:00')
 TOURNAMENT_END   = datetime.fromisoformat('2025-12-01T00:00:00+00:00')
 
 # Main log file

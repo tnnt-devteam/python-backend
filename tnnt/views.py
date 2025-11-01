@@ -944,6 +944,7 @@ class ClanMgmtView(View):
         kwargs['invites'] = player.invites.all().order_by('name')
 
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
+        kwargs['clan_freeze_time'] = settings.CLAN_FREEZE_TIME
 
         if 'invite_member_form' not in kwargs:
             kwargs['invite_member_form'] = InviteMemberForm()

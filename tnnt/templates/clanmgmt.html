@@ -7,6 +7,7 @@
   <title>TNNT :: Clan Management</title>
   {% include "headlinks.html" %}
   <script type="text/javascript" src="{% static 'js/clan-confirm.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/countdown-timer.js' %}"></script>
   {% if trophy_grid %}
   <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
   {% endif %}
@@ -42,6 +43,13 @@
         Clan sign up begins 24 hours prior to tournament start on October 31st at 00:00 UTC,
         and ends on November 10th at 00:00 UTC.
       </p>
+    {% elif clan_freeze_time %}
+      <div class="freeze-countdown-container">
+        <p><strong>Clan freeze countdown:</strong></p>
+        <p class="freeze-countdown" data-freeze-time="{{ clan_freeze_time.isoformat }}">
+          Calculating...
+        </p>
+      </div>
     {% endif %}
 
     <p>You are not in a clan right now.</p>
@@ -94,6 +102,13 @@
             Clan sign up begins 24 hours prior to tournament start on October 31st at 00:00 UTC,
             and ends on November 10th at 00:00 UTC.
           </p>
+        {% elif clan_freeze_time %}
+          <div class="freeze-countdown-container">
+            <p><strong>Clan freeze countdown:</strong></p>
+            <p class="freeze-countdown" data-freeze-time="{{ clan_freeze_time.isoformat }}">
+              Calculating...
+            </p>
+          </div>
         {% endif %}
 
         <h3>{{clan.name}}</h3>

@@ -892,6 +892,25 @@ form.disguised-button button:hover {
     color: #ffcc00;
 }
 
+.freeze-countdown-container {
+    background-color: #224;
+    border-radius: 5px;
+    padding: 0.75em 1em;
+    margin: 1em 0;
+    border-left: 4px solid #eb0;
+}
+
+.freeze-countdown-container p {
+    margin: 0.25em 0;
+}
+
+.freeze-countdown {
+    font-size: 1.1em;
+    color: #eb0;
+    font-weight: bold;
+    font-family: monospace;
+}
+
 /*====================================================================
   === TROPHY PROGRESS TRACKER ========================================
   ====================================================================*/
