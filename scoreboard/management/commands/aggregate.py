@@ -319,17 +319,10 @@ def aggregatePlayerData():
         plr.games_over_1000_turns = gamesby_plr.filter(turns__gte=1000).count()
         # This is the source of truth for "what is a scummed game".
         # Scummed games are defined as:
-        # - (death in ('quit', 'escaped') and turns <= 100) OR
-        # - (death contains 'slipped' and turns <= 300 and player is 'post163')
-        if plr.name == 'post163':
-            plr.games_scummed = gamesby_plr.filter(
-                Q(death__in=('quit','escaped'), turns__lte=100) |
-                Q(death__icontains='slipped', turns__lte=300)
-            ).count()
-        else:
-            plr.games_scummed = gamesby_plr.filter(
-                death__in=('quit','escaped'),
-                turns__lte=100).count()
+        # - (death in ('quit', 'escaped') and turns <= 100)
+        plr.games_scummed = gamesby_plr.filter(
+            death__in=('quit', 'escaped'),
+            turns__lte=100).count()
 
         # a more complex aggregate
         # different from max_achieves_game; this is the total number of

@@ -850,15 +850,11 @@ class ScummedGamesView(TemplateView):
     def get_context_data(self, **kwargs):
         # Get all players with their scummed game counts
         # Scummed games are defined as:
-        # - (death in ('quit', 'escaped') and turns <= 100) OR
-        # - (death contains 'slipped' and turns <= 300 and player is 'post163')
+        # - (death in ('quit', 'escaped') and turns <= 100)
         from django.db.models import Q, Count, F, Sum
 
         # Define the scummed criteria
-        scummed_criteria = (
-            Q(death__in=['quit', 'escaped'], turns__lte=100) |
-            Q(death__icontains='slipped', turns__lte=300, player__name='post163')
-        )
+        scummed_criteria = Q(death__in=['quit', 'escaped'], turns__lte=100)
 
         # Get total scummed games for percentage calculation
         total_scummed = Game.objects.filter(scummed_criteria).count()
@@ -893,10 +889,7 @@ class ScummedGamesView(TemplateView):
         players_data = Player.objects.annotate(
             scummed_count=Count(
                 'game',
-                filter=(
-                    Q(game__death__in=['quit', 'escaped'], game__turns__lte=100) |
-                    Q(game__death__icontains='slipped', game__turns__lte=300, name='post163')
-                )
+                filter=Q(game__death__in=['quit', 'escaped'], game__turns__lte=100)
             )
         ).filter(
             scummed_count__gt=0  # Only include players with scummed games
