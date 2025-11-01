@@ -939,7 +939,8 @@ class ClanMgmtView(View):
         if clan is not None:
             kwargs['clan'] = clan
             kwargs['members'] = Player.objects.filter(clan=clan).order_by('-clan_admin','name')
-            kwargs['invitees'] = clan.invitees.all().order_by('name')
+            # Exclude players who are already members from the invitees list
+            kwargs['invitees'] = clan.invitees.exclude(clan=clan).order_by('name')
         kwargs['invites'] = player.invites.all().order_by('name')
 
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
@@ -1276,13 +1277,11 @@ class ClanMgmtView(View):
         invalidate_trophy_grid_cache(player)
         invalidate_trophy_grid_cache(newclan)
 
-        # A bit questionable whether the invite should be left in place or
-        # removed here, but we decided that if a player leaves or is kicked from
-        # the clan, it's cleaner if they have to ask for the invite again
-        # post 2021 TODO: hothraxxa and a couple others reported inviting
-        # someone and then them still showing up as an invite even after they
-        # accepted
+        # Remove the invite relationship from both sides
+        # This is needed so the player doesn't show up in the invitees list
+        # after joining the clan
         player.invites.remove(newclan)
+        newclan.invitees.remove(player)
         logger.info('%s accepted invite to clan %s',
                     player.name, newclan.name)
 
