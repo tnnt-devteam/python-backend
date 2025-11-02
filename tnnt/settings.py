@@ -81,7 +81,14 @@ if not DEBUG:
 
 # Required when using Django version 4.x
 # CSRF_TRUSTED_ORIGINS = []
-CSRF_TRUSTED_ORIGINS = ['https://tnnt.org']
+CSRF_TRUSTED_ORIGINS = ['https://tnnt.org', 'https://www.tnnt.org']
+
+# Secure cookie settings for HTTPS in production
+if not DEBUG:
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_SAMESITE = 'Lax'
+    SESSION_COOKIE_SAMESITE = 'Lax'
 
 ROOT_URLCONF = 'tnnt.urls'
 
