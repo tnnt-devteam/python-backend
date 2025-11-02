@@ -5,6 +5,7 @@ from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from scoreboard.models import *
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.cache import cache
 from . import hardfought_utils # find_player
 from . import dumplog_utils # format_dumplog
 from . import admin_utils
@@ -1627,9 +1628,60 @@ class AdminPanelView(View):
         # Get current site settings
         site_settings = admin_utils.get_site_settings()
 
+        # Check if manual refresh was requested
+        refresh = request.GET.get('refresh', False)
+
+        # Cache keys
+        cache_key_multi = 'admin_panel_multi_accounts'
+        cache_key_scummers = 'admin_panel_scummers'
+        cache_timeout = 300  # 5 minutes
+
+        # Get multi-account detection data (cached or fresh)
+        if refresh:
+            cache.delete(cache_key_multi)
+            multi_accounts = None
+        else:
+            multi_accounts = cache.get(cache_key_multi)
+
+        if multi_accounts is None:
+            logger.info('Cache miss for multi_accounts, querying all servers...')
+            multi_accounts = hardfought_utils.get_multi_account_ips()
+            cache.set(cache_key_multi, multi_accounts, cache_timeout)
+            logger.info('Cached multi_accounts data for %d seconds', cache_timeout)
+        else:
+            logger.info('Cache hit for multi_accounts')
+
+        # Get excessive scumming data (cached or fresh)
+        if refresh:
+            cache.delete(cache_key_scummers)
+            scummers_list = None
+        else:
+            scummers_list = cache.get(cache_key_scummers)
+
+        if scummers_list is None:
+            logger.info('Cache miss for scummers, querying database...')
+            scummers = Player.objects.filter(games_scummed__gte=100) \
+                .select_related('clan') \
+                .order_by('-games_scummed')
+
+            # Add IP and warning level to each scummer
+            scummers_list = []
+            for player in scummers:
+                player.last_ip = hardfought_utils.get_player_last_ip(player.name)
+                player.warning_level = 'serious' if player.games_scummed >= 500 else 'warning'
+                scummers_list.append(player)
+
+            cache.set(cache_key_scummers, scummers_list, cache_timeout)
+            logger.info('Cached scummers data for %d seconds', cache_timeout)
+        else:
+            logger.info('Cache hit for scummers')
+
         context = {
             'site_settings': site_settings,
             'is_admin': True,
+            'multi_accounts': multi_accounts,
+            'scummers': scummers_list,
+            'cache_refreshed': refresh,
         }
 
         return render(request, self.template_name, context)

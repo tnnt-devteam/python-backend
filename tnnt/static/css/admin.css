@@ -1,8 +1,9 @@
 /* Admin Panel Styles */
 
 .admin-panel {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 20px auto;
+  padding: 0 20px;
 }
 
 .admin-header {
@@ -14,6 +15,28 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.admin-header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.refresh-button {
+  background-color: #2d5;
+  color: #000;
+  padding: 5px 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.refresh-button:hover {
+  background-color: #3e6;
+  color: #000;
 }
 
 .admin-logout-form {
@@ -34,6 +57,17 @@
 .admin-logout:hover {
   background-color: #e44;
   color: #fff;
+}
+
+.cache-refresh-notice {
+  background-color: #162;
+  border: 2px solid #2d5;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  color: #2d5;
+  font-weight: bold;
+  text-align: center;
 }
 
 .setting-card {
@@ -122,7 +156,9 @@
   text-align: center;
   color: #888;
   font-size: 0.85em;
-  margin-top: 15px;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #444;
 }
 
 .warning-box {
@@ -174,4 +210,150 @@
 
 .back-link:hover {
   background-color: #555;
+}
+
+/* Admin Monitoring Sections */
+.admin-monitoring-section {
+  background-color: #222;
+  border: 2px solid #444;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.monitoring-summary {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #fd0;
+  cursor: pointer;
+  list-style: none;
+  padding: 5px 0;
+}
+
+.monitoring-summary:hover {
+  color: #fc0;
+}
+
+.count-badge {
+  display: inline-block;
+  background-color: #444;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
+.monitoring-description {
+  color: #aaa;
+  font-size: 0.9em;
+  font-style: italic;
+  margin: 10px 0 15px 0;
+  padding-left: 0;
+}
+
+.monitoring-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed;
+}
+
+.monitoring-table th {
+  background-color: #333;
+  color: #fd0;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: bold;
+  border-bottom: 2px solid #555;
+  cursor: pointer;
+}
+
+.monitoring-table th:hover {
+  background-color: #444;
+}
+
+.monitoring-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #333;
+  color: #ccc;
+}
+
+.monitoring-table tr:hover {
+  background-color: rgba(34, 51, 85, 0.5);
+}
+
+/* Warning level styling for scummers */
+.warning-warning {
+  background-color: rgba(136, 102, 0, 0.2);
+  border-left: 3px solid #fd0;
+}
+
+.warning-serious {
+  background-color: rgba(136, 34, 0, 0.2);
+  border-left: 3px solid #d33;
+}
+
+.warning-serious .scum-count {
+  color: #f66;
+  font-weight: bold;
+}
+
+/* Table cell styling */
+.monospace {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.centered {
+  text-align: center;
+}
+
+.username-list {
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+.clan-list {
+  font-size: 0.9em;
+  word-break: break-word;
+}
+
+.ip-cell {
+  word-break: break-all;
+  font-size: 0.9em;
+}
+
+.server-cell {
+  font-size: 0.9em;
+}
+
+.date-cell {
+  font-size: 0.9em;
+  white-space: nowrap;
+}
+
+.player-link,
+.clan-link {
+  color: #99b;
+  text-decoration: none;
+}
+
+.player-link:hover,
+.clan-link:hover {
+  color: #aac;
+  text-decoration: underline;
+}
+
+.no-clan {
+  color: #666;
+  font-style: italic;
+}
+
+.no-data {
+  color: #888;
+  font-style: italic;
+  padding: 15px;
+  text-align: center;
 }

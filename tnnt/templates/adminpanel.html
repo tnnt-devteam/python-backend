@@ -7,6 +7,7 @@
   <title>TNNT :: Admin Panel</title>
   {% include "headlinks.html" %}
   <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" />
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
   <script src="{% static 'js/admin.js' %}" defer></script>
 </head>
 
@@ -19,11 +20,20 @@
 <article class="admin-panel">
   <div class="admin-header">
     <div><strong>Site Administrator:</strong> {{ user.username }}</div>
-    <form method="post" action="{% url 'logout' %}" class="admin-logout-form">
-      {% csrf_token %}
-      <button type="submit" class="admin-logout">Logout</button>
-    </form>
+    <div class="admin-header-actions">
+      <a href="?refresh=1" class="refresh-button">&#x21bb; Refresh Data</a>
+      <form method="post" action="{% url 'logout' %}" class="admin-logout-form">
+        {% csrf_token %}
+        <button type="submit" class="admin-logout">Logout</button>
+      </form>
+    </div>
   </div>
+
+  {% if cache_refreshed %}
+  <div class="cache-refresh-notice">
+    &#10004; Data refreshed from all servers
+  </div>
+  {% endif %}
 
   <!-- Login Control -->
   <div class="setting-card">
@@ -86,12 +96,93 @@
     </form>
   </div>
 
+  <!-- Multi-Account Detection -->
+  <details class="admin-monitoring-section">
+    <summary class="monitoring-summary">
+      Multi-Account Detection
+      <span class="count-badge">{{ multi_accounts|length }}</span>
+    </summary>
+    <div class="monitoring-description">
+      Shows IP addresses with 2+ accounts that connected during the tournament (November 2025).
+    </div>
+    {% if multi_accounts %}
+    <table class="sortable monitoring-table">
+      <thead>
+        <tr>
+          <th>IP Address</th>
+          <th>Count</th>
+          <th>Usernames</th>
+          <th>Clans</th>
+          <th>Servers</th>
+          <th>Last Seen</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in multi_accounts %}
+        <tr>
+          <td class="monospace ip-cell">{{ entry.ip_address }}</td>
+          <td class="centered">{{ entry.account_count }}</td>
+          <td class="username-list">{{ entry.usernames|join:", " }}</td>
+          <td class="clan-list">{{ entry.clans|join:", " }}</td>
+          <td class="centered server-cell">{{ entry.servers }}</td>
+          <td class="date-cell">{{ entry.last_seen }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="no-data">No multi-account IPs detected during tournament period.</div>
+    {% endif %}
+  </details>
+
+  <!-- Excessive Scumming Detection -->
+  <details class="admin-monitoring-section">
+    <summary class="monitoring-summary">
+      Excessive Scumming Detection
+      <span class="count-badge">{{ scummers|length }}</span>
+    </summary>
+    <div class="monitoring-description">
+      Shows players with 100+ scummed games. Players with 500+ games are highlighted in red.
+    </div>
+    {% if scummers %}
+    <table class="sortable monitoring-table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Scummed Games</th>
+          <th>Last IP</th>
+          <th>Clan</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for player in scummers %}
+        <tr class="warning-{{ player.warning_level }}">
+          <td><a href="/player/{{ player.name }}" class="player-link">{{ player.name }}</a></td>
+          <td class="centered scum-count">{{ player.games_scummed }}</td>
+          <td class="monospace">{{ player.last_ip|default:"Unknown" }}</td>
+          <td>
+            {% if player.clan %}
+              <a href="/clan/{{ player.clan.name }}" class="clan-link">{{ player.clan.name }}</a>
+            {% else %}
+              <span class="no-clan">None</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="no-data">No players with 100+ scummed games detected.</div>
+    {% endif %}
+  </details>
+
   <div class="last-updated">
     Last updated: {{ site_settings.updated_at|date:"Y-m-d H:i" }} UTC
     {% if site_settings.updated_by %}
       by <strong>{{ site_settings.updated_by }}</strong>
     {% endif %}
   </div>
+
 </article>
 
 </body>

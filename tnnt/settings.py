@@ -210,7 +210,7 @@ CLAN_FREEZE_TIME = datetime.fromisoformat(clan_freeze_env) if clan_freeze_env el
 
 # Site administrators (player names from dgamelaunch database)
 # These users can access the admin panel and control site settings
-SITE_ADMINS = ['k2', 'aosdict']
+SITE_ADMINS = ['k2', 'aosdict', 'aoei']
 
 # Tournament start/end times
 

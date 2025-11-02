@@ -1,9 +1,12 @@
 from django.contrib.auth.backends import BaseBackend
 from django.contrib.auth.models import User
 from scoreboard.models import Player
-from .settings import DGL_DATABASE_PATH
+from .settings import DGL_DATABASE_PATH, TOURNAMENT_START, TOURNAMENT_END
 import sqlite3
 from passlib.context import CryptContext
+from datetime import datetime
+import subprocess
+import json
 import logging
 
 logger = logging.getLogger(__name__)  # use module-specific logger
@@ -20,6 +23,213 @@ def get_dgl_cursor():
     dgl_conn = sqlite3.connect('file:' + DGL_DATABASE_PATH + '?mode=ro', uri=True)
     dgl_conn.row_factory = sqlite3.Row
     return dgl_conn.cursor()
+
+def get_ip_cursor():
+    """Get cursor for dgamelaunch IP tracking database (read-only)"""
+    ip_db_path = DGL_DATABASE_PATH.replace('dgamelaunch.db', 'dgamelaunch_ip.db')
+    ip_conn = sqlite3.connect('file:' + ip_db_path + '?mode=ro', uri=True)
+    ip_conn.row_factory = sqlite3.Row
+    return ip_conn.cursor()
+
+def query_remote_ip_db(server, query, params=None):
+    """
+    Query IP database on a remote server via SSH.
+    Args:
+        server: 'eu' or 'au' (or 'us' for local, though local uses direct sqlite)
+        query: SQL query string
+        params: Optional tuple of query parameters
+    Returns:
+        List of dicts with query results
+    """
+    if server not in ['eu', 'au', 'us']:
+        logger.error('Invalid server: %s', server)
+        return []
+
+    # For US server, use local database
+    if server == 'us':
+        try:
+            cursor = get_ip_cursor()
+            if params:
+                cursor.execute(query, params)
+            else:
+                cursor.execute(query)
+            return [dict(row) for row in cursor.fetchall()]
+        except sqlite3.Error as e:
+            logger.error('Error querying local IP database: %s', str(e))
+            return []
+
+    # For remote servers, use SSH
+    try:
+        db_path = '/opt/nethack/chroot/dgldir/dgamelaunch_ip.db'
+
+        # Build SSH command with sqlite3
+        # Use .mode json for easy parsing
+        sqlite_cmd = f'sqlite3 -json {db_path} "{query}"'
+
+        # Replace query parameters (sqlite3 CLI doesn't support parameterized queries)
+        if params:
+            # Escape parameters for SQL injection safety
+            escaped_params = [str(p).replace("'", "''") for p in params]
+            # Replace ? with actual values
+            for param in escaped_params:
+                query = query.replace('?', f"'{param}'", 1)
+            sqlite_cmd = f'sqlite3 -json {db_path} "{query}"'
+
+        ssh_command = [
+            'ssh',
+            '-o', 'ConnectTimeout=10',
+            '-o', 'BatchMode=yes',
+            f'nhsync@{server}.hardfought.org',
+            sqlite_cmd
+        ]
+
+        result = subprocess.run(
+            ssh_command,
+            capture_output=True,
+            text=True,
+            timeout=30
+        )
+
+        if result.returncode != 0:
+            logger.error('SSH query to %s failed: %s', server, result.stderr)
+            return []
+
+        # Parse JSON output
+        if result.stdout.strip():
+            return json.loads(result.stdout)
+        return []
+
+    except subprocess.TimeoutExpired:
+        logger.error('SSH query to %s timed out', server)
+        return []
+    except json.JSONDecodeError as e:
+        logger.error('Failed to parse JSON from %s: %s', server, str(e))
+        return []
+    except Exception as e:
+        logger.error('Error querying %s IP database: %s', server, str(e))
+        return []
+
+def get_multi_account_ips():
+    """
+    Get list of IP addresses with 2+ accounts that connected during tournament.
+    Queries all three servers (US, EU, AU) and merges results.
+    Returns list of dicts with: ip_address, account_count, usernames, last_seen, servers
+    """
+    try:
+        # Convert tournament dates to Unix timestamps
+        tournament_start_ts = int(TOURNAMENT_START.timestamp())
+        tournament_end_ts = int(TOURNAMENT_END.timestamp())
+
+        # Query all three servers
+        query = """
+            SELECT username, ip_address, last_seen
+            FROM user_ip_history
+            WHERE last_seen >= {start} AND last_seen < {end}
+            ORDER BY ip_address, username
+        """.format(start=tournament_start_ts, end=tournament_end_ts)
+
+        all_rows = []
+        servers = ['us', 'eu', 'au']
+
+        for server in servers:
+            logger.info('Querying %s server for multi-account IPs', server)
+            rows = query_remote_ip_db(server, query)
+            for row in rows:
+                row['server'] = server
+            all_rows.extend(rows)
+            logger.info('Got %d records from %s', len(rows), server)
+
+        # Group by IP address and username to find unique user-IP pairs
+        ip_groups = {}
+        for row in all_rows:
+            ip = row['ip_address']
+            username = row['username']
+            server = row['server']
+
+            if ip not in ip_groups:
+                ip_groups[ip] = {
+                    'usernames': set(),
+                    'last_seen': row['last_seen'],
+                    'servers': set()
+                }
+
+            ip_groups[ip]['usernames'].add(username)
+            ip_groups[ip]['servers'].add(server)
+
+            # Keep most recent last_seen
+            if row['last_seen'] > ip_groups[ip]['last_seen']:
+                ip_groups[ip]['last_seen'] = row['last_seen']
+
+        # Filter to only IPs with 2+ different accounts
+        multi_accounts = []
+        for ip, data in ip_groups.items():
+            if len(data['usernames']) >= 2:
+                usernames_sorted = sorted(list(data['usernames']))
+
+                # Get clan information for each username
+                from scoreboard.models import Player
+                clans = []
+                for username in usernames_sorted:
+                    try:
+                        player = Player.objects.select_related('clan').get(name=username)
+                        clan_name = player.clan.name if player.clan else 'None'
+                        clans.append(clan_name)
+                    except Player.DoesNotExist:
+                        clans.append('None')
+
+                multi_accounts.append({
+                    'ip_address': ip,
+                    'account_count': len(data['usernames']),
+                    'usernames': usernames_sorted,
+                    'clans': clans,
+                    'servers': ', '.join(sorted([s.upper() for s in data['servers']])),
+                    'last_seen': datetime.fromtimestamp(
+                        data['last_seen']
+                    ).strftime('%Y-%m-%d %H:%M')
+                })
+
+        # Sort by account count (descending), then by IP
+        multi_accounts.sort(key=lambda x: (-x['account_count'], x['ip_address']))
+
+        logger.info('Found %d IPs with multiple accounts', len(multi_accounts))
+        return multi_accounts
+
+    except Exception as e:
+        logger.error('Error in get_multi_account_ips: %s', str(e))
+        return []
+
+def get_player_last_ip(username):
+    """
+    Get most recent IP address for a player across all servers.
+    Checks US, EU, and AU servers and returns the most recent IP.
+    """
+    try:
+        # Query to get most recent IP for this user
+        query = """
+            SELECT ip_address, last_seen
+            FROM user_ip_history
+            WHERE username = '{user}'
+            ORDER BY last_seen DESC
+            LIMIT 1
+        """.format(user=username.replace("'", "''"))
+
+        most_recent_ip = None
+        most_recent_time = 0
+
+        # Check all three servers
+        for server in ['us', 'eu', 'au']:
+            rows = query_remote_ip_db(server, query)
+            if rows and len(rows) > 0:
+                row = rows[0]
+                if row['last_seen'] > most_recent_time:
+                    most_recent_time = row['last_seen']
+                    most_recent_ip = row['ip_address']
+
+        return most_recent_ip
+
+    except Exception as e:
+        logger.error('Error getting IP for user %s: %s', username, str(e))
+        return None
 
 # Function that looks up a player in first the Player table, then if not found
 # there then in dgamelaunch database. If found in dgamelaunch, create the player
