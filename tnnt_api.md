@@ -253,9 +253,9 @@ For high-volume applications, consider:
 
 ## Data Freshness
 
-- Game data is polled from game servers every 10 minutes
-- Statistics are aggregated hourly
-- Expect 10-70 minute delay between game completion and API availability
+- Game data is polled from game servers every 5 minutes
+- Statistics are aggregated immediately after polling completes
+- Expect up to 5 minute delay between game completion and API availability
 
 ## Example Integrations
 
@@ -291,7 +291,7 @@ def lookup_player(name):
 async function getLeaderboards() {
     const response = await fetch('https://tnnt.org/api/leaderboards/');
     const data = await response.json();
-    
+
     // Display most wins leaderboard
     const winsList = document.getElementById('wins-leaderboard');
     data.players.most_wins.forEach(player => {
