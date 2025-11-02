@@ -150,6 +150,7 @@
         <tr>
           <th>Player</th>
           <th>Scummed Games</th>
+          <th>Peak Games/Sec</th>
           <th>Last IP</th>
           <th>Clan</th>
         </tr>
@@ -159,6 +160,13 @@
         <tr class="warning-{{ player.warning_level }}">
           <td><a href="/player/{{ player.name }}" class="player-link">{{ player.name }}</a></td>
           <td class="centered scum-count">{{ player.games_scummed }}</td>
+          <td class="centered">
+            {% if player.peak_scum_rate %}
+              {{ player.peak_scum_rate }}
+            {% else %}
+              <span class="no-data">N/A</span>
+            {% endif %}
+          </td>
           <td class="monospace">{{ player.last_ip|default:"Unknown" }}</td>
           <td>
             {% if player.clan %}

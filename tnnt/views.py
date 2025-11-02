@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.views import View
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
+from django.db.models.functions import TruncSecond
 from scoreboard.models import *
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
@@ -1664,11 +1665,33 @@ class AdminPanelView(View):
                 .select_related('clan') \
                 .order_by('-games_scummed')
 
-            # Add IP and warning level to each scummer
+            # Add IP, warning level, and scum rate to each scummer
             scummers_list = []
             for player in scummers:
-                player.last_ip = hardfought_utils.get_player_last_ip(player.name)
-                player.warning_level = 'serious' if player.games_scummed >= 500 else 'warning'
+                player.last_ip = (
+                    hardfought_utils.get_player_last_ip(player.name)
+                )
+                player.warning_level = (
+                    'serious' if player.games_scummed >= 500 else 'warning'
+                )
+
+                # Calculate peak games per second (max burst rate)
+                # Group scummed games by second and find the maximum
+                peak_burst = Game.objects.filter(
+                    player=player,
+                    death__in=['quit', 'escaped'],
+                    turns__lte=100
+                ).annotate(
+                    second=TruncSecond('starttime')
+                ).values('second').annotate(
+                    count=Count('id')
+                ).order_by('-count').first()
+
+                if peak_burst:
+                    player.peak_scum_rate = peak_burst['count']
+                else:
+                    player.peak_scum_rate = None
+
                 scummers_list.append(player)
 
             cache.set(cache_key_scummers, scummers_list, cache_timeout)
