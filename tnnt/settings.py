@@ -28,10 +28,9 @@ SECRET_KEY = os.environ['SECRET_KEY']
 DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['tnnt.org','www.tnnt.org']
+# Include localhost for IRC bot API access
+ALLOWED_HOSTS = ['tnnt.org', 'www.tnnt.org', 'localhost', '127.0.0.1']
 if DEBUG:
-    ALLOWED_HOSTS.append('localhost')
-    ALLOWED_HOSTS.append('127.0.0.1')
     # Required for debug context variable in templates
     INTERNAL_IPS = ['127.0.0.1', 'localhost']
 

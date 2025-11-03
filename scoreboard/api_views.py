@@ -5,6 +5,7 @@ from django.db.models import F
 from datetime import datetime, timedelta
 from django_ratelimit.decorators import ratelimit
 from django.utils.decorators import method_decorator
+from functools import wraps
 from scoreboard.models import Player, Clan, Game, Achievement
 from .serializers import (
     PlayerListSerializer, PlayerDetailSerializer, ClanSerializer,
@@ -12,11 +13,30 @@ from .serializers import (
 )
 
 
+def ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'):
+    """Rate limit decorator that excludes localhost"""
+    def decorator(func):
+        @wraps(func)
+        def wrapper(request, *args, **kwargs):
+            # Skip rate limiting for localhost
+            client_ip = request.META.get('REMOTE_ADDR', '')
+            if client_ip in ['127.0.0.1', '::1', 'localhost']:
+                return func(request, *args, **kwargs)
+            # Apply rate limiting for other IPs
+            return ratelimit(key=key, rate=rate, method=method)(func)(
+                request, *args, **kwargs
+            )
+        return wrapper
+    return decorator
+
+
 @method_decorator(
-    ratelimit(key='ip', rate='100/m', method='GET'), name='list'
+    ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'),
+    name='list'
 )
 @method_decorator(
-    ratelimit(key='ip', rate='100/m', method='GET'), name='retrieve'
+    ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'),
+    name='retrieve'
 )
 class PlayerViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = (
@@ -79,10 +99,12 @@ class PlayerViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 @method_decorator(
-    ratelimit(key='ip', rate='100/m', method='GET'), name='list'
+    ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'),
+    name='list'
 )
 @method_decorator(
-    ratelimit(key='ip', rate='100/m', method='GET'), name='retrieve'
+    ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'),
+    name='retrieve'
 )
 class ClanViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Clan.objects.prefetch_related('player_set', 'trophies')
@@ -92,7 +114,9 @@ class ClanViewSet(viewsets.ReadOnlyModelViewSet):
 
 
 class LeaderboardView(views.APIView):
-    @method_decorator(ratelimit(key='ip', rate='100/m', method='GET'))
+    @method_decorator(
+        ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET')
+    )
     def get(self, request):
         player_boards = {
             'most_wins': list(
@@ -129,7 +153,9 @@ class LeaderboardView(views.APIView):
 
 
 class RecentEventsView(views.APIView):
-    @method_decorator(ratelimit(key='ip', rate='100/m', method='GET'))
+    @method_decorator(
+        ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET')
+    )
     def get(self, request):
         cutoff = datetime.now() - timedelta(hours=1)
 
@@ -157,7 +183,10 @@ class RecentEventsView(views.APIView):
 
 
 class ScoreboardView(views.APIView):
-    @method_decorator(ratelimit(key='ip', rate='100/m', method='GET'))
+
+    @method_decorator(
+        ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET')
+    )
     def get(self, request):
         players = (
             Player.objects.filter(total_games__gt=0)
@@ -165,14 +194,15 @@ class ScoreboardView(views.APIView):
         )
         clans = Clan.objects.all().order_by('-wins', 'name')
 
-        player_data = PlayerListSerializer(players[:50], many=True).data
-        clan_data = ClanSerializer(clans[:20], many=True).data
+        # Return all players and clans
+        player_data = PlayerListSerializer(players, many=True).data
+        clan_data = ClanSerializer(clans, many=True).data
 
         last_game = Game.objects.order_by('-endtime').first()
         last_updated = last_game.endtime if last_game else None
 
         return Response({
-            'tournament': 'TNNT 2024',
+            'tournament': f'TNNT {datetime.now().year}',
             'players': player_data,
             'clans': clan_data,
             'last_updated': last_updated
