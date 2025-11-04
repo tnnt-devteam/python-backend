@@ -174,13 +174,14 @@ def obtainTempAchievements():
         # previously did), so files from simultaneous games on multiple servers
         # are additive, instead of only showing the last one in the list.
 
-        with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
-            lines = file.readlines()
+        try:
+            with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
+                lines = file.readlines()
 
-            if len(lines) != UNIQ_ACHFIELDS:
-                logger.warning('Temp ach file %s is malformed with wrong number of lines'
-                               % (fname))
-                continue # for fname in filelist
+                if len(lines) != UNIQ_ACHFIELDS:
+                    logger.warning('Temp ach file %s is malformed with wrong number of lines'
+                                   % (fname))
+                    continue # for fname in filelist
 
             # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
             # Assumption: file contents have tnntachieve0 as a number on the
@@ -193,6 +194,13 @@ def obtainTempAchievements():
             for ach in ALL_ACHIEVEMENTS:
                 if achdict[ach.xlogfield] & (1 << ach.bit):
                     player.temp_achievements.add(ach)
+        except FileNotFoundError:
+            # File was deleted between directory listing and open (TOCTOU).
+            # This is expected in multi-process environments where games
+            # end and temp achievement files are removed. Skip and continue.
+            logger.info('Ignoring temp achievements from file %s - '
+                        'file deleted during processing' % (fname))
+            continue
 
 # Determine and award trophies to a player or clan.
 # ASSUMPTION: The player's LeaderboardBaseFields are already computed.
