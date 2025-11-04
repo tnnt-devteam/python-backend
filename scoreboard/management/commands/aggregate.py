@@ -183,17 +183,17 @@ def obtainTempAchievements():
                                    % (fname))
                     continue # for fname in filelist
 
-            # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
-            # Assumption: file contents have tnntachieve0 as a number on the
-            # first line, then subsequent lines are tnntachieve1, tnntachieve2, ...
-            achdict = {}
-            tnntachieveX = 0
-            for L in lines:
-                achdict['tnntachieve' + str(tnntachieveX)] = int(L, 16)
-                tnntachieveX += 1
-            for ach in ALL_ACHIEVEMENTS:
-                if achdict[ach.xlogfield] & (1 << ach.bit):
-                    player.temp_achievements.add(ach)
+                # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
+                # Assumption: file contents have tnntachieve0 as a number on the
+                # first line, then subsequent lines are tnntachieve1, tnntachieve2, ...
+                achdict = {}
+                tnntachieveX = 0
+                for L in lines:
+                    achdict['tnntachieve' + str(tnntachieveX)] = int(L, 16)
+                    tnntachieveX += 1
+                for ach in ALL_ACHIEVEMENTS:
+                    if achdict[ach.xlogfield] & (1 << ach.bit):
+                        player.temp_achievements.add(ach)
         except FileNotFoundError:
             # File was deleted between directory listing and open (TOCTOU).
             # This is expected in multi-process environments where games
