@@ -1575,7 +1575,10 @@ class ArchiveFileView(View):
         if not real_path.startswith(real_base):
             raise Http404("Invalid archive path")
 
-        # Serve the file
+        # Serve the file (not directories)
+        if os.path.isdir(file_path):
+            raise Http404("Archive file not found")
+
         try:
             return FileResponse(
                 open(file_path, 'rb'),
