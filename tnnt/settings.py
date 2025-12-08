@@ -204,7 +204,7 @@ MAX_CLAN_PLAYERS = 12
 
 # Clan freeze (no new clan creation / joining clans)
 # Can be disabled by setting CLAN_FREEZE_TIME environment variable to empty string
-clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2025-11-10T00:00:00+00:00')
+clan_freeze_env = os.environ.get('CLAN_FREEZE_TIME', '2026-11-10T00:00:00+00:00')
 CLAN_FREEZE_TIME = datetime.fromisoformat(clan_freeze_env) if clan_freeze_env else None
 
 # Site administrators (player names from dgamelaunch database)
@@ -213,8 +213,8 @@ SITE_ADMINS = ['k2', 'aosdict', 'aoei']
 
 # Tournament start/end times
 
-TOURNAMENT_START = datetime.fromisoformat('2025-11-01T00:00:00+00:00')
-TOURNAMENT_END   = datetime.fromisoformat('2025-12-01T00:00:00+00:00')
+TOURNAMENT_START = datetime.fromisoformat('2026-11-01T00:00:00+00:00')
+TOURNAMENT_END   = datetime.fromisoformat('2026-12-01T00:00:00+00:00')
 
 # Main log file
 # Use absolute path for production. Relative paths (e.g., "tnnt.log")
