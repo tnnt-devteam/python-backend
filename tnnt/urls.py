@@ -34,6 +34,8 @@ urlpatterns = [
     path('clanmgmt', tnntviews.ClanMgmtView.as_view(), name='clanmgmt'),
     path('admin-panel', tnntviews.AdminPanelView.as_view(), name='adminpanel'),
     path('logins-disabled', tnntviews.LoginsDisabledView.as_view(), name='logins-disabled'),
+    # override the stock auth login view (must precede the include below)
+    path('login/', tnntviews.TnntLoginView.as_view(), name='login'),
     path('', include('django.contrib.auth.urls')),
 
     # API endpoints

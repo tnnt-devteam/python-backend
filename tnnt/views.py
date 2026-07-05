@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.views import View
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from django.db.models.functions import TruncSecond
@@ -1756,3 +1757,22 @@ class LoginsDisabledView(TemplateView):
     Page shown when non-admin logins are disabled
     """
     template_name = 'logins_disabled.html'
+
+class TnntLoginView(LoginView):
+    """
+    Standard Django login view, except that while non-admin logins are
+    disabled, login attempts by non-admins redirect straight to the
+    logins disabled page without being authenticated. Authenticating
+    them would create User/Player records as a side effect, making
+    blocked players show up on the players page.
+    """
+    def post(self, request, *args, **kwargs):
+        if not admin_utils.get_site_settings().login_enabled:
+            username = request.POST.get('username', '')
+            if username not in settings.SITE_ADMINS:
+                logger.info(
+                    'Blocked login attempt by %s: non-admin logins disabled',
+                    username
+                )
+                return HttpResponseRedirect('/logins-disabled')
+        return super().post(request, *args, **kwargs)

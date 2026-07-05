@@ -1,7 +1,9 @@
 from django.contrib.auth.backends import BaseBackend
 from django.contrib.auth.models import User
-from scoreboard.models import Player
-from .settings import DGL_DATABASE_PATH, TOURNAMENT_START, TOURNAMENT_END
+from scoreboard.models import Player, SiteSettings
+from .settings import (
+    DGL_DATABASE_PATH, TOURNAMENT_START, TOURNAMENT_END, SITE_ADMINS
+)
 import sqlite3
 from passlib.context import CryptContext
 from datetime import datetime
@@ -293,6 +295,16 @@ class HdfAuthBackend(BaseBackend):
         # success! this is the correct dgl password. look up the user or create
         # if doesn't exist (TNNT login and registration are one and the same)
         logger.info('%s authenticated against dgl password', username)
+
+        # If non-admin logins are disabled, reject the login here, before
+        # any User/Player records get created; otherwise a blocked login
+        # attempt would still register the player on the players page.
+        if username not in SITE_ADMINS \
+                and not SiteSettings.load().login_enabled:
+            logger.info('%s login rejected: non-admin logins are disabled',
+                        username)
+            return None
+
         try:
             user = User.objects.get(username=username)
         except User.DoesNotExist:
