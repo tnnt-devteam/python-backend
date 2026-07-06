@@ -14,6 +14,7 @@ from . import admin_utils
 from . import settings
 from datetime import datetime, timezone
 import logging
+import re
 from tnnt import uniqdeaths
 
 logger = logging.getLogger() # use root logger
@@ -1218,7 +1219,7 @@ class ClanMgmtView(View):
 
     # Helper function triggered when a clan's invite is clicked
     def join_clan(self, request, player, ctx):
-        join_clan_id = request.POST['join_clan_id']
+        join_clan_id = request.POST.get('join_clan_id')
 
         # check if clan operations are allowed
         if not admin_utils.check_clan_operations_allowed(request.user):
@@ -1247,7 +1248,10 @@ class ClanMgmtView(View):
         # disbanded by the time they submit the join request.
         try:
             newclan = Clan.objects.get(id=join_clan_id)
-        except Clan.DoesNotExist:
+        except (Clan.DoesNotExist, ValueError, TypeError):
+            # ValueError/TypeError guard against a missing or non-numeric
+            # join_clan_id in the POST (crafted request), which would otherwise
+            # raise before DoesNotExist and 500 the page.
             logger.warning('%s attempted to join nonexistent clan id %s',
                            player.name, join_clan_id)
             ctx['errmsg'] = "You tried to join a clan that doesn't exist"
@@ -1298,7 +1302,9 @@ class ClanMgmtView(View):
         # other player must exist
         try:
             otherplayer = Player.objects.get(id=oth_id)
-        except Player.DoesNotExist:
+        except (Player.DoesNotExist, ValueError, TypeError):
+            # ValueError/TypeError guard against a missing or non-numeric id in
+            # the POST (crafted request), which would otherwise 500 the page.
             logger.warning('%s attempted to %s with nonexistent id %s',
                            player.name, action, oth_id)
             ctx['errmsg'] = 'The player was not found'
@@ -1331,7 +1337,7 @@ class ClanMgmtView(View):
 
         # post 2021 TODO? all of these helpers should test that the key is in
         # POST, and if not, log an error and return
-        rescindee_id = request.POST['rescind_id']
+        rescindee_id = request.POST.get('rescind_id')
         rescindee = self.clan_admin_other_member_checks(request, player, ctx,
                                                         rescindee_id, "rescind")
         if rescindee is None:
@@ -1351,7 +1357,7 @@ class ClanMgmtView(View):
             ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
             return
 
-        new_admin_id = request.POST['kick_or_admin_id']
+        new_admin_id = request.POST.get('kick_or_admin_id')
         new_admin = self.clan_admin_other_member_checks(request, player, ctx,
                                                         new_admin_id, "make admin")
         if new_admin is None:
@@ -1386,7 +1392,7 @@ class ClanMgmtView(View):
             ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
             return
 
-        kickee_id = request.POST['kick_or_admin_id']
+        kickee_id = request.POST.get('kick_or_admin_id')
         kickee = self.clan_admin_other_member_checks(request, player, ctx,
                                                      kickee_id, "kick")
         if kickee is None:
@@ -1399,9 +1405,12 @@ class ClanMgmtView(View):
             ctx['errmsg'] = '%s is not in your clan' % (kickee.name)
             return
 
-        if kickee_id == player.id:
+        if kickee.id == player.id:
             # the UI should not allow this, but "kick self out" is basically the
-            # same as leaving...
+            # same as leaving... (compare resolved ints; kickee_id is a POST
+            # string, so comparing it to player.id directly never matched and
+            # let an admin kick themselves, bypassing leave_clan's admin-less
+            # guard and orphaning the clan)
             logger.warning('%s is kicking themself out of their clan, not leaving',
                            player.name)
             self.leave_clan(request, player, ctx)
@@ -1557,6 +1566,11 @@ class ArchiveFileView(View):
         from django.http import FileResponse, Http404
         from django.conf import settings
 
+        # Archives are per-year directories (2018-...). Constrain year to four
+        # digits so it can't be '..' or otherwise escape the archives root.
+        if not re.fullmatch(r'\d{4}', year):
+            raise Http404("Invalid archive year")
+
         # Construct the file path
         if not path:
             path = 'index.html'
@@ -1568,12 +1582,15 @@ class ArchiveFileView(View):
             path
         )
 
-        # Security check: ensure the path is within the archives directory
+        # Security check: ensure the path is within the archives directory.
+        # Compare with a trailing separator so a sibling dir sharing the year
+        # as a prefix can't satisfy a bare startswith().
         archive_base = os.path.join(settings.STATIC_ROOT, 'archives', year)
         real_path = os.path.realpath(file_path)
         real_base = os.path.realpath(archive_base)
 
-        if not real_path.startswith(real_base):
+        if real_path != real_base and \
+                not real_path.startswith(real_base + os.sep):
             raise Http404("Invalid archive path")
 
         # Serve the file (not directories)

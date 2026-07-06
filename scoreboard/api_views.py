@@ -13,19 +13,40 @@ from .serializers import (
 )
 
 
+def get_client_ip(request):
+    """Return the real client IP.
+
+    In production, Apache reverse-proxies to localhost:8000, so REMOTE_ADDR is
+    always 127.0.0.1. Apache (the single trusted proxy) appends the real client
+    as the LAST hop of X-Forwarded-For; earlier entries are client-supplied and
+    must not be trusted. Direct localhost hits (e.g. the IRC bot) have no XFF
+    header and fall back to REMOTE_ADDR.
+    """
+    xff = request.META.get('HTTP_X_FORWARDED_FOR', '')
+    if xff:
+        return xff.split(',')[-1].strip()
+    return request.META.get('REMOTE_ADDR', '')
+
+
 def ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'):
-    """Rate limit decorator that excludes localhost"""
+    """Rate limit decorator that excludes localhost.
+
+    Throttling always buckets by the real client IP (see get_client_ip); the
+    `key` argument is retained for call-site compatibility but superseded.
+    """
     def decorator(func):
         @wraps(func)
         def wrapper(request, *args, **kwargs):
-            # Skip rate limiting for localhost
-            client_ip = request.META.get('REMOTE_ADDR', '')
+            # Skip rate limiting for localhost (e.g. the IRC bot hitting
+            # localhost:8000 directly, which has no X-Forwarded-For)
+            client_ip = get_client_ip(request)
             if client_ip in ['127.0.0.1', '::1', 'localhost']:
                 return func(request, *args, **kwargs)
-            # Apply rate limiting for other IPs
-            return ratelimit(key=key, rate=rate, method=method)(func)(
-                request, *args, **kwargs
-            )
+            # Apply rate limiting for other IPs, keyed by real client IP
+            return ratelimit(
+                key=lambda group, req: get_client_ip(req),
+                rate=rate, method=method
+            )(func)(request, *args, **kwargs)
         return wrapper
     return decorator
 

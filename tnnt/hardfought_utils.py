@@ -8,6 +8,7 @@ import sqlite3
 from passlib.context import CryptContext
 from datetime import datetime
 import subprocess
+import shlex
 import json
 import logging
 
@@ -64,25 +65,27 @@ def query_remote_ip_db(server, query, params=None):
     try:
         db_path = '/opt/nethack/chroot/dgldir/dgamelaunch_ip.db'
 
-        # Build SSH command with sqlite3
-        # Use .mode json for easy parsing
-        sqlite_cmd = f'sqlite3 -json {db_path} "{query}"'
-
-        # Replace query parameters (sqlite3 CLI doesn't support parameterized queries)
+        # Substitute query parameters (sqlite3 CLI doesn't support bound
+        # parameters). Escape single quotes for the SQL string-literal layer.
         if params:
-            # Escape parameters for SQL injection safety
             escaped_params = [str(p).replace("'", "''") for p in params]
             # Replace ? with actual values
             for param in escaped_params:
                 query = query.replace('?', f"'{param}'", 1)
-            sqlite_cmd = f'sqlite3 -json {db_path} "{query}"'
+
+        # Build the remote command with shlex.quote so nothing in `query`
+        # (e.g. a crafted player name) can break out of the argument and be
+        # interpreted by the remote login shell that SSH runs it through.
+        remote_cmd = ' '.join(
+            shlex.quote(arg) for arg in ['sqlite3', '-json', db_path, query]
+        )
 
         ssh_command = [
             'ssh',
             '-o', 'ConnectTimeout=10',
             '-o', 'BatchMode=yes',
             f'nhsync@{server}.hardfought.org',
-            sqlite_cmd
+            remote_cmd
         ]
 
         result = subprocess.run(

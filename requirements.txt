@@ -1,18 +1,22 @@
-# All packages are installed via pip into the project venv (env/), which is
-# isolated from system packages (include-system-site-packages = false).
+# All packages are installed via pip into the project venv (env/), which
+# is isolated from system packages (include-system-site-packages = false).
 #
 # Install: source env/bin/activate && pip install -r requirements.txt
 
-django
-djangorestframework
-markdown
-django-filter
-mysqlclient  # pip, but compiles from source: needs apt default-libmysqlclient-dev + pkg-config
-pyyaml
-requests
-whitenoise
-libpass  # maintained passlib fork (same `passlib` import name); never install `passlib` alongside it
-bcrypt
-django-cors-headers
-django-ratelimit
-pycodestyle
+# Versions are pinned to the set currently installed in env/ (as of
+# 20260705). Bump deliberately rather than tracking latest on every
+# install.
+
+django==5.2.15
+djangorestframework==3.17.1
+markdown==3.10.2
+django-filter==25.2
+mysqlclient==2.2.8  # pip, but compiles from source: needs apt default-libmysqlclient-dev + pkg-config
+pyyaml==6.0.3
+requests==2.34.2
+whitenoise==6.12.0
+libpass==1.9.3  # maintained passlib fork (same `passlib` import name); never install `passlib` alongside it
+bcrypt==5.0.0
+django-cors-headers==4.9.0
+django-ratelimit==4.1.0
+pycodestyle==2.14.0
