@@ -1,12 +1,18 @@
+# All packages are installed via pip into the project venv (env/), which is
+# isolated from system packages (include-system-site-packages = false).
+#
+# Install: source env/bin/activate && pip install -r requirements.txt
+
 django
 djangorestframework
 markdown
 django-filter
-mysqlclient
+mysqlclient  # pip, but compiles from source: needs apt default-libmysqlclient-dev + pkg-config
 pyyaml
 requests
 whitenoise
-passlib
+libpass  # maintained passlib fork (same `passlib` import name); never install `passlib` alongside it
+bcrypt
 django-cors-headers
 django-ratelimit
 pycodestyle
