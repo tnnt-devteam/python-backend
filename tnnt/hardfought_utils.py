@@ -248,9 +248,13 @@ def find_player(findname):
             uname = dgl_curs.execute('SELECT username FROM dglusers WHERE username = ?',
                                      (findname,)).fetchone()
         except sqlite3.Error as sqlite_e:
-            logger.error('ERROR connecting to or executing SQL on sqlite database (get username)')
-            logger.error('  db path:', DGL_DATABASE_PATH)
-            logger.error('  username:', username)
+            # Not the same thing as "no such player": let the caller decide
+            # how to report an unavailable dgl database.
+            logger.error('ERROR connecting to or executing SQL on sqlite '
+                         'database (get username): %s', sqlite_e)
+            logger.error('  db path: %s', DGL_DATABASE_PATH)
+            logger.error('  username: %s', findname)
+            raise
         if uname is None:
             # not found in dgl, doesn't apparently exist
             logger.info("find_player attempted but '%s' doesn't exist either in dgl db or backend db",

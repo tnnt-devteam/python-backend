@@ -108,7 +108,7 @@ Returns count and list of unique death types for the player.
 
 **Response fields:**
 - `count` - Total number of unique deaths
-- `deaths` - Array of normalized death strings
+- `deaths` - Array of normalized death strings. Ascensions, quits and escapes are not unique deaths and are not listed (older versions returned a `null` entry for them)
 
 **Example:**
 ```bash

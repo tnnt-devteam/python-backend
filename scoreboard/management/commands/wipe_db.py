@@ -14,6 +14,9 @@ def wipe_leaderboard_fields(entity):
     entity.games_scummed = 0
     entity.total_games = 0
     entity.wins = 0
+    entity.splats = 0
+    entity.donations = 0
+    entity.zscore = 0
     entity.trophies.clear()
     entity.lowest_turncount_asc = None
     entity.fastest_realtime_asc = None

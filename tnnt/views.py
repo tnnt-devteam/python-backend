@@ -5,6 +5,9 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from django.db.models.functions import TruncSecond
 from scoreboard.models import *
+from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
+from scoreboard.api_views import ratelimit_exclude_localhost
+from django.utils.decorators import method_decorator
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.cache import cache
@@ -15,6 +18,7 @@ from . import settings
 from datetime import datetime, timezone
 import logging
 import re
+import sqlite3
 from tnnt import uniqdeaths
 
 logger = logging.getLogger() # use root logger
@@ -48,12 +52,9 @@ def bulk_upd_games(gamelist, do_conducts):
             conducts_by_game[game_id].append(conduct['shortname'])
 
     for g in gamelist:
-        # Check if this is a startscum game (no dumplog generated)
-        # Startscum criteria: quit or escaped within 100 turns or less
-        g['is_startscum'] = (
-            g.get('death') in ('quit', 'escaped') and
-            g.get('turns', 101) <= 100
-        )
+        # Check if this is a startscum game (no dumplog generated); see
+        # scoreboard.models.is_scummed for the definition
+        g['is_startscum'] = is_scummed(g)
 
         g['dumplog'] = dumplog_utils.format_dumplog(g['dlg_fmt'], g['playername'],
                                                     g['starttime'])
@@ -82,6 +83,11 @@ def bulk_upd_games(gamelist, do_conducts):
 # expectation is that the caller will return an appropriate error (500)
 # to the browser.
 def get_player(request_user):
+    # An anonymous visitor has no Player. (Without this check the lookup
+    # below would be `user IS NULL`, which matches every Player who has
+    # never logged in.)
+    if not request_user.is_authenticated:
+        raise Player.DoesNotExist
     try:
         return Player.objects.get(user=request_user.id)
     except Player.DoesNotExist:
@@ -128,17 +134,9 @@ class HomepageView(TemplateView):
         kwargs['tottime'] = aggr2['realtime__sum']
         kwargs['totuniqdeaths'] = len(uniqdeaths.compile_unique_deaths(Game.objects.all()))
 
-        # last 10 games/wins
-        # Exclude scummed games from last 10 games
-        from django.db.models import Q
-
-        # Define scummed criteria
-        scummed_exclude = (
-            Q(death__in=['quit', 'escaped'], turns__lte=100) |
-            Q(death__icontains='slipped', turns__lte=300, player__name='post163')
-        )
-
-        base_qs = Game.objects.exclude(scummed_exclude).annotate(
+        # last 10 games/wins, leaving out scummed games (see
+        # scoreboard.models.SCUMMED_GAME_Q)
+        base_qs = Game.objects.exclude(SCUMMED_GAME_Q).annotate(
             playername=F('player__name'),
             dlg_fmt=F('source__dumplog_fmt')).order_by('-endtime')
         kwargs['last10games'] = bulk_upd_games(list(base_qs.values()[:10]), False)
@@ -185,8 +183,8 @@ class LeaderboardsView(TemplateView):
         annotate_kwargs = {
             'firstasc':        F('first_asc__endtime'),
             'firstasc_stt':    F('first_asc__starttime'),
-            'firstasc_dlg':    F('fastest_realtime_asc__source__dumplog_fmt'),
-            'firstasc_nam':    F('fastest_realtime_asc__player__name'),
+            'firstasc_dlg':    F('first_asc__source__dumplog_fmt'),
+            'firstasc_nam':    F('first_asc__player__name'),
 
             'minturns':        F('lowest_turncount_asc__turns'),
             'minturns_stt':    F('lowest_turncount_asc__starttime'),
@@ -251,6 +249,18 @@ class LeaderboardsView(TemplateView):
         # dictionary appropriately for consumption by the template.
         def gen_leader_list(base_list, stat, descending):
             list_out = []
+            # Leave out entries whose stat is missing or None. That indicates
+            # a field was not correctly populated during aggregation, such as
+            # a Player who has wins > 0 but first_asc is None; log it, but
+            # don't lose the whole leaderboard over one entry. (It also can't
+            # be sorted against numbers below.)
+            usable = []
+            for elem in base_list:
+                if stat not in elem or elem[stat] is None:
+                    logger.error('malformed query result for leaderboards')
+                    logger.error('stat = %s element = %s', stat, str(elem))
+                    continue
+                usable.append(elem)
             # Note: this sorting will put players with the same amount of wins
             # (or whatever metric stat is) in arbitrary order.
             # The obvious enhancement is to order it by the first player to get
@@ -262,25 +272,16 @@ class LeaderboardsView(TemplateView):
             # "donations_updated" field that gets set to the time the
             # aggregation was run whenever someone's donation count goes up --
             # but it's unclear that anyone actually wants this right now.
-            for elem in sorted(base_list, key=lambda E: E[stat], reverse=descending):
-                if not stat in elem or elem[stat] is None:
-                    # could indicate a field was not correctly populated during
-                    # aggregation, such as a Player who has wins > 0 but
-                    # first_asc is None
-                    logger.error('malformed query result for leaderboards')
-                    logger.error('stat = %s element = %s', stat, str(elem))
-                    return []
-
+            for elem in sorted(usable, key=lambda E: E[stat], reverse=descending):
                 # All leaderboards should leave off entries where the stat is 0.
                 # Initially this was done on a case by case basis, but there are
                 # currently no leaderboards that are capable of showing 0s (some
                 # such as most ascensions or most unique asc combos, will never
                 # have a 0 because only wins are considered) that we want to
-                # show 0s.
-                # So if we hit a zero, descending order means everything after
-                # this will also be 0, so stop iterating.
+                # show 0s. (Skip rather than stop: on an ascending board a
+                # zero would sort first.)
                 if elem[stat] == 0:
-                    break
+                    continue
 
                 # elem is either a player or a clan, but this loop doesn't care
                 # which
@@ -419,7 +420,7 @@ class LeaderboardsView(TemplateView):
                     L['clans'] = gen_leader_list(clans_annotated, stat, L['descending'])
         try:
             kwargs['myname'] = get_player(self.request.user).name
-        except:
+        except Player.DoesNotExist:
             # don't do anything if no player found, since you can view
             # leaderboards when not logged in
             pass
@@ -466,7 +467,7 @@ class ClansView(TemplateView):
         # Now insert the lists of members.
         for clan in clanlist:
             if not clan['name'] in clan_members:
-                logging.error('Clan %s exists in db but has no members!', clan['name'])
+                logger.error('Clan %s exists in db but has no members!', clan['name'])
                 continue
             clan['members'] = clan_members[clan['name']]
 
@@ -534,11 +535,9 @@ class SinglePlayerOrClanView(TemplateView):
         kwargs['show_all_games'] = show_all
 
         if show_all:
-            # Show all games (excluding scummed games for performance)
-            # Scummed games: quit/escaped with <=100 turns
-            non_scummed_qs = base_game_qs.exclude(
-                Q(death__in=('quit', 'escaped'), turns__lte=100)
-            )
+            # Show all games (excluding scummed games for performance; see
+            # scoreboard.models.SCUMMED_GAME_Q)
+            non_scummed_qs = base_game_qs.exclude(SCUMMED_GAME_Q)
             kwargs['recentgames'] = \
                 bulk_upd_games(list(non_scummed_qs.values()), False)
         else:
@@ -824,15 +823,9 @@ class AllGamesView(TemplateView):
     template_name = 'allgames.html'
 
     def get_context_data(self, **kwargs):
-        # Get all legitimate games (exclude scummed) ordered by newest first
-        # Scummed games are defined as:
-        # - (death in ('quit', 'escaped') and turns <= 100) OR
-        # - (death contains 'slipped' and turns <= 300 and player is 'post163')
-        from django.db.models import Q
-
-        games_qs = Game.objects.exclude(
-                                   Q(death__in=['quit', 'escaped'], turns__lte=100) |
-                                   Q(death__icontains='slipped', turns__lte=300, player__name='post163')) \
+        # Get all legitimate games (exclude scummed) ordered by newest first.
+        # See scoreboard.models.SCUMMED_GAME_Q for what "scummed" means.
+        games_qs = Game.objects.exclude(SCUMMED_GAME_Q) \
                                .select_related('player', 'source') \
                                .values('id', 'player__name', 'role', 'race',
                                       'gender', 'align', 'gender0', 'align0',
@@ -852,13 +845,9 @@ class ScummedGamesView(TemplateView):
     template_name = 'scummedgames.html'
 
     def get_context_data(self, **kwargs):
-        # Get all players with their scummed game counts
-        # Scummed games are defined as:
-        # - (death in ('quit', 'escaped') and turns <= 100)
-        from django.db.models import Q, Count, F, Sum
-
-        # Define the scummed criteria
-        scummed_criteria = Q(death__in=['quit', 'escaped'], turns__lte=100)
+        # Get all players with their scummed game counts. See
+        # scoreboard.models.SCUMMED_GAME_Q for what "scummed" means.
+        scummed_criteria = SCUMMED_GAME_Q
 
         # Get total scummed games for percentage calculation
         total_scummed = Game.objects.filter(scummed_criteria).count()
@@ -891,10 +880,7 @@ class ScummedGamesView(TemplateView):
 
         # Get player statistics for scummed games
         players_data = Player.objects.annotate(
-            scummed_count=Count(
-                'game',
-                filter=Q(game__death__in=['quit', 'escaped'], game__turns__lte=100)
-            )
+            scummed_count=Count('game', filter=scummed_q('game__'))
         ).filter(
             scummed_count__gt=0  # Only include players with scummed games
         ).select_related('clan').values(
@@ -1127,6 +1113,10 @@ class ClanMgmtView(View):
             logger.warning('%s attempted to invite nonexistent player %s',
                            player.name, invitee_name)
             ctx['errmsg'] = 'No such player exists'
+        except sqlite3.Error:
+            # find_player couldn't consult the dgamelaunch database (it has
+            # logged the details); that's not "no such player"
+            ctx['errmsg'] = 'Player lookup is temporarily unavailable, please try again later'
 
     # Helper function triggered when "leave" is clicked
     def leave_clan(self, request, player, ctx):
@@ -1449,7 +1439,7 @@ class ClanMgmtView(View):
         set_msg_form = SetMessageForm(request.POST)
 
         if not set_msg_form.is_valid():
-            ctx['invite_member_form'] = set_msg_form
+            ctx['set_message_form'] = set_msg_form
             return
 
         clan = player.clan
@@ -1465,14 +1455,17 @@ class ClanMgmtView(View):
     # to clan admins (probably publicly)
     # FUTURE TODO: decline an invite
 
+@method_decorator(
+    ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET'),
+    name='get'
+)
 class TrophyGridGamesView(View):
     """
     API endpoint to fetch games for a specific role-race-alignment combo.
-    Used by clickable trophy grid cells.
+    Used by clickable trophy grid cells. Rate limited like the rest of /api/.
     """
     def get(self, request):
         from django.http import JsonResponse
-        from django.db.models import Q
 
         # Get parameters
         entity_type = request.GET.get('entity_type')  # 'player' or 'clan'
@@ -1503,7 +1496,8 @@ class TrophyGridGamesView(View):
                     clan=clan
                 ).values_list('id', flat=True)
                 base_qs = Game.objects.filter(player__in=member_ids)
-        except (Player.DoesNotExist, Clan.DoesNotExist):
+        except (Player.DoesNotExist, Clan.DoesNotExist, ValueError, TypeError):
+            # ValueError/TypeError: entity_id isn't a number (crafted URL)
             return JsonResponse({
                 'error': 'Entity not found'
             }, status=404)
@@ -1699,9 +1693,7 @@ class AdminPanelView(View):
                 # Calculate peak games per second (max burst rate)
                 # Group scummed games by second and find the maximum
                 peak_burst = Game.objects.filter(
-                    player=player,
-                    death__in=['quit', 'escaped'],
-                    turns__lte=100
+                    SCUMMED_GAME_Q, player=player
                 ).annotate(
                     second=TruncSecond('starttime')
                 ).values('second').annotate(

@@ -18,7 +18,7 @@ def text_field_clean(input_str, input_type, refuse_slashes=False):
         nowcombine = unicodedata.combining(char)
         if nowcombine and prevcombine:
             raise forms.ValidationError(
-                '%s cannot have more than two consecutive combining characters' % input_type)
+                '%s cannot have more than one consecutive combining character' % input_type)
         prevcombine = nowcombine
 
     # don't allow non-printable characters
@@ -26,10 +26,12 @@ def text_field_clean(input_str, input_type, refuse_slashes=False):
         raise forms.ValidationError(
             '%s cannot contain non-printable characters' % input_type)
 
-    # TODO: remove this requirement once we can get the MySQL database
-    # converted to utf8mb4 instead of utf8mb3, so that 4-byte characters will
-    # work.  If a certain subset of 4-byte characters should still be blocked
-    # it can be replaced with a more narrowly scoped test.
+    # This started as a workaround for the database being utf8mb3, which can't
+    # store 4-byte characters. The database has since been converted to
+    # utf8mb4 (verified 2026-09-04), so the check is now a deliberate choice
+    # to keep emoji and the like out of clan names and messages. If a certain
+    # subset of 4-byte characters should be allowed, replace it with a more
+    # narrowly scoped test.
     for char in input_str:
         if len(char.encode('utf-8')) >= 4:
             raise forms.ValidationError(

@@ -8,9 +8,15 @@ alignment combinations have been completed.
 The grid format was designed by ais523 and other TNNT community members.
 """
 
-from django.db.models import Q, Count
 from django.core.cache import cache
-from scoreboard.models import Game
+from scoreboard.models import Game, Conduct, Achievement
+from scoreboard.trophy_defs import (
+    TOTAL_GENDERS, TOTAL_ALIGNMENTS, TOTAL_RACES, TOTAL_ROLES,
+    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role
+)
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Cache timeout: 5 minutes (300 seconds)
 # Grid data is invalidated when new games are aggregated
@@ -228,15 +234,29 @@ def invalidate_trophy_grid_cache(player_or_clan=None):
         cache_prefix = 'clan' if is_clan else 'player'
         cache_key = f'trophy_grid_{cache_prefix}_{player_or_clan.id}'
         cache.delete(cache_key)
+    elif hasattr(cache, 'delete_pattern'):
+        # Redis and friends can drop every grid at once
+        cache.delete_pattern('trophy_grid_*')
     else:
-        # Invalidate all trophy grid caches
-        # Try to use delete_pattern if available (Redis), otherwise clear all
-        if hasattr(cache, 'delete_pattern'):
-            cache.delete_pattern('trophy_grid_*')
-        else:
-            # LocMemCache and other backends don't support pattern deletion
-            # For development/testing, we can just clear the entire cache
-            cache.clear()
+        # The default LocMemCache can't delete by pattern, and it is
+        # per-process anyway: a call from the aggregate cron job never
+        # reaches the web server's cache. Grids simply expire after
+        # TROPHY_GRID_CACHE_TIMEOUT. Don't cache.clear() here; that would
+        # also wipe unrelated entries (rate-limit counters, admin panel
+        # data).
+        logger.debug('Cache backend cannot invalidate trophy grids by '
+                     'pattern; relying on the %ds timeout',
+                     TROPHY_GRID_CACHE_TIMEOUT)
+
+# Trophy status keys for the "Keep X Alive" trophies, by the shortname of
+# the conduct that earns each one.
+KEEP_ALIVE_CONDUCTS = [
+    ('neme', 'keep_nemesis_alive'),
+    ('vlad', 'keep_vlad_alive'),
+    ('wiz', 'keep_rodney_alive'),
+    ('prst', 'keep_high_priest_alive'),
+    ('ride', 'keep_riders_alive'),
+]
 
 def _calculate_trophy_status(
         player_or_clan, mines_soko_combos, ascension_combos):
@@ -244,13 +264,9 @@ def _calculate_trophy_status(
     Calculate which trophies are completed based on combo data.
 
     This provides a quick summary of trophy progress without querying
-    trophies table.
+    trophies table. It runs a fixed number of queries (four) however many
+    games the player or clan has.
     """
-    from scoreboard.management.commands.aggregate import (
-        great_lesser_race, great_lesser_role
-    )
-    from scoreboard.models import Conduct, Achievement
-
     status = {
         'great_races': {},
         'lesser_races': {},
@@ -266,17 +282,10 @@ def _calculate_trophy_status(
         'nethack_dominator': False,
         'never_scum': False,
         'never_scum_unobtainable': False,
-        'keep_nemesis_alive': False,
-        'keep_nemesis_alive_unobtainable': False,
-        'keep_vlad_alive': False,
-        'keep_vlad_alive_unobtainable': False,
-        'keep_rodney_alive': False,
-        'keep_rodney_alive_unobtainable': False,
-        'keep_high_priest_alive': False,
-        'keep_high_priest_alive_unobtainable': False,
-        'keep_riders_alive': False,
-        'keep_riders_alive_unobtainable': False,
     }
+    for _, key in KEEP_ALIVE_CONDUCTS:
+        status[key] = False
+        status[key + '_unobtainable'] = False
 
     # Check Great/Lesser Race trophies
     for fullrace, details in great_lesser_race.items():
@@ -325,12 +334,12 @@ def _calculate_trophy_status(
     asc_roles = set(combo[0] for combo in ascension_combos.keys())
     asc_races = set(combo[1] for combo in ascension_combos.keys())
 
-    status['all_roles'] = len(asc_roles) == 13  # TOTAL_ROLES
-    status['all_races'] = len(asc_races) == 5   # TOTAL_RACES
+    status['all_roles'] = len(asc_roles) == TOTAL_ROLES
+    status['all_races'] = len(asc_races) == TOTAL_RACES
 
-    # Check NetHack Master (all 73 unique ascensions)
+    # Check NetHack Master (all unique ascensions)
     status['nethack_master'] = (
-        len(ascension_combos) == 73  # TOTAL_POSSIBLE_COMBOS
+        len(ascension_combos) == TOTAL_POSSIBLE_COMBOS
     )
 
     # Determine if this is a player or clan
@@ -341,6 +350,7 @@ def _calculate_trophy_status(
         games_qs = Game.objects.filter(player__clan=player_or_clan)
     else:
         games_qs = Game.objects.filter(player=player_or_clan)
+    won_qs = games_qs.filter(won=True)
 
     # Check Both Genders - need at least one male and one female ascension
     genders = set()
@@ -349,33 +359,46 @@ def _calculate_trophy_status(
             genders.add('male')
         if combo_data['female']:
             genders.add('female')
-    status['both_genders'] = len(genders) == 2
+    status['both_genders'] = len(genders) == TOTAL_GENDERS
 
     # Check All Alignments - need ascensions with all 3 alignments
     asc_aligns = set(combo[2] for combo in ascension_combos.keys())
-    status['all_alignments'] = len(asc_aligns) == 3  # Law, Neu, Cha
+    status['all_alignments'] = len(asc_aligns) == TOTAL_ALIGNMENTS
 
-    # Check All Conducts - need all conducts preserved across ascensions
-    from scoreboard.models import Conduct, Achievement
-    all_conduct_bits = set()
-    for game in games_qs.filter(won=True):
-        all_conduct_bits.update(game.conducts.all())
+    # Conducts kept in winning games. One query: each row is a (game id,
+    # conduct shortname) pair from the LEFT JOIN, so a win with no conducts
+    # at all shows up once with shortname None. From this we get the set of
+    # conducts preserved in any ascension, and per game which were kept.
+    conducts_by_game = {}
+    for game_id, shortname in won_qs.values_list('id',
+                                                  'conducts__shortname'):
+        kept = conducts_by_game.setdefault(game_id, set())
+        if shortname is not None:
+            kept.add(shortname)
+    conducts_in_any_win = set()
+    for kept in conducts_by_game.values():
+        conducts_in_any_win.update(kept)
 
-    # Track individual conducts
+    # Track individual conducts (all of them, achieved or not)
+    all_conducts = list(Conduct.objects.all().order_by('name'))
     status['individual_conducts'] = {}
-    all_conducts = Conduct.objects.all().order_by('name')
     for conduct in all_conducts:
-        status['individual_conducts'][conduct.name] = conduct in all_conduct_bits
+        status['individual_conducts'][conduct.name] = (
+            conduct.shortname in conducts_in_any_win
+        )
+    status['all_conducts'] = (
+        len(conducts_in_any_win) >= len(all_conducts)
+    )
 
-    total_conducts = Conduct.objects.count()
-    status['all_conducts'] = len(all_conduct_bits) >= total_conducts
-
-    # Check All Achievements - need all achievements across all games
+    # Check All Achievements - need all achievements across all games.
+    # One query for the distinct achievements in any of the games instead
+    # of one per game.
+    achieved_ids = set(
+        Achievement.objects.filter(game__in=games_qs)
+        .values_list('id', flat=True).distinct()
+    )
     total_achievements = Achievement.objects.count()
-    all_achievement_bits = set()
-    for game in games_qs:
-        all_achievement_bits.update(game.achievements.all())
-    status['all_achievements'] = len(all_achievement_bits) >= total_achievements
+    status['all_achievements'] = len(achieved_ids) >= total_achievements
 
     # Check NetHack Dominator - NetHack Master + All Conducts
     status['nethack_dominator'] = (
@@ -390,67 +413,20 @@ def _calculate_trophy_status(
     )
     status['never_scum_unobtainable'] = (scummed_games > 0)
 
-    # Check Keep X Alive trophies - these are conducts in winning games
-    # These conducts are earned by NOT killing certain NPCs
-    winning_games = games_qs.filter(won=True).prefetch_related('conducts')
-    if winning_games.exists():
-        # Check if any winning game has the specific conduct
-        all_conducts = Conduct.objects.all()
-        conduct_map = {c.shortname: c for c in all_conducts}
-
-        # Keep Your Nemesis Alive - conduct shortname 'neme'
-        if 'neme' in conduct_map:
-            with_conduct = winning_games.filter(
-                conducts=conduct_map.get('neme')
-            ).exists()
-            without_conduct = winning_games.exclude(
-                conducts=conduct_map.get('neme')
-            ).exists()
-            status['keep_nemesis_alive'] = with_conduct
-            status['keep_nemesis_alive_unobtainable'] = without_conduct
-
-        # Keep Vlad Alive - conduct shortname 'vlad'
-        if 'vlad' in conduct_map:
-            with_conduct = winning_games.filter(
-                conducts=conduct_map.get('vlad')
-            ).exists()
-            without_conduct = winning_games.exclude(
-                conducts=conduct_map.get('vlad')
-            ).exists()
-            status['keep_vlad_alive'] = with_conduct
-            status['keep_vlad_alive_unobtainable'] = without_conduct
-
-        # Keep Rodney Alive - conduct shortname 'wiz'
-        if 'wiz' in conduct_map:
-            with_conduct = winning_games.filter(
-                conducts=conduct_map.get('wiz')
-            ).exists()
-            without_conduct = winning_games.exclude(
-                conducts=conduct_map.get('wiz')
-            ).exists()
-            status['keep_rodney_alive'] = with_conduct
-            status['keep_rodney_alive_unobtainable'] = without_conduct
-
-        # Keep The High Priest of Moloch Alive - conduct shortname 'prst'
-        if 'prst' in conduct_map:
-            with_conduct = winning_games.filter(
-                conducts=conduct_map.get('prst')
-            ).exists()
-            without_conduct = winning_games.exclude(
-                conducts=conduct_map.get('prst')
-            ).exists()
-            status['keep_high_priest_alive'] = with_conduct
-            status['keep_high_priest_alive_unobtainable'] = without_conduct
-
-        # Keep The Riders Alive - conduct shortname 'ride'
-        if 'ride' in conduct_map:
-            with_conduct = winning_games.filter(
-                conducts=conduct_map.get('ride')
-            ).exists()
-            without_conduct = winning_games.exclude(
-                conducts=conduct_map.get('ride')
-            ).exists()
-            status['keep_riders_alive'] = with_conduct
-            status['keep_riders_alive_unobtainable'] = without_conduct
+    # Check Keep X Alive trophies - these are conducts in winning games,
+    # earned by NOT killing certain NPCs. "Achieved" if any ascension kept
+    # the conduct; "unobtainable" (for the current set of games) if some
+    # ascension didn't. Both come from the per-game sets built above.
+    if conducts_by_game:
+        known = set(c.shortname for c in all_conducts)
+        for shortname, key in KEEP_ALIVE_CONDUCTS:
+            if shortname not in known:
+                continue
+            status[key] = any(
+                shortname in kept for kept in conducts_by_game.values()
+            )
+            status[key + '_unobtainable'] = any(
+                shortname not in kept for kept in conducts_by_game.values()
+            )
 
     return status

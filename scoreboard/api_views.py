@@ -2,7 +2,9 @@ from rest_framework import viewsets, views
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.db.models import F
-from datetime import datetime, timedelta
+from django.utils import timezone
+from datetime import timedelta
+from tnnt import settings
 from django_ratelimit.decorators import ratelimit
 from django.utils.decorators import method_decorator
 from functools import wraps
@@ -97,11 +99,12 @@ class PlayerViewSet(viewsets.ReadOnlyModelViewSet):
     @action(detail=True, methods=['get'])
     def unique_deaths(self, request, name=None):
         player = self.get_object()
+        # normalized_death is NULL for deaths that don't count as unique
+        # (quit, escaped, ascended; see UNIQUE_DEATH_REJECTIONS), so
+        # filtering on it is the whole definition.
         deaths = Game.objects.filter(
             player=player,
-            death__isnull=False
-        ).exclude(
-            death__in=['quit', 'escaped']
+            normalized_death__isnull=False
         ).values_list('normalized_death', flat=True).distinct()
         return Response({'count': deaths.count(), 'deaths': list(deaths)})
 
@@ -178,7 +181,8 @@ class RecentEventsView(views.APIView):
         ratelimit_exclude_localhost(key='ip', rate='100/m', method='GET')
     )
     def get(self, request):
-        cutoff = datetime.now() - timedelta(hours=1)
+        # timezone-aware, like Game.endtime (USE_TZ is on)
+        cutoff = timezone.now() - timedelta(hours=1)
 
         recent_achievements = Game.objects.filter(
             endtime__gte=cutoff
@@ -223,7 +227,7 @@ class ScoreboardView(views.APIView):
         last_updated = last_game.endtime if last_game else None
 
         return Response({
-            'tournament': f'TNNT {datetime.now().year}',
+            'tournament': 'TNNT %d' % settings.TOURNAMENT_START.year,
             'players': player_data,
             'clans': clan_data,
             'last_updated': last_updated
