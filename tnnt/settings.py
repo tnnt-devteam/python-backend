@@ -50,8 +50,9 @@ INSTALLED_APPS = [
 ]
 if not DEBUG:
     # When DEBUG = True, Django serves local static files.
-    # In prod, we use whitenoise to serve the files.
-    INSTALLED_APPS.append('whitenoise.runserver_nostatic')
+    # In prod, we use whitenoise to serve the files. runserver_nostatic must
+    # come BEFORE django.contrib.staticfiles to override its runserver.
+    INSTALLED_APPS.insert(0, 'whitenoise.runserver_nostatic')
 
 REST_FRAMEWORK = {
     'DEFAULT_PARSER_CLASSES': [
@@ -154,8 +155,6 @@ TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -165,14 +164,24 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = 'static/'
 
 if not DEBUG:
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+    # Django 5.1 removed STATICFILES_STORAGE; storage backends are configured
+    # through STORAGES, which must also carry the 'default' entry.
+    STORAGES = {
+        'default': {
+            'BACKEND': 'django.core.files.storage.FileSystemStorage',
+        },
+        'staticfiles': {
+            'BACKEND': 'whitenoise.storage.CompressedStaticFilesStorage',
+        },
+    }
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Session expiration.
+# Session expiration. The cookie is dropped when the browser closes; the
+# server-side session still expires after SESSION_COOKIE_AGE regardless.
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 SESSION_COOKIE_AGE = 7 * 24 * 60 * 60 # in seconds, so 1 week
@@ -316,7 +325,7 @@ UNIQUE_DEATH_NORMALIZATIONS = [
     (r"^killed by an ", "killed by a "),
     (r", while .*", ""),
     (r"hallucinogen-distorted ", ""),
-    (r"by the invisible ", "by the"),
+    (r"by the invisible ", "by the "),
     # this turns "invisible stalker" into just "stalker" but that's fine since
     # there's no other way to get killed by some other stalker
     (r"by (an|a) invisible ", "by a "),
