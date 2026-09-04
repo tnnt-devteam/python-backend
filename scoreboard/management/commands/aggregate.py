@@ -1,162 +1,159 @@
 from django.core.management.base import BaseCommand
-from scoreboard.models import Source, Game, Player, Clan, Trophy, Achievement, Conduct
-from scoreboard.parsers import XlogParser
+from scoreboard.models import (
+    Game, Player, Clan, Trophy, Achievement, Conduct, SCUMMED_GAME_Q
+)
+# Imported by name so that they are also attributes of this module.
+from scoreboard.trophy_defs import (
+    TOTAL_GENDERS, TOTAL_ALIGNMENTS, TOTAL_RACES, TOTAL_ROLES,
+    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role
+)
 from django.db import transaction
-from django.db.models import Sum, Min, Max, Count, Q
+from django.db.models import Sum, Min, Max, Count
+from tnnt import settings
 from tnnt import uniqdeaths
 from tnnt.trophy_grid import invalidate_trophy_grid_cache
 from pathlib import Path
+from urllib.parse import urlparse
+from collections import Counter
 import os
 import re
-import urllib
 import logging
 import requests
 from decimal import Decimal
 
 logger = logging.getLogger() # root logger
 
-# Optimizations: these don't change over the lifetime of the tournament. Run
-# these queries once when this module is loaded so that they don't have to be
-# hit multiple times in loops.
-ALL_ACHIEVEMENTS = list(Achievement.objects.all())
-TOTAL_ACHIEVEMENTS = len(ALL_ACHIEVEMENTS)
-TOTAL_CONDUCTS = Conduct.objects.count()
-TROPHIES = { tr.name: tr for tr in Trophy.objects.all() }
-UNIQ_ACHFIELDS = len(set([ach.xlogfield for ach in ALL_ACHIEVEMENTS]))
+# Fixture-backed data that doesn't change over the lifetime of the tournament.
+# Loaded once per run by load_static_data(), which handle() calls first thing,
+# rather than at import time: importing this module then has no database side
+# effects (tests load their fixtures first, then call load_static_data()).
+ALL_ACHIEVEMENTS = []
+TOTAL_ACHIEVEMENTS = 0
+TOTAL_CONDUCTS = 0
+TROPHIES = {}
+UNIQ_ACHFIELDS = 0
 
-# These are determined by NetHack and there's no expectation that TNNT would
-# ever change them. However, they may need to change if changes are made to
-# vanilla NetHack which are then incorporated into TNNT (for instance, if the
-# DevTeam adds a new role or race or, more likely, allows a new role-race
-# combination).
-TOTAL_GENDERS = 2
-TOTAL_ALIGNMENTS = 3
-TOTAL_RACES = 5
-TOTAL_ROLES = 13
-TOTAL_POSSIBLE_COMBOS = 73
-great_lesser_race = {
-    'Dwarf': { 'race': 'Dwa', 'req_roles': set(['Arc','Cav','Val']) },
-    'Orc'  : { 'race': 'Orc', 'req_roles': set(['Bar','Ran','Rog','Wiz']) },
-    'Elf'  : { 'race': 'Elf', 'req_roles': set(['Pri','Ran','Wiz']) },
-    'Gnome': { 'race': 'Gno', 'req_roles': set(['Arc','Cav','Hea','Ran','Wiz']) },
-    'Human': { 'race': 'Hum', 'req_roles': set(['Kni','Mon','Sam','Tou']) }
-}
-great_lesser_role = {
-    'Archeologist': {
-        'role': 'Arc',
-        'req_race_algn': set(['Dwa-Law','Hum-Law','Hum-Neu','Gno-Neu'])
-    },
-    'Barbarian': {
-        'role': 'Bar',
-        'req_race_algn': set(['Hum-Neu','Hum-Cha','Orc-Cha'])
-    },
-    'Caveperson': {
-        'role': 'Cav',
-        'req_race_algn': set(['Dwa-Law','Hum-Law','Hum-Neu','Gno-Neu'])
-    },
-    'Healer': {
-        'role': 'Hea',
-        'req_race_algn': set(['Hum-Neu','Gno-Neu'])
-    },
-    'Monk': {
-        'role': 'Mon',
-        'req_race_algn': set(['Hum-Law','Hum-Neu','Hum-Cha'])
-    },
-    'Priest': {
-        'role': 'Pri',
-        'req_race_algn': set(['Hum-Law','Hum-Neu','Hum-Cha','Elf-Cha'])
-    },
-    'Ranger': {
-        'role': 'Ran',
-        'req_race_algn': set(['Hum-Neu','Gno-Neu','Hum-Cha','Elf-Cha','Orc-Cha'])
-    },
-    'Rogue': {
-        'role': 'Rog',
-        'req_race_algn': set(['Hum-Cha','Orc-Cha'])
-    },
-    'Valkyrie': {
-        'role': 'Val',
-        'req_race_algn': set(['Dwa-Law','Hum-Law','Hum-Neu'])
-    },
-    'Wizard': {
-        'role': 'Wiz',
-        'req_race_algn': set(['Hum-Neu','Gno-Neu','Hum-Cha','Elf-Cha','Orc-Cha'])
-    },
-}
+# Timeout for fetching donor files: (connect, read) seconds.
+DONOR_TIMEOUT = (10, 30)
+
+def load_static_data():
+    global ALL_ACHIEVEMENTS, TOTAL_ACHIEVEMENTS, TOTAL_CONDUCTS
+    global TROPHIES, UNIQ_ACHFIELDS
+    ALL_ACHIEVEMENTS = list(Achievement.objects.all())
+    TOTAL_ACHIEVEMENTS = len(ALL_ACHIEVEMENTS)
+    TOTAL_CONDUCTS = Conduct.objects.count()
+    TROPHIES = { tr.name: tr for tr in Trophy.objects.all() }
+    UNIQ_ACHFIELDS = len(set([ach.xlogfield for ach in ALL_ACHIEVEMENTS]))
+
+def donor_cache_path(url):
+    # Where the last successfully fetched copy of the donor file at `url` is
+    # kept, next to the xlogfiles.
+    return Path(settings.XLOG_DIR) / ('donors.%s' % urlparse(url).hostname)
+
+def fetch_donor_names():
+    '''
+    Download every donor file in settings.DONOR_FILES and return a Counter
+    of player names: one count per line, i.e. per item someone else took
+    out of the swap chest.
+
+    A file that can't be fetched falls back to the last copy that was
+    fetched successfully (kept under XLOG_DIR), with a warning. If there is
+    no such copy either, that server's donations are missing from this run
+    but the other servers' are still counted. (Zeroing everyone and giving
+    up, which is what a hard failure used to do, is worse than either.)
+
+    Up to K2 whether it is better in the long run to request these files via
+    HTTP or sync them over to the webserver and read them locally.
+    '''
+    names = Counter()
+    for url in settings.DONOR_FILES:
+        cache = donor_cache_path(url)
+        body = None
+        try:
+            r = requests.get(url, timeout=DONOR_TIMEOUT)
+            if r.status_code == 200:
+                body = r.content
+                try:
+                    cache.write_bytes(body)
+                except OSError as e:
+                    logger.warning('Could not save a copy of donor file %s '
+                                   'at %s: %s', url, cache, e)
+            else:
+                logger.error('Could not fetch donor file %s - HTTP %d',
+                             url, r.status_code)
+        except requests.RequestException as e:
+            logger.error('Could not fetch donor file %s - %s', url, e)
+        if body is None:
+            try:
+                body = cache.read_bytes()
+                logger.warning('Using the last good copy of donor file %s '
+                               'from %s', url, cache)
+            except OSError:
+                logger.error('No saved copy of donor file %s either; its '
+                             'donations are not counted this run', url)
+                continue
+        for line in body.decode('utf-8', errors='replace').splitlines():
+            plname = line.strip()
+            if plname:
+                names[plname] += 1
+    return names
 
 @transaction.atomic
+def apply_donor_counts(names):
+    # Donation credits are recomputed from scratch every run, so first wipe
+    # them from everyone (one UPDATE, not one save() per Player).
+    Player.objects.update(donations=0)
+    for plname, count in names.items():
+        updated = Player.objects.filter(name=plname).update(donations=count)
+        if not updated:
+            # It is possible for there to be a donor for which a Player
+            # doesn't exist yet, specifically in their first game if
+            # they HAVE NOT logged into the site yet but HAVE put items
+            # into the swap chest, and someone else has already removed
+            # those items. Like in the temporary achievements case, we
+            # ignore this until a later update in which the Player does
+            # exist.
+            #
+            # NOTE: This works because the donor files are re-read in full
+            # every run. If that ever changes to an xlogfile-like system
+            # that stores a file position, such donors WOULD be lost and
+            # this SHOULD create the Player instead.
+            logger.warning('Ignoring nonexistent donor %s', plname)
+
 def populateDonors():
-    from tnnt.settings import DONOR_FILES
-
-    # first wipe all donation credits from players, since we will be reading the
-    # donor files from scratch
-    for p in Player.objects.all():
-        p.donations = 0
-        p.save()
-
-    # Up to K2 whether it is better in the long run to request these files via
-    # HTTP or sync them over to the webserver and read them locally.
-    for url in DONOR_FILES:
-        r = requests.get(url, stream=True)
-        if r.status_code != 200:
-            logger.error('Could not fetch donor file %s - %s' % (url, str(r)))
-            continue
-        else:
-            for line in r.iter_lines():
-                plname = line.decode()
-                try:
-                    player = Player.objects.get(name=plname)
-                except Player.DoesNotExist:
-                    # It is possible for there to be a donor for which a Player
-                    # doesn't exist yet, specifically in their first game if
-                    # they HAVE NOT logged into the site yet but HAVE put items
-                    # into the swap chest, and someone else has already removed
-                    # those items. Like in the temporary achievements case, we
-                    # ignore this until a later update in which the Player does
-                    # exist.
-                    #
-                    # NOTE: If this is changed later such that it doesn't pull
-                    # the entire donor file fresh every time, instead using an
-                    # xlogfile-like system of storing the file position, then
-                    # this WILL lose donors from such cases and SHOULD be
-                    # updated to create Players if they don't already exist.
-                    # Currently I don't think an xlogfile-like system is needed
-                    # here.
-                    logger.warning('Ignoring nonexistent donor %s' % (plname))
-                    continue
-                player.donations += 1
-                player.save()
+    # Network first, outside any transaction; then one short atomic write.
+    apply_donor_counts(fetch_donor_names())
 
 # Gather temporary achievements. This only needs to happen once per aggregation
 # and should happen BEFORE any aggregating is done.
-# Input: files in TEMP_ACHIEVEMENTS_PATH
-# Output: structure like
-# {
-#   'player1': [ 1, 66, 123, ... ]
-#   'player2': [ ... ]
-# }
-# where the numbers are the ids of Achievements.
-TEMP_ACHIEVEMENTS = {}
+# Input: files in TEMP_ACHIEVEMENTS_PATH, one per game in progress, named
+# <player>.tach[.<server>].txt and containing the tnntachieve0..N bitfields as
+# hex, one per line.
+# Output: Player.temp_achievements is rebuilt from those files.
 @transaction.atomic
 def obtainTempAchievements():
-    try:
-        from tnnt.settings import TEMP_ACHIEVEMENTS_PATH
-    except ImportError:
+    tach_dir = getattr(settings, 'TEMP_ACHIEVEMENTS_PATH', None)
+    if tach_dir is None:
         # having no TEMP_ACHIEVEMENTS_PATH in settings indicates you don't want
         # to show these
         return
-    # process only files matching the temp achievement filename format, so it
-    # won't try to read log files, etc
-    fn_pat = re.compile(r".*\.tach(?:\.(au|eu|us))?\.txt$")
-    filelist = [ fn for fn in os.listdir(Path(TEMP_ACHIEVEMENTS_PATH))
-                if fn_pat.fullmatch(fn) ]
 
     # Unconditionally wipe all temporary achievements from everyone. If someone
     # still has some from the same game in progress, the file will still be
-    # there and we'll read it in after this.
-    for p in Player.objects.all():
-        p.temp_achievements.clear()
-        p.save()
+    # there and we'll read it in after this. One DELETE on the join table
+    # rather than a clear() and a pointless save() per Player.
+    Player.temp_achievements.through.objects.all().delete()
+
+    # process only files matching the temp achievement filename format, so it
+    # won't try to read log files, etc
+    fn_pat = re.compile(r".*\.tach(?:\.(au|eu|us))?\.txt$")
+    try:
+        filelist = [ fn for fn in os.listdir(Path(tach_dir))
+                    if fn_pat.fullmatch(fn) ]
+    except OSError as e:
+        logger.error('Cannot list temp achievements directory %s: %s',
+                     tach_dir, e)
+        return
 
     for fname in filelist:
         plname = fname.split('.')[0]
@@ -175,25 +172,8 @@ def obtainTempAchievements():
         # are additive, instead of only showing the last one in the list.
 
         try:
-            with open(Path(TEMP_ACHIEVEMENTS_PATH) / fname, 'r') as file:
+            with open(Path(tach_dir) / fname, 'r') as file:
                 lines = file.readlines()
-
-                if len(lines) != UNIQ_ACHFIELDS:
-                    logger.warning('Temp ach file %s is malformed with wrong number of lines'
-                                   % (fname))
-                    continue # for fname in filelist
-
-                # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
-                # Assumption: file contents have tnntachieve0 as a number on the
-                # first line, then subsequent lines are tnntachieve1, tnntachieve2, ...
-                achdict = {}
-                tnntachieveX = 0
-                for L in lines:
-                    achdict['tnntachieve' + str(tnntachieveX)] = int(L, 16)
-                    tnntachieveX += 1
-                for ach in ALL_ACHIEVEMENTS:
-                    if achdict[ach.xlogfield] & (1 << ach.bit):
-                        player.temp_achievements.add(ach)
         except FileNotFoundError:
             # File was deleted between directory listing and open (TOCTOU).
             # This is expected in multi-process environments where games
@@ -201,6 +181,31 @@ def obtainTempAchievements():
             logger.info('Ignoring temp achievements from file %s - '
                         'file deleted during processing' % (fname))
             continue
+        except OSError as e:
+            logger.warning('Skipping temp ach file %s: %s', fname, e)
+            continue
+
+        if len(lines) != UNIQ_ACHFIELDS:
+            logger.warning('Temp ach file %s is malformed with wrong number of lines'
+                           % (fname))
+            continue # for fname in filelist
+
+        # create a dict of { tnntachieve0: <achieve bits>, tnntachieve1: ... }
+        # Assumption: file contents have tnntachieve0 as a number on the
+        # first line, then subsequent lines are tnntachieve1, tnntachieve2, ...
+        try:
+            achdict = { 'tnntachieve%d' % i: int(L, 16)
+                        for i, L in enumerate(lines) }
+            achs = [ ach for ach in ALL_ACHIEVEMENTS
+                     if achdict[ach.xlogfield] & (1 << ach.bit) ]
+        except (ValueError, KeyError) as e:
+            # A line that isn't a hex number (the game may still be writing
+            # the file), or an achievement whose xlog field the file doesn't
+            # have. Either way, skip just this file.
+            logger.warning('Skipping malformed temp ach file %s: %s', fname, e)
+            continue
+        if achs:
+            player.temp_achievements.add(*achs)
 
 # Determine and award trophies to a player or clan.
 # ASSUMPTION: The player's LeaderboardBaseFields are already computed.
@@ -325,12 +330,10 @@ def aggregatePlayerData():
         plr.wins = winsby_plr.count()
         plr.splats = gamesby_plr.filter(splatted=True).count()
         plr.games_over_1000_turns = gamesby_plr.filter(turns__gte=1000).count()
-        # This is the source of truth for "what is a scummed game".
-        # Scummed games are defined as:
-        # - (death in ('quit', 'escaped') and turns <= 100)
-        plr.games_scummed = gamesby_plr.filter(
-            death__in=('quit', 'escaped'),
-            turns__lte=100).count()
+        # "What is a scummed game" is defined once, in scoreboard.models
+        # (SCUMMED_GAME_Q: quit or escaped with <= 100 turns); this field is
+        # the precomputed result every page should use.
+        plr.games_scummed = gamesby_plr.filter(SCUMMED_GAME_Q).count()
 
         # a more complex aggregate
         # different from max_achieves_game; this is the total number of
@@ -381,7 +384,7 @@ def aggregatePlayerData():
 
         plr.save()
         awardTrophies(plr, gamesby_plr)
-    logging.info('aggregatePlayerData complete')
+    logger.info('aggregatePlayerData complete')
 
 # Compute LeaderboardBaseFields data on all Clans, and write it back.
 # ASSUMPTION: It is run after aggregatePlayerData is run, and that each Player
@@ -469,10 +472,12 @@ def aggregateClanData():
         clan.save()
         # For clans, we have to remove all trophies before re-awarding them.
         # This is because a member who provided some of the effort towards a
-        # trophy may have left since the last aggregation.
-        clan.trophies.remove()
+        # trophy may have left since the last aggregation. (This used to be
+        # remove() with no arguments, which is a no-op, so clans never lost
+        # trophies.)
+        clan.trophies.clear()
         awardTrophies(clan, gamesby_clan)
-    logging.info('aggregateClanData complete')
+    logger.info('aggregateClanData complete')
 
 class Command(BaseCommand):
     help = 'Compute aggregate data from the set of all games'
@@ -487,6 +492,7 @@ class Command(BaseCommand):
     # one is clamoring for us to do just-in-time updates, it remains the most
     # convenient to just keep this as a command that's run at regular intervals.
     def handle(self, *args, **options):
+        load_static_data()
         obtainTempAchievements()
         populateDonors()
         # This will end up doing a bunch of writes. Force them to happen all at
@@ -501,5 +507,9 @@ class Command(BaseCommand):
             aggregatePlayerData()
             aggregateClanData()
 
-        # Invalidate all trophy grid caches after transaction commits
+        # Invalidate all trophy grid caches after transaction commits. (With
+        # the default per-process LocMemCache this can't reach the web
+        # server's cache from a cron run; entries expire on their own after
+        # TROPHY_GRID_CACHE_TIMEOUT. It does the right thing if a shared
+        # backend is ever configured.)
         invalidate_trophy_grid_cache()
