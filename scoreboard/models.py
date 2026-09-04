@@ -268,6 +268,37 @@ class Game(models.Model):
             models.Index(fields=['starttime']),  # For streak calculations and chronological ordering
         ]
 
+
+# A "scummed" game is one the player quit or escaped within the first 100
+# turns (startscumming). This is the single source of truth for that
+# definition: aggregate.py computes Player/Clan.games_scummed from it and the
+# views exclude or count scummed games with it.
+SCUMMED_DEATHS = ('quit', 'escaped')
+SCUMMED_MAX_TURNS = 100
+
+
+def scummed_q(prefix=''):
+    # Return a Q object matching scummed Games. `prefix` applies the same
+    # definition through a relation, e.g. scummed_q('game__') when
+    # annotating Players.
+    return models.Q(**{
+        prefix + 'death__in': SCUMMED_DEATHS,
+        prefix + 'turns__lte': SCUMMED_MAX_TURNS,
+    })
+
+
+SCUMMED_GAME_Q = scummed_q()
+
+
+def is_scummed(row):
+    # The same definition for a dict of Game fields (e.g. from .values()).
+    # A row that doesn't carry both fields is not considered scummed.
+    death = row.get('death')
+    turns = row.get('turns')
+    return death in SCUMMED_DEATHS and turns is not None \
+        and turns <= SCUMMED_MAX_TURNS
+
+
 class SiteSettings(models.Model):
     """
     Singleton model for site-wide settings controlled by admins.
