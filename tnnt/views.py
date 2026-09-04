@@ -1676,16 +1676,24 @@ class AdminPanelView(View):
 
         if scummers_list is None:
             logger.info('Cache miss for scummers, querying database...')
-            scummers = Player.objects.filter(games_scummed__gte=100) \
-                .select_related('clan') \
+            scummers = list(
+                Player.objects.filter(games_scummed__gte=100)
+                .select_related('clan')
                 .order_by('-games_scummed')
+            )
+
+            # One batched lookup: three SSH round trips in total rather
+            # than three per scummer.
+            logger.info('Looking up last IPs for %d scummers',
+                        len(scummers))
+            last_ips = hardfought_utils.get_players_last_ips(
+                [player.name for player in scummers]
+            )
 
             # Add IP, warning level, and scum rate to each scummer
             scummers_list = []
             for player in scummers:
-                player.last_ip = (
-                    hardfought_utils.get_player_last_ip(player.name)
-                )
+                player.last_ip = last_ips.get(player.name)
                 player.warning_level = (
                     'serious' if player.games_scummed >= 500 else 'warning'
                 )

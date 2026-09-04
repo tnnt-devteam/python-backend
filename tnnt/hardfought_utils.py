@@ -67,11 +67,19 @@ def query_remote_ip_db(server, query, params=None):
 
         # Substitute query parameters (sqlite3 CLI doesn't support bound
         # parameters). Escape single quotes for the SQL string-literal layer.
+        # Split on the placeholders first: replacing them one at a time
+        # re-scans the values already inserted, so a '?' inside a value
+        # would swallow the next placeholder.
         if params:
-            escaped_params = [str(p).replace("'", "''") for p in params]
-            # Replace ? with actual values
-            for param in escaped_params:
-                query = query.replace('?', f"'{param}'", 1)
+            parts = query.split('?')
+            if len(parts) != len(params) + 1:
+                logger.error('Query has %d placeholders for %d parameters',
+                             len(parts) - 1, len(params))
+                return []
+            values = ["'%s'" % str(p).replace("'", "''") for p in params]
+            query = ''.join(
+                part + value for part, value in zip(parts, values + [''])
+            )
 
         # Build the remote command with shlex.quote so nothing in `query`
         # (e.g. a crafted player name) can break out of the argument and be
@@ -203,38 +211,54 @@ def get_multi_account_ips():
         logger.error('Error in get_multi_account_ips: %s', str(e))
         return []
 
-def get_player_last_ip(username):
+# Names per IN (...) list when batching IP lookups: well under SQLite's
+# 999-parameter floor for the local query, and keeps the SSH command line
+# short for the remote ones.
+IP_LOOKUP_CHUNK = 500
+
+
+def get_players_last_ips(usernames):
     """
-    Get most recent IP address for a player across all servers.
-    Checks US, EU, and AU servers and returns the most recent IP.
+    Most recent IP address for each of `usernames` across the US, EU and
+    AU servers, as {username: ip_address}. Names with no recorded IP are
+    absent from the result.
+
+    One query per server per chunk of names, so the admin panel costs
+    three SSH round trips however many scummers it lists, rather than
+    three per player. Each remote call carries a 10 s connect / 30 s
+    total timeout, which per player added up to minutes whenever a
+    server was unreachable.
     """
+    names = sorted(set(usernames))
+    latest = {}  # username -> (last_seen, ip_address)
     try:
-        # Query to get most recent IP for this user
-        query = """
-            SELECT ip_address, last_seen
-            FROM user_ip_history
-            WHERE username = '{user}'
-            ORDER BY last_seen DESC
-            LIMIT 1
-        """.format(user=username.replace("'", "''"))
-
-        most_recent_ip = None
-        most_recent_time = 0
-
-        # Check all three servers
-        for server in ['us', 'eu', 'au']:
-            rows = query_remote_ip_db(server, query)
-            if rows and len(rows) > 0:
-                row = rows[0]
-                if row['last_seen'] > most_recent_time:
-                    most_recent_time = row['last_seen']
-                    most_recent_ip = row['ip_address']
-
-        return most_recent_ip
-
+        for start in range(0, len(names), IP_LOOKUP_CHUNK):
+            chunk = tuple(names[start:start + IP_LOOKUP_CHUNK])
+            # SQLite guarantees that a bare column in a MAX() query is
+            # taken from the row holding the maximum, so ip_address here
+            # is the one from the newest connection.
+            query = """
+                SELECT username, ip_address, MAX(last_seen) AS last_seen
+                FROM user_ip_history
+                WHERE username IN ({})
+                GROUP BY username
+            """.format(', '.join('?' * len(chunk)))
+            for server in ['us', 'eu', 'au']:
+                for row in query_remote_ip_db(server, query, chunk):
+                    name = row['username']
+                    if name not in latest \
+                            or row['last_seen'] > latest[name][0]:
+                        latest[name] = (row['last_seen'], row['ip_address'])
     except Exception as e:
-        logger.error('Error getting IP for user %s: %s', username, str(e))
-        return None
+        logger.error('Error getting last IPs for %d players: %s',
+                     len(names), str(e))
+    return {name: ip for name, (_, ip) in latest.items()}
+
+
+def get_player_last_ip(username):
+    """Most recent IP address for one player; see get_players_last_ips."""
+    return get_players_last_ips([username]).get(username)
+
 
 # Function that looks up a player in first the Player table, then if not found
 # there then in dgamelaunch database. If found in dgamelaunch, create the player

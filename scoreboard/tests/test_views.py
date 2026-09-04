@@ -218,3 +218,33 @@ class TrophyStatusTests(TestCase):
         self.assertFalse(status['keep_nemesis_alive'])
         self.assertFalse(status['keep_nemesis_alive_unobtainable'])
         self.assertFalse(any(status['individual_conducts'].values()))
+
+
+class AdminPanelTests(TestCase):
+
+    def test_non_admin_is_refused(self):
+        login_player(self.client, 'bob')
+        self.assertEqual(self.client.get('/admin-panel').status_code, 403)
+
+    def test_scummer_ips_come_from_one_batched_lookup(self):
+        login_player(self.client, 'k2')  # in SITE_ADMINS
+        for name, scummed in (('sam', 120), ('sue', 600), ('sal', 5)):
+            Player.objects.create(name=name, games_scummed=scummed)
+        with mock.patch.object(hardfought_utils, 'get_multi_account_ips',
+                               return_value=[]), \
+                mock.patch.object(hardfought_utils, 'get_players_last_ips',
+                                  return_value={'sue': '10.0.0.9'}) as ips, \
+                mock.patch.object(hardfought_utils,
+                                  'get_player_last_ip') as single:
+            resp = self.client.get('/admin-panel?refresh=1')
+        self.assertEqual(resp.status_code, 200)
+        # every scummer in one call, heaviest first; nothing per player
+        ips.assert_called_once_with(['sue', 'sam'])
+        single.assert_not_called()
+        scummers = {p.name: p for p in resp.context['scummers']}
+        self.assertEqual(sorted(scummers), ['sam', 'sue'])
+        self.assertEqual(scummers['sue'].last_ip, '10.0.0.9')
+        self.assertIsNone(scummers['sam'].last_ip)
+        self.assertEqual(scummers['sue'].warning_level, 'serious')
+        self.assertEqual(scummers['sam'].warning_level, 'warning')
+        self.assertContains(resp, '10.0.0.9')
