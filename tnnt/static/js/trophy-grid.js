@@ -1,12 +1,17 @@
 /**
  * Trophy Grid Interactive Functionality
  * Handles clickable cells and game details modal
+ *
+ * Everything that comes back from the API (player names, dumplog URLs,
+ * dates) is placed in the document with textContent or a property
+ * assignment, never by building markup, so nothing in the data can be
+ * interpreted as HTML.
  */
 
 (function() {
   'use strict';
 
-  // Modal HTML structure
+  // Static modal skeleton. It carries no data, so a template is safe here.
   const modalHTML = `
     <div id="trophy-grid-modal" class="trophy-modal trophy-modal-hidden">
       <div class="trophy-modal-overlay"></div>
@@ -16,14 +21,87 @@
           <button class="trophy-modal-close">&times;</button>
         </div>
         <div class="trophy-modal-body">
-          <div id="modal-loading" class="modal-loading">
-            Loading games...
-          </div>
+          <div id="modal-loading" class="modal-loading"></div>
           <div id="modal-games" class="modal-games-hidden"></div>
         </div>
       </div>
     </div>
   `;
+
+  const LOADING_TEXT = 'Loading games...';
+  const COLUMNS = ['Player', 'Date', 'Score', 'Turns', 'Dumplog'];
+
+  // One entry per list in the API response, in display order. The symbols
+  // match the trophy grid legend in singleplayerorclan.html.
+  const SECTIONS = [
+    {key: 'mines_soko', label: 'Mines + Soko Complete',
+     symbolClass: 'sym-mines', symbol: '⛏'},
+    {key: 'male_ascensions', label: 'Male Ascensions',
+     symbolClass: 'sym-male', symbol: '♂'},
+    {key: 'female_ascensions', label: 'Female Ascensions',
+     symbolClass: 'sym-female', symbol: '♀'}
+  ];
+
+  // Create an element with an optional class and text content.
+  function el(tag, className, text) {
+    const node = document.createElement(tag);
+    if (className) {
+      node.className = className;
+    }
+    if (text !== undefined && text !== null) {
+      node.textContent = text;
+    }
+    return node;
+  }
+
+  // One table row for a game.
+  function gameRow(game) {
+    const row = el('tr');
+    row.appendChild(el('td', null, game.player__name || ''));
+    row.appendChild(el('td', null, game.endtime || ''));
+    row.appendChild(el('td', null, (game.points || 0).toLocaleString()));
+    row.appendChild(el('td', null, (game.turns || 0).toLocaleString()));
+    const linkCell = el('td');
+    if (game.dumplog) {
+      const link = el('a', null, 'View');
+      link.href = game.dumplog;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      linkCell.appendChild(link);
+    }
+    row.appendChild(linkCell);
+    return row;
+  }
+
+  // Heading plus table for one section of the response.
+  function gamesSection(section, games) {
+    const fragment = document.createDocumentFragment();
+
+    const heading = el('h4');
+    const symbols = el('span', 'progress-symbols');
+    symbols.appendChild(el('span', section.symbolClass, section.symbol));
+    heading.appendChild(symbols);
+    heading.appendChild(document.createTextNode(
+      ' ' + section.label + ' (' + games.length + ')'));
+    fragment.appendChild(heading);
+
+    const table = el('table', 'games-table');
+    const headerRow = el('tr');
+    COLUMNS.forEach(function(column) {
+      headerRow.appendChild(el('th', null, column));
+    });
+    const thead = el('thead');
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+    const tbody = el('tbody');
+    games.forEach(function(game) {
+      tbody.appendChild(gameRow(game));
+    });
+    table.appendChild(tbody);
+    fragment.appendChild(table);
+
+    return fragment;
+  }
 
   // Initialize when DOM is ready
   document.addEventListener('DOMContentLoaded', function() {
@@ -48,6 +126,11 @@
     const closeBtn = modal.querySelector('.trophy-modal-close');
     const overlay = modal.querySelector('.trophy-modal-overlay');
 
+    // Each click gets a number; a response for anything but the latest
+    // click is dropped, so a slow earlier request cannot overwrite the
+    // games of the cell the user clicked last.
+    let latestRequest = 0;
+
     // Close modal handlers
     closeBtn.addEventListener('click', closeModal);
     overlay.addEventListener('click', closeModal);
@@ -61,15 +144,56 @@
 
     function closeModal() {
       modal.classList.add('trophy-modal-hidden');
-      modalGames.innerHTML = '';
+      modalGames.textContent = '';
     }
 
     function openModal(title) {
       modalTitle.textContent = title;
+      modalLoading.textContent = LOADING_TEXT;
       modalLoading.classList.remove('modal-loading-hidden');
       modalGames.classList.add('modal-games-hidden');
-      modalGames.innerHTML = '';
+      modalGames.textContent = '';
       modal.classList.remove('trophy-modal-hidden');
+    }
+
+    function showError(message) {
+      modalLoading.textContent = '';
+      modalLoading.appendChild(
+        el('p', 'error-msg', 'Error loading games: ' + message));
+    }
+
+    function displayGames(data) {
+      modalLoading.classList.add('modal-loading-hidden');
+      modalGames.classList.remove('modal-games-hidden');
+      modalGames.textContent = '';
+
+      const games = data.games || {};
+      let shown = 0;
+      SECTIONS.forEach(function(section) {
+        const list = games[section.key];
+        if (list && list.length > 0) {
+          modalGames.appendChild(gamesSection(section, list));
+          shown += 1;
+        }
+      });
+
+      if (shown === 0) {
+        modalGames.appendChild(
+          el('p', 'no-games-msg', 'No games found for this combination.'));
+      }
+    }
+
+    // Resolve to the parsed body, or reject with the server's error message
+    // (the API answers 400/404 with {"error": "..."}) or the status code.
+    function parseResponse(response) {
+      return response.json()
+        .catch(function() { return {}; })
+        .then(function(body) {
+          if (!response.ok) {
+            throw new Error(body.error || ('server returned ' + response.status));
+          }
+          return body;
+        });
     }
 
     // Add click handlers to trophy grid cells (cells already declared above)
@@ -84,89 +208,30 @@
         const [race, align] = raceAlign.split('-');
 
         // Open modal
-        openModal(`${role}-${race}-${align} Games`);
+        openModal(role + '-' + race + '-' + align + ' Games');
 
-        // Fetch games from API
-        const url = `/api/trophy-grid-games/?entity_type=${entityType}&entity_id=${entityId}&role=${role}&race=${race}&align=${align}`;
+        const request = ++latestRequest;
+        const params = new URLSearchParams({
+          entity_type: entityType,
+          entity_id: entityId,
+          role: role,
+          race: race,
+          align: align
+        });
 
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            displayGames(data);
+        fetch('/api/trophy-grid-games/?' + params.toString())
+          .then(parseResponse)
+          .then(function(data) {
+            if (request === latestRequest) {
+              displayGames(data);
+            }
           })
-          .catch(error => {
-            modalLoading.innerHTML = '<p class="error-msg">Error loading games: ' + error.message + '</p>';
+          .catch(function(error) {
+            if (request === latestRequest) {
+              showError(error.message);
+            }
           });
       });
     });
-
-    function displayGames(data) {
-      modalLoading.classList.add('modal-loading-hidden');
-      modalGames.classList.remove('modal-games-hidden');
-
-      const games = data.games;
-      let html = '';
-
-      // Mines+Soko section
-      if (games.mines_soko && games.mines_soko.length > 0) {
-        html += '<h4><span class="progress-symbols"><span class="sym-mines">⛏</span></span> Mines + Soko Complete (' + games.mines_soko.length + ')</h4>';
-        html += '<table class="games-table">';
-        html += '<thead><tr><th>Player</th><th>Date</th><th>Score</th><th>Turns</th><th>Dumplog</th></tr></thead>';
-        html += '<tbody>';
-        games.mines_soko.forEach(function(game) {
-          html += '<tr>';
-          html += '<td>' + game.player__name + '</td>';
-          html += '<td>' + (game.endtime || '') + '</td>';
-          html += '<td>' + (game.points || 0).toLocaleString() + '</td>';
-          html += '<td>' + (game.turns || 0).toLocaleString() + '</td>';
-          html += '<td><a href="' + game.dumplog + '" target="_blank">View</a></td>';
-          html += '</tr>';
-        });
-        html += '</tbody></table>';
-      }
-
-      // Male ascensions section
-      if (games.male_ascensions && games.male_ascensions.length > 0) {
-        html += '<h4><span class="progress-symbols"><span class="sym-male">♂</span></span> Male Ascensions (' + games.male_ascensions.length + ')</h4>';
-        html += '<table class="games-table">';
-        html += '<thead><tr><th>Player</th><th>Date</th><th>Score</th><th>Turns</th><th>Dumplog</th></tr></thead>';
-        html += '<tbody>';
-        games.male_ascensions.forEach(function(game) {
-          html += '<tr>';
-          html += '<td>' + game.player__name + '</td>';
-          html += '<td>' + (game.endtime || '') + '</td>';
-          html += '<td>' + (game.points || 0).toLocaleString() + '</td>';
-          html += '<td>' + (game.turns || 0).toLocaleString() + '</td>';
-          html += '<td><a href="' + game.dumplog + '" target="_blank">View</a></td>';
-          html += '</tr>';
-        });
-        html += '</tbody></table>';
-      }
-
-      // Female ascensions section
-      if (games.female_ascensions && games.female_ascensions.length > 0) {
-        html += '<h4><span class="progress-symbols"><span class="sym-female">♀</span></span> Female Ascensions (' + games.female_ascensions.length + ')</h4>';
-        html += '<table class="games-table">';
-        html += '<thead><tr><th>Player</th><th>Date</th><th>Score</th><th>Turns</th><th>Dumplog</th></tr></thead>';
-        html += '<tbody>';
-        games.female_ascensions.forEach(function(game) {
-          html += '<tr>';
-          html += '<td>' + game.player__name + '</td>';
-          html += '<td>' + (game.endtime || '') + '</td>';
-          html += '<td>' + (game.points || 0).toLocaleString() + '</td>';
-          html += '<td>' + (game.turns || 0).toLocaleString() + '</td>';
-          html += '<td><a href="' + game.dumplog + '" target="_blank">View</a></td>';
-          html += '</tr>';
-        });
-        html += '</tbody></table>';
-      }
-
-      // No games found
-      if (html === '') {
-        html = '<p class="no-games-msg">No games found for this combination.</p>';
-      }
-
-      modalGames.innerHTML = html;
-    }
   });
 })();
