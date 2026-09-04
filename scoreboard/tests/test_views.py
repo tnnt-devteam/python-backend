@@ -248,3 +248,43 @@ class AdminPanelTests(TestCase):
         self.assertEqual(scummers['sue'].warning_level, 'serious')
         self.assertEqual(scummers['sam'].warning_level, 'warning')
         self.assertContains(resp, '10.0.0.9')
+
+
+class PlayersPageTests(TestCase):
+    """
+    A Player row is also created by a login or by a clan invite, before
+    any game is played. The players page and the index's player count
+    only show players with at least one game, like the API does.
+    """
+
+    def setUp(self):
+        self.clan = Clan.objects.create(name='Testers')
+        Player.objects.create(name='alice', total_games=3, wins=1,
+                              clan=self.clan)
+        Player.objects.create(name='bob', total_games=2)
+        Player.objects.create(name='ghost', clan=self.clan)
+
+    def test_only_players_with_games_are_listed(self):
+        resp = self.client.get('/players')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual([p.name for p in resp.context['players']],
+                         ['alice', 'bob'])
+        self.assertNotContains(resp, 'ghost')
+
+    def test_index_player_count_uses_the_same_rule(self):
+        resp = self.client.get('/')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.context['numplayers'], 2)
+
+    def test_games_less_player_still_has_a_page(self):
+        self.assertEqual(self.client.get('/player/ghost').status_code, 200)
+
+    def test_clan_column_does_not_query_per_player(self):
+        with CaptureQueriesContext(connection) as few:
+            self.client.get('/players')
+        for i in range(20):
+            Player.objects.create(name='p%d' % i, total_games=1,
+                                  clan=self.clan)
+        with CaptureQueriesContext(connection) as many:
+            self.client.get('/players')
+        self.assertEqual(len(many), len(few))

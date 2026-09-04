@@ -113,7 +113,11 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         # general statistics
         kwargs['numclans'] = Clan.objects.count()
-        kwargs['numplayers'] = Player.objects.count()
+        # A player is someone with at least one game, the same rule as
+        # /players, the API and the leaderboards. A login or a clan invite
+        # also creates a Player row, and those must not be counted (36 of
+        # the 281 rows on the 2025 players page had no games).
+        kwargs['numplayers'] = Player.objects.filter(total_games__gt=0).count()
         kwargs['numgames'] = Game.objects.count()
         aggr = Player.objects.aggregate(
                     Sum('games_scummed'),
@@ -432,7 +436,13 @@ class PlayersView(TemplateView):
     template_name = 'players.html'
 
     def get_context_data(self, **kwargs):
-        kwargs['players'] = Player.objects.order_by('-wins', 'name')
+        # Only players with a game (see HomepageView.numplayers): a Player
+        # row created by a login or a clan invite alone would otherwise
+        # show as a row of zeros interleaved with the winless players.
+        # select_related: the template reads each row's clan name.
+        kwargs['players'] = Player.objects.filter(total_games__gt=0) \
+                                          .select_related('clan') \
+                                          .order_by('-wins', 'name')
         return kwargs
 
 class ClansView(TemplateView):
