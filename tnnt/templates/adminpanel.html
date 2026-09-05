@@ -143,6 +143,8 @@
     </summary>
     <div class="monitoring-description">
       Shows players with 100+ scummed games. Players with 500+ games are highlighted in red.
+      Peak Games/Min is the most scummed games started in any one minute:
+      15+ is faster than manual play, 30+ is a script (a new game every 2 seconds).
     </div>
     {% if scummers %}
     <table class="sortable monitoring-table">
@@ -150,7 +152,7 @@
         <tr>
           <th>Player</th>
           <th>Scummed Games</th>
-          <th>Peak Games/Sec</th>
+          <th>Peak Games/Min</th>
           <th>Last IP</th>
           <th>Clan</th>
         </tr>
@@ -160,9 +162,12 @@
         <tr class="warning-{{ player.warning_level }}">
           <td><a href="/player/{{ player.name }}" class="player-link">{{ player.name }}</a></td>
           <td class="centered scum-count">{{ player.games_scummed }}</td>
-          <td class="centered">
+          <td class="centered{% if player.scum_rate_level %} rate-{{ player.scum_rate_level }}{% endif %}">
             {% if player.peak_scum_rate %}
               {{ player.peak_scum_rate }}
+              {% if player.scum_rate_level %}
+                <span class="rate-label">{{ player.scum_rate_level }}</span>
+              {% endif %}
             {% else %}
               <span class="no-data">N/A</span>
             {% endif %}

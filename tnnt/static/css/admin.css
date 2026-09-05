@@ -357,3 +357,20 @@
   padding: 15px;
   text-align: center;
 }
+
+/* Peak games per minute level for scummers (thresholds: SCUM_RATE_FAST /
+   SCUM_RATE_SCRIPTED in tnnt/views.py) */
+.rate-fast {
+  color: #fd0;
+}
+
+.rate-scripted {
+  color: #f66;
+  font-weight: bold;
+}
+
+.rate-label {
+  font-size: 0.8em;
+  margin-left: 0.4em;
+  text-transform: uppercase;
+}

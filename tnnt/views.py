@@ -3,7 +3,7 @@ from django.views import View
 from django.contrib.auth.views import LoginView
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
-from django.db.models.functions import TruncSecond
+from django.db.models.functions import TruncMinute
 from scoreboard.models import *
 from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
 from scoreboard.api_views import ratelimit_exclude_localhost
@@ -1633,6 +1633,29 @@ class ArchiveFileView(View):
         # Default fallback
         return 'application/octet-stream'
 
+# Peak scummed games started in one clock minute that mark a player as
+# "fast" (macro or script assisted at least) and "scripted". Calibrated on
+# the 2024-2025 xlogfiles: players with 100+ scummed games peaked at 45-48
+# (a new game every 2 s), 33-42 (every 2-3 s), 16-27 (every 3-5 s) and
+# 9-13 (every 5-12 s, a fast human). A per-second window cannot tell
+# anyone apart: xlog timestamps are whole seconds and one game per player
+# per server per second is the practical maximum, so every one of those
+# players peaked at 1 per second.
+SCUM_RATE_FAST = 15
+SCUM_RATE_SCRIPTED = 30
+
+
+def scum_rate_level(peak_per_minute):
+    """'scripted', 'fast' or '' for a peak games-per-minute figure."""
+    if not peak_per_minute:
+        return ''
+    if peak_per_minute >= SCUM_RATE_SCRIPTED:
+        return 'scripted'
+    if peak_per_minute >= SCUM_RATE_FAST:
+        return 'fast'
+    return ''
+
+
 class AdminPanelView(View):
     """
     Admin panel for site administrators.
@@ -1708,20 +1731,21 @@ class AdminPanelView(View):
                     'serious' if player.games_scummed >= 500 else 'warning'
                 )
 
-                # Calculate peak games per second (max burst rate)
-                # Group scummed games by second and find the maximum
+                # Peak games per minute: the most scummed games started
+                # in any one clock minute (see SCUM_RATE_FAST above).
                 peak_burst = Game.objects.filter(
                     SCUMMED_GAME_Q, player=player
                 ).annotate(
-                    second=TruncSecond('starttime')
-                ).values('second').annotate(
+                    minute=TruncMinute('starttime')
+                ).values('minute').annotate(
                     count=Count('id')
                 ).order_by('-count').first()
 
-                if peak_burst:
-                    player.peak_scum_rate = peak_burst['count']
-                else:
-                    player.peak_scum_rate = None
+                player.peak_scum_rate = (
+                    peak_burst['count'] if peak_burst else None
+                )
+                player.scum_rate_level = scum_rate_level(
+                    player.peak_scum_rate)
 
                 scummers_list.append(player)
 

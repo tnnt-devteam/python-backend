@@ -1,4 +1,5 @@
 import sqlite3
+from datetime import datetime, timedelta, timezone
 from unittest import mock
 
 from django.contrib.auth.models import AnonymousUser, User
@@ -7,6 +8,7 @@ from django.test import TestCase
 from django.test.utils import CaptureQueriesContext
 
 from scoreboard.models import Clan, Conduct, Game, Player, Source
+from scoreboard.tests.helpers import in_window
 from scoreboard.tests.test_aggregate import make_game
 from tnnt import hardfought_utils, views
 from tnnt.trophy_grid import generate_combo_grid_data
@@ -221,6 +223,7 @@ class TrophyStatusTests(TestCase):
 
 
 class AdminPanelTests(TestCase):
+    fixtures = ['sources']
 
     def test_non_admin_is_refused(self):
         login_player(self.client, 'bob')
@@ -248,6 +251,35 @@ class AdminPanelTests(TestCase):
         self.assertEqual(scummers['sue'].warning_level, 'serious')
         self.assertEqual(scummers['sam'].warning_level, 'warning')
         self.assertContains(resp, '10.0.0.9')
+
+    def test_peak_rate_is_per_minute_with_levels(self):
+        login_player(self.client, 'k2')
+        src = Source.objects.get(server='hdf')
+        base = datetime.fromtimestamp(in_window(days=2), timezone.utc)
+
+        def scummer(name, games, gap):
+            player = Player.objects.create(name=name, games_scummed=100)
+            for i in range(games):
+                make_game(player, src, death='quit', turns=1, won=False,
+                          mines_soko=False,
+                          start=base + timedelta(seconds=i * gap))
+
+        scummer('slow', 6, 20)   # 3 in each of two minutes
+        scummer('fast', 20, 3)   # 20 in one minute
+        scummer('bot', 30, 2)    # 30 in one minute
+        with mock.patch.object(hardfought_utils, 'get_multi_account_ips',
+                               return_value=[]), \
+                mock.patch.object(hardfought_utils, 'get_players_last_ips',
+                                  return_value={}):
+            resp = self.client.get('/admin-panel?refresh=1')
+        self.assertEqual(resp.status_code, 200)
+        rates = {p.name: (p.peak_scum_rate, p.scum_rate_level)
+                 for p in resp.context['scummers']}
+        self.assertEqual(rates, {'slow': (3, ''), 'fast': (20, 'fast'),
+                                 'bot': (30, 'scripted')})
+        self.assertContains(resp, 'Peak Games/Min')
+        self.assertContains(resp, 'rate-scripted')
+        self.assertNotContains(resp, 'Games/Sec')
 
 
 class PlayersPageTests(TestCase):

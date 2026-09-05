@@ -16,11 +16,15 @@ _game_seq = [0]
 
 def make_game(player, source, role='Val', race='Hum', align0='Law',
               gender0='Fem', won=True, mines_soko=True, death='ascended',
-              turns=20000, points=1000000):
-    """Create a Game with all non-null fields filled in and unique times."""
+              turns=20000, points=1000000, start=None):
+    """
+    Create a Game with all non-null fields filled in and unique times, or
+    starting at `start` (an aware datetime) when given.
+    """
     _game_seq[0] += 1
-    start = datetime.fromtimestamp(in_window(seconds=_game_seq[0] * 3600),
-                                   timezone.utc)
+    if start is None:
+        start = datetime.fromtimestamp(
+            in_window(seconds=_game_seq[0] * 3600), timezone.utc)
     return Game.objects.create(
         version='3.6.7', role=role, race=race, gender=gender0, align=align0,
         gender0=gender0, align0=align0, points=points, turns=turns,
