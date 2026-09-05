@@ -1,0 +1,32 @@
+{
+ "entity_type": "player",
+ "name": "johnnyteapot",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "johnnyteapot",
+     "endtime": "2025-11-29 20:06",
+     "points": 2731418,
+     "turns": 59443,
+     "dumplog": "https://hardfought.org/userdata/j/johnnyteapot/tnnt/dumplog/1764052868.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "johnnyteapot",
+     "endtime": "2025-11-22 08:41",
+     "points": 3706516,
+     "turns": 63117,
+     "dumplog": "https://hardfought.org/userdata/j/johnnyteapot/tnnt/dumplog/1763620088.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

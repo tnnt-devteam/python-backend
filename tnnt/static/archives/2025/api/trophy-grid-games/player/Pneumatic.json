@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "Pneumatic",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Pneumatic",
+     "endtime": "2025-11-25 18:25",
+     "points": 867633,
+     "turns": 53162,
+     "dumplog": "https://hardfought.org/userdata/P/Pneumatic/tnnt/dumplog/1763763144.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

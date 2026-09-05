@@ -1,0 +1,58 @@
+{
+ "entity_type": "player",
+ "name": "karibou",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "karibou",
+     "endtime": "2025-11-30 23:24",
+     "points": 1471114,
+     "turns": 73088,
+     "dumplog": "https://hardfought.org/userdata/k/karibou/tnnt/dumplog/1763951793.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "karibou",
+     "endtime": "2025-11-24 01:59",
+     "points": 110840,
+     "turns": 26984,
+     "dumplog": "https://hardfought.org/userdata/k/karibou/tnnt/dumplog/1763782886.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "karibou",
+     "endtime": "2025-11-21 01:56",
+     "points": 75534,
+     "turns": 21241,
+     "dumplog": "https://hardfought.org/userdata/k/karibou/tnnt/dumplog/1763517917.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "karibou",
+     "endtime": "2025-11-12 01:46",
+     "points": 120948,
+     "turns": 34179,
+     "dumplog": "https://hardfought.org/userdata/k/karibou/tnnt/dumplog/1762521740.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

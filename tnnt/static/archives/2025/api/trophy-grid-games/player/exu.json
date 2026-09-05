@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "exu",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "exu",
+     "endtime": "2025-11-27 04:05",
+     "points": 2213576,
+     "turns": 44859,
+     "dumplog": "https://hardfought.org/userdata/e/exu/tnnt/dumplog/1763769803.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "exu",
+     "endtime": "2025-11-27 04:05",
+     "points": 2213576,
+     "turns": 44859,
+     "dumplog": "https://hardfought.org/userdata/e/exu/tnnt/dumplog/1763769803.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "exu",
+     "endtime": "2025-11-14 07:26",
+     "points": 2089092,
+     "turns": 37933,
+     "dumplog": "https://hardfought.org/userdata/e/exu/tnnt/dumplog/1762975209.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "exu",
+     "endtime": "2025-11-14 07:26",
+     "points": 2089092,
+     "turns": 37933,
+     "dumplog": "https://hardfought.org/userdata/e/exu/tnnt/dumplog/1762975209.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,178 @@
+{
+ "entity_type": "clan",
+ "name": "Meanwhile in Europe",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-29 16:09",
+     "points": 830808,
+     "turns": 37506,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1764031679.tnnt.html"
+    },
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-14 11:49",
+     "points": 4323560,
+     "turns": 67796,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1762327310.tnnt.html"
+    },
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-04 09:41",
+     "points": 120173,
+     "turns": 24736,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1762003352.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-14 11:49",
+     "points": 4323560,
+     "turns": 67796,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1762327310.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-29 16:09",
+     "points": 830808,
+     "turns": 37506,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1764031679.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-28 18:46",
+     "points": 88002,
+     "turns": 34240,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1764071950.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-28 17:24",
+     "points": 3898402,
+     "turns": 53464,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1763218392.tnnt.html"
+    },
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-14 23:37",
+     "points": 19654,
+     "turns": 9636,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1763145186.tnnt.html"
+    },
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-07 14:50",
+     "points": 225168,
+     "turns": 29928,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1762122134.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "khamul",
+     "endtime": "2025-11-28 17:24",
+     "points": 3898402,
+     "turns": 53464,
+     "dumplog": "https://eu.hardfought.org/userdata/k/khamul/tnnt/dumplog/1763218392.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-22 14:31",
+     "points": 34356,
+     "turns": 17985,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1763749191.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-17 00:25",
+     "points": 373735,
+     "turns": 47228,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1763061818.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-11 12:13",
+     "points": 2130222,
+     "turns": 36892,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1762098395.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-11 12:13",
+     "points": 2130222,
+     "turns": 36892,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1762098395.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-11 10:58",
+     "points": 572446,
+     "turns": 52025,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1762550242.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "tromix",
+     "endtime": "2025-11-03 17:26",
+     "points": 4243496,
+     "turns": 84389,
+     "dumplog": "https://eu.hardfought.org/userdata/t/tromix/tnnt/dumplog/1761981834.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "tromix",
+     "endtime": "2025-11-03 17:26",
+     "points": 4243496,
+     "turns": 84389,
+     "dumplog": "https://eu.hardfought.org/userdata/t/tromix/tnnt/dumplog/1761981834.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

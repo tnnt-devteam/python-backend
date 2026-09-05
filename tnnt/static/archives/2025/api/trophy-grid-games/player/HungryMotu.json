@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "HungryMotu",
+ "combos": {
+  "Cav-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "HungryMotu",
+     "endtime": "2025-11-22 05:34",
+     "points": 2049086,
+     "turns": 35927,
+     "dumplog": "https://au.hardfought.org/userdata/H/HungryMotu/tnnt/dumplog/1763185851.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "HungryMotu",
+     "endtime": "2025-11-12 11:16",
+     "points": 2823400,
+     "turns": 42382,
+     "dumplog": "https://au.hardfought.org/userdata/H/HungryMotu/tnnt/dumplog/1762235500.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "HungryMotu",
+     "endtime": "2025-11-12 11:16",
+     "points": 2823400,
+     "turns": 42382,
+     "dumplog": "https://au.hardfought.org/userdata/H/HungryMotu/tnnt/dumplog/1762235500.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

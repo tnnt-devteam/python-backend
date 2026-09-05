@@ -1,0 +1,181 @@
+{
+ "entity_type": "player",
+ "name": "Grouchy",
+ "combos": {
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-30 23:07",
+     "points": 2115798,
+     "turns": 36451,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1764273781.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-30 23:07",
+     "points": 2115798,
+     "turns": 36451,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1764273781.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-27 00:09",
+     "points": 3480896,
+     "turns": 40504,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1764008808.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-27 00:09",
+     "points": 3480896,
+     "turns": 40504,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1764008808.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-24 00:12",
+     "points": 2911498,
+     "turns": 42231,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1763593963.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-24 00:12",
+     "points": 2911498,
+     "turns": 42231,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1763593963.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-19 23:11",
+     "points": 2897374,
+     "turns": 50703,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1763351414.tnnt.html"
+    },
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-17 01:31",
+     "points": 100776,
+     "turns": 26360,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1763320367.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-19 23:11",
+     "points": 2897374,
+     "turns": 50703,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1763351414.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-14 16:43",
+     "points": 2782544,
+     "turns": 43943,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762910405.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-14 16:43",
+     "points": 2782544,
+     "turns": 43943,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762910405.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-09 01:06",
+     "points": 174011,
+     "turns": 25417,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762550150.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-12 01:09",
+     "points": 2677866,
+     "turns": 33998,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762789728.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-05 23:19",
+     "points": 2490938,
+     "turns": 29177,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762220398.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-05 23:19",
+     "points": 2490938,
+     "turns": 29177,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762220398.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-04 01:10",
+     "points": 2911360,
+     "turns": 36932,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762008204.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grouchy",
+     "endtime": "2025-11-04 01:10",
+     "points": 2911360,
+     "turns": 36932,
+     "dumplog": "https://hardfought.org/userdata/G/Grouchy/tnnt/dumplog/1762008204.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

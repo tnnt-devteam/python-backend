@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "joes",
+ "combos": {
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "joes",
+     "endtime": "2025-11-07 10:04",
+     "points": 70245,
+     "turns": 22409,
+     "dumplog": "https://eu.hardfought.org/userdata/j/joes/tnnt/dumplog/1762346418.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

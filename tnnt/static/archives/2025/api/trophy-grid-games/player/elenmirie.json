@@ -1,0 +1,125 @@
+{
+ "entity_type": "player",
+ "name": "elenmirie",
+ "combos": {
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-30 12:49",
+     "points": 1670890,
+     "turns": 34044,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764436314.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-30 12:49",
+     "points": 1670890,
+     "turns": 34044,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764436314.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-29 09:56",
+     "points": 2016024,
+     "turns": 46088,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764145417.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-29 09:56",
+     "points": 2016024,
+     "turns": 46088,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764145417.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-23 18:34",
+     "points": 1992426,
+     "turns": 45125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763713182.tnnt.html"
+    },
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-15 09:53",
+     "points": 200166,
+     "turns": 21607,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763143204.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-23 18:34",
+     "points": 1992426,
+     "turns": 45125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763713182.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-07 17:46",
+     "points": 2242358,
+     "turns": 64523,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762255225.tnnt.html"
+    },
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 19:35",
+     "points": 356529,
+     "turns": 31337,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762162749.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-07 17:46",
+     "points": 2242358,
+     "turns": 64523,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762255225.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 09:31",
+     "points": 2283242,
+     "turns": 46039,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762023249.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 09:31",
+     "points": 2283242,
+     "turns": 46039,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762023249.tnnt.html"
+    }
+   ]
+  }
+ }
+}

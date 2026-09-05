@@ -1,0 +1,69 @@
+{
+ "entity_type": "player",
+ "name": "Furey",
+ "combos": {
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-24 22:19",
+     "points": 3888616,
+     "turns": 103447,
+     "dumplog": "https://hardfought.org/userdata/F/Furey/tnnt/dumplog/1763669075.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-24 22:19",
+     "points": 3888616,
+     "turns": 103447,
+     "dumplog": "https://hardfought.org/userdata/F/Furey/tnnt/dumplog/1763669075.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-20 04:40",
+     "points": 5720693,
+     "turns": 186722,
+     "dumplog": "https://hardfought.org/userdata/F/Furey/tnnt/dumplog/1762065305.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-20 04:40",
+     "points": 5720693,
+     "turns": 186722,
+     "dumplog": "https://hardfought.org/userdata/F/Furey/tnnt/dumplog/1762065305.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-11 18:19",
+     "points": 5904411,
+     "turns": 217822,
+     "dumplog": "https://eu.hardfought.org/userdata/F/Furey/tnnt/dumplog/1762139781.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Furey",
+     "endtime": "2025-11-11 18:19",
+     "points": 5904411,
+     "turns": 217822,
+     "dumplog": "https://eu.hardfought.org/userdata/F/Furey/tnnt/dumplog/1762139781.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

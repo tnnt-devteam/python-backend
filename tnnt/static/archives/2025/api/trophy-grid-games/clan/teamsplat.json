@@ -1,0 +1,670 @@
+{
+ "entity_type": "clan",
+ "name": "teamsplat",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-30 23:17",
+     "points": 1233451,
+     "turns": 43494,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1764107280.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-30 23:17",
+     "points": 1233451,
+     "turns": 43494,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1764107280.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-30 20:42",
+     "points": 5121376,
+     "turns": 62201,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1764043468.tnnt.html"
+    },
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 09:31",
+     "points": 2283242,
+     "turns": 46039,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762023249.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-30 20:42",
+     "points": 5121376,
+     "turns": 62201,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1764043468.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 09:31",
+     "points": 2283242,
+     "turns": 46039,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762023249.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "malor",
+     "endtime": "2025-11-30 17:46",
+     "points": 2362108,
+     "turns": 41915,
+     "dumplog": "https://hardfought.org/userdata/m/malor/tnnt/dumplog/1762346785.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "malor",
+     "endtime": "2025-11-30 17:46",
+     "points": 2362108,
+     "turns": 41915,
+     "dumplog": "https://hardfought.org/userdata/m/malor/tnnt/dumplog/1762346785.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-30 12:49",
+     "points": 1670890,
+     "turns": 34044,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764436314.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-30 12:49",
+     "points": 1670890,
+     "turns": 34044,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764436314.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-30 10:47",
+     "points": 108303,
+     "turns": 12205,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1764491416.tnnt.html"
+    },
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-16 06:12",
+     "points": 302436,
+     "turns": 36821,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1762854711.tnnt.html"
+    },
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-09 00:05",
+     "points": 2489394,
+     "turns": 41304,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762252594.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-09 00:05",
+     "points": 2489394,
+     "turns": 41304,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762252594.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-30 02:18",
+     "points": 52428,
+     "turns": 17631,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1764458092.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-29 22:23",
+     "points": 2915034,
+     "turns": 92271,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1764106538.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-29 22:23",
+     "points": 2915034,
+     "turns": 92271,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1764106538.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-29 09:56",
+     "points": 2016024,
+     "turns": 46088,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764145417.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-29 09:56",
+     "points": 2016024,
+     "turns": 46088,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1764145417.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-28 12:36",
+     "points": 2380442,
+     "turns": 39360,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1763776600.tnnt.html"
+    },
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-21 19:58",
+     "points": 2529030,
+     "turns": 60939,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1762288945.tnnt.html"
+    },
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-05 06:51",
+     "points": 176162,
+     "turns": 37228,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1762269762.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-28 12:36",
+     "points": 2380442,
+     "turns": 39360,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1763776600.tnnt.html"
+    },
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-21 19:58",
+     "points": 2529030,
+     "turns": 60939,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1762288945.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-25 21:47",
+     "points": 33080,
+     "turns": 13448,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1764004398.tnnt.html"
+    },
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-23 19:42",
+     "points": 44230,
+     "turns": 17280,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1763830269.tnnt.html"
+    },
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-19 00:45",
+     "points": 1045460,
+     "turns": 37796,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1763383849.tnnt.html"
+    },
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-16 21:35",
+     "points": 276711,
+     "turns": 18988,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1763303200.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-25 21:33",
+     "points": 3756472,
+     "turns": 79726,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763842807.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-25 21:33",
+     "points": 3756472,
+     "turns": 79726,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763842807.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-24 15:41",
+     "points": 4769786,
+     "turns": 70446,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1763421900.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-24 15:41",
+     "points": 4769786,
+     "turns": 70446,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1763421900.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-23 18:34",
+     "points": 1992426,
+     "turns": 45125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763713182.tnnt.html"
+    },
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-15 09:53",
+     "points": 200166,
+     "turns": 21607,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763143204.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-23 18:34",
+     "points": 1992426,
+     "turns": 45125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1763713182.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-23 02:52",
+     "points": 44866,
+     "turns": 12130,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1763858921.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-22 20:12",
+     "points": 3884922,
+     "turns": 67124,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763660722.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-22 20:12",
+     "points": 3884922,
+     "turns": 67124,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763660722.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-20 17:44",
+     "points": 3643549,
+     "turns": 75630,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763428615.tnnt.html"
+    },
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-08 10:57",
+     "points": 52850,
+     "turns": 16361,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1762590350.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-20 17:44",
+     "points": 3643549,
+     "turns": 75630,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763428615.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-20 07:16",
+     "points": 3370800,
+     "turns": 67843,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1763306438.tnnt.html"
+    },
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-13 17:17",
+     "points": 4136552,
+     "turns": 68433,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762803641.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-13 17:17",
+     "points": 4136552,
+     "turns": 68433,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762803641.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-20 07:16",
+     "points": 3370800,
+     "turns": 67843,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1763306438.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-17 23:04",
+     "points": 3882426,
+     "turns": 58004,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763065350.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-17 23:04",
+     "points": 3882426,
+     "turns": 58004,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1763065350.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-15 17:15",
+     "points": 3779210,
+     "turns": 64573,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1762104850.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-15 17:15",
+     "points": 3779210,
+     "turns": 64573,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1762104850.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-15 13:01",
+     "points": 2180958,
+     "turns": 33757,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762514144.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-15 13:01",
+     "points": 2180958,
+     "turns": 33757,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762514144.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-04 23:29",
+     "points": 36355,
+     "turns": 9270,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1762257561.tnnt.html"
+    },
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-02 18:52",
+     "points": 760845,
+     "turns": 31147,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1762088808.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-13 18:56",
+     "points": 3057192,
+     "turns": 44378,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762724514.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-10 19:24",
+     "points": 1900845,
+     "turns": 57807,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762620725.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-10 19:24",
+     "points": 1900845,
+     "turns": 57807,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762620725.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-08 16:47",
+     "points": 1766766,
+     "turns": 75457,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762367679.tnnt.html"
+    },
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-05 14:22",
+     "points": 228963,
+     "turns": 19402,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762168005.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-08 16:47",
+     "points": 1766766,
+     "turns": 75457,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762367679.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-07 17:46",
+     "points": 2242358,
+     "turns": 64523,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762255225.tnnt.html"
+    },
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-03 19:35",
+     "points": 356529,
+     "turns": 31337,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762162749.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elenmirie",
+     "endtime": "2025-11-07 17:46",
+     "points": 2242358,
+     "turns": 64523,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenmirie/tnnt/dumplog/1762255225.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-05 17:30",
+     "points": 1902862,
+     "turns": 69693,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762120552.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "oh6",
+     "endtime": "2025-11-05 17:30",
+     "points": 1902862,
+     "turns": 69693,
+     "dumplog": "https://hardfought.org/userdata/o/oh6/tnnt/dumplog/1762120552.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "malor",
+     "endtime": "2025-11-04 19:01",
+     "points": 1006996,
+     "turns": 51895,
+     "dumplog": "https://hardfought.org/userdata/m/malor/tnnt/dumplog/1762064470.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "malor",
+     "endtime": "2025-11-04 19:01",
+     "points": 1006996,
+     "turns": 51895,
+     "dumplog": "https://hardfought.org/userdata/m/malor/tnnt/dumplog/1762064470.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Umbire",
+     "endtime": "2025-11-02 07:38",
+     "points": 3118308,
+     "turns": 50707,
+     "dumplog": "https://hardfought.org/userdata/U/Umbire/tnnt/dumplog/1761956996.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Umbire",
+     "endtime": "2025-11-02 07:38",
+     "points": 3118308,
+     "turns": 50707,
+     "dumplog": "https://hardfought.org/userdata/U/Umbire/tnnt/dumplog/1761956996.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

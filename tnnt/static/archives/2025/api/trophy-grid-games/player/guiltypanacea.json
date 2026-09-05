@@ -1,0 +1,126 @@
+{
+ "entity_type": "player",
+ "name": "guiltypanacea",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-28 23:09",
+     "points": 32775,
+     "turns": 15701,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1764300645.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-27 20:53",
+     "points": 52821,
+     "turns": 19352,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1764085125.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-25 06:40",
+     "points": 48646,
+     "turns": 18808,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763999917.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-23 18:22",
+     "points": 35307,
+     "turns": 13739,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763849491.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-22 21:37",
+     "points": 32494,
+     "turns": 17592,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763754107.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-20 05:26",
+     "points": 33114,
+     "turns": 16538,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763565861.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-18 07:33",
+     "points": 1071946,
+     "turns": 45603,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762996360.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-18 07:33",
+     "points": 1071946,
+     "turns": 45603,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762996360.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-12 23:37",
+     "points": 3869110,
+     "turns": 66841,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762460900.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-12 23:37",
+     "points": 3869110,
+     "turns": 66841,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762460900.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "Agentsoup",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Agentsoup",
+     "endtime": "2025-11-10 23:08",
+     "points": 319301,
+     "turns": 41098,
+     "dumplog": "https://hardfought.org/userdata/A/Agentsoup/tnnt/dumplog/1762741366.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

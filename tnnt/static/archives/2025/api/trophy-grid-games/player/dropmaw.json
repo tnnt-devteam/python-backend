@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "dropmaw",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-28 00:28",
+     "points": 4188246,
+     "turns": 88731,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762703320.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-28 00:28",
+     "points": 4188246,
+     "turns": 88731,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762703320.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-08 21:56",
+     "points": 29708,
+     "turns": 19375,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762479025.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

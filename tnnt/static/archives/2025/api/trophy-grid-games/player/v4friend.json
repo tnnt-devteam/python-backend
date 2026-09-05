@@ -1,0 +1,96 @@
+{
+ "entity_type": "player",
+ "name": "v4friend",
+ "combos": {
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-26 01:52",
+     "points": 2203526,
+     "turns": 52887,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763833163.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-26 01:52",
+     "points": 2203526,
+     "turns": 52887,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763833163.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-22 04:51",
+     "points": 2998572,
+     "turns": 76332,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763519807.tnnt.html"
+    },
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-18 16:16",
+     "points": 264593,
+     "turns": 33847,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763345632.tnnt.html"
+    },
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-16 08:43",
+     "points": 118490,
+     "turns": 30010,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763106307.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-22 04:51",
+     "points": 2998572,
+     "turns": 76332,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763519807.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-14 06:28",
+     "points": 2576184,
+     "turns": 49303,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762755676.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-14 06:28",
+     "points": 2576184,
+     "turns": 49303,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762755676.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-06 05:13",
+     "points": 17146,
+     "turns": 26234,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762104606.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,39 @@
+{
+ "entity_type": "player",
+ "name": "Arahael",
+ "combos": {
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-30 10:47",
+     "points": 108303,
+     "turns": 12205,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1764491416.tnnt.html"
+    },
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-16 06:12",
+     "points": 302436,
+     "turns": 36821,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1762854711.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Arahael",
+     "endtime": "2025-11-23 02:52",
+     "points": 44866,
+     "turns": 12130,
+     "dumplog": "https://au.hardfought.org/userdata/A/Arahael/tnnt/dumplog/1763858921.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

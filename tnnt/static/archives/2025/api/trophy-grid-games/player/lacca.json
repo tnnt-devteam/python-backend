@@ -1,0 +1,55 @@
+{
+ "entity_type": "player",
+ "name": "lacca",
+ "combos": {
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-19 18:49",
+     "points": 1192633,
+     "turns": 51714,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1763500745.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-19 18:49",
+     "points": 1192633,
+     "turns": 51714,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1763500745.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-07 17:17",
+     "points": 2927172,
+     "turns": 66826,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762452382.tnnt.html"
+    },
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-03 19:46",
+     "points": 78353,
+     "turns": 19652,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762188120.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-07 17:17",
+     "points": 2927172,
+     "turns": 66826,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762452382.tnnt.html"
+    }
+   ]
+  }
+ }
+}

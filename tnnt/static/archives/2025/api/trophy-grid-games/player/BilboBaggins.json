@@ -1,0 +1,33 @@
+{
+ "entity_type": "player",
+ "name": "BilboBaggins",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "BilboBaggins",
+     "endtime": "2025-11-25 04:01",
+     "points": 73536,
+     "turns": 21515,
+     "dumplog": "https://hardfought.org/userdata/B/BilboBaggins/tnnt/dumplog/1763909218.tnnt.html"
+    },
+    {
+     "player__name": "BilboBaggins",
+     "endtime": "2025-11-08 17:01",
+     "points": 873662,
+     "turns": 55940,
+     "dumplog": "https://hardfought.org/userdata/B/BilboBaggins/tnnt/dumplog/1762382124.tnnt.html"
+    },
+    {
+     "player__name": "BilboBaggins",
+     "endtime": "2025-11-03 02:38",
+     "points": 39122,
+     "turns": 19520,
+     "dumplog": "https://hardfought.org/userdata/B/BilboBaggins/tnnt/dumplog/1762098519.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

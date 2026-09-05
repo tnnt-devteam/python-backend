@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "PsyMarOotC",
+ "combos": {
+  "Pri-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "PsyMarOotC",
+     "endtime": "2025-11-24 17:53",
+     "points": 1937600,
+     "turns": 36109,
+     "dumplog": "https://hardfought.org/userdata/P/PsyMarOotC/tnnt/dumplog/1762812690.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "PsyMarOotC",
+     "endtime": "2025-11-24 17:53",
+     "points": 1937600,
+     "turns": 36109,
+     "dumplog": "https://hardfought.org/userdata/P/PsyMarOotC/tnnt/dumplog/1762812690.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

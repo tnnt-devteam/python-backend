@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "karafruit",
+ "combos": {
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "karafruit",
+     "endtime": "2025-11-09 00:01",
+     "points": 6712708,
+     "turns": 102347,
+     "dumplog": "https://hardfought.org/userdata/k/karafruit/tnnt/dumplog/1762299996.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "karafruit",
+     "endtime": "2025-11-09 00:01",
+     "points": 6712708,
+     "turns": 102347,
+     "dumplog": "https://hardfought.org/userdata/k/karafruit/tnnt/dumplog/1762299996.tnnt.html"
+    }
+   ]
+  }
+ }
+}

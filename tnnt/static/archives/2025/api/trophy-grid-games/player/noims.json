@@ -1,0 +1,61 @@
+{
+ "entity_type": "player",
+ "name": "noims",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-30 23:17",
+     "points": 1233451,
+     "turns": 43494,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1764107280.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-30 23:17",
+     "points": 1233451,
+     "turns": 43494,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1764107280.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-13 18:56",
+     "points": 3057192,
+     "turns": 44378,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762724514.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-09 00:05",
+     "points": 2489394,
+     "turns": 41304,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762252594.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "noims",
+     "endtime": "2025-11-09 00:05",
+     "points": 2489394,
+     "turns": 41304,
+     "dumplog": "https://eu.hardfought.org/userdata/n/noims/tnnt/dumplog/1762252594.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

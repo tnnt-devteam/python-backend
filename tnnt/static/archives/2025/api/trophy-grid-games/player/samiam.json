@@ -1,0 +1,145 @@
+{
+ "entity_type": "player",
+ "name": "samiam",
+ "combos": {
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-30 23:10",
+     "points": 2285432,
+     "turns": 61764,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1764273288.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-24 00:20",
+     "points": 82021,
+     "turns": 24773,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1763916667.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-21 20:39",
+     "points": 62426,
+     "turns": 18113,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1763739631.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-30 23:10",
+     "points": 2285432,
+     "turns": 61764,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1764273288.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-27 16:07",
+     "points": 2661878,
+     "turns": 52637,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1764105218.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-27 16:07",
+     "points": 2661878,
+     "turns": 52637,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1764105218.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-16 23:41",
+     "points": 2755978,
+     "turns": 52879,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1763165687.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-14 02:18",
+     "points": 141414,
+     "turns": 29350,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1763052353.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-13 16:03",
+     "points": 66981,
+     "turns": 17164,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762986290.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-16 23:41",
+     "points": 2755978,
+     "turns": 52879,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1763165687.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-12 18:36",
+     "points": 107220,
+     "turns": 21265,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762823167.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-10 15:43",
+     "points": 3082554,
+     "turns": 51381,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762634591.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-07 21:06",
+     "points": 202755,
+     "turns": 24014,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762473493.tnnt.html"
+    },
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-06 23:52",
+     "points": 1625320,
+     "turns": 60962,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762197541.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "samiam",
+     "endtime": "2025-11-10 15:43",
+     "points": 3082554,
+     "turns": 51381,
+     "dumplog": "https://hardfought.org/userdata/s/samiam/tnnt/dumplog/1762634591.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "entity_type": "clan",
+ "name": "Roscoe & Company",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-30 23:54",
+     "points": 147280,
+     "turns": 20228,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1764375640.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-30 23:03",
+     "points": 2343048,
+     "turns": 33495,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1764369621.tnnt.html"
+    },
+    {
+     "player__name": "cpittman",
+     "endtime": "2025-11-30 21:31",
+     "points": 4160900,
+     "turns": 71063,
+     "dumplog": "https://hardfought.org/userdata/c/cpittman/tnnt/dumplog/1763533942.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-30 23:03",
+     "points": 2343048,
+     "turns": 33495,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1764369621.tnnt.html"
+    },
+    {
+     "player__name": "cpittman",
+     "endtime": "2025-11-30 21:31",
+     "points": 4160900,
+     "turns": 71063,
+     "dumplog": "https://hardfought.org/userdata/c/cpittman/tnnt/dumplog/1763533942.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-29 06:18",
+     "points": 2029816,
+     "turns": 32494,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1764126163.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-29 06:18",
+     "points": 2029816,
+     "turns": 32494,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1764126163.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-28 18:39",
+     "points": 121934,
+     "turns": 24998,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1763897979.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-27 01:51",
+     "points": 1066298,
+     "turns": 65879,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1762108254.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-25 02:13",
+     "points": 2162018,
+     "turns": 36052,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763882179.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-25 02:13",
+     "points": 2162018,
+     "turns": 36052,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763882179.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-22 10:40",
+     "points": 218508,
+     "turns": 28276,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1763235124.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-20 04:18",
+     "points": 2300882,
+     "turns": 37676,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763309942.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-20 04:18",
+     "points": 2300882,
+     "turns": 37676,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763309942.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-15 22:26",
+     "points": 2194382,
+     "turns": 38770,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1762545441.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-15 22:26",
+     "points": 2194382,
+     "turns": 38770,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1762545441.tnnt.html"
+    }
+   ]
+  }
+ }
+}

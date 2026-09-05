@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "WizardOfPoland",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-29 16:09",
+     "points": 830808,
+     "turns": 37506,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1764031679.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-29 16:09",
+     "points": 830808,
+     "turns": 37506,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1764031679.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-11 12:13",
+     "points": 2130222,
+     "turns": 36892,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1762098395.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "WizardOfPoland",
+     "endtime": "2025-11-11 12:13",
+     "points": 2130222,
+     "turns": 36892,
+     "dumplog": "https://eu.hardfought.org/userdata/W/WizardOfPoland/tnnt/dumplog/1762098395.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

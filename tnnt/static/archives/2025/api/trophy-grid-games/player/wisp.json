@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "wisp",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "wisp",
+     "endtime": "2025-11-25 20:30",
+     "points": 4411200,
+     "turns": 134284,
+     "dumplog": "https://eu.hardfought.org/userdata/w/wisp/tnnt/dumplog/1762178521.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "wisp",
+     "endtime": "2025-11-25 20:30",
+     "points": 4411200,
+     "turns": 134284,
+     "dumplog": "https://eu.hardfought.org/userdata/w/wisp/tnnt/dumplog/1762178521.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,595 @@
+{
+ "entity_type": "player",
+ "name": "spazm",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-30 23:16",
+     "points": 1300786,
+     "turns": 31073,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764523392.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-30 23:16",
+     "points": 1300786,
+     "turns": 31073,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764523392.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-28 21:09",
+     "points": 1010357,
+     "turns": 42780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764263741.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-27 04:15",
+     "points": 182835,
+     "turns": 35442,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764191946.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-28 21:09",
+     "points": 1010357,
+     "turns": 42780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764263741.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-26 20:32",
+     "points": 1529007,
+     "turns": 47585,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764104823.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-26 20:32",
+     "points": 1529007,
+     "turns": 47585,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764104823.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-25 18:09",
+     "points": 1242433,
+     "turns": 48201,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764015573.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-25 18:09",
+     "points": 1242433,
+     "turns": 48201,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764015573.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-24 20:06",
+     "points": 1499596,
+     "turns": 46642,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763942874.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-24 20:06",
+     "points": 1499596,
+     "turns": 46642,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763942874.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-23 22:48",
+     "points": 944461,
+     "turns": 39148,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763842900.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-23 22:48",
+     "points": 944461,
+     "turns": 39148,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763842900.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-04 05:35",
+     "points": 1113882,
+     "turns": 30780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762202551.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 20:01",
+     "points": 783644,
+     "turns": 30288,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763777444.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 20:01",
+     "points": 783644,
+     "turns": 30288,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763777444.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 01:49",
+     "points": 1506753,
+     "turns": 42592,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763700608.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 01:49",
+     "points": 1506753,
+     "turns": 42592,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763700608.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-21 03:22",
+     "points": 1056423,
+     "turns": 43982,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763663187.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-21 03:22",
+     "points": 1056423,
+     "turns": 43982,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763663187.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 07:55",
+     "points": 1145615,
+     "turns": 34389,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763605447.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 07:55",
+     "points": 1145615,
+     "turns": 34389,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763605447.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 02:10",
+     "points": 1276832,
+     "turns": 47337,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763567583.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 02:10",
+     "points": 1276832,
+     "turns": 47337,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763567583.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-19 04:38",
+     "points": 1079735,
+     "turns": 34185,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763501700.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-19 04:38",
+     "points": 1079735,
+     "turns": 34185,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763501700.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-18 21:27",
+     "points": 1203780,
+     "turns": 49412,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763427667.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-15 18:27",
+     "points": 194029,
+     "turns": 49640,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763158930.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-18 21:27",
+     "points": 1203780,
+     "turns": 49412,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763427667.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-17 22:23",
+     "points": 1385886,
+     "turns": 45143,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763325577.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-17 22:23",
+     "points": 1385886,
+     "turns": 45143,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763325577.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-16 19:52",
+     "points": 1254623,
+     "turns": 52029,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763232773.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-16 19:52",
+     "points": 1254623,
+     "turns": 52029,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763232773.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-14 19:44",
+     "points": 2138366,
+     "turns": 79100,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763062335.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-14 19:44",
+     "points": 2138366,
+     "turns": 79100,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763062335.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-13 02:51",
+     "points": 1564126,
+     "turns": 43771,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762925381.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-13 02:51",
+     "points": 1564126,
+     "turns": 43771,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762925381.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-12 05:07",
+     "points": 1346262,
+     "turns": 44373,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762883688.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-12 05:07",
+     "points": 1346262,
+     "turns": 44373,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762883688.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-11 17:26",
+     "points": 1327659,
+     "turns": 44928,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762806921.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-11 17:26",
+     "points": 1327659,
+     "turns": 44928,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762806921.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-10 20:28",
+     "points": 1688808,
+     "turns": 48529,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762724349.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-10 20:28",
+     "points": 1688808,
+     "turns": 48529,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762724349.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-09 19:38",
+     "points": 1668262,
+     "turns": 59102,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762478319.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-09 19:38",
+     "points": 1668262,
+     "turns": 59102,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762478319.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 23:06",
+     "points": 1642805,
+     "turns": 41685,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762399993.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 23:06",
+     "points": 1642805,
+     "turns": 41685,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762399993.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 00:05",
+     "points": 1175534,
+     "turns": 28694,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762357616.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 00:05",
+     "points": 1175534,
+     "turns": 28694,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762357616.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-05 05:20",
+     "points": 1308986,
+     "turns": 37663,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762281812.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-05 05:20",
+     "points": 1308986,
+     "turns": 37663,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762281812.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-03 17:32",
+     "points": 1410322,
+     "turns": 35515,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762124530.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-03 17:32",
+     "points": 1410322,
+     "turns": 35515,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762124530.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-02 22:17",
+     "points": 1304316,
+     "turns": 46447,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762022142.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-02 22:17",
+     "points": 1304316,
+     "turns": 46447,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762022142.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-01 07:57",
+     "points": 1354934,
+     "turns": 42001,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1761955784.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-01 07:57",
+     "points": 1354934,
+     "turns": 42001,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1761955784.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

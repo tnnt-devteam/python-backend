@@ -1,0 +1,71 @@
+{
+ "entity_type": "player",
+ "name": "nurdglaw",
+ "combos": {
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-28 18:46",
+     "points": 88002,
+     "turns": 34240,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1764071950.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-22 14:31",
+     "points": 34356,
+     "turns": 17985,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1763749191.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-17 00:25",
+     "points": 373735,
+     "turns": 47228,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1763061818.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-11 10:58",
+     "points": 572446,
+     "turns": 52025,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1762550242.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nurdglaw",
+     "endtime": "2025-11-07 14:50",
+     "points": 225168,
+     "turns": 29928,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nurdglaw/tnnt/dumplog/1762122134.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

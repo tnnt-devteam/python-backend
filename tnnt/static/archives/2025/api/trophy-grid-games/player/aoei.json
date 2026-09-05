@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "aoei",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "aoei",
+     "endtime": "2025-11-03 04:40",
+     "points": 34499,
+     "turns": 11151,
+     "dumplog": "https://hardfought.org/userdata/a/aoei/tnnt/dumplog/1762139447.tnnt.html"
+    },
+    {
+     "player__name": "aoei",
+     "endtime": "2025-11-03 02:26",
+     "points": 578351,
+     "turns": 23537,
+     "dumplog": "https://hardfought.org/userdata/a/aoei/tnnt/dumplog/1762092725.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "aoei",
+     "endtime": "2025-11-21 03:14",
+     "points": 571440,
+     "turns": 15321,
+     "dumplog": "https://eu.hardfought.org/userdata/a/aoei/tnnt/dumplog/1763685743.tnnt.html"
+    },
+    {
+     "player__name": "aoei",
+     "endtime": "2025-11-20 17:30",
+     "points": 706495,
+     "turns": 19572,
+     "dumplog": "https://eu.hardfought.org/userdata/a/aoei/tnnt/dumplog/1763649055.tnnt.html"
+    },
+    {
+     "player__name": "aoei",
+     "endtime": "2025-11-12 22:51",
+     "points": 1469498,
+     "turns": 14765,
+     "dumplog": "https://eu.hardfought.org/userdata/a/aoei/tnnt/dumplog/1762972660.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "entity_type": "player",
+ "name": "gruefood",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "gruefood",
+     "endtime": "2025-11-21 23:53",
+     "points": 2754612,
+     "turns": 111897,
+     "dumplog": "https://hardfought.org/userdata/g/gruefood/tnnt/dumplog/1762821720.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "gruefood",
+     "endtime": "2025-11-09 05:06",
+     "points": 41386,
+     "turns": 13773,
+     "dumplog": "https://hardfought.org/userdata/g/gruefood/tnnt/dumplog/1762653917.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "stash",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "stash",
+     "endtime": "2025-11-18 00:57",
+     "points": 39292,
+     "turns": 11955,
+     "dumplog": "https://hardfought.org/userdata/s/stash/tnnt/dumplog/1763412487.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

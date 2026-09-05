@@ -1,0 +1,61 @@
+{
+ "entity_type": "player",
+ "name": "knnn",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-28 04:29",
+     "points": 126648,
+     "turns": 16489,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1764124446.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-25 05:28",
+     "points": 4966342,
+     "turns": 91227,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762813239.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-25 05:28",
+     "points": 4966342,
+     "turns": 91227,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762813239.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-09 07:26",
+     "points": 3294350,
+     "turns": 57562,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762065955.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-09 07:26",
+     "points": 3294350,
+     "turns": 57562,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762065955.tnnt.html"
+    }
+   ]
+  }
+ }
+}

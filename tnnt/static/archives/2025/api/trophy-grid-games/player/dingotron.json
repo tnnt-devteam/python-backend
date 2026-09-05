@@ -1,0 +1,61 @@
+{
+ "entity_type": "player",
+ "name": "dingotron",
+ "combos": {
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "dingotron",
+     "endtime": "2025-11-29 07:13",
+     "points": 1644293,
+     "turns": 40920,
+     "dumplog": "https://hardfought.org/userdata/d/dingotron/tnnt/dumplog/1763875924.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dingotron",
+     "endtime": "2025-11-29 07:13",
+     "points": 1644293,
+     "turns": 40920,
+     "dumplog": "https://hardfought.org/userdata/d/dingotron/tnnt/dumplog/1763875924.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "dingotron",
+     "endtime": "2025-11-18 05:03",
+     "points": 874968,
+     "turns": 54017,
+     "dumplog": "https://hardfought.org/userdata/d/dingotron/tnnt/dumplog/1762658932.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dingotron",
+     "endtime": "2025-11-18 05:03",
+     "points": 874968,
+     "turns": 54017,
+     "dumplog": "https://hardfought.org/userdata/d/dingotron/tnnt/dumplog/1762658932.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dingotron",
+     "endtime": "2025-11-09 00:18",
+     "points": 1845945,
+     "turns": 52581,
+     "dumplog": "https://hardfought.org/userdata/d/dingotron/tnnt/dumplog/1762063652.tnnt.html"
+    }
+   ]
+  }
+ }
+}

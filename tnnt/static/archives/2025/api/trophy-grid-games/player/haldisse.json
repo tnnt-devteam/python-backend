@@ -1,0 +1,87 @@
+{
+ "entity_type": "player",
+ "name": "haldisse",
+ "combos": {
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-23 19:31",
+     "points": 1555358,
+     "turns": 83983,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1763344443.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-23 19:31",
+     "points": 1555358,
+     "turns": 83983,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1763344443.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-16 00:11",
+     "points": 145830,
+     "turns": 37489,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1762992265.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-10 02:17",
+     "points": 96064,
+     "turns": 27653,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1762718081.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-08 22:15",
+     "points": 2720540,
+     "turns": 66827,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1762201346.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-08 22:15",
+     "points": 2720540,
+     "turns": 66827,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1762201346.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "haldisse",
+     "endtime": "2025-11-02 23:47",
+     "points": 323033,
+     "turns": 43101,
+     "dumplog": "https://hardfought.org/userdata/h/haldisse/tnnt/dumplog/1762052095.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

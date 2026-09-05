@@ -1,0 +1,68 @@
+{
+ "entity_type": "clan",
+ "name": "Smile mold",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "engelson",
+     "endtime": "2025-11-28 14:54",
+     "points": 33915,
+     "turns": 15125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/engelson/tnnt/dumplog/1763839559.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-19 18:49",
+     "points": 1192633,
+     "turns": 51714,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1763500745.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-19 18:49",
+     "points": 1192633,
+     "turns": 51714,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1763500745.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-07 17:17",
+     "points": 2927172,
+     "turns": 66826,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762452382.tnnt.html"
+    },
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-03 19:46",
+     "points": 78353,
+     "turns": 19652,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762188120.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "lacca",
+     "endtime": "2025-11-07 17:17",
+     "points": 2927172,
+     "turns": 66826,
+     "dumplog": "https://eu.hardfought.org/userdata/l/lacca/tnnt/dumplog/1762452382.tnnt.html"
+    }
+   ]
+  }
+ }
+}

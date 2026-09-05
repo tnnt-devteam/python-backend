@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "mracich",
+ "combos": {
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "mracich",
+     "endtime": "2025-11-28 04:54",
+     "points": 5652074,
+     "turns": 163338,
+     "dumplog": "https://hardfought.org/userdata/m/mracich/tnnt/dumplog/1762392552.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "mracich",
+     "endtime": "2025-11-28 04:54",
+     "points": 5652074,
+     "turns": 163338,
+     "dumplog": "https://hardfought.org/userdata/m/mracich/tnnt/dumplog/1762392552.tnnt.html"
+    }
+   ]
+  }
+ }
+}

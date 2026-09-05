@@ -1,0 +1,19 @@
+{
+ "entity_type": "clan",
+ "name": "RubberDuckieGang",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "fadein",
+     "endtime": "2025-11-29 21:08",
+     "points": 827883,
+     "turns": 52211,
+     "dumplog": "https://hardfought.org/userdata/f/fadein/tnnt/dumplog/1762064209.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

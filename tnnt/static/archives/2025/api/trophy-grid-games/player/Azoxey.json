@@ -1,0 +1,90 @@
+{
+ "entity_type": "player",
+ "name": "Azoxey",
+ "combos": {
+  "Wiz-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-16 03:19",
+     "points": 2854776,
+     "turns": 44824,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1763146507.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-16 03:19",
+     "points": 2854776,
+     "turns": 44824,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1763146507.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-12 19:51",
+     "points": 2058613,
+     "turns": 38548,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762868815.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-12 19:51",
+     "points": 2058613,
+     "turns": 38548,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762868815.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-07 04:02",
+     "points": 2505930,
+     "turns": 56719,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762314991.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-07 04:02",
+     "points": 2505930,
+     "turns": 56719,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762314991.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-03 21:50",
+     "points": 2652764,
+     "turns": 47577,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762037926.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-03 21:50",
+     "points": 2652764,
+     "turns": 47577,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762037926.tnnt.html"
+    }
+   ]
+  }
+ }
+}

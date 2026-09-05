@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "Dx34",
+ "combos": {
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Dx34",
+     "endtime": "2025-11-07 06:03",
+     "points": 2517548,
+     "turns": 40249,
+     "dumplog": "https://hardfought.org/userdata/D/Dx34/tnnt/dumplog/1762216021.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Dx34",
+     "endtime": "2025-11-07 06:03",
+     "points": 2517548,
+     "turns": 40249,
+     "dumplog": "https://hardfought.org/userdata/D/Dx34/tnnt/dumplog/1762216021.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Dx34",
+     "endtime": "2025-11-02 02:53",
+     "points": 3123260,
+     "turns": 44898,
+     "dumplog": "https://hardfought.org/userdata/D/Dx34/tnnt/dumplog/1761962001.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Dx34",
+     "endtime": "2025-11-02 02:53",
+     "points": 3123260,
+     "turns": 44898,
+     "dumplog": "https://hardfought.org/userdata/D/Dx34/tnnt/dumplog/1761962001.tnnt.html"
+    }
+   ]
+  }
+ }
+}

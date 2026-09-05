@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "HarmathZsolt",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "HarmathZsolt",
+     "endtime": "2025-11-30 19:45",
+     "points": 2662518,
+     "turns": 73783,
+     "dumplog": "https://eu.hardfought.org/userdata/H/HarmathZsolt/tnnt/dumplog/1762204610.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "HarmathZsolt",
+     "endtime": "2025-11-30 19:45",
+     "points": 2662518,
+     "turns": 73783,
+     "dumplog": "https://eu.hardfought.org/userdata/H/HarmathZsolt/tnnt/dumplog/1762204610.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

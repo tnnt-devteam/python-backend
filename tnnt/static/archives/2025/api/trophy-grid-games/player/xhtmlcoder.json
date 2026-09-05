@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "xhtmlcoder",
+ "combos": {
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "xhtmlcoder",
+     "endtime": "2025-11-30 17:51",
+     "points": 164357,
+     "turns": 29276,
+     "dumplog": "https://eu.hardfought.org/userdata/x/xhtmlcoder/tnnt/dumplog/1763928792.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

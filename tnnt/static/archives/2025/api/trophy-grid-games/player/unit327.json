@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "unit327",
+ "combos": {
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-10 22:51",
+     "points": 1386982,
+     "turns": 43819,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762413625.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-10 22:51",
+     "points": 1386982,
+     "turns": 43819,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762413625.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-06 02:33",
+     "points": 2086418,
+     "turns": 49113,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762211109.tnnt.html"
+    }
+   ]
+  }
+ }
+}

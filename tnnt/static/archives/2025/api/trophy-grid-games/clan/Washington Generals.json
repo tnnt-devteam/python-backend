@@ -1,0 +1,69 @@
+{
+ "entity_type": "clan",
+ "name": "Washington Generals",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-27 04:40",
+     "points": 2663508,
+     "turns": 51034,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1763817389.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-27 04:40",
+     "points": 2663508,
+     "turns": 51034,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1763817389.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-21 03:53",
+     "points": 2348044,
+     "turns": 62535,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1763161882.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-21 03:53",
+     "points": 2348044,
+     "turns": 62535,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1763161882.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-13 06:03",
+     "points": 1459735,
+     "turns": 65313,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1762234884.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "TheLocehiliosan",
+     "endtime": "2025-11-13 06:03",
+     "points": 1459735,
+     "turns": 65313,
+     "dumplog": "https://hardfought.org/userdata/T/TheLocehiliosan/tnnt/dumplog/1762234884.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

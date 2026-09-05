@@ -1,0 +1,102 @@
+{
+ "entity_type": "player",
+ "name": "disperse",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-30 22:37",
+     "points": 1586296,
+     "turns": 20763,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1764531061.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-30 00:41",
+     "points": 706096,
+     "turns": 43911,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1763297647.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-13 21:47",
+     "points": 1257462,
+     "turns": 45028,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762966451.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-13 21:47",
+     "points": 1257462,
+     "turns": 45028,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762966451.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-11 19:56",
+     "points": 2413916,
+     "turns": 46960,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762627145.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-11 19:56",
+     "points": 2413916,
+     "turns": 46960,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762627145.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-06 21:15",
+     "points": 62232,
+     "turns": 15348,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762379269.tnnt.html"
+    },
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-05 01:33",
+     "points": 1837890,
+     "turns": 25110,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762268249.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-05 01:33",
+     "points": 1837890,
+     "turns": 25110,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762268249.tnnt.html"
+    }
+   ]
+  }
+ }
+}

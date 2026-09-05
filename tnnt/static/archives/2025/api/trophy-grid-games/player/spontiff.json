@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "spontiff",
+ "combos": {
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spontiff",
+     "endtime": "2025-11-25 20:30",
+     "points": 95032,
+     "turns": 44931,
+     "dumplog": "https://eu.hardfought.org/userdata/s/spontiff/tnnt/dumplog/1763690360.tnnt.html"
+    },
+    {
+     "player__name": "spontiff",
+     "endtime": "2025-11-20 15:40",
+     "points": 800,
+     "turns": 23494,
+     "dumplog": "https://eu.hardfought.org/userdata/s/spontiff/tnnt/dumplog/1763485849.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "entity_type": "player",
+ "name": "Coder",
+ "combos": {
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Coder",
+     "endtime": "2025-11-29 18:57",
+     "points": 3943772,
+     "turns": 97789,
+     "dumplog": "https://hardfought.org/userdata/C/Coder/tnnt/dumplog/1763513893.tnnt.html"
+    },
+    {
+     "player__name": "Coder",
+     "endtime": "2025-11-10 00:48",
+     "points": 86252,
+     "turns": 22468,
+     "dumplog": "https://hardfought.org/userdata/C/Coder/tnnt/dumplog/1762392721.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Coder",
+     "endtime": "2025-11-29 18:57",
+     "points": 3943772,
+     "turns": 97789,
+     "dumplog": "https://hardfought.org/userdata/C/Coder/tnnt/dumplog/1763513893.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

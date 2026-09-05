@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "Dhuend",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Dhuend",
+     "endtime": "2025-11-27 03:02",
+     "points": 2274368,
+     "turns": 54782,
+     "dumplog": "https://hardfought.org/userdata/D/Dhuend/tnnt/dumplog/1763570120.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Dhuend",
+     "endtime": "2025-11-27 03:02",
+     "points": 2274368,
+     "turns": 54782,
+     "dumplog": "https://hardfought.org/userdata/D/Dhuend/tnnt/dumplog/1763570120.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Dhuend",
+     "endtime": "2025-11-17 02:15",
+     "points": 3411056,
+     "turns": 93468,
+     "dumplog": "https://hardfought.org/userdata/D/Dhuend/tnnt/dumplog/1762561981.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Dhuend",
+     "endtime": "2025-11-17 02:15",
+     "points": 3411056,
+     "turns": 93468,
+     "dumplog": "https://hardfought.org/userdata/D/Dhuend/tnnt/dumplog/1762561981.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

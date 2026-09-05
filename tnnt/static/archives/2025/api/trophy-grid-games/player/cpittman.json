@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "cpittman",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "cpittman",
+     "endtime": "2025-11-30 21:31",
+     "points": 4160900,
+     "turns": 71063,
+     "dumplog": "https://hardfought.org/userdata/c/cpittman/tnnt/dumplog/1763533942.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "cpittman",
+     "endtime": "2025-11-30 21:31",
+     "points": 4160900,
+     "turns": 71063,
+     "dumplog": "https://hardfought.org/userdata/c/cpittman/tnnt/dumplog/1763533942.tnnt.html"
+    }
+   ]
+  }
+ }
+}

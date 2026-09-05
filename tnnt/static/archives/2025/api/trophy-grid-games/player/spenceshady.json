@@ -1,0 +1,32 @@
+{
+ "entity_type": "player",
+ "name": "spenceshady",
+ "combos": {
+  "Cav-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spenceshady",
+     "endtime": "2025-11-24 00:25",
+     "points": 296734,
+     "turns": 46392,
+     "dumplog": "https://hardfought.org/userdata/s/spenceshady/tnnt/dumplog/1763778436.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spenceshady",
+     "endtime": "2025-11-22 01:59",
+     "points": 40544,
+     "turns": 12078,
+     "dumplog": "https://hardfought.org/userdata/s/spenceshady/tnnt/dumplog/1763710364.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

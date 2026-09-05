@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "carr0t",
+ "combos": {
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "carr0t",
+     "endtime": "2025-11-25 05:36",
+     "points": 3768562,
+     "turns": 66955,
+     "dumplog": "https://hardfought.org/userdata/c/carr0t/tnnt/dumplog/1762064956.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "carr0t",
+     "endtime": "2025-11-25 05:36",
+     "points": 3768562,
+     "turns": 66955,
+     "dumplog": "https://hardfought.org/userdata/c/carr0t/tnnt/dumplog/1762064956.tnnt.html"
+    }
+   ]
+  }
+ }
+}

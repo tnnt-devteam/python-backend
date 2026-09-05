@@ -1,0 +1,41 @@
+{
+ "entity_type": "player",
+ "name": "elenko",
+ "combos": {
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "elenko",
+     "endtime": "2025-11-21 10:44",
+     "points": 2351832,
+     "turns": 52330,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenko/tnnt/dumplog/1763233153.tnnt.html"
+    },
+    {
+     "player__name": "elenko",
+     "endtime": "2025-11-05 09:43",
+     "points": 88760,
+     "turns": 27556,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenko/tnnt/dumplog/1762200068.tnnt.html"
+    },
+    {
+     "player__name": "elenko",
+     "endtime": "2025-11-02 14:07",
+     "points": 10373,
+     "turns": 15672,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenko/tnnt/dumplog/1762079705.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "elenko",
+     "endtime": "2025-11-21 10:44",
+     "points": 2351832,
+     "turns": 52330,
+     "dumplog": "https://eu.hardfought.org/userdata/e/elenko/tnnt/dumplog/1763233153.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

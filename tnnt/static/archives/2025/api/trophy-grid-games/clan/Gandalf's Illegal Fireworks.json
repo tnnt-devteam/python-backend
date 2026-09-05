@@ -1,0 +1,1372 @@
+{
+ "entity_type": "clan",
+ "name": "Gandalf's Illegal Fireworks",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-30 23:16",
+     "points": 1300786,
+     "turns": 31073,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764523392.tnnt.html"
+    },
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-15 17:05",
+     "points": 2876234,
+     "turns": 39884,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762708359.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-12 18:48",
+     "points": 2625352,
+     "turns": 57187,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762884927.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-12 18:48",
+     "points": 2625352,
+     "turns": 57187,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762884927.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-30 23:16",
+     "points": 1300786,
+     "turns": 31073,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764523392.tnnt.html"
+    },
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-15 17:05",
+     "points": 2876234,
+     "turns": 39884,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762708359.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-29 22:54",
+     "points": 2647774,
+     "turns": 55000,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764365817.tnnt.html"
+    },
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-18 07:33",
+     "points": 1071946,
+     "turns": 45603,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762996360.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-10 20:28",
+     "points": 1688808,
+     "turns": 48529,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762724349.tnnt.html"
+    },
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-10 20:11",
+     "points": 3480254,
+     "turns": 50337,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762667364.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-29 22:54",
+     "points": 2647774,
+     "turns": 55000,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764365817.tnnt.html"
+    },
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-18 07:33",
+     "points": 1071946,
+     "turns": 45603,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762996360.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-10 20:28",
+     "points": 1688808,
+     "turns": 48529,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762724349.tnnt.html"
+    },
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-10 20:11",
+     "points": 3480254,
+     "turns": 50337,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762667364.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-28 23:09",
+     "points": 32775,
+     "turns": 15701,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1764300645.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-25 21:24",
+     "points": 1702934,
+     "turns": 67340,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764025289.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-18 21:27",
+     "points": 1203780,
+     "turns": 49412,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763427667.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-15 18:27",
+     "points": 194029,
+     "turns": 49640,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763158930.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-18 21:27",
+     "points": 1203780,
+     "turns": 49412,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763427667.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-25 21:24",
+     "points": 1702934,
+     "turns": 67340,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764025289.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-28 21:09",
+     "points": 1010357,
+     "turns": 42780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764263741.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-27 04:15",
+     "points": 182835,
+     "turns": 35442,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764191946.tnnt.html"
+    },
+    {
+     "player__name": "karafruit",
+     "endtime": "2025-11-09 00:01",
+     "points": 6712708,
+     "turns": 102347,
+     "dumplog": "https://hardfought.org/userdata/k/karafruit/tnnt/dumplog/1762299996.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-05 17:12",
+     "points": 3753056,
+     "turns": 64691,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762299258.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-05 17:12",
+     "points": 3753056,
+     "turns": 64691,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762299258.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-28 21:09",
+     "points": 1010357,
+     "turns": 42780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764263741.tnnt.html"
+    },
+    {
+     "player__name": "karafruit",
+     "endtime": "2025-11-09 00:01",
+     "points": 6712708,
+     "turns": 102347,
+     "dumplog": "https://hardfought.org/userdata/k/karafruit/tnnt/dumplog/1762299996.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-28 20:04",
+     "points": 2147012,
+     "turns": 57010,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764280065.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 20:01",
+     "points": 783644,
+     "turns": 30288,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763777444.tnnt.html"
+    },
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-06 05:13",
+     "points": 17146,
+     "turns": 26234,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762104606.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-28 20:04",
+     "points": 2147012,
+     "turns": 57010,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764280065.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 20:01",
+     "points": 783644,
+     "turns": 30288,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763777444.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-27 20:53",
+     "points": 52821,
+     "turns": 19352,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1764085125.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-12 05:07",
+     "points": 1346262,
+     "turns": 44373,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762883688.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-07 15:53",
+     "points": 2345954,
+     "turns": 47867,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762450571.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-07 15:53",
+     "points": 2345954,
+     "turns": 47867,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762450571.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-12 05:07",
+     "points": 1346262,
+     "turns": 44373,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762883688.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-27 20:02",
+     "points": 2195108,
+     "turns": 50279,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764193847.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-13 16:35",
+     "points": 2587998,
+     "turns": 51430,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762979316.tnnt.html"
+    },
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-07 04:02",
+     "points": 2505930,
+     "turns": 56719,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762314991.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-03 17:32",
+     "points": 1410322,
+     "turns": 35515,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762124530.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-27 20:02",
+     "points": 2195108,
+     "turns": 50279,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764193847.tnnt.html"
+    },
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-07 04:02",
+     "points": 2505930,
+     "turns": 56719,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762314991.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-03 17:32",
+     "points": 1410322,
+     "turns": 35515,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762124530.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-13 16:35",
+     "points": 2587998,
+     "turns": 51430,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762979316.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-26 20:32",
+     "points": 1529007,
+     "turns": 47585,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764104823.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-10 16:42",
+     "points": 2047938,
+     "turns": 39342,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762733402.tnnt.html"
+    },
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-06 04:43",
+     "points": 1673429,
+     "turns": 32422,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762299305.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-06 04:43",
+     "points": 1673429,
+     "turns": 32422,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762299305.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-26 20:32",
+     "points": 1529007,
+     "turns": 47585,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764104823.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-10 16:42",
+     "points": 2047938,
+     "turns": 39342,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762733402.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-26 20:01",
+     "points": 1999582,
+     "turns": 52107,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764110203.tnnt.html"
+    },
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-12 23:37",
+     "points": 3869110,
+     "turns": 66841,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762460900.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 00:05",
+     "points": 1175534,
+     "turns": 28694,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762357616.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-26 20:01",
+     "points": 1999582,
+     "turns": 52107,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1764110203.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 00:05",
+     "points": 1175534,
+     "turns": 28694,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762357616.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-12 23:37",
+     "points": 3869110,
+     "turns": 66841,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1762460900.tnnt.html"
+    },
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-06 02:33",
+     "points": 2086418,
+     "turns": 49113,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762211109.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-26 01:52",
+     "points": 2203526,
+     "turns": 52887,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763833163.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-25 18:09",
+     "points": 1242433,
+     "turns": 48201,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764015573.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-25 18:09",
+     "points": 1242433,
+     "turns": 48201,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1764015573.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-26 01:52",
+     "points": 2203526,
+     "turns": 52887,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763833163.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-25 06:40",
+     "points": 48646,
+     "turns": 18808,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763999917.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-24 22:02",
+     "points": 2431136,
+     "turns": 50105,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763982122.tnnt.html"
+    },
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-04 16:34",
+     "points": 56976,
+     "turns": 25567,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762210368.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-24 22:02",
+     "points": 2431136,
+     "turns": 50105,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763982122.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-24 20:06",
+     "points": 1499596,
+     "turns": 46642,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763942874.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-24 20:06",
+     "points": 1499596,
+     "turns": 46642,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763942874.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-23 22:48",
+     "points": 944461,
+     "turns": 39148,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763842900.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-23 22:48",
+     "points": 944461,
+     "turns": 39148,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763842900.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-04 05:35",
+     "points": 1113882,
+     "turns": 30780,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762202551.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-23 18:28",
+     "points": 2210366,
+     "turns": 51960,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763830969.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-09 19:38",
+     "points": 1668262,
+     "turns": 59102,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762478319.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-23 18:28",
+     "points": 2210366,
+     "turns": 51960,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763830969.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-09 19:38",
+     "points": 1668262,
+     "turns": 59102,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762478319.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-23 18:22",
+     "points": 35307,
+     "turns": 13739,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763849491.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 01:49",
+     "points": 1506753,
+     "turns": 42592,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763700608.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-19 15:33",
+     "points": 2367136,
+     "turns": 51766,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763502988.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-19 15:33",
+     "points": 2367136,
+     "turns": 51766,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763502988.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-22 01:49",
+     "points": 1506753,
+     "turns": 42592,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763700608.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-22 21:37",
+     "points": 32494,
+     "turns": 17592,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763754107.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-22 16:15",
+     "points": 2161038,
+     "turns": 45924,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763752471.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-22 16:15",
+     "points": 2161038,
+     "turns": 45924,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763752471.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-22 04:51",
+     "points": 2998572,
+     "turns": 76332,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763519807.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 07:55",
+     "points": 1145615,
+     "turns": 34389,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763605447.tnnt.html"
+    },
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-18 16:16",
+     "points": 264593,
+     "turns": 33847,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763345632.tnnt.html"
+    },
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-16 08:43",
+     "points": 118490,
+     "turns": 30010,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763106307.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 07:55",
+     "points": 1145615,
+     "turns": 34389,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763605447.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-22 04:51",
+     "points": 2998572,
+     "turns": 76332,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1763519807.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-21 16:32",
+     "points": 2163200,
+     "turns": 46805,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763675687.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-20 16:39",
+     "points": 1257317,
+     "turns": 42903,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763569088.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-19 04:38",
+     "points": 1079735,
+     "turns": 34185,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763501700.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-21 16:32",
+     "points": 2163200,
+     "turns": 46805,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763675687.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-19 04:38",
+     "points": 1079735,
+     "turns": 34185,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763501700.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-21 03:22",
+     "points": 1056423,
+     "turns": 43982,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763663187.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-21 03:22",
+     "points": 1056423,
+     "turns": 43982,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763663187.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "guiltypanacea",
+     "endtime": "2025-11-20 05:26",
+     "points": 33114,
+     "turns": 16538,
+     "dumplog": "https://hardfought.org/userdata/g/guiltypanacea/tnnt/dumplog/1763565861.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-06 15:54",
+     "points": 2507712,
+     "turns": 54347,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762369809.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-05 05:20",
+     "points": 1308986,
+     "turns": 37663,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762281812.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-05 05:20",
+     "points": 1308986,
+     "turns": 37663,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762281812.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-06 15:54",
+     "points": 2507712,
+     "turns": 54347,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762369809.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 02:10",
+     "points": 1276832,
+     "turns": 47337,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763567583.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-20 02:10",
+     "points": 1276832,
+     "turns": 47337,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763567583.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-18 19:59",
+     "points": 4993238,
+     "turns": 72714,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763418973.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-17 22:23",
+     "points": 1385886,
+     "turns": 45143,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763325577.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-18 19:59",
+     "points": 4993238,
+     "turns": 72714,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763418973.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-17 22:23",
+     "points": 1385886,
+     "turns": 45143,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763325577.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-17 22:03",
+     "points": 1270540,
+     "turns": 46412,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763329788.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-13 02:51",
+     "points": 1564126,
+     "turns": 43771,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762925381.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-04 20:36",
+     "points": 2460238,
+     "turns": 58505,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762212080.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-04 20:36",
+     "points": 2460238,
+     "turns": 58505,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762212080.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-17 22:03",
+     "points": 1270540,
+     "turns": 46412,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763329788.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-13 02:51",
+     "points": 1564126,
+     "turns": 43771,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762925381.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-16 19:52",
+     "points": 1254623,
+     "turns": 52029,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763232773.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-11 16:33",
+     "points": 2185474,
+     "turns": 46536,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762806463.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-11 16:33",
+     "points": 2185474,
+     "turns": 46536,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762806463.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-16 19:52",
+     "points": 1254623,
+     "turns": 52029,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763232773.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-16 19:39",
+     "points": 2482888,
+     "turns": 55894,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763245540.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-14 19:44",
+     "points": 2138366,
+     "turns": 79100,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763062335.tnnt.html"
+    },
+    {
+     "player__name": "Bean",
+     "endtime": "2025-11-04 05:08",
+     "points": 2198872,
+     "turns": 42216,
+     "dumplog": "https://hardfought.org/userdata/B/Bean/tnnt/dumplog/1762097185.tnnt.html"
+    },
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-03 21:50",
+     "points": 2652764,
+     "turns": 47577,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762037926.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-03 16:52",
+     "points": 11017398,
+     "turns": 155651,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762034256.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-14 19:44",
+     "points": 2138366,
+     "turns": 79100,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1763062335.tnnt.html"
+    },
+    {
+     "player__name": "Bean",
+     "endtime": "2025-11-04 05:08",
+     "points": 2198872,
+     "turns": 42216,
+     "dumplog": "https://hardfought.org/userdata/B/Bean/tnnt/dumplog/1762097185.tnnt.html"
+    },
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-03 16:52",
+     "points": 11017398,
+     "turns": 155651,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762034256.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-16 19:39",
+     "points": 2482888,
+     "turns": 55894,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763245540.tnnt.html"
+    },
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-03 21:50",
+     "points": 2652764,
+     "turns": 47577,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762037926.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-16 03:19",
+     "points": 2854776,
+     "turns": 44824,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1763146507.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-16 03:19",
+     "points": 2854776,
+     "turns": 44824,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1763146507.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-15 16:28",
+     "points": 2370048,
+     "turns": 51395,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763154429.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-15 16:28",
+     "points": 2370048,
+     "turns": 51395,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763154429.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-14 17:28",
+     "points": 2466430,
+     "turns": 62559,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763053222.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-01 07:57",
+     "points": 1354934,
+     "turns": 42001,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1761955784.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-01 07:57",
+     "points": 1354934,
+     "turns": 42001,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1761955784.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-14 17:28",
+     "points": 2466430,
+     "turns": 62559,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1763053222.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-14 06:28",
+     "points": 2576184,
+     "turns": 49303,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762755676.tnnt.html"
+    },
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-12 19:51",
+     "points": 2058613,
+     "turns": 38548,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762868815.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "v4friend",
+     "endtime": "2025-11-14 06:28",
+     "points": 2576184,
+     "turns": 49303,
+     "dumplog": "https://hardfought.org/userdata/v/v4friend/tnnt/dumplog/1762755676.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Azoxey",
+     "endtime": "2025-11-12 19:51",
+     "points": 2058613,
+     "turns": 38548,
+     "dumplog": "https://hardfought.org/userdata/A/Azoxey/tnnt/dumplog/1762868815.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-11 17:26",
+     "points": 1327659,
+     "turns": 44928,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762806921.tnnt.html"
+    },
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-10 22:51",
+     "points": 1386982,
+     "turns": 43819,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762413625.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-11 17:26",
+     "points": 1327659,
+     "turns": 44928,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762806921.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "unit327",
+     "endtime": "2025-11-10 22:51",
+     "points": 1386982,
+     "turns": 43819,
+     "dumplog": "https://au.hardfought.org/userdata/u/unit327/tnnt/dumplog/1762413625.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-09 23:04",
+     "points": 1855826,
+     "turns": 60034,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762698251.tnnt.html"
+    },
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 22:31",
+     "points": 1503150,
+     "turns": 23759,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762487114.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 22:31",
+     "points": 1503150,
+     "turns": 23759,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762487114.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-09 23:04",
+     "points": 1855826,
+     "turns": 60034,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762698251.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-09 14:53",
+     "points": 2403450,
+     "turns": 50788,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762219401.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 23:06",
+     "points": 1642805,
+     "turns": 41685,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762399993.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-06 23:06",
+     "points": 1642805,
+     "turns": 41685,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762399993.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-09 14:53",
+     "points": 2403450,
+     "turns": 50788,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762219401.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-08 23:50",
+     "points": 3381956,
+     "turns": 75654,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762553533.tnnt.html"
+    },
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-02 22:17",
+     "points": 1304316,
+     "turns": 46447,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762022142.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "spazm",
+     "endtime": "2025-11-02 22:17",
+     "points": 1304316,
+     "turns": 46447,
+     "dumplog": "https://hardfought.org/userdata/s/spazm/tnnt/dumplog/1762022142.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "Prowler",
+     "endtime": "2025-11-08 23:50",
+     "points": 3381956,
+     "turns": 75654,
+     "dumplog": "https://eu.hardfought.org/userdata/P/Prowler/tnnt/dumplog/1762553533.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 02:56",
+     "points": 1986880,
+     "turns": 35447,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762405962.tnnt.html"
+    }
+   ]
+  }
+ }
+}

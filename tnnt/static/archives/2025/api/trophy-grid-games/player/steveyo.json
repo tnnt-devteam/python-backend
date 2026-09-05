@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "steveyo",
+ "combos": {
+  "Wiz-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "steveyo",
+     "endtime": "2025-11-10 20:43",
+     "points": 1322400,
+     "turns": 28634,
+     "dumplog": "https://hardfought.org/userdata/s/steveyo/tnnt/dumplog/1762395112.tnnt.html"
+    }
+   ]
+  }
+ }
+}

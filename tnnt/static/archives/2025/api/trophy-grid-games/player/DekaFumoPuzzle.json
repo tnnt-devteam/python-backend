@@ -1,0 +1,90 @@
+{
+ "entity_type": "player",
+ "name": "DekaFumoPuzzle",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-29 06:18",
+     "points": 2029816,
+     "turns": 32494,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1764126163.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-29 06:18",
+     "points": 2029816,
+     "turns": 32494,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1764126163.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-25 02:13",
+     "points": 2162018,
+     "turns": 36052,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763882179.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-25 02:13",
+     "points": 2162018,
+     "turns": 36052,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763882179.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-20 04:18",
+     "points": 2300882,
+     "turns": 37676,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763309942.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-20 04:18",
+     "points": 2300882,
+     "turns": 37676,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1763309942.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-15 22:26",
+     "points": 2194382,
+     "turns": 38770,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1762545441.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DekaFumoPuzzle",
+     "endtime": "2025-11-15 22:26",
+     "points": 2194382,
+     "turns": 38770,
+     "dumplog": "https://hardfought.org/userdata/D/DekaFumoPuzzle/tnnt/dumplog/1762545441.tnnt.html"
+    }
+   ]
+  }
+ }
+}

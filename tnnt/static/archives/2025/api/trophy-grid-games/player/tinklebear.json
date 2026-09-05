@@ -1,0 +1,47 @@
+{
+ "entity_type": "player",
+ "name": "tinklebear",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tinklebear",
+     "endtime": "2025-11-13 02:20",
+     "points": 218920,
+     "turns": 42943,
+     "dumplog": "https://hardfought.org/userdata/t/tinklebear/tnnt/dumplog/1762753916.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "tinklebear",
+     "endtime": "2025-11-28 01:48",
+     "points": 2062133,
+     "turns": 100544,
+     "dumplog": "https://hardfought.org/userdata/t/tinklebear/tnnt/dumplog/1763629287.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tinklebear",
+     "endtime": "2025-11-17 17:43",
+     "points": 123579,
+     "turns": 21085,
+     "dumplog": "https://eu.hardfought.org/userdata/t/tinklebear/tnnt/dumplog/1763277448.tnnt.html"
+    },
+    {
+     "player__name": "tinklebear",
+     "endtime": "2025-11-04 03:05",
+     "points": 215912,
+     "turns": 35364,
+     "dumplog": "https://hardfought.org/userdata/t/tinklebear/tnnt/dumplog/1762066701.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

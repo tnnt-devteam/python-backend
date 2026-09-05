@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "Tormuse",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Tormuse",
+     "endtime": "2025-11-28 11:19",
+     "points": 5395423,
+     "turns": 72999,
+     "dumplog": "https://hardfought.org/userdata/T/Tormuse/tnnt/dumplog/1762284447.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Tormuse",
+     "endtime": "2025-11-28 11:19",
+     "points": 5395423,
+     "turns": 72999,
+     "dumplog": "https://hardfought.org/userdata/T/Tormuse/tnnt/dumplog/1762284447.tnnt.html"
+    }
+   ]
+  }
+ }
+}

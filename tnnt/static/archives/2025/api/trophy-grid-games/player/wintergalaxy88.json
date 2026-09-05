@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "wintergalaxy88",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-29 18:52",
+     "points": 4956332,
+     "turns": 97057,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1764017070.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-29 18:52",
+     "points": 4956332,
+     "turns": 97057,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1764017070.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-17 15:56",
+     "points": 6002398,
+     "turns": 126378,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1763178327.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-17 15:56",
+     "points": 6002398,
+     "turns": 126378,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1763178327.tnnt.html"
+    }
+   ]
+  }
+ }
+}

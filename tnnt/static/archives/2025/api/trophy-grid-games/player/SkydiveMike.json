@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "SkydiveMike",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "SkydiveMike",
+     "endtime": "2025-11-30 22:21",
+     "points": 5031758,
+     "turns": 120109,
+     "dumplog": "https://hardfought.org/userdata/S/SkydiveMike/tnnt/dumplog/1763222108.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "SkydiveMike",
+     "endtime": "2025-11-30 22:21",
+     "points": 5031758,
+     "turns": 120109,
+     "dumplog": "https://hardfought.org/userdata/S/SkydiveMike/tnnt/dumplog/1763222108.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

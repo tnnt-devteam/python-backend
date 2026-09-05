@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "finitelycraig",
+ "combos": {
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "finitelycraig",
+     "endtime": "2025-11-30 23:40",
+     "points": 1955378,
+     "turns": 41686,
+     "dumplog": "https://eu.hardfought.org/userdata/f/finitelycraig/tnnt/dumplog/1763150437.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "finitelycraig",
+     "endtime": "2025-11-30 23:40",
+     "points": 1955378,
+     "turns": 41686,
+     "dumplog": "https://eu.hardfought.org/userdata/f/finitelycraig/tnnt/dumplog/1763150437.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

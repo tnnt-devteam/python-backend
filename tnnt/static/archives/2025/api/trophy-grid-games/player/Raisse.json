@@ -1,0 +1,53 @@
+{
+ "entity_type": "player",
+ "name": "Raisse",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-20 07:16",
+     "points": 3370800,
+     "turns": 67843,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1763306438.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-20 07:16",
+     "points": 3370800,
+     "turns": 67843,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1763306438.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-08 10:57",
+     "points": 52850,
+     "turns": 16361,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1762590350.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Raisse",
+     "endtime": "2025-11-05 06:51",
+     "points": 176162,
+     "turns": 37228,
+     "dumplog": "https://eu.hardfought.org/userdata/R/Raisse/tnnt/dumplog/1762269762.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

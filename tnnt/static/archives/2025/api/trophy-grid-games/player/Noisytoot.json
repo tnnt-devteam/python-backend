@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "Noisytoot",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Noisytoot",
+     "endtime": "2025-11-07 03:10",
+     "points": 2498425,
+     "turns": 87428,
+     "dumplog": "https://eu.hardfought.org/userdata/N/Noisytoot/tnnt/dumplog/1762034493.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Noisytoot",
+     "endtime": "2025-11-07 03:10",
+     "points": 2498425,
+     "turns": 87428,
+     "dumplog": "https://eu.hardfought.org/userdata/N/Noisytoot/tnnt/dumplog/1762034493.tnnt.html"
+    }
+   ]
+  }
+ }
+}

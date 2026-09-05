@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "dpmdpm",
+ "combos": {
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "dpmdpm",
+     "endtime": "2025-11-09 07:01",
+     "points": 2456654,
+     "turns": 35339,
+     "dumplog": "https://hardfought.org/userdata/d/dpmdpm/tnnt/dumplog/1762556062.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dpmdpm",
+     "endtime": "2025-11-09 07:01",
+     "points": 2456654,
+     "turns": 35339,
+     "dumplog": "https://hardfought.org/userdata/d/dpmdpm/tnnt/dumplog/1762556062.tnnt.html"
+    }
+   ]
+  }
+ }
+}

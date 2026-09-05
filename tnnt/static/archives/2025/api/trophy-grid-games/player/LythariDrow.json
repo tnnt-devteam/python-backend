@@ -1,0 +1,81 @@
+{
+ "entity_type": "player",
+ "name": "LythariDrow",
+ "combos": {
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-26 02:07",
+     "points": 74914,
+     "turns": 20153,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1764038975.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-16 21:46",
+     "points": 2150998,
+     "turns": 44645,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1763180876.tnnt.html"
+    },
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-10 01:34",
+     "points": 25140,
+     "turns": 10694,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762730770.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-16 21:46",
+     "points": 2150998,
+     "turns": 44645,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1763180876.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-13 03:25",
+     "points": 56772,
+     "turns": 13967,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762928915.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-09 06:28",
+     "points": 2058712,
+     "turns": 33969,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762482974.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-09 06:28",
+     "points": 2058712,
+     "turns": 33969,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762482974.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,58 @@
+{
+ "entity_type": "player",
+ "name": "MoonPig",
+ "combos": {
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "MoonPig",
+     "endtime": "2025-11-17 14:52",
+     "points": 402500,
+     "turns": 28760,
+     "dumplog": "https://hardfought.org/userdata/M/MoonPig/tnnt/dumplog/1763107333.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "MoonPig",
+     "endtime": "2025-11-12 13:34",
+     "points": 39317,
+     "turns": 9835,
+     "dumplog": "https://hardfought.org/userdata/M/MoonPig/tnnt/dumplog/1762937480.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "MoonPig",
+     "endtime": "2025-11-05 13:56",
+     "points": 38666,
+     "turns": 14145,
+     "dumplog": "https://hardfought.org/userdata/M/MoonPig/tnnt/dumplog/1762341704.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Ran-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "MoonPig",
+     "endtime": "2025-11-04 15:34",
+     "points": 60243,
+     "turns": 20048,
+     "dumplog": "https://hardfought.org/userdata/M/MoonPig/tnnt/dumplog/1762182820.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

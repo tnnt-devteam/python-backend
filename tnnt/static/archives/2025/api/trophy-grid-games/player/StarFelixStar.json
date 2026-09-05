@@ -1,0 +1,95 @@
+{
+ "entity_type": "player",
+ "name": "StarFelixStar",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-10 20:11",
+     "points": 3480254,
+     "turns": 50337,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762667364.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-10 20:11",
+     "points": 3480254,
+     "turns": 50337,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762667364.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 22:31",
+     "points": 1503150,
+     "turns": 23759,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762487114.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 22:31",
+     "points": 1503150,
+     "turns": 23759,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762487114.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-07 02:56",
+     "points": 1986880,
+     "turns": 35447,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762405962.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-06 04:43",
+     "points": 1673429,
+     "turns": 32422,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762299305.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-06 04:43",
+     "points": 1673429,
+     "turns": 32422,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762299305.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "StarFelixStar",
+     "endtime": "2025-11-04 16:34",
+     "points": 56976,
+     "turns": 25567,
+     "dumplog": "https://hardfought.org/userdata/S/StarFelixStar/tnnt/dumplog/1762210368.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

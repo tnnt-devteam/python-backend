@@ -1,0 +1,278 @@
+{
+ "entity_type": "clan",
+ "name": "SplendorOfYendor",
+ "combos": {
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "finitelycraig",
+     "endtime": "2025-11-30 23:40",
+     "points": 1955378,
+     "turns": 41686,
+     "dumplog": "https://eu.hardfought.org/userdata/f/finitelycraig/tnnt/dumplog/1763150437.tnnt.html"
+    },
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-25 05:28",
+     "points": 4966342,
+     "turns": 91227,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762813239.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "finitelycraig",
+     "endtime": "2025-11-30 23:40",
+     "points": 1955378,
+     "turns": 41686,
+     "dumplog": "https://eu.hardfought.org/userdata/f/finitelycraig/tnnt/dumplog/1763150437.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-25 05:28",
+     "points": 4966342,
+     "turns": 91227,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762813239.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Tormuse",
+     "endtime": "2025-11-28 11:19",
+     "points": 5395423,
+     "turns": 72999,
+     "dumplog": "https://hardfought.org/userdata/T/Tormuse/tnnt/dumplog/1762284447.tnnt.html"
+    },
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-16 21:46",
+     "points": 2150998,
+     "turns": 44645,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1763180876.tnnt.html"
+    },
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-10 01:34",
+     "points": 25140,
+     "turns": 10694,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762730770.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-30 22:37",
+     "points": 1586296,
+     "turns": 20763,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1764531061.tnnt.html"
+    },
+    {
+     "player__name": "Tormuse",
+     "endtime": "2025-11-28 11:19",
+     "points": 5395423,
+     "turns": 72999,
+     "dumplog": "https://hardfought.org/userdata/T/Tormuse/tnnt/dumplog/1762284447.tnnt.html"
+    },
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-16 21:46",
+     "points": 2150998,
+     "turns": 44645,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1763180876.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Cloudmillion",
+     "endtime": "2025-11-22 07:40",
+     "points": 98806,
+     "turns": 21752,
+     "dumplog": "https://au.hardfought.org/userdata/C/Cloudmillion/tnnt/dumplog/1763781152.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Cloudmillion",
+     "endtime": "2025-11-30 13:25",
+     "points": 2266050,
+     "turns": 40059,
+     "dumplog": "https://au.hardfought.org/userdata/C/Cloudmillion/tnnt/dumplog/1764466152.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-26 02:07",
+     "points": 74914,
+     "turns": 20153,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1764038975.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-30 00:41",
+     "points": 706096,
+     "turns": 43911,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1763297647.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-28 04:29",
+     "points": 126648,
+     "turns": 16489,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1764124446.tnnt.html"
+    },
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-13 03:25",
+     "points": 56772,
+     "turns": 13967,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762928915.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-13 21:47",
+     "points": 1257462,
+     "turns": 45028,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762966451.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-13 21:47",
+     "points": 1257462,
+     "turns": 45028,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762966451.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-11 19:56",
+     "points": 2413916,
+     "turns": 46960,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762627145.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-11 19:56",
+     "points": 2413916,
+     "turns": 46960,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762627145.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-09 07:26",
+     "points": 3294350,
+     "turns": 57562,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762065955.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "knnn",
+     "endtime": "2025-11-09 07:26",
+     "points": 3294350,
+     "turns": 57562,
+     "dumplog": "https://hardfought.org/userdata/k/knnn/tnnt/dumplog/1762065955.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-09 06:28",
+     "points": 2058712,
+     "turns": 33969,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762482974.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "LythariDrow",
+     "endtime": "2025-11-09 06:28",
+     "points": 2058712,
+     "turns": 33969,
+     "dumplog": "https://hardfought.org/userdata/L/LythariDrow/tnnt/dumplog/1762482974.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "joes",
+     "endtime": "2025-11-07 10:04",
+     "points": 70245,
+     "turns": 22409,
+     "dumplog": "https://eu.hardfought.org/userdata/j/joes/tnnt/dumplog/1762346418.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-06 21:15",
+     "points": 62232,
+     "turns": 15348,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762379269.tnnt.html"
+    },
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-05 01:33",
+     "points": 1837890,
+     "turns": 25110,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762268249.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "disperse",
+     "endtime": "2025-11-05 01:33",
+     "points": 1837890,
+     "turns": 25110,
+     "dumplog": "https://hardfought.org/userdata/d/disperse/tnnt/dumplog/1762268249.tnnt.html"
+    }
+   ]
+  }
+ }
+}

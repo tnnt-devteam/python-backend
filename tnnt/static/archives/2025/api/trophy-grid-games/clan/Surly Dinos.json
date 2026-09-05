@@ -1,0 +1,972 @@
+{
+ "entity_type": "clan",
+ "name": "Surly Dinos",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-30 16:15",
+     "points": 14219568,
+     "turns": 472074,
+     "dumplog": "https://eu.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762260120.tnnt.html"
+    },
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-18 03:30",
+     "points": 1274254,
+     "turns": 49154,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1763261644.tnnt.html"
+    },
+    {
+     "player__name": "richo",
+     "endtime": "2025-11-05 05:14",
+     "points": 117467,
+     "turns": 20063,
+     "dumplog": "https://hardfought.org/userdata/r/richo/tnnt/dumplog/1762291238.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-02 23:11",
+     "points": 7389214,
+     "turns": 83141,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762061124.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-01 06:18",
+     "points": 173384,
+     "turns": 21914,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1761964321.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-30 16:15",
+     "points": 14219568,
+     "turns": 472074,
+     "dumplog": "https://eu.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762260120.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-02 23:11",
+     "points": 7389214,
+     "turns": 83141,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762061124.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Staengia",
+     "endtime": "2025-11-30 15:57",
+     "points": 52388,
+     "turns": 20164,
+     "dumplog": "https://hardfought.org/userdata/S/Staengia/tnnt/dumplog/1764480635.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-08 13:03",
+     "points": 902319,
+     "turns": 42025,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762549119.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-08 13:03",
+     "points": 902319,
+     "turns": 42025,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762549119.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-30 15:27",
+     "points": 2349616,
+     "turns": 48670,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1764133937.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-27 02:00",
+     "points": 1191929,
+     "turns": 46218,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1764175521.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-30 15:27",
+     "points": 2349616,
+     "turns": 48670,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1764133937.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-27 02:00",
+     "points": 1191929,
+     "turns": 46218,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1764175521.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-30 01:47",
+     "points": 1428828,
+     "turns": 51795,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1764121931.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-29 19:43",
+     "points": 1293308,
+     "turns": 32531,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764284949.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-29 19:43",
+     "points": 1293308,
+     "turns": 32531,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764284949.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-30 01:47",
+     "points": 1428828,
+     "turns": 51795,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1764121931.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-29 20:15",
+     "points": 2309720,
+     "turns": 88916,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1764050468.tnnt.html"
+    },
+    {
+     "player__name": "Staengia",
+     "endtime": "2025-11-16 03:18",
+     "points": 56215,
+     "turns": 21750,
+     "dumplog": "https://hardfought.org/userdata/S/Staengia/tnnt/dumplog/1763234420.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-21 01:41",
+     "points": 1382442,
+     "turns": 25348,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763673081.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-29 20:15",
+     "points": 2309720,
+     "turns": 88916,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1764050468.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Staengia",
+     "endtime": "2025-11-29 01:05",
+     "points": 71857,
+     "turns": 21340,
+     "dumplog": "https://hardfought.org/userdata/S/Staengia/tnnt/dumplog/1764170026.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-08 21:18",
+     "points": 1881826,
+     "turns": 33933,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762616572.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-08 21:18",
+     "points": 1881826,
+     "turns": 33933,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762616572.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Staengia",
+     "endtime": "2025-11-07 21:41",
+     "points": 250021,
+     "turns": 41288,
+     "dumplog": "https://hardfought.org/userdata/S/Staengia/tnnt/dumplog/1762368845.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-27 22:06",
+     "points": 1593088,
+     "turns": 23450,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764200679.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-26 23:22",
+     "points": 1585638,
+     "turns": 38595,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764184607.tnnt.html"
+    },
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-16 02:43",
+     "points": 578550,
+     "turns": 45044,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1763080172.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-26 23:22",
+     "points": 1585638,
+     "turns": 38595,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764184607.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-26 18:33",
+     "points": 1547928,
+     "turns": 22020,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764169601.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-26 01:37",
+     "points": 630698,
+     "turns": 30772,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764110610.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-25 21:17",
+     "points": 1705586,
+     "turns": 30817,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764010020.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-25 21:17",
+     "points": 1705586,
+     "turns": 30817,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1764010020.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-25 18:35",
+     "points": 2935656,
+     "turns": 49662,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763666953.tnnt.html"
+    },
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-08 22:17",
+     "points": 35951,
+     "turns": 12288,
+     "dumplog": "https://au.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762616956.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-04 21:10",
+     "points": 151617,
+     "turns": 22247,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762276439.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-25 18:35",
+     "points": 2935656,
+     "turns": 49662,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763666953.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-24 02:06",
+     "points": 1865140,
+     "turns": 30584,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763936667.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-24 02:06",
+     "points": 1865140,
+     "turns": 30584,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763936667.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 22:04",
+     "points": 1598344,
+     "turns": 30505,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763923875.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 18:25",
+     "points": 25110,
+     "turns": 16151,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763914561.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 22:04",
+     "points": 1598344,
+     "turns": 30505,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763923875.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 11:51",
+     "points": 1714920,
+     "turns": 22262,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763864113.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 00:50",
+     "points": 1317858,
+     "turns": 25777,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763846109.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-22 21:13",
+     "points": 91876,
+     "turns": 23857,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763836537.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-23 00:50",
+     "points": 1317858,
+     "turns": 25777,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763846109.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-22 18:18",
+     "points": 1592484,
+     "turns": 28921,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763764601.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-22 18:18",
+     "points": 1592484,
+     "turns": 28921,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763764601.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-21 22:04",
+     "points": 1511798,
+     "turns": 23012,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763746316.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-20 19:49",
+     "points": 1422928,
+     "turns": 35902,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763638005.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-20 00:32",
+     "points": 1416554,
+     "turns": 24940,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763585004.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-20 00:32",
+     "points": 1416554,
+     "turns": 24940,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763585004.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-19 20:04",
+     "points": 1165744,
+     "turns": 26739,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763507530.tnnt.html"
+    },
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-15 18:26",
+     "points": 5170694,
+     "turns": 62854,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762887862.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-19 20:04",
+     "points": 1165744,
+     "turns": 26739,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763507530.tnnt.html"
+    }
+   ],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-15 18:26",
+     "points": 5170694,
+     "turns": 62854,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762887862.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-19 05:08",
+     "points": 2756538,
+     "turns": 46293,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763317365.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-19 05:08",
+     "points": 2756538,
+     "turns": 46293,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763317365.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Gno-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-18 22:57",
+     "points": 1423234,
+     "turns": 26193,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763422513.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-17 22:10",
+     "points": 1529178,
+     "turns": 33685,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763377438.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-12 21:10",
+     "points": 1436980,
+     "turns": 25056,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762899177.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-17 22:10",
+     "points": 1529178,
+     "turns": 33685,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763377438.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-12 21:10",
+     "points": 1436980,
+     "turns": 25056,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762899177.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-11 06:50",
+     "points": 3509082,
+     "turns": 57976,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762531932.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-17 00:13",
+     "points": 1506178,
+     "turns": 27357,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763322937.tnnt.html"
+    },
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-11 06:50",
+     "points": 3509082,
+     "turns": 57976,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762531932.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-16 19:39",
+     "points": 1582254,
+     "turns": 33046,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763310064.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-16 12:26",
+     "points": 1974196,
+     "turns": 35887,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763242905.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-15 21:31",
+     "points": 198437,
+     "turns": 23707,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763231688.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-16 12:26",
+     "points": 1974196,
+     "turns": 35887,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763242905.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-15 17:47",
+     "points": 1773006,
+     "turns": 30387,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763156480.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-15 17:47",
+     "points": 1773006,
+     "turns": 30387,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763156480.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-14 21:01",
+     "points": 704032,
+     "turns": 35522,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763077274.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Elf-Cha": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-13 23:16",
+     "points": 1329008,
+     "turns": 30493,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1763060929.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-13 01:54",
+     "points": 898860,
+     "turns": 27377,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762983390.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-13 01:54",
+     "points": 898860,
+     "turns": 27377,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762983390.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-12 05:05",
+     "points": 3534114,
+     "turns": 75492,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1762064158.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-12 05:05",
+     "points": 3534114,
+     "turns": 75492,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1762064158.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-10 19:59",
+     "points": 1906088,
+     "turns": 33678,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762720599.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-11 22:46",
+     "points": 3894336,
+     "turns": 79166,
+     "dumplog": "https://hardfought.org/userdata/a/ais523/tnnt/dumplog/1762698303.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-11 22:46",
+     "points": 3894336,
+     "turns": 79166,
+     "dumplog": "https://hardfought.org/userdata/a/ais523/tnnt/dumplog/1762698303.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-11 21:22",
+     "points": 1341292,
+     "turns": 44931,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762806817.tnnt.html"
+    },
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-10 05:30",
+     "points": 3814188,
+     "turns": 99739,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1762065907.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-09 00:30",
+     "points": 59827,
+     "turns": 19997,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762641279.tnnt.html"
+    },
+    {
+     "player__name": "Noisytoot",
+     "endtime": "2025-11-07 03:10",
+     "points": 2498425,
+     "turns": 87428,
+     "dumplog": "https://eu.hardfought.org/userdata/N/Noisytoot/tnnt/dumplog/1762034493.tnnt.html"
+    },
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-03 04:51",
+     "points": 2998140,
+     "turns": 45687,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1761993332.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-11 21:22",
+     "points": 1341292,
+     "turns": 44931,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762806817.tnnt.html"
+    },
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-10 05:30",
+     "points": 3814188,
+     "turns": 99739,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1762065907.tnnt.html"
+    },
+    {
+     "player__name": "Noisytoot",
+     "endtime": "2025-11-07 03:10",
+     "points": 2498425,
+     "turns": 87428,
+     "dumplog": "https://eu.hardfought.org/userdata/N/Noisytoot/tnnt/dumplog/1762034493.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-06 21:44",
+     "points": 2761698,
+     "turns": 55077,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762424830.tnnt.html"
+    },
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-03 04:51",
+     "points": 2998140,
+     "turns": 45687,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1761993332.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-09 18:39",
+     "points": 1384612,
+     "turns": 30345,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762690675.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-07 20:09",
+     "points": 1558206,
+     "turns": 38817,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762455267.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-07 20:09",
+     "points": 1558206,
+     "turns": 38817,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762455267.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-07 04:35",
+     "points": 2764420,
+     "turns": 46644,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762187003.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-07 04:35",
+     "points": 2764420,
+     "turns": 46644,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762187003.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-04 20:28",
+     "points": 4071,
+     "turns": 30139,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762207368.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-03 20:30",
+     "points": 15284,
+     "turns": 50430,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762096229.tnnt.html"
+    },
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-02 15:07",
+     "points": 12316,
+     "turns": 38663,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1761995778.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "DoktorL",
+     "endtime": "2025-11-06 02:07",
+     "points": 25890,
+     "turns": 29375,
+     "dumplog": "https://eu.hardfought.org/userdata/D/DoktorL/tnnt/dumplog/1762312394.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

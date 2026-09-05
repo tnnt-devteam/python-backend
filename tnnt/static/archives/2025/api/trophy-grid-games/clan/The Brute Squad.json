@@ -1,0 +1,81 @@
+{
+ "entity_type": "clan",
+ "name": "The Brute Squad",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-26 16:34",
+     "points": 3172920,
+     "turns": 44298,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1763755021.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-26 16:34",
+     "points": 3172920,
+     "turns": 44298,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1763755021.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-20 22:36",
+     "points": 3921484,
+     "turns": 45570,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1763161817.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-20 22:36",
+     "points": 3921484,
+     "turns": 45570,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1763161817.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-13 23:22",
+     "points": 36234,
+     "turns": 19307,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1762724657.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-07 15:39",
+     "points": 340051,
+     "turns": 29315,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1762192070.tnnt.html"
+    },
+    {
+     "player__name": "Leggman",
+     "endtime": "2025-11-02 02:15",
+     "points": 32328,
+     "turns": 14245,
+     "dumplog": "https://hardfought.org/userdata/L/Leggman/tnnt/dumplog/1761968814.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

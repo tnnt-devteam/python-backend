@@ -1,0 +1,61 @@
+{
+ "entity_type": "player",
+ "name": "Tangles",
+ "combos": {
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-28 12:36",
+     "points": 2380442,
+     "turns": 39360,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1763776600.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-28 12:36",
+     "points": 2380442,
+     "turns": 39360,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1763776600.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-15 13:01",
+     "points": 2180958,
+     "turns": 33757,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762514144.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-15 13:01",
+     "points": 2180958,
+     "turns": 33757,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762514144.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Tangles",
+     "endtime": "2025-11-05 14:22",
+     "points": 228963,
+     "turns": 19402,
+     "dumplog": "https://au.hardfought.org/userdata/T/Tangles/tnnt/dumplog/1762168005.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

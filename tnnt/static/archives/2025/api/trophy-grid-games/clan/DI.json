@@ -1,0 +1,223 @@
+{
+ "entity_type": "clan",
+ "name": "DI",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-22 22:20",
+     "points": 1760682,
+     "turns": 49029,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1763396356.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-29 21:35",
+     "points": 1104907,
+     "turns": 39915,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1764354378.tnnt.html"
+    },
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-22 22:20",
+     "points": 1760682,
+     "turns": 49029,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1763396356.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-29 14:02",
+     "points": 1997210,
+     "turns": 56414,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1763993161.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-29 14:02",
+     "points": 1997210,
+     "turns": 56414,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1763993161.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-27 22:01",
+     "points": 2136150,
+     "turns": 32120,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1764174374.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-27 22:01",
+     "points": 2136150,
+     "turns": 32120,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1764174374.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-25 23:01",
+     "points": 1187694,
+     "turns": 34568,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1763596722.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-25 23:01",
+     "points": 1187694,
+     "turns": 34568,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1763596722.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-19 22:32",
+     "points": 2056880,
+     "turns": 47391,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1763244392.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-19 22:32",
+     "points": 2056880,
+     "turns": 47391,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1763244392.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-15 17:55",
+     "points": 1544964,
+     "turns": 34623,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762990298.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-15 17:55",
+     "points": 1544964,
+     "turns": 34623,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762990298.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-14 19:03",
+     "points": 2761990,
+     "turns": 71591,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1762615472.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-14 19:03",
+     "points": 2761990,
+     "turns": 71591,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1762615472.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-11 17:46",
+     "points": 2044832,
+     "turns": 38195,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762457862.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-11 17:46",
+     "points": 2044832,
+     "turns": 38195,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762457862.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-03 06:04",
+     "points": 112717,
+     "turns": 29361,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1761980392.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "larry",
+     "endtime": "2025-11-08 05:18",
+     "points": 2014086,
+     "turns": 55817,
+     "dumplog": "https://hardfought.org/userdata/l/larry/tnnt/dumplog/1762186514.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-03 16:56",
+     "points": 2576248,
+     "turns": 34461,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762021021.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "jamez",
+     "endtime": "2025-11-03 16:56",
+     "points": 2576248,
+     "turns": 34461,
+     "dumplog": "https://hardfought.org/userdata/j/jamez/tnnt/dumplog/1762021021.tnnt.html"
+    }
+   ]
+  }
+ }
+}

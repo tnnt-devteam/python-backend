@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "engelson",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "engelson",
+     "endtime": "2025-11-28 14:54",
+     "points": 33915,
+     "turns": 15125,
+     "dumplog": "https://eu.hardfought.org/userdata/e/engelson/tnnt/dumplog/1763839559.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

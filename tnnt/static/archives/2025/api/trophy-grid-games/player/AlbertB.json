@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "AlbertB",
+ "combos": {
+  "Cav-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "AlbertB",
+     "endtime": "2025-11-14 17:04",
+     "points": 4460776,
+     "turns": 111276,
+     "dumplog": "https://eu.hardfought.org/userdata/A/AlbertB/tnnt/dumplog/1762199756.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "AlbertB",
+     "endtime": "2025-11-14 17:04",
+     "points": 4460776,
+     "turns": 111276,
+     "dumplog": "https://eu.hardfought.org/userdata/A/AlbertB/tnnt/dumplog/1762199756.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

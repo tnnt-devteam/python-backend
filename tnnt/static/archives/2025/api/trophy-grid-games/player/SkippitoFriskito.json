@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "SkippitoFriskito",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "SkippitoFriskito",
+     "endtime": "2025-11-13 22:15",
+     "points": 96442,
+     "turns": 15711,
+     "dumplog": "https://hardfought.org/userdata/S/SkippitoFriskito/tnnt/dumplog/1762985071.tnnt.html"
+    },
+    {
+     "player__name": "SkippitoFriskito",
+     "endtime": "2025-11-05 17:32",
+     "points": 34843,
+     "turns": 11757,
+     "dumplog": "https://hardfought.org/userdata/S/SkippitoFriskito/tnnt/dumplog/1762205437.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

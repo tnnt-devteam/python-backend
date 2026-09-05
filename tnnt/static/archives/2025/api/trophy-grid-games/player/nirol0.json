@@ -1,0 +1,68 @@
+{
+ "entity_type": "player",
+ "name": "nirol0",
+ "combos": {
+  "Arc-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-30 23:21",
+     "points": 3044248,
+     "turns": 47968,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1763673014.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-30 23:21",
+     "points": 3044248,
+     "turns": 47968,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1763673014.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-19 21:14",
+     "points": 2857752,
+     "turns": 42261,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1763043783.tnnt.html"
+    },
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-06 17:52",
+     "points": 105721,
+     "turns": 29254,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1762278290.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-19 21:14",
+     "points": 2857752,
+     "turns": 42261,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1763043783.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "nirol0",
+     "endtime": "2025-11-12 14:18",
+     "points": 2185310,
+     "turns": 37509,
+     "dumplog": "https://hardfought.org/userdata/n/nirol0/tnnt/dumplog/1762451639.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

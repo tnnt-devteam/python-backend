@@ -1,0 +1,75 @@
+{
+ "entity_type": "clan",
+ "name": "Team Skynet",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "bvowk",
+     "endtime": "2025-11-30 03:10",
+     "points": 94114,
+     "turns": 21505,
+     "dumplog": "https://hardfought.org/userdata/b/bvowk/tnnt/dumplog/1764459299.tnnt.html"
+    },
+    {
+     "player__name": "bvowk",
+     "endtime": "2025-11-28 04:20",
+     "points": 1937374,
+     "turns": 66109,
+     "dumplog": "https://hardfought.org/userdata/b/bvowk/tnnt/dumplog/1764033352.tnnt.html"
+    },
+    {
+     "player__name": "bvowk",
+     "endtime": "2025-11-19 02:49",
+     "points": 730043,
+     "turns": 72628,
+     "dumplog": "https://hardfought.org/userdata/b/bvowk/tnnt/dumplog/1763243245.tnnt.html"
+    },
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-08 21:56",
+     "points": 29708,
+     "turns": 19375,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762479025.tnnt.html"
+    },
+    {
+     "player__name": "bvowk",
+     "endtime": "2025-11-08 01:12",
+     "points": 234594,
+     "turns": 35131,
+     "dumplog": "https://hardfought.org/userdata/b/bvowk/tnnt/dumplog/1762483781.tnnt.html"
+    },
+    {
+     "player__name": "bvowk",
+     "endtime": "2025-11-05 05:34",
+     "points": 247314,
+     "turns": 39042,
+     "dumplog": "https://hardfought.org/userdata/b/bvowk/tnnt/dumplog/1762228308.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-28 00:28",
+     "points": 4188246,
+     "turns": 88731,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762703320.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "dropmaw",
+     "endtime": "2025-11-28 00:28",
+     "points": 4188246,
+     "turns": 88731,
+     "dumplog": "https://hardfought.org/userdata/d/dropmaw/tnnt/dumplog/1762703320.tnnt.html"
+    }
+   ]
+  }
+ }
+}

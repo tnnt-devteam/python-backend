@@ -1,0 +1,153 @@
+{
+ "entity_type": "player",
+ "name": "tjw",
+ "combos": {
+  "Ran-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-30 15:27",
+     "points": 2349616,
+     "turns": 48670,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1764133937.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-30 15:27",
+     "points": 2349616,
+     "turns": 48670,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1764133937.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-25 18:35",
+     "points": 2935656,
+     "turns": 49662,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763666953.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-25 18:35",
+     "points": 2935656,
+     "turns": 49662,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763666953.tnnt.html"
+    }
+   ]
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-19 05:08",
+     "points": 2756538,
+     "turns": 46293,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763317365.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-19 05:08",
+     "points": 2756538,
+     "turns": 46293,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1763317365.tnnt.html"
+    }
+   ]
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-15 18:26",
+     "points": 5170694,
+     "turns": 62854,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762887862.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-15 18:26",
+     "points": 5170694,
+     "turns": 62854,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762887862.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-11 06:50",
+     "points": 3509082,
+     "turns": 57976,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762531932.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-11 06:50",
+     "points": 3509082,
+     "turns": 57976,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762531932.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-07 04:35",
+     "points": 2764420,
+     "turns": 46644,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762187003.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-07 04:35",
+     "points": 2764420,
+     "turns": 46644,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1762187003.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-03 04:51",
+     "points": 2998140,
+     "turns": 45687,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1761993332.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "tjw",
+     "endtime": "2025-11-03 04:51",
+     "points": 2998140,
+     "turns": 45687,
+     "dumplog": "https://hardfought.org/userdata/t/tjw/tnnt/dumplog/1761993332.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,61 @@
+{
+ "entity_type": "player",
+ "name": "askhl",
+ "combos": {
+  "Ran-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "askhl",
+     "endtime": "2025-11-30 23:44",
+     "points": 1136194,
+     "turns": 34278,
+     "dumplog": "https://eu.hardfought.org/userdata/a/askhl/tnnt/dumplog/1764350710.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "askhl",
+     "endtime": "2025-11-30 23:44",
+     "points": 1136194,
+     "turns": 34278,
+     "dumplog": "https://eu.hardfought.org/userdata/a/askhl/tnnt/dumplog/1764350710.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "askhl",
+     "endtime": "2025-11-28 00:32",
+     "points": 2134602,
+     "turns": 32146,
+     "dumplog": "https://eu.hardfought.org/userdata/a/askhl/tnnt/dumplog/1763586134.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "askhl",
+     "endtime": "2025-11-28 00:32",
+     "points": 2134602,
+     "turns": 32146,
+     "dumplog": "https://eu.hardfought.org/userdata/a/askhl/tnnt/dumplog/1763586134.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "askhl",
+     "endtime": "2025-11-19 18:16",
+     "points": 1744418,
+     "turns": 36437,
+     "dumplog": "https://eu.hardfought.org/userdata/a/askhl/tnnt/dumplog/1762711001.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

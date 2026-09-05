@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "ChongLi",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-30 23:03",
+     "points": 2343048,
+     "turns": 33495,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1764369621.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-30 23:03",
+     "points": 2343048,
+     "turns": 33495,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1764369621.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "ChongLi",
+     "endtime": "2025-11-27 01:51",
+     "points": 1066298,
+     "turns": 65879,
+     "dumplog": "https://hardfought.org/userdata/C/ChongLi/tnnt/dumplog/1762108254.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

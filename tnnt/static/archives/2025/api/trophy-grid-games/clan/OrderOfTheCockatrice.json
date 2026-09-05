@@ -1,0 +1,111 @@
+{
+ "entity_type": "clan",
+ "name": "OrderOfTheCockatrice",
+ "combos": {
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-30 15:54",
+     "points": 853460,
+     "turns": 40035,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1764263119.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-30 15:54",
+     "points": 853460,
+     "turns": 40035,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1764263119.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-29 18:52",
+     "points": 4956332,
+     "turns": 97057,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1764017070.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-29 18:52",
+     "points": 4956332,
+     "turns": 97057,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1764017070.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "PsyMarOotC",
+     "endtime": "2025-11-24 17:53",
+     "points": 1937600,
+     "turns": 36109,
+     "dumplog": "https://hardfought.org/userdata/P/PsyMarOotC/tnnt/dumplog/1762812690.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "PsyMarOotC",
+     "endtime": "2025-11-24 17:53",
+     "points": 1937600,
+     "turns": 36109,
+     "dumplog": "https://hardfought.org/userdata/P/PsyMarOotC/tnnt/dumplog/1762812690.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-17 15:56",
+     "points": 6002398,
+     "turns": 126378,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1763178327.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "wintergalaxy88",
+     "endtime": "2025-11-17 15:56",
+     "points": 6002398,
+     "turns": 126378,
+     "dumplog": "https://hardfought.org/userdata/w/wintergalaxy88/tnnt/dumplog/1763178327.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-09 21:35",
+     "points": 767445,
+     "turns": 48248,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1762065499.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-09 21:35",
+     "points": 767445,
+     "turns": 48248,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1762065499.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "Brunhild",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Brunhild",
+     "endtime": "2025-11-16 14:45",
+     "points": 216869,
+     "turns": 38977,
+     "dumplog": "https://eu.hardfought.org/userdata/B/Brunhild/tnnt/dumplog/1762711056.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Brunhild",
+     "endtime": "2025-11-09 14:58",
+     "points": 3617564,
+     "turns": 87534,
+     "dumplog": "https://eu.hardfought.org/userdata/B/Brunhild/tnnt/dumplog/1762202704.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Brunhild",
+     "endtime": "2025-11-09 14:58",
+     "points": 3617564,
+     "turns": 87534,
+     "dumplog": "https://eu.hardfought.org/userdata/B/Brunhild/tnnt/dumplog/1762202704.tnnt.html"
+    }
+   ]
+  }
+ }
+}

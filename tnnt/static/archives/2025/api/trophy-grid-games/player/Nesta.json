@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "Nesta",
+ "combos": {
+  "Ran-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Nesta",
+     "endtime": "2025-11-29 09:25",
+     "points": 334952,
+     "turns": 54661,
+     "dumplog": "https://hardfought.org/userdata/N/Nesta/tnnt/dumplog/1764215572.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Nesta",
+     "endtime": "2025-11-20 18:37",
+     "points": 4071794,
+     "turns": 90648,
+     "dumplog": "https://hardfought.org/userdata/N/Nesta/tnnt/dumplog/1762798591.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Nesta",
+     "endtime": "2025-11-20 18:37",
+     "points": 4071794,
+     "turns": 90648,
+     "dumplog": "https://hardfought.org/userdata/N/Nesta/tnnt/dumplog/1762798591.tnnt.html"
+    }
+   ]
+  }
+ }
+}

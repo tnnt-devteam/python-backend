@@ -1,0 +1,40 @@
+{
+ "entity_type": "clan",
+ "name": "{Inferior Force}",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jackofclubs",
+     "endtime": "2025-11-27 03:35",
+     "points": 179528,
+     "turns": 36224,
+     "dumplog": "https://hardfought.org/userdata/j/jackofclubs/tnnt/dumplog/1764028817.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jackofclubs",
+     "endtime": "2025-11-19 03:09",
+     "points": 2330364,
+     "turns": 44008,
+     "dumplog": "https://hardfought.org/userdata/j/jackofclubs/tnnt/dumplog/1762312901.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "jackofclubs",
+     "endtime": "2025-11-19 03:09",
+     "points": 2330364,
+     "turns": 44008,
+     "dumplog": "https://hardfought.org/userdata/j/jackofclubs/tnnt/dumplog/1762312901.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

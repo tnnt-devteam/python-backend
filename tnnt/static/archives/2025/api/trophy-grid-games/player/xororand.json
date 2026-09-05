@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "xororand",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "xororand",
+     "endtime": "2025-11-16 22:53",
+     "points": 421266,
+     "turns": 50143,
+     "dumplog": "https://eu.hardfought.org/userdata/x/xororand/tnnt/dumplog/1763215849.tnnt.html"
+    },
+    {
+     "player__name": "xororand",
+     "endtime": "2025-11-13 09:14",
+     "points": 126858,
+     "turns": 39783,
+     "dumplog": "https://eu.hardfought.org/userdata/x/xororand/tnnt/dumplog/1762960813.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

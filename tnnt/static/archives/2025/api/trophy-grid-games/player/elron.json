@@ -1,0 +1,138 @@
+{
+ "entity_type": "player",
+ "name": "elron",
+ "combos": {
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-23 23:23",
+     "points": 1876316,
+     "turns": 45478,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763907323.tnnt.html"
+    },
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-23 03:00",
+     "points": 88775,
+     "turns": 21695,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763850874.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-23 23:23",
+     "points": 1876316,
+     "turns": 45478,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763907323.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-22 22:27",
+     "points": 2046605,
+     "turns": 36802,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763815610.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-22 22:27",
+     "points": 2046605,
+     "turns": 36802,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763815610.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-21 00:49",
+     "points": 2273958,
+     "turns": 43443,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763512063.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-21 00:49",
+     "points": 2273958,
+     "turns": 43443,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763512063.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Gno-Neu": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-18 03:35",
+     "points": 1968632,
+     "turns": 30223,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1763335283.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-16 19:36",
+     "points": 1987891,
+     "turns": 36397,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1762218427.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-16 19:36",
+     "points": 1987891,
+     "turns": 36397,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1762218427.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-03 03:17",
+     "points": 2419134,
+     "turns": 41792,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1762097305.tnnt.html"
+    },
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-01 22:21",
+     "points": 111698,
+     "turns": 23575,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1762027467.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "elron",
+     "endtime": "2025-11-03 03:17",
+     "points": 2419134,
+     "turns": 41792,
+     "dumplog": "https://hardfought.org/userdata/e/elron/tnnt/dumplog/1762097305.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,116 @@
+{
+ "entity_type": "player",
+ "name": "squishy",
+ "combos": {
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-30 01:13",
+     "points": 3388780,
+     "turns": 78863,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1764111427.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-30 01:13",
+     "points": 3388780,
+     "turns": 78863,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1764111427.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-25 08:25",
+     "points": 3142766,
+     "turns": 66095,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1763787824.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-25 08:25",
+     "points": 3142766,
+     "turns": 66095,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1763787824.tnnt.html"
+    }
+   ]
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-22 04:38",
+     "points": 3043059,
+     "turns": 73407,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1763251944.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-22 04:38",
+     "points": 3043059,
+     "turns": 73407,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1763251944.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-15 19:35",
+     "points": 111138,
+     "turns": 23996,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1763165837.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-14 03:29",
+     "points": 183923,
+     "turns": 35568,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1762760534.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-09 08:16",
+     "points": 4141793,
+     "turns": 78056,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1762028963.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "squishy",
+     "endtime": "2025-11-09 08:16",
+     "points": 4141793,
+     "turns": 78056,
+     "dumplog": "https://hardfought.org/userdata/s/squishy/tnnt/dumplog/1762028963.tnnt.html"
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,291 @@
+{
+ "entity_type": "player",
+ "name": "Eesui",
+ "combos": {
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-30 11:08",
+     "points": 125078,
+     "turns": 30996,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764485306.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-29 23:42",
+     "points": 72933,
+     "turns": 17440,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764449317.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-29 19:44",
+     "points": 359746,
+     "turns": 35913,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764387228.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-29 01:47",
+     "points": 1980002,
+     "turns": 35918,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764306384.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-28 04:52",
+     "points": 373722,
+     "turns": 27345,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764289506.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-27 22:35",
+     "points": 23337,
+     "turns": 12482,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764278262.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-09 21:33",
+     "points": 178049,
+     "turns": 22831,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762674377.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-29 01:47",
+     "points": 1980002,
+     "turns": 35918,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764306384.tnnt.html"
+    }
+   ]
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-26 06:11",
+     "points": 184896,
+     "turns": 32984,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764121514.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-27 06:38",
+     "points": 1582388,
+     "turns": 40559,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1764198739.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-24 22:19",
+     "points": 1818760,
+     "turns": 41714,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763946544.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-23 09:58",
+     "points": 46903,
+     "turns": 12849,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763884820.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-10 00:00",
+     "points": 67607,
+     "turns": 12657,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762725947.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-24 22:19",
+     "points": 1818760,
+     "turns": 41714,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763946544.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-23 07:50",
+     "points": 1938764,
+     "turns": 41217,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763852151.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-21 07:35",
+     "points": 1226036,
+     "turns": 53154,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763516742.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-23 07:50",
+     "points": 1938764,
+     "turns": 41217,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763852151.tnnt.html"
+    }
+   ]
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-16 23:29",
+     "points": 1361585,
+     "turns": 51247,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763250001.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-16 23:29",
+     "points": 1361585,
+     "turns": 51247,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763250001.tnnt.html"
+    }
+   ]
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-15 21:41",
+     "points": 2202236,
+     "turns": 51580,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763161765.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-12 07:03",
+     "points": 63963,
+     "turns": 17428,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762921650.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-15 21:41",
+     "points": 2202236,
+     "turns": 51580,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1763161765.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-09 06:30",
+     "points": 1842344,
+     "turns": 44422,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762615283.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-09 06:30",
+     "points": 1842344,
+     "turns": 44422,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762615283.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-08 02:20",
+     "points": 3292436,
+     "turns": 72857,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762399173.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-08 02:20",
+     "points": 3292436,
+     "turns": 72857,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762399173.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-06 02:24",
+     "points": 94893,
+     "turns": 26847,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762312028.tnnt.html"
+    },
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-05 01:36",
+     "points": 98635,
+     "turns": 22771,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762292366.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-04 06:13",
+     "points": 2516834,
+     "turns": 55561,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762115001.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Eesui",
+     "endtime": "2025-11-04 06:13",
+     "points": 2516834,
+     "turns": 55561,
+     "dumplog": "https://hardfought.org/userdata/E/Eesui/tnnt/dumplog/1762115001.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

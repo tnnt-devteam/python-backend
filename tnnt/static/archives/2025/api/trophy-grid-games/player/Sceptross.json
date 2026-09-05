@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "Sceptross",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Sceptross",
+     "endtime": "2025-11-02 16:57",
+     "points": 1682576,
+     "turns": 32401,
+     "dumplog": "https://eu.hardfought.org/userdata/S/Sceptross/tnnt/dumplog/1761993364.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Sceptross",
+     "endtime": "2025-11-02 16:57",
+     "points": 1682576,
+     "turns": 32401,
+     "dumplog": "https://eu.hardfought.org/userdata/S/Sceptross/tnnt/dumplog/1761993364.tnnt.html"
+    }
+   ]
+  }
+ }
+}

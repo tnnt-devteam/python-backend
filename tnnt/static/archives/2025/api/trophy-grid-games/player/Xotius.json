@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "Xotius",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Xotius",
+     "endtime": "2025-11-12 23:35",
+     "points": 24743,
+     "turns": 10831,
+     "dumplog": "https://eu.hardfought.org/userdata/X/Xotius/tnnt/dumplog/1762868307.tnnt.html"
+    },
+    {
+     "player__name": "Xotius",
+     "endtime": "2025-11-08 16:48",
+     "points": 25756,
+     "turns": 13292,
+     "dumplog": "https://eu.hardfought.org/userdata/X/Xotius/tnnt/dumplog/1762611350.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

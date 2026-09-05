@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "habib",
+ "combos": {
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-30 15:54",
+     "points": 853460,
+     "turns": 40035,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1764263119.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-30 15:54",
+     "points": 853460,
+     "turns": 40035,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1764263119.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-09 21:35",
+     "points": 767445,
+     "turns": 48248,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1762065499.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "habib",
+     "endtime": "2025-11-09 21:35",
+     "points": 767445,
+     "turns": 48248,
+     "dumplog": "https://hardfought.org/userdata/h/habib/tnnt/dumplog/1762065499.tnnt.html"
+    }
+   ]
+  }
+ }
+}

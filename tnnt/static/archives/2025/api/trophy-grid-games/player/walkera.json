@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "walkera",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "walkera",
+     "endtime": "2025-11-22 05:34",
+     "points": 5810152,
+     "turns": 156145,
+     "dumplog": "https://hardfought.org/userdata/w/walkera/tnnt/dumplog/1762825296.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "walkera",
+     "endtime": "2025-11-22 05:34",
+     "points": 5810152,
+     "turns": 156145,
+     "dumplog": "https://hardfought.org/userdata/w/walkera/tnnt/dumplog/1762825296.tnnt.html"
+    }
+   ]
+  }
+ }
+}

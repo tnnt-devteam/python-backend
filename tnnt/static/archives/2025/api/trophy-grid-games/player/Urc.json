@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "Urc",
+ "combos": {
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Urc",
+     "endtime": "2025-11-23 02:07",
+     "points": 171639,
+     "turns": 22503,
+     "dumplog": "https://hardfought.org/userdata/U/Urc/tnnt/dumplog/1763605176.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Urc",
+     "endtime": "2025-11-18 02:55",
+     "points": 2547210,
+     "turns": 58063,
+     "dumplog": "https://hardfought.org/userdata/U/Urc/tnnt/dumplog/1762214096.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Urc",
+     "endtime": "2025-11-18 02:55",
+     "points": 2547210,
+     "turns": 58063,
+     "dumplog": "https://hardfought.org/userdata/U/Urc/tnnt/dumplog/1762214096.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

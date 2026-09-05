@@ -1,0 +1,102 @@
+{
+ "entity_type": "player",
+ "name": "ais523",
+ "combos": {
+  "Ran-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-27 02:00",
+     "points": 1191929,
+     "turns": 46218,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1764175521.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-27 02:00",
+     "points": 1191929,
+     "turns": 46218,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1764175521.tnnt.html"
+    }
+   ]
+  },
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-11 22:46",
+     "points": 3894336,
+     "turns": 79166,
+     "dumplog": "https://hardfought.org/userdata/a/ais523/tnnt/dumplog/1762698303.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-11 22:46",
+     "points": 3894336,
+     "turns": 79166,
+     "dumplog": "https://hardfought.org/userdata/a/ais523/tnnt/dumplog/1762698303.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-06 21:44",
+     "points": 2761698,
+     "turns": 55077,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762424830.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-04 21:10",
+     "points": 151617,
+     "turns": 22247,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762276439.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-02 23:11",
+     "points": 7389214,
+     "turns": 83141,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762061124.tnnt.html"
+    },
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-01 06:18",
+     "points": 173384,
+     "turns": 21914,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1761964321.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "ais523",
+     "endtime": "2025-11-02 23:11",
+     "points": 7389214,
+     "turns": 83141,
+     "dumplog": "https://eu.hardfought.org/userdata/a/ais523/tnnt/dumplog/1762061124.tnnt.html"
+    }
+   ]
+  }
+ }
+}

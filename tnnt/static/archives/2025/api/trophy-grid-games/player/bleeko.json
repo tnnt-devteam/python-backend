@@ -1,0 +1,74 @@
+{
+ "entity_type": "player",
+ "name": "bleeko",
+ "combos": {
+  "Wiz-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-30 01:47",
+     "points": 1428828,
+     "turns": 51795,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1764121931.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-30 01:47",
+     "points": 1428828,
+     "turns": 51795,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1764121931.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-18 03:30",
+     "points": 1274254,
+     "turns": 49154,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1763261644.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-16 02:43",
+     "points": 578550,
+     "turns": 45044,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1763080172.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-12 05:05",
+     "points": 3534114,
+     "turns": 75492,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1762064158.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "bleeko",
+     "endtime": "2025-11-12 05:05",
+     "points": 3534114,
+     "turns": 75492,
+     "dumplog": "https://hardfought.org/userdata/b/bleeko/tnnt/dumplog/1762064158.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

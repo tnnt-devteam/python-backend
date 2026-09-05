@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "StCugel",
+ "combos": {
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "StCugel",
+     "endtime": "2025-11-22 14:00",
+     "points": 2841388,
+     "turns": 71127,
+     "dumplog": "https://hardfought.org/userdata/S/StCugel/tnnt/dumplog/1763394361.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "StCugel",
+     "endtime": "2025-11-22 14:00",
+     "points": 2841388,
+     "turns": 71127,
+     "dumplog": "https://hardfought.org/userdata/S/StCugel/tnnt/dumplog/1763394361.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "StCugel",
+     "endtime": "2025-11-15 02:41",
+     "points": 3380444,
+     "turns": 58981,
+     "dumplog": "https://hardfought.org/userdata/S/StCugel/tnnt/dumplog/1762649795.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "StCugel",
+     "endtime": "2025-11-15 02:41",
+     "points": 3380444,
+     "turns": 58981,
+     "dumplog": "https://hardfought.org/userdata/S/StCugel/tnnt/dumplog/1762649795.tnnt.html"
+    }
+   ]
+  }
+ }
+}

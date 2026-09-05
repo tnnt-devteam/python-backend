@@ -1,0 +1,209 @@
+{
+ "entity_type": "player",
+ "name": "allanb",
+ "combos": {
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-30 02:49",
+     "points": 3877493,
+     "turns": 45323,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1764356890.tnnt.html"
+    },
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-28 02:55",
+     "points": 158734,
+     "turns": 29002,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1764259275.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-30 02:49",
+     "points": 3877493,
+     "turns": 45323,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1764356890.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-26 22:08",
+     "points": 4201843,
+     "turns": 63633,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1764002378.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-26 22:08",
+     "points": 4201843,
+     "turns": 63633,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1764002378.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-23 17:08",
+     "points": 3798795,
+     "turns": 56597,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763759657.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-23 17:08",
+     "points": 3798795,
+     "turns": 56597,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763759657.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Cav-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-20 20:59",
+     "points": 4484201,
+     "turns": 56905,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763494416.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-20 20:59",
+     "points": 4484201,
+     "turns": 56905,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763494416.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-17 23:02",
+     "points": 3996522,
+     "turns": 51466,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763251175.tnnt.html"
+    },
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-15 17:54",
+     "points": 669300,
+     "turns": 41058,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763139830.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-17 23:02",
+     "points": 3996522,
+     "turns": 51466,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1763251175.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-14 16:22",
+     "points": 3897885,
+     "turns": 45888,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762904485.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-14 16:22",
+     "points": 3897885,
+     "turns": 45888,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762904485.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Mon-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-07 20:21",
+     "points": 3756340,
+     "turns": 61584,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762365234.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-07 20:21",
+     "points": 3756340,
+     "turns": 61584,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762365234.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-04 19:44",
+     "points": 4031908,
+     "turns": 47640,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762130320.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-04 19:44",
+     "points": 4031908,
+     "turns": 47640,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1762130320.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-02 22:48",
+     "points": 4201357,
+     "turns": 66829,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1761981277.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "allanb",
+     "endtime": "2025-11-02 22:48",
+     "points": 4201357,
+     "turns": 66829,
+     "dumplog": "https://hardfought.org/userdata/a/allanb/tnnt/dumplog/1761981277.tnnt.html"
+    }
+   ]
+  }
+ }
+}

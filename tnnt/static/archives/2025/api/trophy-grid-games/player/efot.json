@@ -1,0 +1,55 @@
+{
+ "entity_type": "player",
+ "name": "efot",
+ "combos": {
+  "Hea-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "efot",
+     "endtime": "2025-11-30 20:59",
+     "points": 1912922,
+     "turns": 48277,
+     "dumplog": "https://hardfought.org/userdata/e/efot/tnnt/dumplog/1764445338.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "efot",
+     "endtime": "2025-11-30 20:59",
+     "points": 1912922,
+     "turns": 48277,
+     "dumplog": "https://hardfought.org/userdata/e/efot/tnnt/dumplog/1764445338.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "efot",
+     "endtime": "2025-11-29 19:25",
+     "points": 2143694,
+     "turns": 46735,
+     "dumplog": "https://hardfought.org/userdata/e/efot/tnnt/dumplog/1762813335.tnnt.html"
+    },
+    {
+     "player__name": "efot",
+     "endtime": "2025-11-06 22:47",
+     "points": 768046,
+     "turns": 40819,
+     "dumplog": "https://hardfought.org/userdata/e/efot/tnnt/dumplog/1761966022.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "efot",
+     "endtime": "2025-11-29 19:25",
+     "points": 2143694,
+     "turns": 46735,
+     "dumplog": "https://hardfought.org/userdata/e/efot/tnnt/dumplog/1762813335.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

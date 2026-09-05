@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "LiamTheDruid",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "LiamTheDruid",
+     "endtime": "2025-11-27 17:39",
+     "points": 3517082,
+     "turns": 49788,
+     "dumplog": "https://hardfought.org/userdata/L/LiamTheDruid/tnnt/dumplog/1762798878.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "LiamTheDruid",
+     "endtime": "2025-11-27 17:39",
+     "points": 3517082,
+     "turns": 49788,
+     "dumplog": "https://hardfought.org/userdata/L/LiamTheDruid/tnnt/dumplog/1762798878.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "LiamTheDruid",
+     "endtime": "2025-11-05 23:26",
+     "points": 703052,
+     "turns": 36900,
+     "dumplog": "https://hardfought.org/userdata/L/LiamTheDruid/tnnt/dumplog/1762121635.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

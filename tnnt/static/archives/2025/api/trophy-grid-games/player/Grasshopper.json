@@ -1,0 +1,69 @@
+{
+ "entity_type": "player",
+ "name": "Grasshopper",
+ "combos": {
+  "Wiz-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-30 20:42",
+     "points": 5121376,
+     "turns": 62201,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1764043468.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-30 20:42",
+     "points": 5121376,
+     "turns": 62201,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1764043468.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-24 15:41",
+     "points": 4769786,
+     "turns": 70446,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1763421900.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-24 15:41",
+     "points": 4769786,
+     "turns": 70446,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1763421900.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-15 17:15",
+     "points": 3779210,
+     "turns": 64573,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1762104850.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Grasshopper",
+     "endtime": "2025-11-15 17:15",
+     "points": 3779210,
+     "turns": 64573,
+     "dumplog": "https://au.hardfought.org/userdata/G/Grasshopper/tnnt/dumplog/1762104850.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

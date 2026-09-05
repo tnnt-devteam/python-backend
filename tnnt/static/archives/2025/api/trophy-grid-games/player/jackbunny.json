@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "jackbunny",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "jackbunny",
+     "endtime": "2025-11-29 04:33",
+     "points": 252285,
+     "turns": 36147,
+     "dumplog": "https://hardfought.org/userdata/j/jackbunny/tnnt/dumplog/1763532410.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

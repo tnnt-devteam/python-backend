@@ -1,0 +1,27 @@
+{
+ "entity_type": "player",
+ "name": "Bean",
+ "combos": {
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Bean",
+     "endtime": "2025-11-04 05:08",
+     "points": 2198872,
+     "turns": 42216,
+     "dumplog": "https://hardfought.org/userdata/B/Bean/tnnt/dumplog/1762097185.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "Bean",
+     "endtime": "2025-11-04 05:08",
+     "points": 2198872,
+     "turns": 42216,
+     "dumplog": "https://hardfought.org/userdata/B/Bean/tnnt/dumplog/1762097185.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

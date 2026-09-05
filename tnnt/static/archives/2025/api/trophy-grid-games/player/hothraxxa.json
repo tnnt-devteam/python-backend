@@ -1,0 +1,47 @@
+{
+ "entity_type": "player",
+ "name": "hothraxxa",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-25 21:47",
+     "points": 33080,
+     "turns": 13448,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1764004398.tnnt.html"
+    },
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-23 19:42",
+     "points": 44230,
+     "turns": 17280,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1763830269.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-21 19:58",
+     "points": 2529030,
+     "turns": 60939,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1762288945.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "hothraxxa",
+     "endtime": "2025-11-21 19:58",
+     "points": 2529030,
+     "turns": 60939,
+     "dumplog": "https://hardfought.org/userdata/h/hothraxxa/tnnt/dumplog/1762288945.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

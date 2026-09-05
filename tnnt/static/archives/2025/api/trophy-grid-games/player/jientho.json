@@ -1,0 +1,45 @@
+{
+ "entity_type": "player",
+ "name": "jientho",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-30 23:54",
+     "points": 147280,
+     "turns": 20228,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1764375640.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-28 18:39",
+     "points": 121934,
+     "turns": 24998,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1763897979.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Ran-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "jientho",
+     "endtime": "2025-11-22 10:40",
+     "points": 218508,
+     "turns": 28276,
+     "dumplog": "https://hardfought.org/userdata/j/jientho/tnnt/dumplog/1763235124.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

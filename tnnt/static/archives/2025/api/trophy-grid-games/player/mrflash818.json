@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "mrflash818",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "mrflash818",
+     "endtime": "2025-11-28 20:55",
+     "points": 1071109,
+     "turns": 136480,
+     "dumplog": "https://hardfought.org/userdata/m/mrflash818/tnnt/dumplog/1762903139.tnnt.html"
+    },
+    {
+     "player__name": "mrflash818",
+     "endtime": "2025-11-08 01:35",
+     "points": 206318,
+     "turns": 54515,
+     "dumplog": "https://hardfought.org/userdata/m/mrflash818/tnnt/dumplog/1762066256.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

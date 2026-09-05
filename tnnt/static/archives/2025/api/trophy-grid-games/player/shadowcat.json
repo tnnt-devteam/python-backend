@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "shadowcat",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "shadowcat",
+     "endtime": "2025-11-17 04:17",
+     "points": 103082,
+     "turns": 21594,
+     "dumplog": "https://hardfought.org/userdata/s/shadowcat/tnnt/dumplog/1763340323.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

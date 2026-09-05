@@ -1,0 +1,26 @@
+{
+ "entity_type": "clan",
+ "name": "Loggers",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Loggers",
+     "endtime": "2025-11-21 06:30",
+     "points": 1442254,
+     "turns": 20828,
+     "dumplog": "https://hardfought.org/userdata/L/Loggers/tnnt/dumplog/1763700310.tnnt.html"
+    },
+    {
+     "player__name": "Loggers",
+     "endtime": "2025-11-01 23:54",
+     "points": 1490008,
+     "turns": 24692,
+     "dumplog": "https://hardfought.org/userdata/L/Loggers/tnnt/dumplog/1762034684.tnnt.html"
+    }
+   ]
+  }
+ }
+}

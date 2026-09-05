@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "crunchbubba",
+ "combos": {
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-29 20:15",
+     "points": 2309720,
+     "turns": 88916,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1764050468.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-29 20:15",
+     "points": 2309720,
+     "turns": 88916,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1764050468.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-10 05:30",
+     "points": 3814188,
+     "turns": 99739,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1762065907.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "crunchbubba",
+     "endtime": "2025-11-10 05:30",
+     "points": 3814188,
+     "turns": 99739,
+     "dumplog": "https://hardfought.org/userdata/c/crunchbubba/tnnt/dumplog/1762065907.tnnt.html"
+    }
+   ]
+  }
+ }
+}

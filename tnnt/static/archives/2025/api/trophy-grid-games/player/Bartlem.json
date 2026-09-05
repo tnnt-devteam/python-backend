@@ -1,0 +1,47 @@
+{
+ "entity_type": "player",
+ "name": "Bartlem",
+ "combos": {
+  "Wiz-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Bartlem",
+     "endtime": "2025-11-24 19:58",
+     "points": 1898800,
+     "turns": 40074,
+     "dumplog": "https://hardfought.org/userdata/B/Bartlem/tnnt/dumplog/1763574395.tnnt.html"
+    },
+    {
+     "player__name": "Bartlem",
+     "endtime": "2025-11-13 15:17",
+     "points": 651437,
+     "turns": 53380,
+     "dumplog": "https://hardfought.org/userdata/B/Bartlem/tnnt/dumplog/1762810883.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Bartlem",
+     "endtime": "2025-11-24 19:58",
+     "points": 1898800,
+     "turns": 40074,
+     "dumplog": "https://hardfought.org/userdata/B/Bartlem/tnnt/dumplog/1763574395.tnnt.html"
+    }
+   ]
+  },
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Bartlem",
+     "endtime": "2025-11-06 19:40",
+     "points": 1556491,
+     "turns": 51335,
+     "dumplog": "https://hardfought.org/userdata/B/Bartlem/tnnt/dumplog/1762269327.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

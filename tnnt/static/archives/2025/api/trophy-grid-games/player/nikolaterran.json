@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "nikolaterran",
+ "combos": {
+  "Kni-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nikolaterran",
+     "endtime": "2025-11-28 20:32",
+     "points": 2281214,
+     "turns": 51876,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nikolaterran/tnnt/dumplog/1764076787.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "nikolaterran",
+     "endtime": "2025-11-28 20:32",
+     "points": 2281214,
+     "turns": 51876,
+     "dumplog": "https://eu.hardfought.org/userdata/n/nikolaterran/tnnt/dumplog/1764076787.tnnt.html"
+    }
+   ]
+  },
+  "Wiz-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "nikolaterran",
+     "endtime": "2025-11-27 17:35",
+     "points": 2540872,
+     "turns": 44464,
+     "dumplog": "https://hardfought.org/userdata/n/nikolaterran/tnnt/dumplog/1763998133.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "nikolaterran",
+     "endtime": "2025-11-27 17:35",
+     "points": 2540872,
+     "turns": 44464,
+     "dumplog": "https://hardfought.org/userdata/n/nikolaterran/tnnt/dumplog/1763998133.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

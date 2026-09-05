@@ -1,0 +1,118 @@
+{
+ "entity_type": "player",
+ "name": "rancat",
+ "combos": {
+  "Rog-Hum-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-29 01:55",
+     "points": 2063274,
+     "turns": 47850,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1763999107.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-29 01:55",
+     "points": 2063274,
+     "turns": 47850,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1763999107.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-23 19:37",
+     "points": 2385234,
+     "turns": 53049,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1763744692.tnnt.html"
+    },
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-21 17:01",
+     "points": 275844,
+     "turns": 28390,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1763581681.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-23 19:37",
+     "points": 2385234,
+     "turns": 53049,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1763744692.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Gno-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-15 17:54",
+     "points": 2250934,
+     "turns": 40525,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762802373.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-15 17:54",
+     "points": 2250934,
+     "turns": 40525,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762802373.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-10 19:12",
+     "points": 2471762,
+     "turns": 38810,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762371390.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-10 19:12",
+     "points": 2471762,
+     "turns": 38810,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762371390.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-04 20:49",
+     "points": 2306192,
+     "turns": 48753,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762032716.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "rancat",
+     "endtime": "2025-11-04 20:49",
+     "points": 2306192,
+     "turns": 48753,
+     "dumplog": "https://hardfought.org/userdata/r/rancat/tnnt/dumplog/1762032716.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "entity_type": "player",
+ "name": "Gandelf",
+ "combos": {
+  "Mon-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "Gandelf",
+     "endtime": "2025-11-21 21:48",
+     "points": 63014,
+     "turns": 18484,
+     "dumplog": "https://eu.hardfought.org/userdata/G/Gandelf/tnnt/dumplog/1763738524.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

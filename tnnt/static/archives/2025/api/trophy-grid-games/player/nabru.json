@@ -1,0 +1,46 @@
+{
+ "entity_type": "player",
+ "name": "nabru",
+ "combos": {
+  "Bar-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-19 00:45",
+     "points": 1045460,
+     "turns": 37796,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1763383849.tnnt.html"
+    },
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-16 21:35",
+     "points": 276711,
+     "turns": 18988,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1763303200.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-04 23:29",
+     "points": 36355,
+     "turns": 9270,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1762257561.tnnt.html"
+    },
+    {
+     "player__name": "nabru",
+     "endtime": "2025-11-02 18:52",
+     "points": 760845,
+     "turns": 31147,
+     "dumplog": "https://hardfought.org/userdata/n/nabru/tnnt/dumplog/1762088808.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

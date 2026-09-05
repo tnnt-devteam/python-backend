@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "CalvinCoolade",
+ "combos": {
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "CalvinCoolade",
+     "endtime": "2025-11-03 21:00",
+     "points": 3168688,
+     "turns": 63502,
+     "dumplog": "https://hardfought.org/userdata/C/CalvinCoolade/tnnt/dumplog/1762064284.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "CalvinCoolade",
+     "endtime": "2025-11-03 21:00",
+     "points": 3168688,
+     "turns": 63502,
+     "dumplog": "https://hardfought.org/userdata/C/CalvinCoolade/tnnt/dumplog/1762064284.tnnt.html"
+    }
+   ]
+  },
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "CalvinCoolade",
+     "endtime": "2025-11-02 04:11",
+     "points": 77696,
+     "turns": 19054,
+     "dumplog": "https://hardfought.org/userdata/C/CalvinCoolade/tnnt/dumplog/1761966540.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

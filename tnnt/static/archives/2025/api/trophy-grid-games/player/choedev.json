@@ -1,0 +1,26 @@
+{
+ "entity_type": "player",
+ "name": "choedev",
+ "combos": {
+  "Tou-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "choedev",
+     "endtime": "2025-11-26 10:10",
+     "points": 97378,
+     "turns": 34097,
+     "dumplog": "https://hardfought.org/userdata/c/choedev/tnnt/dumplog/1764141439.tnnt.html"
+    },
+    {
+     "player__name": "choedev",
+     "endtime": "2025-11-24 11:13",
+     "points": 143998,
+     "turns": 41314,
+     "dumplog": "https://hardfought.org/userdata/c/choedev/tnnt/dumplog/1763965514.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}

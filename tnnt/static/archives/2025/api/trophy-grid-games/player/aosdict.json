@@ -1,0 +1,48 @@
+{
+ "entity_type": "player",
+ "name": "aosdict",
+ "combos": {
+  "Bar-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-15 17:05",
+     "points": 2876234,
+     "turns": 39884,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762708359.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-15 17:05",
+     "points": 2876234,
+     "turns": 39884,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762708359.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-09 14:53",
+     "points": 2403450,
+     "turns": 50788,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762219401.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "aosdict",
+     "endtime": "2025-11-09 14:53",
+     "points": 2403450,
+     "turns": 50788,
+     "dumplog": "https://hardfought.org/userdata/a/aosdict/tnnt/dumplog/1762219401.tnnt.html"
+    }
+   ]
+  }
+ }
+}

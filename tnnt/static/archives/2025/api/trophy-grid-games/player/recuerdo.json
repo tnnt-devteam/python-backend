@@ -1,0 +1,68 @@
+{
+ "entity_type": "player",
+ "name": "recuerdo",
+ "combos": {
+  "Wiz-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-28 19:05",
+     "points": 342013,
+     "turns": 69415,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1764038260.tnnt.html"
+    },
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-25 00:16",
+     "points": 32990,
+     "turns": 19685,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1763949936.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  },
+  "Cav-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-22 15:21",
+     "points": 2292354,
+     "turns": 75498,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1763609906.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-22 15:21",
+     "points": 2292354,
+     "turns": 75498,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1763609906.tnnt.html"
+    }
+   ]
+  },
+  "Val-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-12 00:54",
+     "points": 2932528,
+     "turns": 66555,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1762798955.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "recuerdo",
+     "endtime": "2025-11-12 00:54",
+     "points": 2932528,
+     "turns": 66555,
+     "dumplog": "https://hardfought.org/userdata/r/recuerdo/tnnt/dumplog/1762798955.tnnt.html"
+    }
+   ]
+  }
+ }
+}

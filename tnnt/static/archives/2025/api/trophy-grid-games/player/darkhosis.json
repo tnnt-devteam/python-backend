@@ -1,0 +1,138 @@
+{
+ "entity_type": "player",
+ "name": "darkhosis",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-26 08:29",
+     "points": 1783040,
+     "turns": 41405,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1764120476.tnnt.html"
+    },
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-05 04:53",
+     "points": 3441856,
+     "turns": 78929,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1762063000.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-26 08:29",
+     "points": 1783040,
+     "turns": 41405,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1764120476.tnnt.html"
+    },
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-05 04:53",
+     "points": 3441856,
+     "turns": 78929,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1762063000.tnnt.html"
+    }
+   ]
+  },
+  "Arc-Dwa-Law": {
+   "mines_soko": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-25 11:35",
+     "points": 2413268,
+     "turns": 53298,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763967925.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-25 11:35",
+     "points": 2413268,
+     "turns": 53298,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763967925.tnnt.html"
+    }
+   ]
+  },
+  "Hea-Hum-Neu": {
+   "mines_soko": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-22 06:45",
+     "points": 1890222,
+     "turns": 47291,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763693010.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-22 06:45",
+     "points": 1890222,
+     "turns": 47291,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763693010.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Pri-Hum-Law": {
+   "mines_soko": [],
+   "male_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-20 08:47",
+     "points": 2348686,
+     "turns": 42052,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763595040.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Sam-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-18 08:32",
+     "points": 1948408,
+     "turns": 42862,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763257389.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-18 08:32",
+     "points": 1948408,
+     "turns": 42862,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763257389.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  },
+  "Rog-Orc-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-15 10:39",
+     "points": 2422708,
+     "turns": 66289,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763074658.tnnt.html"
+    }
+   ],
+   "male_ascensions": [
+    {
+     "player__name": "darkhosis",
+     "endtime": "2025-11-15 10:39",
+     "points": 2422708,
+     "turns": 66289,
+     "dumplog": "https://hardfought.org/userdata/d/darkhosis/tnnt/dumplog/1763074658.tnnt.html"
+    }
+   ],
+   "female_ascensions": []
+  }
+ }
+}

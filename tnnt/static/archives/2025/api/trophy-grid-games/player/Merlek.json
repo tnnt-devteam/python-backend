@@ -1,0 +1,40 @@
+{
+ "entity_type": "player",
+ "name": "Merlek",
+ "combos": {
+  "Val-Hum-Law": {
+   "mines_soko": [
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-30 16:15",
+     "points": 14219568,
+     "turns": 472074,
+     "dumplog": "https://eu.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762260120.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": [
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-30 16:15",
+     "points": 14219568,
+     "turns": 472074,
+     "dumplog": "https://eu.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762260120.tnnt.html"
+    }
+   ]
+  },
+  "Pri-Elf-Cha": {
+   "mines_soko": [
+    {
+     "player__name": "Merlek",
+     "endtime": "2025-11-08 22:17",
+     "points": 35951,
+     "turns": 12288,
+     "dumplog": "https://au.hardfought.org/userdata/M/Merlek/tnnt/dumplog/1762616956.tnnt.html"
+    }
+   ],
+   "male_ascensions": [],
+   "female_ascensions": []
+  }
+ }
+}
