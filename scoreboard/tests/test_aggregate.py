@@ -16,10 +16,12 @@ _game_seq = [0]
 
 def make_game(player, source, role='Val', race='Hum', align0='Law',
               gender0='Fem', won=True, mines_soko=True, death='ascended',
-              turns=20000, points=1000000, start=None):
+              turns=20000, points=1000000, start=None,
+              length=timedelta(hours=1)):
     """
     Create a Game with all non-null fields filled in and unique times, or
-    starting at `start` (an aware datetime) when given.
+    starting at `start` (an aware datetime) when given; `length` is the
+    game's realtime, wallclock and endtime - starttime.
     """
     _game_seq[0] += 1
     if start is None:
@@ -28,8 +30,8 @@ def make_game(player, source, role='Val', race='Hum', align0='Law',
     return Game.objects.create(
         version='3.6.7', role=role, race=race, gender=gender0, align=align0,
         gender0=gender0, align0=align0, points=points, turns=turns,
-        realtime=timedelta(hours=1), wallclock=timedelta(hours=1),
-        maxlvl=50, starttime=start, endtime=start + timedelta(hours=1),
+        realtime=length, wallclock=length,
+        maxlvl=50, starttime=start, endtime=start + length,
         death=death, normalized_death=None, won=won, mines_soko=mines_soko,
         player=player, source=source)
 

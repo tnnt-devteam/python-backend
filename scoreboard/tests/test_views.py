@@ -281,6 +281,37 @@ class AdminPanelTests(TestCase):
         self.assertContains(resp, 'rate-scripted')
         self.assertNotContains(resp, 'Games/Sec')
 
+    def test_instant_quit_share_with_levels(self):
+        login_player(self.client, 'k2')
+        src = Source.objects.get(server='hdf')
+        base = datetime.fromtimestamp(in_window(days=2), timezone.utc)
+
+        def scummer(name, lengths):
+            player = Player.objects.create(name=name, games_scummed=100)
+            for i, seconds in enumerate(lengths):
+                make_game(player, src, death='quit', turns=1, won=False,
+                          mines_soko=False,
+                          start=base + timedelta(minutes=i),
+                          length=timedelta(seconds=seconds))
+
+        scummer('human', [6, 8, 7, 9, 6])          # 0%, median 7 s
+        scummer('fast', [1, 5, 5, 5, 5, 0, 5, 5, 5, 5])   # 20%
+        scummer('bot', [0, 1, 0, 0, 3, 1, 0, 0, 0, 2])    # 80%, median 0
+        with mock.patch.object(hardfought_utils, 'get_multi_account_ips',
+                               return_value=[]), \
+                mock.patch.object(hardfought_utils, 'get_players_last_ips',
+                                  return_value={}):
+            resp = self.client.get('/admin-panel?refresh=1')
+        self.assertEqual(resp.status_code, 200)
+        got = {p.name: (p.instant_quit_pct, p.median_scum_seconds,
+                        p.scum_duration_level)
+               for p in resp.context['scummers']}
+        self.assertEqual(got, {'human': (0, 7, ''),
+                               'fast': (20, 5, 'fast'),
+                               'bot': (80, 0, 'scripted')})
+        self.assertContains(resp, 'Instant Quits')
+        self.assertContains(resp, 'median 7 s')
+
 
 class PlayersPageTests(TestCase):
     """

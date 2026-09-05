@@ -15,8 +15,9 @@ from . import hardfought_utils # find_player
 from . import dumplog_utils # format_dumplog
 from . import admin_utils
 from . import settings
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import logging
+import statistics
 import re
 import sqlite3
 from tnnt import uniqdeaths
@@ -1656,6 +1657,30 @@ def scum_rate_level(peak_per_minute):
     return ''
 
 
+# An "instant quit" is a scummed game over within a second of starting
+# (Game.wallclock, whole-second timestamps, so anything under about 2 s).
+# A human needs longer to get through the welcome message and the quit
+# confirmation. The share of a player's scummed games that are instant
+# quits marks them "fast" and "scripted"; it also catches a bot that
+# spaces its games out to stay under the per-minute rate. Calibrated on
+# the 2024-2025 xlogfiles: the heaviest scripts 74-85%, other scripted
+# players 20-51%, human-paced heavy scummers 0%, light scummers 5%.
+INSTANT_QUIT = timedelta(seconds=1)
+SCUM_INSTANT_FAST = 10
+SCUM_INSTANT_SCRIPTED = 40
+
+
+def scum_duration_level(instant_quit_pct):
+    """'scripted', 'fast' or '' for an instant-quit percentage."""
+    if instant_quit_pct is None:
+        return ''
+    if instant_quit_pct >= SCUM_INSTANT_SCRIPTED:
+        return 'scripted'
+    if instant_quit_pct >= SCUM_INSTANT_FAST:
+        return 'fast'
+    return ''
+
+
 class AdminPanelView(View):
     """
     Admin panel for site administrators.
@@ -1746,6 +1771,25 @@ class AdminPanelView(View):
                 )
                 player.scum_rate_level = scum_rate_level(
                     player.peak_scum_rate)
+
+                # Instant quits and the median length of the player's
+                # scummed games (see INSTANT_QUIT above).
+                durations = sorted(
+                    Game.objects.filter(SCUMMED_GAME_Q, player=player)
+                    .exclude(wallclock__isnull=True)
+                    .values_list('wallclock', flat=True)
+                )
+                if durations:
+                    instant = sum(1 for d in durations if d <= INSTANT_QUIT)
+                    player.instant_quit_pct = round(
+                        100 * instant / len(durations))
+                    player.median_scum_seconds = round(
+                        statistics.median(durations).total_seconds())
+                else:
+                    player.instant_quit_pct = None
+                    player.median_scum_seconds = None
+                player.scum_duration_level = scum_duration_level(
+                    player.instant_quit_pct)
 
                 scummers_list.append(player)
 

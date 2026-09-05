@@ -145,6 +145,9 @@
       Shows players with 100+ scummed games. Players with 500+ games are highlighted in red.
       Peak Games/Min is the most scummed games started in any one minute:
       15+ is faster than manual play, 30+ is a script (a new game every 2 seconds).
+      Instant Quits is the share of scummed games over within a second of starting
+      (a human needs longer to get past the welcome message and the quit confirmation):
+      10%+ is fast, 40%+ is a script. It also catches a bot that paces itself.
     </div>
     {% if scummers %}
     <table class="sortable monitoring-table">
@@ -153,6 +156,7 @@
           <th>Player</th>
           <th>Scummed Games</th>
           <th>Peak Games/Min</th>
+          <th>Instant Quits</th>
           <th>Last IP</th>
           <th>Clan</th>
         </tr>
@@ -168,6 +172,17 @@
               {% if player.scum_rate_level %}
                 <span class="rate-label">{{ player.scum_rate_level }}</span>
               {% endif %}
+            {% else %}
+              <span class="no-data">N/A</span>
+            {% endif %}
+          </td>
+          <td class="centered{% if player.scum_duration_level %} rate-{{ player.scum_duration_level }}{% endif %}">
+            {% if player.instant_quit_pct is not None %}
+              {{ player.instant_quit_pct }}%
+              {% if player.scum_duration_level %}
+                <span class="rate-label">{{ player.scum_duration_level }}</span>
+              {% endif %}
+              <span class="rate-detail">median {{ player.median_scum_seconds }} s</span>
             {% else %}
               <span class="no-data">N/A</span>
             {% endif %}
