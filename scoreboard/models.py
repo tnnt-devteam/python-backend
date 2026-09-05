@@ -267,6 +267,19 @@ class Game(models.Model):
             models.Index(fields=['player']),  # Single column index for player-only queries
             models.Index(fields=['starttime']),  # For streak calculations and chronological ordering
         ]
+        # The same xlog line must never be imported twice (a Source's
+        # file_pos reset, or two pollxlogs runs overlapping). A game is
+        # identified by who played it, where, and when it started AND
+        # ended: starttime alone is not enough, since a game quit within
+        # its first second lets the next one start in the same second
+        # (2024 had 10 such pairs, all 1-turn quits; with endtime, 0
+        # collisions in 47,833 games across 2024-2025). pollxlogs checks
+        # the same key before inserting; this is the backstop.
+        constraints = [
+            models.UniqueConstraint(
+                fields=['player', 'source', 'starttime', 'endtime'],
+                name='game_unique_per_source'),
+        ]
 
 
 # A "scummed" game is one the player quit or escaped within the first 100

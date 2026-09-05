@@ -103,6 +103,44 @@ class ImportFromFileTests(TestCase):
         self.assertEqual(counts[DUPLICATE], 2)
         self.assertEqual(Game.objects.count(), 1)
 
+    def test_same_second_restart_is_not_a_duplicate(self):
+        # A game quit within its first second lets the next one start in
+        # the same second (2024 had 10 such pairs). Different endtimes
+        # make them different games.
+        start = in_window(3)
+        self.write(xlog_line(start=start, realtime=0, turns=1, death='quit')
+                   + xlog_line(start=start, realtime=7, turns=1,
+                               death='quit'))
+        counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[ADDED], 2)
+        self.assertEqual(counts[DUPLICATE], 0)
+        self.assertEqual(Game.objects.count(), 2)
+
+        # ...and re-reading the file still adds nothing
+        self.src.file_pos = 0
+        counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[DUPLICATE], 2)
+        self.assertEqual(Game.objects.count(), 2)
+
+    def test_database_constraint_backs_up_the_duplicate_check(self):
+        # If a duplicate slips past the pre-insert check (two pollxlogs
+        # runs overlapping), the UniqueConstraint on Game rejects it and
+        # the record is skipped like any other failed insert.
+        line = xlog_line()
+        self.write(line + line)
+        never_seen = mock.Mock(**{'exists.return_value': False})
+        with mock.patch.object(Game.objects, 'filter',
+                               return_value=never_seen), \
+                self.assertLogs(level='ERROR'):
+            counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[ADDED], 1)
+        self.assertEqual(counts[DUPLICATE], 0)
+        self.assertEqual(counts[BAD], 1)
+        self.assertEqual(Game.objects.count(), 1)
+        # the line is consumed, not retried forever
+        self.src.refresh_from_db()
+        self.assertEqual(self.src.file_pos, len((line + line).encode()))
+
     def test_failed_record_leaves_no_player_row(self):
         self.write(xlog_line(name='newbie')
                    + xlog_line(name='alice', start=in_window(5)))

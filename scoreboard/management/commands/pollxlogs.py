@@ -121,14 +121,20 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
     kwargs['wallclock'] = kwargs['endtime'] - kwargs['starttime']
 
     # Skip records that are already in the database. dgamelaunch only allows
-    # one game per user per server at a time, so (player, starttime, source)
-    # identifies a game; a duplicate can only mean this xlog line has been
-    # read before (e.g. a Source's file position was reset). This is checked
+    # one game per user per server at a time, so (player, source, starttime,
+    # endtime) identifies a game; a duplicate can only mean this xlog line
+    # has been read before (e.g. a Source's file position was reset).
+    # endtime is part of the key: a game quit within its first second lets
+    # the next one start in the same second, so starttime alone would drop
+    # a real game (10 such pairs in 2024). The Game model carries the same
+    # key as a UniqueConstraint; an insert that slips past this check
+    # fails there and is skipped by the caller's savepoint. This is checked
     # by name, before the Player row is looked up or created, so that a
     # duplicate line for a player not yet in the database leaves nothing
     # behind.
     if Game.objects.filter(player__name=xlog_dict['name'],
                            starttime=kwargs['starttime'],
+                           endtime=kwargs['endtime'],
                            source=source).exists():
         logger.info('Skipping duplicate game: %s on %s, started %s',
                     xlog_dict['name'], source.server, kwargs['starttime'])
