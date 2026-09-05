@@ -111,6 +111,16 @@
       return; // No trophy grid on this page, don't initialize
     }
 
+    // On an archived page (tnnt/static/archives/<year>/) the grid
+    // container carries data-archive-games: the URL of a static JSON file
+    // with every combo's games for this player or clan, written by
+    // ./manage.py archive_trophy_games and wired up by cleanup_archive.py.
+    // The live API cannot serve an archive: it looks entities up by
+    // database id, and ids are reissued every tournament.
+    const container = cells[0].closest('.trophy-grid-container');
+    const archiveUrl = container ? container.dataset.archiveGames : undefined;
+    let archiveData = null; // promise for the parsed archive file
+
     // Check if modal already exists (prevent duplicate initialization)
     if (document.getElementById('trophy-grid-modal')) {
       return;
@@ -196,6 +206,20 @@
         });
     }
 
+    // Archive mode: fetch the page's games file once, then answer every
+    // click from it in the shape the live API uses ({games: {...}}). A
+    // failed fetch is forgotten so the next click retries it.
+    function archiveGames(comboKey) {
+      if (!archiveData) {
+        archiveData = fetch(archiveUrl).then(parseResponse);
+        archiveData.catch(function() { archiveData = null; });
+      }
+      return archiveData.then(function(data) {
+        const combos = data.combos || {};
+        return {games: combos[comboKey] || {}};
+      });
+    }
+
     // Add click handlers to trophy grid cells (cells already declared above)
     cells.forEach(function(cell) {
       cell.addEventListener('click', function() {
@@ -219,8 +243,12 @@
           align: align
         });
 
-        fetch('/api/trophy-grid-games/?' + params.toString())
-          .then(parseResponse)
+        const lookup = archiveUrl
+          ? archiveGames(role + '-' + race + '-' + align)
+          : fetch('/api/trophy-grid-games/?' + params.toString())
+              .then(parseResponse);
+
+        lookup
           .then(function(data) {
             if (request === latestRequest) {
               displayGames(data);

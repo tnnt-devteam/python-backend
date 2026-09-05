@@ -11,12 +11,24 @@ This script processes the mirrored tournament pages to:
 4. Remove admin panel links
 5. Add archive banner below header
 6. Change CSS to archive gray color scheme
+7. Point each trophy progress tracker at its archived games file (see
+   archive_trophy_games below)
+
+The trophy grid's clickable cells normally call the live API by database
+id, which is useless in an archive (ids are reissued every tournament).
+`./manage.py archive_trophy_games <year>` writes one JSON file per player
+and clan under <archive>/api/trophy-grid-games/, and step 7 stamps the
+file's URL on each page's grid container (`data-archive-games`), which
+trophy-grid.js reads instead of the API. Run that command before this
+script, while the tournament's data is still in the database.
 """
 
+import html
 import os
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 def get_archive_dir(year):
     """Get the archive directory path for a given year."""
@@ -140,6 +152,33 @@ def process_html(html_path, year):
         )
         modified = True
         print("    - Removed MY CLAN link")
+
+    # 6. Point the trophy progress tracker at the archived games file.
+    # Player pages live in player/, clan pages in clan/; the entity's exact
+    # name is the page title ("TNNT :: <name>"), HTML-escaped.
+    entity_type = html_path.parent.name
+    if 'class="trophy-grid-container"' in content and \
+            'data-archive-games' not in content and \
+            entity_type in ('player', 'clan'):
+        title = re.search(r'<title>TNNT :: (.*?)</title>', content)
+        if title is None:
+            print("    - WARNING: trophy grid but no title, cannot link "
+                  "its games file")
+        else:
+            name = html.unescape(title.group(1))
+            games_file = html_path.parent.parent / 'api' / \
+                'trophy-grid-games' / entity_type / (name + '.json')
+            if not games_file.exists():
+                print(f"    - WARNING: {games_file} is missing; run "
+                      f"./manage.py archive_trophy_games {year}")
+            url = '../api/trophy-grid-games/%s/%s.json' % (
+                entity_type, quote(name, safe=''))
+            content = content.replace(
+                '<div class="trophy-grid-container">',
+                '<div class="trophy-grid-container" data-archive-games="%s">'
+                % html.escape(url, quote=True), 1)
+            modified = True
+            print("    - Linked trophy grid to its archived games file")
 
     if modified:
         html_path.write_text(content)
