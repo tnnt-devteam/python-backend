@@ -146,7 +146,34 @@ Source exists in the database, run:
 
 `$ ./manage.py pollxlogs --file <your custom xlogfile>`
 
-Note that created Games will be associated with a random Source in the database,
-so dumplog links will probably not work. Three test xlogfiles are provided for
-testing (test-au.xlog, test-eu.xlog, and test-us.xlog); player names match those
-included in the test dgamelaunch sqlite database.
+Each game is attached to the Source named by its `server` field
+(us/eu/au.hardfought.org). Games outside `TOURNAMENT_START`..`TOURNAMENT_END`
+in `tnnt/settings.py` are skipped.
+
+### Test xlogfiles
+Three test xlogfiles are provided (test-us.xlog, test-eu.xlog and
+test-au.xlog). Each holds 1000 real games from the 2025 tournament: 60
+ascensions, 90 scummed games, 650 other games with achievements and 200
+without. The games are renamed to the accounts in the test dgamelaunch
+sqlite database, three per server: alice/bob/chuck on us, david/eve/gimli
+on eu, janet/omghax/sally on au (with DEBUG=True the site logs in against
+that database). Dumplog links do not work for the renamed games.
+
+The games are from the previous tournament, so `pollxlogs --file` skips
+them. Load them with `load_test_xlogs`, which imports them with the
+tournament window moved to November of the previous year and then runs
+aggregate. Aggregate counts every game in the database, so take them out
+again before the tournament starts:
+```shell
+$ ./manage.py load_test_xlogs
+$ ./manage.py load_test_xlogs --remove --dry-run
+$ ./manage.py load_test_xlogs --remove
+```
+Removal deletes the named players' games from before `TOURNAMENT_START`,
+then those players unless they have a login, a clan, an invite, a
+tournament game or a game in progress. On the production server, restart
+tnntbot afterwards so that it announces those names normally again.
+
+To rebuild the files from another year's archive, once that year's
+fixtures are in place, run `./create_test_xlogs.py <year>` with the
+virtualenv active.
