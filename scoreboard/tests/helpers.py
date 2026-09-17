@@ -2,7 +2,7 @@
 Shared helpers for the scoreboard test suite.
 
 Xlog lines are generated rather than taken from the tracked test-*.xlog
-files: those hold 2024 games, which pollxlogs filters out as being before
+files: those hold 2025 games, which pollxlogs filters out as being before
 TOURNAMENT_START.
 """
 from datetime import timedelta
