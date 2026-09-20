@@ -6,10 +6,10 @@ Usage: ./create_test_xlogs.py <year> [--seed N] [--out-dir DIR]
 
 Reads the archived per-server xlogfiles in
 tnnt/static/archives/<year>/xlogfiles/ and writes test-us.xlog,
-test-eu.xlog and test-au.xlog: 1000 real games each, renamed to the nine
-accounts in dgamelaunch_test.db (three per server). Each file holds 60
-ascensions, 90 scummed games, 650 other games with TNNT achievements and
-200 games without, and no game appears in more than one file.
+test-eu.xlog and test-au.xlog: 3000 real games each, renamed to the nine
+accounts in dgamelaunch_test.db (three per server). Each file holds 100
+ascensions, 300 scummed games, 1950 other games with TNNT achievements
+and 650 games without, and no game appears in more than one file.
 
 Only the name= and server= fields of a record are changed; everything
 else, field order included, is copied as it is. Games are drawn from all
@@ -45,12 +45,15 @@ USERS = {
 }
 
 # Games per file from each category. Categories are checked in this order
-# and a game belongs to the first one that matches.
+# and a game belongs to the first one that matches. Ascensions are the
+# scarce category: 2025 has only 326 of them in total, so 100 per file is
+# near the ceiling while the rest of the mix is three times the original
+# 1000-game split.
 TARGETS = (
-    ('ascended', 60),
-    ('scummed', 90),
-    ('achievements', 650),
-    ('normal', 200),
+    ('ascended', 100),
+    ('scummed', 300),
+    ('achievements', 1950),
+    ('normal', 650),
 )
 GAMES_PER_FILE = sum(count for _, count in TARGETS)
 

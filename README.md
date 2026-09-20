@@ -152,12 +152,14 @@ in `tnnt/settings.py` are skipped.
 
 ### Test xlogfiles
 Three test xlogfiles are provided (test-us.xlog, test-eu.xlog and
-test-au.xlog). Each holds 1000 real games from the 2025 tournament: 60
-ascensions, 90 scummed games, 650 other games with achievements and 200
-without. The games are renamed to the accounts in the test dgamelaunch
-sqlite database, three per server: alice/bob/chuck on us, david/eve/gimli
-on eu, janet/omghax/sally on au (with DEBUG=True the site logs in against
-that database). Dumplog links do not work for the renamed games.
+test-au.xlog). Each holds 3000 real games from the 2025 tournament: 100
+ascensions, 300 scummed games, 1950 other games with achievements and 650
+without (2025 has only 326 ascensions in all, so that category cannot
+scale with the rest). The games are renamed to the accounts in the test
+dgamelaunch sqlite database, three per server: alice/bob/chuck on us,
+david/eve/gimli on eu, janet/omghax/sally on au (with DEBUG=True the site
+logs in against that database). Dumplog links do not work for the renamed
+games.
 
 The games are from the previous tournament, so `pollxlogs --file` skips
 them. Load them with `load_test_xlogs`, which imports them with the
