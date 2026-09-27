@@ -213,7 +213,7 @@
   <div class="trophy-status-content">
     <div class="trophy-columns">
       <div class="trophy-column-left">
-    <h4>Great/Lesser Race Trophies</h4>
+    <h3 class="subhead">Great/Lesser Race Trophies</h3>
     <ul>
       {% for race, completed in trophy_grid.trophy_status.great_races.items %}
         <li>
@@ -239,7 +239,7 @@
       {% endfor %}
     </ul>
 
-    <h4>Great/Lesser Role Trophies</h4>
+    <h3 class="subhead">Great/Lesser Role Trophies</h3>
     <ul>
       {% for role, completed in trophy_grid.trophy_status.great_roles.items %}
         <li>
@@ -265,7 +265,7 @@
       {% endfor %}
     </ul>
 
-    <h4>Combo Completion Trophies</h4>
+    <h3 class="subhead">Combo Completion Trophies</h3>
     <ul>
       <li>
         All Roles:
@@ -327,7 +327,7 @@
       </div> {# trophy-column-left #}
 
       <div class="trophy-column-right">
-    <h4>Conducts</h4>
+    <h3 class="subhead">Conducts</h3>
     <ul>
       <li>
         All Conducts:
@@ -349,7 +349,7 @@
       {% endfor %}
     </ul>
 
-    <h4>Special Challenge Trophies</h4>
+    <h3 class="subhead">Special Challenge Trophies</h3>
     <ul>
       <li>
         Never Scum a Game:
@@ -450,6 +450,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
 {% if not isClan %}
   {% if player_or_clan.longest_streak > 0 %}
     <h2 id="streaks">STREAKS</h2>
+    <div class="table-scroll">
     <table>
       <thead>
         <tr class="framed">
@@ -489,6 +490,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
           {% endfor %}
       </tbody>
     </table>
+    </div>
   {% endif %} {# longest_streak greater than 0 #}
 {% endif %} {# not isClan #}
 
@@ -509,6 +511,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
     <span id="ach-filter-not" class="ach-filter">[show not achieved]</span>
     <span id="ach-hide">[hide table]</span>
   </p>
+  <div class="table-scroll">
   <table id="achievements-table" class="sortable" data-default-sort="1">
     <thead>
       <tr class="framed">
@@ -556,6 +559,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
       {% endfor %}
     </tbody>
   </table>
+  </div>
   <div class="achieve-summary">
     {% if isClan %}
       {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements|length %}
@@ -582,6 +586,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
 {% if uniquedeaths|length > 0 %}
   {# post 2021 TODO: show time of achievement and possibly dumplog; for clans, show player #}
   <h2 id="uniqdeaths">Unique Deaths</h2>
+  <div class="table-scroll">
   <table>
     <thead>
       <tr class="framed">
@@ -598,6 +603,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
       {% endfor %}
     </tbody>
   </table>
+  </div>
 {% endif %}
 
 </main>

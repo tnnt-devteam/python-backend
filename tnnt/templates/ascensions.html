@@ -17,6 +17,7 @@
 
 <h2>All Ascensions ({{ ascensions|length }} total)</h2>
 {% if ascensions|length > 0 %}
+  <div class="table-scroll">
   <table class="sortable">
     <thead>
       <tr class="framed">
@@ -58,6 +59,7 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
 {% else %}
   <p>There are no ascensions yet</p>
 {% endif %}

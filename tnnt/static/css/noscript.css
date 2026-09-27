@@ -1,0 +1,5 @@
+/* Loaded only inside <noscript> (leaderboards.html): without JavaScript
+ * every leaderboard is shown, so the picker has nothing to do. */
+#leaderboard-select {
+  display: none;
+}

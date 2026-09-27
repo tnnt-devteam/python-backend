@@ -16,6 +16,7 @@
 {% for category in trophy_categories %}
   {% if category.trophies %}
     <h2>{{ category.name }}</h2>
+    <div class="table-scroll">
     <table class="trophies">
       <thead>
         <tr class="framed">
@@ -45,6 +46,7 @@
         {% endfor %}
       </tbody>
     </table>
+    </div>
   {% endif %}
 {% endfor %}
 

@@ -1,6 +1,7 @@
 {# Expects context to supply 'games' as a list of game dicts #}
 {# also "ascview" as a boolean (is it a table of ascensions or regular games? #}
 {# also optional "sortable" as a boolean (default false) #}
+<div class="table-scroll">
 <table{% if sortable %} class="sortable"{% endif %}>
   <thead>
     <tr class="framed">
@@ -24,3 +25,4 @@
     {% endfor %}
   </tbody>
 </table>
+</div>

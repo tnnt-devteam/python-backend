@@ -124,6 +124,17 @@ h5 {
   color: #eb0;
 }
 
+/* An h2/h3 that must keep the look of an h4 (heading levels may not skip) */
+.subhead {
+  font-size: 1.17em;
+  font-weight: 600;
+  color: #eb0;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: inherit;
+  margin: 1.33em 0;
+}
+
 .num {
   text-align: right;
   letter-spacing: 0.04em;
@@ -1135,12 +1146,12 @@ details.trophy-status summary:hover {
   box-sizing: border-box;
 }
 
-.trophy-status-content h4 {
+.trophy-status-content h3 {
   margin-top: 1em;
   margin-bottom: 0.5em;
 }
 
-.trophy-status-content h4:first-child {
+.trophy-status-content h3:first-child {
   margin-top: 0;
 }
 
@@ -1174,8 +1185,8 @@ details.trophy-status summary:hover {
   overflow-wrap: break-word;
 }
 
-.trophy-column-left h4:first-child,
-.trophy-column-right h4:first-child {
+.trophy-column-left h3:first-child,
+.trophy-column-right h3:first-child {
   margin-top: 0;
 }
 
@@ -1402,4 +1413,175 @@ a.menu.admin-link {
 }
 a.menu.admin-link:hover {
   color: #fd0;
+}
+
+/*====================================================================
+  === NARROW SCREENS =================================================
+  ====================================================================*/
+
+/* Wide tables sit in a div.table-scroll. Above 900px the wrapper takes no
+ * part in layout (display: contents): the table lays out exactly as if the
+ * div were not there, so the 70% cap applies through it. */
+.table-scroll {
+  display: contents;
+}
+
+main > .table-scroll > table {
+  max-width: 70%;
+}
+
+/* Tablets and narrow windows */
+@media (max-width: 900px) {
+  /* a table wider than the screen scrolls sideways inside its wrapper
+   * instead of widening the whole page */
+  .table-scroll {
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+  }
+
+  main > .table-scroll > table {
+    max-width: none;
+  }
+
+  /* Nothing in the page may be wider than the screen. :where() gives this
+   * no specificity, so every existing max-width rule still wins. */
+  :where(main > *) {
+    max-width: 100%;
+  }
+
+  /* side margins, so text doesn't touch the screen edge */
+  main {
+    padding: 0 0.75em;
+    box-sizing: border-box;
+  }
+
+  /* 101% hides edge gaps on desktop but widens a narrow screen */
+  #headerbar {
+    width: 100%;
+  }
+
+  /* the menus wrap onto two lines here: make each link tall enough to tap */
+  a.menu {
+    display: inline-block;
+    padding-top: 0.3em;
+    padding-bottom: 0.3em;
+  }
+
+  /* the logo link wraps the whole image, not just one line of text */
+  table#navlogo td#logo a {
+    display: inline-block;
+  }
+
+  /* stacked list links (FAQ questions, archive years) need a gap to tap */
+  article li {
+    margin: 0.4em 0;
+  }
+
+  /* A tooltip inside a scrolling table would be clipped by the wrapper;
+   * show it as a panel at the bottom of the screen instead. */
+  .ach-tooltip,
+  .ach-tooltip.tooltip-below {
+    position: fixed;
+    top: auto;
+    bottom: 1em;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    max-width: 90vw;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  /* Header: the logo stays flanked by the two menus, each now a column
+   * of full-width links big enough to tap. */
+  #headerbar h1 {
+    font-size: 130%;
+    letter-spacing: 0.12em;
+  }
+
+  a.menu {
+    display: block;
+    padding: 0.35em 0.4em;
+    font-size: 85%;
+    letter-spacing: 0.03em;
+  }
+
+  table#navlogo td#logo {
+    padding: 0 0.3em;
+    width: auto;
+  }
+
+  table#navlogo td#logo img {
+    width: 72px;
+    height: 72px;
+  }
+
+  h2 {
+    font-size: 150%;
+  }
+
+  article {
+    max-width: 100%;
+  }
+
+  .index-column-left {
+    padding-right: 0;
+  }
+
+  /* side-by-side tables (player/clan summary, leaderboards) stack */
+  div.row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  div.row table {
+    margin: 0 0.5em 1em 0.5em;
+  }
+
+  div.achieve-summary,
+  .clan-trophy-grid {
+    min-width: 0;
+  }
+
+  .trophy-columns {
+    flex-direction: column;
+  }
+
+  .trophy-status-content li {
+    white-space: normal;
+  }
+
+  /* the leaderboard picker is a div.row too, but keeps its arrows
+   * beside the drop-down */
+  #leaderboard-select {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  #leaderboard-combobox select {
+    max-width: 60vw;
+  }
+
+  .board-lr-move {
+    padding: 0 0.5em;
+  }
+
+  .trophy-modal-body {
+    overflow-x: auto;
+  }
+}
+
+/* Small phones (360px): shrink the menus a little more so the header fits */
+@media (max-width: 380px) {
+  a.menu {
+    font-size: 78%;
+    padding: 0.45em 0.4em;
+  }
+
+  table#navlogo td#logo img {
+    width: 60px;
+    height: 60px;
+  }
 }

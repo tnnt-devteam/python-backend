@@ -17,6 +17,7 @@
 
 <h2>Scummed Games Statistics</h2>
 
+<div class="table-scroll">
 <table>
   <tbody>
     <tr>
@@ -43,9 +44,11 @@
     {% endif %}
   </tbody>
 </table>
+</div>
 
 <h3>Breakdown by Player</h3>
 {% if scummed_list|length > 0 %}
+  <div class="table-scroll">
   <table class="sortable default-sort-3rd">
     <thead>
       <tr class="framed">
@@ -72,6 +75,7 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
 {% else %}
   <p>No scummed games have been played yet</p>
 {% endif %}

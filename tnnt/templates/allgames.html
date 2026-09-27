@@ -17,6 +17,7 @@
 
 <h2>All Games ({{ games|length }} total)</h2>
 {% if games|length > 0 %}
+  <div class="table-scroll">
   <table class="sortable">
     <thead>
       <tr class="framed">
@@ -59,6 +60,7 @@
       {% endfor %}
     </tbody>
   </table>
+  </div>
 {% else %}
   <p>No games have been played yet</p>
 {% endif %}
