@@ -1,18 +1,20 @@
 {% load static %}
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT - The November NetHack Tournament</title>
   {% include "headlinks.html" %}
-  <script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/countdown.js' %}" defer></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" with page="index" %}
+
+<main>
 
 <div id="salespitch">
   {% if debug %}
@@ -20,17 +22,17 @@
     DEBUG MODE: Active
   </p>
   {% endif %}
-  <h3> Do you love to play <a href="https://nethack.org" target="_blank">NetHack</a>? </h3>
-  <h3> Want to show everyone your personal <a href="/players">prowess</a>?</h3>
-  <h3>
+  <p class="pitch"> Do you love to play <a href="https://nethack.org" target="_blank">NetHack</a>? </p>
+  <p class="pitch"> Want to show everyone your personal <a href="/players">prowess</a>?</p>
+  <p class="pitch">
     Join a <a href="/clans">clan</a> and team up to accomplish feats too hard
     for a single player?
-  </h3>
-  <h3>
+  </p>
+  <p class="pitch">
     Or just mess around and see how many different ways you can
     <a href="/uniquedeaths">get yourself killed</a>?
-  </h3>
-  <h3>Then come join us in November for a month of NetHacking fun.</h3>
+  </p>
+  <p class="pitch">Then come join us in November for a month of NetHacking fun.</p>
   <p id="countdown">
     <span class="initial">&nbsp;</span>
     <span class="before">The tournament starts in</span>
@@ -47,7 +49,7 @@
 <div class="index-columns">
   <div class="index-column-left">
     <article>
-      <h4> How to Play </h4>
+      <h2> How to Play </h2>
       <p>
         TNNT is hosted by
         <a href="https://www.hardfought.org/nethack" target="_blank">hardfought.org</a>.
@@ -58,7 +60,7 @@
         to connect to the game servers. Linux and Mac OS typically come with this
         installed; Windows users can use either a free client like
         <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank">PuTTY</a> or Windows Subsystem
-        for Linux. SSH to "nethack@hardfought.org" or pick an alternate server based
+        for Linux. SSH to "<!--email_off-->nethack@hardfought.org<!--/email_off-->" or pick an alternate server based
         on whatever's closest to where you are geographically:
         <ul>
           <li>hardfought.org: USA (East Coast)</li>
@@ -78,12 +80,12 @@
         menu after you've logged in. That's all there is to it!
       </p>
       <p>
-        To create, join, or manage clans, go
-        <a href="/clanmgmt">here</a>.
+        To create, join, or manage clans, use the
+        <a href="/clanmgmt">clan management page</a>.
         Clan membership (creating and joining) will be frozen on November 10th at 00:00 UTC!
       </p>
 
-      <h4> More Information </h4>
+      <h2> More Information </h2>
       <p>
         For more general information on NetHack, check out
         <a href="https://en.wikipedia.org/wiki/NetHack" target="_blank">Wikipedia</a>,
@@ -108,7 +110,7 @@
   </div>
 
   <div class="index-column-right">
-    <h4>Overall Statistics</h4>
+    <h2>Overall Statistics</h2>
     {% if numgames > 0 %}
       <table>
         <tbody>
@@ -197,6 +199,8 @@
 {% else %}
   <p>No games have been played yet</p>
 {% endif %}
+
+</main>
 
 </body>
 

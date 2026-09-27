@@ -1,12 +1,12 @@
 <!doctype html>
 {% load static %}
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Leaderboards</title>
   {% include "headlinks.html" %}
-  <script type="text/javascript" src="{% static 'js/leaderboard-select.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/leaderboard-select.js' %}" defer></script>
   <noscript>
     {# If JS is unavailable, hide the leaderboard selector. #}
     <style> #leaderboard-select { display: none; } </style>
@@ -16,6 +16,8 @@
 <body>
 
 {% include "header.html" with page='leaderboards' %}
+
+<main>
 
 <div id="leaderboard-select" class="row">
   <div id="prev-board" class="board-lr-move">&laquo;</div>
@@ -44,6 +46,8 @@
   </noscript>
   {% include "2boards.html" %}
 {% endfor %}
+
+</main>
 
 </body>
 

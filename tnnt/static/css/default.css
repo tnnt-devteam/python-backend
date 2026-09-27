@@ -12,6 +12,17 @@ body {
   overflow-x: hidden;
 }
 
+/* Every page wraps its content in <main> (the landmark screen readers
+ * jump to). body is a centred flex column, so main repeats that layout:
+ * its children get the same width and centring they had as direct
+ * children of body. */
+main {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 h2 {
   text-transform: uppercase;
   font-weight: 300;
@@ -98,7 +109,7 @@ table {
 
 /* guard against other sorts of tables directly in the page body and not in any
  * containing div overflowing wildly */
-body > table {
+body > table, main > table {
   max-width: 70%;
 }
 
@@ -679,9 +690,11 @@ table#navlogo tr#lowerheader td {
   margin: 0.5em 0 1em 0;
 }
 
-#salespitch h3 {
+#salespitch .pitch {
   margin: 0;
   margin-top: 0.8em;
+  font-size: 1.17em;
+  font-weight: 700;
 }
 
 #salespitch a {
@@ -706,7 +719,7 @@ article {
   margin-top: 0;
 }
 
-.index-column-left h4:first-child {
+.index-column-left h2:first-child {
   margin-top: 0;
 }
 
@@ -809,6 +822,17 @@ span#counter {
   margin: 2em auto;
 }
 
+/* The column headings are h2 for heading order, styled like h4 */
+.index-columns h2 {
+  font-size: 1.17em;
+  font-weight: 600;
+  color: #eb0;
+  text-transform: none;
+  letter-spacing: normal;
+  text-align: inherit;
+  margin: 1.33em 0;
+}
+
 .index-column-left {
   flex: 0 0 60%;
   min-width: 0;
@@ -820,7 +844,7 @@ span#counter {
   min-width: 0;
 }
 
-.index-column-right h4 {
+.index-column-right h2 {
   margin-top: 0;
 }
 

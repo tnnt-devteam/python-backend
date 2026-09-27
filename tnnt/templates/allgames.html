@@ -1,17 +1,19 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: All Games</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" %}
+
+<main>
 
 <h2>All Games ({{ games|length }} total)</h2>
 {% if games|length > 0 %}
@@ -60,6 +62,8 @@
 {% else %}
   <p>No games have been played yet</p>
 {% endif %}
+
+</main>
 
 </body>
 

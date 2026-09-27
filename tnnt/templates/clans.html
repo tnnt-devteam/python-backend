@@ -1,17 +1,19 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Clans</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" with page='clans' %}
+
+<main>
 
 <h2>All Clans</h2>
 <table class="clans sortable">
@@ -70,6 +72,8 @@
     {% endfor %}
   </tbody>
 </table>
+
+</main>
 
 </body>
 

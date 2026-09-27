@@ -1,17 +1,19 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Scummed Games</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" %}
+
+<main>
 
 <h2>Scummed Games Statistics</h2>
 
@@ -73,6 +75,8 @@
 {% else %}
   <p>No scummed games have been played yet</p>
 {% endif %}
+
+</main>
 
 </body>
 

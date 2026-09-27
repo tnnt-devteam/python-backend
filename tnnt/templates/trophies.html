@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Trophies</title>
@@ -10,6 +10,8 @@
 <body>
 
 {% include "header.html" with page='trophies' %}
+
+<main>
 
 {% for category in trophy_categories %}
   {% if category.trophies %}
@@ -45,6 +47,8 @@
     </table>
   {% endif %}
 {% endfor %}
+
+</main>
 
 </body>
 

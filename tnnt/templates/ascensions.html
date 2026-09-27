@@ -1,17 +1,19 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Ascensions</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" %}
+
+<main>
 
 <h2>All Ascensions ({{ ascensions|length }} total)</h2>
 {% if ascensions|length > 0 %}
@@ -59,6 +61,8 @@
 {% else %}
   <p>There are no ascensions yet</p>
 {% endif %}
+
+</main>
 
 </body>
 

@@ -1,17 +1,19 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Unique Deaths</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" %}
+
+<main>
 
 <h2>Unique Deaths ({{ deathlist|length }} total)</h2>
 <table id="achievements-table" class="sortable default-sort-first">
@@ -36,6 +38,8 @@
     {% endfor %}
   </tbody>
 </table>
+
+</main>
 
 </body>
 

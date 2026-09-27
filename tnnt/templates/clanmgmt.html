@@ -1,21 +1,23 @@
 {% load static %}
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Clan Management</title>
   {% include "headlinks.html" %}
-  <script type="text/javascript" src="{% static 'js/clan-confirm.js' %}"></script>
-  <script type="text/javascript" src="{% static 'js/countdown-timer.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/clan-confirm.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'js/countdown-timer.js' %}" defer></script>
   {% if trophy_grid %}
-  <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/trophy-grid.js' %}" defer></script>
   {% endif %}
 </head>
 
 <body>
 
 {% include "header.html" with page="clanmgmt" %}
+
+<main>
 
 <h2>Clan Management</h2>
 
@@ -213,6 +215,8 @@
   {% endcomment %}
 {% endif %}
 </article>
+
+</main>
 
 </body>
 

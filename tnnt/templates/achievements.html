@@ -1,18 +1,20 @@
 <!doctype html>
 
-<html>
+<html lang="en">
 
 <head>
   <title>TNNT :: Achievements</title>
   {% include "headlinks.html" %}
   {% load static %}
-  <script src="{% static 'js/table-sort.js' %}"></script>
-  <script src="{% static 'js/tooltip-position.js' %}"></script>
+  <script src="{% static 'js/table-sort.js' %}" defer></script>
+  <script src="{% static 'js/tooltip-position.js' %}" defer></script>
 </head>
 
 <body>
 
 {% include "header.html" with page='achievements' %}
+
+<main>
 
 <h2>Achievements</h2>
 <table id="achievements-table" class="sortable default-sort-first">
@@ -67,6 +69,8 @@
     {% endfor %}
   </tbody>
 </table>
+
+</main>
 
 </body>
 
