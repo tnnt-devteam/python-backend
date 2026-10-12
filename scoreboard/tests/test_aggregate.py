@@ -190,11 +190,13 @@ class TempAchievementTests(TestCase):
         self.alice = Player.objects.create(name='alice')
         self.bob = Player.objects.create(name='bob')
         self.carol = Player.objects.create(name='carol')
-        # two achievements from different xlog fields, so a file can be
-        # built that sets exactly one of them
+        # achievements from the first and the last xlog field, so a file
+        # can be built that sets exactly one of them, and the last line of
+        # the file is read too
         achs = aggregate.ALL_ACHIEVEMENTS
         self.ach_a = achs[0]
-        self.ach_b = next(a for a in achs if a.xlogfield != achs[0].xlogfield)
+        self.ach_b = max(achs, key=lambda a: (
+            int(a.xlogfield[len('tnntachieve'):]), a.bit))
 
     def lines_for(self, *achs):
         lines = ['0x0'] * aggregate.UNIQ_ACHFIELDS
@@ -251,4 +253,4 @@ class HandleTests(TestCase):
                 mock.patch.object(tnnt.settings, 'TEMP_ACHIEVEMENTS_PATH',
                                   tmp.name):
             aggregate.Command().handle()
-        self.assertEqual(aggregate.TOTAL_CONDUCTS, 30)
+        self.assertEqual(aggregate.TOTAL_CONDUCTS, 35)

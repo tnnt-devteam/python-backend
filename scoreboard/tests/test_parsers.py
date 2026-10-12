@@ -1,5 +1,6 @@
 import io
-from django.test import SimpleTestCase
+from django.test import SimpleTestCase, TestCase
+from scoreboard.models import Achievement, Conduct
 from scoreboard.parsers import parse_xlog_line, XlogParser
 from scoreboard.tests.helpers import xlog_line
 
@@ -36,3 +37,18 @@ class ParseXlogLineTests(SimpleTestCase):
         stream = io.StringIO(xlog_line(name='a') + '\n' + xlog_line(name='b'))
         entries = XlogParser().parse(stream)
         self.assertEqual([e['name'] for e in entries], ['a', 'b'])
+
+
+class FixtureFieldTests(TestCase):
+    fixtures = ['conducts', 'achievements']
+
+    def test_every_fixture_xlog_field_is_parsed_as_a_number(self):
+        # pollxlogs tests each conduct and achievement bit with "&", so a
+        # field the parser leaves as a string makes every record fail
+        fields = (set(Conduct.objects.values_list('xlogfield', flat=True))
+                  | set(Achievement.objects.values_list('xlogfield',
+                                                        flat=True)))
+        for field in sorted(fields):
+            with self.subTest(field=field):
+                self.assertEqual(parse_xlog_line(field + '=0x1f')[field],
+                                 0x1f)

@@ -1,10 +1,15 @@
+import re
+
 from rest_framework.parsers import BaseParser
 
 dec_fields = ['points', 'turns', 'realtime', 'maxlvl', 'starttime', 'endtime']
-hex_fields = [
-    'flags', 'achieve', 'conduct', 'tnntachieve0', 'tnntachieve1',
-    'tnntachieve2', 'tnntachieve3', 'tnntachieve4', 'tnntachieve5'
-]
+hex_fields = ['flags', 'achieve', 'conduct', 'tnntconduct']
+# tnntachieve0, tnntachieve1, ...: the game writes one 64-bit field per 64
+# achievements and adds the next one by itself when its list outgrows the
+# last, so they are matched by pattern rather than listed. A field missing
+# from both would stay a string, and every record would then fail to import
+# on the first achievement that lives in it.
+tnntachieve_field = re.compile(r'tnntachieve\d+')
 
 FIELD_DELIMITER = '\t'
 KEY_VALUE_SEPARATOR = '='
@@ -13,7 +18,7 @@ KEY_VALUE_SEPARATOR = '='
 def convert_if_numeric(key, value):
     if key in dec_fields:
         return int(value, 10)
-    elif key in hex_fields:
+    elif key in hex_fields or tnntachieve_field.fullmatch(key):
         return int(value, 16)
     else:
         return value

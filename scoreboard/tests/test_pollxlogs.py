@@ -11,7 +11,7 @@ from scoreboard.management.commands import pollxlogs
 from scoreboard.management.commands.pollxlogs import (
     ADDED, BAD, DUPLICATE, FILTERED, import_from_file, sync_local_file,
 )
-from scoreboard.models import Game, Player, Source
+from scoreboard.models import Achievement, Game, Player, Source
 from scoreboard.tests.helpers import in_window, xlog_line
 
 
@@ -44,6 +44,22 @@ class ImportFromFileTests(TestCase):
         self.assertEqual(game.conducts.count(), 1)
         self.assertEqual(game.achievements.count(), 1)
         self.assertEqual(game.conducts.get().bit, 0)
+
+    def test_tnntconduct_and_last_achievement_field_decode(self):
+        # the TNNT conducts have their own field, with the vanilla roleplay
+        # options at its top (deaf is bit 31), and the achievements have
+        # outgrown six fields
+        last = Achievement.objects.order_by('-xlogfield', '-bit').first()
+        self.assertEqual(last.xlogfield, 'tnntachieve6')
+        self.write(xlog_line(conduct='0x0', tnntconduct='0x80004000',
+                             **{last.xlogfield: hex(1 << last.bit)}))
+        counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[ADDED], 1)
+        game = Game.objects.get()
+        self.assertEqual(
+            set(game.conducts.values_list('shortname', flat=True)),
+            {'deaf', 'iden'})
+        self.assertEqual(list(game.achievements.all()), [last])
 
     def test_bad_lines_are_skipped_and_rest_imported(self):
         text = (xlog_line(name='alice')

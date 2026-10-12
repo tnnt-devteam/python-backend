@@ -80,92 +80,122 @@
   fields:
     name: Elberethless
     shortname: elbe
-    xlogfield: conduct
-    bit: 14
+    xlogfield: tnntconduct
+    bit: 0
 - model: scoreboard.conduct
   fields:
     name: Survivor
     shortname: surv
-    xlogfield: conduct
-    bit: 15
+    xlogfield: tnntconduct
+    bit: 1
 - model: scoreboard.conduct
   fields:
     name: Swapchestless
     shortname: swap
-    xlogfield: conduct
-    bit: 16
+    xlogfield: tnntconduct
+    bit: 2
 - model: scoreboard.conduct
   fields:
     name: Never kill a quest nemesis
     shortname: neme
-    xlogfield: conduct
-    bit: 17
+    xlogfield: tnntconduct
+    bit: 3
 - model: scoreboard.conduct
   fields:
     name: Never kill Vlad
     shortname: vlad
-    xlogfield: conduct
-    bit: 18
+    xlogfield: tnntconduct
+    bit: 4
 - model: scoreboard.conduct
   fields:
     name: Never kill the Wizard of Yendor
     shortname: wiz
-    xlogfield: conduct
-    bit: 19
+    xlogfield: tnntconduct
+    bit: 5
 - model: scoreboard.conduct
   fields:
     name: Never kill the High Priest of Moloch
     shortname: prst
-    xlogfield: conduct
-    bit: 20
+    xlogfield: tnntconduct
+    bit: 6
 - model: scoreboard.conduct
   fields:
     name: Never kill a Rider
     shortname: ride
-    xlogfield: conduct
-    bit: 21
+    xlogfield: tnntconduct
+    bit: 7
 - model: scoreboard.conduct
   fields:
     name: Artifactless
     shortname: arti
-    xlogfield: conduct
-    bit: 22
-- model: scoreboard.conduct
-  fields:
-    name: Permadeaf
-    shortname: deaf
-    xlogfield: conduct
-    bit: 23
+    xlogfield: tnntconduct
+    bit: 8
 - model: scoreboard.conduct
   fields:
     name: Permahallucinating
     shortname: halu
-    xlogfield: conduct
-    bit: 24
+    xlogfield: tnntconduct
+    bit: 9
 - model: scoreboard.conduct
   fields:
     name: Bonesless
     shortname: bone
-    xlogfield: conduct
-    bit: 25
+    xlogfield: tnntconduct
+    bit: 10
 - model: scoreboard.conduct
   fields:
     name: Containerless
     shortname: cont
-    xlogfield: conduct
-    bit: 26
+    xlogfield: tnntconduct
+    bit: 11
 - model: scoreboard.conduct
   fields:
     name: Zapless
     shortname: zap
-    xlogfield: conduct
-    bit: 27
+    xlogfield: tnntconduct
+    bit: 12
 - model: scoreboard.conduct
   fields:
     name: Potionless
     shortname: pot
-    xlogfield: conduct
-    bit: 28
+    xlogfield: tnntconduct
+    bit: 13
+- model: scoreboard.conduct
+  fields:
+    name: Identificationless
+    shortname: iden
+    xlogfield: tnntconduct
+    bit: 14
+- model: scoreboard.conduct
+  fields:
+    name: Reflectionless
+    shortname: refl
+    xlogfield: tnntconduct
+    bit: 15
+- model: scoreboard.conduct
+  fields:
+    name: Magic-resistance-less
+    shortname: mr
+    xlogfield: tnntconduct
+    bit: 16
+- model: scoreboard.conduct
+  fields:
+    name: Moneyless
+    shortname: gold
+    xlogfield: tnntconduct
+    bit: 17
+- model: scoreboard.conduct
+  fields:
+    name: Pauper
+    shortname: paup
+    xlogfield: tnntconduct
+    bit: 30
+- model: scoreboard.conduct
+  fields:
+    name: Permadeaf
+    shortname: deaf
+    xlogfield: tnntconduct
+    bit: 31
 # mumble grumble devteam putting conducts in the achieve field grumble mumble...
 - model: scoreboard.conduct
   fields:

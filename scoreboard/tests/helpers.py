@@ -16,12 +16,14 @@ BASE_FIELDS = [
     ('maxhp', '15'), ('deaths', '1'), ('deathdate', '20261107'),
     ('birthdate', '20261107'), ('uid', '5'), ('role', 'Cav'),
     ('race', 'Gno'), ('gender', 'Mal'), ('align', 'Neu'), ('name', 'alice'),
-    ('death', 'killed by a jackal'), ('conduct', '0x1fdfcf'),
-    ('turns', '441'), ('achieve', '0x0'), ('realtime', '275'),
-    ('starttime', None), ('endtime', None), ('gender0', 'Mal'),
-    ('align0', 'Neu'), ('flags', '0x0'), ('tnntachieve0', '0x0'),
-    ('tnntachieve1', '0x0'), ('tnntachieve2', '0x0'), ('tnntachieve3', '0x0'),
-    ('tnntachieve4', '0x0'), ('tnntachieve5', '0x0'), ('while', 'sleeping'),
+    ('death', 'killed by a jackal'), ('conduct', '0x1fcf'),
+    ('turns', '441'), ('achieve', '0x0'), ('tnntconduct', '0x0'),
+    ('realtime', '275'), ('starttime', None), ('endtime', None),
+    ('gender0', 'Mal'), ('align0', 'Neu'), ('flags', '0x0'),
+    ('tnntachieve0', '0x0'), ('tnntachieve1', '0x0'),
+    ('tnntachieve2', '0x0'), ('tnntachieve3', '0x0'),
+    ('tnntachieve4', '0x0'), ('tnntachieve5', '0x0'),
+    ('tnntachieve6', '0x0'), ('while', 'sleeping'),
 ]
 
 # achieve bits used by pollxlogs
