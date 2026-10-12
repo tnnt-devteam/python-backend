@@ -7,9 +7,10 @@ from tnnt import uniqdeaths
 from pathlib import Path
 import requests
 import logging
+import re
 from datetime import datetime, timedelta, timezone
 
-logger = logging.getLogger() # root logger
+logger = logging.getLogger()  # root logger
 
 # xlogfile fields that have the same name in the Game model.
 SIMPLE_XLOG_FIELDS = ['version', 'role', 'race', 'gender', 'align', 'points',
@@ -35,10 +36,41 @@ BAD = 'bad'
 SYNC_TIMEOUT = (10, 60)
 SYNC_CHUNK_SIZE = 64 * 1024
 
+
 class xlog_flags:
-    WIZARD  = 0x1
+    WIZARD = 0x1
     EXPLORE = 0x2
     NOBONES = 0x4
+
+
+# Games that ended in the tutorial are not tournament games: it is a separate
+# game mode (game commit 61f7e1400 made it inaccessible in TNNT, partly
+# because dying there trivialized some unique deaths). It is filtered anyway
+# in case it ever comes back. The xlogfile only says which dungeon the game
+# ended in: deathdnum is the dungeon's position among the dungeons of the
+# game's dat/dungeon.lua, counting from 0, and none of them has a "chance", so
+# the numbering is the same in every game. Re-check it if the game adds or
+# reorders a dungeon. The tutorial only exists from NetHack 3.7 on, and older
+# versions number their dungeons differently: in the 3.6-based TNNT of 2025,
+# dnum 8 was robotfindskitten, a real level that 26 archived games died in.
+TUTORIAL_DNUM = 8
+TUTORIAL_MIN_VERSION = (3, 7)
+VERSION_RE = re.compile(r'(\d+)\.(\d+)')
+
+
+def ended_in_tutorial(xlog_dict):
+    '''
+    Return True if the xlog record is of a game that ended in the tutorial.
+    A record without deathdnum, or with a version that doesn't start with
+    "<major>.<minor>", is taken to be a normal game.
+    '''
+    match = VERSION_RE.match(xlog_dict.get('version', ''))
+    if not match:
+        return False
+    version = (int(match.group(1)), int(match.group(2)))
+    return (version >= TUTORIAL_MIN_VERSION
+            and xlog_dict.get('deathdnum') == TUTORIAL_DNUM)
+
 
 def game_from_xlog(source, xlog_dict, auto_detect_source=False,
                    conducts_cache=None, achievements_cache=None):
@@ -49,8 +81,9 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
     also mapping to Player.
 
     Return ADDED if a Game was created, FILTERED if the record was
-    deliberately not imported (wizard/explore mode, outside the tournament
-    window), or DUPLICATE if this game is already in the database.
+    deliberately not imported (wizard/explore mode, ended in the tutorial,
+    outside the tournament window), or DUPLICATE if this game is already in
+    the database.
 
     Raise ValueError if the record is missing a required field. Any other
     exception (including database errors) propagates too; the caller runs
@@ -87,12 +120,13 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
         server_value = xlog_dict['server']
         if server_value in server_mapping:
             try:
-                source = Source.objects.get(server=server_mapping[server_value])
+                source = Source.objects.get(
+                    server=server_mapping[server_value])
                 logger.debug('Auto-detected source: %s from server=%s',
                              source.server, server_value)
             except Source.DoesNotExist:
-                logger.warning('Could not find Source for server=%s, using default',
-                               server_value)
+                logger.warning('Could not find Source for server=%s, '
+                               'using default', server_value)
 
     kwargs = {'source': source}
 
@@ -103,15 +137,20 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
     if xlog_dict['flags'] & xlog_flags.EXPLORE:
         logger.info('Game not parsed because it was in explore mode')
         return FILTERED
+    if ended_in_tutorial(xlog_dict):
+        logger.info('Game not parsed because it ended in the tutorial')
+        return FILTERED
 
     # time/duration information
     # while doing this, also filter games that partially or completely fall
     # outside the time window of the tournament
-    kwargs['starttime'] = datetime.fromtimestamp(xlog_dict['starttime'], timezone.utc)
-    kwargs['endtime'] = datetime.fromtimestamp(xlog_dict['endtime'], timezone.utc)
+    kwargs['starttime'] = datetime.fromtimestamp(xlog_dict['starttime'],
+                                                 timezone.utc)
+    kwargs['endtime'] = datetime.fromtimestamp(xlog_dict['endtime'],
+                                               timezone.utc)
     if kwargs['starttime'] < settings.TOURNAMENT_START:
-        logger.info('Game not parsed because it started before tournament start: %s'
-                    % (str(kwargs['starttime'])))
+        logger.info('Game not parsed because it started before tournament '
+                    'start: %s' % (str(kwargs['starttime'])))
         return FILTERED
     if kwargs['endtime'] > settings.TOURNAMENT_END:
         logger.info('Game not parsed because it ended after tournament end: %s'
@@ -176,18 +215,23 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
     game = Game.objects.create(**kwargs)
 
     # Use cached conducts/achievements if provided, otherwise query
-    conducts_to_check = conducts_cache if conducts_cache is not None else Conduct.objects.all()
-    achievements_to_check = achievements_cache if achievements_cache is not None else Achievement.objects.all()
+    conducts_to_check = (conducts_cache if conducts_cache is not None
+                         else Conduct.objects.all())
+    achievements_to_check = (achievements_cache
+                             if achievements_cache is not None
+                             else Achievement.objects.all())
 
     # Collect matching conducts and achievements, then add in bulk
     matching_conducts = []
     for conduct in conducts_to_check:
-        if conduct.xlogfield in xlog_dict and xlog_dict[conduct.xlogfield] & (1 << conduct.bit):
+        if (conduct.xlogfield in xlog_dict
+                and xlog_dict[conduct.xlogfield] & (1 << conduct.bit)):
             matching_conducts.append(conduct)
 
     matching_achievements = []
     for achieve in achievements_to_check:
-        if achieve.xlogfield in xlog_dict and xlog_dict[achieve.xlogfield] & (1 << achieve.bit):
+        if (achieve.xlogfield in xlog_dict
+                and xlog_dict[achieve.xlogfield] & (1 << achieve.bit)):
             matching_achievements.append(achieve)
 
     # Bulk add to reduce transactions. (create() already saved the Game;
@@ -198,6 +242,7 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
         game.achievements.add(*matching_achievements)
 
     return ADDED
+
 
 def import_from_file(path, src):
     '''
@@ -224,7 +269,8 @@ def import_from_file(path, src):
     logger.info('Importing Games from local file %s', path)
     auto_detect = False
     if src is None:
-        # When using --file option, we'll auto-detect the source from each xlog entry
+        # When using --file option, we'll auto-detect the source from each
+        # xlog entry
         local_src = Source.objects.all()[0]  # Default fallback
         auto_detect = True
         start_pos = 0
@@ -302,9 +348,11 @@ def import_from_file(path, src):
                 counts[FILTERED], counts[DUPLICATE], counts[BAD])
     return counts
 
+
 def import_records(src):
     xlog_path = Path(settings.XLOG_DIR) / src.local_file
     return import_from_file(xlog_path, src)
+
 
 def content_range_start(response):
     # Return the first byte position from a 206 response's Content-Range
@@ -317,6 +365,7 @@ def content_range_start(response):
     except ValueError:
         return None
 
+
 def content_range_total(response):
     # Return the total length from a 416 response's Content-Range header
     # ("bytes */9999"), or None if it is absent/malformed.
@@ -327,6 +376,7 @@ def content_range_total(response):
         return int(value[len('bytes */'):])
     except ValueError:
         return None
+
 
 def sync_local_file(url, local_file):
     '''
@@ -397,13 +447,15 @@ def sync_local_file(url, local_file):
                 return False
     return True
 
+
 class Command(BaseCommand):
     help = "Poll Sources (xlogfiles) for new game data"
 
     def add_arguments(self, parser):
         parser.add_argument(
             '--file',
-            help='Load games from this xlog file instead of using sources in the database'
+            help='Load games from this xlog file instead of using sources '
+                 'in the database'
         )
 
     def handle(self, *args, **options):

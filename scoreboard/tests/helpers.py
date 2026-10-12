@@ -11,7 +11,7 @@ from tnnt import settings
 # A complete TNNT xlogfile record, in the field order the game writes.
 # starttime/endtime are filled in by xlog_line().
 BASE_FIELDS = [
-    ('server', 'us.hardfought.org'), ('version', '3.6.7'), ('points', '147'),
+    ('server', 'us.hardfought.org'), ('version', '5.0.0'), ('points', '147'),
     ('deathdnum', '2'), ('deathlev', '3'), ('maxlvl', '3'), ('hp', '0'),
     ('maxhp', '15'), ('deaths', '1'), ('deathdate', '20261107'),
     ('birthdate', '20261107'), ('uid', '5'), ('role', 'Cav'),

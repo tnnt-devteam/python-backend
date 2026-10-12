@@ -87,7 +87,7 @@ def read_games(year):
     and fields is the original line split on tabs.
     """
     from scoreboard.management.commands.pollxlogs import (
-        REQUIRED_XLOG_FIELDS, xlog_flags)
+        REQUIRED_XLOG_FIELDS, ended_in_tutorial, xlog_flags)
     from scoreboard.parsers import parse_xlog_line
 
     start = int(datetime(year, 11, 1, tzinfo=timezone.utc).timestamp())
@@ -115,6 +115,7 @@ def read_games(year):
                 continue
             if (REQUIRED_XLOG_FIELDS.difference(entry)
                     or entry['flags'] & unwanted_flags
+                    or ended_in_tutorial(entry)
                     or entry['starttime'] < start
                     or entry['endtime'] > end):
                 excluded += 1

@@ -2,7 +2,8 @@ import re
 
 from rest_framework.parsers import BaseParser
 
-dec_fields = ['points', 'turns', 'realtime', 'maxlvl', 'starttime', 'endtime']
+dec_fields = ['points', 'turns', 'realtime', 'maxlvl', 'starttime', 'endtime',
+              'deathdnum']
 hex_fields = ['flags', 'achieve', 'conduct', 'tnntconduct']
 # tnntachieve0, tnntachieve1, ...: the game writes one 64-bit field per 64
 # achievements and adds the next one by itself when its list outgrows the

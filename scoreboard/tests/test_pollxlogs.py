@@ -188,6 +188,24 @@ class ImportFromFileTests(TestCase):
         self.assertEqual(counts[FILTERED], 4)
         self.assertEqual(Game.objects.count(), 0)
 
+    def test_games_that_ended_in_the_tutorial_are_filtered(self):
+        # the tutorial is dungeon 8 from NetHack 3.7 on; in 3.6, dungeon 8
+        # was TNNT's robotfindskitten level, whose games are real
+        self.write(xlog_line(name='tut50', deathdnum='8')
+                   + xlog_line(name='tut37', deathdnum='8', version='3.7.0',
+                               start=in_window(5))
+                   + xlog_line(name='rfk36', deathdnum='8', version='3.6.7',
+                               start=in_window(6))
+                   + xlog_line(name='dod50', deathdnum='0',
+                               start=in_window(7))
+                   + xlog_line(name='nodnum', deathdnum=None,
+                               start=in_window(8)))
+        counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[FILTERED], 2)
+        self.assertEqual(counts[ADDED], 3)
+        self.assertEqual(set(Player.objects.values_list('name', flat=True)),
+                         {'rfk36', 'dod50', 'nodnum'})
+
     def test_won_and_mines_soko_flags(self):
         self.write(xlog_line(achieve='0x700', death='ascended')
                    + xlog_line(achieve='0x20', start=in_window(5)))
