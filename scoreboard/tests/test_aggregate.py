@@ -8,8 +8,9 @@ from django.test import TestCase
 
 import tnnt.settings
 from scoreboard.management.commands import aggregate
-from scoreboard.models import Clan, Game, Player, Source
+from scoreboard.models import Achievement, Clan, Game, Player, Source, Trophy
 from scoreboard.tests.helpers import in_window
+from scoreboard.trophy_defs import achievement_count_trophies, feature_trophies
 
 _game_seq = [0]
 
@@ -97,6 +98,90 @@ class ClanAggregationTests(TestCase):
             self.alice.trophies.filter(name='Never Scum a Game').exists())
         self.assertTrue(
             self.clan.trophies.filter(name='Never Scum a Game').exists())
+
+
+class AchievementTrophyTests(TestCase):
+    fixtures = ['conducts', 'achievements', 'sources', 'trophies']
+
+    def setUp(self):
+        aggregate.load_static_data()
+        self.src = Source.objects.get(server='hdf')
+        self.clan = Clan.objects.create(name='Testers')
+        self.alice = Player.objects.create(name='alice', clan=self.clan)
+        self.bob = Player.objects.create(name='bob', clan=self.clan)
+        # achievements that earn no feature trophy, in a fixed order
+        self.plain = list(Achievement.objects.exclude(
+            define__in=feature_trophies.values()).order_by('id'))
+
+    def death(self, player, achievements):
+        game = make_game(player, self.src, won=False, mines_soko=False,
+                         death='killed by a jackal')
+        game.achievements.add(*achievements)
+
+    def run_aggregate(self):
+        aggregate.aggregatePlayerData()
+        aggregate.aggregateClanData()
+
+    def trophies(self, player_or_clan):
+        return set(player_or_clan.trophies.values_list('name', flat=True))
+
+    def test_count_trophies_are_inclusive_and_distinct(self):
+        # alice: exactly 20 distinct, one of them in two games
+        self.death(self.alice, self.plain[:20])
+        self.death(self.alice, self.plain[19:20])
+        self.run_aggregate()
+        self.assertIn('20 Achievements', self.trophies(self.alice))
+        self.assertNotIn('50 Achievements', self.trophies(self.alice))
+
+    def test_clan_counts_the_union_of_its_members(self):
+        # alice 30, bob 40, 10 shared: the clan has 60 distinct (70 summed)
+        self.death(self.alice, self.plain[:30])
+        self.death(self.bob, self.plain[20:60])
+        self.run_aggregate()
+        self.assertNotIn('50 Achievements', self.trophies(self.alice))
+        self.assertNotIn('50 Achievements', self.trophies(self.bob))
+        clan = self.trophies(self.clan)
+        self.assertIn('50 Achievements', clan)
+        self.assertNotIn('100 Achievements', clan)
+        self.assertNotIn('All Achievements', clan)
+
+    def test_feature_trophy_from_any_game(self):
+        # a plain death, neither a win nor mines_soko, still counts
+        self.death(self.alice,
+                   [Achievement.objects.get(define='A_FOUND_KITTEN')])
+        self.run_aggregate()
+        self.assertEqual(
+            self.trophies(self.alice) & set(feature_trophies),
+            {'Robot Finds Kitten'})
+        self.assertIn('Robot Finds Kitten', self.trophies(self.clan))
+        self.assertNotIn('Robot Finds Kitten', self.trophies(self.bob))
+
+        self.alice.clan = None
+        self.alice.save()
+        self.run_aggregate()
+        self.assertNotIn('Robot Finds Kitten', self.trophies(self.clan))
+        self.assertIn('Robot Finds Kitten', self.trophies(self.alice))
+
+
+class TrophyDefsTests(TestCase):
+    # The trophies in trophy_defs only work if the fixtures agree with them,
+    # and a resync of the achievements with the game can break that quietly.
+    fixtures = ['achievements', 'trophies']
+
+    def test_every_trophy_is_in_the_fixture(self):
+        names = set(Trophy.objects.values_list('name', flat=True))
+        for name in list(feature_trophies) + list(achievement_count_trophies):
+            self.assertIn(name, names)
+
+    def test_every_feature_achievement_is_in_the_fixture(self):
+        defines = set(Achievement.objects.values_list('define', flat=True))
+        for name, define in feature_trophies.items():
+            self.assertIn(define, defines, name)
+
+    def test_count_trophies_are_short_of_all_achievements(self):
+        total = Achievement.objects.count()
+        for name, count in achievement_count_trophies.items():
+            self.assertLess(count, total, name)
 
 
 class FakeResponse:

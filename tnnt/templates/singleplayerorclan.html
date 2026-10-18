@@ -300,14 +300,6 @@
         {% endif %}
       </li>
       <li>
-        All Achievements:
-        {% if trophy_grid.trophy_status.all_achievements %}
-          <span class="achieved">&#x2714; Complete</span>
-        {% else %}
-          <span class="not-achieved">&#x2718; Incomplete</span>
-        {% endif %}
-      </li>
-      <li>
         NetHack Master (all 73 combos):
         {% if trophy_grid.trophy_status.nethack_master %}
           <span class="achieved">&#x2714; Complete</span>
@@ -318,6 +310,28 @@
       <li>
         NetHack Dominator:
         {% if trophy_grid.trophy_status.nethack_dominator %}
+          <span class="achieved">&#x2714; Complete</span>
+        {% else %}
+          <span class="not-achieved">&#x2718; Incomplete</span>
+        {% endif %}
+      </li>
+    </ul>
+
+    <h3 class="subhead">Achievement Trophies</h3>
+    <ul>
+      {% for name, completed in trophy_grid.trophy_status.achievement_counts.items %}
+        <li>
+          {{ name }}:
+          {% if completed %}
+            <span class="achieved">&#x2714; Complete</span>
+          {% else %}
+            <span class="not-achieved">&#x2718; Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+      <li>
+        All Achievements:
+        {% if trophy_grid.trophy_status.all_achievements %}
           <span class="achieved">&#x2714; Complete</span>
         {% else %}
           <span class="not-achieved">&#x2718; Incomplete</span>
@@ -401,6 +415,20 @@
           <span class="not-achieved">&#x2718; Incomplete</span>
         {% endif %}
       </li>
+    </ul>
+
+    <h3 class="subhead">TNNT Feature Trophies</h3>
+    <ul>
+      {% for name, completed in trophy_grid.trophy_status.feature_trophies.items %}
+        <li>
+          {{ name }}:
+          {% if completed %}
+            <span class="achieved">&#x2714; Complete</span>
+          {% else %}
+            <span class="not-achieved">&#x2718; Incomplete</span>
+          {% endif %}
+        </li>
+      {% endfor %}
     </ul>
       </div> {# trophy-column-right #}
     </div> {# trophy-columns #}

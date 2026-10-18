@@ -5,7 +5,8 @@ from scoreboard.models import (
 # Imported by name so that they are also attributes of this module.
 from scoreboard.trophy_defs import (
     TOTAL_GENDERS, TOTAL_ALIGNMENTS, TOTAL_RACES, TOTAL_ROLES,
-    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role
+    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role,
+    feature_trophies, achievement_count_trophies
 )
 from django.db import transaction
 from django.db.models import Sum, Min, Max, Count
@@ -218,7 +219,9 @@ def obtainTempAchievements():
 def awardTrophies(player_or_clan, allgames_qs):
     # First, a small optimization: exclude all games that are neither ascensions
     # nor have mines/soko complete. These won't contribute to any trophies.
-    # (Never Scum a Game is based off the precomputed games_scummed.)
+    # (Never Scum a Game is based off the precomputed games_scummed, and the
+    # achievement and TNNT feature trophies off unique_achievements and a
+    # query on allgames_qs, since they can be earned in any game.)
     allgames = [ g for g in allgames_qs.all() if g.won or g.mines_soko ]
 
     # It might be possible to optimize some of this by doing a big, single pass
@@ -267,6 +270,18 @@ def awardTrophies(player_or_clan, allgames_qs):
         player_or_clan.trophies.add(TROPHIES['All Roles'])
     if player_or_clan.unique_achievements == TOTAL_ACHIEVEMENTS:
         player_or_clan.trophies.add(TROPHIES['All Achievements'])
+    for name, count in achievement_count_trophies.items():
+        if player_or_clan.unique_achievements >= count:
+            player_or_clan.trophies.add(TROPHIES[name])
+    # TNNT feature trophies: one query for which of their achievements any of
+    # the games has.
+    feature_defines = set(
+        Achievement.objects.filter(game__in=allgames_qs,
+                                   define__in=feature_trophies.values())
+        .values_list('define', flat=True).distinct())
+    for name, define in feature_trophies.items():
+        if define in feature_defines:
+            player_or_clan.trophies.add(TROPHIES[name])
     # All Conducts kind of has to be a query, since we don't track "number of
     # discrete conducts across all games" on a leaderboard.
     unique_conducts = allgames_qs.filter(won=True) \

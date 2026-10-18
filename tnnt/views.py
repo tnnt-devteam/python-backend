@@ -6,6 +6,7 @@ from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from django.db.models.functions import TruncMinute
 from scoreboard.models import *
 from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
+from scoreboard.trophy_defs import feature_trophies, achievement_count_trophies
 from scoreboard.api_views import ratelimit_exclude_localhost
 from django.utils.decorators import method_decorator
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
@@ -712,10 +713,21 @@ class TrophiesView(TemplateView):
                 'trophies': {}
             },
             {
+                'name': 'Achievement Trophies',
+                'trophies': {}
+            },
+            {
                 'name': 'Special Challenge Trophies',
+                'trophies': {}
+            },
+            {
+                'name': 'TNNT Feature Trophies',
                 'trophies': {}
             }
         ]
+        # The achievement count trophies, then All Achievements
+        achievement_order = (list(achievement_count_trophies)
+                             + ['All Achievements'])
 
         # Map trophy names to categories
         for tname, tdata in trophies.items():
@@ -726,13 +738,25 @@ class TrophiesView(TemplateView):
                 else:
                     trophy_categories[1]['trophies'][tname] = tdata
             elif tname in ['All Roles', 'All Races', 'All Alignments',
-                          'Both Genders', 'All Achievements',
+                          'Both Genders',
                           'NetHack Master', 'NetHack Dominator']:
                 trophy_categories[2]['trophies'][tname] = tdata
             elif tname == 'All Conducts':
                 trophy_categories[3]['trophies'][tname] = tdata
-            elif tname.startswith('Keep ') or tname == 'Never Scum a Game':
+            elif tname in achievement_order:
                 trophy_categories[4]['trophies'][tname] = tdata
+            elif tname.startswith('Keep ') or tname == 'Never Scum a Game':
+                trophy_categories[5]['trophies'][tname] = tdata
+            elif tname in feature_trophies:
+                trophy_categories[6]['trophies'][tname] = tdata
+
+        # The count trophies were added to the live database after All
+        # Achievements, so in database (id) order it would come first.
+        by_name = trophy_categories[4]['trophies']
+        trophy_categories[4]['trophies'] = {
+            tname: by_name[tname] for tname in achievement_order
+            if tname in by_name
+        }
 
         kwargs['trophies'] = trophies
         kwargs['trophy_categories'] = trophy_categories

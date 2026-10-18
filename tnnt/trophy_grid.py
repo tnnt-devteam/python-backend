@@ -12,7 +12,8 @@ from django.core.cache import cache
 from scoreboard.models import Game, Conduct, Achievement
 from scoreboard.trophy_defs import (
     TOTAL_GENDERS, TOTAL_ALIGNMENTS, TOTAL_RACES, TOTAL_ROLES,
-    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role
+    TOTAL_POSSIBLE_COMBOS, great_lesser_race, great_lesser_role,
+    feature_trophies, achievement_count_trophies
 )
 import logging
 
@@ -279,6 +280,8 @@ def _calculate_trophy_status(
         'all_alignments': False,
         'all_conducts': False,
         'all_achievements': False,
+        'achievement_counts': {},
+        'feature_trophies': {},
         'nethack_dominator': False,
         'never_scum': False,
         'never_scum_unobtainable': False,
@@ -392,13 +395,19 @@ def _calculate_trophy_status(
 
     # Check All Achievements - need all achievements across all games.
     # One query for the distinct achievements in any of the games instead
-    # of one per game.
-    achieved_ids = set(
+    # of one per game. The same (id, define) pairs give the achievement
+    # count trophies and, by define, the TNNT feature trophies.
+    achieved = set(
         Achievement.objects.filter(game__in=games_qs)
-        .values_list('id', flat=True).distinct()
+        .values_list('id', 'define').distinct()
     )
     total_achievements = Achievement.objects.count()
-    status['all_achievements'] = len(achieved_ids) >= total_achievements
+    status['all_achievements'] = len(achieved) >= total_achievements
+    for name, count in achievement_count_trophies.items():
+        status['achievement_counts'][name] = len(achieved) >= count
+    achieved_defines = set(define for _, define in achieved)
+    for name, define in feature_trophies.items():
+        status['feature_trophies'][name] = define in achieved_defines
 
     # Check NetHack Dominator - NetHack Master + All Conducts
     status['nethack_dominator'] = (

@@ -174,3 +174,39 @@
   fields:
     name: Keep The Riders Alive
     description: Win a game without any Riders dying
+- model: scoreboard.trophy
+  fields:
+    name: 20 Achievements
+    description: Complete at least 20 different achievements across all games
+- model: scoreboard.trophy
+  fields:
+    name: 50 Achievements
+    description: Complete at least 50 different achievements across all games
+- model: scoreboard.trophy
+  fields:
+    name: 100 Achievements
+    description: Complete at least 100 different achievements across all games
+- model: scoreboard.trophy
+  fields:
+    name: 200 Achievements
+    description: Complete at least 200 different achievements across all games
+- model: scoreboard.trophy
+  fields:
+    name: 300 Achievements
+    description: Complete at least 300 different achievements across all games
+- model: scoreboard.trophy
+  fields:
+    name: Swap Chest Contributor
+    description: Put an item into a swap chest
+- model: scoreboard.trophy
+  fields:
+    name: DevTeam Quest
+    description: Finish the task the devteam requires of you
+- model: scoreboard.trophy
+  fields:
+    name: Deathmatch Champion
+    description: Defeat the adversary in the Deathmatch Arena
+- model: scoreboard.trophy
+  fields:
+    name: Robot Finds Kitten
+    description: Find kitten

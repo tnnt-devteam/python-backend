@@ -78,3 +78,25 @@ great_lesser_role = {
                           'Orc-Cha'},
     },
 }
+
+# Trophies for using TNNT's own features. Each is earned by the achievement
+# the game awards for it, named by its define (A_*) in the game's
+# include/tnnt_achievements.h: achievement names and bits have both changed
+# on resyncs. TrophyDefsTests checks that every define here is in the
+# achievements fixture.
+feature_trophies = {
+    'Swap Chest Contributor': 'A_PUT_INTO_SWAPCHEST',
+    'DevTeam Quest': 'A_FINISHED_DEVTEAM_QUEST',
+    'Deathmatch Champion': 'A_NPC_DEATHMATCH',
+    'Robot Finds Kitten': 'A_FOUND_KITTEN',
+}
+
+# Trophies for completing at least this many distinct achievements across
+# all games, smallest first. Completing every one is All Achievements.
+achievement_count_trophies = {
+    '20 Achievements': 20,
+    '50 Achievements': 50,
+    '100 Achievements': 100,
+    '200 Achievements': 200,
+    '300 Achievements': 300,
+}

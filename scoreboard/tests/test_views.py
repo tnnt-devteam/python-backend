@@ -7,9 +7,12 @@ from django.db import connection
 from django.test import TestCase
 from django.test.utils import CaptureQueriesContext
 
-from scoreboard.models import Clan, Conduct, Game, Player, Source
+from scoreboard.models import (
+    Achievement, Clan, Conduct, Game, Player, Source, Trophy
+)
 from scoreboard.tests.helpers import in_window
 from scoreboard.tests.test_aggregate import make_game
+from scoreboard.trophy_defs import achievement_count_trophies
 from tnnt import hardfought_utils, views
 from tnnt.trophy_grid import generate_combo_grid_data
 
@@ -187,8 +190,12 @@ class TrophyStatusTests(TestCase):
         win1 = make_game(a, self.src, role='Val', race='Dwa', align0='Law')
         win1.conducts.add(neme, vlad)
         make_game(a, self.src, role='Val', race='Hum', align0='Law')
-        make_game(b, self.src, role='Arc', race='Gno', align0='Neu',
-                  won=False)
+        loss = make_game(b, self.src, role='Arc', race='Gno', align0='Neu',
+                         won=False)
+        # 25 distinct achievements, one of them a feature trophy's
+        win1.achievements.add(*Achievement.objects.exclude(
+            define='A_FOUND_KITTEN').order_by('id')[:24])
+        loss.achievements.add(Achievement.objects.get(define='A_FOUND_KITTEN'))
 
     def test_flags_and_query_count(self):
         with CaptureQueriesContext(connection) as ctx:
@@ -206,6 +213,10 @@ class TrophyStatusTests(TestCase):
             status['individual_conducts']['Never kill a quest nemesis'])
         self.assertFalse(status['all_conducts'])
         self.assertFalse(status['all_achievements'])
+        self.assertTrue(status['achievement_counts']['20 Achievements'])
+        self.assertFalse(status['achievement_counts']['50 Achievements'])
+        self.assertTrue(status['feature_trophies']['Robot Finds Kitten'])
+        self.assertFalse(status['feature_trophies']['DevTeam Quest'])
         self.assertFalse(status['great_roles']['Valkyrie'])
         self.assertTrue(status['never_scum'])
         grid = {(r['race_align'], c['role']): c for r in data['rows']
@@ -220,6 +231,31 @@ class TrophyStatusTests(TestCase):
         self.assertFalse(status['keep_nemesis_alive'])
         self.assertFalse(status['keep_nemesis_alive_unobtainable'])
         self.assertFalse(any(status['individual_conducts'].values()))
+        # b's one game has only the kitten
+        self.assertFalse(any(status['achievement_counts'].values()))
+        self.assertTrue(status['feature_trophies']['Robot Finds Kitten'])
+
+
+class TrophiesPageTests(TestCase):
+    fixtures = ['trophies']
+
+    def categories(self):
+        resp = self.client.get('/trophies')
+        self.assertEqual(resp.status_code, 200)
+        return {c['name']: list(c['trophies'])
+                for c in resp.context['trophy_categories']}
+
+    def test_every_trophy_is_listed_once(self):
+        listed = [name for names in self.categories().values()
+                  for name in names]
+        self.assertCountEqual(listed,
+                              Trophy.objects.values_list('name', flat=True))
+
+    def test_achievement_trophies_in_threshold_order(self):
+        # the fixture, like the live database, has All Achievements first
+        self.assertEqual(self.categories()['Achievement Trophies'],
+                         list(achievement_count_trophies)
+                         + ['All Achievements'])
 
 
 class AdminPanelTests(TestCase):
