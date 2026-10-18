@@ -176,7 +176,7 @@
         </ul>
         {% if me.clan_admin and not clan_freeze %}
           <p>
-            Places used: {{ clan_places.used }} of {{ clan_places.max }}
+            Spots used: {{ clan_places.used }} of {{ clan_places.max }}
             ({{ clan_places.members }} member{{ clan_places.members|pluralize }},
             {{ clan_places.invites }} pending invitation{{ clan_places.invites|pluralize }})
           </p>
@@ -190,7 +190,7 @@
             <p>Your clan is full.</p>
           {% else %}
             <p>
-              Your clan has no free places. Rescind an invitation to invite
+              Your clan has no open spots. Rescind an invitation to invite
               someone else.
             </p>
           {% endif %}

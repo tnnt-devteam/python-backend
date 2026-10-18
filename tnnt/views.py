@@ -1213,12 +1213,12 @@ class ClanMgmtView(View):
         # (checked before find_player, which may create a Player row)
         places = clan_places(player.clan)
         if places['free'] == 0:
-            logger.info('%s attempted to invite %s with no free places in '
+            logger.info('%s attempted to invite %s with no open spots in '
                         'clan %s', player.name, invitee_name, player.clan.name)
             if places['members'] >= places['max']:
                 ctx['errmsg'] = 'Your clan is full'
             else:
-                ctx['errmsg'] = ('Your clan has no free places: members '
+                ctx['errmsg'] = ('Your clan has no open spots: members '
                                  'plus pending invitations cannot exceed '
                                  '%d. Rescind an invitation to invite '
                                  'someone else.' % (places['max']))

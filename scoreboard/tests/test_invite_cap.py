@@ -2,7 +2,7 @@
 Clan invitations are capped: a clan's members plus its pending invitations
 may not exceed MAX_CLAN_PLAYERS, so every invitation can be accepted.
 Joining or creating a clan withdraws a player's other invitations, which
-gives those clans their places back.
+gives those clans their spots back.
 """
 from datetime import datetime, timedelta, timezone
 from unittest import mock
@@ -47,24 +47,24 @@ class InviteCapTests(TestCase):
             player, _ = Player.objects.get_or_create(name=name)
             player.invites.add(self.clan)
 
-    def test_places_are_shown(self):
+    def test_spots_are_shown(self):
         self.add_members(1)
         self.add_invites('bob')
         resp = self.client.get('/clanmgmt')
         self.assertEqual(resp.context['clan_places'],
                          {'members': 2, 'invites': 1, 'used': 3, 'max': MAX,
                           'free': 1})
-        self.assertContains(resp, 'Places used: 3 of 4')
+        self.assertContains(resp, 'Spots used: 3 of 4')
         self.assertContains(resp, 'name="invitee"')
 
-    def test_invites_stop_at_the_free_places(self):
+    def test_invites_stop_at_the_open_spots(self):
         self.add_members(1)
         for name in ('bob', 'chuck'):
             Player.objects.create(name=name)
             resp = self.invite(name)
             self.assertNotIn('errmsg', resp.context)
         resp = self.invite('gimli')  # in the dgl database, not a Player yet
-        self.assertIn('no free places', resp.context['errmsg'])
+        self.assertIn('no open spots', resp.context['errmsg'])
         # refused before find_player could create a Player row
         self.assertFalse(Player.objects.filter(name='gimli').exists())
         self.assertEqual(self.clan.invitees.count(), 2)
@@ -98,7 +98,7 @@ class InviteCapTests(TestCase):
         self.add_members(1)
         self.add_invites('bob', 'chuck')
         Player.objects.create(name='dave')
-        self.assertIn('no free places', self.invite('dave').context['errmsg'])
+        self.assertIn('no open spots', self.invite('dave').context['errmsg'])
         self.client.post('/clanmgmt', {
             'rescind': '', 'rescind_id': Player.objects.get(name='bob').id})
         resp = self.invite('dave')
@@ -136,7 +136,7 @@ class InviteCapTests(TestCase):
         self.assertEqual(bob.invites.count(), 0)
         self.assertEqual(self.clan.invitees.count(), 0)
 
-    def test_looking_for_clan_invite_buttons_follow_the_places(self):
+    def test_looking_for_clan_invite_buttons_follow_the_spots(self):
         Player.objects.create(name='alice', looking_for_clan=True)
         self.add_members(1)
         self.add_invites('bob')
