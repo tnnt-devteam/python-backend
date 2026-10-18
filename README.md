@@ -188,3 +188,25 @@ $ ./create_test_xlogs.py 2025
 Any other year's archive works too. A year whose records were written by
 an older game must be listed in `OLD_FORMATS` in that script, with the
 commit whose fixtures decoded that tournament.
+
+### Test mode on the production server
+`test_mode.sh` (run as root) puts the live site into test mode, to see how
+changes look with realistic data, and takes it out again:
+```shell
+$ ./test_mode.sh on --dry-run    # every check, plus a rehearsal that is rolled back
+$ ./test_mode.sh on
+$ ./test_mode.sh status
+$ ./test_mode.sh off --dry-run
+$ ./test_mode.sh off
+```
+`on` backs up the database, restarts the site with `DEBUG=True` (set in
+`/etc/default/tnnt_website`), so that logins are checked against
+`dgamelaunch_test.db`, and runs `./manage.py test_mode on`. That command
+writes down what the database holds, turns non-admin logins and clan
+operations on and loads the test xlogfiles, in one transaction. `off`
+backs up the database, stops the site, runs `./manage.py test_mode off`
+(which deletes everything created since `on`, including whatever the test
+players did, and puts the switches back), starts the site without DEBUG
+and restarts tnntbot. While the site is in test mode only the test
+accounts can log in, admins included, and error pages show tracebacks to
+anyone. Turn it off before the tournament starts.
