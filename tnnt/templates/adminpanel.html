@@ -206,6 +206,57 @@
     {% endif %}
   </details>
 
+  <!-- Looking For Clan Messages -->
+  <details class="admin-monitoring-section">
+    <summary class="monitoring-summary">
+      Looking For Clan Messages
+      <span class="count-badge">{{ lfc_entries|length }}</span>
+    </summary>
+    <div class="monitoring-description">
+      Every player with the Looking For Clan flag or a stored message. A message
+      is public (profile page and Clans page) while its player is flagged and
+      clanless, until clan freeze. Clear removes both the flag and the message.
+    </div>
+    {% if lfc_entries %}
+    <table class="sortable monitoring-table">
+      <thead>
+        <tr>
+          <th>Player</th>
+          <th>Flagged</th>
+          <th>Clan</th>
+          <th>Message</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for entry in lfc_entries %}
+        <tr>
+          <td><a href="/player/{{ entry.name }}">{{ entry.name }}</a></td>
+          <td class="centered">{% if entry.looking_for_clan %}yes{% else %}no{% endif %}</td>
+          <td>
+            {% if entry.clan %}
+              <a href="/clan/{{ entry.clan.name|urlencode }}" class="clan-link">{{ entry.clan.name }}</a>
+            {% else %}
+              <span class="no-clan">None</span>
+            {% endif %}
+          </td>
+          <td>{{ entry.lfc_message }}</td>
+          <td>
+            <form method="post">
+              {% csrf_token %}
+              <input name="lfc_player_id" type="hidden" value="{{ entry.id }}" />
+              <button name="clear_lfc" type="submit">Clear</button>
+            </form>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div class="no-data">No Looking For Clan flags or messages.</div>
+    {% endif %}
+  </details>
+
   <div class="last-updated">
     Last updated: {{ site_settings.updated_at|date:"Y-m-d H:i" }} UTC
     {% if site_settings.updated_by %}

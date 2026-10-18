@@ -7,6 +7,8 @@ from django.db import connection
 from django.test import TestCase
 from django.test.utils import CaptureQueriesContext
 
+import tnnt.settings
+
 from scoreboard.models import (
     Achievement, Clan, Conduct, Game, Player, Source, Trophy
 )
@@ -35,6 +37,11 @@ class ClanMgmtTests(TestCase):
         self.alice = login_player(self.client, 'alice', self.clan, admin=True)
         patcher = mock.patch.object(hardfought_utils, 'DGL_DATABASE_PATH',
                                     TEST_DGL_DB)
+        patcher.start()
+        self.addCleanup(patcher.stop)
+        # invites are refused once clan freeze is in effect; don't let the
+        # real date decide that
+        patcher = mock.patch.object(tnnt.settings, 'CLAN_FREEZE_TIME', None)
         patcher.start()
         self.addCleanup(patcher.stop)
 

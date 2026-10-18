@@ -285,6 +285,32 @@ span.plradmin {
   padding: 1em;
 }
 
+/* Looking For Clan: the line under a clanless player's name, the list on
+   the clans page and the clan admins' list on the clan management page */
+
+p.lfc {
+  max-width: 40em;
+  text-align: center;
+  color: #eb0;
+}
+
+p.lfc .lfc-message, ul.lfc-list .lfc-message {
+  font-style: italic;
+  color: #f2f5ff;
+}
+
+table.lfc td.lfc-message {
+  font-style: italic;
+}
+
+ul.lfc-list li {
+  margin-bottom: 0.5em;
+}
+
+p.lfc-disclaimer {
+  color: #eb0;
+}
+
 /* all clans table styling */
 
 table.clans {

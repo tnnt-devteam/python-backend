@@ -22,6 +22,14 @@
 
 <h1>{{ player_or_clan.name }}</h1>
 
+{% if looking_for_clan %}
+  <p class="lfc">
+    Looking for a clan{% if player_or_clan.lfc_message %}:
+      <span class="lfc-message">{{ player_or_clan.lfc_message }}</span>
+    {% endif %}
+  </p>
+{% endif %}
+
 <div class="row">
 
 <table>

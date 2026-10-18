@@ -75,6 +75,36 @@
 </table>
 </div>
 
+{% if lfc_open %}
+<h2>Looking for a Clan</h2>
+<p>
+  Players who would like to be invited to a clan. To add yourself, go to
+  the <a href="/clanmgmt">My Clan</a> page while logged in.
+</p>
+<div class="table-scroll">
+<table class="clans lfc">
+  <thead>
+    <tr class="framed">
+      <th>Player</th>
+      <th>Message</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for plr in lfc_players %}
+      <tr>
+        <td>{% include "plink.html" with name=plr.name %}</td>
+        <td class="lfc-message">{{ plr.lfc_message }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan=2 class="noclans">no players are looking for a clan right now</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
+
 </main>
 
 </body>

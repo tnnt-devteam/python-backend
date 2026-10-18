@@ -83,6 +83,29 @@
     {% else %}
       <p>You do not have any invites.</p>
     {% endif %}
+
+    {% if lfc_open %}
+      <hr>
+      <h3 class="subhead">Looking for a clan?</h3>
+      {% if me.looking_for_clan %}
+        <p>
+          You are flagged as looking for a clan on
+          <a href="/player/{{ me.name }}">your profile page</a> and the
+          <a href="/clans">Clans</a> page.
+        </p>
+      {% else %}
+        <p>Let clan admins know you would like to be invited.</p>
+      {% endif %}
+      <form method="post">
+        {% csrf_token %}
+        {{ lfc_form }}
+        <p class="lfc-disclaimer">
+          This will be visible to everyone on your profile page and on the
+          Clans page.
+        </p>
+        <button name="set_lfc" type="submit">Save</button>
+      </form>
+    {% endif %}
   {% else %}
     <div class="clan-layout">
       <div class="clan-info">
@@ -157,6 +180,34 @@
               {{ invite_member_form }}
               <button name="invite" type="submit">Invite</button>
           </form>
+        {% endif %}
+
+        {% if me.clan_admin and lfc_open %}
+          <hr>
+          {% if lfc_players %}
+            <p>Players looking for a clan:</p>
+            <ul class="lfc-list">
+              {% for othplayer in lfc_players %}
+                <li>
+                  {% include "plink.html" with name=othplayer.name %}
+                  {% if othplayer.id in lfc_invited_ids %}
+                    (invited)
+                  {% else %}
+                    <form method="post" class="disguised-button">
+                      {% csrf_token %}
+                      <input name="invitee" type="hidden" value="{{ othplayer.name }}" />
+                      <button name="invite" type="submit">Invite</button>
+                    </form>
+                  {% endif %}
+                  {% if othplayer.lfc_message %}
+                    <div class="lfc-message">{{ othplayer.lfc_message }}</div>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p>No players are looking for a clan right now.</p>
+          {% endif %}
         {% endif %}
 
         {% if invitees.all %}

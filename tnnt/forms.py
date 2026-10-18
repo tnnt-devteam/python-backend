@@ -62,3 +62,14 @@ class SetMessageForm(forms.Form):
     def clean_message(self):
         data = self.cleaned_data['message']
         return text_field_clean(data, 'Clan messages')
+
+class LookingForClanForm(forms.Form):
+    looking_for_clan = forms.BooleanField(
+        required=False, label='Flag me as looking for a clan')
+    lfc_message = forms.CharField(
+        max_length=200, required=False, label='Message (optional):',
+        widget=forms.TextInput(attrs={'size': 40}))
+
+    def clean_lfc_message(self):
+        data = self.cleaned_data['lfc_message']
+        return text_field_clean(data, 'Looking For Clan messages')

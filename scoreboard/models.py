@@ -113,6 +113,14 @@ class Player(LeaderboardBaseFields):
     trophies   = models.ManyToManyField(Trophy)
     clan_admin = models.BooleanField(default=False)
     invites    = models.ManyToManyField(Clan, related_name='invitees')
+    # "Looking For Clan": a clanless player can flag themself as looking for
+    # a clan, with an optional message; shown publicly while clans can still
+    # be joined (see looking_for_clan_open() in tnnt/views.py).
+    # db_default as well, so that a row inserted by code that predates these
+    # fields (mid-deploy, or a raw INSERT) still gets a value in strict mode.
+    looking_for_clan = models.BooleanField(default=False, db_default=False)
+    lfc_message      = models.CharField(max_length=200, default='',
+                                        db_default='')
     # link to User model for web logins
     user       = models.OneToOneField(User, on_delete=models.PROTECT, null=True)
     # Achievements that this player has earned in a game in progress, which will

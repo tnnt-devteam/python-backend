@@ -9,7 +9,8 @@ from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
 from scoreboard.trophy_defs import feature_trophies, achievement_count_trophies
 from scoreboard.api_views import ratelimit_exclude_localhost
 from django.utils.decorators import method_decorator
-from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm
+from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm, \
+    LookingForClanForm
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.cache import cache
 from . import hardfought_utils # find_player
@@ -108,6 +109,25 @@ def get_player(request_user):
             logger.error('No Player found with name of logged in user (name %s)',
                          request_user)
             raise e
+
+def clan_freeze_in_effect():
+    if settings.CLAN_FREEZE_TIME is None:
+        return False  # No freeze if CLAN_FREEZE_TIME is disabled
+    return settings.CLAN_FREEZE_TIME <= datetime.now(tz=timezone.utc)
+
+def looking_for_clan_open():
+    # Looking For Clan flags can be set, and are shown, only while a clanless
+    # player can still join a clan: not once clan freeze is in effect, and
+    # never after the tournament, so archived pages don't carry them.
+    return (not clan_freeze_in_effect()
+            and datetime.now(tz=timezone.utc) < settings.TOURNAMENT_END)
+
+def looking_for_clan_players():
+    # Clanless players flagged as Looking For Clan. Unlike /players this
+    # needs no games: only the player can set the flag, while logged in, and
+    # it is most useful before the tournament starts.
+    return Player.objects.filter(looking_for_clan=True, clan__isnull=True) \
+                         .order_by('name')
 
 class HomepageView(TemplateView):
     template_name = 'index.html'
@@ -489,6 +509,11 @@ class ClansView(TemplateView):
 
         # Pass on to template.
         kwargs['clans'] = clanlist
+
+        kwargs['lfc_open'] = looking_for_clan_open()
+        if kwargs['lfc_open']:
+            kwargs['lfc_players'] = list(looking_for_clan_players()
+                                         .values('name', 'lfc_message'))
         return kwargs
 
 class SinglePlayerOrClanView(TemplateView):
@@ -530,6 +555,9 @@ class SinglePlayerOrClanView(TemplateView):
             player = get_object_or_404(Player, name=kwargs['playername'])
             kwargs['player_or_clan'] = player
             base_game_qs = Game.objects.filter(player=player.id)
+            kwargs['looking_for_clan'] = (player.looking_for_clan
+                                          and player.clan_id is None
+                                          and looking_for_clan_open())
 
             # Generate trophy progress grid for the player
             kwargs['trophy_grid'] = generate_combo_grid_data(player)
@@ -975,19 +1003,30 @@ class ClanMgmtView(View):
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
         kwargs['clan_freeze_time'] = settings.CLAN_FREEZE_TIME
 
+        # Looking For Clan: clanless players set their flag here, clan admins
+        # see who is looking and can invite them
+        kwargs['lfc_open'] = looking_for_clan_open()
+        if kwargs['lfc_open'] and clan is not None and player.clan_admin:
+            kwargs['lfc_players'] = list(looking_for_clan_players())
+            kwargs['lfc_invited_ids'] = \
+                set(clan.invitees.values_list('id', flat=True))
+
         if 'invite_member_form' not in kwargs:
             kwargs['invite_member_form'] = InviteMemberForm()
         if 'create_clan_form' not in kwargs:
             kwargs['create_clan_form'] = CreateClanForm()
         if 'set_message_form' not in kwargs:
             kwargs['set_message_form'] = SetMessageForm()
+        if 'lfc_form' not in kwargs:
+            kwargs['lfc_form'] = LookingForClanForm(initial={
+                'looking_for_clan': player.looking_for_clan,
+                'lfc_message': player.lfc_message,
+            })
 
         return kwargs
 
     def clan_freeze_in_effect(self):
-        if settings.CLAN_FREEZE_TIME is None:
-            return False  # No freeze if CLAN_FREEZE_TIME is disabled
-        return settings.CLAN_FREEZE_TIME <= datetime.now(tz=timezone.utc)
+        return clan_freeze_in_effect()
 
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
@@ -1056,6 +1095,9 @@ class ClanMgmtView(View):
         elif 'set_message' in request.POST:
             self.set_clan_message(request, player, ctx)
 
+        elif 'set_lfc' in request.POST:
+            self.set_looking_for_clan(request, player, ctx)
+
         return render(request, self.template_name, self.get_context_data(**ctx))
 
     # Helper function triggered when a create_clan POST request comes in
@@ -1100,6 +1142,7 @@ class ClanMgmtView(View):
         newclan.save()
         player.clan = newclan
         player.clan_admin = True
+        player.looking_for_clan = False
         player.save()
         logger.info('%s created clan %s', player.name, newclan.name)
 
@@ -1307,6 +1350,7 @@ class ClanMgmtView(View):
             logger.warning('%s, while joining, was somehow already an admin',
                            player.name)
         player.clan_admin = False # to be safe
+        player.looking_for_clan = False
         player.save()
 
         # Invalidate trophy grid cache for both player and clan
@@ -1487,11 +1531,42 @@ class ClanMgmtView(View):
         logger.info('%s set the message of clan %s to "%s"',
                     player.name, clan.name, clan.message)
 
+    # Helper function triggered when a clanless player saves their Looking
+    # For Clan flag and message
+    def set_looking_for_clan(self, request, player, ctx):
+        # check if clan operations are allowed
+        if not admin_utils.check_clan_operations_allowed(request.user):
+            logger.warning('%s attempted clan operation while disabled',
+                           player.name)
+            ctx['errmsg'] = 'Clan operations are currently disabled by site administrators'
+            return
+
+        if not looking_for_clan_open():
+            logger.warning('%s attempted to set Looking For Clan after '
+                           'clans closed', player.name)
+            ctx['errmsg'] = 'You can no longer look for a clan'
+            return
+
+        if player.clan is not None:
+            logger.warning('%s is in a clan but attempted to set Looking '
+                           'For Clan', player.name)
+            ctx['errmsg'] = "You can't look for a clan - you're already in one"
+            return
+
+        lfc_form = LookingForClanForm(request.POST)
+
+        if not lfc_form.is_valid():
+            ctx['lfc_form'] = lfc_form
+            return
+
+        player.looking_for_clan = lfc_form.cleaned_data['looking_for_clan']
+        player.lfc_message = lfc_form.cleaned_data['lfc_message']
+        player.save()
+        logger.info('%s set Looking For Clan to %s with message "%s"',
+                    player.name, player.looking_for_clan, player.lfc_message)
+
     # FUTURE TODO: functionality for a clanless player to request becoming a
     # member of a clan they input, admins can accept (inverse of invites)
-    # FUTURE TODO: functionality for a clanless player to raise a flag saying
-    # "looking for a clan!" and all such players are listed either publicly or
-    # to clan admins (probably publicly)
     # FUTURE TODO: decline an invite
 
 @method_decorator(
@@ -1826,11 +1901,18 @@ class AdminPanelView(View):
         else:
             logger.info('Cache hit for scummers')
 
+        # Every stored Looking For Clan message, shown or not, so that one
+        # can be cleared before it reappears (not cached: one cheap query)
+        lfc_entries = Player.objects.filter(
+            Q(looking_for_clan=True) | ~Q(lfc_message='')
+        ).select_related('clan').order_by('name')
+
         context = {
             'site_settings': site_settings,
             'is_admin': True,
             'multi_accounts': multi_accounts,
             'scummers': scummers_list,
+            'lfc_entries': lfc_entries,
             'cache_refreshed': refresh,
         }
 
@@ -1871,6 +1953,20 @@ class AdminPanelView(View):
                 request.user.username,
                 'enabled' if site_settings.clan_operations_enabled else 'disabled'
             )
+
+        elif 'clear_lfc' in request.POST:
+            try:
+                lfc_player = Player.objects.get(
+                    id=request.POST.get('lfc_player_id'))
+            except (Player.DoesNotExist, ValueError, TypeError):
+                lfc_player = None
+            if lfc_player is not None:
+                logger.info('%s cleared the Looking For Clan flag and '
+                            'message "%s" of %s', request.user.username,
+                            lfc_player.lfc_message, lfc_player.name)
+                lfc_player.looking_for_clan = False
+                lfc_player.lfc_message = ''
+                lfc_player.save()
 
         # Redirect back to GET to prevent form resubmission
         return HttpResponseRedirect('/admin-panel')
