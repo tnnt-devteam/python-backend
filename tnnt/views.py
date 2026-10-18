@@ -425,7 +425,11 @@ class LeaderboardsView(TemplateView):
                     L['players'] = gen_leader_list(players_annotated, stat, L['descending'])
                     L['clans'] = gen_leader_list(clans_annotated, stat, L['descending'])
         try:
-            kwargs['myname'] = get_player(self.request.user).name
+            me = get_player(self.request.user)
+            kwargs['myname'] = me.name
+            # the template bolds the viewer's clan the same way as their name
+            if me.clan is not None:
+                kwargs['myclan'] = me.clan.name
         except Player.DoesNotExist:
             # don't do anything if no player found, since you can view
             # leaderboards when not logged in

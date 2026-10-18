@@ -37,7 +37,11 @@
             </td>
             <td>
               {% if "clan" in player %}
-                {% include "clink.html" with name=player.clan %}
+                {% if myclan == player.clan %}
+                  <b>{% include "clink.html" with name=player.clan %}</b>
+                {% else %}
+                  {% include "clink.html" with name=player.clan %}
+                {% endif %}
               {% endif %}
             </td>
             <td class="rjust">
@@ -71,7 +75,13 @@
         {% for clan in board.clans %}
           <tr>
             <td class="num dim">{{ forloop.counter }}</td>
-            <td>{% include "clink.html" with name=clan.name %}</td>
+            <td>
+              {% if myclan == clan.name %}
+                <b>{% include "clink.html" with name=clan.name %}</b>
+              {% else %}
+                {% include "clink.html" with name=clan.name %}
+              {% endif %}
+            </td>
             <td class="rjust">
               {% if "dumplog" in clan %}
                 <a href="{{ clan.dumplog }}" target="_blank">

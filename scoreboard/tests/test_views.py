@@ -98,6 +98,7 @@ class GetPlayerTests(TestCase):
             resp = self.client.get('/leaderboards')
         self.assertEqual(resp.status_code, 200)
         self.assertNotIn('myname', resp.context)
+        self.assertNotIn('myclan', resp.context)
 
 
 class LeaderboardTests(TestCase):
@@ -117,6 +118,49 @@ class LeaderboardTests(TestCase):
         board = next(L for L in resp.context['leaderboards']
                      if L['id'] == 'maxscore')
         self.assertEqual([p['name'] for p in board['players']], ['a'])
+
+    def _on_the_score_board(self, *entities):
+        # Highest Scoring Game is then the only board with entries
+        src = Source.objects.get(server='hdf')
+        for entity, member in entities:
+            entity.total_games = 1
+            entity.max_score_game = make_game(member, src, won=False,
+                                              mines_soko=False,
+                                              death='killed by a newt',
+                                              points=500)
+            entity.save()
+
+    def test_viewers_clan_is_bold_like_their_name(self):
+        mine = Clan.objects.create(name='Testers')
+        other = Clan.objects.create(name='Others')
+        alice = login_player(self.client, 'alice', mine)
+        bob = Player.objects.create(name='bob', clan=mine)
+        carol = Player.objects.create(name='carol', clan=other)
+        self._on_the_score_board((alice, alice), (bob, bob), (carol, carol),
+                                 (mine, alice), (other, carol))
+        with self.assertNoLogs(level='ERROR'):
+            resp = self.client.get('/leaderboards')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual(resp.context['myclan'], 'Testers')
+        html = resp.content.decode()
+        self.assertInHTML('<b><a href="/player/alice">alice</a></b>', html)
+        # the clan board's row and the Clan column of alice's and bob's rows
+        self.assertInHTML('<b><a href="/clan/Testers">Testers</a></b>', html,
+                          count=3)
+        self.assertInHTML('<b><a href="/clan/Others">Others</a></b>', html,
+                          count=0)
+        self.assertInHTML('<a href="/clan/Others">Others</a>', html, count=2)
+
+    def test_clanless_viewer_bolds_no_clan(self):
+        clan = Clan.objects.create(name='Testers')
+        alice = login_player(self.client, 'alice')
+        bob = Player.objects.create(name='bob', clan=clan)
+        self._on_the_score_board((alice, alice), (bob, bob), (clan, bob))
+        resp = self.client.get('/leaderboards')
+        self.assertEqual(resp.context['myname'], 'alice')
+        self.assertNotIn('myclan', resp.context)
+        self.assertInHTML('<b><a href="/clan/Testers">Testers</a></b>',
+                          resp.content.decode(), count=0)
 
 
 class TrophyGridGamesViewTests(TestCase):
