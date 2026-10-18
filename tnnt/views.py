@@ -129,6 +129,21 @@ def looking_for_clan_players():
     return Player.objects.filter(looking_for_clan=True, clan__isnull=True) \
                          .order_by('name')
 
+def clan_places(clan):
+    # A clan's members plus its pending invitations may not exceed
+    # MAX_CLAN_PLAYERS, so that every invitation it sends can be accepted.
+    # (Joining or creating a clan withdraws a player's other invitations, so
+    # pending invitations are to players who can accept them.)
+    members = Player.objects.filter(clan=clan).count()
+    invites = clan.invitees.exclude(clan=clan).count()
+    return {
+        'members': members,
+        'invites': invites,
+        'used': members + invites,
+        'max': settings.MAX_CLAN_PLAYERS,
+        'free': max(0, settings.MAX_CLAN_PLAYERS - members - invites),
+    }
+
 class HomepageView(TemplateView):
     template_name = 'index.html'
 
@@ -998,6 +1013,7 @@ class ClanMgmtView(View):
             kwargs['members'] = Player.objects.filter(clan=clan).order_by('-clan_admin','name')
             # Exclude players who are already members from the invitees list
             kwargs['invitees'] = clan.invitees.exclude(clan=clan).order_by('name')
+            kwargs['clan_places'] = clan_places(clan)
         kwargs['invites'] = player.invites.all().order_by('name')
 
         kwargs['clan_freeze'] = self.clan_freeze_in_effect()
@@ -1144,6 +1160,9 @@ class ClanMgmtView(View):
         player.clan_admin = True
         player.looking_for_clan = False
         player.save()
+        # a player in a clan can't accept invitations; withdraw them so they
+        # don't take up places in the clans that sent them
+        player.invites.clear()
         logger.info('%s created clan %s', player.name, newclan.name)
 
     # Helper function triggered when a invite-to-clan POST request comes in
@@ -1180,8 +1199,32 @@ class ClanMgmtView(View):
             ctx['errmsg'] = "You can't invite people because you aren't a clan admin"
             return
 
-        # if we got here, we're good to attempt the invite
         invitee_name = invite_form.cleaned_data['invitee']
+        known = Player.objects.filter(name=invitee_name).first()
+        if known is not None and known.clan_id == player.clan_id:
+            ctx['errmsg'] = '%s is already in your clan' % (known.name)
+            return
+        if known is not None and \
+                known.invites.filter(id=player.clan_id).exists():
+            # already invited: nothing to do, and no extra place taken
+            return
+
+        # members plus pending invitations may not exceed the clan size cap
+        # (checked before find_player, which may create a Player row)
+        places = clan_places(player.clan)
+        if places['free'] == 0:
+            logger.info('%s attempted to invite %s with no free places in '
+                        'clan %s', player.name, invitee_name, player.clan.name)
+            if places['members'] >= places['max']:
+                ctx['errmsg'] = 'Your clan is full'
+            else:
+                ctx['errmsg'] = ('Your clan has no free places: members '
+                                 'plus pending invitations cannot exceed '
+                                 '%d. Rescind an invitation to invite '
+                                 'someone else.' % (places['max']))
+            return
+
+        # if we got here, we're good to attempt the invite
         try:
             # retrieve player if exists in our database, if not
             # but they are in dgl database, create the player in our
@@ -1358,13 +1401,15 @@ class ClanMgmtView(View):
         invalidate_trophy_grid_cache(player)
         invalidate_trophy_grid_cache(newclan)
 
-        # Remove the invite relationship from both sides
-        # This is needed so the player doesn't show up in the invitees list
-        # after joining the clan
-        player.invites.remove(newclan)
-        newclan.invitees.remove(player)
-        logger.info('%s accepted invite to clan %s',
-                    player.name, newclan.name)
+        # Withdraw all of the player's invitations, this one included: a
+        # player in a clan can't accept any, and the other clans get the
+        # places back (see clan_places)
+        withdrawn = [c.name for c in player.invites.exclude(id=newclan.id)]
+        player.invites.clear()
+        logger.info('%s accepted invite to clan %s', player.name, newclan.name)
+        if withdrawn:
+            logger.info('%s joined a clan; withdrew invitations from %s',
+                        player.name, ', '.join(withdrawn))
 
     # Helper function for common logic between rescinding, making admin, and
     # kicking - all of these take a player ID and require similar checks to be made.

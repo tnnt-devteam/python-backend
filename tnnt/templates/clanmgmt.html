@@ -175,11 +175,25 @@
           {% endfor %}
         </ul>
         {% if me.clan_admin and not clan_freeze %}
-          <form method="post">
-              {% csrf_token %}
-              {{ invite_member_form }}
-              <button name="invite" type="submit">Invite</button>
-          </form>
+          <p>
+            Places used: {{ clan_places.used }} of {{ clan_places.max }}
+            ({{ clan_places.members }} member{{ clan_places.members|pluralize }},
+            {{ clan_places.invites }} pending invitation{{ clan_places.invites|pluralize }})
+          </p>
+          {% if clan_places.free %}
+            <form method="post">
+                {% csrf_token %}
+                {{ invite_member_form }}
+                <button name="invite" type="submit">Invite</button>
+            </form>
+          {% elif clan_places.members >= clan_places.max %}
+            <p>Your clan is full.</p>
+          {% else %}
+            <p>
+              Your clan has no free places. Rescind an invitation to invite
+              someone else.
+            </p>
+          {% endif %}
         {% endif %}
 
         {% if me.clan_admin and lfc_open %}
@@ -192,7 +206,7 @@
                   {% include "plink.html" with name=othplayer.name %}
                   {% if othplayer.id in lfc_invited_ids %}
                     (invited)
-                  {% else %}
+                  {% elif clan_places.free %}
                     <form method="post" class="disguised-button">
                       {% csrf_token %}
                       <input name="invitee" type="hidden" value="{{ othplayer.name }}" />
