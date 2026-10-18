@@ -119,7 +119,8 @@ class Convert2025Tests(TestCase):
         values = {'conduct': 0, 'achieve': 1 << 13 | 1 << 14}
         for define in ('A_IDENTIFIED_ALL_WANDS', 'A_NPC_DEATHMATCH',
                        'A_DID_PURE_SOKOBAN', 'A_FOUND_MINES_ALTAR',
-                       'A_REACHED_LEVEL_30'):
+                       'A_CROWNED', 'A_REACHED_LEVEL_30',
+                       'A_EXPELLED_FROM_QUEST'):
             field, bit = old_achievements[define]
             values[field] = values.get(field, 0) | 1 << bit
         for shortname in ('food', 'elbe', 'pets', 'deaf'):
@@ -151,7 +152,8 @@ class Convert2025Tests(TestCase):
         self.assertEqual(
             set(game.achievements.values_list('define', flat=True)),
             {'A_IDENTIFIED_ALL_WANDS', 'A_NPC_DEATHMATCH',
-             'A_COMPLETED_PURE_SOKOBAN', 'A_ENTERED_MINETOWN'})
+             'A_COMPLETED_PURE_SOKOBAN', 'A_ENTERED_MINETOWN',
+             'A_GOT_CROWNED'})
         self.assertEqual(
             set(game.conducts.values_list('shortname', flat=True)),
             {'food', 'elbe', 'pets', 'deaf', 'nude'})

@@ -409,12 +409,64 @@ div.achieve-top table tbody tr:last-child {
   font-weight: 600;
 }
 
-#achievements-table td {
+#achievements-table td,
+table.ach-table td {
   max-width: 32em;
 }
 
-#achievements-table tbody tr:hover {
+#achievements-table tbody tr:hover,
+table.ach-table tbody tr:hover {
   background-color: rgba(34, 51, 85, 0.5);
+}
+
+/* /achievements: one table per category, each as wide as the page's tables
+ * may be and with the same column widths, so the columns line up down the
+ * page */
+table.ach-table {
+  width: 70%;
+  table-layout: fixed;
+}
+
+col.ach-col-id {
+  width: 4em;
+}
+
+col.ach-col-name {
+  width: 30%;
+}
+
+col.ach-col-count {
+  width: 6em;
+}
+
+/* the list of categories at the top of /achievements */
+nav.ach-categories {
+  max-width: 70%;
+  margin-bottom: 0.5em;
+}
+
+nav.ach-categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.2em 1.5em;
+}
+
+nav.ach-categories li {
+  white-space: nowrap;
+}
+
+/* tall enough to tap */
+nav.ach-categories a {
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+.ach-category-count {
+  color: #99b;
 }
 
 #achieve-table-legend {
@@ -1468,6 +1520,23 @@ main > .table-scroll > table {
 
   main > .table-scroll > table {
     max-width: none;
+  }
+
+  /* the /achievements tables size to their content again and scroll
+   * sideways like any other wide table */
+  table.ach-table {
+    width: auto;
+    table-layout: auto;
+  }
+
+  col.ach-col-id,
+  col.ach-col-name,
+  col.ach-col-count {
+    width: auto;
+  }
+
+  nav.ach-categories {
+    max-width: 100%;
   }
 
   /* Nothing in the page may be wider than the screen. :where() gives this

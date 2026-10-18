@@ -1,3 +1,4 @@
+import re
 import sqlite3
 from datetime import datetime, timedelta, timezone
 from unittest import mock
@@ -307,6 +308,64 @@ class TrophiesPageTests(TestCase):
         self.assertEqual(self.categories()['Achievement Trophies'],
                          list(achievement_count_trophies)
                          + ['All Achievements'])
+
+
+class AchievementsPageTests(TestCase):
+    # /achievements has one section per category of the game's #achievements
+    fixtures = ['achievements', 'sources']
+
+    def in_game_order(self):
+        return sorted(Achievement.objects.values_list('ingameid', 'category'),
+                      key=lambda row: int(row[0]))
+
+    def test_every_achievement_has_a_category(self):
+        # an achievements.yaml made by a game tool that predates the
+        # categories loads with every category blank
+        self.assertFalse(Achievement.objects.filter(category='').exists())
+
+    def test_each_category_is_one_run_in_game_order(self):
+        rows = self.in_game_order()
+        runs = [category for i, (_, category) in enumerate(rows)
+                if i == 0 or rows[i - 1][1] != category]
+        self.assertEqual(len(runs), len(set(runs)))
+
+    def test_sections_list_every_achievement_once_in_game_order(self):
+        resp = self.client.get('/achievements')
+        self.assertEqual(resp.status_code, 200)
+        sections = resp.context['categories']
+        self.assertEqual(
+            [(ach['ingameid'], section['name']) for section in sections
+             for ach in section['achievements']],
+            list(self.in_game_order()))
+        self.assertEqual(
+            len(sections),
+            Achievement.objects.values('category').distinct().count())
+
+    def test_category_links_lead_to_the_headings(self):
+        html = self.client.get('/achievements').content.decode()
+        ids = re.findall(r'\bid="([^"]+)"', html)
+        self.assertEqual(len(ids), len(set(ids)))
+        headings = re.findall(r'<h3 class="subhead" id="([^"]+)">', html)
+        self.assertEqual(re.findall(r'<a href="#([^"]+)">', html), headings)
+        self.assertEqual(
+            len(headings),
+            Achievement.objects.values('category').distinct().count())
+
+    def test_counts_and_names(self):
+        clan = Clan.objects.create(name='Testers')
+        alice = Player.objects.create(name='alice', clan=clan)
+        game = make_game(alice, Source.objects.get(server='hdf'))
+        game.achievements.add(
+            Achievement.objects.get(define='A_ENTERED_MINES'))
+        sections = self.client.get('/achievements').context['categories']
+        rows = {ach['define']: ach for section in sections
+                for ach in section['achievements']}
+        self.assertEqual((rows['A_ENTERED_MINES']['nplayers'],
+                          rows['A_ENTERED_MINES']['nclans'],
+                          rows['A_ENTERED_MINES']['player_list'],
+                          rows['A_ENTERED_MINES']['clan_list']),
+                         (1, 1, ['alice'], ['Testers']))
+        self.assertEqual(rows['A_ENTERED_MINETOWN']['nplayers'], 0)
 
 
 class AdminPanelTests(TestCase):

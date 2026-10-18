@@ -17,8 +17,31 @@
 <main>
 
 <h2>Achievements</h2>
+
+{# the categories of the game's #achievements, in the game's order #}
+<nav class="ach-categories" aria-label="Achievement categories">
+  <ul>
+    {% for category in categories %}
+      {% if category.name %}
+        <li><a href="#{{ category.slug }}">{{ category.name }}</a>&nbsp;<span class="ach-category-count">({{ category.achievements|length }})</span></li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>
+
+{% for category in categories %}
+{% if category.name %}
+<h3 class="subhead" id="{{ category.slug }}">{{ category.name }}</h3>
+{% endif %}
 <div class="table-scroll">
-<table id="achievements-table" class="sortable default-sort-first">
+<table class="ach-table sortable default-sort-first">
+  <colgroup>
+    <col class="ach-col-id">
+    <col class="ach-col-name">
+    <col>
+    <col class="ach-col-count">
+    <col class="ach-col-count">
+  </colgroup>
   <thead>
     <tr class="framed">
       <th>ID</th>
@@ -29,7 +52,7 @@
     </tr>
   </thead>
   <tbody>
-    {% for ach in achievements %}
+    {% for ach in category.achievements %}
       <tr id="{{ ach.define }}">
         <td class="ach-id">#{{ ach.ingameid }}</td>
         <td class="ach-name">{{ ach.name }}</td>
@@ -71,6 +94,7 @@
   </tbody>
 </table>
 </div>
+{% endfor %}
 
 </main>
 

@@ -9,6 +9,7 @@ from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
 from scoreboard.trophy_defs import feature_trophies, achievement_count_trophies
 from scoreboard.api_views import ratelimit_exclude_localhost
 from django.utils.decorators import method_decorator
+from django.utils.text import slugify
 from tnnt.forms import CreateClanForm, InviteMemberForm, SetMessageForm, \
     LookingForClanForm
 from django.http import HttpResponse, HttpResponseRedirect
@@ -815,12 +816,15 @@ class AchievementsView(TemplateView):
     def get_context_data(self, **kwargs):
         from collections import defaultdict
 
-        achievements_data = []
+        # one section per category, in the game's order: each category's
+        # achievements are contiguous in ingameid order (see the
+        # Achievement model)
+        categories = []
 
-        achievements = Achievement.objects.annotate(
+        achievements = sorted(Achievement.objects.annotate(
             nplayers=Count('game__player', distinct=True),
             nclans=Count('game__player__clan', distinct=True)
-        ).order_by('-nplayers', '-nclans', 'id')
+        ), key=lambda ach: int(ach.ingameid))
 
         # Pre-fetch all achievement-player relationships in bulk (1 query)
         player_achievements = Player.objects.filter(
@@ -858,7 +862,14 @@ class AchievementsView(TemplateView):
             # Sort by clan_id descending and take first 12 names
             clan_list = [name for cid, name in sorted(clans, key=lambda x: x[0], reverse=True)[:12]]
 
-            achievements_data.append({
+            if not categories or categories[-1]['name'] != ach.category:
+                categories.append({
+                    'name': ach.category,
+                    # anchor for the category list at the top of the page
+                    'slug': slugify(ach.category),
+                    'achievements': [],
+                })
+            categories[-1]['achievements'].append({
                 'ingameid': ach.ingameid,
                 'name': ach.name,
                 'description': ach.description,
@@ -871,7 +882,7 @@ class AchievementsView(TemplateView):
                 'clans_more': max(0, total_clans - 12),
             })
 
-        kwargs['achievements'] = achievements_data
+        kwargs['categories'] = categories
         return kwargs
 
 class UniqueDeathsView(TemplateView):

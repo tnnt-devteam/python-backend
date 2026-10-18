@@ -40,6 +40,10 @@ class Achievement(models.Model):
     xlogfield   = models.CharField(max_length=16)
     # xlog bit position this conduct occupies (assuming "1 << bit")
     bit         = models.IntegerField()
+    # the category the game lists it under in #achievements (BEGIN_CATEGORY
+    # in its tnnt_achievements.h); achievements of a category are contiguous
+    # in ingameid order
+    category    = models.CharField(max_length=64, default='', db_default='')
 
     class Meta:
         # no two achievements should have the same xlogfield and bit

@@ -113,6 +113,7 @@ OLD_FORMATS = {
 ACHIEVEMENT_SUCCESSORS = {
     # the same achievement under a new define
     'A_DID_PURE_SOKOBAN': 'A_COMPLETED_PURE_SOKOBAN',
+    'A_CROWNED': 'A_GOT_CROWNED',
     # "Step onto the Minetown altar" became "Enter Minetown" under the same
     # name, Back To Civilisation
     'A_FOUND_MINES_ALTAR': 'A_ENTERED_MINETOWN',
