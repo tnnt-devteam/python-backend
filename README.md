@@ -159,7 +159,10 @@ scale with the rest). The games are renamed to the accounts in the test
 dgamelaunch sqlite database, three per server: alice/bob/chuck on us,
 david/eve/gimli on eu, janet/omghax/sally on au (with DEBUG=True the site
 logs in against that database). Dumplog links do not work for the renamed
-games.
+games. The records are converted to the record format of the current game
+(version 5.0.0, its achievement and conduct bits, the `tnntconduct` field),
+so they decode to the achievements and conducts they had in 2025, less the
+few the game has since removed.
 
 The games are from the previous tournament, so `pollxlogs --file` skips
 them. Load them with `load_test_xlogs`, which imports them with the
@@ -176,6 +179,12 @@ then those players unless they have a login, a clan, an invite, a
 tournament game or a game in progress. On the production server, restart
 tnntbot afterwards so that it announces those names normally again.
 
-To rebuild the files from another year's archive, once that year's
-fixtures are in place, run `./create_test_xlogs.py <year>` with the
-virtualenv active.
+The game moves achievement and conduct bits whenever its lists change,
+so rebuild the files after every resync of the fixtures, with the
+virtualenv active:
+```shell
+$ ./create_test_xlogs.py 2025
+```
+Any other year's archive works too. A year whose records were written by
+an older game must be listed in `OLD_FORMATS` in that script, with the
+commit whose fixtures decoded that tournament.

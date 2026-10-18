@@ -11,7 +11,10 @@ accounts in dgamelaunch_test.db (three per server). Each file holds 100
 ascensions, 300 scummed games, 1950 other games with TNNT achievements
 and 650 games without, and no game appears in more than one file.
 
-Only the name= and server= fields of a record are changed; everything
+The name= and server= fields of a record are changed. A record written
+by an older game (a year in OLD_FORMATS) is also converted to the record
+format of the current game, so that it decodes to the same achievements
+and conducts under today's fixtures; see RecordConverter. Everything
 else, field order included, is copied as it is. Games are drawn from all
 three servers and filtered the way pollxlogs filters them (required
 fields present, no wizard or explore mode, inside November of <year>).
@@ -19,15 +22,20 @@ No two selected games share a starttime: the games are handed to other
 players, and Player.get_streaks() assumes that a player never has two
 games that started in the same second.
 
-The output is the same for a given year and seed. Run it with the
-virtualenv active. It uses the SQLite test settings, so it needs neither
-secrets.sh nor the database. Load the files into the scoreboard with
-`./manage.py load_test_xlogs`.
+The output is the same for a given year, seed and set of fixtures. The
+game moves achievement and conduct bits whenever its lists change, so
+rerun this after every resync of the fixtures with the game. Run it with
+the virtualenv active. It uses the SQLite test settings, so it needs
+neither secrets.sh nor the database, but converting an older year reads
+that year's fixtures from the git history of this repository. Load the
+files into the scoreboard with `./manage.py load_test_xlogs`.
 """
 
 import argparse
 import os
 import random
+import re
+import subprocess
 import sys
 from collections import Counter
 from datetime import datetime, timezone
@@ -59,6 +67,63 @@ GAMES_PER_FILE = sum(count for _, count in TARGETS)
 
 # pollxlogs counts a game as won when this achieve bit is set
 ACHIEVE_ASCENDED = 0x100
+
+# The current game, whose record format the files are written in: the
+# version it writes, and its top-level dungeons in the order of its
+# dat/dungeon.lua, which is the order deathdnum counts in (from 0).
+# Re-check both on every resync with the game, like TUTORIAL_DNUM in
+# pollxlogs.py.
+GAME_VERSION = '5.0.0'
+GAME_DUNGEONS = (
+    'The Dungeons of Doom', 'Gehennom', 'The Gnomish Mines', 'The Quest',
+    'Sokoban', 'Fort Ludios', "Vlad's Tower", 'The Elemental Planes',
+    'The Tutorial', 'DevTeam Office', 'Deathmatch Arena',
+    'robotfindskitten',
+)
+
+# Archive years whose records were written by an older game, and what it
+# takes to convert them:
+#   fixtures      the commit of this repository whose achievements.yaml
+#                 and conducts.yaml decoded that tournament
+#   dungeons      that game's top-level dungeons, in deathdnum order
+#   achieve_bits  how many low bits of its achieve field mean the same in
+#                 the current game; the bits above them are cleared
+# A year that is not listed is copied as it is. Add it here once the
+# game's achievements or conducts have moved since its tournament.
+OLD_FORMATS = {
+    # NetHack 3.6.7 based. Its achieve bit 14 was "completed the
+    # Deathmatch", which the TNNT achievement Thunderdome also records; in
+    # 5.0 that bit means "entered the Gnomish Mines".
+    2025: {
+        # the last change to the fixtures before the 2025 tournament
+        'fixtures': '8b417ad',
+        'dungeons': (
+            'The Dungeons of Doom', 'Gehennom', 'The Gnomish Mines',
+            'The Quest', 'Sokoban', 'Fort Ludios', 'DevTeam Office',
+            'Deathmatch Arena', 'robotfindskitten', "Vlad's Tower",
+            'The Elemental Planes',
+        ),
+        'achieve_bits': 14,
+    },
+}
+
+# Achievements the current game no longer has, mapped to a current one
+# that earning them proves: old define -> current define. Only certain
+# successors belong here, never a likely one.
+ACHIEVEMENT_SUCCESSORS = {
+    # the same achievement under a new define
+    'A_DID_PURE_SOKOBAN': 'A_COMPLETED_PURE_SOKOBAN',
+    # "Step onto the Minetown altar" became "Enter Minetown" under the same
+    # name, Back To Civilisation
+    'A_FOUND_MINES_ALTAR': 'A_ENTERED_MINETOWN',
+}
+
+FIXTURE_FILES = {
+    'achievements': 'scoreboard/fixtures/achievements.yaml',
+    'conducts': 'scoreboard/fixtures/conducts.yaml',
+}
+
+TNNTACHIEVE_FIELD = re.compile(r'tnntachieve(\d+)')
 
 
 def setup_django():
@@ -126,6 +191,221 @@ def read_games(year):
     return games
 
 
+def read_fixture(name, revision=None):
+    """
+    Return the records of a fixture as a list of field dicts: the current
+    file, or the file as it was in a commit of this repository.
+    """
+    import yaml
+
+    path = FIXTURE_FILES[name]
+    if revision is None:
+        try:
+            with (BASE_DIR / path).open(encoding='utf-8') as fixture:
+                text = fixture.read()
+        except OSError as e:
+            sys.exit('Cannot read %s: %s' % (path, e))
+    else:
+        try:
+            text = subprocess.run(
+                ['git', '-C', str(BASE_DIR), 'show',
+                 '%s:%s' % (revision, path)],
+                capture_output=True, text=True, check=True).stdout
+        except (OSError, subprocess.CalledProcessError) as e:
+            sys.exit('Cannot read %s as of commit %s: %s'
+                     % (path, revision, getattr(e, 'stderr', '') or e))
+    return [record['fields'] for record in yaml.safe_load(text)]
+
+
+def bit_positions(revision=None):
+    """
+    Return (achievements, conducts) for the fixtures of a commit, or the
+    current ones: achievements maps the define of each achievement to its
+    (xlogfield, bit), conducts the shortname of each conduct.
+    """
+    achievements = {a['define']: (a['xlogfield'], a['bit'])
+                    for a in read_fixture('achievements', revision)}
+    conducts = {c['shortname']: (c['xlogfield'], c['bit'])
+                for c in read_fixture('conducts', revision)}
+    return achievements, conducts
+
+
+class RecordConverter:
+    """
+    Converts records written by an older game to the record format of the
+    current game. A converted record says what the old one said and no
+    more:
+
+    - version is the current game's, and deathdnum is the number of the
+      same dungeon in the current game
+    - each TNNT achievement moves to the bit of the achievement with the
+      same define (or its ACHIEVEMENT_SUCCESSORS successor) in the
+      current fixtures; any other achievement the current game no longer
+      has is dropped
+    - each conduct moves to the bit of the conduct with the same
+      shortname, in conduct or tnntconduct. A conduct that the old game
+      did not track is recorded as broken, as is the vanilla "obeyed
+      Sokoban rules" bit, which the scoreboard does not track
+    - achieve keeps only the bits that mean the same in both games
+
+    tnntconduct is added after achieve, and the record ends with as many
+    tnntachieve fields as the current game writes. The fields that only
+    the current game writes and that the old record has nothing for
+    (achieveX, conductX, gold, wish_cnt, arti_wish_cnt, bones, rerolls)
+    are left out; the scoreboard does not read them.
+    """
+
+    def __init__(self, old_format, old_positions, new_positions):
+        old_achievements, old_conducts = old_positions
+        new_achievements, new_conducts = new_positions
+
+        # (old field, old bit) -> (new field, new bit)
+        self.achievements = {}
+        self.dropped = {}
+        for define, position in old_achievements.items():
+            current = define
+            if define not in new_achievements:
+                current = ACHIEVEMENT_SUCCESSORS.get(define)
+            if current in new_achievements:
+                self.achievements[position] = new_achievements[current]
+            else:
+                self.dropped[position] = define
+        self.successors = sorted(
+            '%s -> %s' % (define, ACHIEVEMENT_SUCCESSORS[define])
+            for define in old_achievements
+            if define not in new_achievements
+            and ACHIEVEMENT_SUCCESSORS.get(define) in new_achievements)
+
+        self.achieve_bits = old_format['achieve_bits']
+        self.conducts = {}
+        for shortname, position in old_conducts.items():
+            if shortname not in new_conducts:
+                sys.exit('The current game has no conduct "%s"; decide '
+                         'what becomes of it before converting'
+                         % shortname)
+            new = new_conducts[shortname]
+            # conducts kept in achieve (Zen, Nudist) are copied with the
+            # achieve bits, so they must not move
+            if 'achieve' in (position[0], new[0]) and (
+                    position != new or position[1] >= self.achieve_bits):
+                sys.exit('Conduct "%s" moves from %s bit %d to %s bit %d; '
+                         'RecordConverter cannot move a bit within achieve'
+                         % ((shortname,) + position + new))
+            self.conducts[position] = new
+        self.untracked = sorted(set(new_conducts) - set(old_conducts))
+        fields = {field for field, _ in new_conducts.values()}
+        if not fields <= {'achieve', 'conduct', 'tnntconduct'}:
+            sys.exit('The current conducts use the unknown field(s) %s'
+                     % ', '.join(sorted(fields - {'achieve', 'conduct',
+                                                  'tnntconduct'})))
+
+        # bits each old field may have set, to catch a wrong fixtures commit
+        self.known_bits = Counter()
+        for field, bit in list(old_achievements.values()) + [
+                position for position in old_conducts
+                .values() if position[0] != 'achieve']:
+            self.known_bits[field] |= 1 << bit
+
+        try:
+            self.dungeons = [GAME_DUNGEONS.index(name)
+                             for name in old_format['dungeons']]
+        except ValueError as e:
+            sys.exit('A dungeon of the old game is not in GAME_DUNGEONS: %s'
+                     % e)
+
+        # the game writes NUM_TNNT_ACHIEVEMENTS / 64 + 1 tnntachieve fields
+        self.tnntachieve_fields = len(new_achievements) // 64 + 1
+        for field, _ in new_achievements.values():
+            if int(TNNTACHIEVE_FIELD.fullmatch(field).group(1)) >= \
+                    self.tnntachieve_fields:
+                sys.exit('Achievement field %s is beyond the %d the game '
+                         'writes' % (field, self.tnntachieve_fields))
+
+        self.dropped_seen = Counter()
+
+    def describe(self):
+        """A summary of the conversion, for the console."""
+        return '\n'.join([
+            'Converting to the %s record format: %d achievements kept, %d '
+            'of them as a successor (%s); %d dropped (%s)' % (
+                GAME_VERSION, len(self.achievements), len(self.successors),
+                ', '.join(self.successors) or '-', len(self.dropped),
+                ', '.join(sorted(self.dropped.values())) or '-'),
+            '  %d conducts kept; %d not tracked by the old game, recorded '
+            'as broken: %s' % (len(self.conducts), len(self.untracked),
+                               ', '.join(self.untracked) or '-'),
+        ])
+
+    def convert(self, fields):
+        """Return a record (a list of "key=value" fields), converted."""
+        from scoreboard.parsers import parse_xlog_line
+
+        entry = parse_xlog_line('\t'.join(fields))
+        if 'tnntconduct' in entry:
+            sys.exit('A record already has a tnntconduct field; is %s '
+                     'really an old format?' % entry.get('version'))
+        for field, known in self.known_bits.items():
+            unknown = entry.get(field, 0) & ~known
+            if unknown:
+                sys.exit('A record has %s bits 0x%x that the old fixtures '
+                         "don't define: %s" % (field, unknown,
+                                               '\t'.join(fields)[:200]))
+
+        values = {
+            'achieve': entry['achieve'] & ((1 << self.achieve_bits) - 1),
+            'conduct': 0,
+            'tnntconduct': 0,
+        }
+        for (field, bit), (new_field, new_bit) in self.conducts.items():
+            if new_field != 'achieve' and entry[field] >> bit & 1:
+                values[new_field] |= 1 << new_bit
+        tnntachieve = [0] * self.tnntachieve_fields
+        for (field, bit), (new_field, new_bit) in self.achievements.items():
+            if entry.get(field, 0) >> bit & 1:
+                index = int(TNNTACHIEVE_FIELD.fullmatch(new_field).group(1))
+                tnntachieve[index] |= 1 << new_bit
+        for (field, bit), define in self.dropped.items():
+            if entry.get(field, 0) >> bit & 1:
+                self.dropped_seen[define] += 1
+
+        converted = []
+        for field in fields:
+            key = field.partition('=')[0]
+            if TNNTACHIEVE_FIELD.fullmatch(key):
+                continue
+            if key == 'version':
+                field = 'version=%s' % GAME_VERSION
+            elif key == 'deathdnum':
+                try:
+                    field = 'deathdnum=%d' % self.dungeons[entry[key]]
+                except IndexError:
+                    sys.exit('A record has deathdnum=%d, which the old game '
+                             'did not have' % entry[key])
+            elif key in values:
+                field = '%s=0x%x' % (key, values[key])
+            converted.append(field)
+            if key == 'achieve':
+                converted.append('tnntconduct=0x%x' % values['tnntconduct'])
+        converted.extend('tnntachieve%d=0x%x' % item
+                         for item in enumerate(tnntachieve))
+        return converted
+
+
+def make_converter(year):
+    """
+    Return a RecordConverter for the year's archive, or None if its
+    records are already in the current game's format.
+    """
+    old_format = OLD_FORMATS.get(year)
+    if old_format is None:
+        return None
+    converter = RecordConverter(old_format,
+                                bit_positions(old_format['fixtures']),
+                                bit_positions())
+    print(converter.describe())
+    return converter
+
+
 def has_achievements(entry):
     """True if any of the game's tnntachieve bitfields is set."""
     return any(value for key, value in entry.items()
@@ -187,9 +467,13 @@ def player_sizes(count, players):
             for i in range(players)]
 
 
-def write_test_file(path, server, picks, rng):
-    """Hand the picked games to the server's test players and write them."""
+def write_test_file(path, server, picks, rng, converter=None):
+    """
+    Hand the picked games to the server's test players, convert them if
+    there is a converter, and write them.
+    """
     from scoreboard.models import is_scummed
+    from scoreboard.parsers import parse_xlog_line
 
     rng.shuffle(picks)
     records = []
@@ -198,6 +482,8 @@ def write_test_file(path, server, picks, rng):
     for name, size in zip(USERS[server],
                           player_sizes(len(picks), len(USERS[server]))):
         for entry, fields in picks[offset:offset + size]:
+            if converter:
+                fields = converter.convert(fields)
             records.append((entry, rename(fields, name, server)))
             per_player[name] += 1
         offset += size
@@ -210,13 +496,16 @@ def write_test_file(path, server, picks, rng):
     except OSError as e:
         sys.exit('Cannot write %s: %s' % (path, e))
 
+    # categories are those the games were picked by; the rest describes
+    # the records as written
     categories = Counter(category(entry) for entry, _ in records)
+    written = [parse_xlog_line(line) for _, line in records]
     print('%s: %d games' % (path, len(records)))
     print('  by category: %s' % ', '.join(
         '%s %d' % (name, categories[name]) for name, _ in TARGETS))
     print('  with any achievement bits: %d, scummed: %d' % (
-        sum(1 for entry, _ in records if has_achievements(entry)),
-        sum(1 for entry, _ in records if is_scummed(entry))))
+        sum(1 for entry in written if has_achievements(entry)),
+        sum(1 for entry in written if is_scummed(entry))))
     print('  per player: %s' % ', '.join(
         '%s %d' % item for item in per_player.items()))
 
@@ -237,6 +526,7 @@ def main():
         sys.exit('Output directory %s does not exist' % args.out_dir)
 
     setup_django()
+    converter = make_converter(args.year)
     rng = random.Random(args.seed)
     pools, dropped = build_pools(read_games(args.year), rng)
     print('Pools: %s; %d games dropped for a shared starttime' % (
@@ -256,7 +546,11 @@ def main():
         for name, count in TARGETS:
             picks.extend(pools[name][i * count:(i + 1) * count])
         write_test_file(args.out_dir / ('test-%s.xlog' % server), server,
-                        picks, rng)
+                        picks, rng, converter)
+
+    if converter and converter.dropped_seen:
+        print('Achievements dropped (games): %s' % ', '.join(
+            '%s %d' % item for item in sorted(converter.dropped_seen.items())))
 
 
 if __name__ == '__main__':
