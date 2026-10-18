@@ -367,6 +367,7 @@ table.clans tbody tr:hover {
 
 div.achieve-top {
   margin-bottom: 2em;
+  width: 70%;
 }
 
 div.achieve-top table tbody tr {
@@ -437,6 +438,28 @@ col.ach-col-name {
 
 col.ach-col-count {
   width: 6em;
+}
+
+/* the same tables on player and clan pages, as wide as the achievements
+ * block, with the status and Clan Members columns */
+div.achieve-top table.ach-table {
+  width: 100%;
+}
+
+div.achieve-top h3.subhead {
+  text-align: center;
+}
+
+div.achieve-top nav.ach-categories {
+  max-width: none;
+}
+
+col.ach-col-status {
+  width: 2.5em;
+}
+
+col.ach-col-members {
+  width: 9em;
 }
 
 /* the list of categories at the top of /achievements */
@@ -1524,14 +1547,22 @@ main > .table-scroll > table {
 
   /* the /achievements tables size to their content again and scroll
    * sideways like any other wide table */
-  table.ach-table {
+  table.ach-table,
+  div.achieve-top table.ach-table {
     width: auto;
     table-layout: auto;
   }
 
   col.ach-col-id,
   col.ach-col-name,
-  col.ach-col-count {
+  col.ach-col-count,
+  col.ach-col-status,
+  col.ach-col-members {
+    width: auto;
+  }
+
+  /* the player/clan achievements block sizes to its content again */
+  div.achieve-top {
     width: auto;
   }
 

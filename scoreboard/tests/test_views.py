@@ -343,7 +343,7 @@ class AchievementsPageTests(TestCase):
 
     def test_category_links_lead_to_the_headings(self):
         html = self.client.get('/achievements').content.decode()
-        ids = re.findall(r'\bid="([^"]+)"', html)
+        ids = re.findall(r'\sid="([^"]+)"', html)
         self.assertEqual(len(ids), len(set(ids)))
         headings = re.findall(r'<h3 class="subhead" id="([^"]+)">', html)
         self.assertEqual(re.findall(r'<a href="#([^"]+)">', html), headings)
@@ -366,6 +366,61 @@ class AchievementsPageTests(TestCase):
                           rows['A_ENTERED_MINES']['clan_list']),
                          (1, 1, ['alice'], ['Testers']))
         self.assertEqual(rows['A_ENTERED_MINETOWN']['nplayers'], 0)
+
+
+class ProfileAchievementsTests(TestCase):
+    # player and clan pages list the achievements in the same categories as
+    # /achievements, with how many of each category were achieved
+    fixtures = ['achievements', 'conducts', 'sources', 'trophies']
+
+    def setUp(self):
+        self.clan = Clan.objects.create(name='Testers')
+        alice = Player.objects.create(name='alice', clan=self.clan)
+        game = make_game(alice, Source.objects.get(server='hdf'))
+        game.achievements.add(*Achievement.objects.filter(
+            define__in=['A_ENTERED_MINES', 'A_ENTERED_MINETOWN']))
+        self.category = Achievement.objects.get(
+            define='A_ENTERED_MINES').category
+
+    def check_page(self, url):
+        resp = self.client.get(url)
+        self.assertEqual(resp.status_code, 200)
+        sections = resp.context['achievement_categories']
+        self.assertEqual(
+            [(ach['ingameid'], section['name']) for section in sections
+             for ach in section['achievements']],
+            sorted(Achievement.objects.values_list('ingameid', 'category'),
+                   key=lambda row: int(row[0])))
+        self.assertEqual({section['name']: section['obtained']
+                          for section in sections if section['obtained']},
+                         {self.category: 2})
+        html = resp.content.decode()
+        ids = re.findall(r'\sid="([^"]+)"', html)
+        self.assertEqual(len(ids), len(set(ids)))
+        headings = re.findall(r'<h3 class="subhead" id="([^"]+)">', html)
+        self.assertEqual(len(headings), len(sections))
+        self.assertEqual(
+            re.findall(r'<li data-section="([^"]+)"><a href="#\1">', html),
+            headings)
+        self.assertEqual(
+            re.findall(r'<section class="ach-section" data-section="([^"]+)">',
+                       html),
+            headings)
+        self.assertEqual(html.count('<tr id="A_'), Achievement.objects.count())
+        self.assertIn('(2/%d)' % Achievement.objects.filter(
+            category=self.category).count(), html)
+        return sections
+
+    def test_player_page(self):
+        self.check_page('/player/alice')
+
+    def test_clan_page(self):
+        sections = self.check_page('/clan/Testers')
+        rows = {ach['define']: ach for section in sections
+                for ach in section['achievements']}
+        self.assertEqual(rows['A_ENTERED_MINES']['clan_members_list'],
+                         ['alice'])
+        self.assertEqual(rows['A_GOT_LUCKSTONE']['clan_members_count'], 0)
 
 
 class AdminPanelTests(TestCase):

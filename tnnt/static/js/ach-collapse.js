@@ -1,16 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    // set up event listener for showing or hiding the achievements table
+    // set up event listener for showing or hiding the achievements tables
+    // (one per category, with the category links above them)
     var hider = document.getElementById('ach-hide');
     hider.addEventListener('click', function(event) {
-        var table = document.getElementById('achievements-table');
+        var sections = document.getElementById('ach-sections');
         var hider = document.getElementById('ach-hide');
-        if (table.style.display === 'none') {
-            table.style.display = 'block';
-            hider.textContent = '[hide table]';
+        if (sections.style.display === 'none') {
+            sections.style.display = '';
+            hider.textContent = '[hide tables]';
         }
         else {
-            table.style.display = 'none';
-            hider.textContent = '[show table]';
+            sections.style.display = 'none';
+            hider.textContent = '[show tables]';
         }
     });
 
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             var filterType = filterId.replace('ach-filter-', '');
 
             // Get all achievement rows
-            var rows = document.querySelectorAll('#achievements-table tbody tr');
+            var rows = document.querySelectorAll('.ach-section tbody tr');
 
             // Show/hide rows based on filter
             rows.forEach(function(row) {
@@ -47,6 +48,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
                     row.style.display = '';
                 } else {
                     row.style.display = 'none';
+                }
+            });
+
+            // Hide the categories with no rows left, and their links
+            document.querySelectorAll('.ach-section').forEach(function(section) {
+                var shown = Array.from(section.querySelectorAll('tbody tr'))
+                    .some(function(row) { return row.style.display !== 'none'; });
+                var display = shown ? '' : 'none';
+                section.style.display = display;
+                var link = document.querySelector(
+                    'nav.ach-categories li[data-section="' + section.dataset.section + '"]');
+                if (link) {
+                    link.style.display = display;
                 }
             });
         });

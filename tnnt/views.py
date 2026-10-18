@@ -145,6 +145,24 @@ def clan_places(clan):
         'free': max(0, settings.MAX_CLAN_PLAYERS - members - invites),
     }
 
+def achievement_categories(achievements):
+    # Groups achievement dicts, given in game (ingameid) order, into the
+    # categories the game lists them under in #achievements: one section
+    # per category on /achievements and on player and clan pages. Each
+    # category's achievements are contiguous in that order (see the
+    # Achievement model).
+    categories = []
+    for ach in achievements:
+        if not categories or categories[-1]['name'] != ach['category']:
+            categories.append({
+                'name': ach['category'],
+                # anchor for the category links at the top of the list
+                'slug': slugify(ach['category']),
+                'achievements': [],
+            })
+        categories[-1]['achievements'].append(ach)
+    return categories
+
 class HomepageView(TemplateView):
     template_name = 'index.html'
 
@@ -619,7 +637,9 @@ class SinglePlayerOrClanView(TemplateView):
         else:
             ach_annotate_kwargs['has_in_current_game'] = \
                 Exists(player.temp_achievements.filter(pk=OuterRef('pk')))
-        achievements = Achievement.objects.annotate(**ach_annotate_kwargs)
+        achievements = sorted(
+            Achievement.objects.annotate(**ach_annotate_kwargs),
+            key=lambda ach: int(ach.ingameid))
 
         # For clan pages, add info about which members earned each achievement
         if kwargs['isClan']:
@@ -651,18 +671,20 @@ class SinglePlayerOrClanView(TemplateView):
                     (item['id'], item['name'])
                 )
 
-            achievements_list = []
-            for ach in achievements:
-                ach_dict = {
-                    'pk': ach.pk,
-                    'ingameid': ach.ingameid,
-                    'name': ach.name,
-                    'description': ach.description,
-                    'define': ach.define,
-                    'obtained': ach.obtained,
-                    'has_in_current_game': ach.has_in_current_game,
-                }
+        achievements_list = []
+        for ach in achievements:
+            ach_dict = {
+                'pk': ach.pk,
+                'ingameid': ach.ingameid,
+                'name': ach.name,
+                'description': ach.description,
+                'define': ach.define,
+                'category': ach.category,
+                'obtained': ach.obtained,
+                'has_in_current_game': ach.has_in_current_game,
+            }
 
+            if kwargs['isClan']:
                 # Get unique members who have this achievement (from pre-fetched data)
                 all_members = completed_lookup[ach.pk] | temp_lookup[ach.pk]
                 total_members = len(all_members)
@@ -674,11 +696,16 @@ class SinglePlayerOrClanView(TemplateView):
                 ach_dict['clan_members_list'] = member_list
                 ach_dict['clan_members_more'] = max(0, total_members - 12)
 
-                achievements_list.append(ach_dict)
+            achievements_list.append(ach_dict)
 
-            kwargs['achievements'] = achievements_list
-        else:
-            kwargs['achievements'] = achievements
+        kwargs['achievements'] = achievements_list
+        categories = achievement_categories(achievements_list)
+        for category in categories:
+            # shown next to the category's link: achieved in a finished
+            # game, the same basis as the summary below the tables
+            category['obtained'] = sum(1 for ach in category['achievements']
+                                       if ach['obtained'])
+        kwargs['achievement_categories'] = categories
 
         # Format streak dates to ISO format (YYYY-MM-DD HH:MM) for display
         # This follows the same pattern as bulk_upd_games for consistency
@@ -816,10 +843,7 @@ class AchievementsView(TemplateView):
     def get_context_data(self, **kwargs):
         from collections import defaultdict
 
-        # one section per category, in the game's order: each category's
-        # achievements are contiguous in ingameid order (see the
-        # Achievement model)
-        categories = []
+        achievements_data = []
 
         achievements = sorted(Achievement.objects.annotate(
             nplayers=Count('game__player', distinct=True),
@@ -862,18 +886,12 @@ class AchievementsView(TemplateView):
             # Sort by clan_id descending and take first 12 names
             clan_list = [name for cid, name in sorted(clans, key=lambda x: x[0], reverse=True)[:12]]
 
-            if not categories or categories[-1]['name'] != ach.category:
-                categories.append({
-                    'name': ach.category,
-                    # anchor for the category list at the top of the page
-                    'slug': slugify(ach.category),
-                    'achievements': [],
-                })
-            categories[-1]['achievements'].append({
+            achievements_data.append({
                 'ingameid': ach.ingameid,
                 'name': ach.name,
                 'description': ach.description,
                 'define': ach.define,
+                'category': ach.category,
                 'nplayers': total_players,
                 'nclans': total_clans,
                 'player_list': player_list,
@@ -882,7 +900,7 @@ class AchievementsView(TemplateView):
                 'clans_more': max(0, total_clans - 12),
             })
 
-        kwargs['categories'] = categories
+        kwargs['categories'] = achievement_categories(achievements_data)
         return kwargs
 
 class UniqueDeathsView(TemplateView):

@@ -4,7 +4,7 @@
 <head>
   <title>TNNT :: {{ player_or_clan.name }}</title>
   {% include "headlinks.html" %}
-  <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}" defer></script>
+  <script type="text/javascript" src="{% static 'js/ach-collapse.js' %}?v=20261018d" defer></script>
   <script type="text/javascript" src="{% static 'js/table-sort.js' %}" defer></script>
   <script type="text/javascript" src="{% static 'js/tooltip-position.js' %}" defer></script>
   {% if trophy_grid %}
@@ -545,10 +545,35 @@ If we do show all streaks in a clan at some point, also make sure to remove the
     <span id="ach-filter-achieved" class="ach-filter">[show achieved]</span>
     <span id="ach-filter-temp" class="ach-filter">[show pending achievements]</span>
     <span id="ach-filter-not" class="ach-filter">[show not achieved]</span>
-    <span id="ach-hide">[hide table]</span>
+    <span id="ach-hide">[hide tables]</span>
   </p>
+  <div id="ach-sections">
+  {# the categories of the game's #achievements, in the game's order #}
+  <nav class="ach-categories" aria-label="Achievement categories">
+    <ul>
+      {% for category in achievement_categories %}
+        {% if category.name %}
+          <li data-section="{{ category.slug }}"><a href="#{{ category.slug }}">{{ category.name }}</a>&nbsp;<span class="ach-category-count">({{ category.obtained }}/{{ category.achievements|length }})</span></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </nav>
+  {% for category in achievement_categories %}
+  <section class="ach-section" data-section="{{ category.slug }}">
+  {% if category.name %}
+  <h3 class="subhead" id="{{ category.slug }}">{{ category.name }}</h3>
+  {% endif %}
   <div class="table-scroll">
-  <table id="achievements-table" class="sortable" data-default-sort="1">
+  <table class="ach-table sortable" data-default-sort="1">
+    <colgroup>
+      <col class="ach-col-status">
+      <col class="ach-col-id">
+      <col class="ach-col-name">
+      <col>
+      {% if isClan %}
+        <col class="ach-col-members">
+      {% endif %}
+    </colgroup>
     <thead>
       <tr class="framed">
         <th></th>
@@ -561,7 +586,7 @@ If we do show all streaks in a clan at some point, also make sure to remove the
       </tr>
     </thead>
     <tbody>
-      {% for ach in achievements %}
+      {% for ach in category.achievements %}
         <tr id="{{ ach.define }}" data-status="{% if ach.obtained %}achieved{% elif ach.has_in_current_game %}temp{% else %}not{% endif %}">
           {% if ach.obtained %}
             <td class="achieved">&#10004;</td>
@@ -596,24 +621,17 @@ If we do show all streaks in a clan at some point, also make sure to remove the
     </tbody>
   </table>
   </div>
+  </section>
+  {% endfor %}
+  </div>
   <div class="achieve-summary">
-    {% if isClan %}
-      {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements|length %}
-        <div class="achieve-bar"
-            data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
-        <div class="achieve-msg">
-          {{ plr_ach }} out of {{ tot_ach }} achievements attained
-        </div>
-      {% endwith %}
-    {% else %}
-      {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements.count %}
-        <div class="achieve-bar"
-            data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
-        <div class="achieve-msg">
-          {{ plr_ach }} out of {{ tot_ach }} achievements attained
-        </div>
-      {% endwith %}
-    {% endif %}
+    {% with plr_ach=player_or_clan.unique_achievements tot_ach=achievements|length %}
+      <div class="achieve-bar"
+          data-progress="{% widthratio plr_ach tot_ach 100 %}"></div>
+      <div class="achieve-msg">
+        {{ plr_ach }} out of {{ tot_ach }} achievements attained
+      </div>
+    {% endwith %}
   </div>
 </div>
 
