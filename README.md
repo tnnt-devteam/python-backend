@@ -196,6 +196,7 @@ changes look with realistic data, and takes it out again:
 $ ./test_mode.sh on --dry-run    # every check, plus a rehearsal that is rolled back
 $ ./test_mode.sh on
 $ ./test_mode.sh status
+$ ./test_mode.sh aggregate       # recompute clan totals, trophies and leaderboards
 $ ./test_mode.sh off --dry-run
 $ ./test_mode.sh off
 ```
@@ -210,3 +211,8 @@ players did, and puts the switches back), starts the site without DEBUG
 and restarts tnntbot. While the site is in test mode only the test
 accounts can log in, admins included, and error pages show tracebacks to
 anyone. Turn it off before the tournament starts.
+
+Clan totals, trophies and leaderboards are computed by `aggregate`, which
+cron runs every 5 minutes only during the tournament. In test mode, run
+`./test_mode.sh aggregate` after creating or changing clans. It refuses
+to run while the cron job's update is running.

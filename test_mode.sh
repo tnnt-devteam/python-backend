@@ -1,7 +1,8 @@
 #!/bin/bash
 # test_mode.sh - put tnnt.org into test mode, and back to normal
 #
-# Usage: ./test_mode.sh on|off|status [--dry-run]
+# Usage: ./test_mode.sh on|off [--dry-run]
+#        ./test_mode.sh status|aggregate
 #
 #   on         Back up the database, restart the site in DEBUG mode, turn
 #              non-admin logins and clan operations on and load the test
@@ -10,6 +11,10 @@
 #              mode created and put the switches back (./manage.py test_mode
 #              off), start the site without DEBUG and restart tnntbot.
 #   status     Show which mode the site is in.
+#   aggregate  Run ./manage.py aggregate, which computes clan totals,
+#              trophies and leaderboards. During the tournament cron runs
+#              it every 5 minutes; off-season nothing does, so run this
+#              after changing clans in test mode.
 #   --dry-run  Run every check and rehearse the database work in a
 #              transaction that is rolled back. Changes nothing.
 #
@@ -41,6 +46,8 @@ PUBLIC_URL=${TNNT_PUBLIC_URL-https://tnnt.org/}     # empty: not checked
 BACKUP_DIR=${TNNT_BACKUP_DIR-/root}                 # empty: no backup
 BOT_SERVICE=${TNNT_BOT_SERVICE-tnntbot.service}     # empty: no restart
 LOCK=${TNNT_LOCK:-/run/lock/tnnt_test_mode.lock}
+# held by the cron job's pollxlogs + aggregate run
+CRON_LOCK=${TNNT_CRON_LOCK:-/run/lock/tnnt_update_scoreboard.lock}
 
 STATE="$STATE_DIR/state.json"
 MARKER='# Added by test_mode.sh, which removes it again: the site is in test mode'
@@ -54,7 +61,8 @@ warn() { printf '   WARNING: %s\n' "$*" >&2; }
 die() { printf '\nERROR: %s\n' "$*" >&2; exit 1; }
 
 usage() {
-    printf 'Usage: %s on|off|status [--dry-run]\n' "$0" >&2
+    printf 'Usage: %s on|off [--dry-run]\n       %s status|aggregate\n' \
+        "$0" "$0" >&2
     exit 2
 }
 
@@ -337,11 +345,22 @@ show_status() {
     manage test_mode status --state "$STATE"
 }
 
+run_aggregate() {
+    [ "$(id -u)" = 0 ] || die "run this as root"
+    [ -e "$STATE" ] || warn "the site is not in test mode; running aggregate anyway"
+    # never alongside the cron job's run, which skips while this holds it
+    exec 8> "$CRON_LOCK" || die "cannot open $CRON_LOCK"
+    flock -n 8 || die "the scoreboard update (pollxlogs + aggregate) is running; try again in a minute"
+    step "Running aggregate"
+    manage aggregate || die "aggregate failed"
+    ok "aggregate done"
+}
+
 [ $# -ge 1 ] && [ $# -le 2 ] || usage
 ACTION=$1
 DRY_RUN=0
 if [ $# = 2 ]; then
-    [ "$2" = --dry-run ] || usage
+    [ "$2" = --dry-run ] && [[ $ACTION == on || $ACTION == off ]] || usage
     DRY_RUN=1
 fi
 
@@ -352,5 +371,6 @@ case $ACTION in
     on) turn_on "$DRY_RUN" ;;
     off) turn_off "$DRY_RUN" ;;
     status) show_status ;;
+    aggregate) run_aggregate ;;
     *) usage ;;
 esac
