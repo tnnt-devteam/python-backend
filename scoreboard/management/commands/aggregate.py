@@ -282,11 +282,9 @@ def awardTrophies(player_or_clan, allgames_qs):
     for name, define in feature_trophies.items():
         if define in feature_defines:
             player_or_clan.trophies.add(TROPHIES[name])
-    # All Conducts kind of has to be a query, since we don't track "number of
-    # discrete conducts across all games" on a leaderboard.
-    unique_conducts = allgames_qs.filter(won=True) \
-        .aggregate(Count('conducts__id', distinct=True)) \
-        ['conducts__id__count']
+    # All Conducts is based off the precomputed unique_conducts (distinct
+    # conducts across all ascensions), the same number its leaderboard shows.
+    unique_conducts = player_or_clan.unique_conducts
     if unique_conducts == TOTAL_CONDUCTS:
         player_or_clan.trophies.add(TROPHIES['All Conducts'])
     if player_or_clan.unique_ascs == TOTAL_POSSIBLE_COMBOS:
@@ -356,6 +354,9 @@ def aggregatePlayerData():
         plr.unique_achievements = \
                 gamesby_plr.aggregate(Count('achievements__id', distinct=True)) \
                 ['achievements__id__count']
+        # and likewise for conducts, but only those kept in an ascension
+        plr.unique_conducts = winsby_plr.aggregate(
+            Count('conducts__id', distinct=True))['conducts__id__count']
 
         # Unique deaths are more complex, but that's outsourced to another
         # module, so just get the set of unique deaths and take the length.
@@ -385,6 +386,7 @@ def aggregatePlayerData():
                 plr.lowest_turncount_asc = winsby_plr.order_by('turns')[0]
                 plr.fastest_realtime_asc = winsby_plr.order_by('wallclock')[0]
                 plr.first_asc = winsby_plr.earliest('endtime')
+                plr.latest_start_asc = winsby_plr.latest('starttime')
 
             # These two are also Games which are the player's best in a
             # statistic, but require a bit more complex of a query.
@@ -438,6 +440,9 @@ def aggregateClanData():
         winsby_clan = gamesby_clan.filter(won=True)
 
         clan.unique_deaths = len(uniqdeaths.compile_unique_deaths(gamesby_clan))
+        # distinct conducts across all of the members' ascensions
+        clan.unique_conducts = winsby_clan.aggregate(
+            Count('conducts__id', distinct=True))['conducts__id__count']
         clan.zscore = computeZscore(winsby_clan)
 
         # Unique ascs are still a one-liner.
@@ -469,6 +474,8 @@ def aggregateClanData():
                 [0].fastest_realtime_asc
             clan.first_asc = clan_plrs.filter(wins__gt=0) \
                 .earliest('first_asc__endtime').first_asc
+            clan.latest_start_asc = clan_plrs.filter(wins__gt=0) \
+                .latest('latest_start_asc__starttime').latest_start_asc
             clan.max_conducts_asc = clan_plrs.filter(wins__gt=0) \
                 .annotate(ncond=Count('max_conducts_asc__conducts')) \
                 .order_by('-ncond') \

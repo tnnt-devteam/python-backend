@@ -8,7 +8,9 @@ from django.test import TestCase
 
 import tnnt.settings
 from scoreboard.management.commands import aggregate
-from scoreboard.models import Achievement, Clan, Game, Player, Source, Trophy
+from scoreboard.models import (
+    Achievement, Clan, Conduct, Game, Player, Source, Trophy
+)
 from scoreboard.tests.helpers import in_window
 from scoreboard.trophy_defs import achievement_count_trophies, feature_trophies
 
@@ -161,6 +163,81 @@ class AchievementTrophyTests(TestCase):
         self.run_aggregate()
         self.assertNotIn('Robot Finds Kitten', self.trophies(self.clan))
         self.assertIn('Robot Finds Kitten', self.trophies(self.alice))
+
+
+class AllAscensionsFieldTests(TestCase):
+    # unique_conducts and latest_start_asc, behind the Most Conducts in All
+    # Ascensions and Latest Start Time of an Ascension leaderboards
+    fixtures = ['conducts', 'achievements', 'sources', 'trophies']
+
+    def setUp(self):
+        aggregate.load_static_data()
+        self.src = Source.objects.get(server='hdf')
+        self.clan = Clan.objects.create(name='Testers')
+        self.alice = Player.objects.create(name='alice', clan=self.clan)
+        self.bob = Player.objects.create(name='bob', clan=self.clan)
+        self.carol = Player.objects.create(name='carol')
+        self.conducts = list(Conduct.objects.order_by('id'))
+
+    def game(self, player, conducts, won=True, **kwargs):
+        game = make_game(player, self.src, won=won, mines_soko=won,
+                         death='ascended' if won else 'killed by a jackal',
+                         **kwargs)
+        game.conducts.add(*conducts)
+        return game
+
+    def run_aggregate(self):
+        aggregate.aggregatePlayerData()
+        aggregate.aggregateClanData()
+        for entity in (self.alice, self.bob, self.carol, self.clan):
+            entity.refresh_from_db()
+
+    def test_unique_conducts_are_distinct_and_from_ascensions_only(self):
+        c = self.conducts
+        self.game(self.alice, c[0:2])
+        self.game(self.alice, c[1:3])
+        # a death keeps conducts too, but it is not an ascension
+        self.game(self.alice, c[10:11], won=False)
+        self.game(self.bob, c[2:6])
+        self.game(self.carol, c[0:5], won=False)
+        self.run_aggregate()
+        self.assertEqual(self.alice.unique_conducts, 3)
+        self.assertEqual(self.bob.unique_conducts, 4)
+        self.assertEqual(self.carol.unique_conducts, 0)
+        # the union of the members' ascensions: c[0:6], not 3 + 4 or 7
+        self.assertEqual(self.clan.unique_conducts, 6)
+
+    def test_all_conducts_trophy_needs_every_conduct_in_ascensions(self):
+        c = self.conducts
+        self.game(self.alice, c[:-1])
+        self.game(self.alice, c[-1:], won=False)
+        self.run_aggregate()
+        self.assertEqual(self.alice.unique_conducts, len(c) - 1)
+        self.assertFalse(
+            self.alice.trophies.filter(name='All Conducts').exists())
+        self.game(self.alice, c[-1:])
+        self.run_aggregate()
+        self.assertTrue(
+            self.alice.trophies.filter(name='All Conducts').exists())
+        self.assertTrue(
+            self.clan.trophies.filter(name='All Conducts').exists())
+
+    def test_latest_start_is_by_start_time_not_end_time(self):
+        t = datetime.fromtimestamp(in_window(days=10), timezone.utc)
+        # alice's first ascension started first but ended last
+        self.game(self.alice, [], start=t, length=timedelta(days=2))
+        late = self.game(self.alice, [], start=t + timedelta(hours=2))
+        # a death started later than both does not count
+        self.game(self.alice, [], won=False, start=t + timedelta(hours=5))
+        # bob's started before alice's latest but ended after it
+        bobs = self.game(self.bob, [], start=t + timedelta(hours=1),
+                         length=timedelta(days=3))
+        self.game(self.carol, [], won=False, start=t + timedelta(hours=9))
+        self.run_aggregate()
+        self.assertEqual(self.alice.latest_start_asc, late)
+        self.assertEqual(self.bob.latest_start_asc, bobs)
+        self.assertIsNone(self.carol.latest_start_asc)
+        self.assertEqual(self.clan.latest_start_asc, late)
 
 
 class TrophyDefsTests(TestCase):

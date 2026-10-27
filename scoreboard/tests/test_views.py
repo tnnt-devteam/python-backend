@@ -16,7 +16,7 @@ from scoreboard.models import (
 from scoreboard.tests.helpers import in_window
 from scoreboard.tests.test_aggregate import make_game
 from scoreboard.trophy_defs import achievement_count_trophies
-from tnnt import hardfought_utils, views
+from tnnt import dumplog_utils, hardfought_utils, views
 from tnnt.trophy_grid import generate_combo_grid_data
 
 TEST_DGL_DB = 'dgamelaunch_test.db'
@@ -158,6 +158,78 @@ class LeaderboardTests(TestCase):
         self.assertInHTML('<b><a href="/clan/Others">Others</a></b>', html,
                           count=0)
         self.assertInHTML('<a href="/clan/Others">Others</a>', html, count=2)
+
+    def _ascended(self, entity, member, start, unique_conducts):
+        # one ascension that is the entity's best game in every stat, so no
+        # other board has a malformed (None) entry
+        game = make_game(member, Source.objects.get(server='hdf'),
+                         start=start)
+        entity.total_games = entity.wins = 1
+        entity.unique_conducts = unique_conducts
+        for field in ('first_asc', 'latest_start_asc',
+                      'lowest_turncount_asc', 'fastest_realtime_asc',
+                      'max_conducts_asc', 'max_achieves_game',
+                      'min_score_asc', 'max_score_game'):
+            setattr(entity, field, game)
+        entity.save()
+        return game
+
+    def test_latest_start_and_all_ascensions_conduct_boards(self):
+        clan = Clan.objects.create(name='Testers')
+        alice = Player.objects.create(name='alice', clan=clan)
+        bob = Player.objects.create(name='bob')
+        carol = Player.objects.create(name='carol', clan=clan)
+        # dave has played but never ascended
+        dave = Player.objects.create(name='dave', total_games=1)
+        dave.max_score_game = dave.max_achieves_game = make_game(
+            dave, Source.objects.get(server='hdf'), won=False,
+            mines_soko=False, death='killed by a newt')
+        dave.save()
+        t = datetime(2026, 11, 20, 12, 34, 56, tzinfo=timezone.utc)
+        alices = self._ascended(alice, alice, t, 7)
+        bobs = self._ascended(bob, bob, t + timedelta(days=2), 3)
+        self._ascended(carol, carol, t - timedelta(days=1), 0)
+        self._ascended(clan, alice, None, 9)
+        clan.latest_start_asc = alices
+        clan.save()
+        with self.assertNoLogs(level='ERROR'):
+            resp = self.client.get('/leaderboards')
+        self.assertEqual(resp.status_code, 200)
+        ids = [L['id'] for L in resp.context['leaderboards']]
+        self.assertEqual(ids[ids.index('firstasc') + 1], 'lateststart')
+        self.assertEqual(ids[ids.index('maxcond') + 1], 'allcond')
+        boards = {L['id']: L for L in resp.context['leaderboards']}
+
+        late = boards['lateststart']
+        self.assertEqual([(p['name'], p['stat']) for p in late['players']],
+                         [('bob', '2026-11-22 12:34'),
+                          ('alice', '2026-11-20 12:34'),
+                          ('carol', '2026-11-19 12:34')])
+        src = Source.objects.get(server='hdf')
+        self.assertEqual(late['players'][0]['dumplog'],
+                         dumplog_utils.format_dumplog(
+                             src.dumplog_fmt, 'bob', bobs.starttime))
+        self.assertEqual(late['players'][1]['clan'], 'Testers')
+        self.assertEqual([(c['name'], c['stat']) for c in late['clans']],
+                         [('Testers', '2026-11-20 12:34')])
+        self.assertEqual(late['clans'][0]['dumplog'],
+                         dumplog_utils.format_dumplog(
+                             src.dumplog_fmt, 'alice', alices.starttime))
+
+        # carol's 0 is left off, like every board's zeros
+        cond = boards['allcond']
+        self.assertEqual([(p['name'], p['stat']) for p in cond['players']],
+                         [('alice', 7), ('bob', 3)])
+        self.assertNotIn('dumplog', cond['players'][0])
+        self.assertEqual([(c['name'], c['stat']) for c in cond['clans']],
+                         [('Testers', 9)])
+
+        self.assertContains(
+            resp, '<option value="lateststart">'
+            'Latest Start Time of an Ascension</option>', html=True)
+        self.assertContains(
+            resp, '<option value="allcond">'
+            'Most Conducts in All Ascensions</option>', html=True)
 
     def test_clanless_viewer_bolds_no_clan(self):
         clan = Clan.objects.create(name='Testers')

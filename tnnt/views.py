@@ -246,6 +246,11 @@ class LeaderboardsView(TemplateView):
             'firstasc_dlg':    F('first_asc__source__dumplog_fmt'),
             'firstasc_nam':    F('first_asc__player__name'),
 
+            'lateststart':     F('latest_start_asc__starttime'),
+            'lateststart_stt': F('latest_start_asc__starttime'),
+            'lateststart_dlg': F('latest_start_asc__source__dumplog_fmt'),
+            'lateststart_nam': F('latest_start_asc__player__name'),
+
             'minturns':        F('lowest_turncount_asc__turns'),
             'minturns_stt':    F('lowest_turncount_asc__starttime'),
             'minturns_dlg':    F('lowest_turncount_asc__source__dumplog_fmt'),
@@ -284,8 +289,9 @@ class LeaderboardsView(TemplateView):
         # Load basic player/clan data WITHOUT the expensive annotations
         # These fields are stored directly on the model and are fast to query
         basic_fields = ['id', 'name', 'wins', 'total_games', 'unique_deaths', 'unique_ascs',
-                       'unique_achievements', 'longest_streak', 'zscore', 'splats',
-                       'donations', 'games_over_1000_turns']
+                       'unique_achievements', 'unique_conducts',
+                       'longest_streak', 'zscore', 'splats', 'donations',
+                       'games_over_1000_turns']
 
         allplayers_basic = list(Player.objects
                                       .filter(total_games__gt=0)
@@ -351,7 +357,7 @@ class LeaderboardsView(TemplateView):
                 }
 
                 # Format datetime fields to ISO format (YYYY-MM-DD HH:MM)
-                if stat == 'firstasc' and elem[stat]:
+                if stat in ('firstasc', 'lateststart') and elem[stat]:
                     converted['stat'] = elem[stat].strftime('%Y-%m-%d %H:%M')
 
                 if 'clanname' in elem and elem['clanname'] is not None:
@@ -375,12 +381,19 @@ class LeaderboardsView(TemplateView):
               'title': 'Most Ascensions', 'columntitle': 'Wins' },
             { 'id': 'firstasc', 'descending': False, 'wins_only': True,
               'title': 'Earliest Ascension', 'columntitle': 'Time' },
+            { 'id': 'lateststart', 'descending': True, 'wins_only': True,
+              'title': 'Latest Start Time of an Ascension',
+              'columntitle': 'Start time' },
             { 'id': 'minturns', 'descending': False, 'wins_only': True,
               'title': 'Lowest Turncount Ascension', 'columntitle': 'Turns' },
             { 'id': 'mintime', 'descending': False, 'wins_only': True,
               'title': 'Fastest Realtime Ascension', 'columntitle': 'Wallclock' },
             { 'id': 'maxcond', 'descending': True, 'wins_only': True,
               'title': 'Most Conducts in One Ascension', 'columntitle': 'Conducts' },
+            { 'id': 'allcond', 'stat': 'unique_conducts', 'descending': True,
+              'wins_only': True,
+              'title': 'Most Conducts in All Ascensions',
+              'columntitle': 'Conducts' },
             { 'id': 'mostachgame', 'descending': True, 'wins_only': False,
               'title': 'Most Achievements in One Game', 'columntitle': 'Achievements' },
             { 'id': 'mostach', 'descending': True, 'stat': 'unique_achievements',
@@ -455,8 +468,8 @@ class LeaderboardsView(TemplateView):
 
                     L['players'] = gen_leader_list(top_players, stat, L['descending'])
                     L['clans'] = gen_leader_list(top_clans, stat, L['descending'])
-                elif stat in ['minturns', 'mintime', 'maxcond', 'mostachgame',
-                              'minscore', 'maxscore']:
+                elif stat in ['lateststart', 'minturns', 'mintime', 'maxcond',
+                              'mostachgame', 'minscore', 'maxscore']:
                     # For other complex leaderboards, annotate only the fields
                     # needed for this specific stat
                     stat_annotations = {k: v for k, v in annotate_kwargs.items()

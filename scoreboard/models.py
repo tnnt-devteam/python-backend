@@ -61,6 +61,11 @@ class LeaderboardBaseFields(models.Model):
     unique_deaths          = models.IntegerField(default=0)
     unique_ascs            = models.IntegerField(default=0)
     unique_achievements    = models.IntegerField(default=0)
+    # different from max_conducts_asc; this is the number of distinct
+    # conducts kept across all ascensions (All Conducts needs every one).
+    # db_default as well, so that a row inserted by code that predates this
+    # field (mid-deploy) still gets a value in strict mode.
+    unique_conducts        = models.IntegerField(default=0, db_default=0)
     games_over_1000_turns  = models.IntegerField(default=0)
     games_scummed          = models.IntegerField(default=0)
     total_games            = models.IntegerField(default=0)
@@ -77,6 +82,10 @@ class LeaderboardBaseFields(models.Model):
     min_score_asc          = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     max_score_game         = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
     first_asc              = models.ForeignKey('Game', null=True, on_delete=models.SET_NULL, related_name='+')
+    # the ascension that STARTED last (first_asc is the one that ended first)
+    latest_start_asc       = models.ForeignKey('Game', null=True,
+                                               on_delete=models.SET_NULL,
+                                               related_name='+')
 
     # Return a string denoting the ascension ratio of this player or clan.
     def ratio(self):

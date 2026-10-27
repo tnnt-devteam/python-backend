@@ -10,6 +10,7 @@ def wipe_leaderboard_fields(entity):
     entity.unique_deaths = 0
     entity.unique_ascs = 0
     entity.unique_achievements = 0
+    entity.unique_conducts = 0
     entity.games_over_1000_turns = 0
     entity.games_scummed = 0
     entity.total_games = 0
@@ -25,6 +26,7 @@ def wipe_leaderboard_fields(entity):
     entity.min_score_asc = None
     entity.max_score_game = None
     entity.first_asc = None
+    entity.latest_start_asc = None
     entity.save()
 
 
