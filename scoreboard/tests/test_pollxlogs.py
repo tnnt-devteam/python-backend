@@ -218,6 +218,19 @@ class ImportFromFileTests(TestCase):
         self.assertTrue(splat.splatted)
         self.assertEqual(splat.normalized_death, 'killed by a jackal')
 
+    def test_rerolls_are_stored(self):
+        # flags bit 3 only says the reroll option was on; rerolls is the
+        # count, and older records have no rerolls field at all
+        self.write(xlog_line(name='rerolled', flags='0x8', rerolls='3')
+                   + xlog_line(name='kept', flags='0x8', rerolls='0',
+                               start=in_window(5))
+                   + xlog_line(name='older', start=in_window(6)))
+        counts = import_from_file(self.path, self.src)
+        self.assertEqual(counts[ADDED], 3)
+        self.assertEqual(
+            dict(Game.objects.values_list('player__name', 'rerolls')),
+            {'rerolled': 3, 'kept': 0, 'older': 0})
+
     def test_file_mode_reads_unterminated_last_line_and_detects_source(self):
         self.write(xlog_line(server='eu.hardfought.org').rstrip('\n'))
         counts = import_from_file(self.path, None)

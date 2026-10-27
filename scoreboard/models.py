@@ -158,6 +158,11 @@ class Player(LeaderboardBaseFields):
         # If a game is eligible to continue MULTIPLE streaks at once (possible
         # with server shenanigans), it will continue only the oldest of those
         # streaks (i.e. the one that comes first in streaks), and kill the rest.
+        # A game in which the starting character was rerolled (rerolls > 0)
+        # never continues a streak: as a candidate it kills it like a loss,
+        # even if it won, because rerolling would otherwise be a way to
+        # startscum a streak game without the quit that ends the streak. A
+        # rerolled win can still start a new streak.
         #
         # ASSUMPTION: No two Games of the same player will ever have the same
         # starttime. If they did, it would be possible to have two candidate
@@ -165,26 +170,27 @@ class Player(LeaderboardBaseFields):
 
         streaks = []
         for g in Game.objects.filter(player=self).order_by('starttime').all():
-            extended_or_killed_streak = False
+            extended_streak = False
             # first: will this game extend/kill a streak?
             for strk in streaks:
                 if strk.continuable == False:
                     # this streak is dead, ignore it
                     continue
                 if strk.games[-1].endtime < g.starttime:
-                    extended_or_killed_streak = True
-                    if g.won == False:
-                        # streak is killed
+                    if g.won == False or g.rerolls > 0:
+                        # streak is killed (by a loss or a rerolled game)
                         strk.continuable = False
                         continue # it could still kill other streaks
                     else:
                         # streak is extended
                         strk.games.append(g)
+                        extended_streak = True
                         # and stop looking for other streaks to extend
                         break
 
-            # if we didn't extend or kill a streak, and the game is a win, we start one
-            if (not extended_or_killed_streak) and g.won:
+            # if we didn't extend a streak, and the game is a win, we start one
+            # (a rerolled win starts one too, after killing any streak)
+            if (not extended_streak) and g.won:
                 streaks.append(Streak(g))
 
         # filter out "streaks" of only 1 game, which are not streaks yet
@@ -244,6 +250,15 @@ class Game(models.Model):
     # deathlev is a native xlogfile field.
     splatted         = models.BooleanField(default=False)
     deathlev         = models.IntegerField(null=True)
+
+    # How many times the player rerolled the starting character (the reroll
+    # option; xlog field rerolls). A rerolled game can't continue a streak,
+    # see Player.get_streaks(). Only actual rerolls count: with the option on
+    # and the first character kept, this is 0. Records without the field
+    # (the test games, converted from 2025, before rerolling existed) count
+    # as 0. db_default as well, so that a row inserted by code that predates
+    # this field still gets a value in strict mode.
+    rerolls          = models.BigIntegerField(default=0, db_default=0)
 
     # not necessary for tnnt but may re-introduce for NHS
     # hp           = models.BigIntegerField(null=True)

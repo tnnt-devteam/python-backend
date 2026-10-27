@@ -253,7 +253,9 @@ class RecordConverter:
     tnntachieve fields as the current game writes. The fields that only
     the current game writes and that the old record has nothing for
     (achieveX, conductX, gold, wish_cnt, arti_wish_cnt, bones, rerolls)
-    are left out; the scoreboard does not read them.
+    are left out. Of those, the scoreboard reads only rerolls, and a record
+    without it counts as not rerolled, which is right for 2025: the game
+    had no rerolling then.
     """
 
     def __init__(self, old_format, old_positions, new_positions):

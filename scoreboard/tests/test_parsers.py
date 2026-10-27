@@ -15,8 +15,10 @@ class ParseXlogLineTests(SimpleTestCase):
 
     def test_numeric_fields_are_converted(self):
         entry = parse_xlog_line(
-            xlog_line(turns='1234', conduct='0x1f', flags='0x4'))
+            xlog_line(turns='1234', conduct='0x1f', flags='0x4',
+                      rerolls='12'))
         self.assertEqual(entry['turns'], 1234)
+        self.assertEqual(entry['rerolls'], 12)
         self.assertEqual(entry['conduct'], 0x1f)
         self.assertEqual(entry['flags'], 4)
         self.assertEqual(entry['role'], 'Cav')

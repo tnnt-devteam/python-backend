@@ -204,6 +204,11 @@ def game_from_xlog(source, xlog_dict, auto_detect_source=False,
     if (xlog_dict['achieve'] & 0x600) == 0x600:
         kwargs['mines_soko'] = True
 
+    # rerolls is how many rerolls were actually made, which is what counts
+    # for streaks (flags bit 3 only says the option was on). Records written
+    # before the game had rerolling have no such field.
+    kwargs['rerolls'] = xlog_dict.get('rerolls', 0)
+
     # find/create player
     try:
         player = Player.objects.get(name=xlog_dict['name'])
