@@ -624,3 +624,76 @@ class PlayersPageTests(TestCase):
         with CaptureQueriesContext(connection) as many:
             self.client.get('/players')
         self.assertEqual(len(many), len(few))
+
+
+class SignedUpPlayersTests(TestCase):
+    """
+    Until the tournament ends, /players also lists the players who have
+    logged in but have no game yet, in a section of their own. A Player row
+    created only by a clan invite (no User) is not a sign-up.
+    """
+
+    def setUp(self):
+        self.clan = Clan.objects.create(name='Testers')
+        Player.objects.create(name='alice', total_games=3, wins=1,
+                              clan=self.clan,
+                              user=User.objects.create(username='alice'))
+        Player.objects.create(name='newbie', clan=self.clan,
+                              user=User.objects.create(username='newbie'))
+        Player.objects.create(name='carol',
+                              user=User.objects.create(username='carol'))
+        Player.objects.create(name='invitee')
+        # pinned, or the list would disappear from these tests on Dec 1
+        patcher = mock.patch.object(
+            tnnt.settings, 'TOURNAMENT_END',
+            datetime.now(tz=timezone.utc) + timedelta(days=1))
+        patcher.start()
+        self.addCleanup(patcher.stop)
+
+    def test_logged_in_players_without_games_are_listed(self):
+        resp = self.client.get('/players')
+        self.assertEqual(resp.status_code, 200)
+        self.assertEqual([p.name for p in resp.context['players']],
+                         ['alice'])
+        self.assertEqual([p.name for p in resp.context['signed_up']],
+                         ['carol', 'newbie'])
+        self.assertContains(resp, 'Signed Up, No Games Yet')
+        self.assertContains(resp, 'href="/player/newbie"')
+        self.assertNotContains(resp, 'invitee')
+        self.assertNotContains(resp, 'no finished games yet')
+
+    def test_section_is_left_out_when_nobody_is_waiting(self):
+        Player.objects.filter(total_games=0).update(total_games=1)
+        resp = self.client.get('/players')
+        self.assertEqual(list(resp.context['signed_up']), [])
+        self.assertNotContains(resp, 'Signed Up, No Games Yet')
+
+    def test_not_listed_after_the_tournament(self):
+        with mock.patch.object(
+                tnnt.settings, 'TOURNAMENT_END',
+                datetime.now(tz=timezone.utc) - timedelta(days=1)):
+            resp = self.client.get('/players')
+        self.assertNotIn('signed_up', resp.context)
+        self.assertNotContains(resp, 'Signed Up, No Games Yet')
+        self.assertEqual([p.name for p in resp.context['players']],
+                         ['alice'])
+
+    def test_empty_scoreboard_says_so(self):
+        Player.objects.filter(name='alice').update(total_games=0, wins=0)
+        resp = self.client.get('/players')
+        self.assertEqual(list(resp.context['players']), [])
+        self.assertContains(resp, 'no finished games yet')
+        self.assertEqual([p.name for p in resp.context['signed_up']],
+                         ['alice', 'carol', 'newbie'])
+
+    def test_clan_column_does_not_query_per_player(self):
+        with CaptureQueriesContext(connection) as few:
+            self.client.get('/players')
+        for i in range(20):
+            name = 'new%d' % i
+            Player.objects.create(name=name, clan=self.clan,
+                                  user=User.objects.create(username=name))
+        with CaptureQueriesContext(connection) as many:
+            resp = self.client.get('/players')
+        self.assertEqual(len(resp.context['signed_up']), 22)
+        self.assertEqual(len(many), len(few))

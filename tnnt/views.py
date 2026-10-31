@@ -516,6 +516,16 @@ class PlayersView(TemplateView):
         kwargs['players'] = Player.objects.filter(total_games__gt=0) \
                                           .select_related('clan') \
                                           .order_by('-wins', 'name')
+        # Listed separately below them, so that sign-ups can be seen before
+        # anyone has played: players who have logged in here but have no
+        # game yet. Logged in, not just any Player row, because an invite
+        # creates one for any hardfought account. Not after the tournament,
+        # so the archived page doesn't carry the list.
+        if datetime.now(tz=timezone.utc) < settings.TOURNAMENT_END:
+            kwargs['signed_up'] = Player.objects \
+                .filter(total_games=0, user__isnull=False) \
+                .select_related('clan') \
+                .order_by('name')
         return kwargs
 
 class ClansView(TemplateView):

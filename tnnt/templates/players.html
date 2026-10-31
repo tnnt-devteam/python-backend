@@ -16,6 +16,7 @@
 <main>
 
 <h2>All Players</h2>
+{% if players %}
 <div class="table-scroll">
 <table class="sortable">
   <thead>
@@ -70,6 +71,41 @@
   </tbody>
 </table>
 </div>
+{% else %}
+<p class="noclans">no finished games yet</p>
+{% endif %}
+
+{% if signed_up %}
+<h2>Signed Up, No Games Yet</h2>
+<p>
+  Players who have logged in on this site but have not finished a game
+  yet. Players move to the list above once they finish a game.
+</p>
+<div class="table-scroll">
+<table class="sortable">
+  <thead>
+    <tr class="framed">
+      <th></th>
+      <th>Player</th>
+      <th>Clan</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for plr in signed_up %}
+      <tr>
+        <td class="num dim">{{ forloop.counter }}</td>
+        <td>{% include "plink.html" with name=plr.name %}</td>
+        <td>
+          {% if plr.clan %}
+            {% include "clink.html" with name=plr.clan.name %}
+          {% endif %}
+        </td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endif %}
 
 </main>
 
