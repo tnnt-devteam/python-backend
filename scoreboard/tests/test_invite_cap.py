@@ -7,7 +7,9 @@ gives those clans their spots back.
 from datetime import datetime, timedelta, timezone
 from unittest import mock
 
+from django.db import connection
 from django.test import Client, TestCase
+from django.test.utils import CaptureQueriesContext
 
 import tnnt.settings
 from scoreboard.models import Clan, Player
@@ -15,6 +17,11 @@ from scoreboard.tests.test_views import login_player
 from tnnt import hardfought_utils
 
 MAX = 4  # MAX_CLAN_PLAYERS in these tests
+
+
+def page_text(resp):
+    """The response body with runs of whitespace collapsed to one space."""
+    return ' '.join(resp.content.decode().split())
 
 
 class InviteCapTests(TestCase):
@@ -159,3 +166,46 @@ class InviteCapTests(TestCase):
         self.assertEqual(resp.context['errmsg'], 'That clan is full')
         bob.refresh_from_db()
         self.assertIsNone(bob.clan)
+
+    # admins can see who holds each pending invitation's spot
+
+    def test_spots_line_names_the_pending_invitations(self):
+        self.add_members(1)
+        self.add_invites('chuck', 'bob')
+        self.assertIn('Spots used: 4 of 4 (2 members, 2 pending '
+                      'invitations: bob, chuck)',
+                      page_text(self.client.get('/clanmgmt')))
+
+    def test_spots_line_without_invitations(self):
+        self.assertIn('Spots used: 1 of 4 (1 member, 0 pending '
+                      'invitations)',
+                      page_text(self.client.get('/clanmgmt')))
+
+    def test_invitee_in_another_clan_is_marked(self):
+        other = Clan.objects.create(name='Surly Dinos')
+        recuerdo = Player.objects.create(name='recuerdo', clan=other)
+        recuerdo.invites.add(self.clan)
+        self.add_invites('bob')
+        resp = self.client.get('/clanmgmt')
+        text = page_text(resp)
+        self.assertIn('recuerdo (in clan <a href="/clan/Surly%20Dinos">'
+                      'Surly Dinos</a>)', text)
+        self.assertEqual(text.count('(in clan '), 1)
+        # they can accept only after leaving that clan, so the invitation
+        # still holds one of this clan's spots
+        self.assertEqual(resp.context['clan_places']['invites'], 2)
+
+    def test_invitees_clans_cost_no_query_each(self):
+        other = Clan.objects.create(name='Others')
+
+        def queries(*names):
+            for name in names:
+                Player.objects.create(name=name, clan=other) \
+                              .invites.add(self.clan)
+            with CaptureQueriesContext(connection) as ctx:
+                self.assertContains(self.client.get('/clanmgmt'),
+                                    '(in clan ')
+            return len(ctx.captured_queries)
+
+        self.client.get('/clanmgmt')  # first-request lookups aside
+        self.assertEqual(queries('bob'), queries('chuck', 'dave'))

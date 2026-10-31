@@ -178,7 +178,7 @@
           <p>
             Spots used: {{ clan_places.used }} of {{ clan_places.max }}
             ({{ clan_places.members }} member{{ clan_places.members|pluralize }},
-            {{ clan_places.invites }} pending invitation{{ clan_places.invites|pluralize }})
+            {{ clan_places.invites }} pending invitation{{ clan_places.invites|pluralize }}{% if clan_places.invites %}: {% for othplayer in invitees %}{{ othplayer.name }}{% if not forloop.last %}, {% endif %}{% endfor %}{% endif %})
           </p>
           {% if clan_places.free %}
             <form method="post">
@@ -231,6 +231,9 @@
             {% for othplayer in invitees %}
               <li>
                 {{othplayer.name}}
+                {% if othplayer.clan %}
+                  (in clan <a href="/clan/{{ othplayer.clan.name|urlencode }}">{{ othplayer.clan.name }}</a>)
+                {% endif %}
                 {% if me.clan_admin %}
                   <form method="post" class="disguised-button">
                     {% csrf_token %}

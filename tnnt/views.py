@@ -1063,8 +1063,11 @@ class ClanMgmtView(View):
         if clan is not None:
             kwargs['clan'] = clan
             kwargs['members'] = Player.objects.filter(clan=clan).order_by('-clan_admin','name')
-            # Exclude players who are already members from the invitees list
-            kwargs['invitees'] = clan.invitees.exclude(clan=clan).order_by('name')
+            # Exclude players who are already members from the invitees list;
+            # an invitee's own clan, if any, is shown next to their name
+            kwargs['invitees'] = clan.invitees.exclude(clan=clan) \
+                                              .select_related('clan') \
+                                              .order_by('name')
             kwargs['clan_places'] = clan_places(clan)
         kwargs['invites'] = player.invites.all().order_by('name')
 
