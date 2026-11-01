@@ -6,6 +6,7 @@ from django.db.models import Exists, OuterRef, F, Count, Value, Sum, Q
 from django.db.models.functions import TruncMinute
 from scoreboard.models import *
 from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
+from django.db import IntegrityError, transaction
 from scoreboard.trophy_defs import feature_trophies, achievement_count_trophies
 from scoreboard.api_views import ratelimit_exclude_localhost
 from django.utils.decorators import method_decorator
@@ -1208,16 +1209,37 @@ class ClanMgmtView(View):
             return
 
         # if we got here, we're good to create the clan, with the creator as its
-        # admin
-        newclan = Clan(name=new_clan_name)
-        newclan.save()
-        player.clan = newclan
-        player.clan_admin = True
-        player.looking_for_clan = False
-        player.save()
-        # a player in a clan can't accept invitations; withdraw them so they
-        # don't take up places in the clans that sent them
-        player.invites.clear()
+        # admin, all in one transaction: a failure part way never leaves a
+        # clan without its creator
+        try:
+            with transaction.atomic():
+                # Re-read the creator's row under a lock. A second submit of
+                # the form (double click, another tab) waits here for the
+                # first one, then sees the clan it made, where the copy of the
+                # player loaded at the start of this request would not.
+                locked = Player.objects.select_for_update().get(pk=player.pk)
+                if locked.clan_id is not None:
+                    logger.warning('%s attempted to make a clan while '
+                                   'already in one (form sent twice?)',
+                                   player.name)
+                    ctx['errmsg'] = 'You are already in a clan'
+                    return
+                newclan = Clan.objects.create(name=new_clan_name)
+                player.clan = newclan
+                player.clan_admin = True
+                player.looking_for_clan = False
+                player.save()
+                # a player in a clan can't accept invitations; withdraw them
+                # so they don't take up places in the clans that sent them
+                player.invites.clear()
+        except IntegrityError:
+            # the unique name: someone else created a clan of that name
+            # after the exists() check above
+            logger.warning('%s attempted to make clan %s, which was just '
+                           'created by someone else', player.name,
+                           new_clan_name)
+            ctx['errmsg'] = 'That clan already exists'
+            return
         logger.info('%s created clan %s', player.name, newclan.name)
 
     # Helper function triggered when a invite-to-clan POST request comes in
