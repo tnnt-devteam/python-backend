@@ -102,6 +102,111 @@ class ClanAggregationTests(TestCase):
             self.clan.trophies.filter(name='Never Scum a Game').exists())
 
 
+class ConcurrentWriteTests(TestCase):
+    """
+    The website changes Players and Clans while aggregate runs (cron, every
+    5 minutes). aggregate must write back only the fields it computes, or it
+    puts back the values it loaded at the start of the loop: on 2026-10-31 a
+    clan created mid-run lost its only member, which crashed the run.
+    """
+    fixtures = ['conducts', 'achievements', 'sources', 'trophies']
+
+    def setUp(self):
+        aggregate.load_static_data()
+        self.src = Source.objects.get(server='hdf')
+        self.alice = Player.objects.create(name='alice')
+        self.game = make_game(self.alice, self.src)
+
+    def during(self, func):
+        """
+        Patch aggregate so that `func` runs once in the middle of the next
+        pass: after its rows were loaded, before they are written back.
+        """
+        real = aggregate.computeZscore
+        calls = []
+
+        def wrapper(game_qs):
+            if not calls:
+                calls.append(1)
+                func()
+            return real(game_qs)
+        return mock.patch.object(aggregate, 'computeZscore', wrapper)
+
+    def test_clan_created_mid_run_keeps_its_creator(self):
+        def create_clan():
+            clan = Clan.objects.create(name='Combo Crew')
+            Player.objects.filter(pk=self.alice.pk).update(
+                clan=clan, clan_admin=True)
+        with self.during(create_clan):
+            aggregate.aggregatePlayerData()
+        aggregate.aggregateClanData()
+
+        self.alice.refresh_from_db()
+        self.assertEqual(self.alice.clan.name, 'Combo Crew')
+        self.assertTrue(self.alice.clan_admin)
+        # aggregate's own fields are still written, FKs included
+        self.assertEqual(self.alice.wins, 1)
+        self.assertEqual(self.alice.first_asc, self.game)
+        self.assertEqual(self.alice.clan.wins, 1)
+
+    def test_joining_a_clan_mid_run_is_not_undone(self):
+        clan = Clan.objects.create(name='Testers')
+        Player.objects.create(name='bob', clan=clan, clan_admin=True)
+        self.alice.looking_for_clan = True
+        self.alice.lfc_message = 'tank for hire'
+        self.alice.save()
+
+        def join():
+            Player.objects.filter(pk=self.alice.pk).update(
+                clan=clan, looking_for_clan=False)
+        with self.during(join):
+            aggregate.aggregatePlayerData()
+        aggregate.aggregateClanData()
+
+        self.alice.refresh_from_db()
+        self.assertEqual(self.alice.clan, clan)
+        self.assertFalse(self.alice.looking_for_clan)
+        self.assertEqual(self.alice.lfc_message, 'tank for hire')
+        clan.refresh_from_db()
+        self.assertEqual(clan.total_games, 1)
+
+    def test_clan_message_set_mid_run_is_not_undone(self):
+        clan = Clan.objects.create(name='Testers')
+        self.alice.clan = clan
+        self.alice.save()
+        aggregate.aggregatePlayerData()
+        with self.during(lambda: Clan.objects.filter(pk=clan.pk)
+                         .update(message='recruiting')):
+            aggregate.aggregateClanData()
+
+        clan.refresh_from_db()
+        self.assertEqual(clan.message, 'recruiting')
+        self.assertEqual(clan.wins, 1)
+
+    def test_clan_without_members_gets_zeros(self):
+        clan = Clan.objects.create(name='Empty')
+        with self.assertLogs(level='INFO') as logs:
+            aggregate.aggregatePlayerData()
+            aggregate.aggregateClanData()
+        self.assertIn('Clan Empty has no members', '\n'.join(logs.output))
+        clan.refresh_from_db()
+        self.assertEqual((clan.total_games, clan.wins, clan.longest_streak),
+                         (0, 0, 0))
+
+    def test_clan_disbanded_mid_run_leaves_its_members_clanless(self):
+        clan = Clan.objects.create(name='Testers')
+        self.alice.clan = clan
+        self.alice.clan_admin = True
+        self.alice.save()
+        with self.during(lambda: Clan.objects.filter(pk=clan.pk).delete()):
+            aggregate.aggregatePlayerData()
+        aggregate.aggregateClanData()
+
+        self.alice.refresh_from_db()
+        self.assertIsNone(self.alice.clan_id)
+        self.assertFalse(Clan.objects.filter(pk=clan.pk).exists())
+
+
 class AchievementTrophyTests(TestCase):
     fixtures = ['conducts', 'achievements', 'sources', 'trophies']
 

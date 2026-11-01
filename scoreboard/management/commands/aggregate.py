@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from scoreboard.models import (
-    Game, Player, Clan, Trophy, Achievement, Conduct, SCUMMED_GAME_Q
+    Game, Player, Clan, Trophy, Achievement, Conduct, LeaderboardBaseFields,
+    SCUMMED_GAME_Q
 )
 # Imported by name so that they are also attributes of this module.
 from scoreboard.trophy_defs import (
@@ -36,6 +37,20 @@ UNIQ_ACHFIELDS = 0
 
 # Timeout for fetching donor files: (connect, read) seconds.
 DONOR_TIMEOUT = (10, 30)
+
+# The columns aggregate computes: every LeaderboardBaseFields field. Players
+# and clans are saved with update_fields set to these, never as a whole row.
+# The website changes clan, clan_admin, looking_for_clan, user, a clan's
+# message etc. at any moment, and saving the whole copy loaded at the start of
+# the loop put the old values back: on 2026-10-31 a clan created mid-run lost
+# its only member, and the run crashed on clan.wins = None. (A row deleted
+# mid-run now makes save() raise, rolling the run back, where a whole-row save
+# re-inserted it.)
+CLAN_AGGREGATE_FIELDS = [f.name for f in
+                         LeaderboardBaseFields._meta.concrete_fields]
+# Player.donations is written by populateDonors(), not aggregatePlayerData().
+PLAYER_AGGREGATE_FIELDS = [f for f in CLAN_AGGREGATE_FIELDS
+                           if f != 'donations']
 
 def load_static_data():
     global ALL_ACHIEVEMENTS, TOTAL_ACHIEVEMENTS, TOTAL_CONDUCTS
@@ -399,7 +414,7 @@ def aggregatePlayerData():
                     winsby_plr.annotate(ncond=Count('conducts__id', distinct=True)) \
                     .order_by('-ncond')[0]
 
-        plr.save()
+        plr.save(update_fields=PLAYER_AGGREGATE_FIELDS)
         awardTrophies(plr, gamesby_plr)
     logger.info('aggregatePlayerData complete')
 
@@ -418,6 +433,12 @@ def aggregateClanData():
                                          Max('longest_streak'),
                                          Sum('splats'),
                                          Sum('donations'))
+        # Sum/Max over no rows is None. A clan is memberless only briefly:
+        # created by a request whose save of its creator hasn't gone through
+        # (it waits for this run's lock on that row). Zeros, not a crash.
+        if aggrs_dict['total_games__sum'] is None:
+            logger.info('Clan %s has no members', clan.name)
+            aggrs_dict = dict.fromkeys(aggrs_dict, 0)
         clan.total_games = aggrs_dict['total_games__sum']
         clan.wins = aggrs_dict['wins__sum']
         clan.games_over_1000_turns = aggrs_dict['games_over_1000_turns__sum']
@@ -491,7 +512,7 @@ def aggregateClanData():
                 .order_by('-maxachieve') \
                 [0].max_achieves_game
 
-        clan.save()
+        clan.save(update_fields=CLAN_AGGREGATE_FIELDS)
         # For clans, we have to remove all trophies before re-awarding them.
         # This is because a member who provided some of the effort towards a
         # trophy may have left since the last aggregation. (This used to be
