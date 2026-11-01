@@ -7,6 +7,8 @@ from django.db.models.functions import TruncMinute
 from scoreboard.models import *
 from scoreboard.models import SCUMMED_GAME_Q, scummed_q, is_scummed
 from django.db import IntegrityError, transaction
+from django.middleware.csrf import REASON_NO_CSRF_COOKIE
+from django.urls import reverse
 from scoreboard.trophy_defs import feature_trophies, achievement_count_trophies
 from scoreboard.api_views import ratelimit_exclude_localhost
 from django.utils.decorators import method_decorator
@@ -2092,6 +2094,35 @@ class AdminPanelView(View):
 
         # Redirect back to GET to prevent form resubmission
         return HttpResponseRedirect('/admin-panel')
+
+
+def csrf_failure(request, reason=''):
+    """
+    CSRF_FAILURE_VIEW: what a POST with a missing or stale CSRF token gets,
+    instead of Django's bare "Forbidden (403)" page. Nothing was changed by
+    then: the check runs before the view.
+
+    The login form sent again after the login worked (a second click, or
+    Back and submit) carries the token from before the login, which Django
+    rotated. The user is logged in by then, so send them where a login goes.
+    Django still logs its own "Forbidden (<reason>)" line for that redirect,
+    at INFO; ours adds who it was.
+    """
+    if request.user.is_authenticated and request.path == reverse('login'):
+        logger.info('%s re-sent the login form after logging in (%s); '
+                    'sent to %s', request.user.username, reason,
+                    settings.LOGIN_REDIRECT_URL)
+        return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)
+    # Link back only to the forms people really use; never reflect the
+    # request path into the page (a "//host/..." path would make the link
+    # an off-site one).
+    forms = (reverse('login'), reverse('clanmgmt'), reverse('adminpanel'))
+    retry_url = request.path if request.path in forms else '/'
+    return render(request, 'csrf_failure.html',
+                  {'no_cookie': reason == REASON_NO_CSRF_COOKIE,
+                   'retry_url': retry_url},
+                  status=403)
+
 
 class LoginsDisabledView(TemplateView):
     """

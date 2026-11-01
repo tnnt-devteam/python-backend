@@ -1,0 +1,49 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <title>TNNT :: Form Expired</title>
+  {% include "headlinks.html" %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/admin.css' %}" />
+</head>
+
+<body>
+
+{% include "header.html" %}
+
+<main>
+
+<article class="logins-disabled-container">
+  <h2>&#10008; Form Expired</h2>
+
+  {% if no_cookie %}
+  <p>
+    Your browser did not send tnnt.org's cookie with the form. Logging in
+    and clan management need cookies: allow cookies for tnnt.org (some
+    browsers, such as Lynx, ask first) and try again.
+  </p>
+  {% else %}
+  <p>
+    The form you sent was out of date: it was probably sent twice, or from
+    a page opened before you logged in or out.
+  </p>
+  {% endif %}
+
+  <p>
+    Nothing was changed.
+  </p>
+
+  {% if retry_url == '/' %}
+  <a href="/" class="back-link">Return to Homepage</a>
+  {% else %}
+  <a href="{{ retry_url }}" class="back-link">Reload the form and try again</a>
+  {% endif %}
+</article>
+
+</main>
+
+</body>
+
+</html>

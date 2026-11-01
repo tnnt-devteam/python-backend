@@ -83,6 +83,11 @@ if not DEBUG:
 # CSRF_TRUSTED_ORIGINS = []
 CSRF_TRUSTED_ORIGINS = ['https://tnnt.org', 'https://www.tnnt.org']
 
+# A POST with a missing or stale CSRF token gets a TNNT page (or, for the
+# login form sent again after logging in, a redirect) instead of Django's
+# bare 403
+CSRF_FAILURE_VIEW = 'tnnt.views.csrf_failure'
+
 # Secure cookie settings for HTTPS in production
 if not DEBUG:
     SESSION_COOKIE_SECURE = True
