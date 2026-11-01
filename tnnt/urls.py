@@ -1,4 +1,6 @@
+from django.templatetags.static import static
 from django.urls import include, path
+from django.views.generic import RedirectView
 from rest_framework.routers import DefaultRouter
 from tnnt import views as tnntviews
 from scoreboard.api_views import (
@@ -16,6 +18,10 @@ router.register('clans', ClanViewSet)
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('', tnntviews.HomepageView.as_view(), name='root'),
+    # browsers and bots ask for /favicon.ico whatever a page's <link> says;
+    # the file is served under /static/
+    path('favicon.ico',
+         RedirectView.as_view(url=static('favicon.ico'), permanent=True)),
     path('leaderboards', tnntviews.LeaderboardsView.as_view(), name='leaderboards'),
     path('trophies', tnntviews.TrophiesView.as_view(), name='trophies'),
     path('clans', tnntviews.ClansView.as_view(), name='clans'),

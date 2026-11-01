@@ -4,6 +4,7 @@ from datetime import datetime, timedelta, timezone
 from unittest import mock
 
 from django.contrib.auth.models import AnonymousUser, User
+from django.contrib.staticfiles import finders
 from django.db import connection
 from django.test import TestCase
 from django.test.utils import CaptureQueriesContext
@@ -697,3 +698,12 @@ class SignedUpPlayersTests(TestCase):
             resp = self.client.get('/players')
         self.assertEqual(len(resp.context['signed_up']), 22)
         self.assertEqual(len(many), len(few))
+
+
+class FaviconTests(TestCase):
+
+    def test_favicon_redirects_to_the_static_file(self):
+        resp = self.client.get('/favicon.ico')
+        self.assertRedirects(resp, '/static/favicon.ico', status_code=301,
+                             fetch_redirect_response=False)
+        self.assertIsNotNone(finders.find('favicon.ico'))
