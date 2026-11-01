@@ -105,7 +105,7 @@ def get_player(request_user):
             # user to exist without a Player of corresponding name
             player = Player.objects.get(name=request_user)
             player.user = request_user
-            player.save()
+            player.save(update_fields=['user'])
             logger.warning('Fell back on linking to existing Player named %s',
                            request_user)
             return player
@@ -1050,6 +1050,10 @@ class ScummedGamesView(TemplateView):
         kwargs['total_scummed_time'] = total_scummed_time
         return kwargs
 
+# Every save of an existing Player or Clan row in this module names its
+# fields (update_fields). aggregate rewrites the stats columns of every row
+# every 5 minutes, and a whole-row save of the copy loaded at the start of a
+# request would put back the stats from before that run.
 class ClanMgmtView(View):
     template_name = 'clanmgmt.html'
 
@@ -1230,7 +1234,8 @@ class ClanMgmtView(View):
                 player.clan = newclan
                 player.clan_admin = True
                 player.looking_for_clan = False
-                player.save()
+                player.save(update_fields=['clan', 'clan_admin',
+                                           'looking_for_clan'])
                 # a player in a clan can't accept invitations; withdraw them
                 # so they don't take up places in the clans that sent them
                 player.invites.clear()
@@ -1360,7 +1365,7 @@ class ClanMgmtView(View):
         save_clan_name = player.clan.name
         save_clan = player.clan  # Save reference before clearing
         player.clan = None
-        player.save()
+        player.save(update_fields=['clan'])
 
         # Invalidate trophy grid cache for both player and clan
         from tnnt.trophy_grid import invalidate_trophy_grid_cache
@@ -1405,7 +1410,7 @@ class ClanMgmtView(View):
             # explicit?
             member.clan = None
             member.clan_admin = False
-            member.save()
+            member.save(update_fields=['clan', 'clan_admin'])
         save_clan_name = player.clan.name
         clan.delete()
         logger.info('%s disbanded clan %s',
@@ -1473,7 +1478,7 @@ class ClanMgmtView(View):
                            player.name)
         player.clan_admin = False # to be safe
         player.looking_for_clan = False
-        player.save()
+        player.save(update_fields=['clan', 'clan_admin', 'looking_for_clan'])
 
         # Invalidate trophy grid cache for both player and clan
         from tnnt.trophy_grid import invalidate_trophy_grid_cache
@@ -1576,7 +1581,7 @@ class ClanMgmtView(View):
 
         # if we passed checks, we're good to make this person an admin
         new_admin.clan_admin = True
-        new_admin.save()
+        new_admin.save(update_fields=['clan_admin'])
         logger.info('%s made %s an admin of clan %s',
                     player.name, new_admin.name, player.clan.name)
 
@@ -1617,7 +1622,7 @@ class ClanMgmtView(View):
         save_clan = kickee.clan  # Save reference before clearing
         kickee.clan = None
         kickee.clan_admin = False
-        kickee.save()
+        kickee.save(update_fields=['clan', 'clan_admin'])
 
         # Invalidate trophy grid cache for both kicked player and clan
         from tnnt.trophy_grid import invalidate_trophy_grid_cache
@@ -1651,7 +1656,7 @@ class ClanMgmtView(View):
 
         clan = player.clan
         clan.message = set_msg_form.cleaned_data['message']
-        clan.save()
+        clan.save(update_fields=['message'])
         logger.info('%s set the message of clan %s to "%s"',
                     player.name, clan.name, clan.message)
 
@@ -1685,7 +1690,7 @@ class ClanMgmtView(View):
 
         player.looking_for_clan = lfc_form.cleaned_data['looking_for_clan']
         player.lfc_message = lfc_form.cleaned_data['lfc_message']
-        player.save()
+        player.save(update_fields=['looking_for_clan', 'lfc_message'])
         logger.info('%s set Looking For Clan to %s with message "%s"',
                     player.name, player.looking_for_clan, player.lfc_message)
 
@@ -2090,7 +2095,8 @@ class AdminPanelView(View):
                             lfc_player.lfc_message, lfc_player.name)
                 lfc_player.looking_for_clan = False
                 lfc_player.lfc_message = ''
-                lfc_player.save()
+                lfc_player.save(update_fields=['looking_for_clan',
+                                               'lfc_message'])
 
         # Redirect back to GET to prevent form resubmission
         return HttpResponseRedirect('/admin-panel')

@@ -347,7 +347,9 @@ class HdfAuthBackend(BaseBackend):
             player = find_player(username)
             # link to the User record
             player.user = user
-            player.save()
+            # only the link: a whole-row save would write back whatever
+            # stats this copy of the row was loaded with
+            player.save(update_fields=['user'])
             logger.info('linked new User to its Player with name = %s', username)
         return user
 
