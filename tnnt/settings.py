@@ -246,9 +246,13 @@ LOGGING = {
         },
     },
     'handlers': {
+        # WatchedFileHandler, not FileHandler: logrotate renames the log
+        # weekly ("create"), and the long-running web server would keep
+        # writing to the renamed file (then to a deleted one after the
+        # next rotation compresses it). This one reopens the path.
         'file': {
             'level': 'DEBUG' if DEBUG else 'INFO',
-            'class': 'logging.FileHandler',
+            'class': 'logging.handlers.WatchedFileHandler',
             'filename': TNNT_LOG_FILE,
             'formatter': 'normal',
         },
