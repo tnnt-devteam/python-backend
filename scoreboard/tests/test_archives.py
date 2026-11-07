@@ -170,3 +170,30 @@ class ArchivePageLinkTests(SimpleTestCase):
         report = ['%s (%d pages, e.g. %s)' % (href, len(pages), pages[0])
                   for href, pages in sorted(broken.items())]
         self.assertEqual(report, [])
+
+
+HTML_COMMENT = re.compile(rb'<!--.*?-->', re.S)
+FORM_TAG = re.compile(rb'<form\b', re.I)
+
+
+@unittest.skipUnless(ARCHIVES.is_dir(), 'no archives in this checkout')
+class ArchiveFormTests(SimpleTestCase):
+    """
+    No archive page shows a form: ArchiveFileView answers GET only, so a
+    login form on an archived page can only fail. cleanup_archive.py
+    comments them out; the 2021-2023 clanmgmt pages (copies of the login
+    page that it never processed) still had theirs until 2026-11-06.
+    """
+
+    def test_no_page_has_a_form_outside_a_comment(self):
+        found = []
+        for dirpath, dirnames, filenames in os.walk(ARCHIVES):
+            dirnames[:] = [d for d in dirnames if d != 'xlogfiles']
+            for name in filenames:
+                page = Path(dirpath) / name
+                if not is_page(page):
+                    continue
+                visible = HTML_COMMENT.sub(b'', page.read_bytes())
+                if FORM_TAG.search(visible):
+                    found.append(str(page.relative_to(ARCHIVES)))
+        self.assertEqual(sorted(found), [])

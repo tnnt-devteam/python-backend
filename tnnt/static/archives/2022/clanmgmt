@@ -63,7 +63,7 @@
       <a href="https://www.hardfought.org/nethack/#how-to-connect">this page</a>
       for instructions.
     </p>
-    <form method="post">
+    <!--     <form method="post">
       <input type="hidden" name="csrfmiddlewaretoken" value="T0A1SxFiBPX9rpo20uLu2AWOhfmPizDJfxlfBmNKK9aVdgqkFKB3JhelcXGXZvMF"> 
     <tr>
     <th><label for="id_username">Username:</label></th>
@@ -87,7 +87,7 @@
     </td>
   </tr>
     <button type="submit">Log In</button>
-    </form>
+    </form> -->
 </article>
 
 
