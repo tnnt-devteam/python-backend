@@ -37,7 +37,7 @@
               <a href="../leaderboards" class="menu ">LEADERBOARDS</a>
           </td>
           <td class="rightmenu">
-              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="../trophies" class="menu ">TROPHIES</a>
               <a href="../about" class="menu ">ABOUT</a>
               <a href="../archives" class="menu ">ARCHIVES</a>
               

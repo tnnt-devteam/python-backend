@@ -643,7 +643,7 @@
         
         <td>
           <span class="clan">
-            <a href="clanclan%20name">clan name</a>
+            <a href="clan/clan%20name">clan name</a>
 
           </span>
 
@@ -698,7 +698,7 @@
         
         <td>
           <span class="clan">
-            <a href="clanclan%20EIT%21">Clan EIT!</a>
+            <a href="clan/Clan%20EIT%21">Clan EIT!</a>
 
           </span>
 
@@ -858,7 +858,7 @@
         
         <td>
           <span class="clan">
-            <a href="clanclan%20of%20the%20Cave%20Grue">Clan of the Cave Grue</a>
+            <a href="clan/Clan%20of%20the%20Cave%20Grue">Clan of the Cave Grue</a>
 
           </span>
 
@@ -1693,7 +1693,7 @@
         
         <td>
           <span class="clan">
-            <a href="clanclan%20Spoopy%20Hack">Clan Spoopy Hack</a>
+            <a href="clan/Clan%20Spoopy%20Hack">Clan Spoopy Hack</a>
 
           </span>
 

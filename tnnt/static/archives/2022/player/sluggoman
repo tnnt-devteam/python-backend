@@ -17,7 +17,7 @@
 
 <header>
   <div id="headerbar">
-    <a id="titlelink" href="index.html"><h1>The November Nethack Tournament</h1></a>
+    <a id="titlelink" href="../index.html"><h1>The November Nethack Tournament</h1></a>
   </div>
   <table id="navlogo">
       <tr>
