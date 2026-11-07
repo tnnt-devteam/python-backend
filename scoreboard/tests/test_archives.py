@@ -86,31 +86,11 @@ class ArchiveAssetTests(SimpleTestCase):
 # <a href="..."> on a page; the archived markup double-quotes every href.
 PAGE_LINK = re.compile(rb'<a\b[^>]*?\shref="([^"]*)"')
 YEAR_LINK = re.compile(r'/archives/(\d{4})/(.*)')
-# 2018-2020 predate the move to tnnt.org and still link hardfought.org-era
-# pages that were never archived (clanmgmt/, /nethack, ...). Every later
-# year was mirrored from tnnt.org, so none of its links may be dead.
-FIRST_LINK_CHECKED_YEAR = 2021
-
-
-def link_target(page, base, href):
-    """
-    The file a browser and ArchiveFileView serve for `href` on `page` (with
-    <base href> `base`), or None when the link leaves the archives (http:,
-    mailto:, a fragment, a live-site path like /archives or /). Entities and
-    %-escapes are decoded and a query is dropped, as the browser and Django
-    do; a literal '?' starts the query, an escaped one (%3F) is part of the
-    file name (2025's "?show_all=..." pages).
-    """
-    href = html.unescape(href).split('#', 1)[0].split('?', 1)[0]
-    if not href or ':' in href.split('/', 1)[0]:
-        return None
-    path = unquote(href)
-    if path.startswith('/'):
-        match = YEAR_LINK.fullmatch(path)
-        if not match:
-            return None
-        return ARCHIVES / match.group(1) / match.group(2)
-    return Path(os.path.normpath(page.parent / html.unescape(base) / path))
+# The only live-site pages an archive may link: the logo (/) and the
+# ARCHIVES menu (/archives), as cleanup_archive.py sets them. Any other
+# absolute path is either dead (hardfought.org-era /nethack, /tnnt/...) or
+# leaves the archived year for the current tournament's page.
+LIVE_LINKS = {'/', '/archives'}
 
 
 def link_resolves(target):
@@ -130,22 +110,47 @@ def link_resolves(target):
     return target.is_file()
 
 
+def link_ok(page, base, href):
+    """
+    Whether `href` on `page` (with <base href> `base`) leads somewhere: a
+    link off the site (http:, mailto:) or to a fragment is fine, an absolute
+    path must be in LIVE_LINKS or name an archived file, a relative one must
+    reach an archived file. Entities and %-escapes are decoded and a query is
+    dropped, as the browser and Django do; a literal '?' starts the query,
+    an escaped one (%3F) is part of the file name (2025's "?show_all=..."
+    pages).
+    """
+    href = html.unescape(href).split('#', 1)[0].split('?', 1)[0]
+    if not href or ':' in href.split('/', 1)[0]:
+        return True
+    path = unquote(href)
+    if path.startswith('/'):
+        if path in LIVE_LINKS:
+            return True
+        match = YEAR_LINK.fullmatch(path)
+        if not match:
+            return False
+        return link_resolves(ARCHIVES / match.group(1) / match.group(2))
+    return link_resolves(
+        Path(os.path.normpath(page.parent / html.unescape(base) / path)))
+
+
 @unittest.skipUnless(ARCHIVES.is_dir(), 'no archives in this checkout')
 class ArchivePageLinkTests(SimpleTestCase):
     """
-    Every link between archive pages leads to a page. wget mis-converted
-    some links when 2022 was mirrored: the four clans whose names start
-    with "clan" were linked as clanclan%20<rest> on the clans, leaderboards,
-    players and trophies pages, and the clan and player pages pointed their
-    title link at index.html and TROPHIES at trophies inside clan/ and
-    player/ (repaired 2026-11-06).
+    Every link on an archive page leads to a page. wget mis-converted some
+    links when 2022 was mirrored (clans linked as clanclan%20<rest>, the
+    clan and player pages' index.html and trophies inside clan/ and player/;
+    repaired 2026-11-06, 3b53588), and 2018-2020 still linked hardfought.org
+    paths that 404 on tnnt.org (/nethack, /nethack/hterm, /tnnt/clanmgmt,
+    clanmgmt/, ARCHIVES -> /tnnt/archives/2018 or archives.html), as did two
+    2022 pages that linked the live /players, /about and menu (repaired
+    2026-11-06).
     """
 
     def test_every_page_link_resolves(self):
         broken = defaultdict(list)
-        years = [y for y in os.listdir(ARCHIVES)
-                 if re.fullmatch(r'\d{4}', y)
-                 and int(y) >= FIRST_LINK_CHECKED_YEAR]
+        years = [y for y in os.listdir(ARCHIVES) if re.fullmatch(r'\d{4}', y)]
         for year in sorted(years):
             for dirpath, dirnames, filenames in os.walk(ARCHIVES / year):
                 dirnames[:] = [d for d in dirnames
@@ -159,8 +164,7 @@ class ArchivePageLinkTests(SimpleTestCase):
                     base = match.group(1).decode() if match else ''
                     for href in set(PAGE_LINK.findall(data)):
                         href = href.decode('utf-8', 'replace')
-                        target = link_target(page, base, href)
-                        if target is not None and not link_resolves(target):
+                        if not link_ok(page, base, href):
                             broken[href].append(
                                 str(page.relative_to(ARCHIVES)))
         report = ['%s (%d pages, e.g. %s)' % (href, len(pages), pages[0])

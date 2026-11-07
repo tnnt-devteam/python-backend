@@ -7,8 +7,8 @@
   <title>TNNT::Login</title>
   
 
-<link rel="stylesheet" type="text/css" href="/static/css/default.css" />
-<link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="static/css/default.css" />
+<link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico" />
 
 </head>
 
@@ -25,24 +25,24 @@
           <td class="leftmenu"></td>
           <td id="logo" rowspan="3">
               <a href="/">
-              <img src="/static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
+              <img src="static/images/tnnt_square_logo.svg" alt="An @ argent on a field azure, a wreath d'or encircling" width="100px" height="100px" />
               </a>
           </td>
           <td class="rightmenu"></td>
       </tr>
       <tr>
           <td class="leftmenu">
-              <a href="/rules" class="menu ">RULES</a>
-              <a href="/players" class="menu ">PLAYERS</a>
-              <a href="/clans" class="menu ">CLANS</a>
-              <a href="/leaderboards" class="menu ">LEADERBOARDS</a>
+              <a href="rules" class="menu ">RULES</a>
+              <a href="players" class="menu ">PLAYERS</a>
+              <a href="clans" class="menu ">CLANS</a>
+              <a href="leaderboards" class="menu ">LEADERBOARDS</a>
           </td>
           <td class="rightmenu">
-              <a href="/trophies" class="menu ">TROPHIES</a>
-              <a href="/about" class="menu ">ABOUT</a>
+              <a href="trophies" class="menu ">TROPHIES</a>
+              <a href="about" class="menu ">ABOUT</a>
               <a href="/archives" class="menu ">ARCHIVES</a>
               
-                <a href="/login" class="menu  menusel ">LOGIN</a>
+                <a href="login" class="menu  menusel ">LOGIN</a>
               
           </td>
       </tr>
