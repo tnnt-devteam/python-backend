@@ -3142,7 +3142,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Minesweeper"
-    description: "Disarm all Fort Ludios land mines without triggering any after entering the vault"
+    description: "Disarm all Fort Ludios land mines without triggering any after entering the treasury"
     ingameid: "350"
     define: "A_DISARMED_LUDIOS_MINES"
     xlogfield: "tnntachieve5"
@@ -3340,7 +3340,7 @@
 - model: scoreboard.achievement
   fields:
     name: "Gold Rush"
-    description: "Enter the Fort Ludios vault on your first visit to the level"
+    description: "Enter the Fort Ludios treasury before leaving the level for the first time"
     ingameid: "372"
     define: "A_COMPLETED_LUDIOS_WITHOUT_BACKTRACKING"
     xlogfield: "tnntachieve5"
